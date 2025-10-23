@@ -99,6 +99,9 @@ You MUST use the following function signature:
 {}
 ```
 
+Include any necessary imports (e.g., import 'dart:math', import 'dart:core') at the beginning.
+Write ONLY the function implementation - do NOT include test code or main().
+
 ### Assembly:
 {}
 
@@ -119,7 +122,41 @@ def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> t
       -1.0: Runtime/compilation error
       -2.0: Timeout or sandbox error
     """
-    full_code = solution_code + "\n\n" + test_code
+    # Validate solution code
+    if not solution_code.strip():
+        return -1.0, "Error: Empty solution code"
+    
+    # Solution should NOT contain main() - that comes from test_code
+    if 'void main(' in solution_code or 'main()' in solution_code:
+        return -1.0, "Error: Solution should only contain the function, not main()"
+    
+    # Extract imports/pragmas and function code for proper file structure
+    # Dart convention: imports at top, then code
+    lines = solution_code.split('\n')
+    imports = []
+    function_lines = []
+    
+    for line in lines:
+        stripped = line.strip()
+        # Check if line is an import, export, or pragma
+        if (stripped.startswith('import ') or 
+            stripped.startswith('export ') or 
+            stripped.startswith('@pragma(') or
+            stripped.startswith('library ') or
+            stripped.startswith('part ')):
+            imports.append(line)
+        else:
+            function_lines.append(line)
+    
+    # Reconstruct with proper structure: imports first, then function, then tests
+    imports_section = '\n'.join(imports) if imports else ''
+    function_section = '\n'.join(function_lines).strip()
+    
+    # Combine: imports + function + test_code
+    if imports_section:
+        full_code = imports_section + "\n\n" + function_section + "\n\n" + test_code
+    else:
+        full_code = function_section + "\n\n" + test_code
     
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
