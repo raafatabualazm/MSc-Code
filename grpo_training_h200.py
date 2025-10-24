@@ -9,23 +9,32 @@ from transformers import (
     AutoTokenizer,
     TrainingArguments,
 )
-from peft import LoraConfig, get_peft_model
-from trl import PPOTrainer, PPOConfig
+from peft import LoraConfig
+from trl import PPOTrainer, PPOConfig, AutoModelForCausalLMWithValueHead
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
 from accelerate import Accelerator
+import gc
 
 # ============================================================================
-# H200 OPTIMIZED GRPO TRAINING SCRIPT
+# H200 DoRA-OPTIMIZED GRPO TRAINING SCRIPT
 # Hardware: NVIDIA H200 (141GB HBM3e)
-# Optimizations: Large batch sizes, more samples, full bf16, Flash Attention 2
+# Features: DoRA enabled + Long sequences (2048 or 3072)
+# Strategy: Smaller batches, aggressive memory management
 # ============================================================================
 
-print("🚀 H200-Optimized GRPO Training Script")
+print("🚀 H200 DoRA-Optimized GRPO Training Script")
 print("=" * 80)
 
-# --- 1. Accelerator and Model/Tokenizer Setup ---
-accelerator = Accelerator(mixed_precision="bf16")  # Full bf16 for H200
+# CONFIGURATION SELECTOR
+# ========================================================================
+# Choose your configuration here:
+SEQUENCE_MODE = "2048"  # Options: "2048" or "3072"
+# ========================================================================
+
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
+accelerator = Accelerator(mixed_precision="bf16")
 
 model_dir = "Qwen/Qwen3-4B-Thinking-2507"
 
@@ -33,21 +42,42 @@ tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=True)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 
-accelerator.print("Loading models...")
+accelerator.print("=" * 80)
+accelerator.print("CONFIGURATION")
+accelerator.print("=" * 80)
 accelerator.print(f"  Device: {accelerator.device}")
 accelerator.print(f"  Mixed Precision: bf16")
 accelerator.print(f"  Available Memory: ~141GB (H200)")
+accelerator.print(f"  Sequence Mode: {SEQUENCE_MODE} tokens")
+accelerator.print(f"  DoRA: ENABLED")
+accelerator.print(f"  Memory Optimization: AGGRESSIVE")
+accelerator.print("=" * 80)
 
-# Load the base model for training (with LoRA)
-model = AutoModelForCausalLM.from_pretrained(
+# --- PEFT Configuration with DoRA ---
+# Using DoRA for better performance, but with smaller rank to fit memory
+peft_config = LoraConfig(
+    lora_alpha=32,
+    lora_dropout=0.05,
+    r=16,                 # Keep rank modest with DoRA
+    bias="none",
+    task_type="CAUSAL_LM",
+    use_dora=True,        # ✓ DoRA ENABLED as requested
+    target_modules=[
+        "q_proj", "k_proj", "v_proj", "o_proj",
+        "gate_proj", "up_proj", "down_proj"
+    ],
+)
+
+accelerator.print("\nLoading models with DoRA...")
+model = AutoModelForCausalLMWithValueHead.from_pretrained(
     model_dir,
     device_map={"": accelerator.local_process_index},
     torch_dtype=torch.bfloat16,
     trust_remote_code=True,
-    attn_implementation="flash_attention_2"  # H200 supports FA2
+    attn_implementation="flash_attention_2",
+    peft_config=peft_config
 )
 
-# Load the reference model (frozen, no LoRA)
 ref_model = AutoModelForCausalLM.from_pretrained(
     model_dir,
     device_map={"": accelerator.local_process_index},
@@ -62,31 +92,16 @@ ref_model.config.use_cache = False
 model.config.pretraining_tp = 1
 ref_model.config.pretraining_tp = 1
 
-accelerator.print("✓ Models loaded successfully")
+# CRITICAL: Enable gradient checkpointing
+model.pretrained_model.gradient_checkpointing_enable()
 
+accelerator.print("✓ Models loaded with DoRA")
 
-# --- 2. PEFT (LoRA) Configuration ---
-# H200: Can use larger rank and more modules
-peft_config = LoraConfig(
-    lora_alpha=64,        # Increased from 32
-    lora_dropout=0.08,
-    r=32,                 # Increased from 16 for more capacity
-    bias="none",
-    task_type="CAUSAL_LM",
-    use_dora=True,
-    target_modules=[
-        "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj", "lm_head"
-    ],
-)
-
-model = get_peft_model(model, peft_config)
 trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
 total_params = sum(p.numel() for p in model.parameters())
-accelerator.print(f"✓ LoRA applied: {trainable_params:,} trainable / {total_params:,} total ({100*trainable_params/total_params:.2f}%)")
+accelerator.print(f"✓ DoRA applied: {trainable_params:,} trainable / {total_params:,} total ({100*trainable_params/total_params:.2f}%)")
 
-
-# --- 2.5. Prompt Template ---
+# --- Prompt Template ---
 inference_prompt_style = """Below is an instruction that describes a task, paired with an input that provides further context. 
 Write a response that appropriately completes the request. 
 Before answering, think carefully about the task and create a step-by-step chain of thoughts to ensure a logical and accurate response.
@@ -109,36 +124,20 @@ Write ONLY the function implementation - do NOT include test code or main().
 <think>
 """
 
-
-# --- 3. Dart Sandbox Reward Function ---
+# --- Dart Sandbox Reward Function ---
 def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> tuple:
-    """
-    Runs Dart code in a secure sandbox.
-    Returns (reward, log_message) tuple.
-    
-    Reward scheme:
-      +1.0: All tests passed
-      -0.5: Test failure (assertion failed)
-      -1.0: Runtime/compilation error
-      -2.0: Timeout or sandbox error
-    """
-    # Validate solution code
     if not solution_code.strip():
         return -1.0, "Error: Empty solution code"
     
-    # Solution should NOT contain main() - that comes from test_code
     if 'void main(' in solution_code or 'main()' in solution_code:
         return -1.0, "Error: Solution should only contain the function, not main()"
     
-    # Extract imports/pragmas and function code for proper file structure
-    # Dart convention: imports at top, then code
     lines = solution_code.split('\n')
     imports = []
     function_lines = []
     
     for line in lines:
         stripped = line.strip()
-        # Check if line is an import, export, or pragma
         if (stripped.startswith('import ') or 
             stripped.startswith('export ') or 
             stripped.startswith('@pragma(') or
@@ -148,11 +147,9 @@ def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> t
         else:
             function_lines.append(line)
     
-    # Reconstruct with proper structure: imports first, then function, then tests
     imports_section = '\n'.join(imports) if imports else ''
     function_section = '\n'.join(function_lines).strip()
     
-    # Combine: imports + function + test_code
     if imports_section:
         full_code = imports_section + "\n\n" + function_section + "\n\n" + test_code
     else:
@@ -187,10 +184,9 @@ def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> t
     except Exception as e:
         return -2.0, f"Sandbox Error: {str(e)}"
 
-
-# --- 4. Dataset Loading and Preparation ---
+# --- Dataset Loading ---
 accelerator.print("\nLoading dataset...")
-dataset = load_dataset("json", data_files="dart_all.jsonl", split="train")
+dataset = load_dataset("json", data_files="grpo_data.jsonl", split="train")
 accelerator.print(f"✓ Loaded {len(dataset):,} training examples")
 
 def prepare_dataset_entry(example):
@@ -200,147 +196,163 @@ def prepare_dataset_entry(example):
         example['dart_function_signature'],
         example['assembly']
     )
-    
-    tokenized = tokenizer(
-        prompt_text, 
-        truncation=True, 
-        max_length=2048,  # H200: Increased from 1024
-        padding=False
-    )
-    
     return {
-        "input_ids": tokenized.input_ids,
-        "prompt": prompt_text,
-        "tests": example["tests"],
-        "dart_function_signature": example.get("dart_function_signature", "")
+        'prompts': prompt_text,
+        'tests': example['tests']
     }
 
-train_dataset = dataset.map(prepare_dataset_entry, num_proc=4)
-train_dataset = train_dataset.remove_columns(
-    [col for col in dataset.column_names if col not in ['input_ids', 'prompt', 'tests', 'dart_function_signature']]
-)
-train_dataset.set_format(type='torch')
+dataset = dataset.map(prepare_dataset_entry)
 
-def collate_fn_rl(batch):
-    return {
-        "input_ids": [item['input_ids'] for item in batch],
-        "prompts": [item['prompt'] for item in batch],
-        "tests": [item['tests'] for item in batch],
-        "signatures": [item.get('dart_function_signature', '') for item in batch]
-    }
+# --- Configuration Based on Sequence Length ---
+EPOCHS = 3
+LEARNING_RATE = 1e-5
 
+if SEQUENCE_MODE == "2048":
+    # Configuration for 2048 tokens
+    # Estimated memory: ~95-105 GB
+    accelerator.print("\n⚙️  Using 2048 token configuration")
+    PROMPTS_PER_BATCH = 2
+    K_SAMPLES = 6
+    MAX_LENGTH = 2048
+    MAX_NEW_TOKENS = 1536
+    GRAD_ACCUM_STEPS = 3  # Effective batch = 6 prompts
+    MINI_BATCH_SIZE = 2
+    accelerator.print(f"   • Prompts/batch: {PROMPTS_PER_BATCH}")
+    accelerator.print(f"   • Samples/prompt: {K_SAMPLES}")
+    accelerator.print(f"   • Total sequences: {PROMPTS_PER_BATCH * K_SAMPLES}")
+    accelerator.print(f"   • Expected memory: 95-105 GB")
+    
+elif SEQUENCE_MODE == "3072":
+    # Configuration for 3072 tokens (VERY AGGRESSIVE)
+    # Estimated memory: ~115-125 GB
+    accelerator.print("\n⚙️  Using 3072 token configuration (AGGRESSIVE)")
+    PROMPTS_PER_BATCH = 2
+    K_SAMPLES = 4
+    MAX_LENGTH = 3072
+    MAX_NEW_TOKENS = 2048
+    GRAD_ACCUM_STEPS = 4  # Effective batch = 8 prompts
+    MINI_BATCH_SIZE = 2
+    accelerator.print(f"   • Prompts/batch: {PROMPTS_PER_BATCH}")
+    accelerator.print(f"   • Samples/prompt: {K_SAMPLES}")
+    accelerator.print(f"   • Total sequences: {PROMPTS_PER_BATCH * K_SAMPLES}")
+    accelerator.print(f"   • Expected memory: 115-125 GB")
+    accelerator.print(f"   • ⚠️  WARNING: Pushing memory limits!")
+else:
+    raise ValueError(f"Invalid SEQUENCE_MODE: {SEQUENCE_MODE}")
 
-# --- 5. H200-Optimized PPO and GRPO Configuration ---
-accelerator.print("\n" + "=" * 80)
-accelerator.print("H200 OPTIMIZATION SETTINGS")
-accelerator.print("=" * 80)
-
-# H200: Aggressive scaling
-K_SAMPLES = 16            # 4x increase (was 4)
-BATCH_SIZE = 8            # 4x increase (was 2)
-MINI_BATCH_SIZE = 2       # Can process larger mini-batches
-GRAD_ACCUM_STEPS = 4      # = BATCH_SIZE / MINI_BATCH_SIZE
-
-accelerator.print(f"K_SAMPLES (per prompt):        {K_SAMPLES}")
-accelerator.print(f"BATCH_SIZE (prompts/step):     {BATCH_SIZE}")
-accelerator.print(f"Total samples per step:        {BATCH_SIZE * K_SAMPLES}")
-accelerator.print(f"Mini-batch size:               {MINI_BATCH_SIZE}")
-accelerator.print(f"Gradient accumulation:         {GRAD_ACCUM_STEPS}")
-accelerator.print(f"Effective batch size:          {BATCH_SIZE * K_SAMPLES}")
 accelerator.print("=" * 80)
 
 training_arguments = TrainingArguments(
-    output_dir="decompiler-grpo-h200",
-    num_train_epochs=5,  # Can afford more epochs with H200
-    remove_unused_columns=False,
+    output_dir="./dart_grpo_dora_h200",
+    num_train_epochs=EPOCHS,
+    per_device_train_batch_size=PROMPTS_PER_BATCH,
+    gradient_accumulation_steps=GRAD_ACCUM_STEPS,
+    learning_rate=LEARNING_RATE,
+    logging_steps=5,
+    save_strategy="no",
     bf16=True,
+    optim="adamw_torch",
+    warmup_ratio=0.1,
+    lr_scheduler_type="cosine",
+    gradient_checkpointing=True,
+    dataloader_num_workers=2,
+    dataloader_pin_memory=True,
+    report_to="none"
 )
+
+# --- PPO Configuration ---
+TOTAL_SEQUENCES = PROMPTS_PER_BATCH * K_SAMPLES
 
 ppo_config = PPOConfig(
-    batch_size=BATCH_SIZE,
+    batch_size=TOTAL_SEQUENCES,
     mini_batch_size=MINI_BATCH_SIZE,
-    gradient_accumulation_steps=GRAD_ACCUM_STEPS,
-    learning_rate=8e-6,      # Slightly higher for larger batches
-    kl_penalty="kl",
-    kl_coeff=0.05,
-    target_kl=0.15,          # Slightly higher target for stability
-    ppo_epochs=4,
-    log_with="none",         # Set to "wandb" for logging
-    use_score_scaling=True,
-    use_score_norm=True,
-    cliprange=0.2,           # PPO clipping
-)
-
-# H200: Can generate longer sequences faster
-gen_kwargs = {
-    "max_new_tokens": 1536,   # Increased from 1024
-    "eos_token_id": tokenizer.eos_token_id,
-    "pad_token_id": tokenizer.pad_token_id,
-    "do_sample": True,
-    "temperature": 0.8,       # Slightly higher for more exploration
-    "top_p": 0.95,
-}
-
-
-# --- 6. Trainer and Dataloader Initialization ---
-train_dataloader = DataLoader(
-    train_dataset,
-    batch_size=ppo_config.batch_size,
-    collate_fn=collate_fn_rl,
-    shuffle=True,
-    num_workers=4,            # H200: Parallel data loading
-    pin_memory=True,          # Faster CPU->GPU transfer
+    learning_rate=LEARNING_RATE,
+    log_with=None,
+    ppo_epochs=3,
+    early_stopping=False,
+    target_kl=0.1,
+    init_kl_coef=0.2,
+    adap_kl_ctrl=True,
+    cliprange=0.2,
+    cliprange_value=0.2,
+    vf_coef=0.1,
+    gamma=1.0,
+    lam=0.95,
 )
 
 ppo_trainer = PPOTrainer(
     config=ppo_config,
     model=model,
     ref_model=ref_model,
-    tokenizer=tokenizer
+    tokenizer=tokenizer,
 )
 
-model, ref_model, ppo_trainer, train_dataloader = accelerator.prepare(
-    model, ref_model, ppo_trainer, train_dataloader
+# --- Main Training Loop ---
+accelerator.print(f"\n{'='*80}")
+accelerator.print("STARTING DoRA TRAINING WITH LONG SEQUENCES")
+accelerator.print(f"{'='*80}")
+accelerator.print(f"Total Epochs: {EPOCHS}")
+accelerator.print(f"Sequence length: {MAX_LENGTH}")
+accelerator.print(f"Max new tokens: {MAX_NEW_TOKENS}")
+accelerator.print(f"Batch: {PROMPTS_PER_BATCH} prompts × {K_SAMPLES} samples = {TOTAL_SEQUENCES} sequences")
+accelerator.print(f"Gradient accumulation: {GRAD_ACCUM_STEPS} (effective: {PROMPTS_PER_BATCH * GRAD_ACCUM_STEPS} prompts)")
+accelerator.print(f"{'='*80}\n")
+
+dataloader = DataLoader(
+    dataset, 
+    batch_size=training_arguments.per_device_train_batch_size,
+    shuffle=True,
+    collate_fn=lambda x: {
+        'prompts': [item['prompts'] for item in x],
+        'tests': [item['tests'] for item in x]
+    }
 )
 
+gen_kwargs = {
+    "max_new_tokens": MAX_NEW_TOKENS,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "do_sample": True,
+    "eos_token_id": tokenizer.eos_token_id,
+    "pad_token_id": tokenizer.pad_token_id,
+}
 
-# --- 7. The GRPO Training Loop ---
-accelerator.print(f"\n🚀 Starting GRPO Training on H200")
-accelerator.print(f"  Epochs: {training_arguments.num_train_epochs}")
-accelerator.print(f"  Steps per epoch: ~{len(train_dataloader)}")
-accelerator.print(f"  Total samples per step: {BATCH_SIZE * K_SAMPLES}")
-accelerator.print(f"  Estimated time per epoch: ~{len(train_dataloader) * BATCH_SIZE * K_SAMPLES * 2 / 3600:.1f}h")
-accelerator.print(f"-" * 80)
-
+best_reward = float('-inf')
 global_step = 0
-best_reward = -999.0
 
-for epoch in range(training_arguments.num_train_epochs):
-    accelerator.print(f"\n{'='*80}")
-    accelerator.print(f"EPOCH {epoch+1}/{training_arguments.num_train_epochs}")
-    accelerator.print(f"{'='*80}")
-    
-    pbar = tqdm(
-        enumerate(train_dataloader), 
-        disable=not accelerator.is_main_process, 
-        total=len(train_dataloader),
-        desc=f"Epoch {epoch+1}"
-    )
+for epoch in range(EPOCHS):
+    if accelerator.is_main_process:
+        pbar = tqdm(dataloader, desc=f"Epoch {epoch+1}/{EPOCHS}")
+    else:
+        pbar = dataloader
     
     epoch_rewards = []
     
-    for batch_idx, batch in pbar:
-        # --- 7a. Rollout Phase (Generate k Samples) ---
-        query_tensors = [torch.tensor(ids).to(accelerator.device) for ids in batch['input_ids']]
+    for batch_idx, batch in enumerate(pbar):
+        # Aggressive memory clearing before batch
+        torch.cuda.empty_cache()
+        gc.collect()
+        
+        # --- Generation Phase ---
+        query_tensors = []
+        for prompt_text in batch['prompts']:
+            tokens = tokenizer(
+                prompt_text, 
+                return_tensors="pt", 
+                padding="max_length",
+                truncation=True, 
+                max_length=MAX_LENGTH
+            )
+            query_tensors.append(tokens.input_ids.squeeze(0).to(accelerator.device))
         
         response_tensors = []
         all_generated_texts = []
         
-        # H200: Can batch generate efficiently
-        for query_tensor in query_tensors:
+        # Generate sequences one prompt at a time for better memory control
+        for query_idx, query_tensor in enumerate(query_tensors):
             query_batch = query_tensor.unsqueeze(0)
             
-            with torch.no_grad():  # Save memory during generation
+            with torch.no_grad():
                 generated = accelerator.unwrap_model(ppo_trainer.model).generate(
                     query_batch,
                     num_return_sequences=K_SAMPLES,
@@ -354,10 +366,24 @@ for epoch in range(training_arguments.num_train_epochs):
                 response_tensors.append(response_only)
             
             all_generated_texts.extend(decoded_texts)
+            
+            # Critical: Clear immediately after each prompt's generation
+            del generated
+            torch.cuda.empty_cache()
+            
+            # Log memory after each prompt (only for first batch)
+            if batch_idx == 0 and accelerator.is_main_process:
+                allocated = torch.cuda.memory_allocated() / 1e9
+                accelerator.print(f"   Prompt {query_idx+1}/{len(query_tensors)} generated - Memory: {allocated:.1f}GB")
 
-        queries_repeated = [q for q in query_tensors for _ in range(K_SAMPLES)]
+        # Create repeated queries list
+        queries_repeated = [
+            q.clone() 
+            for q in query_tensors 
+            for _ in range(K_SAMPLES)
+        ]
         
-        # --- 7b. Reward & GRPO Advantage Calculation ---
+        # --- Reward & GRPO Advantage Calculation ---
         rewards = []
         raw_rewards_log = []
         successful_completions = 0
@@ -371,7 +397,6 @@ for epoch in range(training_arguments.num_train_epochs):
                 gen_text = all_generated_texts[gen_idx]
                 completion = gen_text[len(ex_prompt):]
                 
-                # Extract Dart code from Markdown block
                 solution_match = re.search(r"```dart\n(.*?)\n```", completion, re.DOTALL)
                 
                 if solution_match:
@@ -386,7 +411,7 @@ for epoch in range(training_arguments.num_train_epochs):
                 group_rewards.append(reward_val)
                 raw_rewards_log.append(reward_val)
             
-            # GRPO: Calculate advantage relative to group mean
+            # GRPO: Calculate advantage
             group_mean = sum(group_rewards) / len(group_rewards)
             group_advantages = [
                 torch.tensor(r - group_mean, dtype=torch.float32).to(accelerator.device) 
@@ -396,8 +421,13 @@ for epoch in range(training_arguments.num_train_epochs):
             
             example_idx += 1
         
-        # --- 7c. PPO Optimization Step ---
+        # --- PPO Optimization Step ---
         stats = ppo_trainer.step(queries_repeated, response_tensors, rewards)
+        
+        # Aggressive cleanup after PPO step
+        del queries_repeated, response_tensors, rewards, query_tensors, all_generated_texts
+        torch.cuda.empty_cache()
+        gc.collect()
         
         # Track metrics
         mean_raw_reward = sum(raw_rewards_log) / len(raw_rewards_log) if raw_rewards_log else 0.0
@@ -405,16 +435,25 @@ for epoch in range(training_arguments.num_train_epochs):
         success_rate = successful_completions / len(raw_rewards_log) if raw_rewards_log else 0.0
         
         if accelerator.is_main_process:
+            # Monitor memory closely
+            allocated = torch.cuda.memory_allocated() / 1e9
+            reserved = torch.cuda.memory_reserved() / 1e9
+            max_allocated = torch.cuda.max_memory_allocated() / 1e9
+            
             pbar.set_description(
-                f"Epoch {epoch+1} | Step {global_step} | "
-                f"Reward: {mean_raw_reward:.3f} | "
-                f"Success: {success_rate*100:.1f}% | "
-                f"Loss: {stats.get('ppo/loss/policy', 0):.4f}"
+                f"E{epoch+1} | S{global_step} | "
+                f"R:{mean_raw_reward:.3f} | "
+                f"Acc:{success_rate*100:.1f}% | "
+                f"Mem:{allocated:.0f}GB(max:{max_allocated:.0f}GB)"
             )
+            
+            # Reset max memory tracker every 10 steps
+            if global_step % 10 == 0:
+                torch.cuda.reset_peak_memory_stats()
         
         global_step += 1
         
-        # Periodic checkpointing (every 50 steps on H200 - faster hardware)
+        # Checkpoint every 50 steps
         if (batch_idx % 50 == 0 and batch_idx > 0) and accelerator.is_main_process:
             checkpoint_dir = f"{training_arguments.output_dir}/checkpoint-epoch{epoch+1}-step{global_step}"
             os.makedirs(checkpoint_dir, exist_ok=True)
@@ -422,15 +461,16 @@ for epoch in range(training_arguments.num_train_epochs):
             unwrapped_model.save_pretrained(checkpoint_dir)
             tokenizer.save_pretrained(checkpoint_dir)
             
-            # Save metrics
             with open(f"{checkpoint_dir}/metrics.txt", "w") as f:
                 f.write(f"Global Step: {global_step}\n")
                 f.write(f"Mean Reward: {mean_raw_reward:.4f}\n")
                 f.write(f"Success Rate: {success_rate*100:.2f}%\n")
+                f.write(f"Sequence Length: {MAX_LENGTH}\n")
+                f.write(f"Max Memory: {max_allocated:.2f}GB\n")
             
             accelerator.print(f"\n💾 Checkpoint saved: {checkpoint_dir}")
     
-    # End of epoch summary
+    # End of epoch
     if accelerator.is_main_process:
         epoch_mean_reward = sum(epoch_rewards) / len(epoch_rewards) if epoch_rewards else 0.0
         epoch_success_rate = sum(1 for r in epoch_rewards if r == 1.0) / len(epoch_rewards) if epoch_rewards else 0.0
@@ -438,12 +478,12 @@ for epoch in range(training_arguments.num_train_epochs):
         accelerator.print(f"\n{'='*80}")
         accelerator.print(f"EPOCH {epoch+1} SUMMARY")
         accelerator.print(f"{'='*80}")
-        accelerator.print(f"Mean Reward:    {epoch_mean_reward:.4f}")
+        accelerator.print(f"Mean Reward:   {epoch_mean_reward:.4f}")
         accelerator.print(f"Success Rate:   {epoch_success_rate*100:.2f}%")
         accelerator.print(f"Total Samples:  {len(epoch_rewards):,}")
+        accelerator.print(f"Peak Memory:    {torch.cuda.max_memory_allocated()/1e9:.2f}GB")
         accelerator.print(f"{'='*80}\n")
         
-        # Save best model
         if epoch_mean_reward > best_reward:
             best_reward = epoch_mean_reward
             best_model_dir = f"{training_arguments.output_dir}/best_model"
@@ -453,8 +493,7 @@ for epoch in range(training_arguments.num_train_epochs):
             tokenizer.save_pretrained(best_model_dir)
             accelerator.print(f"🏆 New best model saved: {best_model_dir} (reward: {best_reward:.4f})")
 
-
-# --- 8. Save Final Model ---
+# --- Save Final Model ---
 accelerator.wait_for_everyone()
 if accelerator.is_main_process:
     accelerator.print("\n" + "="*80)
@@ -469,70 +508,8 @@ if accelerator.is_main_process:
     accelerator.print(f"✓ Final model saved: {training_arguments.output_dir}")
     accelerator.print(f"✓ Best model saved: {training_arguments.output_dir}/best_model")
     accelerator.print(f"  Best reward: {best_reward:.4f}")
-
-
-# --- 9. Final Inference Test ---
-accelerator.wait_for_everyone()
-if accelerator.is_main_process:
-    accelerator.print("\n" + "="*80)
-    accelerator.print("FINAL INFERENCE TEST")
-    accelerator.print("="*80)
-    
-    test_dataset = load_dataset("json", data_files="dart_all.jsonl", split="train")
-    test_example = test_dataset[min(10, len(test_dataset)-1)]
-    
-    prompt_text = inference_prompt_style.format(
-        test_example['lang'],
-        test_example['lang'],
-        test_example['dart_function_signature'],
-        test_example['assembly']
-    )
-    
-    inputs = tokenizer([prompt_text], return_tensors="pt").to(accelerator.device)
-    
-    final_model = accelerator.unwrap_model(model)
-    final_model.eval()
-    
-    accelerator.print("\nGenerating response...")
-    with torch.no_grad():
-        outputs = final_model.generate(
-            input_ids=inputs.input_ids,
-            attention_mask=inputs.attention_mask,
-            max_new_tokens=1536,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.pad_token_id,
-            use_cache=True,
-            temperature=0.1,
-            top_p=1.0,
-        )
-    
-    response = tokenizer.batch_decode(outputs, skip_special_tokens=True)
-    completion_text = response[0][len(prompt_text):]
-    
-    print(f"\n{'='*80}")
-    print("GENERATED COMPLETION:")
-    print(f"{'='*80}")
-    print(completion_text[:500] + "..." if len(completion_text) > 500 else completion_text)
-    
-    print(f"\n{'='*80}")
-    print("VALIDATION:")
-    print(f"{'='*80}")
-    
-    solution_match = re.search(r"```dart\n(.*?)\n```", completion_text, re.DOTALL)
-    
-    if solution_match:
-        solution_code = solution_match.group(1)
-        test_code = test_example['tests']
-        reward, log = run_dart_sandbox(solution_code, test_code)
-        
-        if reward == 1.0:
-            print("✅ PASS - All tests passed!")
-        else:
-            print(f"❌ FAIL - Reward: {reward}")
-        print(f"Log: {log}")
-    else:
-        print("❌ FAIL - Could not parse Dart code block")
+    accelerator.print(f"  Peak memory usage: {torch.cuda.max_memory_allocated()/1e9:.2f}GB")
 
 accelerator.print("\n" + "="*80)
-accelerator.print("🎉 TRAINING PIPELINE COMPLETED SUCCESSFULLY!")
+accelerator.print("🎉 DoRA TRAINING COMPLETED!")
 accelerator.print("="*80)
