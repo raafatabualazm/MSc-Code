@@ -1,7 +1,0 @@
-compute_environment: LOCAL_MACHINE
-distributed_type: DEEPSPEED
-num_processes: 8
-mixed_precision: bf16
-deepspeed_config:
-  zero_stage: 3
-  deepspeed_config_file: ds_zero3.json
