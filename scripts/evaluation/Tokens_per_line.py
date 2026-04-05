@@ -11,12 +11,12 @@ Fields expected per entry (matching compile_at_k.py):
     language, source, assembly, function, filename
 
 Usage:
-    python tokens_per_line.py data/datasets/test-set2.jsonl
-    python tokens_per_line.py data/datasets/test-set2.jsonl --model Qwen/Qwen3-8B
-    python tokens_per_line.py data/datasets/test-set2.jsonl --strip-addr
-    python tokens_per_line.py data/datasets/test-set2.jsonl --prompt          # include system+user prompt overhead
-    python tokens_per_line.py data/datasets/test-set2.jsonl --per-line        # verbose per-line dump
-    python tokens_per_line.py data/datasets/test-set2.jsonl -o stats.json     # JSON export
+    python tokens_per_line.py data/testing/test-set2.jsonl
+    python tokens_per_line.py data/testing/test-set2.jsonl --model Qwen/Qwen3-8B
+    python tokens_per_line.py data/testing/test-set2.jsonl --strip-addr
+    python tokens_per_line.py data/testing/test-set2.jsonl --prompt          # include system+user prompt overhead
+    python tokens_per_line.py data/testing/test-set2.jsonl --per-line        # verbose per-line dump
+    python tokens_per_line.py data/testing/test-set2.jsonl -o stats.json     # JSON export
 """
 
 import argparse
@@ -490,3 +490,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

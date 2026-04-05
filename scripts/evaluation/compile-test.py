@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, required=True, help="Model name/path served by the API")
 parser.add_argument("--base-url", type=str, default="http://localhost:8000/v1", help="OpenAI-compatible API base URL")
 parser.add_argument("--api-key", type=str, default="EMPTY", help="API key (use EMPTY for local vLLM/TGI)")
-parser.add_argument("--test-set", type=str, default="data/datasets/test-set2.jsonl", help="Path to test set JSONL")
+parser.add_argument("--test-set", type=str, default="data/testing/test-set2.jsonl", help="Path to test set JSONL")
 parser.add_argument("--k", type=int, default=5, help="Number of generations per input (compile@K)")
 parser.add_argument("--batch-size", type=int, default=8, help="Number of completions per API call (n parameter)")
 parser.add_argument("--max-tokens", type=int, default=8192, help="Max new tokens to generate")
@@ -395,4 +395,5 @@ else:
 
 if not codebleu_maxes:
     print("\nNo successful compilations across all samples!")
+
 

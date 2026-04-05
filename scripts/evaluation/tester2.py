@@ -268,7 +268,7 @@ def write_stats(lang_scores: list[float], lang_name: str):
 
 
 def main():
-    with open("data/datasets/test-set2.jsonl", encoding="utf-8") as f:
+    with open("data/testing/test-set2.jsonl", encoding="utf-8") as f:
         data_lines = [json.loads(line) for line in f if line.strip()]
 
     total = len(data_lines)
@@ -335,4 +335,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

@@ -441,7 +441,7 @@ Response:
 
 # --- Dataset Loading ---
 accelerator.print("\nLoading dataset...")
-dataset = load_dataset("json", data_files="data/intermediate/grpo_data.jsonl", split="train")
+dataset = load_dataset("json", data_files="data/testing/grpo_data.jsonl", split="train")
 accelerator.print(f"✓ Loaded {len(dataset):,} examples")
 
 def prepare_dataset_entry(example):
@@ -902,4 +902,5 @@ if accelerator.is_main_process:
     accelerator.print("\n" + "="*80)
     accelerator.print("🎉 BATCHED TRUE PER-TEST DoRA-GRPO TRAINING WITH STRUCTURAL GUARDS COMPLETED!")
     accelerator.print("="*80)
+
 
