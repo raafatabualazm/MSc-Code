@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+
+data/intermediate/all_data_new_reason3.jsonl
+data/intermediate/all_data_new_reason5.jsonl

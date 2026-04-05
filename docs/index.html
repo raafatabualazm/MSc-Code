@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدورة المستندية شيكات مرتدة</title>
+    <style>
+        @page {
+            size: A3 portrait;
+            margin: 10mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: white;
+            width: 297mm;
+            min-height: 420mm;
+            padding: 15mm;
+            direction: rtl;
+            margin: 0 auto;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .dates-header {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 20px 0;
+        }
+        
+        .date-box {
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        
+        .date-real-estate {
+            background: #3498db;
+            color: white;
+        }
+        
+        .date-financial {
+            background: #9b59b6;
+            color: white;
+        }
+        
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .box {
+            padding: 18px 30px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            min-width: 240px;
+            max-width: 320px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .start-box {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+        
+        .process-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .action-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .decision-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #2c3e50;
+            border: 3px solid #e74c3c;
+        }
+        
+        .branch-a {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #2c3e50;
+            border-right: 5px solid #27ae60;
+        }
+        
+        .branch-b {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #2c3e50;
+            border-right: 5px solid #e74c3c;
+        }
+        
+        .legal-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #2c3e50;
+            border-right: 5px solid #9b59b6;
+        }
+        
+        .arrow {
+            font-size: 28px;
+            color: #667eea;
+        }
+        
+        .arrow-down {
+            display: flex;
+            justify-content: center;
+            padding: 6px 0;
+        }
+        
+        .branch-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            width: 100%;
+            margin-top: 25px;
+        }
+        
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(240,240,240,0.5);
+            border: 2px dashed #bdc3c7;
+        }
+        
+        .branch-title {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .branch-a-title {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .branch-b-title {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            line-height: 28px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        
+        .small-arrow {
+            font-size: 20px;
+            color: #95a5a6;
+        }
+        
+        .sub-branch {
+            display: flex;
+            gap: 40px;
+            margin-top: 12px;
+        }
+        
+        .sub-box {
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        .yes-box {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .no-box {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .note-section {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+            border-radius: 15px;
+            border-right: 6px solid #f39c12;
+        }
+        
+        .note-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d35400;
+            margin-bottom: 18px;
+        }
+        
+        .note-content {
+            font-size: 16px;
+            color: #2c3e50;
+            line-height: 2;
+        }
+        
+        .highlight {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .reasons-section {
+            margin-top: 25px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffcccb 0%, #ffd6d6 100%);
+            border-radius: 15px;
+            border-right: 6px solid #c0392b;
+        }
+        
+        .reasons-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 12px;
+        }
+        
+        .reason-item {
+            padding: 10px 18px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+            font-size: 15px;
+            border-right: 4px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">الدورة المستندية شيكات مرتدة</div>
+        
+        <div class="flowchart">
+            <div class="box start-box">يتم استلام الشيكات</div>
+            <div class="arrow-down"><span class="arrow">⬇</span></div>
+            
+            <div class="box process-box">يتم استبعادها من محفظه البنوك</div>
+            <div class="arrow-down"><span class="arrow">⬇</span></div>
+            
+            <div class="box action-box">يتم اثباتها ا.ق خزينه شيكات مرتده</div>
+            <div class="arrow-down"><span class="arrow">⬇</span></div>
+            
+            <div class="box decision-box">يتم الفحص</div>
+            
+            <div class="dates-header" style="margin-top: 15px;">
+                <div class="date-box date-real-estate">
+                    قبل 2025/12/1 العقارية
+                </div>
+                <div class="date-box date-financial">
+                    بعد 2025/12/1 المالية
+                </div>
+            </div>
+        </div>
+        
+        <div class="branch-container">
+            <!-- Branch A -->
+            <div class="branch">
+                <div class="branch-title branch-a-title">أ- محصلة نقدا بالخزينة</div>
+                
+                <div class="box branch-a">
+                    <span class="step-number">1</span>
+                    يتم ارسال صورة ايصال السداد لإرفاقه بالشيك
+                </div>
+                <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                
+                <div class="box branch-a">
+                    <span class="step-number">2</span>
+                    يتم تسليم محاسب اوراق القبض صورة من الشيك وايصال السداد لعمل قيد واستبعاده من أ.ق
+                </div>
+                <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                
+                <div class="box branch-a">
+                    <span class="step-number">3</span>
+                    يتم تبويبه أمانات بخزينة الشيكات المرتدة
+                </div>
+                <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                
+                <div class="box branch-a">
+                    <span class="step-number">4</span>
+                    يوضع بحافظة الشيكات المرتدة بالخزينة أمانات
+                </div>
+            </div>
+            
+            <!-- Branch B -->
+            <div class="branch">
+                <div class="branch-title branch-b-title">ب- غير محصل بالخزينة</div>
+                
+                <div class="box branch-b">
+                    <span class="step-number">1</span>
+                    الاتصال بالعميل عن طريق خدمة العملاء
+                </div>
+                <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                
+                <div class="box decision-box" style="min-width: 180px;">تم السداد؟</div>
+                
+                <div class="sub-branch">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="sub-box yes-box">تم السداد</div>
+                        <div style="font-size: 14px; margin-top: 10px; text-align: center;">نتبع نفس<br>خطوات المرحلة أ</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="sub-box no-box">لم يتم السداد</div>
+                        <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                        <div class="box legal-box" style="font-size: 14px;">
+                            يتم ارساله للشئون القانونية لإتخاذ الإجراءات القانونية
+                        </div>
+                        <div class="arrow-down"><span class="small-arrow">⬇</span></div>
+                        <div class="box legal-box" style="font-size: 14px;">
+                            يبوب أ.ق بالشئون القانونية
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Note Section -->
+        <div class="note-section">
+            <div class="note-title">* ملحوظة *</div>
+            <div class="note-content">
+                يوجد فرق دفتري بين خزينة شيكات تحت التحصيل، شيكات مرتدة، والجرد الفعلي للخزينة
+                <br><br>
+                 مثبت بأوراق القبض قدره <span class="highlight">43 مليون جنيه</span> بتاريخ  2025/06/30 ولم يتم معالجته حتى تاريخه
+            </div>
+        </div>
+        
+        <!-- Reasons Section -->
+        <div class="reasons-section">
+            <div class="reasons-title">الأسباب: عوار بالخطوة رقم 2 بند أ</div>
+            <div class="reason-item">
+                شيكات مسلمة للعملاء ولم يتم ابلاغ محاسب أ.ق للإستبعاد
+            </div>
+            <div class="reason-item">
+                شيكات مبوبة أمانات ولم يتم إبلاغ محاسب أ.ق للإستبعاد
+            </div>
+            <div class="reason-item">
+                مبوبة بالخطأ أمانات ويجب تبويبها أ.ق تحت التحصيل
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+10001th prime
+
+A* search algorithm
+
+Append numbers at same position in strings
+
+Apply a callback to an array
+
+Array concatenation
+
+Berlekamp–Massey algorithm
+
+Binomial transform
+
+Boolean values
+
+Borůvka algorithm
+
+Bron–Kerbosch algorithm
+
+Centre and radius of a circle passing through 3 points in a plane
+
+Christofides algorithm
+
+Cipolla's algorithm
+
+Color Difference CIE ΔE2000
+
+Conditional structures
+
+Continued fraction/Arithmetic/G(matrix ng, continued fraction n1, continued fraction n2)
+
+Copy a string
+
+Count the occurrence of each digit in e
+
+Cycles of a permutation
+
+De Bruijn sequences
+
+Double Twin Primes
+
+Euclidean rhythm
+
+Factors of an integer
+
+Filter
+
+Find prime numbers of the form n*n*n+2
+
+Find square difference
+
+Gabow's algorithm
+
+Greatest common divisor
+
+Greatest prime dividing the n-th cubefree number
+
+Hierholzer's algorithm
+
+Hopcroft-Karp Algorithm
+
+Increment a numerical string
+
+Integer comparison
+
+Integer sequence
+
+Jaccard index
+
+Johnson's algorithm
+
+Kahan summation
+
+L-system
+
+Linux CPU utilization
+
+Logical operations
+
+Long stairs
+
+Loops/Break
+
+Loops/Foreach
+
+Marching squares
+
+McNaughton-Yamada-Thompson algorithm
+
+Modulinos
+
+Numbers k whose divisor sum is equal to the divisor sum of k + 1
+
+Numbers with prime digits whose sum is 13
+
+Numerical integration/Tanh-Sinh Quadrature
+
+O'Halloran numbers
+
+Parse EBNF
+
+Parsing/Shunting-yard algorithm
+
+Permutations with some identical elements
+
+Pfaffian and hfaffian
+
+Piprimes
+
+Pollard's rho algorithm
+
+Quickhull
+
+Rainbow
+
+Red black tree sort
+
+Remove vowels from a string
+
+Repeat a string
+
+Schieber-Vishkin algorithm
+
+Self-contained numbers
+
+Show the (decimal) value of a number of 1s appended with a 3, then squared
+
+Sorting algorithms/Bubble sort
+
+Steady squares
+
+Strassen's algorithm
+
+String concatenation
+
+String length
+
+Suffix tree
+
+Sum and product of an array
+
+Szymański's algorithm
+
+Tokenize a string
+
+Topological sort
+
+Two sum
+
