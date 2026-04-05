@@ -60,7 +60,7 @@ from datasets import load_dataset
 
 dataset = load_dataset(
     "json",
-    data_files="dart_all.jsonl",
+    data_files="data/datasets/dart_all.jsonl",
     split="train"
 )
 

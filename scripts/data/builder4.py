@@ -18,8 +18,8 @@ Please convert the following assembly code to idiomatic and clear {} code.
 API_KEY = "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"
 client = OpenAI(api_key=API_KEY, base_url="https://openrouter.ai/api/v1")
 
-input_file = 'final_analysis.jsonl'
-output_file = 'data_swift_reason_new.jsonl'
+input_file = 'results/analysis/final_analysis.jsonl'
+output_file = 'data/intermediate/data_swift_reason_new.jsonl'
 
 try:
     with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
@@ -52,3 +52,4 @@ try:
                 print(f"Error processing line: {e}")
 except FileNotFoundError:
     print(f"Input file {input_file} not found.")
+

@@ -43,7 +43,7 @@ Please convert the following assembly code to idiomatic and clear {} code.
 
 ### Response:
 """
-data = open('dart_all.jsonl')
+data = open('data/datasets/dart_all.jsonl')
 counter = 0
 for line in data:
     entry = json.loads(line)
@@ -94,7 +94,7 @@ dart_average = statistics.mean(dart_scores)
 dart_stdv = statistics.stdev(dart_scores)
 header = ['Min', 'Max', 'Average', 'Standard_Deviation']
 data_row = [min_dart, max_dart, dart_average, dart_stdv]
-file_name = 'dart_statistics-Qwen3-4B-Thinking-2507.csv'
+file_name = 'results/statistics/dart_statistics-Qwen3-4B-Thinking-2507.csv'
 with open(file_name, 'w', newline='') as csvfile:
     # Create a writer object
     writer = csv.writer(csvfile)

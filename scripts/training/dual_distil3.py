@@ -18,7 +18,7 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 # Configuration
 # ------------------------------------------------------------------------
 MODEL_ID = "Qwen/Qwen3-4B-Thinking-2507" 
-DATASET_FILE = "all_data_new_reason5.jsonl" 
+DATASET_FILE = "data/intermediate/all_data_new_reason5.jsonl" 
 OUTPUT_DIR = "decompiler-dual-v1"
 
 MAX_SEQ_LENGTH = 90112 
@@ -313,3 +313,4 @@ if __name__ == "__main__":
     if hf_token is not None:
         print("Pushing Model to HuggingFace Hub...")
         trainer.push_to_hub(commit_message="Initial commit", token=hf_token)
+

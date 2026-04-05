@@ -32,8 +32,8 @@ API_RETRY_MAX_DELAY = 120   # cap backoff at 2 minutes
 ENTRY_MAX_RETRIES = 3       # retries for the full evaluate pipeline per entry
 
 # ── Resume support ─────────────────────────────────────────────────────────
-RESULTS_CACHE = "eval_results_cache_qwen3_8b.jsonl"   # completed results saved here
-FAILED_LOG = "eval_failed_entries_qwen3_8b.jsonl"     # entries that exhausted all retries
+RESULTS_CACHE = "results/cache/eval_results_cache_qwen3_8b.jsonl"   # completed results saved here
+FAILED_LOG = "results/cache/eval_failed_entries_qwen3_8b.jsonl"     # entries that exhausted all retries
 
 # ── Evaluators & score storage ─────────────────────────────────────────────
 dart_eval = CodeBLEUCalculator('dart')
@@ -269,7 +269,7 @@ def write_stats(lang_scores: list[float], lang_name: str):
 
 # ── Main ───────────────────────────────────────────────────────────────────
 def main():
-    with open("test-set2.jsonl", encoding="utf-8") as f:
+    with open("data/datasets/test-set2.jsonl", encoding="utf-8") as f:
         data_lines = [json.loads(line) for line in f if line.strip()]
 
     total = len(data_lines)
@@ -340,3 +340,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

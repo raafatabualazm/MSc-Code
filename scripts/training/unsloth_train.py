@@ -77,7 +77,7 @@ from datasets import load_dataset
 
 dataset = load_dataset(
     "json",
-    data_files="all_data_new_reason5.jsonl",
+    data_files="data/intermediate/all_data_new_reason5.jsonl",
     split="train"
 )
 
@@ -224,3 +224,4 @@ hf_token = os.getenv("HUGGINGFACE_TOKEN", None)
 if hf_token is not None:
     print("Pushing Model to HuggingFace Hub...")
     model.push_to_hub_merged("raafatabualazm/decompiler-single-v1", tokenizer, save_method="merged_16bit", token=hf_token)
+

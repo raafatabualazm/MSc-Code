@@ -18,9 +18,9 @@ Please convert the following assembly code to idiomatic and clear {} code.
 API_KEY = "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"
 client = OpenAI(api_key=API_KEY, base_url="https://openrouter.ai/api/v1")
 
-input_file = 'failed_reasoning7.jsonl'
-output_file = 'all_data_new_reason5.jsonl'
-failed_file = 'failed_reasoning8.jsonl'
+input_file = 'data/intermediate/failed_reasoning7.jsonl'
+output_file = 'data/intermediate/all_data_new_reason5.jsonl'
+failed_file = 'data/intermediate/failed_reasoning8.jsonl'
 
 try:
     with open(input_file, 'r') as infile, open(output_file, 'a') as outfile, open(failed_file, 'w') as failfile:
@@ -58,3 +58,4 @@ try:
                 failfile.write(line)
 except FileNotFoundError:
     print(f"Input file {input_file} not found.")
+

@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, required=True, help="Model name/path served by the API")
 parser.add_argument("--base-url", type=str, default="http://localhost:8000/v1", help="OpenAI-compatible API base URL")
 parser.add_argument("--api-key", type=str, default="EMPTY", help="API key (use EMPTY for local vLLM/TGI)")
-parser.add_argument("--test-set", type=str, default="test-set2.jsonl", help="Path to test set JSONL")
+parser.add_argument("--test-set", type=str, default="data/datasets/test-set2.jsonl", help="Path to test set JSONL")
 parser.add_argument("--k", type=int, default=5, help="Number of generations per input (compile@K)")
 parser.add_argument("--batch-size", type=int, default=8, help="Number of completions per API call (n parameter)")
 parser.add_argument("--max-tokens", type=int, default=8192, help="Max new tokens to generate")
@@ -34,7 +34,7 @@ MAX_PROMPT_TOKENS = args.max_prompt_tokens
 model_slug = MODEL_NAME.replace("/", "_").replace("\\", "_").replace(" ", "_")
 
 # Checkpoint file for resume support
-CHECKPOINT_FILE = args.checkpoint or f"checkpoint_{model_slug}.jsonl"
+CHECKPOINT_FILE = args.checkpoint or f"results/cache/checkpoint_{model_slug}.jsonl"
 
 # Initialize OpenAI-compatible client
 client = OpenAI(base_url=args.base_url, api_key=args.api_key)
@@ -357,7 +357,7 @@ if codebleu_maxes:
 if not stopped_early:
     if codebleu_maxes:
         # Write CodeBLEU statistics CSV
-        codebleu_file = f"dart_statistics_{model_slug}_compiled.csv"
+        codebleu_file = f"results/statistics/dart_statistics_{model_slug}_compiled.csv"
         with open(codebleu_file, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(['Model', 'Min', 'Max', 'Average', 'Standard_Deviation',
@@ -395,3 +395,4 @@ else:
 
 if not codebleu_maxes:
     print("\nNo successful compilations across all samples!")
+

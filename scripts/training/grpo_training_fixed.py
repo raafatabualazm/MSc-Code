@@ -183,7 +183,7 @@ def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> t
 
 # --- 4. Dataset Loading and Preparation ---
 accelerator.print("Loading custom JSONL dataset for Dart...")
-dataset = load_dataset("json", data_files="dart_all.jsonl", split="train")
+dataset = load_dataset("json", data_files="data/datasets/dart_all.jsonl", split="train")
 
 def prepare_dataset_entry(example):
     # Create the prompt from 'lang', 'assembly', and 'dart_function_signature'
@@ -402,7 +402,7 @@ if accelerator.is_main_process:
     accelerator.print("\n--- Running Final Inference Test ---")
     
     # Load a test sample (use a different index for testing)
-    test_dataset = load_dataset("json", data_files="dart_all.jsonl", split="train")
+    test_dataset = load_dataset("json", data_files="data/datasets/dart_all.jsonl", split="train")
     test_example = test_dataset[min(10, len(test_dataset)-1)]
     
     prompt_text = inference_prompt_style.format(
@@ -459,3 +459,4 @@ if accelerator.is_main_process:
         print("Final test failed: Could not parse ```dart code block from response.")
 
 accelerator.print("\n✅ Training pipeline completed successfully!")
+
