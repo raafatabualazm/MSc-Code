@@ -134,7 +134,7 @@ K = 5  # Number of generations per input
 BATCH_SIZE = 1  # Process one at a time since we need K generations per input
 
 data_lines = []
-with open('test-set.jsonl') as f:
+with open('data/datasets/test-set.jsonl') as f:
     data_lines = [json.loads(line) for line in f]
 
 counter = 0
@@ -242,7 +242,7 @@ if dart_scores:
     # Write CodeBLEU statistics
     header = ['Min', 'Max', 'Average', 'Standard_Deviation', 'Samples_With_Success', 'Total_Samples']
     data_row = [min_dart, max_dart, dart_average, dart_stdv, len(dart_scores), len(data_lines)]
-    file_name = 'dart_statistics_decompiler-v3_compiled.csv'
+    file_name = 'results/statistics/dart_statistics_decompiler-v3_compiled.csv'
     
     with open(file_name, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -266,3 +266,5 @@ if dart_scores:
     print(f"Compilation statistics written to {comp_file}")
 else:
     print("\nNo successful compilations across all samples!")
+
+

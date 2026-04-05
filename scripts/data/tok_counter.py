@@ -129,5 +129,6 @@ def count_tokens_in_jsonl(filepath: str, model_name: str = "deepseek-ai/DeepSeek
 
 
 if __name__ == "__main__":
-    # Count tokens in dart_synth.jsonl
-    results = count_tokens_in_jsonl("dart_synth.jsonl")
+    # Count tokens in data/intermediate/dart_synth.jsonl
+    results = count_tokens_in_jsonl("data/intermediate/dart_synth.jsonl")
+

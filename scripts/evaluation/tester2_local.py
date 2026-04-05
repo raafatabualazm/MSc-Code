@@ -94,7 +94,7 @@ def handle(line: str):
         print(f"[rank {rank}] swift score: {score}")
 
 # ---------------- Sharded reading ----------------
-with open('dart_all.jsonl', 'r', encoding='utf-8', errors='replace') as data:
+with open('data/datasets/dart_all.jsonl', 'r', encoding='utf-8', errors='replace') as data:
     for i, line in enumerate(data):
         if i % world == rank:
             handle(line)
@@ -136,3 +136,4 @@ if accelerator.is_main_process:
     write_stats(combined_scores, "combined")
     
 accelerator.wait_for_everyone()
+

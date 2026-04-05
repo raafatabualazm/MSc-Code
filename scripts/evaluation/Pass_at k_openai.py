@@ -22,7 +22,7 @@ BASE_URL = "http://127.0.0.1:18000/v1"
 API_KEY = "sk-45co41dpxtvdka"
 
 # Checkpoint file for resume support
-CHECKPOINT_FILE = f"checkpoint_{MODEL_NAME.replace('/', '_')}.json"
+CHECKPOINT_FILE = f"results/cache/checkpoint_{MODEL_NAME.replace('/', '_')}.json"
 # Force-skip only this exact JSONL entry and score it as 0 passed.
 FORCED_ZERO_SOURCE_LINE = 152
 FORCED_ZERO_FILENAME = "160.dart"
@@ -304,7 +304,7 @@ for k_val in k_values:
     avg = np.mean(scores) if scores else 0.0
     print(f"  pass@{k_val} = {avg:.4f}  (over {len(scores)} tasks)")
 
-csv_file = f"dart_pass_at_k_{MODEL_NAME.replace('/', '_')}.csv"
+csv_file = f"results/pass_at_k/dart_pass_at_k_{MODEL_NAME.replace('/', '_')}.csv"
 fieldnames = ["task_id", "n", "c"] + [f"pass@{k}" for k in k_values]
 with open(csv_file, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -312,7 +312,7 @@ with open(csv_file, "w", newline="", encoding="utf-8") as f:
     for row in results:
         writer.writerow({k: row.get(k, "") for k in fieldnames})
 
-summary_file = f"dart_pass_at_k_summary_{MODEL_NAME.replace('/', '_')}.csv"
+summary_file = f"results/pass_at_k/dart_pass_at_k_summary_{MODEL_NAME.replace('/', '_')}.csv"
 with open(summary_file, "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f)
     writer.writerow(["metric", "value", "n_tasks"])
@@ -327,3 +327,4 @@ print(f"Summary           → {summary_file}")
 if os.path.exists(CHECKPOINT_FILE):
     os.remove(CHECKPOINT_FILE)
     print(f"Checkpoint removed (all tasks complete).")
+

@@ -96,7 +96,7 @@ def extract_code(response, lang):
 BATCH_SIZE = 4  # Adjust based on your H200 memory (141GB allows larger batches)
 
 data_lines = []
-with open('test-set.jsonl') as f:
+with open('data/datasets/test-set.jsonl') as f:
     data_lines = [json.loads(line) for line in f]
 
 counter = 0
@@ -183,7 +183,7 @@ if dart_scores:
     
     header = ['Min', 'Max', 'Average', 'Standard_Deviation']
     data_row = [min_dart, max_dart, dart_average, dart_stdv]
-    file_name = 'dart_statistics_decompiler-v3.csv'
+    file_name = 'results/statistics/dart_statistics_decompiler-v3.csv'
     
     with open(file_name, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -206,3 +206,5 @@ if swift_scores:
         writer.writerow([min_swift, max_swift, swift_average, swift_stdv])
     
     print(f"Swift data successfully written to {file_name}")
+
+

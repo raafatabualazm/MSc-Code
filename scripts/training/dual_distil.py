@@ -19,7 +19,7 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 # 2. Configuration
 # ------------------------------------------------------------------------
 MODEL_ID = "Qwen/Qwen3-4B-Thinking-2507" 
-DATASET_FILE = "all_data_new_reason5.jsonl" 
+DATASET_FILE = "data/intermediate/all_data_new_reason5.jsonl" 
 OUTPUT_DIR = "decompiler-distil-best"  # Folder for best model
 
 # Hyperparameters

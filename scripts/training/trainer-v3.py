@@ -59,7 +59,7 @@ class ChunkedTrainingConfig:
     use_flash_attention: bool = True
     
     # Dataset
-    data_file: str = "all_swift_matched.jsonl"
+    data_file: str = "data/matched/all_swift_matched.jsonl"
     test_size: float = 0.1
 
 
@@ -591,7 +591,7 @@ def main():
         save_steps=100,
         save_total_limit=3,
         gradient_checkpointing=True,
-        data_file="all_swift_matched.jsonl",
+        data_file="data/matched/all_swift_matched.jsonl",
         test_size=0.1,
     )
     
@@ -736,3 +736,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
