@@ -4868,10 +4868,14 @@ rewriting the historical run narrative.
 - GLM-5.2 covers 44/154 tasks versus 43/154 for the 17-arm union: a one-task edge that
   is reported but not interpreted as a meaningful capability difference.
 - Public code/results artifact:
-  `https://github.com/raafatabualazm/MSc-Code/tree/graph-decompiler-2026-v1/graph_decompiler_2026_artifact`
+  `https://github.com/raafatabualazm/MSc-Code/tree/graph-decompiler-2026-v1.1/graph_decompiler_2026_artifact`
 - Public 8B adapter collection:
   `https://huggingface.co/raafatabualazm/antigravity-qwen3-8b-artifacts`
   at pinned revision `bc992cecbb6968be2e20b6e99e8a4c420e32242c`.
-- Remaining honest gaps: no pod-side `pip freeze`, no repeated training seeds, no
-  signature-only frontier control, and no preserved literal training commands for
-  four auxiliary repair pools used only in union/reranking analysis.
+- The captured training-pod `requirements.txt` records the working CUDA 12.8 /
+  PyTorch 2.8 environment. It includes machine-local paths for locally built
+  dependencies, so those paths must be replaced when recreating the environment
+  elsewhere; the environment snapshot itself is not missing.
+- Remaining honest gaps: no repeated training seeds, no signature-only frontier
+  control, and no preserved literal training commands for four auxiliary repair
+  pools used only in union/reranking analysis.

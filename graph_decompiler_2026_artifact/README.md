@@ -34,7 +34,7 @@ data/harvest/         Released RS-SFT harvest rows and report
 data/future/          Compressed synthetic and ARM64 future-work assets
 frontier/             Raw hosted-model and GPT-5.5 ablation pools
 results/              Raw specialized predictions and metric/statistical outputs
-environment/          Captured local verification package manifest
+environment/          Training-pod and local verification environment snapshots
 manifests/            Hugging Face and local SHA-256 manifests
 paper/                Paper source, bibliography, and built PDF
 docs/                 Commands and project handoff
@@ -45,7 +45,24 @@ See [VERIFICATION.md](VERIFICATION.md) for the release audit and
 
 ## Environment
 
-The archived local verification environment used Python 3.12.7 with:
+`environment/requirements.txt` is the captured working training-pod snapshot for
+CUDA 12.8 and PyTorch 2.8. Its central packages include:
+
+```text
+torch==2.8.0+cu128
+transformers==5.12.1
+peft==0.19.1
+torch-geometric==2.8.0
+triton==3.4.0
+flash-linear-attention==0.5.0
+tilelang==0.1.11
+```
+
+The file retains machine-local `file://` references for locally built
+`causal-conv1d` and tree-sitter packages. Supply equivalent wheels/source paths
+when recreating the environment away from the original pod.
+
+The separate archived local verification environment used Python 3.12.7 with:
 
 ```text
 torch==2.11.0+cu128
@@ -102,10 +119,9 @@ See [MODEL_WEIGHTS.md](MODEL_WEIGHTS.md) and `manifests/huggingface_files_qwen3_
 
 ## Known Reproducibility Gaps
 
-1. The ephemeral training-pod `pip freeze` was not captured before pod destruction. Local verification pins, runner settings, `training_args.bin` files, and hosted file hashes are available, but they are not a pod-side environment snapshot.
-2. Literal training commands were not preserved for four auxiliary repair pools used only in reranking/union analysis. Their predictions and metrics are released, but they are not independently reproducible core training arms.
-3. Training was not repeated over multiple random seeds.
-4. The Azure `gpt-chat-latest` identifier is a moving hosted alias. Raw outputs and query metadata preserve the July 8, 2026 snapshot, but the provider cannot be forced to recreate it later.
+1. Literal training commands were not preserved for four auxiliary repair pools used only in reranking/union analysis. Their predictions and metrics are released, but they are not independently reproducible core training arms.
+2. Training was not repeated over multiple random seeds.
+3. The Azure `gpt-chat-latest` identifier is a moving hosted alias. Raw outputs and query metadata preserve the July 8, 2026 snapshot, but the provider cannot be forced to recreate it later.
 
 The hosted comparison is evaluated at a fixed budget of ten requests per task. Empty content and request failures remain failed slots: 115/1,540 slots are blank for GPT-5.5, 765 for Sonnet 5, 1,233 for DeepSeek V4 Pro, and 1,188 for GLM-5.2. This is an end-to-end API baseline, not a comparison conditioned on obtaining ten non-empty programs.
 
