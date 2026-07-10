@@ -9,6 +9,16 @@ The release tree was audited on 2026-07-10 before tagging.
 - `scripts/data/test_graph_preprocessing_fixes.py`: all 56 CFG/DFG and tensor-builder checks passed.
 - Training and evaluation CLIs load and expose their argument parsers.
 
+## Environment Records
+
+- `environment/requirements.txt` captures the working CUDA 12.8/PyTorch 2.8
+  training-pod environment.
+- `environment/requirements-verification.txt` and
+  `environment/env_manifest_local_verification.txt` capture the separate local
+  verification environment.
+- Machine-local `file://` dependencies in the training snapshot are documented
+  rather than presented as portable package-index requirements.
+
 ## Artifact Checks
 
 - 123 JSON files parsed successfully.

@@ -1,8 +1,8 @@
 {
-    "release_tag":  "graph-decompiler-2026-v1",
-    "generated_at_utc":  "2026-07-10T16:50:57.3244451Z",
-    "payload_file_count":  358,
-    "payload_bytes":  89878956,
+    "release_tag":  "graph-decompiler-2026-v1.1",
+    "generated_at_utc":  "2026-07-10T17:07:38.5897383Z",
+    "payload_file_count":  359,
+    "payload_bytes":  89885030,
     "largest_payload_file":  "data/future/flutter_function_assembly_pool_cfg.jsonl.gz",
     "largest_payload_file_bytes":  9292926,
     "top_level":  [
@@ -29,12 +29,12 @@
                       {
                           "name":  "docs",
                           "files":  2,
-                          "bytes":  255024
+                          "bytes":  255297
                       },
                       {
                           "name":  "environment",
-                          "files":  2,
-                          "bytes":  32506
+                          "files":  3,
+                          "bytes":  36915
                       },
                       {
                           "name":  "frontier",
@@ -59,12 +59,12 @@
                       {
                           "name":  "paper",
                           "files":  3,
-                          "bytes":  348429
+                          "bytes":  348933
                       },
                       {
                           "name":  "README.md",
                           "files":  1,
-                          "bytes":  5584
+                          "bytes":  5865
                       },
                       {
                           "name":  "results",
@@ -74,7 +74,7 @@
                       {
                           "name":  "REVIEW_RESPONSE.md",
                           "files":  1,
-                          "bytes":  3705
+                          "bytes":  3883
                       },
                       {
                           "name":  "SECURITY_AND_DUAL_USE.md",
@@ -84,7 +84,7 @@
                       {
                           "name":  "VERIFICATION.md",
                           "files":  1,
-                          "bytes":  1618
+                          "bytes":  2047
                       }
                   ],
     "hash_manifest":  "manifests/files_sha256.csv"

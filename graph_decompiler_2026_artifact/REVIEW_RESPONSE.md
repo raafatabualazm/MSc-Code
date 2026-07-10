@@ -21,7 +21,8 @@ This ledger records how the public draft and artifact address the July 2026 revi
 | Causal claims from one seed | Reworded as fixed-run observations; task-level intervals and McNemar tests are not training-seed uncertainty. |
 | Seventeen arms but fourteen table rows | Paper names the three auxiliary pools and scopes them to union/reranking analysis. |
 | Artifact promised but unavailable | Code/results are released here; adapters are public at a pinned Hugging Face revision with LFS hashes. |
-| Missing pod environment and repair commands | Retained as explicit reproducibility gaps instead of reconstructed or invented. |
+| Pod environment provenance | Added the captured working CUDA 12.8/PyTorch 2.8 `requirements.txt`; machine-local wheel/source paths are identified as a portability caveat. |
+| Missing repair-arm commands | Retained as an explicit command-provenance gap instead of reconstructing or inventing invocations. |
 | Thin ethics discussion | Expanded to define release contents, excluded target data, authorization boundaries, false-confidence risks, and dual use. |
 
 ## Claims Deliberately Not Made
