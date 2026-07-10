@@ -1,0 +1,91 @@
+{
+    "release_tag":  "graph-decompiler-2026-v1",
+    "generated_at_utc":  "2026-07-10T16:50:57.3244451Z",
+    "payload_file_count":  358,
+    "payload_bytes":  89878956,
+    "largest_payload_file":  "data/future/flutter_function_assembly_pool_cfg.jsonl.gz",
+    "largest_payload_file_bytes":  9292926,
+    "top_level":  [
+                      {
+                          "name":  "CITATION.cff",
+                          "files":  1,
+                          "bytes":  795
+                      },
+                      {
+                          "name":  "code",
+                          "files":  94,
+                          "bytes":  1306192
+                      },
+                      {
+                          "name":  "data",
+                          "files":  8,
+                          "bytes":  27348608
+                      },
+                      {
+                          "name":  "DATA_CARD.md",
+                          "files":  1,
+                          "bytes":  2521
+                      },
+                      {
+                          "name":  "docs",
+                          "files":  2,
+                          "bytes":  255024
+                      },
+                      {
+                          "name":  "environment",
+                          "files":  2,
+                          "bytes":  32506
+                      },
+                      {
+                          "name":  "frontier",
+                          "files":  30,
+                          "bytes":  7457106
+                      },
+                      {
+                          "name":  "LICENSE_STATUS.md",
+                          "files":  1,
+                          "bytes":  584
+                      },
+                      {
+                          "name":  "manifests",
+                          "files":  4,
+                          "bytes":  31296
+                      },
+                      {
+                          "name":  "MODEL_WEIGHTS.md",
+                          "files":  1,
+                          "bytes":  1436
+                      },
+                      {
+                          "name":  "paper",
+                          "files":  3,
+                          "bytes":  348429
+                      },
+                      {
+                          "name":  "README.md",
+                          "files":  1,
+                          "bytes":  5584
+                      },
+                      {
+                          "name":  "results",
+                          "files":  207,
+                          "bytes":  53082564
+                      },
+                      {
+                          "name":  "REVIEW_RESPONSE.md",
+                          "files":  1,
+                          "bytes":  3705
+                      },
+                      {
+                          "name":  "SECURITY_AND_DUAL_USE.md",
+                          "files":  1,
+                          "bytes":  988
+                      },
+                      {
+                          "name":  "VERIFICATION.md",
+                          "files":  1,
+                          "bytes":  1618
+                      }
+                  ],
+    "hash_manifest":  "manifests/files_sha256.csv"
+}

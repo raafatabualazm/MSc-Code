@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the accompanying paper."
+title: "Graph-Conditioned Neural Decompilation of Dart AOT Binaries: Artifact"
+version: 1.0.0
+date-released: 2026-07-10
+repository-code: "https://github.com/raafatabualazm/MSc-Code"
+authors:
+  - family-names: Abualazm
+    given-names: Raafat
+  - family-names: AboElHassan
+    given-names: Ayman
+  - family-names: Wassal
+    given-names: Amr G.
+preferred-citation:
+  type: article
+  title: "Graph-Conditioned Neural Decompilation of Dart AOT Binaries: Pass@k, Reward Adaptation, and Multi-Arm Candidate Ensembling"
+  year: 2026
+  authors:
+    - family-names: Abualazm
+      given-names: Raafat
+    - family-names: AboElHassan
+      given-names: Ayman
+    - family-names: Wassal
+      given-names: Amr G.

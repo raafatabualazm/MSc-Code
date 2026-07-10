@@ -1,0 +1,47 @@
+{
+    "generated_at_utc":  "2026-07-10T16:18:14.0872606Z",
+    "files":  [
+                  {
+                      "path":  "data/benchmark/grpo_data_cfg.jsonl",
+                      "bytes":  3228962,
+                      "rows":  154,
+                      "sha256":  "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f"
+                  },
+                  {
+                      "path":  "data/benchmark/compile-test2_cfg.jsonl",
+                      "bytes":  3791847,
+                      "rows":  126,
+                      "sha256":  "36996310ba8503904229a21e3768d3ed62d423017563ab14c3be2744a63a471c"
+                  },
+                  {
+                      "path":  "data/harvest/rs_sft_x86_8b_allarms_with_h100_all.jsonl",
+                      "bytes":  1705371,
+                      "rows":  142,
+                      "sha256":  "e16cc92e1d8068a8a75255dfba9dc1a839740ca9a33f4764239e4e1f2473d056"
+                  },
+                  {
+                      "path":  "data/harvest/rs_sft_x86_8b_allarms_with_h100_all_plus_refs.jsonl",
+                      "bytes":  4390093,
+                      "rows":  253,
+                      "sha256":  "a205f411f241d2326f758e3942c320dafde39085806c177bb25c60c496da7d55"
+                  },
+                  {
+                      "path":  "data/future/synthetic_pool_clean.jsonl.gz",
+                      "bytes":  4917495,
+                      "rows":  1726,
+                      "sha256":  "246b232f4d42cbbdc791eb2f0ee19d7588a302f8adf5cee73aabafabf4abdda0"
+                  },
+                  {
+                      "path":  "data/future/flutter_function_assembly_pool_cfg.jsonl.gz",
+                      "bytes":  9292926,
+                      "rows":  1714,
+                      "sha256":  "e7a977b4ed4046bb63ed92bd3847b9a646335fb8a9afb06861f32d07cc7415d6"
+                  },
+                  {
+                      "path":  "data/fixtures/flutter_train_cfg_first.jsonl",
+                      "bytes":  9515,
+                      "rows":  1,
+                      "sha256":  "7c19a8bee0d202d20a5ada6dcd430a463540cd691276fa483b461b32a239e7e5"
+                  }
+              ]
+}

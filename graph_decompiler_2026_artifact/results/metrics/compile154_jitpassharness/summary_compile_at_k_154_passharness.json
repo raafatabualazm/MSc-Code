@@ -1,0 +1,182 @@
+[
+  {
+    "label": "frontier_gpt_chat_latest",
+    "compile_at_1": 0.8662337662337668,
+    "compile_at_5": 0.9495464852607712,
+    "compile_at_10": 0.9545454545454546,
+    "total_problems": 154,
+    "cache_entries": 784,
+    "source": "results\\compile154_jitpassharness\\frontier_gpt_chat_latest_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "frontier_sonnet5",
+    "compile_at_1": 0.47337662337662334,
+    "compile_at_5": 0.6365440115440116,
+    "compile_at_10": 0.6818181818181818,
+    "total_problems": 154,
+    "cache_entries": 1240,
+    "source": "results\\compile154_jitpassharness\\frontier_sonnet5_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "frontier_deepseek_v4_pro",
+    "compile_at_1": 0.17727272727272733,
+    "compile_at_5": 0.5163626056483195,
+    "compile_at_10": 0.6753246753246753,
+    "total_problems": 154,
+    "cache_entries": 1520,
+    "source": "results\\compile154_jitpassharness\\frontier_deepseek_v4_pro_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "frontier_glm_5_2",
+    "compile_at_1": 0.19545454545454552,
+    "compile_at_5": 0.36603277674706236,
+    "compile_at_10": 0.42857142857142855,
+    "total_problems": 154,
+    "cache_entries": 1651,
+    "source": "results\\compile154_jitpassharness\\frontier_glm_5_2_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "binary_grpo",
+    "compile_at_1": 0.11688311688311691,
+    "compile_at_5": 0.40334467120181405,
+    "compile_at_10": 0.5909090909090909,
+    "total_problems": 154,
+    "cache_entries": 3169,
+    "source": "results\\compile154_jitpassharness\\binary_grpo_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "rs_sft_allarms",
+    "compile_at_1": 0.1142857142857142,
+    "compile_at_5": 0.3755668934240363,
+    "compile_at_10": 0.551948051948052,
+    "total_problems": 154,
+    "cache_entries": 4686,
+    "source": "results\\compile154_jitpassharness\\rs_sft_allarms_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "binary_rs_sft_ref",
+    "compile_at_1": 0.09025974025974014,
+    "compile_at_5": 0.3317357245928675,
+    "compile_at_10": 0.5064935064935064,
+    "total_problems": 154,
+    "cache_entries": 6197,
+    "source": "results\\compile154_jitpassharness\\binary_rs_sft_ref_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "clean_g3",
+    "compile_at_1": 0.11493506493506493,
+    "compile_at_5": 0.42151102865388584,
+    "compile_at_10": 0.6298701298701299,
+    "total_problems": 154,
+    "cache_entries": 7727,
+    "source": "results\\compile154_jitpassharness\\clean_g3_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "style_repair_ultralite",
+    "compile_at_1": 0.09025974025974016,
+    "compile_at_5": 0.34428468357039793,
+    "compile_at_10": 0.525974025974026,
+    "total_problems": 154,
+    "cache_entries": 9253,
+    "source": "results\\compile154_jitpassharness\\style_repair_ultralite_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "g3_p128r",
+    "compile_at_1": 0.2240259740259742,
+    "compile_at_5": 0.6678262213976497,
+    "compile_at_10": 0.8571428571428571,
+    "total_problems": 154,
+    "cache_entries": 10773,
+    "source": "results\\compile154_jitpassharness\\g3_p128r_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "style1036_sft",
+    "compile_at_1": 0.09415584415584405,
+    "compile_at_5": 0.33678622964337257,
+    "compile_at_10": 0.5064935064935064,
+    "total_problems": 154,
+    "cache_entries": 12289,
+    "source": "results\\compile154_jitpassharness\\style1036_sft_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "cfg_only",
+    "compile_at_1": 0.11233766233766225,
+    "compile_at_5": 0.4072356215213358,
+    "compile_at_10": 0.6038961038961039,
+    "total_problems": 154,
+    "cache_entries": 13822,
+    "source": "results\\compile154_jitpassharness\\cfg_only_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "simko_style_grpo",
+    "compile_at_1": 0.1662337662337663,
+    "compile_at_5": 0.5546279117707685,
+    "compile_at_10": 0.7792207792207793,
+    "total_problems": 154,
+    "cache_entries": 15342,
+    "source": "results\\compile154_jitpassharness\\simko_style_grpo_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "graph_text",
+    "compile_at_1": 0.09999999999999991,
+    "compile_at_5": 0.36221913007627293,
+    "compile_at_10": 0.5584415584415584,
+    "total_problems": 154,
+    "cache_entries": 16875,
+    "source": "results\\compile154_jitpassharness\\graph_text_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "base_reference",
+    "compile_at_1": 0.053896103896103865,
+    "compile_at_5": 0.2206503813646671,
+    "compile_at_10": 0.37012987012987014,
+    "total_problems": 154,
+    "cache_entries": 18390,
+    "source": "results\\compile154_jitpassharness\\base_reference_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "null_graph",
+    "compile_at_1": 0.051948051948051896,
+    "compile_at_5": 0.22005772005772012,
+    "compile_at_10": 0.38311688311688313,
+    "total_problems": 154,
+    "cache_entries": 19902,
+    "source": "results\\compile154_jitpassharness\\null_graph_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "text_only",
+    "compile_at_1": 0.04545454545454543,
+    "compile_at_5": 0.20183982683982687,
+    "compile_at_10": 0.34415584415584416,
+    "total_problems": 154,
+    "cache_entries": 21430,
+    "source": "results\\compile154_jitpassharness\\text_only_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "p128_without_rms",
+    "compile_at_1": 0.01038961038961039,
+    "compile_at_5": 0.050505050505050504,
+    "compile_at_10": 0.09740259740259741,
+    "total_problems": 154,
+    "cache_entries": 22967,
+    "source": "results\\compile154_jitpassharness\\p128_without_rms_compile_at_k.json",
+    "skipped_existing": false
+  }
+]
