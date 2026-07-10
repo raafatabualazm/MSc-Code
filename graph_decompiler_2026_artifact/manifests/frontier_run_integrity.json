@@ -1,0 +1,71 @@
+﻿{
+    "snapshot_date":  "2026-07-08",
+    "request_protocol":  "Ten independent requests per task; empty content and caught errors remain failed candidate slots.",
+    "sampling_note":  "Requested controls are archived metadata; effective provider-side sampling was not independently verified.",
+    "runs":  [
+                 {
+                     "file":  "preds_azure_gpt_chat_latest_asm.json",
+                     "sha256":  "55df3e7e00ba95cffd41d64a54c2284f40e7d52642df3e245f84b776fbeccaff",
+                     "model":  "gpt-chat-latest",
+                     "rows":  154,
+                     "requested_candidate_slots":  1540,
+                     "candidates_per_row":  10,
+                     "temperature_requested":  0.7,
+                     "top_p_requested":  0.95,
+                     "max_tokens_requested":  1024,
+                     "api_error_rows":  0,
+                     "caught_request_errors":  0,
+                     "empty_content_responses":  0,
+                     "blank_candidate_slots":  115,
+                     "nonblank_candidate_slots":  1425
+                 },
+                 {
+                     "file":  "preds_frontier_asm_deepseekvpro.json",
+                     "sha256":  "6bf4cc6583c15da5f39e982d6df7ef91eaa6ca0e0492fc379836653a90dfbaf1",
+                     "model":  "deepseek/deepseek-v4-pro",
+                     "rows":  154,
+                     "requested_candidate_slots":  1540,
+                     "candidates_per_row":  10,
+                     "temperature_requested":  0.7,
+                     "top_p_requested":  0.95,
+                     "max_tokens_requested":  1024,
+                     "api_error_rows":  3,
+                     "caught_request_errors":  3,
+                     "empty_content_responses":  0,
+                     "blank_candidate_slots":  1233,
+                     "nonblank_candidate_slots":  307
+                 },
+                 {
+                     "file":  "preds_frontier_asm_glm52.json",
+                     "sha256":  "06b8c03bdeba0f777059cec300fa22714b091f07440cbf46fb0715b414296bcd",
+                     "model":  "z-ai/glm-5.2",
+                     "rows":  154,
+                     "requested_candidate_slots":  1540,
+                     "candidates_per_row":  10,
+                     "temperature_requested":  0.7,
+                     "top_p_requested":  0.95,
+                     "max_tokens_requested":  1024,
+                     "api_error_rows":  1,
+                     "caught_request_errors":  1,
+                     "empty_content_responses":  0,
+                     "blank_candidate_slots":  1188,
+                     "nonblank_candidate_slots":  352
+                 },
+                 {
+                     "file":  "preds_frontier_asm_sonnet5.json",
+                     "sha256":  "581c7c2ce249e522807795534424266e430c541e071a5ad7d44b0168036315dd",
+                     "model":  "anthropic/claude-sonnet-5",
+                     "rows":  154,
+                     "requested_candidate_slots":  1540,
+                     "candidates_per_row":  10,
+                     "temperature_requested":  0.7,
+                     "top_p_requested":  0.95,
+                     "max_tokens_requested":  1024,
+                     "api_error_rows":  0,
+                     "caught_request_errors":  0,
+                     "empty_content_responses":  0,
+                     "blank_candidate_slots":  765,
+                     "nonblank_candidate_slots":  775
+                 }
+             ]
+}
