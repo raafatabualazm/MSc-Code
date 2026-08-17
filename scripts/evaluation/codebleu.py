@@ -65,7 +65,8 @@ class CodeBLEUCalculator:
         else:
             raise ValueError(f"Unsupported language: {lang}")
         
-        self.parser = Parser(self.language)
+        self.parser = Parser()
+        self.parser.language = self.language
         
         # Language-specific keywords for weighted BLEU
         self.keywords = self._get_language_keywords()
