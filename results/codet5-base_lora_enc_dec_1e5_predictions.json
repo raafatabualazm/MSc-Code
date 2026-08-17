@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "predictions": [
+      "..444:$:$\"pEnable with4$(,4'4(d4$4\ufffd5\u0131(es\ufffd,$iable)%\ufffd'\ufffd# Frame>!A95T\u0018\ufffd2#ot:,$orkTrigger)$eter'\ufffd2#ot:84(44(4:(%#",
+      ":$\"4L\"4:$$4:$4k=ata Class(w\ufffd>ql(4\"44\ufffd/%\ufffd($4Zet;-'% no) \" other)($\ufffd!A9Z;Xot(\ufffdFT'es:($:\u0504ZG(('4($!Name$\ufffd str\"\ufffd!!",
+      "E\ufffd$Y\ufffd5ange1\ufffd:$\ufffd str\"`>;#W%\ufffdk;X$ics\ufffdle:4$\ufffd(w4(%ig4:Ikt!A9\ufffd(((ostdm$\ufffd>;#\ufffd(@(:$\ufffd str44:$\ufffd str4#%previous#'#\ufffd#\"\"",
+      ":Y$:$$,$\u0001)$E\ufffd$\ufffd str\"\ufffd5\u0015\ufffd(readyY':$\ufffd str'$\ufffd::$\ufffd str\"$4(('::$\ufffd str\"`(($4k\ufffd^'k(4k\ufffd$:$\ufffd str\"`kageWesde!\ufffdTOR(\ufffd$\ufffd\"\""
+    ],
+    "reference": "@pragma('vm:entry-point')\nvoid main() {\n  final sortedList = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];\n  final target = 13;\n  \n  int low = 0;\n  int high = sortedList.length - 1;\n  int resultIndex = -1;\n  \n  while (low <= high) {\n    final mid = (low + high) ~/ 2;\n    final midValue = sortedList[mid];\n    \n    if (midValue == target) {\n      resultIndex = mid;\n      break;\n    } else if (midValue < target) {\n      low = mid + 1;\n    } else {\n      high = mid - 1;\n    }\n  }\n  \n  if (resultIndex != -1) {\n    print('Element $target found at index $resultIndex');\n  } else {\n    print('Element $target not found in the list');\n  }\n}",
+    "language": "Dart"
+  },
+  {
+    "id": 1,
+    "predictions": [
+      " l:$((ost(:$\ufffd str\"j\ufffd$$:$\ufffd str:$\ufffd str\"'L/ethod\ufffd(\ufffd$4'(4$:$14\ufffdkach/4k\ufffdW:$\ufffd str\ufffd/$pon)(($+. Condition' default($:$\ufffd str\"'($\ufffd str| com\u0001\ufffd)\"",
+      ":1d\ufffd$\ufffd :!::4:(:$\ufffd str\"`k2X4\"ode:b p\"4$\ufffd ER#=ec% sub \"I$lkray!Bundle\ufffdenerw8$ bo)%\ufffd4$fincesw'4\ufffd4(\ufffdk ->V44:((::$(X developer",
+      "\"::b('\"$4(:b((Uaersion!     \u059a>cess(\ufffd$(::$.$4kT@\ufffd(\ufffd!\ufffd/$\ufffd}7;\ufffd====L\"`\ufffd getFirst\"4:\ufffd>ator($(\u0018\u05045R\ufffd($;\ufffd%6X+;:($d!",
+      "ckV:(4::b p:b((('(44$wactive\":$\ufffd str\"'\ufffdk= Count:$\ufffd str\"`$ym)$}k\ufffd(\ufffd/$icsZG!\ufffd=% wh\" wh\"' N)$ this4ZG($4:(::44\ufffd=%unction)!!"
+    ],
+    "reference": "@pragma('vm:entry-point')\nvoid main() {\n  // Define a graph using an adjacency list\n  final Map<int, List<int>> graph = {\n    0: [1, 2],\n    1: [0, 3],\n    2: [0, 3, 4],\n    3: [1, 2],\n    4: [2, 5],\n    5: [4],\n  };\n\n  // Set to track visited nodes\n  final Set<int> visited = <int>{};\n\n  // Stack for DFS traversal\n  final List<int> stack = <int>[];\n\n  // Start DFS from node 0\n  stack.add(0);\n  visited.add(0);\n\n  print('DFS Traversal:');\n\n  while (stack.isNotEmpty) {\n    final int currentNode = stack.removeLast();\n    print('Visited: $currentNode');\n\n    // Process all adjacent nodes\n    for (final int neighbor in graph[currentNode]!) {\n      if (!visited.contains(neighbor)) {\n        visited.add(neighbor);\n        stack.add(neighbor);\n      }\n    }\n  }\n}",
+    "language": "Dart"
+  }
+]

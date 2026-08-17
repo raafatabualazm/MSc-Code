@@ -1,0 +1,140 @@
+\documentclass[sigconf,review]{acmart}
+
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{url}
+
+\settopmatter{printfolios=true}
+
+\copyrightyear{2026}
+\acmYear{2026}
+\acmConference[ASE '26]{Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering}{October 12--16, 2026}{Munich, Germany}
+\acmBooktitle{Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering (ASE '26), October 12--16, 2026, Munich, Germany}
+
+\title{MSc-Code: A Toolkit and Dataset Suite for Assembly-to-Dart and Assembly-to-Swift Decompilation Research}
+
+\author{Raafat Abualazm}
+\affiliation{%
+  \institution{Faculty of Engineering, Cairo University}
+  \city{Giza}
+  \country{Egypt}
+}
+\email{raafat.202210476@eng-st.cu.edu.eg}
+
+\author{Ayman Abo Elhassan}
+\affiliation{%
+  \institution{Faculty of Engineering, Cairo University}
+  \city{Giza}
+  \country{Egypt}
+}
+\email{ayman.abo.elmaaty@eng.cu.edu.eg}
+
+\begin{document}
+\begin{abstract}
+Assembly-to-source decompilation datasets and reusable research pipelines are scarce for modern managed languages such as Dart and Swift. We present \textsc{MSc-Code}, a public toolkit and dataset suite for studying assembly-to-Dart and assembly-to-Swift decompilation with large language models. The artifact organizes 39 Python scripts into data construction, model training, evaluation, and two-stage repair workflows. The packaged data include 1,195 raw Dart assembly--source pairs; 658 reasoning-augmented examples for each of Dart and Swift; two token-matched bilingual subsets with 412 and 415 pairs; a 126-instance compile-oriented benchmark; and a 154-task executable benchmark with unit tests suitable for GRPO and \texttt{pass@k} evaluation. The toolkit supports JSONL validation, token-balanced pairing, long-context supervised fine-tuning, reinforcement-style training, compile-only assessment, \textsc{CodeBLEU}, executable evaluation, and analysis--generation--repair pipelines. Archived result files already demonstrate end-to-end use of the artifact, including average compiled \textsc{CodeBLEU} of 0.666 over 76 successfully compiled instances (out of 126) for Qwen3-8B, and \texttt{pass@10} of 0.279 on 154 tasks for Qwen3-Max. The package is intended for reverse-engineering and code-generation researchers who need reusable data, scripts, and benchmarks for modern-language decompilation.
+
+\smallskip
+\noindent\textbf{Repository:} \url{https://github.com/raafatabualazm/MSc-Code}. \textbf{Dataset archive:} Zenodo DOI will be provided at camera-ready. \textbf{Screencast:} a 5-minute walkthrough will be included at camera-ready.
+\end{abstract}
+
+\keywords{decompilation, reverse engineering, Dart, Swift, large language models, datasets, benchmarks, tool demonstration}
+
+\maketitle
+
+\section{Introduction}
+Learning-based decompilation is increasingly practical. Existing benchmarks such as HumanEval~\cite{chen2021codex} measure code generation from natural-language specifications, and general-purpose code evaluation metrics such as \textsc{CodeBLEU}~\cite{ren2020codebleu} are language-agnostic, but most reusable decompilation datasets and evaluation scripts still emphasize C-like outputs. Researchers who want to study decompilation into modern managed languages such as Dart or Swift must typically assemble their own corpora, prompts, metrics, and executable benchmarks from scratch. This slows down comparison, weakens reproducibility, and makes it harder to evaluate whether generated code is merely plausible or actually usable.
+
+\textsc{MSc-Code} addresses this gap with a compact but end-to-end research artifact centered on assembly-to-Dart and assembly-to-Swift decompilation. The artifact is designed for three groups of users: reverse-engineering researchers who need comparable benchmarks, LLM training researchers who need long-context and RL-ready scripts, and educators or practitioners who want concrete examples of assembly-to-source reconstruction workflows. The package combines curated JSONL datasets, training scripts, evaluation drivers, archived outputs, and a two-stage generate-and-repair pipeline in a single repository.
+
+The ASE 2026 Tools and Datasets track asks submissions to communicate intended users, artifact contents, usage workflow, and evidence of utility. We therefore structure this paper around the actual repository contents: what data are packaged, what workflows the scripts enable, and what evidence is already archived in the results directory.
+
+\section{Artifact Overview}
+The repository is organized into \texttt{data/}, \texttt{scripts/}, \texttt{results/}, and \texttt{artifacts/}. The workflow is straightforward: users first validate or construct JSONL datasets, then train or adapt models, and finally run compile-oriented or executable evaluation. Table~\ref{tab:data} summarizes the main datasets; Table~\ref{tab:tools} summarizes the main script families.
+
+\begin{table}[t]
+\caption{Packaged datasets and benchmarks. Counts were taken from the current repository snapshot.}
+\label{tab:data}
+\centering
+\footnotesize
+\begin{tabular}{p{0.22\columnwidth}p{0.11\columnwidth}p{0.56\columnwidth}}
+\toprule
+\textbf{Asset} & \textbf{Size} & \textbf{Purpose and contents} \\
+\midrule
+\texttt{dart\_all.jsonl} & 1,195 & Raw Dart source--assembly pairs used for baseline supervised training. \\
+\texttt{all\_dart\_matched.jsonl} / \texttt{all\_swift\_matched.jsonl} & 658 / 658 & Reasoning-augmented examples with \texttt{assembly}, \texttt{source}, \texttt{language}, and \texttt{reasoning}. \\
+\texttt{matched\_datasets} / \texttt{matched\_datasets-deepseek} & 412 / 415 pairs & Token-matched Dart/Swift bilingual subsets for controlled cross-language experiments. \\
+\texttt{test-set.jsonl} / \texttt{test-set2.jsonl} & 165 / 72 & Held-out prompt-based evaluation sets. \\
+\texttt{compile-test.jsonl} / \texttt{compile-test2.jsonl} & 34 / 126 & Compile-oriented Dart benchmarks for \texttt{compile@k}-style assessment. \\
+\texttt{grpo\_data.jsonl} & 154 & Executable benchmark with function signatures and unit tests for RL and \texttt{pass@k}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The data are stored as JSONL records rather than task-specific binaries, which makes the artifact easy to inspect, extend, and repurpose. For example, matched bilingual data include natural-language reasoning traces in addition to assembly and reference source, while \texttt{grpo\_data.jsonl} adds test harnesses, canonical signatures, and paired Python/Dart metadata. This distinction matters: it separates pure reconstruction tasks from executable correctness tasks, and it allows the same repository to support both supervised and reinforcement-style training.
+
+\begin{table}[t]
+\caption{Main script families in \texttt{scripts/}. The repository currently contains 11 data scripts, 16 training scripts, and 12 evaluation scripts.}
+\label{tab:tools}
+\centering
+\footnotesize
+\begin{tabular}{p{0.24\columnwidth}p{0.28\columnwidth}p{0.39\columnwidth}}
+\toprule
+\textbf{Module} & \textbf{Representative scripts} & \textbf{Capability} \\
+\midrule
+Data curation & \texttt{validate\_data.py}, \texttt{token\_matcher.py}, \texttt{builder3--5.py} & Validate required fields, augment reasoning traces, and construct token-balanced paired corpora. \\
+Training & \texttt{chunked\_sft\_fixed.py}, \texttt{trainer-v1--v3.py}, \texttt{GRPO\_Trainv3.py} & Run long-context SFT and GRPO-style training for decompilation models. \\
+Evaluation & \texttt{compile-test.py}, \texttt{Pass\_at k\_openai.py}, \texttt{tester3.py} & Measure compile success, compiled \textsc{CodeBLEU}, and executable \texttt{pass@k} with cached outputs. \\
+Two-stage pipeline & \texttt{dart\_decomp\_two\_stage\_pipeline.py}, \texttt{Two\_stage\_pass\_at k\_openai.py} & Generate analyses, sample code candidates, and repair failures in a structured pipeline. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Several script details are particularly useful for reuse. \texttt{validate\_data.py} checks for required \texttt{assembly} and \texttt{reasoning} fields before matching. \texttt{token\_matcher.py} constructs bilingual subsets using default tolerance \(0.1\) and maximum absolute token difference \(50\), and it saves token statistics alongside the matched corpora. \texttt{chunked\_sft\_fixed.py} supports long sequences up to 90,112 tokens with chunked processing. The two-stage pipeline samples \(4\) reasoning traces, \(3\) code candidates per reasoning, and up to \(4\) repairs per task, making it suitable for controlled studies of analysis-guided decompilation.
+
+\section{Datasets and Evidence of Utility}
+The most distinctive part of \textsc{MSc-Code} is not a single script but the combination of dataset slices that support different levels of evaluation rigor. The raw and reasoning-augmented corpora support prompt engineering and supervised training. The matched Dart/Swift subsets support controlled cross-language studies; in the current snapshot, the saved matching statistics report 412 and 415 bilingual pairs, with mean total token counts of 5,459.9/5,488.0 and 5,470.3/5,499.1 for Dart/Swift in the two matched variants, respectively. The executable benchmark adds unit tests, which turns decompilation from a readability-only problem into a semantics-sensitive one.
+
+The repository also includes archived outputs that demonstrate the toolkit has already been exercised end to end. Table~\ref{tab:results} reports results from these archived files, covering both commercial API models and task-specific fine-tunes produced with the packaged training scripts. The table is not a controlled ablation study; it is evidence that the datasets, training scripts, and evaluation drivers are already wired together and produce reusable benchmark summaries across multiple model families.
+
+\begin{table}[t]
+\caption{Archived benchmark results from \texttt{results/}, covering base and fine-tuned models. Compiled \textsc{CodeBLEU} averages are computed over successfully compiled instances only; compile counts are shown in parentheses. Fine-tuned models (\textit{decompiler-v1}, \textit{-v3}) are task-specific checkpoints trained with the packaged scripts.}
+\label{tab:results}
+\centering
+\footnotesize
+\begin{tabular}{p{0.30\columnwidth}p{0.17\columnwidth}p{0.11\columnwidth}p{0.29\columnwidth}}
+\toprule
+\textbf{Model} & \textbf{Benchmark} & \textbf{Tasks} & \textbf{Archived result} \\
+\midrule
+\texttt{Qwen/Qwen3-8B} & Compiled \textsc{CodeBLEU} & 126 & Avg.\ 0.666 (76/126 compile) \\
+\texttt{qwen/qwen3-max} & Compiled \textsc{CodeBLEU} & 126 & Avg.\ 0.666 (68/126 compile) \\
+\texttt{decompiler-v3} (SFT) & Compiled \textsc{CodeBLEU} & 126 & Avg.\ 0.587 (104/126 compile) \\
+\texttt{decompiler-v1} (SFT) & Compiled \textsc{CodeBLEU} & 126 & Avg.\ 0.566 (89/126 compile) \\
+\texttt{Qwen/Qwen3-8B} & \texttt{pass@10} & 154 & 0.182 \\
+\texttt{qwen/qwen3-max} & \texttt{pass@10} & 154 & 0.279 \\
+\texttt{decompiler-v1} (SFT) & \texttt{pass@10} & 154 & 0.162 \\
+\texttt{decompiler-v3} (SFT) & \texttt{pass@10} & 154 & 0.136 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These archived outputs expose three practical strengths of the artifact. First, the evaluation stack is multi-level: it supports compile-only screening when tests are unavailable, and executable evaluation when tests exist. Second, the results span commercial API models and local fine-tunes, so the artifact supports the full research loop from data construction through training to evaluation. Third, the fine-tuned checkpoints compile more often than the base model (e.g., decompiler-v3 compiles 104/126 vs.\ Qwen3-8B's 76/126) while showing lower \textsc{CodeBLEU}, which itself is a reusable finding enabled by the multi-level evaluation design.
+
+\section{Availability, Reuse, and Limitations}
+The repository is publicly available on GitHub and includes the scripts, datasets, and archived result files needed to reproduce the workflows described above. The current layout separates reusable assets by role, which simplifies onboarding and makes it easier to package subsets for future artifacts or classroom use. A Zenodo long-term archive snapshot and a screencast walkthrough will accompany the camera-ready submission.
+
+The current artifact also has clear limitations. Executable evaluation is concentrated on Dart; Swift support is strongest for paired-data construction and cross-language comparison rather than unit-test execution. Some scripts target local checkpoints while others target OpenAI-compatible or OpenRouter-style APIs, so users still need to manage credentials and runtime environments. Finally, the results directory contains archived runs from multiple model families; this is useful for benchmarking, but users should treat it as a reusable baseline suite rather than as a single, uniformly controlled study.
+
+\section{Conclusion}
+\textsc{MSc-Code} packages the parts that modern-language decompilation research usually lacks in one place: reusable datasets, token-matched bilingual subsets, executable test-bearing tasks, long-context training scripts, and evaluation drivers that span readability, compilability, and functional correctness. For ASE 2026's Tools and Datasets track, the contribution is therefore the integrated artifact itself: a practical, public research toolkit for assembly-to-Dart and assembly-to-Swift decompilation studies.
+
+\begin{thebibliography}{9}
+
+\bibitem{chen2021codex}
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, Alex Ray, Raul Puri, Gretchen Krueger, Michelle Petrov, Heidy Khlaaf, Girish Sastry, Pamela Mishkin, Brooke Chan, Scott Gray, Nick Ryder, Mikhail Pavlov, Alethea Power, Lukasz Kaiser, Mohammad Bavarian, Clemens Winter, Philippe Tillet, Felipe Such, Dave Cummings, Matthias Plappert, Fotios Chantzis, Elizabeth Barnes, Ariel Herbert-Voss, William Hebgen Guss, Alex Nichol, Alex Paino, Nikolas Tezak, Jie Tang, Igor Babuschkin, Suchir Balaji, Shantanu Jain, William Saunders, Christopher Hesse, Andrew N. Carr, Jan Leike, Josh Achiam, Vedant Misra, Evan Morikawa, Alec Radford, Matthew Knight, Miles Brundage, Mira Murati, Katie Mayer, Peter Welinder, Bob McGrew, Dario Amodei, Sam McCandlish, Ilya Sutskever, and Wojciech Zaremba. 2021. Evaluating Large Language Models Trained on Code. \emph{arXiv preprint arXiv:2107.03374}.
+
+\bibitem{ren2020codebleu}
+Shuo Ren, Daya Guo, Shuai Lu, Long Zhou, Shujie Liu, Duyu Tang, Nan Duan, Shimin Tao, Ming Zhou, and Furu Wei. 2020. CodeBLEU: a Method for Automatic Evaluation of Code Synthesis. \emph{arXiv preprint arXiv:2009.10297}.
+
+\end{thebibliography}
+
+\end{document}

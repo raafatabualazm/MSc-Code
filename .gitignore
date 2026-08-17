@@ -5,3 +5,8 @@ __pycache__/
 
 data/intermediate/all_data_new_reason3.jsonl
 data/intermediate/all_data_new_reason5.jsonl
+
+# Model checkpoints and run outputs (too large for GitHub)
+artifacts/
+MSc-Code/
+neural_decompiler_bundle.tar.gz
