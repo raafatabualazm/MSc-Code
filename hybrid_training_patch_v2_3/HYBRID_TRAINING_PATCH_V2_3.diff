@@ -1,0 +1,1597 @@
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/CHANGELOG_V2_2.md /mnt/data/work_v2_3/hybrid_training_patch_v2_3/CHANGELOG_V2_2.md
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/CHANGELOG_V2_2.md	2026-07-17 13:10:07.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/CHANGELOG_V2_2.md	1970-01-01 00:00:00.000000000 +0000
+@@ -1,34 +0,0 @@
+-# v2.2 changes
+-
+-## Removed
+-
+-- The rule that quarantined all functions above 150/199 instructions from SFT.
+-- Claims that the long population should be reserved exclusively for a later
+-  research track.
+-- Silent acceptance of truncated long targets.
+-
+-## Added
+-
+-- All-length Phase-0 train/dev splitting with proportional length-bin
+-  apportionment.
+-- Short, bridge, and long files as **training subsets**.
+-- Deterministic CFG-region-plan targets for bridge and long functions.
+-- Plan-conditioned complete-code examples.
+-- A matched direct-code control with identical example cardinality.
+-- Code-only recovery with configurable 1×/2×/3× short/bridge/long replay.
+-- A ≥200-only paired functional gate against the matched direct-SFT control.
+-- 64-token dynamic RMS-matched prefix defaults and linear residual region
+-  compression for all stages.
+-- 3,072-token prompt/target defaults and 2,048-token generation defaults.
+-- Fail-closed pre-tokenization checks for target and prompt truncation.
+-- Consistent propagation of custom short/bridge thresholds into curriculum metadata.
+-- New hierarchical dataset builder and installer entry.
+-
+-## Retained from v2.1
+-
+-- Statistical paired graph/RS-SFT gates.
+-- Attention+MLP Qwen LoRA.
+-- Frozen-evaluation hash controls.
+-- Hidden acceptance and FACTS gates.
+-- Exact 50/50 RS-SFT and matched gold control.
+-- Verified-only RL anchoring and dynamic resampling.
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/CHANGELOG_V2_3.md /mnt/data/work_v2_3/hybrid_training_patch_v2_3/CHANGELOG_V2_3.md
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/CHANGELOG_V2_3.md	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/CHANGELOG_V2_3.md	2026-07-17 14:09:05.879367324 +0000
+@@ -0,0 +1,47 @@
++# Changelog v2.3
++
++v2.3 corrects two compute-invalidating defects in v2.2 and makes the historical
++long-function truncation result observable independently of the graph gate.
++
++## Dynamic padding
++
++- SFT tokenization now stores variable-length labels and decoder prompts with
++  `padding=False`.
++- `models/graph_data_collator.py` dynamically right-pads prompts to the current
++  batch maximum and pads labels with `-100`.
++- GRPO uses the same collator for policy and verified-anchor batches.
++- Inference no longer pads a single row to the global prompt ceiling and aborts
++  rather than silently truncating an oversized prompt.
++
++## Budget consistency
++
++- The default long generation floor is now 3,072 tokens, matching the default
++  3,072-token admitted target ceiling.
++- The runner validates that the target ceiling fits the effective gate,
++  rollout, and GRPO generation budgets before Phase 0.
++- A complete target can no longer pass SFT admission while being impossible to
++  emit in every evaluation path.
++
++## Token-distribution preflight
++
++- Added `report_token_lengths_antigravity.py`.
++- Reports target/prompt percentiles, historical 768/1024/2048 truncation counts,
++  per-stratum and per-task distributions, unique code-target distributions,
++  largest examples, and all configured-budget overflows.
++- The curriculum runs this preflight before any GPU stage and fails closed on
++  overflow.
++
++## Direct-control ordering
++
++- The matched direct-code control and its code-recovery stage now run before the
++  Stage-1 causal graph gate.
++- An absolute ≥200 direct-control pass@k report is produced even if the latent
++  prefix gate fails.
++- Hierarchical training still requires the causal gate to pass.
++
++## Validation
++
++- 36/36 tests pass.
++- Added regressions for dynamic batch padding, absence of global max-length
++  padding, generation-budget consistency, token-preflight wiring, and direct
++  control ordering.
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/README_HYBRID_TRAINING.md /mnt/data/work_v2_3/hybrid_training_patch_v2_3/README_HYBRID_TRAINING.md
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/README_HYBRID_TRAINING.md	2026-07-17 13:02:05.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/README_HYBRID_TRAINING.md	2026-07-17 14:13:09.005565262 +0000
+@@ -1,7 +1,7 @@
+-# Hybrid Decompiler Training Patch v2.2
++# Hybrid Decompiler Training Patch v2.3
+ 
+ This overlay replaces the v2.1 rule that routed functions above 199 parsed
+-instructions out of supervised training. In v2.2, every Phase-0-approved length
++instructions out of supervised training. In v2.3, every Phase-0-approved length
+ stratum participates in training.
+ 
+ The ≥200-instruction population receives:
+@@ -17,7 +17,7 @@
+ withheld. The bridge and long JSONL files are training-stratum artifacts for
+ reporting and sampling, not quarantine files.
+ 
+-## Why v2.1 held long rows out—and why v2.2 changes that
++## Why v2.1 held long rows out—and why v2.3 changes that
+ 
+ The v2.1 split was intended to isolate the representation experiment from the
+ known one-shot length cliff. That was defensible for a narrowly scoped ablation,
+@@ -26,9 +26,9 @@
+ the architecture and curriculum must change; it is not a reason to discard the
+ very supervision needed to learn that regime.
+ 
+-v2.2 therefore makes the short/bridge/long thresholds curriculum boundaries:
++v2.3 therefore makes the short/bridge/long thresholds curriculum boundaries:
+ 
+-| Parsed instructions | Role in v2.2 |
++| Parsed instructions | Role in v2.3 |
+ |---:|---|
+ | ≤150 | direct SFT, replay in hierarchical stage, code recovery |
+ | 151–199 | direct SFT, region planning, plan-conditioned code, 2× recovery |
+@@ -58,7 +58,7 @@
+ 
+ A legacy Regions16 checkpoint will generally not contain these new structural
+ parameters. It must not be loaded with permissive `strict=False` semantics. Use
+-a checkpoint whose provenance matches the v2.2 architecture, or begin the new
++a checkpoint whose provenance matches the v2.3 architecture, or begin the new
+ all-length run from the pretrained base. The existing attention-only to
+ attention+MLP LoRA migration remains narrow and does not pretend to migrate an
+ old 16-prefix/CLS/no-region checkpoint into the new hierarchy.
+@@ -136,7 +136,7 @@
+ 
+ ## Long-function causal/performance gate
+ 
+-Before frontier-teacher harvesting or RL, v2.2 evaluates the recovered
++Before frontier-teacher harvesting or RL, v2.3 evaluates the recovered
+ hierarchical model against the recovered matched direct-SFT control on the
+ **≥200-instruction development subset only**.
+ 
+@@ -162,47 +162,96 @@
+ The default minimum long-development size is 64. With about 792 long rows and a
+ 10% proportional dev split, the expected long gate contains roughly 79 tasks.
+ 
+-## No silent truncation
++## No silent truncation, impossible targets, or global 3k padding
+ 
+-Long-function SFT cannot be credited when the reference is truncated.
++The trainer first tokenizes every complete target and prompt with
++`truncation=False` and `padding=False`.
+ 
+-Before padding, the trainer tokenizes each complete target and prompt without
+-truncation. It aborts when either exceeds its configured budget unless an
+-explicit unsafe truncation override is supplied.
++It then:
+ 
+-Defaults for the all-length stages:
++1. aborts when a complete target exceeds `GRAPH_MAX_TARGET_LENGTH`;
++2. aborts when a complete prompt exceeds the configured prompt ceiling;
++3. dynamically pads labels and prompts only to the current batch maximum;
++4. requires the target ceiling to fit every effective gate, rollout, and GRPO
++   generation budget.
++
++At batch size 1, a 200-token target remains 200 tokens rather than being padded
++to 3,072. At larger batch sizes, labels are padded with `-100` and decoder
++prompts are right-padded with the decoder pad token and a zero attention mask.
++The shared cumulative position-id implementation remains active, so dynamic
++right padding does not reintroduce the earlier mid-sequence RoPE mismatch.
++
++The all-length defaults are now aligned:
+ 
+ - target budget: 3,072 tokens;
+ - prompt budget: 3,072 tokens;
+-- rollout/gate/GRPO generation budget: at least 2,048 new tokens.
++- effective gate/rollout/GRPO generation budget: at least 3,072 new tokens.
++
++The runner exits before Phase 0 if the admitted target ceiling is greater than
++any generation path. `GRAPH_ALLOW_TARGET_TRUNCATION=1` remains an unsafe
++reproduction-only override and must not be used for confirmatory training.
++
++## Token-length preflight
++
++Before any GPU stage,
++`scripts/evaluation/report_token_lengths_antigravity.py` measures:
++
++- target and prompt min/mean/p50/p75/p90/p95/p99/max;
++- counts and fractions above historical 768, 1,024, 2,048, and 3,072 limits;
++- distributions by short/bridge/long stratum;
++- distributions by training task and input dataset;
++- deduplicated complete-code target distribution;
++- the largest 25 prompts and targets;
++- every target or prompt that exceeds the configured budgets.
++
++The runner produces two reports:
++
++```text
++00_phase0/raw_token_length_distribution.json
++00_phase0/token_length_distribution.json
++```
+ 
+-Increase the budgets if the prepared corpus exceeds them. Do not enable
+-`GRAPH_ALLOW_TARGET_TRUNCATION=1` for confirmatory training.
++The raw report runs before Phase 0 and is descriptive, so rows that Phase 0 will
++later reject do not block preprocessing. The second report measures the exact
++direct, hierarchical, recovery, and development views that will reach training;
++any overflow there is fail-closed. The deduplicated complete-code section
++quantifies how much of the original target population exceeded the historical
++768-token ceiling without being inflated by recovery replay.
+ 
+ ## Complete curriculum
+ 
+-1. Phase-0 all-length approval and full reward audit.
+-2. Build direct, hierarchical, matched-control, and recovery datasets.
+-3. Prepare neutral held-out functional evaluation.
+-4. Optional compatible-checkpoint probe, or a probe immediately after Stage 1.
+-5. Graph-only direct all-length SFT.
+-6. Free-running graph-causality gate.
+-7. Matched direct-code control SFT.
+-8. Hierarchical region-plan multitask SFT.
+-9. Identical code-only recovery for control and hierarchical arms.
+-10. ≥200-only hierarchical-versus-control functional gate.
+-11. All-length k=16 rollouts.
+-12. Redacted frontier diagnosis and repair.
+-13. Hidden acceptance, full-harness, and assembly-facts replay.
+-14. Exact 50/50 gold/verified RS-SFT with matched gold-only control.
+-15. Statistical RS-SFT kill switch.
+-16. Optional verified-only VeRPO and final gate.
++1. Measure the raw-corpus target and prompt token distribution.
++2. Run Phase-0 all-length approval and full reward audit.
++3. Build direct, hierarchical, matched-control, and recovery datasets.
++4. Run the fail-closed token-budget report over the exact training views.
++5. Prepare and audit the neutral held-out functional evaluation set.
++6. Run the compatible-checkpoint probe, or probe immediately after Stage 1.
++7. Train graph-only direct all-length SFT.
++8. Train and evaluate the matched direct-code long-function control **even if
++   the subsequent graph-causality gate fails**.
++9. Run the free-running Stage-1 graph-causality gate.
++10. Only after that gate passes, train region-plan multitask SFT.
++11. Run code-only all-length recovery.
++12. Evaluate hierarchy versus the matched direct control on the ≥200 stratum.
++13. Generate all-length k=16 rollouts.
++14. Run redacted frontier diagnosis and repair.
++15. Replay hidden acceptance, complete harnesses, and assembly-facts checks.
++16. Train exact 50/50 gold/verified RS-SFT with a matched gold-only control.
++17. Apply the statistical RS-SFT kill switch.
++18. Optionally run verified-only VeRPO and the final gate.
++
++The direct control is intentionally placed before the causal gate. It produces
++an absolute ≥200 pass@k result even if the latent graph-prefix experiment stops,
++allowing the no-truncation/direct-SFT result to be reported independently. It is
++still a control within the v2.3 architecture; a claim that truncation alone
++caused the entire historical cliff would require a separately matched
++historical-architecture truncation ablation.
+ 
+ ## Installation
+ 
+ ```bash
+-unzip hybrid_training_patch_v2_2_20260717.zip
+-cd hybrid_training_patch_v2_2
++unzip hybrid_training_patch_v2_3_20260717.zip
++cd hybrid_training_patch_v2_3
+ 
+ python apply_hybrid_patch.py \
+   --project-root /path/to/antigravity
+@@ -215,7 +264,7 @@
+ 
+ python -m scripts.training.run_hybrid_curriculum_antigravity \
+   --project_root . \
+-  --output_root artifacts/hybrid_v2_2 \
++  --output_root artifacts/hybrid_v2_3 \
+   --train_file data/prepared/all_gold.jsonl \
+   --eval_file data/testing/frozen_154.jsonl \
+   --functional_eval_file data/testing/fresh_eval.jsonl \
+@@ -227,16 +276,16 @@
+   --min_long_gate_rows 64 \
+   --long_target_max_tokens 3072 \
+   --long_prompt_max_tokens 3072 \
+-  --long_generation_max_tokens 2048
++  --long_generation_max_tokens 3072
+ ```
+ 
+ For a new hierarchy, omit legacy `--initial_checkpoint` and
+ `--stage1_checkpoint` unless their recorded graph architecture exactly matches
+-v2.2.
++v2.3.
+ 
+ ## Important interpretation
+ 
+-v2.2 is an implementation for training the ≥200 regime, not proof that it is
++v2.3 is an implementation for training the ≥200 regime, not proof that it is
+ solved. A credible result requires separate reporting for:
+ 
+ - ≤150;
+@@ -252,11 +301,12 @@
+ ## Validation performed in this archive
+ 
+ - every Python file parses and compiles;
+-- 32 unit/integration tests pass;
++- 36 unit/integration tests pass;
+ - tests cover all-length Phase-0 routing, deterministic hierarchical dataset
+-  generation, matched-control cardinality, long-row recovery oversampling,
+-  statistical gates, checkpoint contracts, teacher leakage controls, and the
+-  corrected runner ordering;
++  generation, dynamic batch padding, generation-budget consistency,
++  token-distribution preflight wiring, matched-control cardinality, long-row
++  recovery oversampling, statistical gates, checkpoint contracts, teacher
++  leakage controls, and the corrected runner ordering;
+ - installer copy, backup, and SHA-256 verification are tested separately.
+ 
+ Not executed in this environment:
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/VALIDATION_REPORT.md /mnt/data/work_v2_3/hybrid_training_patch_v2_3/VALIDATION_REPORT.md
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/VALIDATION_REPORT.md	2026-07-17 13:10:06.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/VALIDATION_REPORT.md	2026-07-17 14:09:05.888585091 +0000
+@@ -1,58 +1,76 @@
+-# Hybrid Training Patch v2.2 Validation Report
++# Validation Report — Hybrid Training Patch v2.3
+ 
+ ## Scope
+ 
+-v2.2 replaces the short-only training policy with an all-length curriculum. Functions above 199 parsed instructions are now included in direct supervised fine-tuning, deterministic region-plan supervision, plan-conditioned full-code reconstruction, code-only recovery, verifier-bounded RS-SFT, and optional verified-only VeRPO.
++This validation covers the source overlay, installer, CPU/unit behavior, and
++pipeline command construction. It does not claim that the model has been
++trained or that ≥200-instruction pass@k has improved.
+ 
+-The development split remains withheld for evaluation, but the bridge and long training subsets are not holdouts.
++## Confirmed fixes
+ 
+-## Implemented long-function controls
++### Dynamic sequence padding
+ 
+-- All approved length strata are split proportionally between train and development data.
+-- Every training row receives a direct complete-code SFT example.
+-- Every 151–199 and ≥200 row receives a deterministic CFG-region plan, a plan-conditioned complete-code example, and a direct-code example.
+-- The final recovery stage contains only complete-code targets and oversamples short/bridge/long rows at configurable 1×/2×/3× rates.
+-- The direct-control and hierarchical stages have identical example cardinality, starting checkpoint, architecture, learning rate, epoch count, and identical code-recovery data. They are matched by examples/steps, not claimed to consume exactly equal FLOPs.
+-- A ≥200-only paired functional gate compares hierarchical recovery against the recovered direct-code control before teacher harvesting or RL can run.
+-- Prompt and target tokenization is checked without truncation first. A run aborts when a complete target or prompt does not fit its configured budget.
+-- User-supplied short/bridge thresholds propagate consistently into row metadata and sampling.
+-
+-## Static and test validation
+-
+-- `python -m compileall -q .`: **PASS**.
+-- Unit/integration test suite: **32/32 passed**.
+-- Installer validation: **16/16 overlay files copied and SHA-256 verified**.
+-- Second installer dry run: **16/16 files unchanged**.
+-- Existing-file backup creation and contents were verified.
+-- Generated archive contains no `__pycache__`, `.pyc`, or `.pyo` files.
+-
+-The tests cover:
+-
+-- all-length Phase-0 train/dev routing;
+-- frozen-evaluation hash blocking and reference replay;
+-- deterministic region construction and region-plan examples;
+-- bridge/long direct SFT inclusion;
+-- plan-conditioned code generation rows;
+-- matched-control cardinality;
+-- configurable threshold metadata propagation;
+-- 1×/2×/3× recovery sampling;
+-- fail-closed statistical gates;
+-- Qwen attention+MLP LoRA;
+-- checkpoint architecture contracts;
+-- hidden test acceptance and FACTS checks;
+-- verified-only RL anchoring and dynamic resampling;
+-- curriculum stage ordering.
+-
+-## Not executed in this environment
+-
+-The following remain empirical experiments rather than validated claims:
+-
+-- real Qwen3-8B and GraphCodeBERT GPU forward/backward passes;
+-- full Dart replay over the user's pending prepared corpus;
+-- measured prompt/target token distributions for that corpus;
+-- live frontier-model repair requests;
+-- actual correct/permuted/null graph pass@k;
+-- actual hierarchical-versus-direct pass@k for the ≥200 stratum;
+-- actual RS-SFT or VeRPO improvement.
++- Supervised targets and decoder prompts are tokenized with `padding=False`.
++- The supplied graph collator pads labels with `-100` and prompts to the batch
++  maximum only.
++- GRPO policy and verified-anchor dataloaders use the same dynamic collator.
++- Single-row inference no longer pads prompts to 3,072 tokens.
+ 
+-Therefore, v2.2 implements a defensible path for training the ≥200 regime, but it does not claim the length cliff is already solved. The authoritative result is the paired ≥200 functional gate after the real data and checkpoints are available.
++### Train/evaluation budget consistency
++
++- Default target and long-generation ceilings are both 3,072 tokens.
++- The runner rejects a target ceiling greater than any effective gate, rollout,
++  or GRPO generation ceiling.
++- The Phase-0 token report independently fails on target, generation, or prompt
++  overflows.
++
++### Token distribution
++
++The new CPU report includes:
++
++- p50/p75/p90/p95/p99 and extrema;
++- historical 768/1024/2048/3072 overflow counts;
++- short/bridge/long and training-task breakdowns;
++- per-input-file summaries;
++- deduplicated complete-code target summaries;
++- largest examples and concrete overflow records.
++
++### Ordering
++
++The matched direct-code long baseline and its absolute ≥200 evaluation are run
++before the latent graph-causality stop gate. Region-plan training remains behind
++that gate.
++
++## Automated tests
++
++`python -m unittest discover -s tests -v`
++
++Result: **36/36 passed**.
++
++Coverage added in v2.3:
++
++- dynamic labels and prompt padding;
++- batch-size-one avoidance of global 3,072-token padding;
++- SFT/GRPO/inference dynamic-padding wiring;
++- target/generation invariant rejection and success cases;
++- direct control evaluation before the graph gate;
++- token-distribution stage ordering.
++
++## Static validation
++
++- All Python files parsed successfully.
++- `compileall` passed.
++- Generated bytecode/cache files were removed before packaging.
++
++## Not executed here
++
++- Qwen3-8B or GraphCodeBERT model loading;
++- real tokenizer distribution measurement over the pending prepared corpus;
++- Dart SDK replay over the final corpus;
++- GPU SFT, hierarchy, RS-SFT, or VeRPO;
++- live frontier API calls;
++- empirical ≥200 direct-control or hierarchical pass@k.
++
++The token report must be reviewed after the user uploads the final prepared
++corpus. A 3,072-token ceiling is a default, not an empirical claim about that
++corpus.
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/apply_hybrid_patch.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/apply_hybrid_patch.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/apply_hybrid_patch.py	2026-07-17 12:53:19.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/apply_hybrid_patch.py	2026-07-17 14:03:08.948503230 +0000
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Install the all-length hierarchical hybrid-training v2.2 overlay."""
++"""Install the all-length hierarchical hybrid-training v2.3 overlay."""
+ 
+ from __future__ import annotations
+ 
+@@ -11,6 +11,7 @@
+ from pathlib import Path
+ 
+ FILES = (
++    "models/graph_data_collator.py",
+     "scripts/training/graph_positions.py",
+     "scripts/training/checkpoint_contract.py",
+     "scripts/training/hybrid_data_controls.py",
+@@ -25,6 +26,7 @@
+     "scripts/evaluation/prepare_neutral_evaluation_antigravity.py",
+     "scripts/evaluation/probe_graph_representations_antigravity.py",
+     "scripts/evaluation/functional_graph_gate_antigravity.py",
++    "scripts/evaluation/report_token_lengths_antigravity.py",
+     "scripts/evaluation/graph_inference_antigravity.py",
+     "scripts/evaluation/run_sweeps_antigravity.py",
+ )
+@@ -32,7 +34,6 @@
+ # These are project-owned dependencies, not replacements supplied by the patch.
+ PREREQUISITES = (
+     "models/graphcodebert_tensor_builder.py",
+-    "models/graph_data_collator.py",
+     "models/hierarchical_graph_encoder_antigravity.py",
+     "models/pyg_cfg_dataset.py",
+     "scripts/data/cfg_extractor.py",
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/models/__pycache__/graph_data_collator.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/models/__pycache__/graph_data_collator.cpython-313.pyc differ
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/models/graph_data_collator.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/models/graph_data_collator.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/models/graph_data_collator.py	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/models/graph_data_collator.py	2026-07-17 13:57:48.869857485 +0000
+@@ -0,0 +1,95 @@
++from __future__ import annotations
++
++import math
++
++import torch
++from torch_geometric.data import Batch as PyGBatch
++
++
++class GraphDataCollator:
++    """Dynamically pad decoder-side sequences to the current batch maximum.
++
++    Graph/block tensors keep their existing representation. Labels are padded with
++    ``-100`` and causal prompt tokens are right-padded with the decoder pad token.
++    This avoids allocating every example at the global 3k-token safety ceiling.
++    """
++
++    def __init__(self, target_tokenizer, pad_to_multiple_of=None):
++        self.target_tokenizer = target_tokenizer
++        self.pad_to_multiple_of = pad_to_multiple_of
++
++    def _padded_length(self, lengths: list[int]) -> int:
++        maximum = max(lengths, default=0)
++        if self.pad_to_multiple_of and maximum:
++            multiple = int(self.pad_to_multiple_of)
++            maximum = int(math.ceil(maximum / multiple) * multiple)
++        return maximum
++
++    def __call__(self, features):
++        if not features:
++            raise ValueError("GraphDataCollator received an empty feature list")
++
++        batch = {}
++
++        if "labels" in features[0]:
++            label_lists = [list(feature["labels"]) for feature in features]
++            max_len = self._padded_length([len(ids) for ids in label_lists])
++            padded = [ids + [-100] * (max_len - len(ids)) for ids in label_lists]
++            batch["labels"] = torch.tensor(padded, dtype=torch.long)
++
++        if "decoder_prompt_input_ids" in features[0]:
++            pad_id = self.target_tokenizer.pad_token_id
++            if pad_id is None:
++                pad_id = self.target_tokenizer.eos_token_id
++            if pad_id is None:
++                pad_id = 0
++
++            prompt_ids = [list(feature["decoder_prompt_input_ids"]) for feature in features]
++            prompt_masks = [
++                list(feature.get("decoder_prompt_attention_mask") or [1] * len(ids))
++                for feature, ids in zip(features, prompt_ids)
++            ]
++            for index, (ids, mask) in enumerate(zip(prompt_ids, prompt_masks)):
++                if len(ids) != len(mask):
++                    raise ValueError(
++                        f"decoder prompt ids/mask length mismatch at batch index {index}: "
++                        f"ids={len(ids)} mask={len(mask)}"
++                    )
++            max_len = self._padded_length([len(ids) for ids in prompt_ids])
++            batch["decoder_prompt_input_ids"] = torch.tensor(
++                [ids + [pad_id] * (max_len - len(ids)) for ids in prompt_ids],
++                dtype=torch.long,
++            )
++            batch["decoder_prompt_attention_mask"] = torch.tensor(
++                [mask + [0] * (max_len - len(mask)) for mask in prompt_masks],
++                dtype=torch.long,
++            )
++
++        if "pyg_data" in features[0]:
++            pyg_graphs = [feature["pyg_data"] for feature in features]
++            batch["pyg_graph"] = PyGBatch.from_data_list(pyg_graphs)
++
++        passthrough = (
++            "cfg",
++            "edges",
++            "block_inputs",
++            "language",
++            "tests",
++        )
++        for key in passthrough:
++            if key in features[0]:
++                batch[key] = [feature[key] for feature in features]
++
++        # Encoder-side tensors are already fixed-width by the block tensor builder.
++        tensor_keys = (
++            "input_ids",
++            "attention_mask",
++            "position_ids",
++            "token_type_ids",
++        )
++        for key in tensor_keys:
++            if key in features[0]:
++                values = [torch.as_tensor(feature[key]) for feature in features]
++                batch[key] = torch.stack(values)
++
++        return batch
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/__pycache__/__init__.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/__pycache__/__init__.cpython-313.pyc differ
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/evaluation/__pycache__/functional_graph_gate_antigravity.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/evaluation/__pycache__/functional_graph_gate_antigravity.cpython-313.pyc differ
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/evaluation/graph_inference_antigravity.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/evaluation/graph_inference_antigravity.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/evaluation/graph_inference_antigravity.py	2026-07-16 23:37:13.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/evaluation/graph_inference_antigravity.py	2026-07-17 13:59:02.167780377 +0000
+@@ -784,11 +784,18 @@
+             )
+             prompt_tensors = decoder_tokenizer(
+                 prompt_text,
+-                max_length=args.decoder_prompt_max_length,
+-                truncation=True,
+-                padding="max_length",
++                add_special_tokens=True,
++                truncation=False,
++                padding=False,
+                 return_tensors="pt",
+             )
++            prompt_tokens = int(prompt_tensors["input_ids"].size(1))
++            if prompt_tokens > args.decoder_prompt_max_length:
++                raise RuntimeError(
++                    f"row {idx + 1} prompt needs {prompt_tokens} tokens but "
++                    f"--decoder_prompt_max_length={args.decoder_prompt_max_length}; "
++                    "refusing silent inference truncation"
++                )
+ 
+         predictions = []
+         remaining = args.num_samples
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/evaluation/report_token_lengths_antigravity.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/evaluation/report_token_lengths_antigravity.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/evaluation/report_token_lengths_antigravity.py	1970-01-01 00:00:00.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/evaluation/report_token_lengths_antigravity.py	2026-07-17 14:06:19.904599398 +0000
+@@ -0,0 +1,295 @@
++#!/usr/bin/env python3
++"""Measure prompt/target token distributions before any GPU training stage.
++
++The report quantifies how many examples would have been silently truncated by
++historical limits and fails closed when the configured training or generation
++budget cannot represent a complete supervised target.
++"""
++
++from __future__ import annotations
++
++import argparse
++import hashlib
++import json
++import math
++import os
++import sys
++from collections import Counter, defaultdict
++from pathlib import Path
++from typing import Any
++
++ROOT = Path(__file__).resolve().parents[2]
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
++
++from transformers import AutoTokenizer  # noqa: E402
++
++from scripts.training.graph_encoder_decoder_decompiler_v2_antigravity import (  # noqa: E402
++    build_decoder_prompt,
++    target_source_from_record,
++)
++from scripts.training.hybrid_data_controls import (  # noqa: E402
++    instruction_count,
++    read_jsonl_many,
++    source_text,
++    task_identity,
++)
++
++
++def percentile(values: list[int], q: float) -> float:
++    if not values:
++        return 0.0
++    ordered = sorted(values)
++    position = (len(ordered) - 1) * q
++    lower = math.floor(position)
++    upper = math.ceil(position)
++    if lower == upper:
++        return float(ordered[lower])
++    weight = position - lower
++    return float(ordered[lower] * (1.0 - weight) + ordered[upper] * weight)
++
++
++def stratum(count: int, short_max: int, bridge_max: int) -> str:
++    if count <= short_max:
++        return "short"
++    if count <= bridge_max:
++        return "bridge"
++    return "long"
++
++
++def summary(values: list[int], historical_limits: list[int]) -> dict[str, Any]:
++    total = len(values)
++    return {
++        "count": total,
++        "min": min(values) if values else 0,
++        "max": max(values) if values else 0,
++        "mean": (sum(values) / total) if total else 0.0,
++        "p50": percentile(values, 0.50),
++        "p75": percentile(values, 0.75),
++        "p90": percentile(values, 0.90),
++        "p95": percentile(values, 0.95),
++        "p99": percentile(values, 0.99),
++        "over_historical_limits": {
++            str(limit): {
++                "count": sum(value > limit for value in values),
++                "fraction": (sum(value > limit for value in values) / total) if total else 0.0,
++            }
++            for limit in historical_limits
++        },
++    }
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser(allow_abbrev=False)
++    parser.add_argument("--dataset", action="append", required=True)
++    parser.add_argument("--output", type=Path, required=True)
++    parser.add_argument("--decoder_model", required=True)
++    parser.add_argument("--decoder_revision", default="")
++    parser.add_argument("--max_target_tokens", type=int, required=True)
++    parser.add_argument("--max_prompt_tokens", type=int, required=True)
++    parser.add_argument("--max_generation_tokens", type=int, required=True)
++    parser.add_argument("--short_max", type=int, default=150)
++    parser.add_argument("--bridge_max", type=int, default=199)
++    parser.add_argument("--historical_limits", default="768,1024,2048")
++    parser.add_argument("--prompt_mode", choices=["full", "graph_only", "none"], default="full")
++    parser.add_argument("--fail_on_overflow", action=argparse.BooleanOptionalAction, default=True)
++    args = parser.parse_args()
++
++    for name in ("max_target_tokens", "max_prompt_tokens", "max_generation_tokens"):
++        if getattr(args, name) <= 0:
++            parser.error(f"--{name} must be positive")
++    if args.bridge_max < args.short_max:
++        parser.error("--bridge_max must be >= --short_max")
++
++    historical_limits = sorted(
++        {int(value.strip()) for value in args.historical_limits.split(",") if value.strip()}
++    )
++    if any(value <= 0 for value in historical_limits):
++        parser.error("historical limits must be positive")
++
++    os.environ["GRAPH_PROMPT_ASSEMBLY_MODE"] = args.prompt_mode
++    tokenizer = AutoTokenizer.from_pretrained(
++        args.decoder_model,
++        revision=args.decoder_revision or None,
++        trust_remote_code=True,
++    )
++    if tokenizer.pad_token is None:
++        tokenizer.pad_token = tokenizer.eos_token
++
++    dataset_rows: list[tuple[str, dict[str, Any]]] = []
++    for raw_path in args.dataset:
++        resolved = str(Path(raw_path).expanduser().resolve())
++        dataset_rows.extend((resolved, row) for row in read_jsonl_many([raw_path]))
++    if not dataset_rows:
++        raise SystemExit("token-length preflight received an empty dataset")
++
++    records: list[dict[str, Any]] = []
++    by_stratum: dict[str, dict[str, list[int]]] = defaultdict(
++        lambda: {"target": [], "prompt": []}
++    )
++    by_task: dict[str, dict[str, list[int]]] = defaultdict(
++        lambda: {"target": [], "prompt": []}
++    )
++    overflow: list[dict[str, Any]] = []
++
++    for index, (dataset_path, row) in enumerate(dataset_rows):
++        raw_source = source_text(row)
++        target = target_source_from_record(row, raw_source)
++        target_ids = tokenizer(
++            target, add_special_tokens=True, truncation=False, padding=False
++        )["input_ids"]
++        eos_id = tokenizer.eos_token_id
++        if eos_id is not None and (not target_ids or target_ids[-1] != eos_id):
++            target_ids = list(target_ids) + [eos_id]
++        target_tokens = len(target_ids)
++
++        prompt = build_decoder_prompt(row, tokenizer, args.max_prompt_tokens)
++        prompt_tokens = len(
++            tokenizer(prompt, add_special_tokens=True, truncation=False, padding=False)[
++                "input_ids"
++            ]
++        )
++        instructions = instruction_count(row)
++        bucket = stratum(instructions, args.short_max, args.bridge_max)
++        task = str(row.get("training_task") or "code")
++        by_stratum[bucket]["target"].append(target_tokens)
++        by_stratum[bucket]["prompt"].append(prompt_tokens)
++        by_task[task]["target"].append(target_tokens)
++        by_task[task]["prompt"].append(prompt_tokens)
++
++        reasons = []
++        if target_tokens > args.max_target_tokens:
++            reasons.append("target_budget")
++        if target_tokens > args.max_generation_tokens and task != "region_plan":
++            reasons.append("generation_budget")
++        if prompt_tokens > args.max_prompt_tokens:
++            reasons.append("prompt_budget")
++        if reasons:
++            overflow.append(
++                {
++                    "index": index,
++                    "dataset": dataset_path,
++                    "task_id": task_identity(row),
++                    "training_task": task,
++                    "instruction_count": instructions,
++                    "stratum": bucket,
++                    "target_tokens": target_tokens,
++                    "prompt_tokens": prompt_tokens,
++                    "reasons": reasons,
++                }
++            )
++        records.append(
++            {
++                "index": index,
++                "dataset": dataset_path,
++                "task_id": task_identity(row),
++                "target_sha256": hashlib.sha256(target.encode("utf-8")).hexdigest(),
++                "training_task": task,
++                "instruction_count": instructions,
++                "stratum": bucket,
++                "target_tokens": target_tokens,
++                "prompt_tokens": prompt_tokens,
++            }
++        )
++
++    target_values = [record["target_tokens"] for record in records]
++    prompt_values = [record["prompt_tokens"] for record in records]
++
++    by_dataset: dict[str, list[dict[str, Any]]] = defaultdict(list)
++    for record in records:
++        by_dataset[record["dataset"]].append(record)
++
++    unique_code: dict[tuple[str, str], dict[str, Any]] = {}
++    for record in records:
++        if record["training_task"] not in {"code", "code_from_region_plan"}:
++            continue
++        key = (record["task_id"], record["target_sha256"])
++        unique_code.setdefault(key, record)
++    unique_code_records = list(unique_code.values())
++
++    report = {
++        "schema_version": 1,
++        "datasets": [str(Path(path).expanduser().resolve()) for path in args.dataset],
++        "decoder_model": args.decoder_model,
++        "decoder_revision": args.decoder_revision or None,
++        "rows": len(records),
++        "budgets": {
++            "target_tokens": args.max_target_tokens,
++            "prompt_tokens": args.max_prompt_tokens,
++            "generation_tokens": args.max_generation_tokens,
++        },
++        "historical_limits": historical_limits,
++        "overall": {
++            "target": summary(target_values, historical_limits),
++            "prompt": summary(prompt_values, historical_limits),
++        },
++        "unique_code_targets": {
++            "rows": len(unique_code_records),
++            "target": summary(
++                [record["target_tokens"] for record in unique_code_records],
++                historical_limits,
++            ),
++            "by_instruction_stratum": {
++                bucket: summary(
++                    [
++                        record["target_tokens"]
++                        for record in unique_code_records
++                        if record["stratum"] == bucket
++                    ],
++                    historical_limits,
++                )
++                for bucket in ("short", "bridge", "long")
++            },
++        },
++        "by_dataset": {
++            dataset: {
++                "rows": len(dataset_records),
++                "target": summary(
++                    [record["target_tokens"] for record in dataset_records],
++                    historical_limits,
++                ),
++                "prompt": summary(
++                    [record["prompt_tokens"] for record in dataset_records],
++                    historical_limits,
++                ),
++            }
++            for dataset, dataset_records in sorted(by_dataset.items())
++        },
++        "by_instruction_stratum": {
++            bucket: {
++                "target": summary(values["target"], historical_limits),
++                "prompt": summary(values["prompt"], historical_limits),
++            }
++            for bucket, values in sorted(by_stratum.items())
++        },
++        "by_training_task": {
++            task: {
++                "target": summary(values["target"], historical_limits),
++                "prompt": summary(values["prompt"], historical_limits),
++            }
++            for task, values in sorted(by_task.items())
++        },
++        "stratum_counts": dict(Counter(record["stratum"] for record in records)),
++        "training_task_counts": dict(Counter(record["training_task"] for record in records)),
++        "overflow_count": len(overflow),
++        "overflow": overflow,
++        "largest_targets": sorted(
++            records, key=lambda value: value["target_tokens"], reverse=True
++        )[:25],
++        "largest_prompts": sorted(
++            records, key=lambda value: value["prompt_tokens"], reverse=True
++        )[:25],
++    }
++    args.output.parent.mkdir(parents=True, exist_ok=True)
++    args.output.write_text(json.dumps(report, indent=2), encoding="utf-8")
++    print(json.dumps(report, indent=2))
++
++    if overflow and args.fail_on_overflow:
++        raise SystemExit(
++            f"token-length preflight found {len(overflow)} rows outside the configured "
++            f"train/generation budgets; see {args.output}"
++        )
++
++
++if __name__ == "__main__":
++    main()
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/__pycache__/__init__.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/__pycache__/__init__.cpython-313.pyc differ
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/__pycache__/checkpoint_contract.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/__pycache__/checkpoint_contract.cpython-313.pyc differ
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/__pycache__/hybrid_data_controls.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/__pycache__/hybrid_data_controls.cpython-313.pyc differ
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/__pycache__/run_hybrid_curriculum_antigravity.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/__pycache__/run_hybrid_curriculum_antigravity.cpython-313.pyc differ
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/__pycache__/teacher_repair_dataset_antigravity.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/__pycache__/teacher_repair_dataset_antigravity.cpython-313.pyc differ
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py	2026-07-17 13:02:35.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py	2026-07-17 13:58:19.128767197 +0000
+@@ -625,76 +625,74 @@
+             or ""
+         )
+         target_text = target_source_from_record(record, raw_source)
+-        target_untruncated = decoder_tokenizer(
+-            target_text, add_special_tokens=True, truncation=False
+-        )["input_ids"]
++        labels = decoder_tokenizer(
++            target_text,
++            add_special_tokens=True,
++            truncation=False,
++            padding=False,
++        )
++        label_input_ids = list(labels["input_ids"])
++        label_attention = list(labels.get("attention_mask") or [1] * len(label_input_ids))
++
++        # Preserve a real EOS target even when pad_token_id == eos_token_id.
++        # Dynamic padding happens in GraphDataCollator, so append EOS before the
++        # hard length check rather than reserving a global max-length slot.
++        eos_id = decoder_tokenizer.eos_token_id
++        if eos_id is not None and (not label_input_ids or label_input_ids[-1] != eos_id):
++            label_input_ids.append(eos_id)
++            label_attention.append(1)
++
+         if (
+-            len(target_untruncated) > config.max_target_length
++            len(label_input_ids) > config.max_target_length
+             and os.environ.get("GRAPH_ALLOW_TARGET_TRUNCATION", "0") != "1"
+         ):
+             raise ValueError(
+                 f"{hybrid_task_identity(record, idx)}: {record.get('training_task', 'code')} "
+-                f"target needs {len(target_untruncated)} tokens but GRAPH_MAX_TARGET_LENGTH="
++                f"target needs {len(label_input_ids)} tokens but GRAPH_MAX_TARGET_LENGTH="
+                 f"{config.max_target_length}; refusing to train on a truncated long-function target"
+             )
+-        labels = decoder_tokenizer(
+-            target_text,
+-            max_length=config.max_target_length,
+-            truncation=True,
+-            padding="max_length",
+-        )
++        if len(label_input_ids) > config.max_target_length:
++            label_input_ids = label_input_ids[: config.max_target_length]
++            label_attention = label_attention[: config.max_target_length]
++            if eos_id is not None and label_input_ids:
++                label_input_ids[-1] = eos_id
++                label_attention[-1] = 1
++
+         prompt_text = build_decoder_prompt(
+             record, decoder_tokenizer, config.max_decoder_prompt_length
+         )
+-        prompt_untruncated = decoder_tokenizer(
+-            prompt_text, add_special_tokens=True, truncation=False
+-        )["input_ids"]
++        decoder_prompt = decoder_tokenizer(
++            prompt_text,
++            add_special_tokens=True,
++            truncation=False,
++            padding=False,
++        )
++        prompt_ids = list(decoder_prompt["input_ids"])
++        prompt_attention = list(
++            decoder_prompt.get("attention_mask") or [1] * len(prompt_ids)
++        )
+         if (
+-            len(prompt_untruncated) > config.max_decoder_prompt_length
++            len(prompt_ids) > config.max_decoder_prompt_length
+             and os.environ.get("GRAPH_ALLOW_PROMPT_TRUNCATION", "0") != "1"
+         ):
+             raise ValueError(
+-                f"{hybrid_task_identity(record, idx)}: prompt needs {len(prompt_untruncated)} "
++                f"{hybrid_task_identity(record, idx)}: prompt needs {len(prompt_ids)} "
+                 f"tokens but GRAPH_DECODER_PROMPT_MAX_LENGTH={config.max_decoder_prompt_length}; "
+                 "enable GRAPH_PROMPT_FIT_ASSEMBLY or increase the long-function prompt budget"
+             )
+-        decoder_prompt = decoder_tokenizer(
+-            prompt_text,
+-            max_length=config.max_decoder_prompt_length,
+-            truncation=True,
+-            padding="max_length",
+-        )
+-
+-        # Preserve a real EOS target even when pad_token_id == eos_token_id
+-        # (common for GPT-like/CodeT5+ tokenizers after assigning pad=eos).
+-        # Masking by token id would hide every EOS and train a model that never
+-        # stops, causing long rambling generations and compile@k=0.
+-        label_input_ids = list(labels["input_ids"])
+-        label_attention = list(labels["attention_mask"])
+-        eos_id = decoder_tokenizer.eos_token_id
+-        if eos_id is not None:
+-            active_len = int(sum(label_attention))
+-            has_terminal_eos = active_len > 0 and label_input_ids[active_len - 1] == eos_id
+-            if not has_terminal_eos:
+-                if active_len < len(label_input_ids):
+-                    label_input_ids[active_len] = eos_id
+-                    label_attention[active_len] = 1
+-                elif label_input_ids:
+-                    label_input_ids[-1] = eos_id
+-                    label_attention[-1] = 1
++        if len(prompt_ids) > config.max_decoder_prompt_length:
++            prompt_ids = prompt_ids[: config.max_decoder_prompt_length]
++            prompt_attention = prompt_attention[: config.max_decoder_prompt_length]
+ 
+-        # Mask only true padding positions. Do not mask by token id, because
+-        # real EOS may share the pad id.
+-        label_ids = [
+-            (token_id if attn == 1 else -100)
+-            for token_id, attn in zip(label_input_ids, label_attention)
+-        ]
++        # No padding is stored per row. The collator pads labels and prompts only
++        # to the current batch maximum, which is especially important at batch 1.
++        label_ids = list(label_input_ids)
+ 
+         converted.append({
+             "block_inputs": block_tensors,
+             "labels": label_ids,
+-            "decoder_prompt_input_ids": decoder_prompt["input_ids"],
+-            "decoder_prompt_attention_mask": decoder_prompt["attention_mask"],
++            "decoder_prompt_input_ids": prompt_ids,
++            "decoder_prompt_attention_mask": prompt_attention,
+             "cfg": cfg_blocks,
+             "edges": edges,
+             # Carry language + unit-test harness so the GRPO stage can compute a
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/graph_grpo_decompiler_antigravity.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/graph_grpo_decompiler_antigravity.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/graph_grpo_decompiler_antigravity.py	2026-07-16 23:42:19.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/graph_grpo_decompiler_antigravity.py	2026-07-17 13:58:48.830369719 +0000
+@@ -99,6 +99,7 @@
+ from models.hierarchical_graph_encoder_antigravity import LocalBlockEncoder, GraphPoolingEncoder
+ from scripts.data.dfg_extractor import LightweightDFGExtractor
+ from models.graphcodebert_tensor_builder import GraphCodeBERTTensorBuilder
++from models.graph_data_collator import GraphDataCollator
+ from scripts.training.graph_positions import cumsum_position_ids  # shared with the SFT forward
+ from scripts.training.graph_encoder_decoder_decompiler_v2_antigravity import (
+     GraphDecompilerConfig,
+@@ -2184,17 +2185,9 @@
+     print(f"Tokenizing GRPO rows with reward field {reward_field!r}...")
+     train_dataset = tokenize_dataset(train_records, tensor_builder, dfg_extractor, decoder_tokenizer, config)
+ 
+-    def grpo_collate(batch_list):
+-        return {
+-            'labels': torch.stack([torch.tensor(x['labels'], dtype=torch.long) for x in batch_list]),
+-            'decoder_prompt_input_ids': torch.stack([torch.tensor(x['decoder_prompt_input_ids'], dtype=torch.long) for x in batch_list]),
+-            'decoder_prompt_attention_mask': torch.stack([torch.tensor(x['decoder_prompt_attention_mask'], dtype=torch.long) for x in batch_list]),
+-            'block_inputs': [x['block_inputs'] for x in batch_list],
+-            'cfg': [x['cfg'] for x in batch_list],
+-            'edges': [x['edges'] for x in batch_list],
+-            'language': [x.get('language', 'dart') for x in batch_list],
+-            'tests': [x.get('tests', '') for x in batch_list],
+-        }
++    # The dataset stores variable-length target/prompt sequences. Pad only to
++    # each batch maximum rather than the global long-function safety ceiling.
++    grpo_collate = GraphDataCollator(decoder_tokenizer)
+ 
+     train_loader = DataLoader(
+         train_dataset,
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/run_hybrid_curriculum_antigravity.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/run_hybrid_curriculum_antigravity.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/scripts/training/run_hybrid_curriculum_antigravity.py	2026-07-17 13:07:27.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/scripts/training/run_hybrid_curriculum_antigravity.py	2026-07-17 14:14:18.927416386 +0000
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Run the fail-closed all-length hybrid decompiler curriculum (v2.2).
++"""Run the fail-closed all-length hybrid decompiler curriculum (v2.3).
+ 
+ The ordering is deliberate:
+ 
+@@ -30,7 +30,7 @@
+ from pathlib import Path
+ from typing import Any
+ 
+-SCHEMA_VERSION = 4
++SCHEMA_VERSION = 5
+ 
+ 
+ # Only architecture/representation settings are imported from checkpoint
+@@ -172,6 +172,29 @@
+     path.write_text(json.dumps(value, indent=2, sort_keys=True), encoding="utf-8")
+ 
+ 
++def effective_generation_budgets(args: argparse.Namespace) -> dict[str, int]:
++    """Resolve every code-generation ceiling used by the curriculum."""
++    long_floor = int(args.long_generation_max_tokens)
++    return {
++        "gate": max(int(args.gate_max_new_tokens), long_floor),
++        "rollout": max(int(args.rollout_max_new_tokens), long_floor),
++        "grpo": max(int(args.grpo_max_new_tokens), long_floor),
++    }
++
++
++def validate_target_generation_budget(args: argparse.Namespace) -> dict[str, int]:
++    budgets = effective_generation_budgets(args)
++    target = int(args.long_target_max_tokens)
++    minimum = min(budgets.values())
++    if target > minimum:
++        raise ValueError(
++            "long_target_max_tokens cannot exceed any effective generation budget; "
++            f"target={target}, effective={budgets}. Increase long_generation_max_tokens "
++            "or lower the admitted target ceiling."
++        )
++    return budgets
++
++
+ def display_command(command: list[str]) -> str:
+     return " ".join(shlex.quote(str(part)) for part in command)
+ 
+@@ -379,6 +402,7 @@
+             self.root / "scripts/training/prepare_hybrid_training_data_antigravity.py",
+             self.root / "scripts/training/build_hierarchical_long_training_antigravity.py",
+             self.root / "scripts/training/build_balanced_sft_mix_antigravity.py",
++            self.root / "models/graph_data_collator.py",
+             self.root / "scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+             self.root / "scripts/training/graph_grpo_decompiler_antigravity.py",
+             self.root / "scripts/training/teacher_repair_dataset_antigravity.py",
+@@ -386,12 +410,13 @@
+             self.root / "scripts/evaluation/prepare_neutral_evaluation_antigravity.py",
+             self.root / "scripts/evaluation/probe_graph_representations_antigravity.py",
+             self.root / "scripts/evaluation/functional_graph_gate_antigravity.py",
++            self.root / "scripts/evaluation/report_token_lengths_antigravity.py",
+             self.root / "scripts/evaluation/graph_inference_antigravity.py",
+         ]
+         missing = [str(path) for path in required if not path.is_file()]
+         if missing:
+             raise FileNotFoundError(
+-                "Overlay the v2.2 patch into the project root first. Missing:\n  "
++                "Overlay the v2.3 patch into the project root first. Missing:\n  "
+                 + "\n  ".join(missing)
+             )
+         code_digest = hashlib.sha256()
+@@ -565,6 +590,7 @@
+         baseline_checkpoint: Path | None = None,
+         baseline_pass_at_k: float = -1.0,
+         run_deployment_arm: bool = True,
++        run_causality_arm: bool = True,
+         min_rows: int | None = None,
+     ) -> list[str]:
+         command = [
+@@ -587,6 +613,7 @@
+             "--causality_prompt_mode", "graph_only",
+             "--performance_prompt_mode", performance_prompt_mode,
+             "--run_deployment_arm" if run_deployment_arm else "--no-run_deployment_arm",
++            "--run_causality_arm" if run_causality_arm else "--no-run_causality_arm",
+             "--min_rows", str(min_rows or self.args.min_gate_rows),
+             "--bootstrap_iterations", str(self.args.gate_bootstrap_iterations),
+             "--bootstrap_seed", str(self.args.seed),
+@@ -683,6 +710,36 @@
+         # probe runs immediately after direct all-length SFT.
+ 
+         phase0_dir = self.output / "00_phase0"
++        raw_token_length_report = phase0_dir / "raw_token_length_distribution.json"
++        effective_generation_budget = min(
++            validate_target_generation_budget(args).values()
++        )
++        self.run(
++            "00_raw_token_length_measurement",
++            [
++                self.python,
++                str(self.root / "scripts/evaluation/report_token_lengths_antigravity.py"),
++                "--dataset", str(train_file),
++                "--output", str(raw_token_length_report),
++                "--decoder_model", args.decoder_model,
++                "--decoder_revision", args.decoder_revision,
++                "--max_target_tokens", str(args.long_target_max_tokens),
++                "--max_prompt_tokens", str(args.long_prompt_max_tokens),
++                "--max_generation_tokens", str(effective_generation_budget),
++                "--short_max", str(args.max_train_instructions),
++                "--bridge_max", str(args.max_bridge_instructions),
++                "--historical_limits", "768,1024,2048,3072",
++                "--prompt_mode", "full",
++                "--no-fail_on_overflow",
++            ],
++            {
++                "GRAPH_PROMPT_CLEAN_ASM": "1",
++                "GRAPH_PROMPT_FIT_ASSEMBLY": "1",
++                "GRAPH_REQUIRE_NEUTRAL_CONTRACT": "0",
++            },
++            expected=raw_token_length_report,
++        )
++
+         approved_all = phase0_dir / "approved_all_length_train.jsonl"
+         approved_dev = phase0_dir / "approved_all_length_dev.jsonl"
+         short_train = phase0_dir / "approved_short_le150.jsonl"
+@@ -817,6 +874,38 @@
+             expected=hierarchy_dev_report,
+         )
+ 
++        token_length_report = phase0_dir / "token_length_distribution.json"
++        self.run(
++            "00h_token_length_preflight",
++            [
++                self.python,
++                str(self.root / "scripts/evaluation/report_token_lengths_antigravity.py"),
++                "--dataset", str(direct_train),
++                "--dataset", str(hierarchy_train),
++                "--dataset", str(recovery_train),
++                "--dataset", str(direct_dev),
++                "--output", str(token_length_report),
++                "--decoder_model", args.decoder_model,
++                "--decoder_revision", args.decoder_revision,
++                "--max_target_tokens", str(args.long_target_max_tokens),
++                "--max_prompt_tokens", str(args.long_prompt_max_tokens),
++                "--max_generation_tokens", str(effective_generation_budget),
++                "--short_max", str(args.max_train_instructions),
++                "--bridge_max", str(args.max_bridge_instructions),
++                "--historical_limits", "768,1024,2048,3072",
++                "--prompt_mode", "full",
++                "--fail_on_overflow",
++            ],
++            {
++                "GRAPH_PROMPT_CLEAN_ASM": "1",
++                "GRAPH_PROMPT_FIT_ASSEMBLY": "1",
++                "GRAPH_PROMPT_BINARY_EVIDENCE": "1",
++                "GRAPH_REQUIRE_NEUTRAL_CONTRACT": "1",
++                "GRAPH_NEUTRAL_FUNCTION_NAME": "fn0",
++            },
++            expected=token_length_report,
++        )
++
+         neutral_eval = phase0_dir / "neutral_functional_eval.jsonl"
+         neutral_report = phase0_dir / "neutral_functional_eval_report.json"
+         self.run(
+@@ -926,27 +1015,13 @@
+                 expected=probe_report,
+             )
+ 
+-        stage1_gate_dir = self.output / "02a_graph_only_functional_gate"
+-        stage1_gate_report = stage1_gate_dir / "report.json"
+-        self.run(
+-            "02a_graph_only_functional_gate",
+-            self.functional_gate_command(
+-                dataset=neutral_eval,
+-                checkpoint=stage1_checkpoint,
+-                output_dir=stage1_gate_dir,
+-                report=stage1_gate_report,
+-                performance_prompt_mode="graph_only",
+-                min_permutation_drop_pp=args.stage1_min_permutation_drop_pp,
+-                min_facts_drop_pp=args.stage1_min_facts_drop_pp,
+-                min_improvement_pp=0.0,
+-                run_deployment_arm=False,
+-            ),
+-            expected=stage1_gate_report,
+-        )
+-
+-        hierarchy_control_dir = self.output / "02b0_matched_direct_control"
++        # Run the matched direct-code control regardless of whether the latent
++        # graph channel later passes its causal-use gate. This independently
++        # measures how much of the historical >=200 cliff came from target
++        # truncation and insufficient generation budgets.
++        hierarchy_control_dir = self.output / "02a0_matched_direct_control"
+         hierarchy_control_checkpoint = self.sft_stage(
+-            stage="02b0_matched_direct_control",
++            stage="02a0_matched_direct_control",
+             train_file=hierarchy_control_train,
+             eval_file=hierarchy_control_dev,
+             output_dir=hierarchy_control_dir,
+@@ -961,43 +1036,82 @@
+             max_prompt_length=args.long_prompt_max_tokens,
+         )
+ 
+-        hierarchical_dir = self.output / "02b_hierarchical_region_sft"
+-        hierarchical_checkpoint = self.sft_stage(
+-            stage="02b_hierarchical_region_sft",
+-            train_file=hierarchy_train,
+-            eval_file=hierarchy_dev,
+-            output_dir=hierarchical_dir,
+-            checkpoint=stage1_checkpoint,
++        control_recovery_dir = self.output / "02a1_matched_control_recovery"
++        control_recovery_checkpoint = self.sft_stage(
++            stage="02a1_matched_control_recovery",
++            train_file=recovery_train,
++            eval_file=recovery_dev,
++            output_dir=control_recovery_dir,
++            checkpoint=hierarchy_control_checkpoint,
+             prompt_mode="full",
+             binary_evidence=True,
+             dependence_weight=0.0,
+             dependence_every=1,
+-            learning_rate=args.hierarchical_lr,
+-            epochs=args.hierarchical_epochs,
++            learning_rate=args.recovery_lr,
++            epochs=args.recovery_epochs,
+             max_target_length=args.long_target_max_tokens,
+             max_prompt_length=args.long_prompt_max_tokens,
+         )
+ 
+-        control_recovery_dir = self.output / "02b1_matched_control_recovery"
+-        control_recovery_checkpoint = self.sft_stage(
+-            stage="02b1_matched_control_recovery",
+-            train_file=recovery_train,
+-            eval_file=recovery_dev,
+-            output_dir=control_recovery_dir,
+-            checkpoint=hierarchy_control_checkpoint,
++        direct_control_eval_dir = self.output / "02a2_direct_control_long_eval"
++        direct_control_eval_report = direct_control_eval_dir / "report.json"
++        self.run(
++            "02a2_direct_control_long_eval",
++            self.functional_gate_command(
++                dataset=long_dev,
++                checkpoint=control_recovery_checkpoint,
++                output_dir=direct_control_eval_dir,
++                report=direct_control_eval_report,
++                performance_prompt_mode="full",
++                min_permutation_drop_pp=0.0,
++                min_facts_drop_pp=0.0,
++                min_improvement_pp=0.0,
++                run_deployment_arm=True,
++                run_causality_arm=False,
++                min_rows=args.min_long_gate_rows,
++            ),
++            expected=direct_control_eval_report,
++        )
++
++        stage1_gate_dir = self.output / "02b_graph_only_functional_gate"
++        stage1_gate_report = stage1_gate_dir / "report.json"
++        self.run(
++            "02b_graph_only_functional_gate",
++            self.functional_gate_command(
++                dataset=neutral_eval,
++                checkpoint=stage1_checkpoint,
++                output_dir=stage1_gate_dir,
++                report=stage1_gate_report,
++                performance_prompt_mode="graph_only",
++                min_permutation_drop_pp=args.stage1_min_permutation_drop_pp,
++                min_facts_drop_pp=args.stage1_min_facts_drop_pp,
++                min_improvement_pp=0.0,
++                run_deployment_arm=False,
++                run_causality_arm=True,
++            ),
++            expected=stage1_gate_report,
++        )
++
++        hierarchical_dir = self.output / "02c_hierarchical_region_sft"
++        hierarchical_checkpoint = self.sft_stage(
++            stage="02c_hierarchical_region_sft",
++            train_file=hierarchy_train,
++            eval_file=hierarchy_dev,
++            output_dir=hierarchical_dir,
++            checkpoint=stage1_checkpoint,
+             prompt_mode="full",
+             binary_evidence=True,
+             dependence_weight=0.0,
+             dependence_every=1,
+-            learning_rate=args.recovery_lr,
+-            epochs=args.recovery_epochs,
++            learning_rate=args.hierarchical_lr,
++            epochs=args.hierarchical_epochs,
+             max_target_length=args.long_target_max_tokens,
+             max_prompt_length=args.long_prompt_max_tokens,
+         )
+ 
+-        recovery_dir = self.output / "02c_all_length_code_recovery"
++        recovery_dir = self.output / "02d_all_length_code_recovery"
+         curriculum_checkpoint = self.sft_stage(
+-            stage="02c_all_length_code_recovery",
++            stage="02d_all_length_code_recovery",
+             train_file=recovery_train,
+             eval_file=recovery_dev,
+             output_dir=recovery_dir,
+@@ -1012,10 +1126,10 @@
+             max_prompt_length=args.long_prompt_max_tokens,
+         )
+ 
+-        long_gate_dir = self.output / "02d_long_hierarchy_functional_gate"
++        long_gate_dir = self.output / "02e_long_hierarchy_functional_gate"
+         long_gate_report = long_gate_dir / "report.json"
+         self.run(
+-            "02d_long_hierarchy_functional_gate",
++            "02e_long_hierarchy_functional_gate",
+             self.functional_gate_command(
+                 dataset=long_dev,
+                 checkpoint=curriculum_checkpoint,
+@@ -1132,10 +1246,13 @@
+             "code_recovery_train": recovery_train,
+             "long_development_stratum": long_dev,
+             "phase0_report": phase0_report,
++            "raw_token_length_distribution": raw_token_length_report,
++            "token_length_distribution": token_length_report,
+             "neutral_eval": neutral_eval,
+             "probe_report": probe_report if args.run_probe else None,
+             "stage1_checkpoint": stage1_checkpoint,
+             "stage1_functional_gate": stage1_gate_report,
++            "direct_control_long_evaluation": direct_control_eval_report,
+             "hierarchical_checkpoint": hierarchical_checkpoint,
+             "matched_direct_control_checkpoint": hierarchy_control_checkpoint,
+             "matched_control_recovery_checkpoint": control_recovery_checkpoint,
+@@ -1510,12 +1627,12 @@
+     parser.add_argument("--long_prefix_tokens_per_log2", type=int, default=8)
+     parser.add_argument("--long_target_max_tokens", type=int, default=3072)
+     parser.add_argument("--long_prompt_max_tokens", type=int, default=3072)
+-    parser.add_argument("--long_generation_max_tokens", type=int, default=2048)
++    parser.add_argument("--long_generation_max_tokens", type=int, default=3072)
+ 
+     parser.add_argument("--gate_num_samples", type=int, default=10)
+     parser.add_argument("--gate_k", type=int, default=10)
+     parser.add_argument("--gate_generation_batch_size", type=int, default=4)
+-    parser.add_argument("--gate_max_new_tokens", type=int, default=2048)
++    parser.add_argument("--gate_max_new_tokens", type=int, default=3072)
+     parser.add_argument(
+         "--decoder_prompt_max_length", type=int, default=0,
+         help="0 inherits GRAPH_DECODER_PROMPT_MAX_LENGTH from architecture provenance (else 768).",
+@@ -1583,7 +1700,7 @@
+ 
+     parser.add_argument("--rollout_samples", type=int, default=16)
+     parser.add_argument("--rollout_generation_batch_size", type=int, default=4)
+-    parser.add_argument("--rollout_max_new_tokens", type=int, default=2048)
++    parser.add_argument("--rollout_max_new_tokens", type=int, default=3072)
+     parser.add_argument("--limit_candidates", type=int, default=0)
+     parser.add_argument("--max_failures_per_task", type=int, default=2)
+     parser.add_argument("--max_positives_per_task", type=int, default=3)
+@@ -1611,7 +1728,7 @@
+     parser.add_argument("--grpo_grad_accum", type=int, default=8)
+     parser.add_argument("--grpo_epochs", type=int, default=1)
+     parser.add_argument("--grpo_lr", type=float, default=1e-6)
+-    parser.add_argument("--grpo_max_new_tokens", type=int, default=2048)
++    parser.add_argument("--grpo_max_new_tokens", type=int, default=3072)
+     parser.add_argument("--grpo_min_reward_range", type=float, default=0.05)
+     parser.add_argument("--grpo_passk_k", type=int, default=10)
+     parser.add_argument("--grpo_score_chunk_size", type=int, default=4)
+@@ -1656,6 +1773,10 @@
+         parser.error("--dev_fraction must be strictly between 0 and 1")
+     if args.gate_k > args.gate_num_samples:
+         parser.error("--gate_k cannot exceed --gate_num_samples")
++    try:
++        validate_target_generation_budget(args)
++    except ValueError as exc:
++        parser.error(str(exc))
+     if args.gate_bootstrap_iterations < 100:
+         parser.error("--gate_bootstrap_iterations must be at least 100")
+     if not 0.5 < args.gate_statistical_confidence < 1.0:
+Binary files /mnt/data/work_v2_3/hybrid_training_patch_v2_2/tests/__pycache__/test_hybrid_patch.cpython-313.pyc and /mnt/data/work_v2_3/hybrid_training_patch_v2_3/tests/__pycache__/test_hybrid_patch.cpython-313.pyc differ
+diff -ruN '--exclude=*.diff' '--exclude=MANIFEST.json' '--exclude=TEST_RESULTS.txt' '--exclude=INSTALLER_TEST.txt' '--exclude=COMPILE_RESULTS.txt' /mnt/data/work_v2_3/hybrid_training_patch_v2_2/tests/test_hybrid_patch.py /mnt/data/work_v2_3/hybrid_training_patch_v2_3/tests/test_hybrid_patch.py
+--- /mnt/data/work_v2_3/hybrid_training_patch_v2_2/tests/test_hybrid_patch.py	2026-07-17 13:08:10.000000000 +0000
++++ /mnt/data/work_v2_3/hybrid_training_patch_v2_3/tests/test_hybrid_patch.py	2026-07-17 14:11:43.876990572 +0000
+@@ -30,6 +30,8 @@
+ INFERENCE = EVALUATION / "graph_inference_antigravity.py"
+ PROBE = EVALUATION / "probe_graph_representations_antigravity.py"
+ CHECKPOINT_CONTRACT = TRAINING / "checkpoint_contract.py"
++COLLATOR = PATCH_ROOT / "models" / "graph_data_collator.py"
++TOKEN_REPORT = EVALUATION / "report_token_lengths_antigravity.py"
+ 
+ if str(PATCH_ROOT) not in sys.path:
+     sys.path.insert(0, str(PATCH_ROOT))
+@@ -1040,7 +1042,9 @@
+         with tempfile.TemporaryDirectory() as temp:
+             root = Path(temp) / "project"
+             shutil.copytree(PATCH_ROOT / "scripts", root / "scripts")
++            shutil.copytree(PATCH_ROOT / "models", root / "models")
+             (root / "scripts/__init__.py").touch()
++            (root / "models/__init__.py").touch()
+             (root / "scripts/training/__init__.py").touch()
+             (root / "scripts/evaluation/__init__.py").touch()
+             (root / "scripts/evaluation/graph_pass_at_k_antigravity.py").write_text(
+@@ -1079,23 +1083,26 @@
+             manifest = json.loads((output / "hybrid_curriculum_manifest.json").read_text())
+             stages = [item["stage"] for item in manifest["history"]]
+             expected_prefix = [
++                "00_raw_token_length_measurement",
+                 "00a_phase0_prepare",
+                 "00b_phase0_reference_audit",
+                 "00b2_phase0_dev_reference_audit",
+                 "00f_build_hierarchical_train",
+                 "00g_build_hierarchical_dev",
++                "00h_token_length_preflight",
+                 "00c_prepare_neutral_gate",
+                 "00d_neutral_gate_audit",
+                 "01_graph_only_sft",
+                 "01b_post_direct_sft_representation_probe",
+             ]
+             self.assertEqual(stages[: len(expected_prefix)], expected_prefix)
+-            self.assertIn("02a_graph_only_functional_gate", stages)
+-            self.assertIn("02b0_matched_direct_control", stages)
+-            self.assertIn("02b_hierarchical_region_sft", stages)
+-            self.assertIn("02b1_matched_control_recovery", stages)
+-            self.assertIn("02c_all_length_code_recovery", stages)
+-            self.assertIn("02d_long_hierarchy_functional_gate", stages)
++            self.assertIn("02a0_matched_direct_control", stages)
++            self.assertIn("02a1_matched_control_recovery", stages)
++            self.assertIn("02a2_direct_control_long_eval", stages)
++            self.assertIn("02b_graph_only_functional_gate", stages)
++            self.assertIn("02c_hierarchical_region_sft", stages)
++            self.assertIn("02d_all_length_code_recovery", stages)
++            self.assertIn("02e_long_hierarchy_functional_gate", stages)
+             collect = next(
+                 item for item in manifest["history"]
+                 if item["stage"] == "04_collect_verifier_feedback"
+@@ -1145,7 +1152,7 @@
+ 
+             gate = next(
+                 item for item in manifest["history"]
+-                if item["stage"] == "02a_graph_only_functional_gate"
++                if item["stage"] == "02b_graph_only_functional_gate"
+             )
+             self.assertIn("--causality_prompt_mode", gate["command"])
+             self.assertIn("--min_causal_permutation_drop_pp", gate["command"])
+@@ -1584,6 +1591,94 @@
+                 else:
+                     os.environ[key] = value
+ 
++
++    def test_dynamic_collator_pads_only_to_batch_maximum(self):
++        import torch
++
++        fake_tg = types.ModuleType("torch_geometric")
++        fake_tg_data = types.ModuleType("torch_geometric.data")
++
++        class DummyPyGBatch:
++            @staticmethod
++            def from_data_list(values):
++                return values
++
++        fake_tg_data.Batch = DummyPyGBatch
++        previous_tg = sys.modules.get("torch_geometric")
++        previous_tg_data = sys.modules.get("torch_geometric.data")
++        sys.modules["torch_geometric"] = fake_tg
++        sys.modules["torch_geometric.data"] = fake_tg_data
++        try:
++            module = load_module(COLLATOR, "dynamic_graph_collator_test")
++        finally:
++            if previous_tg is None:
++                sys.modules.pop("torch_geometric", None)
++            else:
++                sys.modules["torch_geometric"] = previous_tg
++            if previous_tg_data is None:
++                sys.modules.pop("torch_geometric.data", None)
++            else:
++                sys.modules["torch_geometric.data"] = previous_tg_data
++
++        tokenizer = types.SimpleNamespace(pad_token_id=99, eos_token_id=2)
++        collator = module.GraphDataCollator(tokenizer)
++        features = [
++            {
++                "labels": [10, 11, 2],
++                "decoder_prompt_input_ids": [1, 2, 3, 4],
++                "decoder_prompt_attention_mask": [1, 1, 1, 1],
++                "block_inputs": [], "cfg": [], "edges": [],
++                "language": "dart", "tests": "a",
++            },
++            {
++                "labels": [20, 2],
++                "decoder_prompt_input_ids": [5, 6],
++                "decoder_prompt_attention_mask": [1, 1],
++                "block_inputs": [], "cfg": [], "edges": [],
++                "language": "dart", "tests": "b",
++            },
++        ]
++        batch = collator(features)
++        self.assertEqual(tuple(batch["labels"].shape), (2, 3))
++        self.assertEqual(tuple(batch["decoder_prompt_input_ids"].shape), (2, 4))
++        self.assertEqual(batch["labels"][1].tolist(), [20, 2, -100])
++        self.assertEqual(batch["decoder_prompt_input_ids"][1].tolist(), [5, 6, 99, 99])
++        self.assertEqual(batch["decoder_prompt_attention_mask"][1].tolist(), [1, 1, 0, 0])
++        self.assertTrue(torch.equal(batch["labels"][0], torch.tensor([10, 11, 2])))
++
++    def test_training_and_inference_do_not_global_pad_to_long_ceiling(self):
++        sft_source = SFT.read_text(encoding="utf-8")
++        inference_source = INFERENCE.read_text(encoding="utf-8")
++        self.assertNotIn('padding="max_length"', sft_source)
++        self.assertNotIn('padding="max_length"', inference_source)
++        self.assertIn("GraphDataCollator(decoder_tokenizer)", GRPO.read_text(encoding="utf-8"))
++
++    def test_target_budget_must_fit_every_generation_path(self):
++        runner = load_module(RUNNER, "hybrid_runner_budget_test")
++        args = types.SimpleNamespace(
++            long_target_max_tokens=3072,
++            long_generation_max_tokens=2048,
++            gate_max_new_tokens=2048,
++            rollout_max_new_tokens=2048,
++            grpo_max_new_tokens=2048,
++        )
++        with self.assertRaisesRegex(ValueError, "cannot exceed"):
++            runner.validate_target_generation_budget(args)
++        args.long_generation_max_tokens = 3072
++        budgets = runner.validate_target_generation_budget(args)
++        self.assertEqual(budgets, {"gate": 3072, "rollout": 3072, "grpo": 3072})
++
++    def test_direct_control_runs_before_causal_gate(self):
++        source = RUNNER.read_text(encoding="utf-8")
++        control = source.index('stage="02a0_matched_direct_control"')
++        control_eval = source.index('"02a2_direct_control_long_eval"')
++        causal_gate = source.index('"02b_graph_only_functional_gate"')
++        hierarchy = source.index('stage="02c_hierarchical_region_sft"')
++        self.assertLess(control, control_eval)
++        self.assertLess(control_eval, causal_gate)
++        self.assertLess(causal_gate, hierarchy)
++        self.assertIn("report_token_lengths_antigravity.py", source)
++
+     def test_qwen_lora_target_contract_is_not_required_for_non_qwen_models(self):
+         runner = load_module(RUNNER, "hybrid_runner_non_qwen_contract_test")
+         self.assertNotIn(

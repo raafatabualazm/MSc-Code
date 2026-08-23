@@ -1,0 +1,17 @@
+{"original_line":42,"reason":"codec_quarantine"}
+{"original_line":50,"reason":"codec_quarantine"}
+{"original_line":72,"reason":"codec_quarantine"}
+{"original_line":91,"reason":"codec_quarantine"}
+{"original_line":208,"reason":"codec_quarantine"}
+{"original_line":218,"reason":"codec_quarantine"}
+{"original_line":285,"reason":"codec_quarantine"}
+{"original_line":298,"reason":"codec_quarantine"}
+{"original_line":310,"reason":"codec_quarantine"}
+{"original_line":318,"reason":"codec_quarantine"}
+{"original_line":381,"reason":"codec_quarantine"}
+{"original_line":431,"reason":"codec_quarantine"}
+{"original_line":434,"reason":"codec_quarantine"}
+{"forbidden_corpus":"data/testing/fresh_graphv2_holdout_s44.jsonl","forbidden_line":331,"jaccard":0.62963,"original_line":717,"reason":"forbidden_near_clone","sequence":0.957143}
+{"duplicate_original_line":541,"original_line":1138,"reason":"duplicate_alpha_structural"}
+{"original_line":1180,"reason":"codec_quarantine"}
+{"forbidden_corpus":"data/testing/fresh_graphv2_holdout_s44.jsonl","forbidden_line":477,"jaccard":0.575221,"original_line":1683,"reason":"forbidden_near_clone","sequence":0.861538}

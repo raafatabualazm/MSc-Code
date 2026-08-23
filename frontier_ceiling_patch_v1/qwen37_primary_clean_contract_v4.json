@@ -1,0 +1,81 @@
+{
+  "schema": "qwen37_frontier_primary_clean_completion_cap_v4",
+  "purpose": "Paired 175-task K=10 text-only frontier-ceiling evaluation over two sealed enrichment arms, pooling all four exact Qwen3.7-Max model identifiers under the supplied text-weight-equivalence premise",
+  "request_policy": {
+    "request_cap_parameter": "max_completion_tokens",
+    "max_tokens_absent": true,
+    "total_completion_cap": 12288,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 12298,
+    "enable_thinking": true,
+    "thinking_budget": 8192,
+    "extra_body_exact_keys": [
+      "enable_thinking",
+      "thinking_budget"
+    ],
+    "reasoning_and_final_share_completion_cap": true,
+    "reasoning_tokens_usage_required_positive_and_bounded": true,
+    "reasoning_content_required_nonempty": true,
+    "answer_tokens_derived_and_preserved": true,
+    "finite_runner_budget": 0,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "runtime_identity": {
+    "qwen_completion_entry": "frontier_passk_qwen_completion.py",
+    "qwen_completion_entry_sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15",
+    "shared_frontier_runner_sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead",
+    "shared_frontier_core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258",
+    "frontier_f2_sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+  },
+  "primary_global_sample_allocation": [
+    {
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 3,
+      "global_sample_indices": [0, 1, 2],
+      "run_directory_pattern": "qwen37_clean_v4_0517_{arm}_k3_mc12k_tol10_tb8k"
+    },
+    {
+      "model": "qwen3.7-max-preview",
+      "local_k": 2,
+      "global_sample_indices": [3, 4],
+      "run_directory_pattern": "qwen37_clean_v4_preview_{arm}_k2_mc12k_tol10_tb8k"
+    },
+    {
+      "model": "qwen3.7-max-2026-05-20",
+      "local_k": 3,
+      "global_sample_indices": [5, 6, 7],
+      "run_directory_pattern": "qwen37_clean_v4_0520_{arm}_k3_mc12k_tol10_tb8k"
+    },
+    {
+      "model": "qwen3.7-max-2026-06-08",
+      "local_k": 2,
+      "global_sample_indices": [8, 9],
+      "run_directory_pattern": "qwen37_clean_v4_0608_{arm}_k2_mc12k_tol10_tb8k"
+    }
+  ],
+  "primary_global_k_per_arm": 10,
+  "text_equivalence_premise": "The user confirms the exact snapshots differ only in vision-language capability; this experiment is text-only. Exact requested and resolved model identities remain stratified in every journal and diagnostic.",
+  "paired_invariant": "The exact same model/global-sample allocation, completion cap, tolerance, thinking budget, sampling policy, and sealed task sequence are applied to both enrichment arms.",
+  "invalid_policy_pilot_quarantine": {
+    "excluded_from_primary": true,
+    "reason": "The older bulk runs sent max_tokens with thinking enabled. Provider usage demonstrated that reasoning and final-answer accounting did not obey the runner's assumed total-completion cap, so those candidates and outcomes are not comparable to the clean estimator.",
+    "run_directory_patterns": [
+      "qwen37_pool_*",
+      "qwen37_primary_v2_w2_*",
+      "qwen37_clean_v3_*"
+    ],
+    "preservation_policy": "Preserve all journals and artifacts; never merge their candidates or outcomes into this primary estimator."
+  },
+  "reporting": {
+    "primary": "Pooled pass@10 and compile@10 for each enrichment arm over only the four clean-v4 shards",
+    "required_diagnostics": [
+      "Per-exact-model compile and pass rates",
+      "Per-exact-model token usage and reasoning-token usage",
+      "Requested and resolved model identities",
+      "Finish-reason distribution",
+      "Paired task-level arm comparison",
+      "Separate inventory of invalid-policy pilot artifacts"
+    ]
+  }
+}

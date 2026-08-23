@@ -1,0 +1,15 @@
+
+$ /venv/main/bin/python scripts/data/validate_synthetic_pool.py --pool data/datasets/synthetic_pool_reward_clean_cfg.jsonl --eval_data data/testing/grpo_data_cfg.jsonl --run_tests 0 --report data/datasets/synthetic_reward_splits/schema_validation.json
+Traceback (most recent call last):
+  File "/workspace/scripts/data/validate_synthetic_pool.py", line 34, in <module>
+    from rerank_predictions_antigravity import (  # noqa: E402
+ModuleNotFoundError: No module named 'rerank_predictions_antigravity'
+
+$ /venv/main/bin/python scripts/data/validate_synthetic_pool.py --pool data/datasets/synthetic_pool_reward_clean_cfg.jsonl --eval_data data/testing/grpo_data_cfg.jsonl --run_tests 0 --report data/datasets/synthetic_reward_splits/schema_validation.json
+key-set variant (522 rows): +['generator_model_reported'] -[]
+rows=1725 | dup_ids=0 | expects/task: med 8 min 4
+convention failures: candidate_line=0 expect_helper=0 source_name=0 assembly=0
+eval-set leakage: function-name overlap=0 identical-source=0
+
+VERDICT: OK
+report: data/datasets/synthetic_reward_splits/schema_validation.json

@@ -1,0 +1,32 @@
+{
+  "experiment": "qwen-2b_lora_enc_dec_r16_1e5",
+  "config": {
+    "name": "qwen-2b_lora_enc_dec_r16_1e5",
+    "decoder": "Qwen/Qwen3.5-2B",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "1e-5",
+    "epochs": "1",
+    "oom_risk": "high",
+    "lora_r": "16",
+    "lora_alpha": "32"
+  },
+  "codebleu": {
+    "count": 165,
+    "mean_codebleu": 0.390491205678849,
+    "min_codebleu": 0.006889763779527559,
+    "max_codebleu": 0.6250007837038675
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.0,
+    "compile_at_5": 0.0,
+    "total_problems": 165
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "pass_at_5": 0.0,
+    "total_problems": 165
+  }
+}

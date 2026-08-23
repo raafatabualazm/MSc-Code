@@ -1,0 +1,60 @@
+{
+  "experiment": "qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft",
+  "config": {
+    "name": "qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft",
+    "decoder": "Qwen/Qwen3.5-9B-Base",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "1",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/compile-test2.jsonl",
+    "pass_at_k": "data/testing/grpo_data.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 5,
+    "pass_at_k": 10,
+    "generation_batch_size": 2,
+    "eval_max_new_tokens": 768
+  },
+  "predictions": {
+    "compile_codebleu": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\results-qwen-9b-latest-3\\qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_compile_predictions.json",
+    "pass_at_k": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\results-qwen-9b-latest-3\\qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_pass_predictions.json"
+  },
+  "codebleu": {
+    "count": 126,
+    "samples_with_success": 126,
+    "mean_codebleu": 0.6589563841328613,
+    "min_codebleu": 0.10882554200842107,
+    "max_codebleu": 0.9208026056687371
+  },
+  "codebleu_compiled_only": {
+    "count": 126,
+    "samples_with_success": 80,
+    "mean_codebleu": 0.6394481332620894,
+    "min_codebleu": 0.04858031808960714,
+    "max_codebleu": 0.8096437476982307
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.34285714285714286,
+    "compile_at_5": 0.6349206349206349,
+    "total_problems": 126
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.14740259740259737,
+    "pass_at_5": 0.26997010925582354,
+    "pass_at_10": 0.3116883116883117,
+    "total_problems": 154
+  },
+  "local_recomputed_from_candidate_stats": {
+    "compile_stats": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\results-qwen-9b-latest-3\\sweeps_antigravity\\qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_compile_stats.csv",
+    "pass_stats": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\results-qwen-9b-latest-3\\sweeps_antigravity\\qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_pass_stats.csv",
+    "codebleu_note": "CodeBLEU recomputed locally from predictions; compiled-only uses compile flags from candidate stats."
+  }
+}

@@ -1,4 +1,5 @@
 import json
+import os
 from openai import OpenAI
 
 
@@ -14,8 +15,9 @@ Please convert the following assembly code to idiomatic and clear {} code.
 {}
 """
 
-# Replace this with your DeepSeek API key
-API_KEY = "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"
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Set OPENROUTER_API_KEY before running this script.")
 client = OpenAI(api_key=API_KEY, base_url="https://openrouter.ai/api/v1")
 
 input_file = 'data/intermediate/failed_reasoning7.jsonl'

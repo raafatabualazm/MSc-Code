@@ -1,0 +1,17 @@
+{
+  "output": "data\\testing\\grpo_mix_synth576_real154_zp2.jsonl",
+  "rows": 910,
+  "synthetic": "data\\datasets\\synthetic_pool_train576.jsonl",
+  "synthetic_rows_used": 576,
+  "synthetic_repeat": 1,
+  "real": "data\\testing\\grpo_data.jsonl",
+  "real_rows": 154,
+  "real_repeat": 1,
+  "gap_analysis": "results-20260613\\qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5_grpo_pass_predictions_k50_rerank_gap_analysis.json",
+  "zero_pass_indices": 90,
+  "zero_pass_repeat": 2,
+  "missed_passable_indices": 30,
+  "missed_passable_repeat": 0,
+  "shuffle": true,
+  "seed": 13
+}

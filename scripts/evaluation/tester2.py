@@ -13,7 +13,7 @@ import requests
 from codebleu import CodeBLEUCalculator
 
 # ── Configuration ──────────────────────────────────────────────────────────
-API_KEY = "sk-82kl3oqtxwjt4x"
+API_KEY = os.environ.get("LOCAL_OPENAI_API_KEY", "not-required")
 API_BASE_URL = "http://127.0.0.1:18000/v1/chat/completions"
 
 # Fetch available model from the endpoint

@@ -124,13 +124,15 @@ def run_dart_sandbox(solution_code: str, test_code: str, timeout: int = 10) -> t
 
 class TruePerTestReward:
     def __init__(self,
-                 base_pass_reward=1.5,
-                 base_fail_penalty=-0.5,
+                 base_reward: float = -1.0,
+                 pass_ratio_reward: float = 8.0,
+                 perfect_bonus: float = 2.0,
                  enable_asserts: bool = False,
                  main_violation_penalty: float = -5.0,
                  empty_code_penalty: float = -3.0):
-        self.base_pass_reward = base_pass_reward
-        self.base_fail_penalty = base_fail_penalty
+        self.base_reward = base_reward
+        self.pass_ratio_reward = pass_ratio_reward
+        self.perfect_bonus = perfect_bonus
         self.enable_asserts = enable_asserts
         self.main_violation_penalty = main_violation_penalty
         self.empty_code_penalty = empty_code_penalty
@@ -162,7 +164,49 @@ class TruePerTestReward:
         )
         return bool(pat.search(clean))
 
+    def _extract_code_candidate(self, code: str) -> str:
+        m = re.search(r"```(?:dart)?\s*(.*?)```", code, flags=re.S | re.I)
+        if m:
+            return m.group(1).strip()
+        return code.strip()
+
+    def _remove_main_function(self, code: str) -> str:
+        code = self._extract_code_candidate(code)
+        while True:
+            main_match = re.search(
+                r"^\s*(?:\w+(?:<[^>]*>)?\s+)?main\s*\([^)]*\)\s*(?:async\s*)?\{",
+                code,
+                flags=re.MULTILINE,
+            )
+            if not main_match:
+                return code.strip()
+
+            start = main_match.start()
+            depth = 0
+            i = main_match.end() - 1
+            end = None
+            while i < len(code):
+                ch = code[i]
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        end = i + 1
+                        break
+                i += 1
+
+            if end is None:
+                return code[:start].strip()
+            code = (code[:start] + code[end:]).strip()
+
+    def _prepare_solution_for_tests(self, code: str) -> str:
+        code = self._remove_main_function(code)
+        code = re.sub(r"^@pragma\(.*\)\s*$", "", code, flags=re.MULTILINE)
+        return code.strip()
+
     def compute_reward(self, solution_code: str, test_code: str):
+        solution_code = self._prepare_solution_for_tests(solution_code)
         # GUARD 1: Empty code check
         if not solution_code.strip() or len(solution_code.strip()) < 10:
             msg = f"Empty/short code violation; Reward={self.empty_code_penalty:.3f}"
@@ -192,16 +236,15 @@ class TruePerTestReward:
         if details['total'] == 0:
             return 0.0, "No tests found", details
 
-        total = 0.0
-        for r in details['individual_results']:
-            total += self.base_pass_reward if r['passed'] else self.base_fail_penalty
+        pass_ratio = details['passed'] / details['total']
+        total = self.base_reward + self.pass_ratio_reward * pass_ratio
 
         if details['passed'] == details['total']:
-            total += 2.0  # Perfect bonus
+            total += self.perfect_bonus
 
         total = max(-5.0, min(10.0, total))
         msg = (f"Per-test: {details['passed']}/{details['total']} | Reward={total:.3f} "
-               f"({self.base_pass_reward}/pass, {self.base_fail_penalty}/fail)")
+               f"(pass_ratio={pass_ratio:.3f})")
         return total, msg, details
 
     def extract_expect_calls_single_line(self, test_code: str) -> list:
@@ -213,6 +256,7 @@ class TruePerTestReward:
         return cases
 
     def parse_and_run_individual_tests(self, solution_code: str, test_code: str) -> dict:
+        solution_code = self._prepare_solution_for_tests(solution_code)
         test_cases = self.extract_expect_calls_single_line(test_code)
         results = {'total': len(test_cases), 'passed': 0, 'failed': 0, 'individual_results': []}
         for tc in test_cases:
@@ -284,7 +328,12 @@ void main() {{
         i, out = 0, []
         while i < len(lines):
             s = lines[i].strip()
-            if any(re.match(rf'^\s*(?:[\w<>\[\]\?,\s]+?\s+)?{t}\s*\(', s) for t in targets):
+            is_def = (
+                any(re.match(rf'^\s*[\w<>\[\]\?,\s]+?\s+{t}\s*\(', s) for t in targets)
+                and not s.endswith(';')
+                and '{' in s
+            )
+            if is_def:
                 brace = 0
                 j = i
                 while j < len(lines):
@@ -299,6 +348,7 @@ void main() {{
         return '\n'.join(out)
 
     def extract_function_body(self, code: str) -> str:
+        code = self._prepare_solution_for_tests(code)
         body = []
         for ln in code.splitlines():
             s = ln.strip()
@@ -314,8 +364,9 @@ void main() {{
 
 # Initialize true per-test reward system
 true_per_test_reward = TruePerTestReward(
-    base_pass_reward=1.5,
-    base_fail_penalty=-0.5,
+    base_reward=-1.0,
+    pass_ratio_reward=8.0,
+    perfect_bonus=2.0,
     enable_asserts=False,
     main_violation_penalty=-5.0,
     empty_code_penalty=-3.0
@@ -330,14 +381,13 @@ def compute_enhanced_reward(decompiled_code: str, test_code: str) -> tuple:
         if 'violation' in details:
             return reward, message, pass_ratio
         
-        # Shaping: add bonus for compilation
-        compile_success = reward > -5.0
-        if compile_success:
-            reward += 0.8
-        if len(decompiled_code.strip()) < 50:
-            reward -= 1.0
-        if 'void' in decompiled_code or 'return' in decompiled_code:
-            reward += 0.3
+        # Keep the reward dominated by functional behavior. Tiny shaping only
+        # helps break ties early; it should never overpower test results.
+        if pass_ratio == 0.0 and len(decompiled_code.strip()) < 50:
+            reward -= 0.5
+        if re.search(r"\b(?:List<[^>]+>|String|int|double|bool|void)\s+\w+\s*\(", decompiled_code):
+            reward += 0.2
+        reward = max(-5.0, min(10.0, reward))
             
         return reward, message, pass_ratio
     except Exception as e:
@@ -495,12 +545,12 @@ class GRPOTrainer:
                     num_return_sequences=G,
                     **gen_kwargs
                 )
-                decoded_texts = self.tokenizer.batch_decode(generated, skip_special_tokens=True)
-                all_generated_texts.extend(decoded_texts)
-                
                 for gen_seq in generated:
                     response_only = gen_seq[len(query_tensor):]
                     all_response_tensors.append(response_only)
+                    all_generated_texts.append(
+                        self.tokenizer.decode(response_only, skip_special_tokens=True)
+                    )
                     
         # Duplicate prompts to match completions batching
         repeated_prompts = [p for p in prompts for _ in range(G)]
@@ -514,8 +564,7 @@ class GRPOTrainer:
         raw_rewards_log = []
         pass_ratios = []
         
-        for idx, (gen_text, prompt, test_code) in enumerate(zip(all_generated_texts, repeated_prompts, repeated_tests)):
-            completion = gen_text[len(prompt):]
+        for idx, (completion, prompt, test_code) in enumerate(zip(all_generated_texts, repeated_prompts, repeated_tests)):
             reward_val, msg, pass_ratio, _, _ = compute_best_reward_from_all_snippets(completion, test_code)
             
             rewards.append(reward_val)
@@ -625,7 +674,7 @@ class GRPOTrainer:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_dir', default='raafatabualazm/decompiler-v1')
-    parser.add_argument('--dataset_path', default='MSc-Code/data/testing/grpo_data.jsonl')
+    parser.add_argument('--dataset_path', default='data/testing/grpo_data.jsonl')
     parser.add_argument('--group_size', type=int, default=4)
     parser.add_argument('--kl_coef', type=float, default=0.01)
     parser.add_argument('--clip_eps', type=float, default=0.2)

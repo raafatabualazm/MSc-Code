@@ -1,0 +1,13 @@
+{
+  "schema": "dart-signature-scrubbed-v1",
+  "benchmark_kind": "existing_ablation",
+  "input": "data/testing/grpo_data_graphv2.jsonl",
+  "input_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "freeze_manifest_sha256": null,
+  "input_rows": 154,
+  "accepted_rows": 154,
+  "rejected_rows": 0,
+  "prepare_only": false,
+  "private_output": "data/testing/grpo_data_graphv2_signature_scrubbed_private.jsonl",
+  "public_output": "data/testing/grpo_data_graphv2_signature_scrubbed_public.jsonl"
+}

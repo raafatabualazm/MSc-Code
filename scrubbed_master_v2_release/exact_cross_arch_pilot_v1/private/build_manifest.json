@@ -1,0 +1,195 @@
+{
+  "builder": {
+    "graph_builder_sha256": "eefb68b6abdd7d5b3c4f5907ad03c000f62d0c5f0e11002a2fda72ca292bd673",
+    "networkx_version": "3.6.1",
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "script_sha256": "b862e32dfffc262b9577de933bd5d5a8a32514d020cb2b88b25e3b176767662f"
+  },
+  "counts": {
+    "aarch64_rows": 4,
+    "private_architecture_rows": 8,
+    "public_architecture_rows": 8,
+    "semantic_pairs": 4,
+    "x86_64_rows": 4
+  },
+  "created_utc_epoch": 1784493888,
+  "extractor": {
+    "cfg_sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+    "combined_cfg_dfg_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "dfg_sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+    "max_block_instructions": 20,
+    "max_dfg_edges": 0,
+    "schema": "antigravity-graph-v2.1"
+  },
+  "pair_id_policy": "hmac-sha256-neutral-source-v1",
+  "pair_id_salt": "private/semantic_pair_salt (withheld from public artifacts)",
+  "pair_summaries_private": [
+    {
+      "aot_sha256_private": {
+        "aarch64": "02db9874127b7d1ae53f0eb60fa4f18931de70c61576046535595d905a1c71a3",
+        "x86_64": "2d4afb403d72a20e08625b45388a1441bff21636deaad98685eee6d7cb69eede"
+      },
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "jit_tests": "passed",
+      "pair_slot": 0,
+      "program_sha256_private": "d2356792a89a37491bcc0f550f11fd1b57d7581a28c3d7d872cef4ee31707c7b",
+      "semantic_pair_id": "sp_ded55c781977b70fecfb5bea",
+      "source_release_index_private": 508,
+      "source_sha256_private": "f5bda49175f71e74276e58bcaaebde9baacf657117a4609bfcccd5d39c25b715"
+    },
+    {
+      "aot_sha256_private": {
+        "aarch64": "5f28604286e24ad4853e067d9bf066b136957e8a8f6c56832df98c3dd8746ddb",
+        "x86_64": "0f43c338be76f5b05535d53f440b0658723701117442407ac97dd094f3d1d22d"
+      },
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "jit_tests": "passed",
+      "pair_slot": 1,
+      "program_sha256_private": "a2a8489004ed2e90b7a504ca3fd8182005c9c3a59d66eba5b98f05c417a66f15",
+      "semantic_pair_id": "sp_d05a6da2fe87ba1ed575e198",
+      "source_release_index_private": 509,
+      "source_sha256_private": "5911c812398a1a471df4d16712827a983f884c6ce92fac72d5975b8f8b17e65e"
+    },
+    {
+      "aot_sha256_private": {
+        "aarch64": "ebfaf87ee159fe1c1f9c3a35557b2dee4004c9d3c69d71e5ff752555bae7e7f6",
+        "x86_64": "c0b653a65dc72df2347406681df910fa2e3a65a7bf98d2ae5e5f30132e470c20"
+      },
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "jit_tests": "passed",
+      "pair_slot": 2,
+      "program_sha256_private": "52d40fb6dbd437e7cf30b060ba80031e7d187e815d8ebf68628608398a1f6050",
+      "semantic_pair_id": "sp_13c7f13a8124848a4d6468d9",
+      "source_release_index_private": 510,
+      "source_sha256_private": "bc1b0bee8a26079a67575d94c76c35b4682edf5f968cfffffee8a56a33a07434"
+    },
+    {
+      "aot_sha256_private": {
+        "aarch64": "c827ac95e953902b8564f005f84687b26aebf1a49a78303ab6665b6f7d03f584",
+        "x86_64": "f6c05f081a1c24ad6e313f8e409dbe0173142c087ef04e3d412dd6f3b24919ee"
+      },
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "jit_tests": "passed",
+      "pair_slot": 3,
+      "program_sha256_private": "1ae4cdd416727dbb2db511f2990d6b8f58c2f48f6328c169950dbd37c2f95e63",
+      "semantic_pair_id": "sp_65c7ffc3a2c251e13039f67f",
+      "source_release_index_private": 511,
+      "source_sha256_private": "60a99ed4a105611cc9aa536edc386e95010a1db07a6f6b36de7a7aef0a1f010f"
+    }
+  ],
+  "private_input": {
+    "path": "/root/exact_cross_arch_pilot/input/master_dart_graphv2_signature_scrubbed_private.jsonl",
+    "selected_zero_based_indices": [
+      508,
+      509,
+      510,
+      511
+    ],
+    "sha256": "03acc6dd45c861fb6517048a4b8be66a428dcb5cde7cbf3ccdea302fdc08f52b"
+  },
+  "public_address_policy": "candidate entry rebased to 0x100000; external absolute targets zeroed",
+  "public_leakage_gate": {
+    "forbidden_term_residues": [],
+    "forbidden_value_residues": [],
+    "passed": true
+  },
+  "runtime_validation": {
+    "aot_arm64": "not_run_no_native_or_qemu_runtime",
+    "aot_x64_all_pairs": "passed",
+    "jit_x64_all_pairs": "passed"
+  },
+  "schema": "exact-neutral-cross-arch-pairs-v1",
+  "source_policy": "same byte-exact neutral candidate program compiled once per ISA",
+  "symbol_policy": {
+    "self": "candidate / candidate+offset",
+    "self_nested": "candidate.local_N",
+    "snapshot_image": "runtime_image",
+    "trusted_runtime": "stub _iso_stub_* and dart:*",
+    "untrusted": "symbol_N",
+    "version": "cross-arch-symbol-scrub-v1"
+  },
+  "symbol_policy_sha256": "5f7cca2c1a6b864277ff4fdeeca5994441725bfdb02afc1685112788ee732f3a",
+  "toolchain": {
+    "dart": {
+      "path": "/opt/dart-3.11.5/dart-sdk/bin/dart",
+      "resolved_path": "/opt/dart-3.11.5/dart-sdk/bin/dart",
+      "sha256": "37924d3acf1b2b80a8fcadc69ceec85ce55f82b36d479f5caa328f023389252b",
+      "size_bytes": 4974760,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\""
+    },
+    "dart_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+    "dartaotruntime_x64": {
+      "path": "/opt/dart-3.11.5/dart-sdk/bin/dartaotruntime",
+      "resolved_path": "/opt/dart-3.11.5/dart-sdk/bin/dartaotruntime",
+      "sha256": "0c731859f537027455e456719dd745f3aeaa3e28a38926c3b6e81d6569532ee4",
+      "size_bytes": 5765616
+    },
+    "objdump_arm64": {
+      "path": "/usr/bin/aarch64-linux-gnu-objdump",
+      "resolved_path": "/usr/bin/aarch64-linux-gnu-objdump",
+      "sha256": "d3310c4f50e6c265f691e7b2d55a2fbf4eba5785993ae5c70e9cc3949bf73c28",
+      "size_bytes": 460272,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "GNU objdump (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty."
+    },
+    "objdump_x64": {
+      "path": "/usr/bin/x86_64-linux-gnu-objdump",
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-objdump",
+      "sha256": "325c4205a4c658a9d1e1ebc469ae55975a2b897a3d3c1e79d9b158612d37f745",
+      "size_bytes": 390848,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "GNU objdump (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty."
+    },
+    "readelf": {
+      "path": "/usr/bin/x86_64-linux-gnu-readelf",
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-readelf",
+      "sha256": "64c58e15274bbbb5153f31078e455e9e77ee5f51489e709bba5bb788ce9df2b0",
+      "size_bytes": 789280,
+      "version_returncode": 0,
+      "version_stderr": "",
+      "version_stdout": "GNU readelf (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty."
+    },
+    "sdk_target_tools": {
+      "/opt/dart-3.11.5/dart-sdk/bin/dartaotruntime": {
+        "path": "/opt/dart-3.11.5/dart-sdk/bin/dartaotruntime",
+        "resolved_path": "/opt/dart-3.11.5/dart-sdk/bin/dartaotruntime",
+        "sha256": "0c731859f537027455e456719dd745f3aeaa3e28a38926c3b6e81d6569532ee4",
+        "size_bytes": 5765616
+      },
+      "/opt/dart-3.11.5/dart-sdk/bin/utils/gen_snapshot": {
+        "path": "/opt/dart-3.11.5/dart-sdk/bin/utils/gen_snapshot",
+        "resolved_path": "/opt/dart-3.11.5/dart-sdk/bin/utils/gen_snapshot",
+        "sha256": "d204ebd858489ca436e917462d4f25d75c1c7ce448b9934d2afc27e27643e572",
+        "size_bytes": 6226296
+      },
+      "/root/.dart/dartdev/sdk_cache/3.11.5/dartaotruntime_linux_arm64": {
+        "path": "/root/.dart/dartdev/sdk_cache/3.11.5/dartaotruntime_linux_arm64",
+        "resolved_path": "/root/.dart/dartdev/sdk_cache/3.11.5/dartaotruntime_linux_arm64",
+        "sha256": "97db522e811911c8fa2ff2e464702a4caec8d14fea191cd36642e87e5c4591e2",
+        "size_bytes": 5519776
+      },
+      "/root/.dart/dartdev/sdk_cache/3.11.5/gen_snapshot_linux_x64_linux_arm64": {
+        "path": "/root/.dart/dartdev/sdk_cache/3.11.5/gen_snapshot_linux_x64_linux_arm64",
+        "resolved_path": "/root/.dart/dartdev/sdk_cache/3.11.5/gen_snapshot_linux_x64_linux_arm64",
+        "sha256": "98ffbaaad2c22f7eb30cd5a00960c330241c98c198026fedb261588d829fb0b1",
+        "size_bytes": 6237576
+      }
+    }
+  }
+}

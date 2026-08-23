@@ -1,0 +1,106 @@
+{
+  "schema": "qwen37-capacity-length-contract-v7",
+  "purpose": "Outcome-blind 24K adaptive-cap repair of v6 capacity-effective terminals that ended only because the sealed 12K total completion cap was reached.",
+  "parent_capacity_overlay": {
+    "contract": "qwen37_capacity_fallback_contract_v6.json",
+    "contract_sha256": "cea8acaa785ddc2685a5da8b4426dce41837a25af2e7dd9639dd70f632d59631",
+    "entry": "qwen37_capacity_fallback_v6.py",
+    "entry_sha256": "6b2d642be25bb7b2e97daddf70e9a2245a8ff09e5f0c6e5e32c09afc92159521",
+    "outcome_free_feed": "effective_terminal_feed.jsonl",
+    "feed_payload_hash_required": true
+  },
+  "selection_policy": {
+    "source": "v6 outcome-free effective-terminal feed only",
+    "trigger": "validated effective finish_reason == length",
+    "capacity_outcomes_must_not_be_read_for_selection": true,
+    "non_length_resampling": false,
+    "maximum_terminal_repair_responses_per_effective_slot": 1,
+    "source_feed_raw_response_is_reclassified": true,
+    "source_prompt_is_loaded_by_exact_prompt_sha256": true,
+    "acceptance_tests_are_loaded_from_the_hash_sealed_eval_dataset": true,
+    "public_tasks_jsonl_is_not_expected_to_contain_plaintext_tests": true
+  },
+  "request_policy": {
+    "same_exact_source_prompt": true,
+    "same_exact_source_requested_model": true,
+    "authorized_models": [
+      "qwen3.7-max-2026-05-17",
+      "qwen3.7-max-2026-05-20",
+      "qwen3.7-max-2026-06-08",
+      "qwen3.7-max-preview",
+      "qwen3.7-max"
+    ],
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "request_cap_parameter": "max_completion_tokens",
+    "max_tokens_absent": true,
+    "requested_total_completion_cap": 24576,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 24586,
+    "enable_thinking": true,
+    "thinking_budget": 8192,
+    "required_finish_reason": "stop",
+    "reasoning_tokens_required_positive_and_bounded": true,
+    "reasoning_content_required_nonempty": true,
+    "unsupported_24576_or_second_length": "fail_closed"
+  },
+  "endpoint_epoch_policy": {
+    "source_capacity_endpoint_is_not_assumed_to_be_the_repair_endpoint": true,
+    "each_repair_endpoint_epoch_has_a_fresh_output_directory_and_config_hash": true,
+    "completed_repairs_are_imported_by_hash_checked_prior_output_references": true,
+    "completed_slots_are_never_dispatched_again": true,
+    "exact_free_quota_403_is_the_only_nonretryable_boundary_accepted_from_a_prior_epoch": true,
+    "rate_limits_transport_errors_and_data_inspection_do_not_authorize_an_endpoint_transition": true,
+    "stages": [
+      {
+        "name": "secondary-dated",
+        "credential": "/workspace/Qwen.env",
+        "allowed_models": [
+          "qwen3.7-max-2026-05-20",
+          "qwen3.7-max-2026-06-08"
+        ]
+      },
+      {
+        "name": "secondary-generic",
+        "credential": "/workspace/Qwen.env",
+        "allowed_models": [
+          "qwen3.7-max"
+        ],
+        "imports_prior_stage": "secondary-dated"
+      },
+      {
+        "name": "fallback-all-five",
+        "credential": "/workspace/Qwen_fallback.env",
+        "allowed_models": [
+          "qwen3.7-max-2026-05-17",
+          "qwen3.7-max-2026-05-20",
+          "qwen3.7-max-2026-06-08",
+          "qwen3.7-max-preview",
+          "qwen3.7-max"
+        ],
+        "imports_prior_stages": [
+          "secondary-dated",
+          "secondary-generic"
+        ]
+      }
+    ]
+  },
+  "estimation_policy": {
+    "replacement_does_not_increase_global_k": true,
+    "fixed_12k_metric_uses_original_or_v6_effective_outcome": true,
+    "adaptive_24k_metric_replaces_each_length_outcome_with_its_same_slot_repair": true,
+    "metrics_are_withheld_until_exactly_3500_global_slots_exist": true,
+    "original_capacity_and_each_repair_layer_have_separate_usage_accounting": true
+  },
+  "implementation": {
+    "repair_entry": "qwen37_capacity_length_repair_v7.py",
+    "repair_entry_sha256": "a74cb5595032c5d2b1d7fc325e38903ccf4f8fa844e8caf0f15f30a853ec19a8",
+    "merged_status": "qwen37_primary_effective_status_v7.py",
+    "merged_status_sha256": "fafa9d84a6633a990754363f25d947794143416c1f7224684daa56ee5ec0e363",
+    "shared_runner_sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead",
+    "core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258",
+    "qwen_completion_entry_sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15",
+    "evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6",
+    "dart_sha256": "c03ad868b5c53e31461b0fef22dc6eb6aeb56b7567efff6ca488ce9c4a6f8a6a"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "lossless-semantic-f2-train-preflight-v1",
+  "created_at": "2026-07-23T13:31:46Z",
+  "validation_source": {
+    "path": "temp/train_api_readable_compact.remote.jsonl",
+    "sha256": "fb78ab8e1dfdd8a37b6c1cd240f9a4ccb60a8f27bd41dadfa67b3399a2074d6c",
+    "rows": 1580,
+    "note": "Each verified F1 row was decoded to its canonical graph and constant prefix, re-encoded as F2, then independently decoded and compared exactly."
+  },
+  "tokenizer": {
+    "path": ".frontier_integration_20260723/tokenizer.json",
+    "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "visible_exact_one_token_symbols": 8501
+  },
+  "prompt_contract": {
+    "representation_schema": "lossless-semantic-f2",
+    "system_prompt_export": "frontier_core.COMPACT_F2_SYSTEM_PROMPT",
+    "system_prompt_sha256": "92131f7467d63e98b01acd8f9d2785e8e752a9c64727280fb0d5d9528655831d",
+    "system_tokens": 412,
+    "chat_overhead_reserve": 256,
+    "maximum_prompt_tokens": 12000
+  },
+  "proof": {
+    "rows_serialized": 1580,
+    "constant_prefix_roundtrip_failures": 0,
+    "canonical_roundtrip_failures": 0,
+    "prompts_over_limit": 0,
+    "canonical_hash_sequence_sha256": "08563a23420ac35dfac09da53e1a523ef2c60fc111144e37ba371d5725a1c4c6",
+    "maximum": {
+      "task_id": "sigless_1bba4dc0b268",
+      "user_tokens": 11250,
+      "complete_prompt_tokens": 11918
+    },
+    "second": {
+      "task_id": "sigless_f17b4d628f1b",
+      "user_tokens": 11052,
+      "complete_prompt_tokens": 11720
+    },
+    "third": {
+      "task_id": "sigless_f221251b6b7f",
+      "user_tokens": 8072,
+      "complete_prompt_tokens": 8740
+    },
+    "no_truncation": true,
+    "no_exclusion": true
+  },
+  "source_sha256": {
+    "frontier_core.py": "6ba25fb0377cd83dd7f1e785eceecccd9eb0765eb9130c2596e663b09669f213",
+    "frontier_f2.py": "d6ad20fdd81888f961831a098054eb39d85e97dcbb0f33f0310010caf04e8717",
+    "serialize_compact_inputs.py": "1f5535872a47f1b3b52aec6d542a5544892d23c837c2f504e2900aa736667e9c",
+    "frontier_passk.py": "1fa663e5de3cf1d6414cba367d56aaa140ffe09b30b63f17d201328d10369d4e",
+    "tests/test_frontier_core.py": "6329239f1575efa4d48311a1d51bdec2355b5505f0132770ef816b43e55cc3d0",
+    "install_remote_fixes.sh": "b7fd1e0205f271403af33910723d8981cabba739d2672dbbe9f44750650e428b"
+  },
+  "tests": {
+    "command": "python -m pytest frontier_ceiling_patch_v1/tests/test_frontier_core.py -q",
+    "passed": 24,
+    "failed": 0
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_clean_s42_text/pytorch_model.bin",
+    "sha256": "6f970841ed498768e854c355ccb87526bfb4acab92050a1babc59cc1bdd6eb60",
+    "size_bytes": 365435575
+  },
+  "dataset": {
+    "path": "/workspace/data/testing/grpo_data_cfg.jsonl",
+    "sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+    "size_bytes": 3228962
+  },
+  "generation": {
+    "decoder_gradient_checkpointing": false,
+    "decoder_prompt_max_length": 2048,
+    "generation_batch_size": 10,
+    "max_new_tokens": 768,
+    "num_samples": 10,
+    "use_cache": true
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  },
+  "graph_environment": {
+    "GRAPH_ATTN_IMPLEMENTATION": "sdpa",
+    "GRAPH_AUTO_CFG": "0",
+    "GRAPH_BATCH_SIZE": "4",
+    "GRAPH_CAUSAL_POSITION_IDS": "cumsum",
+    "GRAPH_DECODER_MODEL": "Qwen/Qwen3-8B",
+    "GRAPH_DECODER_PEFT": "lora",
+    "GRAPH_DECODER_PROMPT_MAX_LENGTH": "2048",
+    "GRAPH_DECODER_REVISION": "b968826d9c46dd6066d109eabc6255188de91218",
+    "GRAPH_DFG_MODE": "off",
+    "GRAPH_EDGE_ABLATION": "none",
+    "GRAPH_ENCODER_MODEL": "microsoft/graphcodebert-base",
+    "GRAPH_ENCODER_PEFT": "lora",
+    "GRAPH_ENCODER_REVISION": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+    "GRAPH_EPOCHS": "4",
+    "GRAPH_EVAL_FILE": "data/datasets/dart_all_cfg_clean_validation.jsonl",
+    "GRAPH_FREEZE_DECODER": "0",
+    "GRAPH_FREEZE_ENCODER": "0",
+    "GRAPH_GNN_ABLATION": "identity",
+    "GRAPH_GRADIENT_CHECKPOINTING": "1",
+    "GRAPH_GRAD_ACCUM": "16",
+    "GRAPH_HF_PATH_PREFIX": "artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_clean_s42_text",
+    "GRAPH_HF_PRIVATE": "1",
+    "GRAPH_HF_REPO": "raafatabualazm/antigravity-qwen3-8b-artifacts",
+    "GRAPH_HF_UPLOAD_CHECKPOINTS": "1",
+    "GRAPH_LOAD_4BIT": "0",
+    "GRAPH_LORA_ALPHA": "128",
+    "GRAPH_LORA_R": "64",
+    "GRAPH_LR": "5e-06",
+    "GRAPH_MAX_BLOCK_INSTRS": "24",
+    "GRAPH_OUTPUT_DIR": "artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_clean_s42_text",
+    "GRAPH_POSITION_SCHEME": "roberta",
+    "GRAPH_PROMPT_ASSEMBLY_MODE": "full",
+    "GRAPH_PROMPT_CLEAN_ASM": "1",
+    "GRAPH_PROMPT_FIT_ASSEMBLY": "1",
+    "GRAPH_QUIET": "1",
+    "GRAPH_QWEN_PREFIX_GATE_INIT": "0.2",
+    "GRAPH_QWEN_PREFIX_RMS_MATCH": "0",
+    "GRAPH_SAVE_STRATEGY": "epoch",
+    "GRAPH_SAVE_TOTAL_LIMIT": "2",
+    "GRAPH_SEED": "42",
+    "GRAPH_TRAIN_FILE": "data/datasets/dart_all_cfg_clean_train.jsonl",
+    "GRAPH_USE_REASONING": "0"
+  },
+  "models": {
+    "decoder": {
+      "requested_id": "Qwen/Qwen3-8B",
+      "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "resolved_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+      "resolved_name_or_path": "Qwen/Qwen3-8B"
+    },
+    "encoder": {
+      "requested_id": "microsoft/graphcodebert-base",
+      "requested_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+      "resolved_commit": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+      "resolved_name_or_path": "microsoft/graphcodebert-base"
+    }
+  },
+  "output": {
+    "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_clean_s42_text_pass_predictions.json",
+    "sha256": "bc252eb5923d73e82a079c3110433c079715e84efc497ba8f5146f992abbcd59",
+    "size_bytes": 2387095
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "prompt_stream_sha256": "1e92b027c19f639822773bff8e133b8b4eabe2fa991d6d8291c739a657d0d3a6",
+  "reused_candidate_pool_from": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_clean_s42_text_compile_predictions.json",
+  "row_count": 154,
+  "runtime": {
+    "cuda_available": true,
+    "cuda_runtime": "12.8",
+    "executable": "/venv/main/bin/python",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "torch": "2.8.0+cu128"
+  },
+  "schema_version": 1,
+  "scoring_tests_visible_to_policy": false,
+  "seed": 42,
+  "source_files": [
+    {
+      "path": "/workspace/scripts/evaluation/graph_inference_antigravity.py",
+      "sha256": "e0809dfd07afce64e43c0f19d5a7afde38ca6f574056cbe0236ce2d6ab27c6b4",
+      "size_bytes": 25443
+    },
+    {
+      "path": "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+      "sha256": "7b73bc4bc6fce609963c52e8facc21bde5ef367850535cc7ab5cfb4ec35039b7",
+      "size_bytes": 68343
+    },
+    {
+      "path": "/workspace/models/hierarchical_graph_encoder_antigravity.py",
+      "sha256": "50441fe63ad0466d63684731a2f4437d83c644cd328ecc41f14a689f08db8ade",
+      "size_bytes": 10811
+    },
+    {
+      "path": "/workspace/models/graphcodebert_tensor_builder.py",
+      "sha256": "ad0b2abf10d2eeaac40a5c2f9c63fc54581f6cfc802fc09c13c43f9d9e8080ea",
+      "size_bytes": 6748
+    },
+    {
+      "path": "/workspace/models/pyg_cfg_dataset.py",
+      "sha256": "4e8f77fe366d0c1223ec7923f66fca50136d83b797214ec120e0ee6a9034b80e",
+      "size_bytes": 3325
+    },
+    {
+      "path": "/workspace/scripts/data/cfg_extractor.py",
+      "sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce",
+      "size_bytes": 22143
+    },
+    {
+      "path": "/workspace/scripts/data/dfg_extractor.py",
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+      "size_bytes": 17964
+    }
+  ]
+}

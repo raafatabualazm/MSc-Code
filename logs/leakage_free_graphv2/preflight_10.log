@@ -1,0 +1,333 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/test_graph_preprocessing_fixes.py
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 13:32:50.168000 32928 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+Traceback (most recent call last):
+  File "C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\scripts\data\test_graph_preprocessing_fixes.py", line 331, in <module>
+    main()
+  File "C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\scripts\data\test_graph_preprocessing_fixes.py", line 326, in main
+    test_tensor_builder(snapshot)
+  File "C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\scripts\data\test_graph_preprocessing_fixes.py", line 193, in test_tensor_builder
+    t_long_edges = edges_builder.build_block_tensors(long_instrs, {"nodes": [], "edges": [], "instruction_to_nodes": {}})
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\models\graphcodebert_tensor_builder.py", line 119, in build_block_tensors
+    raise ValueError(
+ValueError: Block tokenization exceeds GraphCodeBERT budget: 3600 code tokens > 510; regenerate CFG with a smaller GRAPH_MAX_BLOCK_INSTRS
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/test_graph_preprocessing_fixes.py
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 13:34:50.628000 33592 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+  ok: strict graph-v2 rejects oversized blocks
+  ok: legacy-compatible edges mode reclaims the 8-token reserve
+  ok: roberta: code starts at 2
+  ok: roberta: pads at padding_idx=1
+  ok: roberta: max position < 514
+  ok: roberta: DFG tokens at position 0
+
+ALL 58 CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/test_graph_preprocessing_fixes.py
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:15:17.649000 35632 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 xchg reads and writes both operands
+  ok: x86 idiv implicit operands
+  ok: x86 cqo implicit operands
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm stxr status destination
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+  ok: strict graph-v2 rejects oversized blocks
+  ok: legacy-compatible edges mode reclaims the 8-token reserve
+  ok: roberta: code starts at 2
+  ok: roberta: pads at padding_idx=1
+  ok: roberta: max position < 514
+  ok: roberta: DFG tokens at position 0
+
+ALL 62 CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/test_graph_preprocessing_fixes.py
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:18:58.385000 38524 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 xchg reads and writes both operands
+  ok: x86 idiv implicit operands
+  ok: x86 cqo implicit operands
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm stxr status destination
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+  ok: strict graph-v2 rejects oversized blocks
+  ok: legacy-compatible edges mode reclaims the 8-token reserve
+  ok: roberta: code starts at 2
+  ok: roberta: pads at padding_idx=1
+  ok: roberta: max position < 514
+  ok: roberta: DFG tokens at position 0
+
+ALL 62 CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/datasets/synthetic_pool_clean_cfg.jsonl --output data/datasets/synthetic_pool_graphv2.jsonl --rejected data/datasets/synthetic_pool_graphv2.rejected.jsonl --summary data/datasets/synthetic_pool_graphv2.summary.json --expected_input_rows 1726 --expected_output_rows 1726 --max_block_instrs 20 --max_dataflow_edges 0
+{
+  "blocks": 86085,
+  "cfg_edges": 120582,
+  "dataflow_edges": 280591,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 0,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\datasets\\synthetic_pool_clean_cfg.jsonl",
+  "input_rows": 1726,
+  "input_sha256": "754be81dd8ade6cfe80fb651bbf06c792d2f2d2bd98584ca5fc37f522e38c018",
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 49.87543453070683,
+  "mean_cfg_edges_per_row": 69.86210892236384,
+  "mean_dataflow_edges_per_row": 162.56720741599074,
+  "output": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+  "output_rows": 1726,
+  "output_sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621",
+  "pruned_blocks": 7,
+  "rejected": "data\\datasets\\synthetic_pool_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

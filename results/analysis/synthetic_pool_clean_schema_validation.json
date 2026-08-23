@@ -1,0 +1,6 @@
+{
+  "pool": "data\\datasets\\synthetic_pool_clean.jsonl",
+  "rows": 1726,
+  "problems": [],
+  "functional": null
+}

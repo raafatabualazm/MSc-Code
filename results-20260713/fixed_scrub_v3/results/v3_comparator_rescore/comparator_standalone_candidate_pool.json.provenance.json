@@ -1,0 +1,36 @@
+{
+  "schema_version": "fixed-scrub-v3-standalone-pool-projection-v1",
+  "diagnostic_role": "secondary_standalone_compile",
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_count": 1540,
+  "candidate_stream_sha256": "398e3ab262cbe4d88f84ecc060284866abf27a3f0126728730362d89a047a44a",
+  "candidate_stream_preserved": true,
+  "pool_is_candidate_only": true,
+  "pool_row_keys": [
+    "id",
+    "predictions"
+  ],
+  "opaque_id_scheme": "standalone_row_{one_based_index:04d}",
+  "semantic_identifiers_preserved": false,
+  "hidden_evaluation_metadata_preserved": false,
+  "inputs": {
+    "predictions": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_predictions.json",
+      "sha256": "474dac0836c3810fa6fdad176c60021e08e0f3d722365672927c1f36484e0118",
+      "size_bytes": 1064404
+    }
+  },
+  "output": {
+    "candidate_pool": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_standalone_candidate_pool.json",
+      "sha256": "caf67104218141e6c15baa2d5c1a354487c900289525cec299061a69620e9765",
+      "size_bytes": 779806
+    }
+  },
+  "projector": {
+    "path": "/workspace/scripts/evaluation/project_fixed_scrub_v3_standalone_pool.py",
+    "sha256": "2068cfbd6a3a31a53332fab6d64feaf1d0ac8066b52a052b5ec98c1fff88c2a4",
+    "size_bytes": 7427
+  }
+}

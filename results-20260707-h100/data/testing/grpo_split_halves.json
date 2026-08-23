@@ -1,0 +1,781 @@
+{
+  "rule": "even row index -> RL train half; odd row index -> held out",
+  "source": "data\\testing\\grpo_data.jsonl",
+  "total": 154,
+  "train_half_indices": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    62,
+    64,
+    66,
+    68,
+    70,
+    72,
+    74,
+    76,
+    78,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    96,
+    98,
+    100,
+    102,
+    104,
+    106,
+    108,
+    110,
+    112,
+    114,
+    116,
+    118,
+    120,
+    122,
+    124,
+    126,
+    128,
+    130,
+    132,
+    134,
+    136,
+    138,
+    140,
+    142,
+    144,
+    146,
+    148,
+    150,
+    152
+  ],
+  "heldout_half_indices": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29,
+    31,
+    33,
+    35,
+    37,
+    39,
+    41,
+    43,
+    45,
+    47,
+    49,
+    51,
+    53,
+    55,
+    57,
+    59,
+    61,
+    63,
+    65,
+    67,
+    69,
+    71,
+    73,
+    75,
+    77,
+    79,
+    81,
+    83,
+    85,
+    87,
+    89,
+    91,
+    93,
+    95,
+    97,
+    99,
+    101,
+    103,
+    105,
+    107,
+    109,
+    111,
+    113,
+    115,
+    117,
+    119,
+    121,
+    123,
+    125,
+    127,
+    129,
+    131,
+    133,
+    135,
+    137,
+    139,
+    141,
+    143,
+    145,
+    147,
+    149,
+    151,
+    153
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "id": "0.dart"
+    },
+    {
+      "index": 1,
+      "id": "1.dart"
+    },
+    {
+      "index": 2,
+      "id": "2.dart"
+    },
+    {
+      "index": 3,
+      "id": "3.dart"
+    },
+    {
+      "index": 4,
+      "id": "4.dart"
+    },
+    {
+      "index": 5,
+      "id": "5.dart"
+    },
+    {
+      "index": 6,
+      "id": "6.dart"
+    },
+    {
+      "index": 7,
+      "id": "7.dart"
+    },
+    {
+      "index": 8,
+      "id": "8.dart"
+    },
+    {
+      "index": 9,
+      "id": "9.dart"
+    },
+    {
+      "index": 10,
+      "id": "10.dart"
+    },
+    {
+      "index": 11,
+      "id": "11.dart"
+    },
+    {
+      "index": 12,
+      "id": "12.dart"
+    },
+    {
+      "index": 13,
+      "id": "13.dart"
+    },
+    {
+      "index": 14,
+      "id": "14.dart"
+    },
+    {
+      "index": 15,
+      "id": "15.dart"
+    },
+    {
+      "index": 16,
+      "id": "16.dart"
+    },
+    {
+      "index": 17,
+      "id": "17.dart"
+    },
+    {
+      "index": 18,
+      "id": "18.dart"
+    },
+    {
+      "index": 19,
+      "id": "19.dart"
+    },
+    {
+      "index": 20,
+      "id": "20.dart"
+    },
+    {
+      "index": 21,
+      "id": "21.dart"
+    },
+    {
+      "index": 22,
+      "id": "22.dart"
+    },
+    {
+      "index": 23,
+      "id": "24.dart"
+    },
+    {
+      "index": 24,
+      "id": "26.dart"
+    },
+    {
+      "index": 25,
+      "id": "27.dart"
+    },
+    {
+      "index": 26,
+      "id": "28.dart"
+    },
+    {
+      "index": 27,
+      "id": "29.dart"
+    },
+    {
+      "index": 28,
+      "id": "30.dart"
+    },
+    {
+      "index": 29,
+      "id": "31.dart"
+    },
+    {
+      "index": 30,
+      "id": "33.dart"
+    },
+    {
+      "index": 31,
+      "id": "34.dart"
+    },
+    {
+      "index": 32,
+      "id": "35.dart"
+    },
+    {
+      "index": 33,
+      "id": "36.dart"
+    },
+    {
+      "index": 34,
+      "id": "37.dart"
+    },
+    {
+      "index": 35,
+      "id": "39.dart"
+    },
+    {
+      "index": 36,
+      "id": "40.dart"
+    },
+    {
+      "index": 37,
+      "id": "41.dart"
+    },
+    {
+      "index": 38,
+      "id": "42.dart"
+    },
+    {
+      "index": 39,
+      "id": "43.dart"
+    },
+    {
+      "index": 40,
+      "id": "44.dart"
+    },
+    {
+      "index": 41,
+      "id": "45.dart"
+    },
+    {
+      "index": 42,
+      "id": "46.dart"
+    },
+    {
+      "index": 43,
+      "id": "47.dart"
+    },
+    {
+      "index": 44,
+      "id": "48.dart"
+    },
+    {
+      "index": 45,
+      "id": "49.dart"
+    },
+    {
+      "index": 46,
+      "id": "51.dart"
+    },
+    {
+      "index": 47,
+      "id": "52.dart"
+    },
+    {
+      "index": 48,
+      "id": "53.dart"
+    },
+    {
+      "index": 49,
+      "id": "54.dart"
+    },
+    {
+      "index": 50,
+      "id": "55.dart"
+    },
+    {
+      "index": 51,
+      "id": "56.dart"
+    },
+    {
+      "index": 52,
+      "id": "57.dart"
+    },
+    {
+      "index": 53,
+      "id": "58.dart"
+    },
+    {
+      "index": 54,
+      "id": "59.dart"
+    },
+    {
+      "index": 55,
+      "id": "60.dart"
+    },
+    {
+      "index": 56,
+      "id": "61.dart"
+    },
+    {
+      "index": 57,
+      "id": "62.dart"
+    },
+    {
+      "index": 58,
+      "id": "63.dart"
+    },
+    {
+      "index": 59,
+      "id": "64.dart"
+    },
+    {
+      "index": 60,
+      "id": "65.dart"
+    },
+    {
+      "index": 61,
+      "id": "66.dart"
+    },
+    {
+      "index": 62,
+      "id": "67.dart"
+    },
+    {
+      "index": 63,
+      "id": "68.dart"
+    },
+    {
+      "index": 64,
+      "id": "69.dart"
+    },
+    {
+      "index": 65,
+      "id": "70.dart"
+    },
+    {
+      "index": 66,
+      "id": "71.dart"
+    },
+    {
+      "index": 67,
+      "id": "72.dart"
+    },
+    {
+      "index": 68,
+      "id": "73.dart"
+    },
+    {
+      "index": 69,
+      "id": "74.dart"
+    },
+    {
+      "index": 70,
+      "id": "75.dart"
+    },
+    {
+      "index": 71,
+      "id": "76.dart"
+    },
+    {
+      "index": 72,
+      "id": "77.dart"
+    },
+    {
+      "index": 73,
+      "id": "78.dart"
+    },
+    {
+      "index": 74,
+      "id": "79.dart"
+    },
+    {
+      "index": 75,
+      "id": "80.dart"
+    },
+    {
+      "index": 76,
+      "id": "81.dart"
+    },
+    {
+      "index": 77,
+      "id": "82.dart"
+    },
+    {
+      "index": 78,
+      "id": "83.dart"
+    },
+    {
+      "index": 79,
+      "id": "84.dart"
+    },
+    {
+      "index": 80,
+      "id": "85.dart"
+    },
+    {
+      "index": 81,
+      "id": "86.dart"
+    },
+    {
+      "index": 82,
+      "id": "87.dart"
+    },
+    {
+      "index": 83,
+      "id": "88.dart"
+    },
+    {
+      "index": 84,
+      "id": "89.dart"
+    },
+    {
+      "index": 85,
+      "id": "90.dart"
+    },
+    {
+      "index": 86,
+      "id": "91.dart"
+    },
+    {
+      "index": 87,
+      "id": "92.dart"
+    },
+    {
+      "index": 88,
+      "id": "93.dart"
+    },
+    {
+      "index": 89,
+      "id": "94.dart"
+    },
+    {
+      "index": 90,
+      "id": "95.dart"
+    },
+    {
+      "index": 91,
+      "id": "96.dart"
+    },
+    {
+      "index": 92,
+      "id": "97.dart"
+    },
+    {
+      "index": 93,
+      "id": "98.dart"
+    },
+    {
+      "index": 94,
+      "id": "99.dart"
+    },
+    {
+      "index": 95,
+      "id": "100.dart"
+    },
+    {
+      "index": 96,
+      "id": "101.dart"
+    },
+    {
+      "index": 97,
+      "id": "102.dart"
+    },
+    {
+      "index": 98,
+      "id": "104.dart"
+    },
+    {
+      "index": 99,
+      "id": "105.dart"
+    },
+    {
+      "index": 100,
+      "id": "106.dart"
+    },
+    {
+      "index": 101,
+      "id": "107.dart"
+    },
+    {
+      "index": 102,
+      "id": "108.dart"
+    },
+    {
+      "index": 103,
+      "id": "109.dart"
+    },
+    {
+      "index": 104,
+      "id": "110.dart"
+    },
+    {
+      "index": 105,
+      "id": "111.dart"
+    },
+    {
+      "index": 106,
+      "id": "112.dart"
+    },
+    {
+      "index": 107,
+      "id": "113.dart"
+    },
+    {
+      "index": 108,
+      "id": "114.dart"
+    },
+    {
+      "index": 109,
+      "id": "115.dart"
+    },
+    {
+      "index": 110,
+      "id": "116.dart"
+    },
+    {
+      "index": 111,
+      "id": "117.dart"
+    },
+    {
+      "index": 112,
+      "id": "118.dart"
+    },
+    {
+      "index": 113,
+      "id": "119.dart"
+    },
+    {
+      "index": 114,
+      "id": "120.dart"
+    },
+    {
+      "index": 115,
+      "id": "121.dart"
+    },
+    {
+      "index": 116,
+      "id": "122.dart"
+    },
+    {
+      "index": 117,
+      "id": "123.dart"
+    },
+    {
+      "index": 118,
+      "id": "124.dart"
+    },
+    {
+      "index": 119,
+      "id": "126.dart"
+    },
+    {
+      "index": 120,
+      "id": "127.dart"
+    },
+    {
+      "index": 121,
+      "id": "128.dart"
+    },
+    {
+      "index": 122,
+      "id": "129.dart"
+    },
+    {
+      "index": 123,
+      "id": "130.dart"
+    },
+    {
+      "index": 124,
+      "id": "131.dart"
+    },
+    {
+      "index": 125,
+      "id": "132.dart"
+    },
+    {
+      "index": 126,
+      "id": "133.dart"
+    },
+    {
+      "index": 127,
+      "id": "134.dart"
+    },
+    {
+      "index": 128,
+      "id": "135.dart"
+    },
+    {
+      "index": 129,
+      "id": "136.dart"
+    },
+    {
+      "index": 130,
+      "id": "138.dart"
+    },
+    {
+      "index": 131,
+      "id": "139.dart"
+    },
+    {
+      "index": 132,
+      "id": "140.dart"
+    },
+    {
+      "index": 133,
+      "id": "141.dart"
+    },
+    {
+      "index": 134,
+      "id": "142.dart"
+    },
+    {
+      "index": 135,
+      "id": "143.dart"
+    },
+    {
+      "index": 136,
+      "id": "144.dart"
+    },
+    {
+      "index": 137,
+      "id": "145.dart"
+    },
+    {
+      "index": 138,
+      "id": "146.dart"
+    },
+    {
+      "index": 139,
+      "id": "147.dart"
+    },
+    {
+      "index": 140,
+      "id": "149.dart"
+    },
+    {
+      "index": 141,
+      "id": "150.dart"
+    },
+    {
+      "index": 142,
+      "id": "151.dart"
+    },
+    {
+      "index": 143,
+      "id": "152.dart"
+    },
+    {
+      "index": 144,
+      "id": "153.dart"
+    },
+    {
+      "index": 145,
+      "id": "154.dart"
+    },
+    {
+      "index": 146,
+      "id": "155.dart"
+    },
+    {
+      "index": 147,
+      "id": "156.dart"
+    },
+    {
+      "index": 148,
+      "id": "157.dart"
+    },
+    {
+      "index": 149,
+      "id": "158.dart"
+    },
+    {
+      "index": 150,
+      "id": "159.dart"
+    },
+    {
+      "index": 151,
+      "id": "160.dart"
+    },
+    {
+      "index": 152,
+      "id": "161.dart"
+    },
+    {
+      "index": 153,
+      "id": "163.dart"
+    }
+  ]
+}

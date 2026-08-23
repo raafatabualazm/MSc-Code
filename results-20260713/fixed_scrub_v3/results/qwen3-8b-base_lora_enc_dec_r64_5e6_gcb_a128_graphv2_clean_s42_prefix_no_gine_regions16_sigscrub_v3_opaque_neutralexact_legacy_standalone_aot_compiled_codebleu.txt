@@ -1,0 +1,8 @@
+{
+  "count": 154,
+  "compile_filter_mode": "legacy_wrapped_standalone_aot",
+  "samples_with_success": 151,
+  "mean_codebleu": 0.6738567432664222,
+  "min_codebleu": 0.4105151054241504,
+  "max_codebleu": 0.8533919914509187
+}

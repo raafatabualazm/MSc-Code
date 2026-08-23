@@ -1,0 +1,106 @@
+{
+  "schema": "antigravity-master-dataset-audit-v1",
+  "train": {
+    "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl",
+    "sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf",
+    "size_bytes": 170808909,
+    "rows": 2474,
+    "unique_ids": 2474,
+    "unique_source_fingerprints": 2474,
+    "unique_assembly_fingerprints": 2474,
+    "source_datasets": {
+      "dart_all_graphv2_train": 749,
+      "synthetic_pool_reward_clean_graphv2": 1725
+    },
+    "test_kinds": {
+      "differential_program": 720,
+      "differential_function": 29,
+      "dart_harness": 1725
+    },
+    "test_origins": {
+      "generated": 749,
+      "provided": 1725
+    },
+    "runtime_status": {
+      "not_run": 2474
+    },
+    "dataflow_origins": {
+      "source_graph_v2": 2474
+    },
+    "rows_with_dataflow": 2474,
+    "flutter_rows": 2,
+    "total_nodes": 128053,
+    "total_control_edges": 180035,
+    "total_dataflow_edges": 417720,
+    "total_test_cases": 18386,
+    "error_count": 0,
+    "errors": []
+  },
+  "heldout": {
+    "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_heldout.jsonl",
+    "sha256": "ffe25e4d21b86c5325668244b3980d3a5688c06963c7dcef97319f0ba432b4e2",
+    "size_bytes": 6722530,
+    "rows": 149,
+    "unique_ids": 149,
+    "unique_source_fingerprints": 149,
+    "unique_assembly_fingerprints": 149,
+    "source_datasets": {
+      "test_set_cfg_clean": 149
+    },
+    "test_kinds": {
+      "differential_program": 102,
+      "differential_function": 47
+    },
+    "test_origins": {
+      "generated": 149
+    },
+    "runtime_status": {
+      "not_run": 149
+    },
+    "dataflow_origins": {
+      "generated_reaching_definitions": 149
+    },
+    "rows_with_dataflow": 131,
+    "flutter_rows": 0,
+    "total_nodes": 4981,
+    "total_control_edges": 6925,
+    "total_dataflow_edges": 17956,
+    "total_test_cases": 349,
+    "error_count": 0,
+    "errors": []
+  },
+  "leakage": {
+    "source_overlap_count": 0,
+    "assembly_overlap_count": 0
+  },
+  "gzip_checks": {
+    "master_dart_cfg_dfg_train.jsonl.gz": {
+      "exists": true,
+      "compressed_sha256": "803fdf4df5ea677d5d695fd850d3fe82922bd94f7380a96860b10ed4f8633208",
+      "payload_sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf",
+      "raw_sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf",
+      "payload_matches_raw": true
+    },
+    "master_dart_cfg_dfg_heldout.jsonl.gz": {
+      "exists": true,
+      "compressed_sha256": "8e6265e0379ce4a27352e945cb8c9bed9710d338536d4373823b5de84a08ae58",
+      "payload_sha256": "ffe25e4d21b86c5325668244b3980d3a5688c06963c7dcef97319f0ba432b4e2",
+      "raw_sha256": "ffe25e4d21b86c5325668244b3980d3a5688c06963c7dcef97319f0ba432b4e2",
+      "payload_matches_raw": true
+    }
+  },
+  "rejections": {
+    "rows": 37,
+    "reasons": {
+      "duplicate_assembly_input_conflicting_target": 28,
+      "canonical_graph_or_test_static_validation_failed": 9
+    }
+  },
+  "manifest_checks": {
+    "train_rows_match": true,
+    "heldout_rows_match": true,
+    "source_overlap_match": true,
+    "assembly_overlap_match": true
+  },
+  "passed": true
+}

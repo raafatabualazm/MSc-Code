@@ -1,0 +1,30 @@
+{
+  "schema": "t5gemma2-arm-c2-production-eligibility-amendment-seal-v1",
+  "status": "fixed_before_arm_c2_training",
+  "original_arm_c": {
+    "status": "TERMINATED_PREFLIGHT_INFEASIBLE",
+    "optimizer_steps": 0,
+    "gpu_training_started": false,
+    "preregistration_sha256": "aa8fb9b3ba258a0ee117e8c7f98acb55d92fba2d79ef4b0df7b093d57135dcf6",
+    "preregistration_seal_sha256": "c0aa14cecb80681515c05a9db6bedaa89eebfb84660fb5b8932e2ee9ec977f96"
+  },
+  "amendment_document_sha256": "8226d0ebd55476088d2e2a5cbfb06e573e92539012c4dc4ba551417158e261ed",
+  "corrected_production_evaluator_sha256": "5a76523647c8bef54cf0beba611c5c29611c02cdf9053273ca5e531afe14d23d",
+  "completion_attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+  "ranking_schema": "t5gemma2-typed-fold-gold-replay-dataset-v1",
+  "seed": 42,
+  "post_direct_disjoint_rows": 2315,
+  "source_unique_candidates": 2314,
+  "production_verifier_eligible_candidates": 2312,
+  "production_verifier_ineligible_candidates": 2,
+  "production_ineligible_task_ids_sha256": "4907b672737c0b2886b80dd4a4f8f9136b1e8b02f1a66793123f423b843c7b28",
+  "selected_rows": 458,
+  "selected_task_ids_sha256": "6da49d120c902fde194c09fa14f7718bb379d8e676da8071211e1ac95da8e9df",
+  "selected_source_sha256s_sha256": "1c818f33808c4142eb7b148733ce6879a779f795f1855e66533832baa99b31d6",
+  "selected_target_sha256s_sha256": "c7031487c72a2edba0baca1d8fe9eadc76232136c439a0f1fc95b25e2044e8f6",
+  "uses_arm_b_predictions_or_scores_for_selection": false,
+  "tests_model_visible": false,
+  "diagnostics_persisted": false,
+  "automatic_promotion_permitted": false,
+  "verpo_status": "HOLD"
+}

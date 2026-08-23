@@ -1,0 +1,9 @@
+[PASS] map: every scrubbed task maps to a benchmark row 
+[PASS] G1 drift(strict): byte-exact instructions modulo <symbol> masking + edges mismatched=0 []
+[PASS] G2 leak: no original identifiers >3 chars in public rows {}
+    (benign SDK-context collisions: {'common': 1, 'add': 30, 'encode': 1}; short-name mnemonics: {'add': 645})
+[PASS] G3 neutrality+hygiene 
+[PASS] G3 shuffle: public order differs from private order 
+[PASS] G4 stub-compile: >= 150 of 154 accept failed=4 [('sigtyped_51bda7a464b7', "stability_run_1/1: test.dart:4:21: Error: Undefined name 'solution'.\n  final candidate = solution;\n "), ('sigtyped_f7d4c4ab123e', "stability_run_1/1: test.dart:6:25: Error: The argument type '(int, int)' can't be assigned to the pa"), ('sigtyped_c251b6ab84d4', "stability_run_1/1: test.dart:4:21: Error: Undefined name 'Strongest_Extension'.\n  final candidate = "), ('sigtyped_52725b368cec', 'stability_run_1/1: test.dart:12:28: Error: Undefined name \'a\'.\n  expect(implementation("#$a^D"), "#$')]
+[PASS] G5 references: compile 151/154 (expect 151), pass 142/154 (expect 142) 
+GATES: ALL PASS

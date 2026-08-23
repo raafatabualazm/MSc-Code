@@ -1,0 +1,25 @@
+{
+  "duplicate_source_rows": 168,
+  "input_rows": 941,
+  "inputs": [
+    {
+      "path": "data\\datasets\\dart_all_rebuilt_train.jsonl",
+      "rows": 897,
+      "sha256": "210479b11d97be2fc0092d9e322cd8e76d725c4ffda2ba59e1c566f47f462929"
+    },
+    {
+      "path": "data\\datasets\\dart_all_rebuilt_train_retry.jsonl",
+      "rows": 40,
+      "sha256": "afcd296207d42d1eb6aef47c105dc13688124d28caacc44d77fb509902835840"
+    },
+    {
+      "path": "data\\datasets\\dart_all_rebuilt_train_tree_shaken.jsonl",
+      "rows": 4,
+      "sha256": "6535f4cbbb2f37baaacf6c07c61d4f99cb8812fdac5fa27d7a98110520aea470"
+    }
+  ],
+  "output": "data\\datasets\\dart_all_rebuilt_train_unique.jsonl",
+  "output_rows": 773,
+  "output_sha256": "b2db9828af7ebe287ac6b40dc53547c2e37386696a2664796910f4a4573b551f",
+  "schema": "antigravity-source-deduplicated-merge-v1"
+}

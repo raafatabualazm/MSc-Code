@@ -1,0 +1,13 @@
+{
+  "rows": 1725,
+  "static_failures": 0,
+  "assertions_min": 4,
+  "assertions_max": 14,
+  "helper_names": [
+    "expect",
+    "expectList",
+    "expectMap",
+    "expectSet"
+  ],
+  "static_failure_rows": []
+}

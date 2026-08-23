@@ -1,0 +1,64 @@
+{
+  "schema": "t5gemma2-f2-seed47-extension-preregistration-v1",
+  "status": "sealed_before_any_seed47_generation",
+  "registered_date_utc": "2026-08-05",
+  "amends": {
+    "predecessor_design": "t5gemma2-f2-intervention-multiseed (seeds 42-46)",
+    "reason": "The five-seed paired sign-flip design has a minimum attainable two-sided p of 2/32 = 0.0625, so no contrast can reach alpha = 0.05 regardless of magnitude. One additional fresh seed makes a single prespecified test attainable (2/64 = 0.03125)."
+  },
+  "design": {
+    "new_seed": 47,
+    "seed_is_fresh": "seed 47 has produced no generation anywhere in this programme",
+    "arms": ["baseline", "typed_opaque_contract", "semantic_body_swap"],
+    "arm_excluded": {
+      "constants_stripped": "excluded on identifiability, fixed before any data: its five-seed difference vector contains two zero blocks (0 cannot be sign-flipped), so even a sixth all-sign-consistent block cannot bring its minimum attainable p below 0.0625. Running it cannot change its status and is not performed."
+    },
+    "tasks": 175,
+    "confirmatory_denominator": "leakage-clean 174 (sigless_8bf7f40ca356 excluded, as in the manuscript)",
+    "k": 10,
+    "generation_batch_size": 10,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_source_tokens": 32768,
+    "max_new_tokens": 4096,
+    "attention_implementation": "sdpa",
+    "bf16": true,
+    "scorer_timeout_seconds": 30,
+    "scorer_stability_runs": 2
+  },
+  "hypotheses_and_decision_rule": {
+    "primary_test": {
+      "contrast": "typed_opaque_contract vs baseline",
+      "metric": "pass_at_10 on clean-174",
+      "test": "exact paired sign-flip over six seed blocks (2^6 = 64 arrangements), two-sided",
+      "prediction": "the seed-47 difference is positive, matching all five existing blocks; if so p = 2/64 = 0.03125 and the effect is reported as significant at alpha = 0.05",
+      "if_sign_flips_or_zero": "report the resulting exact p without further seeds"
+    },
+    "secondary_descriptive": [
+      {"contrast": "typed_opaque_contract vs baseline", "metric": "compile_at_10", "note": "reported with exact paired p, explicitly not multiplicity-corrected"},
+      {"contrast": "semantic_body_swap vs baseline", "metric": "compile_at_10", "note": "reported with exact paired p, explicitly not multiplicity-corrected"}
+    ],
+    "multiplicity_statement": "Exactly one confirmatory test is registered. Under a three-test Holm family, n=6 cannot clear the first threshold (0.03125 > 0.05/3); rather than run further seeds, the two compile contrasts are demoted to secondary and the single primary is the paper's declared primary endpoint, pass@k.",
+    "hard_stop": "No seed beyond 47 will be added after observing any seed-47 result."
+  },
+  "sealed_inputs_verified_before_upload": {
+    "dataset_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "dataset_seal_sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+    "f2_sha256": "6ba98eb496af2ef36ca1a0d460bf6e64b715c42f0b9216c64b4a8fc300ccffab",
+    "f2_manifest_sha256": "777078c9ba759f45db8908b44990306e4fa403c0bd3b825546029ea7bd49ef44"
+  },
+  "checkpoint_identity": {
+    "name": "checkpoint-optstep-000348 (original enriched SFT, 2 epoch)",
+    "base_model": "google/t5gemma-2-4b-4b",
+    "base_model_revision": "487d4acf21a4d70c70bf534265b5263c9424979e",
+    "adapter_model_safetensors_sha256_required": "83d8152edc7236a144fcb7b321f03c4dc5fcf90a1e866fa334338938ee0bdcdc",
+    "run_contract_json_sha256_required": "562c3da5f89428e6a7263ad8ec79dde9c8b6eb25c77949606277d7d80aecea4f",
+    "adapter_config_json_sha256_expected": "c21ee4458e7c9fe1321337ce22409ee2a03dfe37299c25cfc7c468a490ffb4c3",
+    "tokenizer_disclosure": "The sealed tokenizer/tokenizer.json (sha256 f5b325224482ec441ec5fbe2a5ac08c3758e0f9605f6e54368e31f736fcfb01d) is not recoverable from any surviving artifact or repository. It will be regenerated on the pod with transformers 5.9.0 from the pinned base revision; the regenerated file's sha256 will be recorded, and identity of tokenizer CONTENT will be checked against the sealed vocab_sha256 aacdb7cfcf76c202d7f7a157fda1392c83138d20e0d2b433a062e8dfd99b4c91 and special_tokens_map_sha256 a237afa0a3964f4db32b59e1031adcc948cf01b552badfdf5a96092422a19884 from the sealed SFT preflight. Any mismatch on those two content hashes aborts the run.",
+    "hardware_note": "RTX 5090 (GB202) rather than the original RTX PRO 6000 (GB202); torch 2.8.0+cu128 identical to the sealed runtime. Same-architecture GPU; bitwise generation identity with seeds 42-46 machines is not assumed and is not needed - seed 47 is a new block, not a replay."
+  },
+  "reporting": {
+    "per_seed_artifacts": "predictions + provenance sidecar + generation journal + score + evaluation journal, per arm, retained",
+    "manuscript_effect": "if the primary prediction holds, the abstract's 'nothing here is significant, and that is a fact about the design' paragraph is replaced by the n=6 primary result; the two compile contrasts remain descriptive"
+  }
+}

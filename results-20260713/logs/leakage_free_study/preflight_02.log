@@ -1,0 +1,36 @@
+
+$ /venv/main/bin/python -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+E
+======================================================================
+ERROR: test_protocol_integrity_antigravity (unittest.loader._FailedTest.test_protocol_integrity_antigravity)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_protocol_integrity_antigravity
+Traceback (most recent call last):
+  File "/venv/main/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/evaluation/test_protocol_integrity_antigravity.py", line 21, in <module>
+    from scripts.training.graph_encoder_decoder_decompiler_v2_antigravity import (
+  File "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py", line 129, in <module>
+    from models.graph_data_collator import GraphDataCollator
+ModuleNotFoundError: No module named 'models.graph_data_collator'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+$ /venv/main/bin/python -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.711s
+
+OK
+
+$ /venv/main/bin/python -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.705s
+
+OK

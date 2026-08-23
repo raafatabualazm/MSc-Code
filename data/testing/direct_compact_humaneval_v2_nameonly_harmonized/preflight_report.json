@@ -1,0 +1,56 @@
+{
+  "schema": "compact-qwen-v1-preflight",
+  "rows_retained": 2129,
+  "rows_by_role": {
+    "fit": 1975,
+    "measure": 154
+  },
+  "quarantined": 0,
+  "quarantine_reasons": {},
+  "failures_count": 0,
+  "failure_examples": [],
+  "tokens": {
+    "kind": "compact_source_only",
+    "min": 29,
+    "p50": 375,
+    "p95": 1382,
+    "p99": 2213,
+    "max": 7766,
+    "limit": 9000
+  },
+  "lossless_invariants": {
+    "lossless_domain": "scrubbed_canonical_graph",
+    "privacy_scrub_is_only_intentional_irreversibility": true,
+    "exact_instruction_entry_cfg_roundtrip_rows": 2129,
+    "dfg_regenerated_and_matched_rows": 2129,
+    "dfg_edges_matched_edge_for_edge": 189393,
+    "dfg_extractor_sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+    "unknown_tokens": 0,
+    "truncated_rows": 0,
+    "raw_fallback_is_reversible": true
+  },
+  "codebook_expansion_leakage_scan": {
+    "candidate": 0,
+    "file_uri": 0,
+    "absolute_symbol_address": 0,
+    "private_field_terms": 0
+  },
+  "passed": true,
+  "exploratory_full_release_fit": false,
+  "contract": {
+    "compact_codec_sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4",
+    "compact_codebook_sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+    "compact_tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "base_vocab_size": 151936,
+    "tokenizer_vocab_size": 151669,
+    "model_vocab_size": 151936,
+    "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "decoder_model": "Qwen/Qwen3-8B",
+    "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "target_function": "candidate",
+    "target_language": "Dart",
+    "tokenizer_fingerprint_sha256": "c1e79a88eb4b3e2a96972edf99f6b28e6f39ed832ae95e4727ecdb425a25de4a",
+    "source_token_expansion_count": 20475,
+    "runtime_symbol_policy_sha256": "f5057dbb432e84ace3181bd4838795ae2f6c2315e4bebea6ad56be24ab461ed6"
+  }
+}

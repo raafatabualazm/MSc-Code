@@ -1,0 +1,193 @@
+{
+  "audit": {
+    "existing_train_holdout_exclusions": 0,
+    "existing_train_input_rows": 2211,
+    "existing_train_internal_duplicates": 1,
+    "existing_train_retained_rows": 2210,
+    "fresh_candidate_rows": 1666,
+    "fresh_leftovers_considered": 1136,
+    "fresh_training_rejections": 17,
+    "fresh_training_retained_pools": {
+      "base_llm": 450,
+      "topup_chatgpt_s46": 119,
+      "topup_s44": 226,
+      "topup_s45": 324
+    },
+    "fresh_training_retained_providers": {
+      "azure:gpt-chat-latest": 548,
+      "deepseek:deepseek-v4-pro": 521,
+      "openrouter:anthropic/claude-sonnet-4.6": 50
+    },
+    "fresh_training_retained_rows": 1119,
+    "fresh_training_retained_strata": {
+      "high": 762,
+      "low": 9,
+      "mid": 348
+    },
+    "manifest_external_exclusions": 30,
+    "rejection_counts": {
+      "existing_train:existing_train_set:alpha_structural_source": 1,
+      "fresh_candidate:external_corpora:near_source": 30,
+      "fresh_candidate:fresh_training_set:near_source": 6,
+      "fresh_candidate:sealed_holdout:near_source": 11
+    },
+    "sealed_holdout_rows": 500
+  },
+  "created_utc": "2026-07-17T18:02:49+00:00",
+  "inputs": {
+    "existing_train": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\master_dart_graphv2_signature_scrubbed_private.jsonl",
+      "rows": 2211,
+      "sha256": "03acc6dd45c861fb6517048a4b8be66a428dcb5cde7cbf3ccdea302fdc08f52b",
+      "size_bytes": 103814880
+    },
+    "existing_train_manifest": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\master_dart_graphv2_scrubbed_manifest.json",
+      "sha256": "781d458cfc8febb81b2f18ac20b81722eb01ba2fd0b86404bf9da1816910a473",
+      "size_bytes": 3699
+    },
+    "fresh_pools": [
+      {
+        "extractor_sha256": [
+          "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1"
+        ],
+        "graph_schema": [
+          "antigravity-graph-v2.1"
+        ],
+        "name": "base_llm",
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_eval_llm_graphv2.jsonl",
+        "realized_strata": {
+          "high": 475,
+          "low": 37,
+          "mid": 76
+        },
+        "rows": 588,
+        "sha256": "9d1fec926ce5721bdc13e3293720f7e21d8057fe57236bc58f569fb8bb88d9f2",
+        "size_bytes": 36647710
+      },
+      {
+        "extractor_sha256": [
+          "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1"
+        ],
+        "graph_schema": [
+          "antigravity-graph-v2.1"
+        ],
+        "name": "topup_s44",
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_eval_lowmid_topup_s44_graphv2.jsonl",
+        "realized_strata": {
+          "high": 176,
+          "low": 19,
+          "mid": 129
+        },
+        "rows": 324,
+        "sha256": "6bdef7b566fc5c083fb09f4329d359139a5e028f2b643d33c9e7ec2b1c1d1cb4",
+        "size_bytes": 10663268
+      },
+      {
+        "extractor_sha256": [
+          "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1"
+        ],
+        "graph_schema": [
+          "antigravity-graph-v2.1"
+        ],
+        "name": "topup_s45",
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_eval_low_topup_deepseek_s45_graphv2.jsonl",
+        "realized_strata": {
+          "high": 209,
+          "low": 107,
+          "mid": 242
+        },
+        "rows": 558,
+        "sha256": "162a02882798c99166d65e31344a0ca3cb4d9374a04e7589b1643604c3941020",
+        "size_bytes": 15376796
+      },
+      {
+        "extractor_sha256": [
+          "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1"
+        ],
+        "graph_schema": [
+          "antigravity-graph-v2.1"
+        ],
+        "name": "topup_chatgpt_s46",
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_eval_low_topup_chatgpt_s46_graphv2.jsonl",
+        "realized_strata": {
+          "high": 69,
+          "low": 24,
+          "mid": 103
+        },
+        "rows": 196,
+        "sha256": "1f16c3e5060cc15be7e24f879978a40171a79b29e91054eecbeb751df3299101",
+        "size_bytes": 5208057
+      }
+    ],
+    "hybrid_data_controls": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\hybrid_training_patch_v2_3\\scripts\\training\\hybrid_data_controls.py",
+      "sha256": "a06859dbfef6a3ebed026e6a5f9e4e6ab98a94ec1c33c6c973a9f73ceffbd78a",
+      "size_bytes": 63426
+    },
+    "seal_manifest": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_graphv2_holdout_s44.manifest.json",
+      "sha256": "89c57b6c0fb46680c051ffd28e44e31924dd022431ce4fa442b119afbddb67d8",
+      "size_bytes": 290808
+    },
+    "sealed_holdout": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\fresh_graphv2_holdout_s44.jsonl",
+      "rows": 500,
+      "sha256": "b4e2dd5cfeb3309055a260e508086ca047ac9f4ac550ad4280f38894f829259c",
+      "size_bytes": 15260164
+    }
+  },
+  "invariants": {
+    "existing_train_partition_exact": true,
+    "fresh_candidate_partition_exact": true,
+    "fresh_output_has_zero_holdout_overlap": true,
+    "fresh_output_has_zero_internal_overlap": true,
+    "fresh_output_has_zero_master_overlap": true,
+    "master_output_has_zero_exact_or_alpha_internal_duplicates": true,
+    "master_output_has_zero_holdout_overlap": true,
+    "sealed_holdout_hash_unchanged": true,
+    "sealed_holdout_order_matches_manifest": true
+  },
+  "outputs": {
+    "fresh_extra_train_input": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\training\\fresh_graphv2_extra_s44_train_input.jsonl",
+      "rows": 1119,
+      "sha256": "90939f305db5c57a68fb6ae9e57d425f9657b0062d15aa4cba804b6a8a996609",
+      "size_bytes": 51601042
+    },
+    "holdout_bound_master_train_input": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\training\\scrubbed_master_v2_fresh_s44_train_input.jsonl",
+      "rows": 2210,
+      "sha256": "c16c91af75ea516984f04bb91fcbcbc7af94c28c47205aafe16102af9ba75d7f",
+      "size_bytes": 103806569
+    },
+    "rejections": {
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\training\\fresh_graphv2_extra_s44_train_input.rejections.jsonl",
+      "rows": 48,
+      "sha256": "d9a6edab77bb2ae42f5237580a8c1a4a58497bee20e98e9629b3cc24d2003f9f",
+      "size_bytes": 20663
+    }
+  },
+  "parameters": {
+    "low_max": 14,
+    "mid_max": 25,
+    "seed": 44,
+    "sequence_matcher": 0.7,
+    "token_jaccard": 0.55
+  },
+  "policy": {
+    "checks": [
+      "exact neutral source fingerprint",
+      "alpha-structural source fingerprint",
+      "v2.3-compatible exact/alpha deduplication within the scrubbed master",
+      "holdout name collision for fresh candidates",
+      "token Jaccard plus SequenceMatcher near-source match"
+    ],
+    "fresh_rows_are_raw_phase0_inputs": true,
+    "sealed_holdout_is_immutable": true,
+    "source_pools_are_immutable": true,
+    "training_interpretation": "same-corpus held-out split"
+  },
+  "schema_version": "fresh-graphv2-training-inputs-v1",
+  "stage": "holdout_bound_training_input_split"
+}

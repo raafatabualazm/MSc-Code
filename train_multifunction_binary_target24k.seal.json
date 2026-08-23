@@ -1,0 +1,54 @@
+{
+  "adapter_contract_sha256": "255af3f968fc04e5f6f80c78ebc1912355d7785aad230ed81a84c59680218cae",
+  "adapter_script_sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66",
+  "completion_attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+  "contract_sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+  "dart_version": "Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on \"linux_x64\"",
+  "evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6",
+  "executable_reward_eligible_rows": 1578,
+  "execution_ineligible_task_ids": [
+    "sigless_67bb88ce699e",
+    "sigless_bfde11b99b84"
+  ],
+  "f2_manifest": {
+    "bytes": 7455,
+    "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl.manifest.json",
+    "sha256": "231227e9aa6f31c793ff097e8167972975e9f94871c9ea682d6a0dc996ed4af8",
+    "size_bytes": 7455
+  },
+  "f2_output": {
+    "bytes": 9606976,
+    "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl",
+    "sha256": "f86032533f7f3e1bade9280e5bf6e28858daf25e34167837fec160a34b2370ba",
+    "size_bytes": 9606976
+  },
+  "frontier_f2_schema": "lossless-semantic-f2",
+  "heldout_measure_only": false,
+  "output": {
+    "bytes": 16562502,
+    "path": "/workspace/multifunction_v1/build/train_multifunction_binary.jsonl",
+    "sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18",
+    "size_bytes": 16562502
+  },
+  "output_sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18",
+  "quarantine_sha256": "8d29f8a4c2abae58a8930ef0dc8c617b080ba1294b1791e391b5d3914ef93e58",
+  "raw_source_names_serialized": false,
+  "representation_schema": "binary-multifunction-v1-semantic-adapter-v1",
+  "rows": 1580,
+  "sanitation_schema": "compact-target-harness-sanitation-v1",
+  "sanitized_base_seal_sha256": "0bfd2007657a7523f2754a42d9527501dd1fa76ca5c3f6b876b63768e2b18c32",
+  "sanitized_base_sha256": "0a2d94e279ae04cb1e9ea656ff5222401e6970f41a519e9234ea74f8053c3db4",
+  "sanitizer_sha256": "30534ff49c49627c22baa560e5fcc115e24abcefed527a4875cc2ea09698723b",
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "fit",
+  "source_function_bundles_sha256": "d2a019fe14e500bf1d242367e3b52b644f3e166bb8e3b5ad47e980e6ccb688d2",
+  "source_symbol_attestation_binding_sha256_sequence": "e18b6e10ac7adabab77ac1f936ed4b0aad7f3cfee7f4de033c9ebfc9b697f4c2",
+  "source_symbol_attestation_file_sha256": "4aabcd4576ceaefbc1460e7aee7a5876c4acbeab9b0d834048b45f691fdb2c02",
+  "source_symbol_attestation_is_keyed": true,
+  "source_symbol_attestation_key_id_sha256": "02347c2e61fe0c0402027edb0ac5718b00c42da81ddd308ec133fab67dd974ab",
+  "source_symbol_attestation_used": true,
+  "stability_runs": 2,
+  "task_set_sha256": "04cba1dc6421f0a1d598ab68308f613daaae717f304d94fecb715689db7ff9f4",
+  "training_allowed": true,
+  "training_objective_scope": "sequence_imitation_all_train"
+}

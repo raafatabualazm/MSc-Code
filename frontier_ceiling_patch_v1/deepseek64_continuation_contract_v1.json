@@ -1,0 +1,98 @@
+{
+  "schema": "deepseek-64k-continuation-contract-v1",
+  "created_at": "2026-07-26T00:00:00Z",
+  "purpose": "Continue only unresolved slots from the stopped 128K DeepSeek-V4-Pro paired frontier runs at a fixed 65536-token completion cap.",
+  "workspace": "/workspace",
+  "run_root": "artifacts/frontier_ceiling_two_enrichments/runs",
+  "runner": {
+    "path": "frontier_ceiling_patch_v1/frontier_passk.py",
+    "sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead",
+    "core_path": "frontier_ceiling_patch_v1/frontier_core.py",
+    "core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258"
+  },
+  "policy": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-v4-pro",
+    "k": 10,
+    "source_max_output_tokens": 131072,
+    "continuation_max_output_tokens": 65536,
+    "max_prompt_tokens": 12000,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "timeout_seconds": 7200,
+    "max_attempts_per_slot": 6,
+    "retry_base_seconds": 2.0,
+    "retry_max_seconds": 30.0,
+    "workers": 10,
+    "eval_timeout_seconds": 30,
+    "eval_stability_runs": 2,
+    "expected_task_count": 175,
+    "evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6",
+    "dart_sha256": "c03ad868b5c53e31461b0fef22dc6eb6aeb56b7567efff6ca488ce9c4a6f8a6a",
+    "deepseek_env_file": "data.env",
+    "selection_uses_only_terminal_presence": true,
+    "selection_ignores_compile_and_pass_outcomes": true,
+    "source_terminal_without_outcome_is_evaluated_before_api": true,
+    "source_journals_are_never_modified": true,
+    "dangling_dispatch_intent_fails_closed": true
+  },
+  "arms": {
+    "opus": {
+      "pair_arm_key": "opus_real_fn0_cfg",
+      "dataset_label": "opus_real_fn0_cfg_175",
+      "source_run": "opus_real_deepseek_v4pro_k10_exact128k",
+      "continuation_run": "opus_real_deepseek_v4pro_k10_64k_continuation_v1",
+      "source_config_sha256": "4e4e3c585a0dbe8b546dd6296df21bd6a9de4aca7f39b09e2586810dfd023bfd",
+      "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+      "files": {
+        "provenance.json": "d4be5c4ff0bdbc61fbc544d421219999b44afda8ad1ea00c46d761a41f035e8c",
+        "tasks.jsonl": "f4957a58bd56a9fbe35147d82bf474015da1d75d0f6b53a12e01f3ee052aa9e6",
+        "prompts.jsonl": "b2ef13fefc180ba78c69c0dc546b0f1b25faa0547e1de46a85b102d0317a76ef",
+        "attempts.jsonl": "df13f43088b4b35d05e742041928dd2348a80b8debabbe82a96bfd31de55ef3e",
+        "outcomes.jsonl": "8e4ce957180b00f54c30150898d3831430778d822b22d61227345dfaa71a9ea6"
+      },
+      "expected_snapshot_counts": {
+        "terminal_slots": 976,
+        "source_outcomes": 930,
+        "terminal_without_outcome": 46,
+        "missing_slots": 774
+      }
+    },
+    "codex": {
+      "pair_arm_key": "codex_multifunction_cfg",
+      "dataset_label": "codex_multifunction_cfg_175",
+      "source_run": "codex_multifunction_deepseek_v4pro_k10_exact128k",
+      "continuation_run": "codex_multifunction_deepseek_v4pro_k10_64k_continuation_v1",
+      "source_config_sha256": "1bd3552110c7fb7c29c0562838ae44aa94f5cbf2a839a33ac005cdc94b2ca217",
+      "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+      "files": {
+        "provenance.json": "14bb64d9c8a5903dec94c186df49d8d617a07e73ea6f8e355de9f92c844c25c2",
+        "tasks.jsonl": "2cb2d2c60c5af5acae4238a2f7075653118d65152c76d0c01402b2edb14bfb78",
+        "prompts.jsonl": "5abd0e37ae6ddcb6664700bd97ca518912b0113e29fe8a5722ab578bc75dbc04",
+        "attempts.jsonl": "c41b708e7d655ef970d4be814011d0e8ff9099dfbd7e539fa910ba145ea15dea",
+        "outcomes.jsonl": "30bffee2927b102fb1326c9cb4a347e705e3d961640e356fb2ab5734dc2d734b"
+      },
+      "expected_snapshot_counts": {
+        "terminal_slots": 1014,
+        "source_outcomes": 970,
+        "terminal_without_outcome": 44,
+        "missing_slots": 736
+      }
+    }
+  },
+  "reporting": {
+    "effective_attempts_contains_exactly_one_terminal_row_per_slot": true,
+    "effective_outcomes_contains_exactly_one_outcome_per_terminal": true,
+    "source_rows_are_copied_byte_for_byte": true,
+    "capacity_strata": [
+      131072,
+      65536
+    ],
+    "task_composition_strata": [
+      "all_128k",
+      "mixed_128k_64k",
+      "all_64k"
+    ],
+    "partial_pass_at_k_is_withheld": true
+  }
+}

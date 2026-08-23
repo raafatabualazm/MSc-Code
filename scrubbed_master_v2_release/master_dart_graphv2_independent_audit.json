@@ -1,0 +1,68 @@
+{
+  "schema": "scrubbed-release-audit-v1",
+  "counts": {
+    "public": 2211,
+    "private": 2211,
+    "ledger": 2211,
+    "quarantine": 263
+  },
+  "schema_parity": {
+    "public_keys_match_reference": true,
+    "private_keys_match_reference": true
+  },
+  "graphs": {
+    "blocks": 109608,
+    "cfg_edges": 153667,
+    "dfg_edges": 201798
+  },
+  "quarantine_reasons": {
+    "main_requires_process_global_io": 130,
+    "jit_test_failed": 38,
+    "duplicate_transformed_assembly": 30,
+    "reference_program_failed": 21,
+    "jit_batch_failure": 20,
+    "reference_oracle_failed": 8,
+    "a bytes-like object is required, not 'str'": 7,
+    "oracle_line_count": 4,
+    "aot_test_failed": 3,
+    "duplicate_transformed_source": 1,
+    "semantic_function_name_in_literal": 1
+  },
+  "fresh_compile_samples": [
+    {
+      "index": 0,
+      "task_id": "sigless_6c7cc82cf730",
+      "jit": 0,
+      "aot_compile": 0,
+      "aot_run": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "index": 508,
+      "task_id": "sigless_921a14a5f720",
+      "jit": 0,
+      "aot_compile": 0,
+      "aot_run": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "index": 2210,
+      "task_id": "sigless_b332ffb8adba",
+      "jit": 0,
+      "aot_compile": 0,
+      "aot_run": 0,
+      "passed": true,
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "master_dart_graphv2_signature_scrubbed_public.jsonl": "7e15df3f9567d882d174d743a220bdea7576ae2cd5b5bc1cc68af4dd22c12adf",
+    "master_dart_graphv2_signature_scrubbed_private.jsonl": "03acc6dd45c861fb6517048a4b8be66a428dcb5cde7cbf3ccdea302fdc08f52b",
+    "master_dart_graphv2_compile_ledger.jsonl": "a0c3225144c001b013adc99c38d63e9cb4f2ec1fdd1604388df65ada9e150c0a",
+    "master_dart_graphv2_quarantine.jsonl": "f24f76d6e92a8491c2ce6cc05711235e4bf7b241b72af51d0f35971bfd0d8840"
+  },
+  "problems": [],
+  "passed": true
+}

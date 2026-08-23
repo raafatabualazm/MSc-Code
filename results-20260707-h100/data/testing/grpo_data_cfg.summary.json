@@ -1,0 +1,11 @@
+{
+  "input": "data\\testing\\grpo_data.jsonl",
+  "output": "data\\testing\\grpo_data_cfg.jsonl",
+  "overwrite": false,
+  "rows": 154,
+  "extracted_cfg": 154,
+  "total_blocks": 3530,
+  "total_edges": 4904,
+  "mean_blocks_per_extracted_row": 22.92207792207792,
+  "mean_edges_per_extracted_row": 31.844155844155843
+}

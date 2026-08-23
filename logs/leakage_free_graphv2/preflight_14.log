@@ -1,0 +1,71 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/prepare_synthetic_reward_pool.py --input data/datasets/synthetic_pool_graphv2.jsonl --output data/datasets/synthetic_pool_reward_clean_graphv2.jsonl --split_dir data/datasets/synthetic_reward_graphv2_splits --split_prefix synthetic_reward_graphv2 --seed 42 --drop_invalid --report data/datasets/synthetic_reward_graphv2_splits/manifest.json
+{
+  "input": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+  "output": "data\\datasets\\synthetic_pool_reward_clean_graphv2.jsonl",
+  "rows": 1725,
+  "rewritten_rows": 172,
+  "rewritten_calls": 1375,
+  "rejected_rows": 1,
+  "rejects": [
+    {
+      "index": 1342,
+      "task_id": "syn_1342",
+      "function": "computeImbalancedArtRows",
+      "error": "only 2 candidate assertions; require at least 4"
+    }
+  ],
+  "helper_definition_rows": {
+    "expect": 1725,
+    "expectList": 1725,
+    "expectMap": 1725,
+    "expectSet": 1625
+  },
+  "input_sha256": "8f5d48bb3c4cf1c433488e32a246b3f985dd02e2414d93ccc2857b436ffdb11a",
+  "output_sha256": "9eafacbea033eb10bd8bc2f09910cda1ef81e35228521619c3543263fefa7e43",
+  "splits": {
+    "train": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_train.jsonl",
+      "rows": 1380,
+      "sha256": "aff96741a02c641ba49ebeebbfbe3eddf9adac260313a2e23af822ef8e90e582"
+    },
+    "validation": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_validation.jsonl",
+      "rows": 172,
+      "sha256": "c331e252a26206475dac3add19011fda27abb4e2db01477236445f468b86b64c"
+    },
+    "test": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_test.jsonl",
+      "rows": 173,
+      "sha256": "b593250ef75b123adeebfb46205e791fd7b2d906e3f93df947f5695ecb7403d4"
+    }
+  }
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/audit_dataset_overlap_antigravity.py --train data/datasets/dart_all_graphv2_train.jsonl --benchmark data/testing/grpo_data_graphv2.jsonl --output results/sft_benchmark_overlap_graphv2.json
+{
+  "train_rows": 773,
+  "benchmark_rows": 154,
+  "duplicate_train_source_rows": 0,
+  "exact_overlap_pairs": 0,
+  "near_overlap_pairs": 0
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/evaluation/audit_prompt_integrity_antigravity.py --dataset data/testing/grpo_data_graphv2.jsonl --output results/protocol_audit_154_graphv2.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:24:59.712000 7664 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "dataset": {
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\grpo_data_graphv2.jsonl",
+    "size_bytes": 4883242,
+    "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+  },
+  "rows": 154,
+  "rows_with_tests": 154,
+  "rows_with_candidate_assertions": 154,
+  "rows_leaking_scoring_tests": 0,
+  "leaked_rows": [],
+  "prompt_stream_sha256": "7cbd12ba2bd0dd98281ea39e8389492909b7226fde94c80eae98d1c09fe5ade4",
+  "passed": true
+}

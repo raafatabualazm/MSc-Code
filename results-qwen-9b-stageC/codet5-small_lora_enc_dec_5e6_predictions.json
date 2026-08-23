@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "predictions": [
+      "<extra_id_0>DI ( ) { return<extra_id_1>* ( * )<extra_id_2>( *<extra_id_3>)<extra_id_4>) return ( *<extra_id_5>) * ( ( M)<extra_id_6>) (<extra_id_4>) ,<extra_id_8>) } ( *<extra_id_9>* b ) (<extra_id_10>) ; return ( void<extra_id_11>) ( *<extra_id_12>} { The_DUD_HQ_B_DI<extra_id_13>) ( this .<extra_id_14>*<extra_id_15>) ; if ( *<extra_id_16>( )<extra_id_17>(<extra_id_18>) )<extra_id_2>{ } return<extra_id_19>( ( *<extra_id_20>",
+      "<extra_id_0>) { return ( !<extra_id_1>) } else { return<extra_id_2>} else { if (<extra_id_3>DO_DIVISITOR_DIVISSH_UNIT_DIDIDIVISLY_DIDIVIS_DIVIS_DIVIS<extra_id_4>) { } }<extra_id_5>) { return ( The<extra_id_6>) (<extra_id_7>* B_B_HALF_MEQ ) (<extra_id_8>this * *<extra_id_9>*<extra_id_10>) { } return (<extra_id_11>DI<extra_id_4>*<extra_id_7>.<extra_id_8>( ) - +<extra_id_5>)",
+      "<extra_id_0>) { return ( (<extra_id_1>) )<extra_id_2>} * ( . *<extra_id_3>) ; return (<extra_id_4>) ? . *<extra_id_5>( ) *<extra_id_6>) { return ( m<extra_id_7>) (<extra_id_8>) } ( )<extra_id_9>( )<extra_id_10>{ return DUP<extra_id_11>; } { }<extra_id_12>*<extra_id_13>) { return (",
+      "<extra_id_0>* A ) { The<extra_id_1>the<extra_id_1>* The!DIQ_VISSH : m (<extra_id_2>\"DO_DI\" ) . The<extra_id_3>* this_DIDIQ_DIDI_DIDI_DO = * (<extra_id_4>{ } )<extra_id_5>( ) + ( A)<extra_id_6>( *<extra_id_6>) { }<extra_id_7>return<extra_id_8>*<extra_id_9>*<extra_id_10>*<extra_id_11>*<extra_id_4>_DIDI_DIDI_DI_DIH ( )<extra_id_12>return<extra_id_13>) ? The (<extra_id_4>)"
+    ],
+    "reference": "@pragma('vm:entry-point')\nvoid main() {\n  final sortedList = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];\n  final target = 13;\n  \n  int low = 0;\n  int high = sortedList.length - 1;\n  int resultIndex = -1;\n  \n  while (low <= high) {\n    final mid = (low + high) ~/ 2;\n    final midValue = sortedList[mid];\n    \n    if (midValue == target) {\n      resultIndex = mid;\n      break;\n    } else if (midValue < target) {\n      low = mid + 1;\n    } else {\n      high = mid - 1;\n    }\n  }\n  \n  if (resultIndex != -1) {\n    print('Element $target found at index $resultIndex');\n  } else {\n    print('Element $target not found in the list');\n  }\n}",
+    "language": "Dart"
+  },
+  {
+    "id": 1,
+    "predictions": [
+      "<extra_id_0>{ return<extra_id_1>this }<extra_id_2>{ }<extra_id_3>a .<extra_id_4>{ return<extra_id_5>if ( a .<extra_id_6>) return (<extra_id_7>) ( ) (<extra_id_8>? : a .<extra_id_9>) ; if (<extra_id_10>\"*\" ) return ( *<extra_id_11>) (<extra_id_12>) ; return ( m",
+      "<extra_id_0>*<extra_id_1>{ return ( ! !<extra_id_2>) }<extra_id_3>) { return ( b<extra_id_4>*<extra_id_5>) . ext (<extra_id_6>) . H (<extra_id_7>{ return - (<extra_id_8>) }<extra_id_9>) ; return ( this<extra_id_10>) (<extra_id_11>*<extra_id_12>) ; }<extra_id_13>( *<extra_id_14>) (<extra_id_16>? ( * )",
+      "<extra_id_0>{ return<extra_id_1>? a_part_of :<extra_id_2>- ( ) ? m<extra_id_3>; return<extra_id_4>) { return (<extra_id_5>) * ( a_part<extra_id_6>) (<extra_id_7>if<extra_id_8>+<extra_id_9>*<extra_id_10>return<extra_id_11>if ( b )<extra_id_12>) { return (<extra_id_13>) ; } return (<extra_id_14>) (<extra_id_15>(",
+      "<extra_id_0>) { return (<extra_id_1>) | ( M )<extra_id_2>( )<extra_id_3>( )<extra_id_4>( 'C' )<extra_id_5>}<extra_id_6>The *<extra_id_7>!= '0' ) ( *<extra_id_8>) ; return ( m<extra_id_9>) ? ( m<extra_id_10>) : ( *<extra_id_10>) ( b<extra_id_11>*"
+    ],
+    "reference": "@pragma('vm:entry-point')\nvoid main() {\n  // Define a graph using an adjacency list\n  final Map<int, List<int>> graph = {\n    0: [1, 2],\n    1: [0, 3],\n    2: [0, 3, 4],\n    3: [1, 2],\n    4: [2, 5],\n    5: [4],\n  };\n\n  // Set to track visited nodes\n  final Set<int> visited = <int>{};\n\n  // Stack for DFS traversal\n  final List<int> stack = <int>[];\n\n  // Start DFS from node 0\n  stack.add(0);\n  visited.add(0);\n\n  print('DFS Traversal:');\n\n  while (stack.isNotEmpty) {\n    final int currentNode = stack.removeLast();\n    print('Visited: $currentNode');\n\n    // Process all adjacent nodes\n    for (final int neighbor in graph[currentNode]!) {\n      if (!visited.contains(neighbor)) {\n        visited.add(neighbor);\n        stack.add(neighbor);\n      }\n    }\n  }\n}",
+    "language": "Dart"
+  }
+]

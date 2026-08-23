@@ -1,0 +1,86 @@
+
+$ /venv/main/bin/python scripts/data/prepare_synthetic_reward_pool.py --input data/datasets/synthetic_pool_clean_cfg.jsonl --output data/datasets/synthetic_pool_reward_clean_cfg.jsonl --split_dir data/datasets/synthetic_reward_splits --split_prefix synthetic_reward_cfg --seed 42 --drop_invalid --report data/datasets/synthetic_reward_splits/manifest.json
+{
+  "input": "data/datasets/synthetic_pool_clean_cfg.jsonl",
+  "output": "data/datasets/synthetic_pool_reward_clean_cfg.jsonl",
+  "rows": 1725,
+  "rewritten_rows": 172,
+  "rewritten_calls": 1375,
+  "rejected_rows": 1,
+  "rejects": [
+    {
+      "index": 1342,
+      "task_id": "syn_1342",
+      "function": "computeImbalancedArtRows",
+      "error": "only 2 candidate assertions; require at least 4"
+    }
+  ],
+  "helper_definition_rows": {
+    "expect": 1725,
+    "expectList": 1725,
+    "expectMap": 1725,
+    "expectSet": 1625
+  },
+  "input_sha256": "754be81dd8ade6cfe80fb651bbf06c792d2f2d2bd98584ca5fc37f522e38c018",
+  "output_sha256": "a70f7c8769d997a731ce01ef661bb80e98542613aa42de141865f6cdfb01c5f3",
+  "splits": {
+    "train": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_train.jsonl",
+      "rows": 1380,
+      "sha256": "43c0ff68394f0514bb56739509a0635cb009bc562a40979bd83d8c8b22c851c2"
+    },
+    "validation": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_validation.jsonl",
+      "rows": 172,
+      "sha256": "5d28260a78b900ce85d4f1944f9440058b122a45c1232a79d1f106ffce73a766"
+    },
+    "test": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_test.jsonl",
+      "rows": 173,
+      "sha256": "54e87b5bf2fe10344b7b4228dd33bda52af0359ff17d8442cb3546934b271e2a"
+    }
+  }
+}
+
+$ /venv/main/bin/python scripts/data/prepare_synthetic_reward_pool.py --input data/datasets/synthetic_pool_clean_cfg.jsonl --output data/datasets/synthetic_pool_reward_clean_cfg.jsonl --split_dir data/datasets/synthetic_reward_splits --split_prefix synthetic_reward_cfg --seed 42 --drop_invalid --report data/datasets/synthetic_reward_splits/manifest.json
+{
+  "input": "data/datasets/synthetic_pool_clean_cfg.jsonl",
+  "output": "data/datasets/synthetic_pool_reward_clean_cfg.jsonl",
+  "rows": 1725,
+  "rewritten_rows": 172,
+  "rewritten_calls": 1375,
+  "rejected_rows": 1,
+  "rejects": [
+    {
+      "index": 1342,
+      "task_id": "syn_1342",
+      "function": "computeImbalancedArtRows",
+      "error": "only 2 candidate assertions; require at least 4"
+    }
+  ],
+  "helper_definition_rows": {
+    "expect": 1725,
+    "expectList": 1725,
+    "expectMap": 1725,
+    "expectSet": 1625
+  },
+  "input_sha256": "754be81dd8ade6cfe80fb651bbf06c792d2f2d2bd98584ca5fc37f522e38c018",
+  "output_sha256": "a70f7c8769d997a731ce01ef661bb80e98542613aa42de141865f6cdfb01c5f3",
+  "splits": {
+    "train": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_train.jsonl",
+      "rows": 1380,
+      "sha256": "43c0ff68394f0514bb56739509a0635cb009bc562a40979bd83d8c8b22c851c2"
+    },
+    "validation": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_validation.jsonl",
+      "rows": 172,
+      "sha256": "5d28260a78b900ce85d4f1944f9440058b122a45c1232a79d1f106ffce73a766"
+    },
+    "test": {
+      "path": "data/datasets/synthetic_reward_splits/synthetic_reward_cfg_test.jsonl",
+      "rows": 173,
+      "sha256": "54e87b5bf2fe10344b7b4228dd33bda52af0359ff17d8442cb3546934b271e2a"
+    }
+  }
+}

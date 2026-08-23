@@ -1,0 +1,13 @@
+{
+  "schema": "typed-rs-sft-fold-arm-b-operational-amendment-seal-v1",
+  "status": "fixed_before_arm_b_training",
+  "document": {
+    "path": "analysis_rs_sft_fold/FOLD_ARM_B_OPERATIONAL_AMENDMENT.md",
+    "sha256": "1ffba1114185070cc02d92fc1ccb0976b50967fedb88d72a493683e1afe558ee"
+  },
+  "arm_b_run_contract_present_when_fixed": false,
+  "arm_a_seed42_evaluation_running_when_fixed": true,
+  "automatic_promotion_permitted": false,
+  "minimum_matched_seeds_for_promotion": 3,
+  "verpo_status": "HOLD"
+}

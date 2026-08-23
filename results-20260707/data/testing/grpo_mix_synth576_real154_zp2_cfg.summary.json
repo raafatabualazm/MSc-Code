@@ -1,0 +1,11 @@
+{
+  "input": "data\\testing\\grpo_mix_synth576_real154_zp2.jsonl",
+  "output": "data\\testing\\grpo_mix_synth576_real154_zp2_cfg.jsonl",
+  "overwrite": false,
+  "rows": 910,
+  "extracted_cfg": 910,
+  "total_blocks": 34796,
+  "total_edges": 49121,
+  "mean_blocks_per_extracted_row": 38.23736263736264,
+  "mean_edges_per_extracted_row": 53.97912087912088
+}

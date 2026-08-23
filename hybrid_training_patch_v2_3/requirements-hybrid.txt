@@ -1,0 +1,3 @@
+# Only the new frontier-critic dependency. The existing project supplies
+# PyTorch, Transformers, Datasets, PEFT, torch-geometric, and Dart tooling.
+openai

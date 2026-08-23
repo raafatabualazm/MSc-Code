@@ -1,0 +1,117 @@
+=== GATE: assembly ===
+
+--- tool output ---
+[gdb on aot-snapshot] rc=0
+x2
+   0x000000000008fcd4 <+668>:	call   0x8a250 <stub _iso_stub_AllocateArrayStub>
+   0x000000000008fcd9 <+673>:	mov    QWORD PTR [rbp-0x10],rax
+   0x000000000008fcdd <+677>:	mov    QWORD PTR [rax+0x17],0x8
+   0x000000000008fce5 <+685>:	mov    rdx,QWORD PTR [r15+0x23f]
+   0x000000000008fcec <+692>:	call   0x89288 <stub _iso_stub_AllocateGrowableArrayStub>
+   0x000000000008fcf1 <+697>:	mov    rcx,rax
+   0x000000000008fcf4 <+700>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x000000000008fcf8 <+704>:	mov    QWORD PTR [rcx+0x17],rax
+   0x000000000008fcfc <+708>:	mov    QWORD PTR [rcx+0xf],0x2
+   0x000000000008fd04 <+716>:	mov    rdx,QWORD PTR [rbp-0x8]
+   0x000000000008fd08 <+720>:	mov    rax,rcx
+   0x000000000008fd0b <+723>:	lea    r13,[rdx+0x6f]
+   0x000000000008fd0f <+727>:	mov    QWORD PTR [r13+0x0],rax
+   0x000000000008fd13 <+731>:	test   al,0x1
+   0x000000000008fd15 <+733>:	je     0x8fd2e <main+758>
+   0x000000000008fd17 <+735>:	mov    r11b,BYTE PTR [rdx-0x1]
+   0x000000000008fd1b <+739>:	shr    r11d,0x2
+   0x000000000008fd1f <+743>:	and    r11d,DWORD PTR [r14+0x50]
+   0x000000000008fd23 <+747>:	test   BYTE PTR [rax-0x1],r11b
+   0x000000000008fd27 <+751>:	je     0x8fd2e <main+758>
+   0x000000000008fd29 <+753>:	call   0x88974 <stub _iso_stub_ArrayWriteBarrierStub>
+   0x000000000008fd2e <+758>:	mov    r11,QWORD PTR [r15+0x787]
+   0x000000000008fd35 <+765>:	mov    QWORD PTR [rsp+0x8],r11
+   0x000000000008fd3a <+770>:	mov    r11,QWORD PTR [rbp-0x8]
+   0x000000000008fd3e <+774>:	mov    QWORD PTR [rsp],r11
+   0x000000000008fd42 <+778>:	call   0x6cdb0 <new Map._fromLiteral>
+   0x000000000008fd47 <+783>:	mov    QWORD PTR [rbp-0x8],rax
+   0x000000000008fd4b <+787>:	mov    r10d,0x3
+   0x000000000008fd51 <+793>:	call   0x892b8 <stub _iso_stub_AllocateContextStub>
+   0x000000000008fd56 <+798>:	mov    rcx,rax
+   0x000000000008fd59 <+801>:	mov    rax,QWORD PTR [rbp-0x8]
+   0x000000000008fd5d <+805>:	mov    QWORD PTR [rbp-0x10],rcx
+   0x000000000008fd61 <+809>:	mov    QWORD PTR [rcx+0x17],rax
+   0x000000000008fd65 <+813>:	mov    rdx,QWORD PTR [r15+0x23f]
+   0x000000000008fd6c <+820>:	call   0x8feb4 <new _Set>
+   0x000000000008fd71 <+825>:	mov    rcx,rax
+   0x000000000008fd74 <+828>:	mov    rax,QWORD PTR [r15+0x78f]
+   0x000000000008fd7b <+835>:	mov    QWORD PTR [rcx+0x2f],rax
+   0x000000000008fd7f <+839>:	mov    QWORD PTR [rcx+0xf],0x0
+   0x000000000008fd87 <+847>:	mov    rax,QWORD PTR [r15+0x797]
+   0x000000000008fd8e <+854>:	mov    QWORD PTR [rcx+0x17],rax
+   0x000000000008fd92 <+858>:	mov    QWORD PTR [rcx+0x1f],0x0
+   0x000000000008fd9a <+866>:	mov    QWORD PTR [rcx+0x27],0x0
+   0x000000000008fda2 <+874>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x000000000008fda6 <+878>:	mov    QWORD PTR [rax+0x1f],rcx
+   0x000000000008fdaa <+882>:	mov    rdx,rax
+   0x000000000008fdad <+885>:	mov    rbx,QWORD PTR [r15+0x79f]
+   0x000000000008fdb4 <+892>:	call   0x89610 <stub _iso_stub_AllocateClosureStub>
+   0x000000000008fdb9 <+897>:	mov    rcx,rax
+   0x000000000008fdbc <+900>:	mov    rax,QWORD PTR [rbp-0x10]
+   0x000000000008fdc0 <+904>:	mov    QWORD PTR [rbp-0x8],rcx
+   0x000000000008fdc4 <+908>:	mov    QWORD PTR [rax+0x27],rcx
+   0x000000000008fdc8 <+912>:	mov    rdi,QWORD PTR [r15+0x7a7]
+   0x000000000008fdcf <+919>:	call   0x8fe48 <printToConsole>
+   0x000000000008fdd4 <+924>:	mov    r11,QWORD PTR [rbp-0x8]
+   0x000000000008fdd8 <+928>:	mov    QWORD PTR [rsp+0x8],r11
+   0x000000000008fddd <+933>:	mov    QWORD PTR [rsp],0x0
+   0x000000000008fde5 <+941>:	mov    rax,QWORD PTR [rbp-0x8]
+   0x000000000008fde9 <+945>:	mov    r10,QWORD PTR [r15+0x37f]
+   0x000000000008fdf0 <+952>:	mov    rcx,QWORD PTR [rax+0x37]
+   0x000000000008fdf4 <+956>:	call   rcx
+   0x000000000008fdf6 <+958>:	mov    rax,QWORD PTR [r14+0x80]
+   0x000000000008fdfd <+965>:	mov    rsp,rbp
+   0x000000000008fe00 <+968>:	pop    rbp
+   0x000000000008fe01 <+969>:	ret
+   0x000000000008fe02 <+970>:	call   QWORD PTR [r14+0x238]
+   0x000000000008fe09 <+977>:	jmp    0x8fa4a <main+18>
+End of assembler dump.
+
+
+[gdb on exe] rc=1
+All functions matching regular expression "main":
+No symbol table is loaded.  Use the "file" command.
+
+
+--- source ---
+@pragma('vm:entry-point')
+void main() {
+  // Example graph represented as an adjacency list
+  // 0: [1, 2]
+  // 1: [0, 3, 4]
+  // 2: [0]
+  // 3: [1]
+  // 4: [1, 5]
+  // 5: [4]
+  final Map<int, List<int>> graph = {
+    0: [1, 2],
+    1: [0, 3, 4],
+    2: [0],
+    3: [1],
+    4: [1, 5],
+    5: [4],
+  };
+
+  // Set to keep track of visited nodes
+  final Set<int> visited = {};
+
+  // Depth-First Search implementation
+  void dfs(int node) {
+    visited.add(node);
+    print('Visited $node');
+    for (final neighbor in graph[node] ?? []) {
+      if (!visited.contains(neighbor)) {
+        dfs(neighbor);
+      }
+    }
+  }
+
+  // Start DFS from node 0
+  print('Depth-First Search starting from node 0:');
+  dfs(0);
+}

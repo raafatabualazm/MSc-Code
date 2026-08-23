@@ -1,0 +1,63 @@
+START_UTC=2026-07-17T02:15:54Z
+INPUT_COPY_AND_TOOLS
+ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13  .sync_snapshots/fresh_eval_low_topup_deepseek_s45_20260717T020543Z/data/testing/fresh_eval_low_topup_deepseek_s45.jsonl
+ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13  data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+1566cfc20a579875be63bee6bd5347ec883311e3a0644f10e6e797f373c1e12a  generate_fresh_eval_tasks.py
+Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on "linux_x64"
+GNU gdb (GDB) 17.1
+  [warn] assembly failed for fresh-eval-768238f87de2
+  [warn] assembly failed for fresh-eval-ea5648b36597
+  [warn] assembly failed for fresh-eval-aaf4e861a6e0
+  [warn] assembly failed for fresh-eval-e8924c05d567
+  [warn] assembly failed for fresh-eval-f0b7b8b4d933
+  [warn] assembly failed for fresh-eval-78df31b81a43
+  [warn] assembly failed for fresh-eval-059d434f9b04
+  [warn] assembly failed for fresh-eval-938dc30cd189
+  [warn] assembly failed for fresh-eval-fe5d04a36406
+  [warn] assembly failed for fresh-eval-8870d5392b15
+  [warn] assembly failed for fresh-eval-6856fd0f713a
+  [warn] assembly failed for fresh-eval-f562a8c243f9
+  [warn] assembly failed for fresh-eval-e9fb2e61f238
+  [warn] assembly failed for fresh-eval-758e9a255ef1
+  [warn] assembly failed for fresh-eval-ca53deedf3c6
+  [warn] assembly failed for fresh-eval-9a591fafdf63
+  [warn] assembly failed for fresh-eval-b1e363b07361
+  [warn] assembly failed for fresh-eval-418aef971fcb
+  [warn] assembly failed for fresh-eval-7b6aa6b15c62
+  [warn] assembly failed for fresh-eval-5949c99dcb5a
+  [warn] assembly failed for fresh-eval-322188ff0de4
+  [warn] assembly failed for fresh-eval-f03c34bb2c5b
+  [warn] assembly failed for fresh-eval-6a34305f0f9b
+  [warn] assembly failed for fresh-eval-cd27c4e4f140
+  [warn] assembly failed for fresh-eval-9c6fde8ee8cb
+  [warn] assembly failed for fresh-eval-9dd3fab904b8
+  [warn] assembly failed for fresh-eval-caed347ff28a
+  [warn] assembly failed for fresh-eval-0aa823618c64
+  [warn] assembly failed for fresh-eval-19304828eaa7
+  [warn] assembly failed for fresh-eval-3e7768fc9004
+  [warn] assembly failed for fresh-eval-3a73d091d901
+  [warn] assembly failed for fresh-eval-7347c8d7fd36
+  [warn] assembly failed for fresh-eval-ba6c11a0a513
+  [warn] assembly failed for fresh-eval-c590b598a879
+  [warn] assembly failed for fresh-eval-f8a52ab1f7bd
+  [warn] assembly failed for fresh-eval-1a115064f9bb
+  [warn] assembly failed for fresh-eval-565715c49191
+  [warn] assembly failed for fresh-eval-fd7d1ce05e1c
+  [warn] assembly failed for fresh-eval-826e6eff14d9
+  [warn] assembly failed for fresh-eval-2b73ede14387
+  [warn] assembly failed for fresh-eval-a8a05d115a47
+  [warn] assembly failed for fresh-eval-9465c68bb59b
+  [warn] assembly failed for fresh-eval-32e804cb82a6
+  [warn] assembly failed for fresh-eval-2db6e6a3ad31
+  [warn] assembly failed for fresh-eval-53ae8e4a5834
+seeds: benchmark=154 synthetic=1726 extra_decontam=0 banned_names=3717 dedup_pool=1880
+measured targets: strata={'low': [3, 14], 'mid': [14, 25], 'high': [25, 458]} loc_bands={'low': [4, 11], 'mid': [9, 16], 'high': [16, 23]}
+  rtype_weights={'bool': 28, 'List<String>': 11, 'double': 5, 'List<int>': 29, 'String': 25, 'String?': 2, 'int': 42, 'List<double>': 2, 'List<num>': 3, 'num': 2, 'List<List<int>>': 1, 'Map<String, int>': 1, 'int?': 1}
+  param_count_weights={2: 36, 1: 113, 3: 5}
+assembly backfill: filled 558, missing 45 / 603
+next: scripts/data/build_graph_v2_jsonl.py to attach CFG/DFG (see module docstring).
+ASSEMBLY_RC=0
+FINAL_COUNTS_AND_HASH
+603 data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a  data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+END_UTC=2026-07-17T02:44:28Z

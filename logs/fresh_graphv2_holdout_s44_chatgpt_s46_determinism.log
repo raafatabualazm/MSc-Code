@@ -1,0 +1,24 @@
+{
+  "output": {
+    "path": "/tmp/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.jsonl",
+    "size_bytes": 15260164,
+    "sha256": "b4e2dd5cfeb3309055a260e508086ca047ac9f4ac550ad4280f38894f829259c",
+    "rows": 500
+  },
+  "manifest": {
+    "path": "/tmp/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.manifest.json",
+    "size_bytes": 279558,
+    "sha256": "d89eed9776eb3d3fab2470fc1952ae7d246b077971e1b00d4e341bb587fbb325"
+  },
+  "selected_realized_strata": {
+    "low": 170,
+    "mid": 170,
+    "high": 160
+  },
+  "selected_source_pools": {
+    "topup_chatgpt_s46": 69,
+    "topup_s45": 203,
+    "base_llm": 137,
+    "topup_s44": 91
+  }
+}

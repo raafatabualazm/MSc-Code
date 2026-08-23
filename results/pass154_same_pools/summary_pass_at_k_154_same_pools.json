@@ -1,0 +1,164 @@
+[
+  {
+    "label": "frontier_gpt_chat_latest",
+    "pass_at_1": 0.5525974025974024,
+    "pass_at_5": 0.6708668315811173,
+    "pass_at_10": 0.7012987012987013,
+    "total_problems": 154,
+    "source": "Frontier_results\\preds_azure_gpt_chat_latest_asm_results.txt",
+    "output": "results\\pass154_same_pools\\frontier_gpt_chat_latest_pass_at_k.json"
+  },
+  {
+    "label": "frontier_sonnet5",
+    "pass_at_1": 0.3058441558441559,
+    "pass_at_5": 0.4358122036693465,
+    "pass_at_10": 0.487012987012987,
+    "total_problems": 154,
+    "source": "Frontier_results\\preds_frontier_asm_sonnet5_results.txt",
+    "output": "results\\pass154_same_pools\\frontier_sonnet5_pass_at_k.json"
+  },
+  {
+    "label": "frontier_deepseek_v4_pro",
+    "pass_at_1": 0.08506493506493501,
+    "pass_at_5": 0.25610698824984546,
+    "pass_at_10": 0.35064935064935066,
+    "total_problems": 154,
+    "source": "Frontier_results\\preds_frontier_asm_deepseekvpro_results.txt",
+    "output": "results\\pass154_same_pools\\frontier_deepseek_v4_pro_pass_at_k.json"
+  },
+  {
+    "label": "frontier_glm_5_2",
+    "pass_at_1": 0.14610389610389612,
+    "pass_at_5": 0.2526025561739847,
+    "pass_at_10": 0.2857142857142857,
+    "total_problems": 154,
+    "source": "Frontier_results\\preds_frontier_asm_glm52_results.txt",
+    "output": "results\\pass154_same_pools\\frontier_glm_5_2_pass_at_k.json"
+  },
+  {
+    "label": "binary_grpo",
+    "pass_at_1": 0.040909090909090895,
+    "pass_at_5": 0.12804061018346735,
+    "pass_at_10": 0.18181818181818182,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_binary_pk10_g32_grpo_grpo.json",
+    "output": "results\\pass154_same_pools\\binary_grpo_pass_at_k.json"
+  },
+  {
+    "label": "rs_sft_allarms",
+    "pass_at_1": 0.047402597402597405,
+    "pass_at_5": 0.12956091527520097,
+    "pass_at_10": 0.16883116883116883,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_rs_sft_allarms.json",
+    "output": "results\\pass154_same_pools\\rs_sft_allarms_pass_at_k.json"
+  },
+  {
+    "label": "binary_rs_sft_ref",
+    "pass_at_1": 0.03571428571428571,
+    "pass_at_5": 0.11209029066171924,
+    "pass_at_10": 0.15584415584415584,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_binary_rs_sft_ref.json",
+    "output": "results\\pass154_same_pools\\binary_rs_sft_ref_pass_at_k.json"
+  },
+  {
+    "label": "clean_g3",
+    "pass_at_1": 0.026623376623376615,
+    "pass_at_5": 0.09959286745001032,
+    "pass_at_10": 0.15584415584415584,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_graphonly.json",
+    "output": "results\\pass154_same_pools\\clean_g3_pass_at_k.json"
+  },
+  {
+    "label": "style_repair_ultralite",
+    "pass_at_1": 0.024025974025974037,
+    "pass_at_5": 0.09178519892805609,
+    "pass_at_10": 0.14285714285714285,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style_repair_ultralite_pass_at_k.json",
+    "output": "results\\pass154_same_pools\\style_repair_ultralite_pass_at_k.json"
+  },
+  {
+    "label": "g3_p128r",
+    "pass_at_1": 0.02922077922077921,
+    "pass_at_5": 0.0878169449598021,
+    "pass_at_10": 0.13636363636363635,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_p128r.json",
+    "output": "results\\pass154_same_pools\\g3_p128r_pass_at_k.json"
+  },
+  {
+    "label": "style1036_sft",
+    "pass_at_1": 0.032467532467532464,
+    "pass_at_5": 0.09722222222222222,
+    "pass_at_10": 0.13636363636363635,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft.json",
+    "output": "results\\pass154_same_pools\\style1036_sft_pass_at_k.json"
+  },
+  {
+    "label": "cfg_only",
+    "pass_at_1": 0.02012987012987013,
+    "pass_at_5": 0.06707379921665636,
+    "pass_at_10": 0.11038961038961038,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g2c_cfgonly.json",
+    "output": "results\\pass154_same_pools\\cfg_only_pass_at_k.json"
+  },
+  {
+    "label": "simko_style_grpo",
+    "pass_at_1": 0.022077922077922075,
+    "pass_at_5": 0.07160894660894661,
+    "pass_at_10": 0.11038961038961038,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_simko_eval_grpo.json",
+    "output": "results\\pass154_same_pools\\simko_style_grpo_pass_at_k.json"
+  },
+  {
+    "label": "graph_text",
+    "pass_at_1": 0.022727272727272728,
+    "pass_at_5": 0.0690836940836941,
+    "pass_at_10": 0.09740259740259741,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g2_graphtext.json",
+    "output": "results\\pass154_same_pools\\graph_text_pass_at_k.json"
+  },
+  {
+    "label": "base_reference",
+    "pass_at_1": 0.015584415584415584,
+    "pass_at_5": 0.05627705627705629,
+    "pass_at_10": 0.09090909090909091,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_ref_base.json",
+    "output": "results\\pass154_same_pools\\base_reference_pass_at_k.json"
+  },
+  {
+    "label": "null_graph",
+    "pass_at_1": 0.013636363636363637,
+    "pass_at_5": 0.04942279942279942,
+    "pass_at_10": 0.07792207792207792,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g0_null.json",
+    "output": "results\\pass154_same_pools\\null_graph_pass_at_k.json"
+  },
+  {
+    "label": "text_only",
+    "pass_at_1": 0.005194805194805194,
+    "pass_at_5": 0.025974025974025976,
+    "pass_at_10": 0.05194805194805195,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g1_textonly.json",
+    "output": "results\\pass154_same_pools\\text_only_pass_at_k.json"
+  },
+  {
+    "label": "p128_without_rms",
+    "pass_at_1": 0.0,
+    "pass_at_5": 0.0,
+    "pass_at_10": 0.0,
+    "total_problems": 154,
+    "source": "results-20260707\\results\\sweeps_antigravity\\qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_p128.json",
+    "output": "results\\pass154_same_pools\\p128_without_rms_pass_at_k.json"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "name_only",
+  "expected_target_name": "fn0",
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_stream_sha256": "c31001ed239743144f81b0062cae1a4f6864ad2e36cb263ba17b39b060a23671",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_raw_predictions.json",
+      "sha256": "b12e07c4d4e8a07f3bf921d8df54395bcb0b3b4f8f7f5f4f857e5b49bed9f8ac",
+      "size_bytes": 1101523
+    },
+    "raw_inference_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_raw_predictions.json.provenance.json",
+      "sha256": "1f8ca611b8bbe921beab1ba78644bb9d7f52dfb6bbbe8c0b2fccb12f8429fbe4",
+      "size_bytes": 5833
+    },
+    "public_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_nameonly_public.jsonl",
+      "sha256": "75c9a6c663c87c9f95ad3a98197abffba811debbb366eaa7966058ec3866a2b4",
+      "size_bytes": 4644803
+    },
+    "private_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_nameonly_private.jsonl",
+      "sha256": "0fa377019ed558fc2fb2ebbb723690ca90ab2391b9e8bdaed48f184856fcae87",
+      "size_bytes": 4903833
+    }
+  },
+  "output": {
+    "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_predictions.json",
+    "sha256": "7005141260a9845458a4407b6e5f7ccfd83eb81ba534bd32c3e96e9368ae0845",
+    "size_bytes": 1299745
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}

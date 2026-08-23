@@ -1,0 +1,340 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/audit_graph_v2_dataset.py --dataset data/testing/grpo_data_graphv2.jsonl=154 --dataset data/datasets/dart_all_graphv2_train.jsonl=513 --dataset data/datasets/dart_all_graphv2_validation.jsonl=58 --dataset data/datasets/synthetic_pool_graphv2.jsonl=1726 --tokenizer_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --output results/graph_v2_dataset_audit.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 13:35:02.985000 28096 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "datasets": [
+    {
+      "blocks": 3892,
+      "cfg_edges": 5410,
+      "dataflow_edges": 13330,
+      "expected_rows": 154,
+      "max_blocks_per_row": 458,
+      "max_cfg_edges_per_row": 696,
+      "max_code_tokens_per_block": 504,
+      "max_dataflow_edges_per_row": 3708,
+      "passed": true,
+      "path": "data\\testing\\grpo_data_graphv2.jsonl",
+      "problems": [],
+      "rows": 154,
+      "sha256": "f0fa10ae926b5f6b7d905c2ec7f072f0f9c63fb91922c0cb48d93b64c8599fb8"
+    },
+    {
+      "blocks": 6109,
+      "cfg_edges": 8094,
+      "dataflow_edges": 15984,
+      "expected_rows": 513,
+      "max_blocks_per_row": 212,
+      "max_cfg_edges_per_row": 318,
+      "max_code_tokens_per_block": 502,
+      "max_dataflow_edges_per_row": 685,
+      "passed": true,
+      "path": "data\\datasets\\dart_all_graphv2_train.jsonl",
+      "problems": [],
+      "rows": 513,
+      "sha256": "a700ac06c55f2de2166ed9c3bb3d4e71e10fb99a3d0158b9fb8756de5b18805f"
+    },
+    {
+      "blocks": 511,
+      "cfg_edges": 659,
+      "dataflow_edges": 1615,
+      "expected_rows": 58,
+      "max_blocks_per_row": 59,
+      "max_cfg_edges_per_row": 85,
+      "max_code_tokens_per_block": 508,
+      "max_dataflow_edges_per_row": 317,
+      "passed": true,
+      "path": "data\\datasets\\dart_all_graphv2_validation.jsonl",
+      "problems": [],
+      "rows": 58,
+      "sha256": "9277dda5f601fc65c21820c5af445f7013972581923f17a6bdb199b83fcb226e"
+    },
+    {
+      "blocks": 85373,
+      "cfg_edges": 119870,
+      "dataflow_edges": 278733,
+      "expected_rows": 1726,
+      "max_blocks_per_row": 294,
+      "max_cfg_edges_per_row": 428,
+      "max_code_tokens_per_block": 504,
+      "max_dataflow_edges_per_row": 1410,
+      "passed": true,
+      "path": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+      "problems": [],
+      "rows": 1726,
+      "sha256": "8f5d48bb3c4cf1c433488e32a246b3f985dd02e2414d93ccc2857b436ffdb11a"
+    }
+  ],
+  "graph_schema_version": "antigravity-graph-v2",
+  "instruction_token_cache_size": 70600,
+  "passed": true,
+  "tokenizer": "microsoft/graphcodebert-base",
+  "tokenizer_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/audit_graph_v2_dataset.py --dataset data/testing/grpo_data_graphv2.jsonl=154 --dataset data/datasets/dart_all_graphv2_train.jsonl=773 --dataset data/datasets/dart_all_graphv2_validation.jsonl=83 --dataset data/datasets/synthetic_pool_graphv2.jsonl=1726 --tokenizer_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --output results/graph_v2_dataset_audit.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:15:30.397000 22792 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "datasets": [
+    {
+      "blocks": 3892,
+      "cfg_edges": 5410,
+      "dataflow_edges": 13330,
+      "expected_rows": 154,
+      "external_direct_branches": 0,
+      "max_blocks_per_row": 458,
+      "max_cfg_edges_per_row": 696,
+      "max_code_tokens_per_block": 504,
+      "max_dataflow_edges_per_row": 3708,
+      "max_external_direct_branches_per_row": 0,
+      "passed": true,
+      "path": "data\\testing\\grpo_data_graphv2.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 1,
+      "rows": 154,
+      "sha256": "917a99f31b490292690ab0243296ed6d0072714ef76f0f060906cc2a978c550d"
+    },
+    {
+      "blocks": 41191,
+      "cfg_edges": 58711,
+      "dataflow_edges": 135124,
+      "expected_rows": 773,
+      "external_direct_branches": 63,
+      "max_blocks_per_row": 632,
+      "max_cfg_edges_per_row": 967,
+      "max_code_tokens_per_block": 517,
+      "max_dataflow_edges_per_row": 2113,
+      "max_external_direct_branches_per_row": 4,
+      "passed": false,
+      "path": "data\\datasets\\dart_all_graphv2_train.jsonl",
+      "problem_count": 3,
+      "problems": [
+        {
+          "identity": "main",
+          "line_number": 386,
+          "message": "block 10 has 515 GraphCodeBERT tokens"
+        },
+        {
+          "identity": "main",
+          "line_number": 400,
+          "message": "block 1 has 517 GraphCodeBERT tokens"
+        },
+        {
+          "identity": "main",
+          "line_number": 613,
+          "message": "block 10 has 515 GraphCodeBERT tokens"
+        }
+      ],
+      "pruned_unreachable_blocks": 1179,
+      "rows": 773,
+      "sha256": "4d28421f67e123e7825880e5471b2f7a35b6c0408428e962ed5d28797e23855f"
+    },
+    {
+      "blocks": 5703,
+      "cfg_edges": 8170,
+      "dataflow_edges": 23156,
+      "expected_rows": 83,
+      "external_direct_branches": 5,
+      "max_blocks_per_row": 543,
+      "max_cfg_edges_per_row": 792,
+      "max_code_tokens_per_block": 497,
+      "max_dataflow_edges_per_row": 3653,
+      "max_external_direct_branches_per_row": 1,
+      "passed": true,
+      "path": "data\\datasets\\dart_all_graphv2_validation.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 31,
+      "rows": 83,
+      "sha256": "1bd8008e446c65f5a59d9105df7aab58375f3f9521a59023c2bb0f61c7d92a2d"
+    },
+    {
+      "blocks": 85373,
+      "cfg_edges": 119870,
+      "dataflow_edges": 278733,
+      "expected_rows": 1726,
+      "external_direct_branches": 0,
+      "max_blocks_per_row": 294,
+      "max_cfg_edges_per_row": 428,
+      "max_code_tokens_per_block": 504,
+      "max_dataflow_edges_per_row": 1410,
+      "max_external_direct_branches_per_row": 0,
+      "passed": true,
+      "path": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 7,
+      "rows": 1726,
+      "sha256": "2d17e48cbcd0f07653f2a7084397012cd83791dbb1b84caeaa07da0e677d8af4"
+    }
+  ],
+  "graph_schema_version": "antigravity-graph-v2",
+  "instruction_token_cache_size": 102210,
+  "passed": false,
+  "tokenizer": "microsoft/graphcodebert-base",
+  "tokenizer_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/audit_graph_v2_dataset.py --dataset data/testing/grpo_data_graphv2.jsonl=154 --dataset data/datasets/dart_all_graphv2_train.jsonl=773 --dataset data/datasets/dart_all_graphv2_validation.jsonl=83 --dataset data/datasets/synthetic_pool_graphv2.jsonl=1726 --max_block_instrs 20 --tokenizer_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --output results/graph_v2_dataset_audit.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:19:10.996000 38316 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "datasets": [
+    {
+      "blocks": 3917,
+      "cfg_edges": 5435,
+      "dataflow_edges": 13373,
+      "expected_rows": 154,
+      "external_direct_branches": 0,
+      "max_blocks_per_row": 458,
+      "max_cfg_edges_per_row": 696,
+      "max_code_tokens_per_block": 414,
+      "max_dataflow_edges_per_row": 3708,
+      "max_external_direct_branches_per_row": 0,
+      "passed": true,
+      "path": "data\\testing\\grpo_data_graphv2.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 1,
+      "rows": 154,
+      "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+    },
+    {
+      "blocks": 42132,
+      "cfg_edges": 59652,
+      "dataflow_edges": 137413,
+      "expected_rows": 773,
+      "external_direct_branches": 63,
+      "max_blocks_per_row": 638,
+      "max_cfg_edges_per_row": 973,
+      "max_code_tokens_per_block": 430,
+      "max_dataflow_edges_per_row": 2126,
+      "max_external_direct_branches_per_row": 4,
+      "passed": true,
+      "path": "data\\datasets\\dart_all_graphv2_train.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 1192,
+      "rows": 773,
+      "sha256": "28d460af1dffe3074d5fc8bfaa5afd53037002aa2e01551a07bf68b924a2426b"
+    },
+    {
+      "blocks": 5795,
+      "cfg_edges": 8262,
+      "dataflow_edges": 23294,
+      "expected_rows": 83,
+      "external_direct_branches": 5,
+      "max_blocks_per_row": 544,
+      "max_cfg_edges_per_row": 793,
+      "max_code_tokens_per_block": 420,
+      "max_dataflow_edges_per_row": 3656,
+      "max_external_direct_branches_per_row": 1,
+      "passed": true,
+      "path": "data\\datasets\\dart_all_graphv2_validation.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 31,
+      "rows": 83,
+      "sha256": "51f5149aeca68d12640bab00a8275da786d45927cb9e315c2c006debea068292"
+    },
+    {
+      "blocks": 86085,
+      "cfg_edges": 120582,
+      "dataflow_edges": 280591,
+      "expected_rows": 1726,
+      "external_direct_branches": 0,
+      "max_blocks_per_row": 297,
+      "max_cfg_edges_per_row": 431,
+      "max_code_tokens_per_block": 420,
+      "max_dataflow_edges_per_row": 1410,
+      "max_external_direct_branches_per_row": 0,
+      "passed": true,
+      "path": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+      "problems": [],
+      "pruned_unreachable_blocks": 7,
+      "rows": 1726,
+      "sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621"
+    }
+  ],
+  "graph_schema_version": "antigravity-graph-v2",
+  "instruction_token_cache_size": 102210,
+  "max_block_instrs": 20,
+  "max_code_tokens": 510,
+  "passed": true,
+  "tokenizer": "microsoft/graphcodebert-base",
+  "tokenizer_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/test_graph_preprocessing_fixes.py
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:24:28.065000 28872 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 xchg reads and writes both operands
+  ok: x86 idiv implicit operands
+  ok: x86 cqo implicit operands
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm stxr status destination
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+  ok: strict graph-v2 rejects oversized blocks
+  ok: legacy-compatible edges mode reclaims the 8-token reserve
+  ok: roberta: code starts at 2
+  ok: roberta: pads at padding_idx=1
+  ok: roberta: max position < 514
+  ok: roberta: DFG tokens at position 0
+
+ALL 62 CHECKS PASSED

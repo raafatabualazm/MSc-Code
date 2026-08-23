@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "build_host": "167.172.150.125",
+  "workspace": "/root/experiment_workspace",
+  "architecture": "linux_x64",
+  "dart": {
+    "requested_path": "/usr/local/bin/dart",
+    "resolved_path": "/opt/dart-3.11.5/dart-sdk/bin/dart",
+    "version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on linux_x64",
+    "sha256": "37924d3acf1b2b80a8fcadc69ceec85ce55f82b36d479f5caa328f023389252b"
+  },
+  "gdb": {
+    "requested_path": "/usr/local/bin/gdb",
+    "resolved_path": "/opt/gdb-17.1/bin/gdb",
+    "version": "GNU gdb (GDB) 17.1",
+    "sha256": "9403e3f3e5f3dc7fec684b827598a5075ce386b6ad3c643497c90fb7a6c42ebd"
+  },
+  "python": {
+    "requested_path": "/root/experiment_workspace/.venv/bin/python",
+    "resolved_path": "/usr/bin/python3.12",
+    "version": "Python 3.12.3",
+    "sha256": "1643dacd9feaedc58f3cc581e4d22577dfe25c09b10282936186ccf0f2e61118"
+  },
+  "networkx": {
+    "version": "3.6.1",
+    "init_path": "/root/experiment_workspace/.venv/lib/python3.12/site-packages/networkx/__init__.py",
+    "init_sha256": "39537c0bec78e0b81e25629c6fbeeff96c1f315ec462a89e69f92841d9409791",
+    "metadata_path": "/root/experiment_workspace/.venv/lib/python3.12/site-packages/networkx-3.6.1.dist-info/METADATA",
+    "metadata_sha256": "aca5d94a97d1f70f301d033addb635f6e66be8973a00aba4127637eed2ef316a"
+  },
+  "scripts": {
+    "generate_fresh_eval_tasks.py": "1566cfc20a579875be63bee6bd5347ec883311e3a0644f10e6e797f373c1e12a",
+    "scripts/data/build_graph_v2_jsonl.py": "eefb68b6abdd7d5b3c4f5907ad03c000f62d0c5f0e11002a2fda72ca292bd673",
+    "scripts/data/seal_fresh_graphv2_holdout.py": "92d8c06fc1851353b2ad02f98b9c279d972e793f0a599d69d073198e56595eb2"
+  },
+  "assembly_build": {
+    "input_rows": 603,
+    "output_rows": 603,
+    "assembly_present": 558,
+    "assembly_missing": 45,
+    "input_sha256": "ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13",
+    "output_sha256": "4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a"
+  },
+  "graph_v2_build": {
+    "input_rows": 603,
+    "output_rows": 558,
+    "rejected_rows": 45,
+    "drop_invalid": true,
+    "max_block_instrs": 20,
+    "max_dataflow_edges": 0,
+    "schema": "antigravity-graph-v2.1",
+    "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "input_sha256": "4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a",
+    "output_sha256": "162a02882798c99166d65e31344a0ca3cb4d9374a04e7589b1643604c3941020",
+    "rejected_sha256": "8248d5f597587294faa8702644b8bb3beb285369dcaf8eed1a9e8bebb570c2ab",
+    "summary_sha256": "351af9f79e4e46a3091d856f1d3e7fe2e32cb4c3b99d238aa2f1067210e408ca"
+  }
+}

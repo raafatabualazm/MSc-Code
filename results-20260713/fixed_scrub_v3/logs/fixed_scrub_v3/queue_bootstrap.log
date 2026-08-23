@@ -1,0 +1,50 @@
+{
+  "schema_version": "fixed-scrub-v3-scoring-provenance-v1",
+  "arm": "comparator",
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16/pytorch_model.bin",
+    "sha256": "e8e872608f22ae8e1c5607d6179feeb5f133401fb2a7d1fc40fe8894d8c347fc",
+    "size_bytes": 924910291
+  },
+  "generation_seed": 42,
+  "compile_mode": "jit_tests",
+  "scorer_sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+  "dart_sdk_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "scoring_tests_visible_to_policy": false,
+  "policy_input_verified_public_only": false,
+  "row_count": 154,
+  "samples_per_row": 10,
+  "inputs": {
+    "predictions": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_predictions.json",
+      "sha256": "474dac0836c3810fa6fdad176c60021e08e0f3d722365672927c1f36484e0118",
+      "size_bytes": 1064404
+    },
+    "stats": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_stats.csv",
+      "sha256": "d3f8c03fb8d86103df33d72d7f3c9ea4fe9a06d7ab12980b28dd62f6c0ff377e",
+      "size_bytes": 20827
+    },
+    "inference_provenance": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_predictions.json.provenance.json",
+      "sha256": "6ea5b7be98b1f8ba13c04f6cba05a4a578cfa071b8559531ad22bb07dd3cb93e",
+      "size_bytes": 6301
+    },
+    "join_provenance": null,
+    "public_dataset": null,
+    "scorer": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+      "size_bytes": 18813
+    },
+    "dart_version": {
+      "path": "/workspace/logs/fixed_scrub_v3/dart_version.txt",
+      "sha256": "aec0deb0431af41549d28510392a11f7cbfc1d38fb9e29954bcd865d4b54802d",
+      "size_bytes": 82
+    }
+  }
+}
+Using Dart binary: /home/zeus/dart-sdk/bin/dart | workers=64
+compile@k:   0%|          | 0/154 [00:00<?, ?row/s]compile@k:   1%|          | 1/154 [01:26<3:41:35, 86.90s/row]compile@k:   1%|▏         | 2/154 [01:33<1:39:54, 39.44s/row]compile@k:   4%|▍         | 6/154 [01:49<29:57, 12.15s/row]  compile@k:  24%|██▍       | 37/154 [01:53<02:44,  1.40s/row]compile@k:  42%|████▏     | 64/154 [02:00<01:11,  1.25row/s]compile@k:  42%|████▏     | 65/154 [02:06<01:23,  1.07row/s]compile@k:  50%|█████     | 77/154 [02:07<00:52,  1.48row/s]compile@k:  65%|██████▍   | 100/154 [02:09<00:21,  2.49row/s]compile@k:  70%|███████   | 108/154 [02:10<00:15,  3.00row/s]compile@k:  73%|███████▎  | 113/154 [02:11<00:13,  3.08row/s]compile@k:  75%|███████▍  | 115/154 [02:13<00:15,  2.59row/s]compile@k:  88%|████████▊ | 136/154 [02:14<00:03,  4.82row/s]compile@k: 100%|██████████| 154/154 [02:14<00:00,  1.14row/s]
+PASS: analyzed 154 paired tasks x 10 candidates; pairing=normalized_hidden_test_sha256

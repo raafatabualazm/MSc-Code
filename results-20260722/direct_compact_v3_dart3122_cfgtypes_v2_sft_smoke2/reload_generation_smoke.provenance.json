@@ -1,0 +1,21 @@
+{
+  "alignment_sha256": "df582c575eba10880e9920fd80c16134895b1d6d09482d223d050b7d7878a984",
+  "attn_implementation": "flash_attention_2",
+  "contract_sha256": "bdfc16373fd55b708a6edb8210067238faeb975bd921c86016cbe9a74ab02dda",
+  "dataset_sha256": "f48c6fa05865276e398f843d73d45f36318e1f8a4c79486e291a7f50a0655e77",
+  "decoder_adapter": "/workspace/artifacts/direct_compact_v3_dart3122_cfgtypes_v2_sft_smoke2/decoder_adapter",
+  "decoder_adapter_sha256": "3de20114e3293f28ac1e5bc44ade24653a4f75bc00645a3a4b23e6d2ddc1b85d",
+  "decoder_model": "Qwen/Qwen3-8B",
+  "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "encoder": null,
+  "lm_head_rows": 151936,
+  "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+  "num_rows": 1,
+  "num_samples": 1,
+  "overlay_rows": 16512,
+  "schema": "direct-compact-inference-v1",
+  "seed": 42,
+  "selected_role": "measure",
+  "soft_prefix": null,
+  "source_overlay_sha256": "45bea813deab75bda86be1bfc7dff8b7b1fbaf4965622241d5d9ff88fad7b44d"
+}

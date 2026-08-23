@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "checkpoint_contract_sha256": "3f75898b4bed1b2b6058341d8ac0788b1feb8c66aa0f7aef5e374e6745b9f8ba",
+    "clean_score_sha256": "ccad1ca0e09fe9c7aaeddc51562148e82781dacd17e009d457da23ee68363183",
+    "evaluation_journal_chain_head_sha256": "45e5f83feee329f48b5652b176006d40c1f02b3a18e270fcb2e3e322ce7b2106",
+    "evaluation_journal_sha256": "fa53f822e85d7d0f9c76bf33c9be31fb64b6d954102439c7a0bc75abc9c8c796",
+    "full_score_sha256": "a297250d4b7d4ccf730ba4ddb30921374708b9e3b07fd621d9934cc275482f78",
+    "generation_journal_chain_head_sha256": "e05e0eb85d01875750d6ddfe972d87b4a2f1a1566df86006e66f115456d1925d",
+    "generation_journal_sha256": "3f7025d841e4fcc72b051fc64609820551f9446f03a5e7133ed0fbf749da2559",
+    "predictions_sha256": "08418b0b442820ff5f8ae6676decfa1958ba07666f787d3b61d64497dbb03c8c",
+    "provenance_sha256": "155c6387ef5cc9d79e5c4670c62c3a70d81fe25aefc715c8e437831bbf0c3db7",
+    "training_result_sha256": "90d8bff2a4776e8cd473ffe68f34f5998595ac473f8ac333be6c2426592eceef"
+  },
+  "checkpoint_contract_canonical_sha256": "3cb25d54f12743ed43572b219e119667f264abab94ec4cbfac72a94407fbdfc7",
+  "evaluation_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+  "metrics": {
+    "clean174": {
+      "compile_at_k": 170,
+      "pass_at_1": 5,
+      "pass_at_k": 14
+    },
+    "full175": {
+      "compile_at_k": 171,
+      "pass_at_1": 5,
+      "pass_at_k": 14
+    }
+  },
+  "ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+  "schema": "t5gemma2-typed-contract-eval-baseline-seal-v1",
+  "status": "sealed"
+}

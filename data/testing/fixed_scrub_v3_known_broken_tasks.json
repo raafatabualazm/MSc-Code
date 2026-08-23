@@ -1,0 +1,25 @@
+{
+  "schema_version": "fixed-scrub-v3-known-benchmark-defects-v1",
+  "tasks": [
+    {
+      "comparator_id": "121",
+      "function": "sumOddInEvenPosition",
+      "failure": "hidden tests bind an undefined solution wrapper; contract stub does not compile"
+    },
+    {
+      "comparator_id": "127",
+      "function": "intersection",
+      "failure": "hidden tests pass record arguments to a List<int> contract"
+    },
+    {
+      "comparator_id": "153",
+      "function": "strongestExtension",
+      "failure": "hidden tests bind an undefined Strongest_Extension wrapper"
+    },
+    {
+      "comparator_id": "161",
+      "function": "solve",
+      "failure": "hidden test source contains unintended $a interpolation"
+    }
+  ]
+}

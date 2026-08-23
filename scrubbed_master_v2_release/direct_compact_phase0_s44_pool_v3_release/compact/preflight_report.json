@@ -1,0 +1,289 @@
+{
+  "cfg_edge_types": {
+    "call": 135,
+    "conditional_false": 72957,
+    "conditional_true": 72923,
+    "linear_fallthrough": 47272,
+    "loop_backedge": 5690,
+    "unconditional_jump": 24564
+  },
+  "codebook_expansion_leakage_scan": {
+    "absolute_symbol_address": 0,
+    "candidate": 0,
+    "file_uri": 0,
+    "private_field_terms": 0
+  },
+  "codebook_fit": {
+    "input_sha256": "0cfd4d766bc9fbc8156d82fd25c424fae94112348fd186590c19e0476614319a",
+    "measure_rows_in_fit": 0,
+    "retained_rows": 2951,
+    "role": "fit_only"
+  },
+  "contract": {
+    "aot_manifest_sha256": "036462866880fdd389036fb34539619c6e99035ba53195a83853ee0f597bd058",
+    "codebook_sha256": "af874d8f4de76785a16c36f4c5c4e158693d1bdf180f7381a3151831cfd249bd",
+    "codec_sha256": "ea2da3983cce6b3fb2c96fd0768bfed5437ddeddf8ee96ccd40065353cad41e3",
+    "dart_toolchain_manifest_sha256": "6cbcbcb56f826dc7e706ef30e0089d9bd314b920ca5221b80356e2ac373c2bdd",
+    "graph_codec_dependency_sha256": "0a8cde3bfb7ec08c45115d4226a45f4b2c1b192a5277270af866237641c419b3",
+    "pool_extractor_sha256": "8657e3946ff121bb23f0fe48b3bd06277672e6ea244b9ba4ce93a819fbe5a389",
+    "pool_reconciliation_manifest_sha256": "67222f33aa29ce99963718889e321d4aeb2c682c263f31cb8850cae84fd7af7c",
+    "stream_marker_ids": {
+      "<CFG>": 168210,
+      "<END>": 168213,
+      "<G2C3>": 168206,
+      "<PEND>": 168212,
+      "<PX0>": 168211
+    },
+    "target_function": "candidate",
+    "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "failure_examples": [],
+  "failures_count": 0,
+  "fallback_by_dataset": {
+    "/workspace/compact_qwen_pool_v3_full_v3_r2/prepared/dev_codec_private.jsonl": {
+      "fallback": 401,
+      "fallback_rate": 0.005738572941412176,
+      "instructions": 69878,
+      "rows": 326
+    },
+    "/workspace/compact_qwen_pool_v3_full_v3_r2/prepared/train_codec_private.jsonl": {
+      "fallback": 0,
+      "fallback_rate": 0.0,
+      "instructions": 696219,
+      "rows": 2951
+    }
+  },
+  "fallback_by_family": {
+    "master": {
+      "fallback": 284,
+      "fallback_rate": 0.0005021083245670642,
+      "instructions": 565615,
+      "rows": 2172
+    },
+    "topup_s45": {
+      "fallback": 113,
+      "fallback_rate": 0.0006016975325076411,
+      "instructions": 187802,
+      "rows": 994
+    },
+    "topup_s46": {
+      "fallback": 4,
+      "fallback_rate": 0.0003154574132492114,
+      "instructions": 12680,
+      "rows": 111
+    }
+  },
+  "fallback_by_role": {
+    "fit": {
+      "fallback": 0,
+      "fallback_rate": 0.0,
+      "instructions": 696219,
+      "rows": 2951
+    },
+    "measure": {
+      "fallback": 401,
+      "fallback_rate": 0.005738572941412176,
+      "instructions": 69878,
+      "rows": 326
+    }
+  },
+  "fallback_by_role_and_family": {
+    "fit": {
+      "master": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 516281,
+        "rows": 1953
+      },
+      "topup_s45": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 168080,
+        "rows": 894
+      },
+      "topup_s46": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 11858,
+        "rows": 104
+      }
+    },
+    "measure": {
+      "master": {
+        "fallback": 284,
+        "fallback_rate": 0.005756678963797787,
+        "instructions": 49334,
+        "rows": 219
+      },
+      "topup_s45": {
+        "fallback": 113,
+        "fallback_rate": 0.005729642024135484,
+        "instructions": 19722,
+        "rows": 100
+      },
+      "topup_s46": {
+        "fallback": 4,
+        "fallback_rate": 0.004866180048661801,
+        "instructions": 822,
+        "rows": 7
+      }
+    }
+  },
+  "lossless_invariants": {
+    "alignment_rows_without_payload_or_source": 3277,
+    "call_edges_encoded_explicitly": true,
+    "compact_id_stream_roundtrip_rows": 3277,
+    "dfg_edges_by_route": {
+      "current_combined_v2": 511678
+    },
+    "dfg_edges_matched_edge_for_edge": 511678,
+    "dfg_regenerated_and_matched_rows": 3277,
+    "exact_graph_and_pool_roundtrip_rows": 3277,
+    "lossless_domain": "scrubbed-canonical-graph-v2-plus-complete-source-blind-pool-values-at-canonical-graph-retained-fixed-r15-uses-v1",
+    "nested_nonliteral_descriptors_preserved": 55,
+    "pool_projection_hashes_matched": 3277,
+    "pool_receipts_hash_bound": 3277,
+    "pool_reconciliation_manifest_sha256": "67222f33aa29ce99963718889e321d4aeb2c682c263f31cb8850cae84fd7af7c",
+    "pool_reconciliation_rows_cover_all_inputs": 3277,
+    "pool_records_roundtripped": 11795,
+    "pool_use_sites_validated": 16690,
+    "privacy_scrub_is_only_intentional_irreversibility": true,
+    "public_private_rows_bijective_and_hash_bound": 3277,
+    "raw_instruction_fallback_is_reversible": true,
+    "raw_target_xrefs_reconciled": 29601,
+    "source_blind_pool_rows": 3277,
+    "truncated_rows": 0,
+    "unknown_tokens": 0
+  },
+  "passed": true,
+  "pool": {
+    "all_node_kind_counts": {
+      "composite": 1354,
+      "double": 551,
+      "int": 3370,
+      "nonliteral": 55,
+      "null": 1555,
+      "string": 9356
+    },
+    "nested_nonliteral_descriptors": {
+      "count": 55,
+      "pair_counts": {
+        "Instance->runtime_object": 50,
+        "Record->runtime_object": 5
+      },
+      "profile_type_to_nonliteral_kind_allowlist": {
+        "ArgumentsDescriptor": "calling_convention_metadata",
+        "Class": "declaration_metadata",
+        "Closure": "callable",
+        "ClosureData": "callable",
+        "Code": "code",
+        "Field": "declaration_metadata",
+        "Function": "callable",
+        "FunctionType": "type_metadata",
+        "Instance": "runtime_object",
+        "PatchClass": "declaration_metadata",
+        "Record": "runtime_object",
+        "SubtypeTestCache": "calling_convention_metadata",
+        "Type": "type_metadata",
+        "TypeArguments": "type_metadata",
+        "TypeParameter": "type_metadata",
+        "TypeParameters": "type_metadata",
+        "UnlinkedCall": "calling_convention_metadata"
+      }
+    },
+    "records": 11795,
+    "rows_validated": 3277,
+    "rows_with_uses": 2305,
+    "schema": "dart-aot-target-literal-pool-v1",
+    "top_level_kind_counts": {
+      "composite": 1310,
+      "double": 551,
+      "int": 1,
+      "null": 779,
+      "string": 9154
+    },
+    "use_sites": 16690
+  },
+  "provenance_manifests": {
+    "aot_manifest_contract_binding": {
+      "mode": "finalized_binary_build_seal",
+      "sha256": "036462866880fdd389036fb34539619c6e99035ba53195a83853ee0f597bd058"
+    },
+    "aot_manifests": [
+      {
+        "name": "binary_build_manifest.json",
+        "schema": "phase0-s44-binary-pool-build-seal-v1",
+        "sha256": "036462866880fdd389036fb34539619c6e99035ba53195a83853ee0f597bd058",
+        "size_bytes": 2853
+      }
+    ],
+    "combined_pool_extractor_manifest": {
+      "name": "pool_extractor_manifest.json",
+      "schema": "dart-aot-pool-extractor-manifest-v1",
+      "sha256": "8657e3946ff121bb23f0fe48b3bd06277672e6ea244b9ba4ce93a819fbe5a389",
+      "size_bytes": 594
+    },
+    "dart_toolchain_manifest": {
+      "name": "dart_toolchain_manifest.json",
+      "schema": "dart-aot-toolchain-manifest-v1",
+      "sha256": "6cbcbcb56f826dc7e706ef30e0089d9bd314b920ca5221b80356e2ac373c2bdd",
+      "size_bytes": 1346
+    },
+    "input_dataset_bindings": [
+      {
+        "name": "train_codec_private.jsonl",
+        "role": "fit",
+        "rows": 2951,
+        "sha256": "0cfd4d766bc9fbc8156d82fd25c424fae94112348fd186590c19e0476614319a",
+        "split": "train"
+      },
+      {
+        "name": "dev_codec_private.jsonl",
+        "role": "measure_0",
+        "rows": 326,
+        "sha256": "65fe6abd094a079a9d250c589797507049d427d3c7204507abbeb80dc0517a4a",
+        "split": "dev"
+      }
+    ],
+    "sealed_dataset_bindings": [
+      {
+        "manifest": "binary_build_manifest.json",
+        "rows": 326,
+        "sha256": "65fe6abd094a079a9d250c589797507049d427d3c7204507abbeb80dc0517a4a",
+        "split": "dev"
+      },
+      {
+        "manifest": "binary_build_manifest.json",
+        "rows": 2951,
+        "sha256": "0cfd4d766bc9fbc8156d82fd25c424fae94112348fd186590c19e0476614319a",
+        "split": "train"
+      }
+    ]
+  },
+  "quarantine_reasons": {},
+  "quarantined": 0,
+  "rows_by_family": {
+    "master": 2172,
+    "topup_s45": 994,
+    "topup_s46": 111
+  },
+  "rows_by_role": {
+    "fit": 2951,
+    "measure": 326
+  },
+  "rows_by_route": {
+    "current_combined_v2": 3277
+  },
+  "rows_retained": 3277,
+  "schema": "compact-qwen-v3-preflight",
+  "tokens": {
+    "kind": "compact_v3_graph_plus_binary_pool_source_only",
+    "limit": 9000,
+    "max": 8791,
+    "min": 33,
+    "p50": 407,
+    "p95": 1455,
+    "p99": 2651,
+    "rows_over_limit": 0
+  }
+}

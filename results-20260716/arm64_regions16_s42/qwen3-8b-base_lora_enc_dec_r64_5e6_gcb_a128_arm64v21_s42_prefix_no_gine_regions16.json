@@ -1,0 +1,63 @@
+{
+  "experiment": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16",
+  "config": {
+    "name": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16",
+    "decoder": "Qwen/Qwen3-8B",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "4",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/datasets/arm64_graphv2/flutter_eval_graphv2.jsonl",
+    "pass_at_k": "data/datasets/arm64_graphv2/flutter_eval_graphv2.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 10,
+    "pass_at_k": 10,
+    "generation_batch_size": 10,
+    "eval_max_new_tokens": 768,
+    "compile_mode": "jit_tests"
+  },
+  "predictions": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json"
+  },
+  "provenance": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json.provenance.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json.provenance.json",
+    "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "encoder_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+    "seed": 42
+  },
+  "codebleu": {
+    "count": 343,
+    "samples_with_success": 343,
+    "mean_codebleu": 0.67232372727892,
+    "min_codebleu": 0.3907873899615062,
+    "max_codebleu": 0.8415330798344485
+  },
+  "codebleu_compiled_only": {
+    "count": 343,
+    "samples_with_success": 227,
+    "mean_codebleu": 0.6634723334737541,
+    "min_codebleu": 0.3936749737522528,
+    "max_codebleu": 0.8204657296718888
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.5294460641399417,
+    "compile_at_5": 0.9307464482391603,
+    "total_problems": 343
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.02128279883381924,
+    "pass_at_5": 0.045282058401591926,
+    "pass_at_10": 0.05539358600583091,
+    "total_problems": 343
+  }
+}

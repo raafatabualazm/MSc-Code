@@ -1,0 +1,57 @@
+{
+  "synthetic": "data\\datasets\\synthetic_pool_clean_cfg.jsonl",
+  "real": "data\\testing\\grpo_data_cfg.jsonl",
+  "output": "data\\datasets\\synthetic_pool_stylematched1400_cfg.jsonl",
+  "target_rows": 1400,
+  "selected_rows": 1036,
+  "real_return_counts": {
+    "bool": 28,
+    "List<String>": 11,
+    "double": 5,
+    "List<int>": 29,
+    "String": 25,
+    "String?": 2,
+    "int": 42,
+    "List<double>": 2,
+    "List<num>": 3,
+    "num": 2,
+    "List<List<int>>": 1,
+    "Map<String,int>": 1,
+    "List<Object>": 1,
+    "int?": 1,
+    "List<dynamic>": 1
+  },
+  "selected_return_counts": {
+    "int": 245,
+    "String": 180,
+    "bool": 240,
+    "List<String>": 100,
+    "double": 45,
+    "Map<String,int>": 9,
+    "List<int>": 217
+  },
+  "real_profile": {
+    "src_median": 79.0,
+    "asm_median": 102.0,
+    "expect_median": 7.0
+  },
+  "selected_profile": {
+    "src_median": 105.0,
+    "asm_median": 166.5,
+    "expect_median": 8.0
+  },
+  "rejects": {
+    "return_type": 191,
+    "source_words": 85
+  },
+  "bucket_sizes_after_filters": {
+    "int": 245,
+    "double": 212,
+    "bool": 240,
+    "String": 180,
+    "List<int>": 217,
+    "List<String>": 175,
+    "Map<String,int>": 181
+  },
+  "seed": 13
+}

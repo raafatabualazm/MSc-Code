@@ -1,0 +1,769 @@
+
+
+===== PAGE 1 =====
+Analytical Review of Graph-Conditioned Neural
+Decompilation of Dart AOT Binaries
+Executive summary
+This manuscript is best understood as an empirical machine-learning systems paper aimed at
+readers in reverse engineering, program analysis, neural code generation, and software engineering
+research. Its present structure and numbered citation style make it look far closer to an IEEE/ACM-style
+technical paper than to an APA-style manuscript. If the intended venue is double-blind, however, the
+current title page and self-citations would need immediate anonymisation; if the intended venue is a
+journal with a house style, that guide should take precedence over any generic convention.
+fileciteturn0file0 1
+Overall, the paper has a promising core contribution: it identifies a genuinely important phenomenon
+in neural decompilation, namely that better surface metrics do not necessarily yield better functional
+correctness, and it presents a useful empirical contrast between graph conditioning, reward adaptation,
+reranking, and multi-arm candidate pooling. The paper is also sensibly organised at a high level, with
+Introduction, Related Work, Method, Experimental Setup, Results, Discussion, Threats to Validity, Future
+Work, and Conclusion. fileciteturn0file0
+My overall recommendation is major revision. The key reasons are not that the paper lacks merit, but
+that several issues currently weaken its scientific reliability and publication readiness:
+Why it changes the
+Area Main issue
+recommendation
+The paper openly acknowledges that some This threatens the clarity of
+training and evaluation arms share data and the central claim. Readers
+that harvest/ensemble results should be need a sharper boundary
+Experimental
+treated as optimisation analysis rather than between generalisable
+validity
+clean generalisation, yet the clean and evidence and benchmark-
+transductive-style results are still presented too specific candidate
+closely together. fileciteturn0file0 harvesting.
+Section 4 says the paper reports compile@1
+and compile@5, but Table 1 shows only
+This makes comparisons
+compile@5 and a redundant “Compiled” count.
+Metrics and harder to interpret and
+There are also no confidence intervals, no
+statistical reduces comparability with
+significance tests, and no explicit clarification of
+reporting prior code-generation
+whether pass@k is an empirical k-sample
+literature.
+success rate or an estimator in the HumanEval
+sense. fileciteturn0file0 2
+1
+
+
+===== PAGE 2 =====
+Why it changes the
+Area Main issue
+recommendation
+There is no explicit code/data/checkpoint
+availability statement, no seeds, no sampling
+hyperparameters, no GRPO training details For an empirical ML paper,
+Reproducibility
+sufficient for replication, and no appendix this is a major weakness.
+listing exact run configurations beyond partial
+mentions in prose. fileciteturn0file0
+The manuscript relies heavily on internal run This obscures the argument
+labels such as G3, p128r, withB ref ultralite, and and forces the reader to
+Readability and
+binary repair ultralite, which are meaningful to decode the experiment
+style
+the authors but not yet reader-friendly. taxonomy while trying to
+fileciteturn0file0 follow the results.
+The references are inconsistent: some entries
+include venue and pages, many do not; several
+likely arXiv or technical-report items omit A strong paper in this area
+Reference persistent identifiers; and one reference is needs a cleaner, more
+hygiene explicitly “under peer review”, which is weak complete reference
+evidence for readers and potentially apparatus.
+problematic for anonymous review.
+fileciteturn0file0 3
+Bottom line: the paper appears publishable in principle, but not in its current state. The right path is
+major revision with re-framing, not rejection by default. The most important improvement is to
+restructure the evidence so that the reader can clearly distinguish clean model comparison, reranking
+analysis, and candidate-harvesting/coverage analysis. fileciteturn0file0
+Assumptions and review frame
+Because the paper did not specify its target audience, venue, or paper type in metadata, this review
+proceeds under explicit assumptions derived from the manuscript itself.
+Item Working assumption Basis in the manuscript
+Empirical
+The manuscript presents datasets, architecture variants,
+benchmarking /
+Paper experimental arms, tables of metrics, and a threats-to-
+systems paper rather
+type validity section rather than proofs or a literature
+than theoretical or survey
+synthesis as its main output. fileciteturn0file0
+paper
+Researchers in reverse
+The paper foregrounds decompilation, CodeBLEU,
+Likely engineering, ML for
+pass@k, HumanEval-Dart, GraphCodeBERT, LoRA, and
+audience code, and software
+Qwen. fileciteturn0file0
+engineering
+2
+
+
+===== PAGE 3 =====
+Item Working assumption Basis in the manuscript
+The paper uses numbered references, bracketed
+citations, and conventional technical sectioning; IEEE’s
+Closest
+IEEE/ACM technical author manual expects a one-paragraph abstract, index
+default
+style terms, and a standard article order that is broadly
+style
+similar to what the paper already uses.
+fileciteturn0file0 4
+Low unless the APA is an author-date system and is most natural in
+APA fit manuscript is social/behavioural sciences rather than a systems-style
+completely reformatted SE/ML paper of this form. 5
+This cannot be assessed properly until a target journal is
+Possible, but journal-
+Elsevier fit named; for Elsevier, the specific Guide for Authors would
+specific
+govern the final form.
+This matters because several apparent “problems” are in fact venue-dependent. For example, the
+presence of author names is normal for a camera-ready or non-blind draft, but not for an anonymous
+review submission. Likewise, “Figure 1” may be acceptable in a generic preprint, whereas IEEE style
+expects figure and table citation conventions to be handled in a particular way. fileciteturn0file0
+6
+Findings across the requested dimensions
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+The macro-structure is
+strong: title, abstract,
+Missing keywords/ Add
+Introduction, Related These
+index terms; missing affiliations or
+Work, Method, omissions
+author affiliations/ anonymise
+Experimental Setup, reduce
+contact details if this fully
+Results, Discussion, discoverability,
+is not blind; no code/ depending on
+Threats to Validity, publication
+data availability venue; add
+Overall Future Work, readiness, and
+statement; no explicit Index Terms;
+structure and Conclusion, reader
+ethics/broader-impact add a concise
+organisation References. The orientation.
+note; no short contributions
+abstract is one IEEE explicitly
+roadmap of paragraph;
+paragraph and is expects Index
+contributions at the add
+approximately within Terms after
+end of the availability
+the IEEE 150–250 word the abstract.
+Introduction. and ethics
+range. 7
+fileciteturn0file0 statements.
+fileciteturn0file0
+4
+3
+
+
+===== PAGE 4 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+The paper treats
+clean model
+comparison,
+reranking effects,
+and multi-arm
+harvesting/coverage
+too closely together. Readers need
+The strongest claims to know which
+increasingly rely on claims are
+Split claims
+pooled candidate about
+into: primary
+coverage, but the deployable
+The central narrative clean results,
+manuscript does not models, which
+is sensible: sequence- secondary
+elevate this shift in are about
+only fine-tuning is reranking
+evidential status early search-space
+insufficient, graph analysis,
+Argumentation enough. The phrase discovery, and
+conditioning helps, tertiary
+and logical “These results suggest which are
+reward tuning is pooled-
+coherence that graph about
+unstable, ensembling coverage
+conditioning and benchmark
+yields complementary analysis. Add
+multi-policy candidate optimisation.
+gains. explicit
+ensembling are more Without that
+fileciteturn0file0 research
+reliable directions...” in separation,
+questions or
+the abstract is slightly the paper
+hypotheses.
+stronger than the sounds more
+evidence base conclusive
+warrants, especially than it is.
+because much of the
+coverage story is
+benchmark-specific
+pooling rather than
+clean generalisation.
+fileciteturn0file0
+4
+
+
+===== PAGE 5 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+Section 4 says the
+paper reports
+compile@1 and
+compile@5, but Table
+1 omits compile@1.
+Table 1’s “Compiled”
+column is numerically
+redundant with
+compile@5 because Metric
+Restore
+The paper does a both represent “at ambiguity
+compile@1,
+good job of least one compilable reduces
+define pass@k
+separating the 126- candidate among five” comparability
+exactly, state
+task compile/ on the 126-task set. and makes the
+sample count
+CodeBLEU The paper also does contribution
+and estimator
+Technical denominator from the not state clearly look less
+formula, and
+accuracy 154-task pass-set whether pass@k is a rigorous than
+add
+denominator, and the simple empirical it may actually
+confidence
+threats-to-validity success fraction from be. Missing
+intervals or
+section is more candid k samples or a compile@1 is
+paired
+than average. HumanEval-style a direct
+statistical
+fileciteturn0file0 estimator. internal
+tests.
+HumanEval’s original inconsistency.
+paper formalised
+pass@k as a
+functional metric and
+discusses estimation
+from multiple
+samples.
+fileciteturn0file0
+2
+5
+
+
+===== PAGE 6 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+Table 1 uses cryptic
+labels; its caption does
+not explain every
+Dense result
+abbreviation; best
+tables
+values are not visually Replace
+increase
+marked; no internal labels
+The figure and tables cognitive load
+uncertainty intervals with
+are genuinely and slow
+are shown; Table 2 descriptive
+informative, especially down review.
+headings are heavily names in the
+in showing the trade- In a
+Data abbreviated; Figure 1 main table,
+off between competitive
+presentation caption is serviceable move archive/
+CodeBLEU, paper, readers
+but could be more run IDs to an
+compile@k, and should not
+self-contained and appendix, add
+pass@k. have to
+venue-conformant. CIs, and make
+fileciteturn0file0 reverse-
+IEEE expects clear captions
+engineer run
+figure/table citation standalone.
+names from
+order and stable
+prose.
+caption conventions.
+fileciteturn0file0
+8
+6
+
+
+===== PAGE 7 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+Reference formatting
+is inconsistent. Some
+entries include venue
+and pages; many list
+only title and year.
+Several entries that
+are clearly available as
+arXiv or technical
+reports omit Normalise all
+persistent identifiers, references to
+including a single venue
+GraphCodeBERT, style; add
+Incomplete
+LoRA, HumanEval/ missing
+references
+Codex, venues,
+The paper cites make it harder
+DeepSeekMath, pages,
+relevant prior work in for reviewers
+SimKO, and the publishers,
+Citations and decompilation, code to verify
+Qwen3 Technical arXiv IDs, and
+references modelling, and claims and
+Report. The paper also DOIs/URLs
+optimisation. reduce the
+includes a self- where
+fileciteturn0file0 paper’s
+reference marked applicable;
+professional
+“under peer review”, reconsider
+polish.
+which is weakly how
+verifiable and may be unpublished
+problematic in blind self-citations
+review. IEEE expects are handled.
+each reference to be a
+separate numbered
+entry; Crossref and
+current DOI practice
+favour actionable DOI
+URLs when available.
+fileciteturn0file0
+9
+7
+
+
+===== PAGE 8 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+Style is uneven.
+Informal phrases such
+as “one magical
+checkpoint” and
+archive-facing labels
+such as “withB ref
+Tighten
+ultralite” weaken Reviewers
+sentences,
+The prose is generally academic tone. tend to trust
+replace
+clear, and the paper Several sentences are papers more
+colloquial
+avoids most obvious longer than needed when claims
+Language, phrasing,
+grammatical and bury the main are precise,
+grammar, and standardise
+problems. The tone is claim. The paper hedged
+academic style tense, and
+often confident sometimes slides from appropriately,
+distinguish
+without being opaque. precise description and separated
+observation
+fileciteturn0file0 into promotional from
+from
+language such as interpretation.
+interpretation.
+“best balanced”,
+“strongest result”, and
+“substantially more”
+without immediate
+statistical framing.
+fileciteturn0file0
+8
+
+
+===== PAGE 9 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+Replication details are
+insufficient: no public
+repository, no
+checkpoint list, no
+seed reporting, no
+detailed sampling
+settings, no
+optimisation
+schedules, no exact
+GRPO reward
+The method section Add a
+definition beyond In ML systems
+gives a useful reproducibility
+high-level description, papers,
+conceptual overview appendix and
+Reproducibility no precise train/ reproducibility
+of CFG/DFG a clearly
+and validation split is part of the
+extraction, graph labelled “clean
+transparency description, and no contribution,
+conditioning, and vs
+appendix with full not a nice-to-
+adaptation arms. transductive”
+configs. Most have.
+fileciteturn0file0 protocol split.
+importantly, the paper
+acknowledges that
+some harvest/
+ensemble results are
+not clean
+generalisation but
+does not reorganise
+the evidence around
+that admission.
+fileciteturn0file0
+Missing Index Terms;
+uncertain byline
+status; figure/table
+style not fully
+The abstract length Style
+harmonised with IEEE
+and overall article mismatch can Choose the
+Formatting norms; references not
+order are compatible trigger desk- target venue
+and style- normalised; if APA
+with IEEE-like level friction first, then do
+guide were intended, the
+expectations. even when the a full style
+adherence entire citation
+fileciteturn0file0 science is pass once.
+apparatus would need
+4 sound.
+conversion to author-
+date format.
+fileciteturn0file0
+10
+9
+
+
+===== PAGE 10 =====
+Errors,
+Why they Priority
+Dimension What is working inconsistencies, and
+matter correction
+style issues
+There is a self-overlap
+Even
+risk because the Run
+legitimate
+manuscript draws iThenticate or
+reuse can
+No obvious plagiarism heavily on the authors’ equivalent,
+trigger
+is visible from the text prior Dart AOT work inspect self-
+reviewer
+alone. The paper does and on benchmark/ overlap
+Originality and concern if
+cite its own earlier task descriptions that manually, and
+plagiarism wording
+work rather than may recur across rewrite shared
+concerns overlap is high
+presenting those related manuscripts. benchmark-
+or if dataset/
+ideas as if new. The references also description
+task
+fileciteturn0file0 signal multiple closely paragraphs
+descriptions
+related papers in a into fresher
+are recycled
+short period. wording.
+too closely.
+fileciteturn0file0
+One structural change would improve the manuscript more than any local copy-edit:
+Introduction and problem
+framing
+RQ1: Does graph RQ2: Does reward tuning RQ3: How much extra
+conditioning improve improve functional value comes from
+clean decompilation correctness without reranking and cross-arm
+quality? damaging compilability? pooling?
+Clean held-out model Separate candidate-pool
+comparison and reranking analysis
+Secondary optimisation
+Primary claims
+and coverage claims
+Discussion
+Threats to validity and
+limits on generalisation
+That reorganisation would align the argument more closely with what the paper already admits in its
+Threats to Validity section. fileciteturn0file0
+10
+
+
+===== PAGE 11 =====
+Prioritised corrections
+Severity Correction What to change concretely
+Create separate subsections and tables. Clean results should
+Separate clean
+include only models not trained or repaired using the
+evaluation from
+Critical evaluation tasks. Coverage/harvest results should be clearly
+harvested/
+marked as optimisation analysis rather than generalisation
+transductive analysis
+evidence. fileciteturn0file0
+Add compile@1 to Table 1 or remove the claim from Section
+Fix metric reporting 4. Define pass@k formally, state whether it is empirical k-
+Critical
+inconsistency sample success or an estimator, and cite the HumanEval
+convention. fileciteturn0file0 2
+Include code/data/checkpoint availability, seeds, train/dev/
+Add reproducibility test splits, sampling temperature/top-p, batch sizes,
+Critical
+package details optimisation schedules, reward definitions, and hardware.
+fileciteturn0file0
+In the manuscript body and main tables, use descriptive
+Replace archive-facing
+names such as “Graph-conditioned, 16-prefix, no prompt
+High run labels in main
+assembly” rather than “G3”, and move internal IDs to an
+results
+appendix. fileciteturn0file0
+Add venue/publisher/page range for all published items; add
+Normalise the arXiv IDs or DOIs for preprints/technical reports; use
+High
+references consistent title capitalisation and punctuation.
+fileciteturn0file0 11
+Report confidence intervals for pass@k and compile@k,
+Add statistical
+High ideally with paired comparisons across tasks for major claims.
+uncertainty
+fileciteturn0file0
+If non-blind: affiliations, emails, ORCIDs if required,
+Add Index Terms and
+keywords/index terms. If blind: remove identifying
+Medium venue-ready front
+information consistently. IEEE expects Index Terms after the
+matter
+abstract. fileciteturn0file0 7
+Remove colloquial register, shorten long sentences, and state
+Medium Tighten the prose interpretations with measured confidence.
+fileciteturn0file0
+Make captions standalone; expand abbreviations; mark best
+values; explain denominators in the table itself, not just in the
+Improve captions and
+Medium caption. IEEE’s figure/table citation rules are a good
+table clarity
+benchmark if that is the target style. fileciteturn0file0
+8
+Because decompilation is relevant to malware analysis and
+Add ethics / dual-use
+Medium reverse engineering, include a short dual-use and
+note
+responsible-release statement. fileciteturn0file0
+11
+
+
+===== PAGE 12 =====
+Annotated edits for key problematic passages
+The examples below focus on passages where the draft is scientifically serviceable but stylistically or
+logically weaker than it needs to be.
+Location Original text Issue Suggested revision
+“Motivated by the finding
+that sequence-only fine-
+Slightly conversational and tuning does not reliably
+backward-looking; it leans on improve functional
+“This paper
+prior work without correctness, we evaluate
+Introduction starts from that
+immediately stating the whether graph-conditioned
+negative result.”
+present paper’s contribution. decoding, reward
+fileciteturn0file0 adaptation, reranking, and
+candidate pooling recover
+additional semantic fidelity.”
+“The purpose is “Our aim is not to identify a
+not to find one universally dominant
+“One magical checkpoint”
+magical checkpoint, but to
+sounds colloquial and
+checkpoint but characterise how each
+Method undercuts the otherwise
+to map how each intervention shifts the trade-
+technical tone.
+intervention off among CodeBLEU,
+fileciteturn0file0
+changes the compilability, and functional
+tradeoff…” correctness.”
+“The largest task-level
+The sentence overstates the coverage gain is observed
+“The strongest evidential status without when candidates are pooled
+result appears immediately signalling that across independently
+Results when candidates this is a pooled-coverage adapted arms, although this
+are pooled analysis, not a clean single- result reflects candidate-set
+across arms.” model win. complementarity rather
+fileciteturn0file0 than single-model
+generalisation.”
+“The 17 files “The multi-arm pool
+Archive-oriented detail
+consist of the 14 combines the 14 primary
+interrupts the Results
+Table/ standalone arms model families with three
+narrative. This belongs in an
+Results in Table 1 plus auxiliary repair/rerank pools;
+appendix or a dataset card for
+narration three additional exact file identifiers are
+experiment artefacts.
+repair/rerank provided in the appendix for
+fileciteturn0file0
+pools…” traceability.”
+A slightly larger paragraph-level rewrite is also warranted in the section on pooled candidates. The
+current paragraph is informative, but it mixes headline result, pool composition, archive labels, and
+example tasks in one block. A cleaner version would be:
+“Pooling candidates across 17 evaluation pools increases task-level passing coverage
+from 24/154 for the clean graph-conditioned model and 28/154 for the best GRPO arm to
+43/154 overall. This result indicates substantial complementarity across adaptation
+12
+
+
+===== PAGE 13 =====
+strategies. Because some pooled arms include repair and harvest variants, we interpret
+this outcome as an upper-bound analysis of candidate discovery rather than as clean
+single-model generalisation. Full pool composition is reported in the appendix.”
+fileciteturn0file0
+Suggested abstract and title options
+Rewritten abstract
+Neural decompilation is often evaluated with surface-form and compilability metrics, yet these
+measures can diverge from functional correctness. We study whether graph-conditioned decoding and
+inference-time candidate selection improve neural decompilation of Dart AOT binaries beyond
+sequence-only fine-tuning. Our approach encodes control-flow and lightweight data-flow structure
+extracted from x86-64 Dart AOT assembly using a GraphCodeBERT-based encoder and conditions a
+Qwen3-8B decoder through learned graph-prefix representations. We evaluate architecture ablations,
+GRPO-based reward adaptation, rejection-sampling supervised fine-tuning, compile-aware reranking,
+and multi-arm candidate pooling on 154 HumanEval-Dart tasks, with separate denominators for
+compile-oriented and pass-oriented evaluations. The clean graph-conditioned model provides the
+strongest overall balance of CodeBLEU, compilability, and functional correctness, reaching 0.638
+CodeBLEU, compile@5 of 0.667, and pass@10 of 0.156. A binary-reward GRPO variant attains the
+highest standalone pass@10 of 0.182, but at substantial cost to compile@5 and CodeBLEU, indicating
+instability under sparse correctness rewards. No single adaptation arm dominates across all metrics.
+Instead, pooled candidate sets reveal substantial complementarity across arms, yielding at least one
+passing candidate for 43 of 154 tasks. We therefore conclude that graph conditioning improves the
+most balanced single-model profile, whereas multi-arm candidate generation and stronger selection
+mechanisms are the most promising route to higher functional recovery in Dart AOT decompilation.
+fileciteturn0file0
+Improved title options
+The current title is informative but dense. These alternatives are stronger because they reduce the
+subtitle’s list-like feel and foreground the paper’s actual claim.
+Option Why it is better
+Graph-Conditioned Neural Decompilation of Dart Best if you want a concise, architecture-
+AOT Binaries centred title.
+Improving Functional Correctness in Dart AOT Best if you want the title to foreground
+Neural Decompilation with Graph Conditioning the paper’s real outcome rather than the
+and Candidate Ensembling method inventory.
+Graph Conditioning, Reward Adaptation, and Best compromise if you want to keep the
+Candidate Ensembling for Dart AOT Neural three-way method framing but shorten
+Decompilation the current title.
+Towards Functionally Correct Dart AOT
+Best if you want a more cautious,
+Decompilation via Graph-Conditioned Generation
+research-forward title.
+and Candidate Pooling
+13
+
+
+===== PAGE 14 =====
+My preferred option is the second one, because the paper’s most interesting story is not merely that it
+uses graph conditioning, but that it studies what actually helps functional correctness.
+fileciteturn0file0
+Author checklist and recommended resources
+Before resubmission, the authors should be able to answer yes to each item below.
+Yes/No
+Checklist item
+target
+Have you separated clean held-out results from harvested or transductive
+Yes
+optimisation results?
+Have you defined pass@k precisely and made it comparable with prior code-
+Yes
+generation work?
+Have you restored or removed any promised-but-missing metrics such as
+Yes
+compile@1?
+Have you added confidence intervals or significance analyses for the main
+Yes
+comparisons?
+Have you replaced cryptic run labels in the main paper with descriptive names? Yes
+Have you added a code/data/checkpoint availability statement? Yes
+Have you reported seeds, sampling parameters, optimisation settings, and
+Yes
+hardware?
+Have you normalised all references and added missing persistent identifiers? Yes
+Have you added keywords/index terms and venue-correct front matter? Yes
+Have you run a similarity check for plagiarism and self-overlap? Yes
+Have you added an ethics or dual-use statement appropriate to decompilation
+Yes
+research?
+Have you completed one full venue-specific style pass after choosing the target
+Yes
+outlet?
+The most useful resources to consult next are these:
+• IEEE Editorial Style Manual for Authors. This is the best primary source if the manuscript
+remains in numbered-citation technical-paper form; it specifies article order, one-paragraph
+abstracts, Index Terms, heading conventions, reference handling, and figure/table citation
+practice. 12
+• APA Publication Manual and APA Style guidance. Use this only if the target outlet truly
+requires APA, because it would require a full conversion to author-date citations and APA-specific
+paper conventions. 5
+• HumanEval / “Evaluating Large Language Models Trained on Code”. Use this as the reference
+point for explaining pass@k clearly and avoiding metric ambiguity. 2
+• Crossref / DOI display guidance. Use actionable DOI or stable identifier formatting consistently
+wherever DOIs are available. 13
+14
+
+
+===== PAGE 15 =====
+• Reference metadata for omitted identifiers. Several cited works in the paper have readily
+available persistent records or arXiv identifiers, including GraphCodeBERT, LoRA, DeepSeekMath,
+SimKO, HumanEval/Codex, and the Qwen3 Technical Report. 14
+On substance rather than style, the paper’s revised version should aim to make one claim unmistakably
+clear: graph conditioning improves the clean single-model baseline, while pooled candidate
+coverage is a separate and more exploratory result about complementarity and selection. If the
+revision makes that distinction crisp, tightens the metrics, and strengthens reproducibility, the paper
+will read as a much more rigorous and credible contribution. fileciteturn0file0
+1 4 6 7 8 10 12 IEEE Editorial Style Manual for Authors
+https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE-Editorial-Style-Manual-for-Authors.pdf
+2 Evaluating Large Language Models Trained on Code
+https://arxiv.org/abs/2107.03374?utm_source=chatgpt.com
+3 9 11 14 GraphCodeBERT: Pre-training Code Representations with Data Flow
+https://arxiv.org/abs/2009.08366?utm_source=chatgpt.com
+5 APA style - Wikipedia
+https://en.wikipedia.org/wiki/APA_style
+13 Digital object identifier
+https://en.wikipedia.org/wiki/Digital_object_identifier?utm_source=chatgpt.com
+15

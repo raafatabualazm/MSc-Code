@@ -1,0 +1,1127 @@
+{
+  "row": 150,
+  "task_id": "158",
+  "problem_id": "158",
+  "runs": [
+    {
+      "repeat": 1,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_babx7ft3/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_babx7ft3/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_lufi553n/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_lufi553n/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_f8yxctza/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_f8yxctza/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_6xvlzolm/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_6xvlzolm/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ncba != abc\n#0      expect (file:///tmp/dart_jit_compilek_158_3rxx5o5s/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_3rxx5o5s/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_utqzs58r/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_utqzs58r/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_eomxks5j/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_eomxks5j/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_bc2b8ifj/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_bc2b8ifj/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_iuktt7us/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_iuktt7us/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_bxz111zy/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_bxz111zy/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_9vtdepof/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_9vtdepof/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_y70d98sc/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_y70d98sc/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ze_tkwey/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ze_tkwey/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_q9quydbc/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_q9quydbc/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_fb1hjxly/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_fb1hjxly/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_krgo7jqy/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_krgo7jqy/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ww05nm05/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ww05nm05/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_8gik1u1a/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_8gik1u1a/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 4,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_6tbeeve5/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_6tbeeve5/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_o3ipzmmw/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_o3ipzmmw/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_u9ur1thv/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_u9ur1thv/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_qw16et92/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_qw16et92/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_u94ievjg/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_u94ievjg/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 5,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_qzzcd0s3/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_qzzcd0s3/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_t95mr5eb/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_t95mr5eb/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_343iumi_/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_343iumi_/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vl398sr1/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vl398sr1/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_n62q3d8e/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_n62q3d8e/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_sglofctt/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_sglofctt/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 6,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vj_w4s00/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vj_w4s00/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ts6pk5z3/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ts6pk5z3/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_kmpkjn64/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_kmpkjn64/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_jl5b38v9/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_jl5b38v9/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_6e4tynwx/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_6e4tynwx/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_v8lyk7o2/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_v8lyk7o2/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 7,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_782ldpht/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_782ldpht/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_1_l9tkk_/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_1_l9tkk_/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_phepq23w/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_phepq23w/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vpl5qm1d/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vpl5qm1d/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_g5r7wag7/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_g5r7wag7/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_secy_ml4/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_secy_ml4/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 8,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_nea5jm49/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_nea5jm49/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_n5k_oc2n/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_n5k_oc2n/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_t5p2b0rm/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_t5p2b0rm/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_hfi6ck34/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_hfi6ck34/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_o2u91kyz/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_o2u91kyz/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_rianfvk7/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_rianfvk7/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 9,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_9lsak7jc/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_9lsak7jc/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_cw9mab_5/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_cw9mab_5/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_jqdnbt1o/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_jqdnbt1o/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_igabsn2x/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_igabsn2x/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nprrk != this\n#0      expect (file:///tmp/dart_jit_compilek_158_736wl2dj/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_736wl2dj/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_2bfys1l9/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_2bfys1l9/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 10,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_2me08hi4/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_2me08hi4/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_grn61jim/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_grn61jim/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ebt29xvl/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ebt29xvl/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_jlgyibkw/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_jlgyibkw/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vh_quvyg/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vh_quvyg/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_y9i_ax4z/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_y9i_ax4z/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 11,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_8negc07x/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_8negc07x/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_war1jfmw/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_war1jfmw/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_5zmubsk3/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_5zmubsk3/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_n0feu3_9/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_n0feu3_9/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_cudthjot/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_cudthjot/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_n07m4a6y/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_n07m4a6y/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 12,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_01706l8p/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_01706l8p/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158____tr9ep/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158____tr9ep/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_52lsmysb/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_52lsmysb/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_aapf9uk1/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_aapf9uk1/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_4rwsybyh/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_4rwsybyh/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_sgxxjm20/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_sgxxjm20/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 13,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_j77kkso7/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_j77kkso7/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_m9oqaqb6/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_m9oqaqb6/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ezp1kw6h/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ezp1kw6h/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_lpn6fkvg/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_lpn6fkvg/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ncba != abc\n#0      expect (file:///tmp/dart_jit_compilek_158_a9ezmcg5/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_a9ezmcg5/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_zjhjqplo/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_zjhjqplo/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 14,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_b_zzuh6c/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_b_zzuh6c/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_qw1xoqad/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_qw1xoqad/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_onxe3r61/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_onxe3r61/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_00glm_rs/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_00glm_rs/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_bam7n7nr/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_bam7n7nr/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_d1eynfy5/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_d1eynfy5/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 15,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_tv519jry/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_tv519jry/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_q5bhrv7i/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_q5bhrv7i/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_haytc4wx/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_haytc4wx/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ze7a8pz2/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ze7a8pz2/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_wb441fmn/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_wb441fmn/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_dq433eb6/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_dq433eb6/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 16,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ty5fxpnx/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ty5fxpnx/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_o5pp9p5z/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_o5pp9p5z/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ly117bzx/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ly117bzx/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_rhm9t6f7/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_rhm9t6f7/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ncba != abc\n#0      expect (file:///tmp/dart_jit_compilek_158_xszyk36z/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_xszyk36z/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ot66ibrv/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ot66ibrv/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 17,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_kjf1nte5/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_kjf1nte5/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_k09bi_lc/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_k09bi_lc/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_e3l305z9/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_e3l305z9/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_5uhh2xpe/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_5uhh2xpe/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_e5igw5cb/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_e5igw5cb/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_wxkferys/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_wxkferys/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 18,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_ycx4b4l_/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_ycx4b4l_/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_mz0srwp5/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_mz0srwp5/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_z8kwvhpe/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_z8kwvhpe/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_q2i_uuyf/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_q2i_uuyf/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_12q8dntt/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_12q8dntt/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vrzj0hx_/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vrzj0hx_/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 19,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_vr86wmmb/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_vr86wmmb/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_do96blm4/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_do96blm4/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_zdw_g3po/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_zdw_g3po/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_lgmieee2/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_lgmieee2/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\ngame != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_mvxta1d0/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_mvxta1d0/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_cc9blsaz/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_cc9blsaz/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    },
+    {
+      "repeat": 20,
+      "passed": 0,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_8unnszqr/test.dart:47:5)\n#1      main (file:///tmp/dart_jit_compilek_158_8unnszqr/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_pag0bk56/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_pag0bk56/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_93omj9yo/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_93omj9yo/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_e7ygk7w4/test.dart:40:5)\n#1      main (file:///tmp/dart_jit_compilek_158_e7ygk7w4/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_hc5a5msu/test.dart:49:5)\n#1      main (file:///tmp/dart_jit_compilek_158_hc5a5msu/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:11:56: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (words[i].length == maxWord.length && words[i] > maxWord)) {\n                                                       ^"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: Unhandled exception:\nname != enam\n#0      expect (file:///tmp/dart_jit_compilek_158_bg7b4yas/test.dart:36:5)\n#1      main (file:///tmp/dart_jit_compilek_158_bg7b4yas/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:16:20: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n      if (words[i] > maxWord) {\n                   ^"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:10:41: Error: The operator '>' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '>' operator.\n        (lengthB == lengthA && words[i] > words[maxIndex])) {\n                                        ^"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/1: test.dart:22:13: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n            ^^\ntest.dart:22:33: Error: The operator '<=' isn't defined for the type 'String'.\nTry correcting the operator to an existing operator, or defining a '<=' operator.\n    if ('A' <= letter && letter <= 'Z') {\n                                ^^\ntest.dart:34:14: Error: A"
+        }
+      ]
+    }
+  ]
+}

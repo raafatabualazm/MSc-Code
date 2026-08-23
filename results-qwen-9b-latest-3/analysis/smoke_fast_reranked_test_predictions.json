@@ -1,0 +1,247 @@
+[
+  {
+    "id": "0",
+    "source_line": 1,
+    "filename": "0.dart",
+    "predictions": [
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; ++i) {\n    for (int j = i + 1; j < numbers.length; ++j) {\n      final diff = numbers[i] - numbers[j];\n      if (diff.abs() <= threshold) return true;\n    }\n  }\n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length; i++) {\n    for (int j = i + 1; j < numbers.length; j++) {\n      if ((numbers[i] - numbers[j]).abs() <= threshold) return true;\n    }\n  }\n\n  \n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  int n = numbers.length;\n\n  for (int i = 0; i < n - 1; i++) {\n    double a = numbers[i];\n    for (int j = i + 1; j < n; j++) {\n      if ((a - numbers[j]).abs() <= threshold) return true;\n    }\n  }\n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; i++) {\n    for (int j = i + 1; j < numbers.length; j++) {\n      if ((numbers[i] - numbers[j]).abs() <= threshold) return true;\n    }\n  }\n  \n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; ++i) {\n    final diff = numbers[i + 1] - numbers[i];\n    if (diff <= threshold && diff >= -threshold) {\n      return true;\n    }\n  }\n  \n  for (int i = 0; i < numbers.length - 2; ++i) {\n    for (int j = i + 1; j < numbers.length - 1; ++j) {\n      final diff = numbers[j + 1] - numbers[j];\n      if (diff <= threshold && diff >= -threshold) {\n        return true;\n      }\n    }\n    \n    for (int j = i + 1; j < numbers.length; ++j) {\n      final diff = numbers[j] - numbers[i];\n      if (diff <= threshold && diff >= -threshold) {\n        return true;\n      }\n    }\n  }\n\n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; i++) {\n    final diff = numbers[i + 1] - numbers[i];\n    if (diff.abs() <= threshold) return true;\n  }\n  \n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (var i = 0; i < numbers.length - 1; ++i) {\n    final diff = numbers[i + 1] - numbers[i];\n    if ((diff >= -threshold && diff <= threshold)) {\n      return true;\n    }\n  }\n\n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; i++) {\n    if ((numbers[i] + threshold).floorToDouble() == \n        numbers[i+1].ceilToDouble()) {\n      return true;\n    }\n  }\n\n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (var i = 0; i < numbers.length - 1; ++i) {\n    if ((numbers[i] + threshold >= numbers[i+1]) && \n        (numbers[i+1] - threshold <= numbers[i])) { return true;}\n  }\n\n  \n  return false;\n}",
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; i++) {\n    if ((numbers[i] + threshold > numbers[i + 1]) || \n        (numbers[i + 1] + threshold > numbers[i])) return true;\n  }\n  return false;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nbool hasCloseElements(List<double> numbers, double threshold) {\n  for (int idx = 0; idx < numbers.length; idx++) {\n    double elem = numbers[idx];\n    for (int idx2 = 0; idx2 < numbers.length; idx2++) {\n      double elem2 = numbers[idx2];\n      if (idx != idx2) {\n        double distance = (elem - elem2).abs();\n        if (distance < threshold) {\n          return true;\n        }\n      }\n    }\n  }\n  return false;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case 1\n  assert(hasCloseElements([1.0, 2.0, 3.0], 0.5) == false);\n  \n  // Test case 2\n  assert(hasCloseElements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3) == true);\n  \n  print('All tests passed!');\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = hasCloseElements;\n\n  expect(candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3), true);\n  expect(candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05), false);\n  expect(candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.95), true);\n  expect(candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.8), false);\n  expect(candidate([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], 0.1), true);\n  expect(candidate([1.1, 2.2, 3.1, 4.1, 5.1], 1.0), true);\n  expect(candidate([1.1, 2.2, 3.1, 4.1, 5.1], 0.5), false);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; ++i) {\n    for (int j = i + 1; j < numbers.length; ++j) {\n      final diff = numbers[i] - numbers[j];\n      if (diff.abs() <= threshold) return true;\n    }\n  }\n  return false;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        2,
+        6,
+        9,
+        0,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1012.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "id": "1",
+    "source_line": 2,
+    "filename": "1.dart",
+    "predictions": [
+      "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n\n  int depth = 0;\n  String currentGroup = \"\";\n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      currentGroup += parenString[i];\n    } else if (parenString[i] == ')') {\n      currentGroup += parenString[i];\n      depth--;\n      \n      if (depth == 0) {\n        result.add(currentGroup);\n        currentGroup = '';\n      }\n    }\n  }\n\n  return result;\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<List<int>> groups = [];\n\n  \n  int groupStartIndex = -1;\n\n \n  for (int i = 0; i < parenString.length; ++i) {\n    if (parenString[i] == '(' && groupStartIndex == -1) {\n      groupStartIndex = i;\n    } else if (parenString[i] == ')') {\n      if (groupStartIndex != -1) {\n        \n        String currentGroup = parenString.substring(groupStartIndex, i + 1);\n        groups.add(currentGroup.split('').toList()); \n\n        \n        groupStartIndex = -1;\n      }\n    }\n  }\n\n\n  return groups.map((g) => g.join('')).toList();\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<List<int>> groups = [];\n\n  \n  int depth = 0;\n  for (int i = 0, n = parenString.length; i < n; ++i) {\n    if (parenString[i] == '(') {\n      ++depth;\n    } else if (parenString[i] == ')') {\n      --depth;\n      \n      if (depth >= 0 && depth != 1) continue; \n      \n      \n      groups.add(parenString.substring(i - depth + 1, i + 1));\n      i += depth - 2; \n    }\n    \n    if (depth == 0) break; \n  }\n\n  return groups.map((g) => g.toString()).toList();\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n  \n  int depth = 0;\n  String currentGroup = '';\n  \n  for (int i = 0; i < parenString.length; i++) {\n    char c = parenString[i];\n    \n    if (c == '(') {\n      currentGroup += c;\n      depth++;\n      \n      // Check if we've reached the end of a complete group at this depth level\n      if (depth == 1 && i + 1 >= parenString.length || \n          (i > 0 && parenString[i - 1] == ')')) {\n        result.add(currentGroup);\n        currentGroup = '';\n        depth = 0;\n      }\n    } else if (c == ')') {\n      currentGroup += c;\n      depth--;\n      \n      // If we're back to depth 0, we have a completed top-level group\n      if (depth == 0) {\n        result.add(currentGroup);\n        currentGroup = '';\n      }\n    }\n  }\n  \n  return result;\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<List<int>> groups = [];\n\n  for (int i = 0; i < parenString.length; ) {\n    int j = i + 1;\n\n    while (j < parenString.length && \n           (parenString[j] == '(' || parenString[j] == ')')) {\n      if ((parenString[i] == '(' && parenString[j] == ')' ) ||\n          (parenString[i] == ')' && parenString[j] == '(' ))\n        break;\n      \n      else\n        j++;\n    }\n    \n    if (i != j){\n      String group = \"\";\n      for(int k=i;k<j;k++){\n        group += parenString[k];\n      }\n      groups.add(group);\n      i=j;\n    }else{\n      i++;\n    }\n    \n    \n  }\n\n\n  return groups.map((e) => e.toString()).toList();\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n  int depth = 0;\n\n  for (int i = 0, j = -1; i < parenString.length; ++i) {\n    if (parenString.codeUnitAt(i) == 40 /* '(' */) {\n      depth++;\n      j = i;\n    } else if (parenString.codeUnitAt(i) == 41 /* ')' */) {\n      depth--;\n      \n      if (depth == 0) {\n        result.add(parenString.substring(j + 1, i));\n      }\n    }\n  }\n  \n  return result;\n}",
+      "List<String> separateParenGroups(String parenString) {\n  final groups = <String>[];\n  int depth = 0;\n  String currentGroup = '';\n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      currentGroup += parenString[i];\n    } else if (parenString[i] == ')') {\n      currentGroup += parenString[i];\n      depth--;\n      if (depth == 0) {\n        groups.add(currentGroup);\n        currentGroup = '';\n      }\n    } else {\n      // If there's any character other than parentheses, it should be handled or the input is invalid.\n      throw ArgumentError('Invalid string: $parenString');\n    }\n  }\n\n  return groups;\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<List<int>> groups = [];\n  \n  for (int i = 0; i < parenString.length;) {\n    if (parenString[i] != '(' || i + 1 >= parenString.length) break;\n\n    int openCount = 0, closeCount = 0, j = i;\n    \n    while (j < parenString.length && \n           ((openCount == 0 && parenString[j] == ')') || \n            (closeCount == 0 && parenString[j] == '('))) {\n      openCount += parenString[j++] == '(' ? 1 : -1;\n      closeCount += parenString[j-1] == ')' ? 1 : -1;\n      \n      if (openCount < 0 || closeCount > openCount) break;\n      \n      if (openCount == 0 && closeCount == 0) break;\n    }\n\n    if (openCount == 0 && closeCount == 0) {\n      groups.add(parenString.substring(i, j));\n      i = j;\n    } else {\n      i++;\n    }\n  }\n  \n  return groups.map((group) => group.replaceAll(\" \", \"\")).toList();\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n\n  \n  int depth = 0; \n  String currentGroup = \"\"; \n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++; \n      \n      currentGroup += parenString[i]; \n      \n      if (depth == 1 && parenString[i + 1] == ')') {\n        \n        result.add(currentGroup);\n        currentGroup = \"\";\n        depth = 0; \n      } else if (i + 1 >= parenString.length || parenString[i + 1] != ')') {\n        \n        \n        currentGroup += parenString[i + 1];\n        i++; \n      }\n    } \n    \n    \n    else if (parenString[i] == ')') {\n      \n      \n      currentGroup += parenString[i];\n      \n      if (currentGroup.isNotEmpty) {\n        result.add(currentGroup);\n        currentGroup = \"\";\n      }\n    }\n  }\n\n  \n  \n  return result.where((group) => group.trim().isNotEmpty).toList();\n}",
+      "List<String> separateParenGroups(String parenString) {\n  List<List<int>> groups = [];\n\n  \n  int depth = 0;\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      \n    } else if (parenString[i] == ')') {\n      depth--;\n      \n      \n\n      \n      \n    }\n    \n    \n    \n\n    \n  }\n\n\n  \n  \n  return groups.map((group) => parenString.substring(group[0], group[1] + 1)).toList();\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nList<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n  List<String> currentString = [];\n  int currentDepth = 0;\n\n  for (int i = 0; i < parenString.length; i++) {\n    String c = parenString[i];\n    if (c == '(') {\n      currentDepth += 1;\n      currentString.add(c);\n    } else if (c == ')') {\n      currentDepth -= 1;\n      currentString.add(c);\n\n      if (currentDepth == 0) {\n        result.add(currentString.join(''));\n        currentString.clear();\n      }\n    }\n  }\n\n  return result;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case 1\n  List<String> result1 = separateParenGroups(\"( ) (( )) (( )( ))\");\n  print(result1);\n  assert(result1.length == 3);\n  assert(result1[0] == \"()\");\n  assert(result1[1] == \"(())\");\n  assert(result1[2] == \"(()())\");\n\n  // Test case 2\n  List<String> result2 = separateParenGroups(\"()\");\n  print(result2);\n  assert(result2.length == 1);\n  assert(result2[0] == \"()\");\n\n  // Test case 3\n  List<String> result3 = separateParenGroups(\"()(())\");\n  print(result3);\n  assert(result3.length == 2);\n  assert(result3[0] == \"()\");\n  assert(result3[1] == \"(())\");\n\n  print(\"All tests passed!\");\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = separateParenGroups;\n\n  expect(candidate(\"(()()) ((())) () ((())()())\"), [\"(()())\", \"((()))\", \"()\", \"((())()())\"]);\n  expect(candidate(\"() (()) ((())) (((())))\"), [\"()\", \"(())\", \"((()))\", \"(((())))\"]);\n  expect(candidate(\"(()(())((())))\"), [\"(()(())((())))\"]);\n  expect(candidate(\"( ) (( )) (( )( ))\"), [\"()\", \"(())\", \"(()())\"]);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n\n  int depth = 0;\n  String currentGroup = \"\";\n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      currentGroup += parenString[i];\n    } else if (parenString[i] == ')') {\n      currentGroup += parenString[i];\n      depth--;\n      \n      if (depth == 0) {\n        result.add(currentGroup);\n        currentGroup = '';\n      }\n    }\n  }\n\n  return result;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        0,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        5
+      ],
+      "scores": [
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "source_line": 3,
+    "filename": "2.dart",
+    "predictions": [
+      "double truncateNumber(double number) {\n  return (number % 1.0).abs();\n}",
+      "double truncateNumber(double number) {\n  return (number - number.floor()).abs();\n}",
+      "double truncateNumber(double number) {\n  if (number < 0.5) return -1;\n  \n  var mod = number.mod(1);\n\n  if (mod == 0 && number >= 0) {\n    return mod;\n  } else {\n    return mod > 0 ? mod : 1 + mod;\n  }\n}",
+      "double truncateNumber(double number) {\n  return ((number - (int)number + .5).abs() >= 0.5)?(int)(number)+(1-((number-(int)number+0.5).abs())):((int)(number));\n}",
+      "double truncateNumber(double number) {\n  final double integerPart = floor(number);\n\n  if (integerPart == -floor(number)) return trunc(num.abs(number));\n}",
+      "double truncateNumber(double number) {\n  final num = number.mod(1);\n\n  return num;\n}",
+      "double truncateNumber(double number) {\n  return double.parse(number.toString().substring(0, number.toStringAsFixed(2).length));\n}",
+      "double truncateNumber(double number) {\n  return (number - ((int)number));\n}",
+      "double truncateNumber(double number) {\n  int decimalPlaces = (number.toStringAsFixed(number.toString().length - number.toStringBefore('.').length)).split('.')[1].length;\n\n  \n  double multiplier = pow(10, decimalPlaces);\n\n \n  return round((number * multiplier)) / multiplier;\n}",
+      "double truncateNumber(double number) {\n  return floor(number);\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\ndouble truncateNumber(double number) {\n  return number % 1.0;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test cases\n  print(truncateNumber(3.5)); // 0.5\n  print(truncateNumber(1.25)); // 0.25\n  print(truncateNumber(5.0)); // 0.0\n  print(truncateNumber(10.75)); // 0.75\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = truncateNumber;\n\n  expect(candidate(3.5), 0.5);\n  expect(candidate(1.25), 0.25);\n  expect(candidate(123.0), 0.0);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "double truncateNumber(double number) {\n  return (number % 1.0).abs();\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 7,
+      "order": [
+        7,
+        9,
+        0,
+        2,
+        4,
+        5,
+        8,
+        1,
+        3,
+        6
+      ],
+      "scores": [
+        1018.0,
+        1018.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0,
+        18.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "source_line": 4,
+    "filename": "3.dart",
+    "predictions": [
+      "bool belowZero(List<int> operations) {\n  if (operations.isEmpty) return false;\n\n  int balance = 0;\n  for (int op in operations) {\n    if (op > 0) balance += op;\n    else balance -= (-op); \n      \n    if (balance < 0) return true; \n  }\n\n  return false;\n}",
+      "bool belowZero(List<int> operations) {\n  int balance = 0;\n  for (int op in operations) {\n    if (op > 0) {\n      balance += op;\n    } else {\n      balance -= (-op); \n      \n      if (balance < 0) {\n        return true; \n      }\n    }\n  }\n  \n  return false; \n}",
+      "bool belowZero(List<int> operations) {\n  int total = 0;\n\n  \n  for (var operation in operations) {\n    if (operation < 0 && total + operation <= 0) {\n      return true; \n    } else {\n      total += operation; \n    }\n    \n    if (total == 0) {\n      break; \n    }\n  }\n\n  return false;\n}",
+      "bool belowZero(List<int> operations) {\n  int sum = 0;\n\n  for (int operation in operations) {\n    if (operation < 0 && sum <= -1 * operation) return true;\n    else sum += operation;\n  }\n\n  return false;\n}",
+      "bool belowZero(List<int> operations) {\n  int sum = 0;\n\n  \n  for (int operation in operations) {\n    if (operation == -1) { \n      return true; \n    } else {\n      \n      sum += operation;\n    }\n  }\n\n  \n  \n  return false;\n}",
+      "bool belowZero(List<int> operations) {\n  int balance = 0;\n\n  for (var operation in operations) {\n    if (operation < 0 && balance == 0) return true;\n    balance += operation;\n  }\n\n  return false;\n}",
+      "bool belowZero(List<int> operations) {\n  int sum = 0;\n  for (int operation in operations) {\n    if (operation < 0 && sum + operation <= 0) return true;\n    sum += operation;\n    \n}\nreturn false;\n}",
+      "bool belowZero(List<int> operations) {\n  int currentBalance = 0;\n\n  \n  for (int op in operations) {\n    if (op == -1 && currentBalance > 0) { \n      return true; \n    } else {\n      \n      currentBalance += op;\n    }\n  }\n\n  return false; \n}",
+      "bool belowZero(List<int> operations) {\n  int sum = 0;\n\n  \n  for (int i = 1; i < operations.length - 2; ) {\n    \n    if ((operations[i] > 0 && operations[i + 1] >= operations[i]) || \n        (operations[i] <= 0 && operations[i + 1] <= operations[i])) {\n      sum += operations[i];\n      i++;\n    } else {\n      \n      sum -= operations[i] * operations[i + 1];\n      i += 3;\n    }\n    \n    \n    if (sum < 0) return true;\n  }\n\n  return false;\n}",
+      "import 'dart:math';\n\nbool belowZero(List<int> operations) {\n  double balance = 0; \n  for (int op in operations) {\n    if (op == -1) {\n      balance -= 1.5;  \n    } else if (op == 2) {\n      balance += sqrt(3); \n    } else if (op == 4) {\n      balance += sin(pi / 3);\n    } else if (op == -4) {\n      balance -= cos(pi / 6);\n    } else {\n      throw ArgumentError('Invalid operation code');\n    }\n    \n    if (balance < 0) return true;\n  }\n  \n  \n  return false;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nbool belowZero(List<int> operations) {\n  int balance = 0;\n\n  for (int op in operations) {\n    balance += op;\n    if (balance < 0) {\n      return true;\n    }\n  }\n\n  return false;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test cases\n  print(belowZero([1, 2, 3])); // false\n  print(belowZero([1, 2, -4, 5])); // true\n  print(belowZero([])); // false\n  print(belowZero([1, -1, 0, -1])); // true\n  print(belowZero([10, -5, -3, -2])); // false\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = belowZero;\n\n  expect(candidate([]), false);\n  expect(candidate([1, 2, -3, 1, 2, -3]), false);\n  expect(candidate([1, 2, -4, 5, 6]), true);\n  expect(candidate([1, -1, 2, -2, 5, -5, 4, -4]), false);\n  expect(candidate([1, -1, 2, -2, 5, -5, 4, -5]), true);\n  expect(candidate([1, -2, 2, -2, 5, -5, 4, -4]), true);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "bool belowZero(List<int> operations) {\n  if (operations.isEmpty) return false;\n\n  int balance = 0;\n  for (int op in operations) {\n    if (op > 0) balance += op;\n    else balance -= (-op); \n      \n    if (balance < 0) return true; \n  }\n\n  return false;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 3,
+      "order": [
+        3,
+        7,
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        5,
+        9
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "source_line": 5,
+    "filename": "4.dart",
+    "predictions": [
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return 0.0;\n\n  double sum = 0.0;\n  for (var n in numbers) sum += n;\n  double avg = sum / numbers.length;\n\n  double madSum = 0.0;\n  for (var n in numbers) madSum += (n - avg).abs();\n\n  return madSum / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return double.infinity;\n\n  final mean = numbers.reduce((a, b) => a + b) / numbers.length;\n  \n  var sumOfAbsDeviations = 0.0;\n  for (final n in numbers) {\n    sumOfAbsDeviations += (n - mean).abs();\n  }\n  \n  return sumOfAbsDeviations / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  double sum = 0;\n  for (int i = 0; i < numbers.length; i++) {\n    sum += numbers[i];\n  }\n  final average = sum / numbers.length;\n\n  double absoluteDeviationsSum = 0.0;\n  for (final n in numbers) {\n    if ((n - average).isNegative) {\n      absoluteDeviationsSum += -(n - average);\n    } else {\n      absoluteDeviationsSum += n - average;\n    }\n  }\n\n  return absoluteDeviationsSum / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  double sum = numbers.reduce((a, b) => a + b);\n\n  \n  double average = sum / numbers.length;\n\n  \n  double absoluteDeviationsSum = numbers.fold(0.0, (acc, num) => acc + ((num - average).abs()));\n\n  \n  \n  return absoluteDeviationsSum / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return 0;\n\n  \n  double sum = 0.0;\n  for (var n in numbers) sum += n;\n  double mean = sum / numbers.length; \n\n  \n  List<double> deviations = [];\n  for (var n in numbers) deviations.add((n - mean).abs());\n\n  \n  double madSum = 0.0;\n  for (var d in deviations) madSum += d;\n\n  \n  return madSum / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  double sum = 0.0;\n\n  for (var num in numbers) {\n    sum += num;\n  }\n\n  var average = sum / numbers.length;\n\n  double deviationSum = 0.0;\n\n  for (var i = 0; i < numbers.length; ++i) {\n    final difference = numbers[i] - average;\n    if (difference < 0.0) {\n      deviationSum -= difference;\n    } else {\n      deviationSum += difference;\n    }\n  }\n\n  return deviationSum / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  final sum = numbers.reduce((a, b) => a + b);\n  final mean = (sum / numbers.length).toDouble();\n\n  return numbers.map(\n        (num) => num.abs() - mean.abs(),\n      ).reduce((a, b) => a + b).abs() / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return double.infinity;\n\n  final sum = numbers.fold(0, (a, b) => a + b);\n  final average = sum / numbers.length;\n\n  \n  var totalDeviations = 0.0;\n  for (final number in numbers) {\n    totalDeviations += (number - average).abs(); \n  }\n\n  return totalDeviations / numbers.length;\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  final List<double>.copyWith = (List src, [int start = 0]) => \n      List<int>.generate(src.length - start, (i) => i + start).map((index) => src[index]).toList();\n\n  double sum(double f(double a), double b) => a + b;\n  \n  double abs(double x) => x < 0 ? -x : x;\n  \n  double min(double a, double b) => a <= b ? a : b;\n  \n  double max(double a, double b) => a >= b ? a : b;\n  \n  \n  return numbers.map(meanAbsoluteDeviation.<anonymous closure>).reduce(sum);\n}",
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  final List<int?>? ints = Ints.fromList([1,2,null]);\n\n  \n  int sumOfInts(int n0,int n1){\n    return (n0+n1)!;\n  }\n\n\n  \n\n  \n  \n  \n  \n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\ndouble meanAbsoluteDeviation(List<double> numbers) {\n  double mean = numbers.reduce((a, b) => a + b) / numbers.length;\n  return numbers.map((x) => (x - mean).abs()).reduce((a, b) => a + b) / numbers.length;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case from the docstring\n  print(meanAbsoluteDeviation([1.0, 2.0, 3.0, 4.0])); // Expected: 1.0\n  \n  // Additional test cases\n  print(meanAbsoluteDeviation([1.0, 2.0, 3.0, 4.0, 5.0])); // Expected: 1.2\n  print(meanAbsoluteDeviation([0.0, 0.0, 0.0])); // Expected: 0.0\n  print(meanAbsoluteDeviation([10.0])); // Expected: 0.0\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = meanAbsoluteDeviation;\n\n  expect(candidate([1.0, 2.0]), 0.5);\n  expect(candidate([1.0, 2.0, 3.0, 4.0]), 1.0);\n  expect(candidate([1.0, 2.0, 3.0, 4.0, 5.0]), 1.2);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return 0.0;\n\n  double sum = 0.0;\n  for (var n in numbers) sum += n;\n  double avg = sum / numbers.length;\n\n  double madSum = 0.0;\n  for (var n in numbers) madSum += (n - avg).abs();\n\n  return madSum / numbers.length;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        0,
+        2,
+        4,
+        9
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0
+      ]
+    }
+  }
+]

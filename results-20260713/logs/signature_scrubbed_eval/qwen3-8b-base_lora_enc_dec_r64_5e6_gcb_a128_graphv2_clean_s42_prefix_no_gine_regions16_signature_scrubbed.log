@@ -1,0 +1,675 @@
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m trap 'rc=$?; printf "FAILED rc=%s time=%s\n" "$rc" "$(date -u +%FT%TZ)" > "$STATUS"; echo "FAILURE rc=$rc time=$(date -u +%FT%TZ)"; exit "$rc"' ERR
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=preflight time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "START time=$(date -u +%FT%TZ)"
+[?2004lSTART time=2026-07-16T04:38:13Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -x /venv/main/bin/python
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -x /usr/bin/dart
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f "$PUBLIC"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f "$PRIVATE"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f "$CHECKPOINT"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/graph_inference_antigravity.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/graph_codebleu_antigravity.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/graph_compile_at_k_antigravity.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/graph_pass_at_k_antigravity.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -f /workspace/scripts/evaluation/compile_statistical_results_antigravity.py
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test "$(wc -l < "$PUBLIC")" -eq 154
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test "$(wc -l < "$PRIVATE")" -eq 154
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m sha256sum "$PUBLIC" "$PRIVATE" "$CHECKPOINT" /workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py
+[?2004l45756d00c0fc7f749081ca1236e715b1b9d33412a454cea27342ddf0ac2d657e  /workspace/data/testing/grpo_data_graphv2_signature_scrubbed_public.jsonl
+91dc2eee2f06602e6cd95873c81802e0997fd3ff758b395aeab9c3da114df252  /workspace/data/testing/grpo_data_graphv2_signature_scrubbed_private.jsonl
+e8e872608f22ae8e1c5607d6179feeb5f133401fb2a7d1fc40fe8894d8c347fc  /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16/pytorch_model.bin
+2dff4599f98cc7ab8c65b87fe13b5845e2c90d79510229f67994aa36799cac61  /workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /usr/bin/dart --version
+[?2004lDart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on "linux_x64"
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m nvidia-smi --query-gpu=name,utilization.gpu,memory.used,memory.total,temperature.gpu,clocks_throttle_reasons.active --format=csv,noheader
+[?2004lNVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 0 %, 15 MiB, 97887 MiB, 36, 0x0000000000000000
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export PATH=/usr/bin:$PATH
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export PYTHONUNBUFFERED=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export PYTHONHASHSEED=42
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export TOKENIZERS_PARALLELISM=false
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export CUDA_VISIBLE_DEVICES=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_ENCODER_MODEL=microsoft/graphcodebert-base
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_DECODER_MODEL=Qwen/Qwen3-8B
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_ENCODER_REVISION=2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_DECODER_REVISION=b968826d9c46dd6066d109eabc6255188de91218
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_ENCODER_PEFT=lora
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_DECODER_PEFT=lora
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_FREEZE_ENCODER=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_FREEZE_DECODER=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_LORA_R=64
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_LORA_ALPHA=128
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_LOAD_4BIT=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_ATTN_IMPLEMENTATION=sdpa
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_MAX_BLOCK_INSTRS=20
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_MAX_DATAFLOW_EDGES=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_POSITION_SCHEME=roberta
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_BLOCK_POSITION_MODE=sinusoidal
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_CAUSAL_POSITION_IDS=cumsum
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_BLOCK_POOLING=cls
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_BLOCK_VECTORS_PER_BLOCK=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_EDGE_ABLATION=full
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_DFG_MODE=edges
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_GLOBAL_ATTENTION_ABLATION=full
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_GNN_ABLATION=identity
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_GNN_LAYERS=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_ADD_REVERSE_EDGES=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_AUTO_CFG=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_STRICT_GRAPH=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_PROMPT_ASSEMBLY_MODE=none
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_PROMPT_CLEAN_ASM=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_PROMPT_FIT_ASSEMBLY=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_TOKENS=64
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_DYNAMIC=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_MIN_TOKENS=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_TOKENS_PER_LOG2=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_GATE_MODE=token
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_GATE_INIT=0.2
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QWEN_PREFIX_RMS_MATCH=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_REGION_COMPRESSION=linear_residual
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_REGION_MAX_BLOCKS=16
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_USE_REASONING=0
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_SEED=42
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_QUIET=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_GRADIENT_CHECKPOINTING=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_DECODER_PROMPT_MAX_LENGTH=2048
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_EVAL_GENERATION_BATCH_SIZE=10
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_EVAL_MAX_NEW_TOKENS=768
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_BATCH_SIZE=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_EPOCHS=4
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_GRAD_ACCUM=16
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_LR=5e-06
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_SAVE_STRATEGY=no
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_SAVE_TOTAL_LIMIT=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_TRAIN_FILE=data/datasets/dart_all_graphv2_train.jsonl
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_EVAL_FILE=data/datasets/dart_all_graphv2_validation.jsonl
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_HF_PATH_PREFIX=artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_OUTPUT_DIR=artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_HF_REPO=raafatabualazm/antigravity-qwen3-8b-artifacts
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_HF_PRIVATE=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export GRAPH_HF_UPLOAD_CHECKPOINTS=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export EVAL_DART_WORKERS=64
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m export EVAL_PASS_STABILITY_RUNS=1
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=inference time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=inference time=$(date -u +%FT%TZ)"
+[?2004lSTAGE=inference time=2026-07-16T04:38:14Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/graph_inference_antigravity.py --dataset "$PUBLIC" --decoder_model Qwen/Qwen3-8B --output "$RAW" --checkpoint "$CHECKPOINT" --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --num_samples 10 --generation_batch_size 10 --max_new_tokens 768 --decoder_prompt_max_length 2048 --graph_input_ablation none --graph_ablation_seed 42
+[?2004lLoading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 50632.88it/s]
+Decoder attention implementation: sdpa
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7728.56it/s]
+Enabled decoder gradient checkpointing.
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Enabled local block encoder gradient checkpointing.
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+loaded checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16/pytorch_model.bin
+Loaded parameters with strict=False. Missing keys: 602, Unexpected keys: 0
+Qwen graph prefix gate: 0.200001
+Inference mode: decoder gradient checkpointing OFF; KV cache ON
+generate:   0%|          | 0/154 [00:00<?, ?row/s]                                                  [1/154] generated 10 candidates
+generate:   0%|          | 0/154 [00:48<?, ?row/s]generate:   1%|          | 1/154 [00:48<2:03:40, 48.50s/row]                                                            [2/154] generated 10 candidates
+generate:   1%|          | 1/154 [01:37<2:03:40, 48.50s/row]generate:   1%|▏         | 2/154 [01:37<2:03:50, 48.88s/row]                                                            [3/154] generated 10 candidates
+generate:   1%|▏         | 2/154 [02:02<2:03:50, 48.88s/row]generate:   2%|▏         | 3/154 [02:02<1:35:57, 38.13s/row]                                                            [4/154] generated 10 candidates
+generate:   2%|▏         | 3/154 [02:53<1:35:57, 38.13s/row]generate:   3%|▎         | 4/154 [02:53<1:47:40, 43.07s/row]                                                            [5/154] generated 10 candidates
+generate:   3%|▎         | 4/154 [03:34<1:47:40, 43.07s/row]generate:   3%|▎         | 5/154 [03:34<1:44:37, 42.13s/row]                                                            [6/154] generated 10 candidates
+generate:   3%|▎         | 5/154 [04:24<1:44:37, 42.13s/row]generate:   4%|▍         | 6/154 [04:24<1:50:30, 44.80s/row]                                                            [7/154] generated 10 candidates
+generate:   4%|▍         | 6/154 [04:53<1:50:30, 44.80s/row]generate:   5%|▍         | 7/154 [04:53<1:37:14, 39.69s/row]                                                            [8/154] generated 10 candidates
+generate:   5%|▍         | 7/154 [05:25<1:37:14, 39.69s/row]generate:   5%|▌         | 8/154 [05:25<1:30:46, 37.31s/row]                                                            [9/154] generated 10 candidates
+generate:   5%|▌         | 8/154 [06:16<1:30:46, 37.31s/row]generate:   6%|▌         | 9/154 [06:16<1:40:10, 41.45s/row]                                                            [10/154] generated 10 candidates
+generate:   6%|▌         | 9/154 [07:06<1:40:10, 41.45s/row]generate:   6%|▋         | 10/154 [07:06<1:46:18, 44.30s/row]                                                             [11/154] generated 10 candidates
+generate:   6%|▋         | 10/154 [07:57<1:46:18, 44.30s/row]generate:   7%|▋         | 11/154 [07:57<1:50:10, 46.23s/row]                                                             [12/154] generated 10 candidates
+generate:   7%|▋         | 11/154 [08:25<1:50:10, 46.23s/row]generate:   8%|▊         | 12/154 [08:25<1:36:24, 40.73s/row]                                                             [13/154] generated 10 candidates
+generate:   8%|▊         | 12/154 [08:56<1:36:24, 40.73s/row]generate:   8%|▊         | 13/154 [08:56<1:28:39, 37.73s/row]                                                             [14/154] generated 10 candidates
+generate:   8%|▊         | 13/154 [09:28<1:28:39, 37.73s/row]generate:   9%|▉         | 14/154 [09:28<1:23:56, 35.98s/row]                                                             [15/154] generated 10 candidates
+generate:   9%|▉         | 14/154 [10:08<1:23:56, 35.98s/row]generate:  10%|▉         | 15/154 [10:08<1:26:11, 37.21s/row]                                                             [16/154] generated 10 candidates
+generate:  10%|▉         | 15/154 [10:58<1:26:11, 37.21s/row]generate:  10%|█         | 16/154 [10:58<1:34:48, 41.22s/row]                                                             [17/154] generated 10 candidates
+generate:  10%|█         | 16/154 [11:27<1:34:48, 41.22s/row]generate:  11%|█         | 17/154 [11:27<1:25:33, 37.47s/row]                                                             [18/154] generated 10 candidates
+generate:  11%|█         | 17/154 [12:17<1:25:33, 37.47s/row]generate:  12%|█▏        | 18/154 [12:17<1:33:46, 41.37s/row]                                                             [19/154] generated 10 candidates
+generate:  12%|█▏        | 18/154 [13:08<1:33:46, 41.37s/row]generate:  12%|█▏        | 19/154 [13:08<1:39:17, 44.13s/row]                                                             [20/154] generated 10 candidates
+generate:  12%|█▏        | 19/154 [13:35<1:39:17, 44.13s/row]generate:  13%|█▎        | 20/154 [13:35<1:27:13, 39.06s/row]                                                             [21/154] generated 10 candidates
+generate:  13%|█▎        | 20/154 [14:17<1:27:13, 39.06s/row]generate:  14%|█▎        | 21/154 [14:17<1:28:25, 39.89s/row]                                                             [22/154] generated 10 candidates
+generate:  14%|█▎        | 21/154 [15:02<1:28:25, 39.89s/row]generate:  14%|█▍        | 22/154 [15:02<1:30:49, 41.28s/row]                                                             [23/154] generated 10 candidates
+generate:  14%|█▍        | 22/154 [15:25<1:30:49, 41.28s/row]generate:  15%|█▍        | 23/154 [15:25<1:18:14, 35.83s/row]                                                             [24/154] generated 10 candidates
+generate:  15%|█▍        | 23/154 [16:07<1:18:14, 35.83s/row]generate:  16%|█▌        | 24/154 [16:07<1:21:39, 37.69s/row]                                                             [25/154] generated 10 candidates
+generate:  16%|█▌        | 24/154 [16:57<1:21:39, 37.69s/row]generate:  16%|█▌        | 25/154 [16:57<1:29:20, 41.56s/row]                                                             [26/154] generated 10 candidates
+generate:  16%|█▌        | 25/154 [17:45<1:29:20, 41.56s/row]generate:  17%|█▋        | 26/154 [17:45<1:32:22, 43.30s/row]                                                             [27/154] generated 10 candidates
+generate:  17%|█▋        | 26/154 [18:35<1:32:22, 43.30s/row]generate:  18%|█▊        | 27/154 [18:35<1:36:13, 45.46s/row]                                                             [28/154] generated 10 candidates
+generate:  18%|█▊        | 27/154 [19:12<1:36:13, 45.46s/row]generate:  18%|█▊        | 28/154 [19:12<1:29:50, 42.78s/row]                                                             [29/154] generated 10 candidates
+generate:  18%|█▊        | 28/154 [19:42<1:29:50, 42.78s/row]generate:  19%|█▉        | 29/154 [19:42<1:21:16, 39.01s/row]                                                             [30/154] generated 10 candidates
+generate:  19%|█▉        | 29/154 [20:33<1:21:16, 39.01s/row]generate:  19%|█▉        | 30/154 [20:33<1:27:50, 42.50s/row]                                                             [31/154] generated 10 candidates
+generate:  19%|█▉        | 30/154 [21:23<1:27:50, 42.50s/row]generate:  20%|██        | 31/154 [21:23<1:32:08, 44.95s/row]                                                             [32/154] generated 10 candidates
+generate:  20%|██        | 31/154 [21:48<1:32:08, 44.95s/row]generate:  21%|██        | 32/154 [21:48<1:19:18, 39.00s/row]                                                             [33/154] generated 10 candidates
+generate:  21%|██        | 32/154 [22:39<1:19:18, 39.00s/row]generate:  21%|██▏       | 33/154 [22:39<1:25:38, 42.47s/row]                                                             [34/154] generated 10 candidates
+generate:  21%|██▏       | 33/154 [23:30<1:25:38, 42.47s/row]generate:  22%|██▏       | 34/154 [23:30<1:29:54, 44.95s/row]                                                             [35/154] generated 10 candidates
+generate:  22%|██▏       | 34/154 [24:01<1:29:54, 44.95s/row]generate:  23%|██▎       | 35/154 [24:01<1:20:50, 40.76s/row]                                                             [36/154] generated 10 candidates
+generate:  23%|██▎       | 35/154 [24:52<1:20:50, 40.76s/row]generate:  23%|██▎       | 36/154 [24:52<1:26:10, 43.82s/row]                                                             [37/154] generated 10 candidates
+generate:  23%|██▎       | 36/154 [25:42<1:26:10, 43.82s/row]generate:  24%|██▍       | 37/154 [25:42<1:29:29, 45.89s/row]                                                             [38/154] generated 10 candidates
+generate:  24%|██▍       | 37/154 [26:33<1:29:29, 45.89s/row]generate:  25%|██▍       | 38/154 [26:33<1:31:24, 47.28s/row]                                                             [39/154] generated 10 candidates
+generate:  25%|██▍       | 38/154 [27:24<1:31:24, 47.28s/row]generate:  25%|██▌       | 39/154 [27:24<1:32:31, 48.28s/row]                                                             [40/154] generated 10 candidates
+generate:  25%|██▌       | 39/154 [27:54<1:32:31, 48.28s/row]generate:  26%|██▌       | 40/154 [27:54<1:21:47, 43.05s/row]                                                             [41/154] generated 10 candidates
+generate:  26%|██▌       | 40/154 [28:45<1:21:47, 43.05s/row]generate:  27%|██▋       | 41/154 [28:45<1:25:25, 45.36s/row]                                                             [42/154] generated 10 candidates
+generate:  27%|██▋       | 41/154 [29:36<1:25:25, 45.36s/row]generate:  27%|██▋       | 42/154 [29:36<1:27:31, 46.89s/row]                                                             [43/154] generated 10 candidates
+generate:  27%|██▋       | 42/154 [30:12<1:27:31, 46.89s/row]generate:  28%|██▊       | 43/154 [30:12<1:20:54, 43.73s/row]                                                             [44/154] generated 10 candidates
+generate:  28%|██▊       | 43/154 [31:03<1:20:54, 43.73s/row]generate:  29%|██▊       | 44/154 [31:03<1:23:57, 45.80s/row]                                                             [45/154] generated 10 candidates
+generate:  29%|██▊       | 44/154 [31:53<1:23:57, 45.80s/row]generate:  29%|██▉       | 45/154 [31:53<1:25:49, 47.24s/row]                                                             [46/154] generated 10 candidates
+generate:  29%|██▉       | 45/154 [32:34<1:25:49, 47.24s/row]generate:  30%|██▉       | 46/154 [32:34<1:21:49, 45.46s/row]                                                             [47/154] generated 10 candidates
+generate:  30%|██▉       | 46/154 [33:22<1:21:49, 45.46s/row]generate:  31%|███       | 47/154 [33:22<1:21:57, 45.96s/row]                                                             [48/154] generated 10 candidates
+generate:  31%|███       | 47/154 [34:12<1:21:57, 45.96s/row]generate:  31%|███       | 48/154 [34:12<1:23:38, 47.35s/row]                                                             [49/154] generated 10 candidates
+generate:  31%|███       | 48/154 [35:00<1:23:38, 47.35s/row]generate:  32%|███▏      | 49/154 [35:00<1:22:51, 47.35s/row]                                                             [50/154] generated 10 candidates
+generate:  32%|███▏      | 49/154 [35:26<1:22:51, 47.35s/row]generate:  32%|███▏      | 50/154 [35:26<1:11:04, 41.01s/row]                                                             [51/154] generated 10 candidates
+generate:  32%|███▏      | 50/154 [36:08<1:11:04, 41.01s/row]generate:  33%|███▎      | 51/154 [36:08<1:10:56, 41.33s/row]                                                             [52/154] generated 10 candidates
+generate:  33%|███▎      | 51/154 [36:58<1:10:56, 41.33s/row]generate:  34%|███▍      | 52/154 [36:58<1:14:59, 44.12s/row]                                                             [53/154] generated 10 candidates
+generate:  34%|███▍      | 52/154 [37:49<1:14:59, 44.12s/row]generate:  34%|███▍      | 53/154 [37:49<1:17:35, 46.10s/row]                                                             [54/154] generated 10 candidates
+generate:  34%|███▍      | 53/154 [38:26<1:17:35, 46.10s/row]generate:  35%|███▌      | 54/154 [38:26<1:12:04, 43.24s/row]                                                             [55/154] generated 10 candidates
+generate:  35%|███▌      | 54/154 [39:17<1:12:04, 43.24s/row]generate:  36%|███▌      | 55/154 [39:17<1:15:07, 45.53s/row]                                                             [56/154] generated 10 candidates
+generate:  36%|███▌      | 55/154 [40:07<1:15:07, 45.53s/row]generate:  36%|███▋      | 56/154 [40:07<1:16:49, 47.04s/row]                                                             [57/154] generated 10 candidates
+generate:  36%|███▋      | 56/154 [40:58<1:16:49, 47.04s/row]generate:  37%|███▋      | 57/154 [40:58<1:17:47, 48.12s/row]                                                             [58/154] generated 10 candidates
+generate:  37%|███▋      | 57/154 [41:46<1:17:47, 48.12s/row]generate:  38%|███▊      | 58/154 [41:46<1:17:13, 48.27s/row]                                                             [59/154] generated 10 candidates
+generate:  38%|███▊      | 58/154 [42:37<1:17:13, 48.27s/row]generate:  38%|███▊      | 59/154 [42:37<1:17:34, 49.00s/row]                                                             [60/154] generated 10 candidates
+generate:  38%|███▊      | 59/154 [43:28<1:17:34, 49.00s/row]generate:  39%|███▉      | 60/154 [43:28<1:17:31, 49.48s/row]                                                             [61/154] generated 10 candidates
+generate:  39%|███▉      | 60/154 [44:09<1:17:31, 49.48s/row]generate:  40%|███▉      | 61/154 [44:09<1:12:48, 46.98s/row]                                                             [62/154] generated 10 candidates
+generate:  40%|███▉      | 61/154 [45:00<1:12:48, 46.98s/row]generate:  40%|████      | 62/154 [45:00<1:13:44, 48.09s/row]                                                             [63/154] generated 10 candidates
+generate:  40%|████      | 62/154 [45:50<1:13:44, 48.09s/row]generate:  41%|████      | 63/154 [45:50<1:14:10, 48.90s/row]                                                             [64/154] generated 10 candidates
+generate:  41%|████      | 63/154 [46:21<1:14:10, 48.90s/row]generate:  42%|████▏     | 64/154 [46:21<1:05:12, 43.48s/row]                                                             [65/154] generated 10 candidates
+generate:  42%|████▏     | 64/154 [47:12<1:05:12, 43.48s/row]generate:  42%|████▏     | 65/154 [47:12<1:07:46, 45.69s/row]                                                             [66/154] generated 10 candidates
+generate:  42%|████▏     | 65/154 [48:03<1:07:46, 45.69s/row]generate:  43%|████▎     | 66/154 [48:03<1:09:13, 47.20s/row]                                                             [67/154] generated 10 candidates
+generate:  43%|████▎     | 66/154 [48:53<1:09:13, 47.20s/row]generate:  44%|████▎     | 67/154 [48:53<1:09:55, 48.23s/row]                                                             [68/154] generated 10 candidates
+generate:  44%|████▎     | 67/154 [49:44<1:09:55, 48.23s/row]generate:  44%|████▍     | 68/154 [49:44<1:10:12, 48.98s/row]                                                             [69/154] generated 10 candidates
+generate:  44%|████▍     | 68/154 [50:35<1:10:12, 48.98s/row]generate:  45%|████▍     | 69/154 [50:35<1:10:07, 49.50s/row]                                                             [70/154] generated 10 candidates
+generate:  45%|████▍     | 69/154 [51:08<1:10:07, 49.50s/row]generate:  45%|████▌     | 70/154 [51:08<1:02:20, 44.53s/row]                                                             [71/154] generated 10 candidates
+generate:  45%|████▌     | 70/154 [51:49<1:02:20, 44.53s/row]generate:  46%|████▌     | 71/154 [51:49<1:00:12, 43.53s/row]                                                             [72/154] generated 10 candidates
+generate:  46%|████▌     | 71/154 [52:40<1:00:12, 43.53s/row]generate:  47%|████▋     | 72/154 [52:40<1:02:24, 45.66s/row]                                                             [73/154] generated 10 candidates
+generate:  47%|████▋     | 72/154 [53:30<1:02:24, 45.66s/row]generate:  47%|████▋     | 73/154 [53:30<1:03:43, 47.20s/row]                                                             [74/154] generated 10 candidates
+generate:  47%|████▋     | 73/154 [54:04<1:03:43, 47.20s/row]generate:  48%|████▊     | 74/154 [54:04<57:27, 43.09s/row]                                                             [75/154] generated 10 candidates
+generate:  48%|████▊     | 74/154 [54:33<57:27, 43.09s/row]generate:  49%|████▊     | 75/154 [54:33<51:23, 39.03s/row]                                                           [76/154] generated 10 candidates
+generate:  49%|████▊     | 75/154 [55:24<51:23, 39.03s/row]generate:  49%|████▉     | 76/154 [55:24<55:16, 42.52s/row]                                                           [77/154] generated 10 candidates
+generate:  49%|████▉     | 76/154 [56:15<55:16, 42.52s/row]generate:  50%|█████     | 77/154 [56:15<57:52, 45.10s/row]                                                           [78/154] generated 10 candidates
+generate:  50%|█████     | 77/154 [57:06<57:52, 45.10s/row]generate:  51%|█████     | 78/154 [57:06<59:14, 46.76s/row]                                                           [79/154] generated 10 candidates
+generate:  51%|█████     | 78/154 [57:57<59:14, 46.76s/row]generate:  51%|█████▏    | 79/154 [57:57<1:00:00, 48.01s/row]                                                             [80/154] generated 10 candidates
+generate:  51%|█████▏    | 79/154 [58:20<1:00:00, 48.01s/row]generate:  52%|█████▏    | 80/154 [58:20<50:04, 40.60s/row]                                                             [81/154] generated 10 candidates
+generate:  52%|█████▏    | 80/154 [59:11<50:04, 40.60s/row]generate:  53%|█████▎    | 81/154 [59:11<53:04, 43.62s/row]                                                           [82/154] generated 10 candidates
+generate:  53%|█████▎    | 81/154 [59:34<53:04, 43.62s/row]generate:  53%|█████▎    | 82/154 [59:34<45:08, 37.62s/row]                                                           [83/154] generated 10 candidates
+generate:  53%|█████▎    | 82/154 [1:00:25<45:08, 37.62s/row]generate:  54%|█████▍    | 83/154 [1:00:25<49:10, 41.56s/row]                                                             [84/154] generated 10 candidates
+generate:  54%|█████▍    | 83/154 [1:00:54<49:10, 41.56s/row]generate:  55%|█████▍    | 84/154 [1:00:54<43:58, 37.69s/row]                                                             [85/154] generated 10 candidates
+generate:  55%|█████▍    | 84/154 [1:01:44<43:58, 37.69s/row]generate:  55%|█████▌    | 85/154 [1:01:44<47:48, 41.58s/row]                                                             [86/154] generated 10 candidates
+generate:  55%|█████▌    | 85/154 [1:02:31<47:48, 41.58s/row]generate:  56%|█████▌    | 86/154 [1:02:31<48:50, 43.10s/row]                                                             [87/154] generated 10 candidates
+generate:  56%|█████▌    | 86/154 [1:03:21<48:50, 43.10s/row]generate:  56%|█████▋    | 87/154 [1:03:21<50:16, 45.03s/row]                                                             [88/154] generated 10 candidates
+generate:  56%|█████▋    | 87/154 [1:04:11<50:16, 45.03s/row]generate:  57%|█████▋    | 88/154 [1:04:11<51:22, 46.71s/row]                                                             [89/154] generated 10 candidates
+generate:  57%|█████▋    | 88/154 [1:05:02<51:22, 46.71s/row]generate:  58%|█████▊    | 89/154 [1:05:02<51:53, 47.91s/row]                                                             [90/154] generated 10 candidates
+generate:  58%|█████▊    | 89/154 [1:05:42<51:53, 47.91s/row]generate:  58%|█████▊    | 90/154 [1:05:42<48:28, 45.44s/row]                                                             [91/154] generated 10 candidates
+generate:  58%|█████▊    | 90/154 [1:06:32<48:28, 45.44s/row]generate:  59%|█████▉    | 91/154 [1:06:32<49:25, 47.06s/row]                                                             [92/154] generated 10 candidates
+generate:  59%|█████▉    | 91/154 [1:07:23<49:25, 47.06s/row]generate:  60%|█████▉    | 92/154 [1:07:23<49:48, 48.20s/row]                                                             [93/154] generated 10 candidates
+generate:  60%|█████▉    | 92/154 [1:08:14<49:48, 48.20s/row]generate:  60%|██████    | 93/154 [1:08:14<49:46, 48.95s/row]                                                             [94/154] generated 10 candidates
+generate:  60%|██████    | 93/154 [1:09:05<49:46, 48.95s/row]generate:  61%|██████    | 94/154 [1:09:05<49:27, 49.45s/row]                                                             [95/154] generated 10 candidates
+generate:  61%|██████    | 94/154 [1:09:56<49:27, 49.45s/row]generate:  62%|██████▏   | 95/154 [1:09:56<49:02, 49.87s/row]                                                             [96/154] generated 10 candidates
+generate:  62%|██████▏   | 95/154 [1:10:28<49:02, 49.87s/row]generate:  62%|██████▏   | 96/154 [1:10:28<43:18, 44.80s/row]                                                             [97/154] generated 10 candidates
+generate:  62%|██████▏   | 96/154 [1:11:06<43:18, 44.80s/row]generate:  63%|██████▎   | 97/154 [1:11:06<40:21, 42.48s/row]                                                             [98/154] generated 10 candidates
+generate:  63%|██████▎   | 97/154 [1:11:56<40:21, 42.48s/row]generate:  64%|██████▎   | 98/154 [1:11:56<41:55, 44.93s/row]                                                             [99/154] generated 10 candidates
+generate:  64%|██████▎   | 98/154 [1:12:38<41:55, 44.93s/row]generate:  64%|██████▍   | 99/154 [1:12:38<40:25, 44.10s/row]                                                             [100/154] generated 10 candidates
+generate:  64%|██████▍   | 99/154 [1:13:24<40:25, 44.10s/row]generate:  65%|██████▍   | 100/154 [1:13:24<40:01, 44.47s/row]                                                              [101/154] generated 10 candidates
+generate:  65%|██████▍   | 100/154 [1:13:58<40:01, 44.47s/row]generate:  66%|██████▌   | 101/154 [1:13:58<36:29, 41.31s/row]                                                              [102/154] generated 10 candidates
+generate:  66%|██████▌   | 101/154 [1:14:33<36:29, 41.31s/row]generate:  66%|██████▌   | 102/154 [1:14:33<34:17, 39.58s/row]                                                              [103/154] generated 10 candidates
+generate:  66%|██████▌   | 102/154 [1:15:24<34:17, 39.58s/row]generate:  67%|██████▋   | 103/154 [1:15:24<36:25, 42.86s/row]                                                              [104/154] generated 10 candidates
+generate:  67%|██████▋   | 103/154 [1:15:57<36:25, 42.86s/row]generate:  68%|██████▊   | 104/154 [1:15:57<33:21, 40.04s/row]                                                              [105/154] generated 10 candidates
+generate:  68%|██████▊   | 104/154 [1:16:33<33:21, 40.04s/row]generate:  68%|██████▊   | 105/154 [1:16:33<31:41, 38.80s/row]                                                              [106/154] generated 10 candidates
+generate:  68%|██████▊   | 105/154 [1:17:24<31:41, 38.80s/row]generate:  69%|██████▉   | 106/154 [1:17:24<34:02, 42.55s/row]                                                              [107/154] generated 10 candidates
+generate:  69%|██████▉   | 106/154 [1:18:15<34:02, 42.55s/row]generate:  69%|██████▉   | 107/154 [1:18:15<35:12, 44.95s/row]                                                              [108/154] generated 10 candidates
+generate:  69%|██████▉   | 107/154 [1:19:06<35:12, 44.95s/row]generate:  70%|███████   | 108/154 [1:19:06<35:50, 46.74s/row]                                                              [109/154] generated 10 candidates
+generate:  70%|███████   | 108/154 [1:19:44<35:50, 46.74s/row]generate:  71%|███████   | 109/154 [1:19:44<33:14, 44.32s/row]                                                              [110/154] generated 10 candidates
+generate:  71%|███████   | 109/154 [1:20:35<33:14, 44.32s/row]generate:  71%|███████▏  | 110/154 [1:20:35<33:53, 46.23s/row]                                                              [111/154] generated 10 candidates
+generate:  71%|███████▏  | 110/154 [1:21:26<33:53, 46.23s/row]generate:  72%|███████▏  | 111/154 [1:21:26<34:03, 47.51s/row]                                                              [112/154] generated 10 candidates
+generate:  72%|███████▏  | 111/154 [1:22:16<34:03, 47.51s/row]generate:  73%|███████▎  | 112/154 [1:22:16<33:56, 48.50s/row]                                                              [113/154] generated 10 candidates
+generate:  73%|███████▎  | 112/154 [1:23:02<33:56, 48.50s/row]generate:  73%|███████▎  | 113/154 [1:23:02<32:36, 47.71s/row]                                                              [114/154] generated 10 candidates
+generate:  73%|███████▎  | 113/154 [1:23:53<32:36, 47.71s/row]generate:  74%|███████▍  | 114/154 [1:23:53<32:24, 48.61s/row]                                                              [115/154] generated 10 candidates
+generate:  74%|███████▍  | 114/154 [1:24:38<32:24, 48.61s/row]generate:  75%|███████▍  | 115/154 [1:24:38<30:58, 47.65s/row]                                                              [116/154] generated 10 candidates
+generate:  75%|███████▍  | 115/154 [1:25:29<30:58, 47.65s/row]generate:  75%|███████▌  | 116/154 [1:25:29<30:45, 48.57s/row]                                                              [117/154] generated 10 candidates
+generate:  75%|███████▌  | 116/154 [1:26:08<30:45, 48.57s/row]generate:  76%|███████▌  | 117/154 [1:26:08<28:06, 45.59s/row]                                                              [118/154] generated 10 candidates
+generate:  76%|███████▌  | 117/154 [1:26:59<28:06, 45.59s/row]generate:  77%|███████▋  | 118/154 [1:26:59<28:17, 47.15s/row]                                                              [119/154] generated 10 candidates
+generate:  77%|███████▋  | 118/154 [1:27:47<28:17, 47.15s/row]generate:  77%|███████▋  | 119/154 [1:27:47<27:44, 47.57s/row]                                                              [120/154] generated 10 candidates
+generate:  77%|███████▋  | 119/154 [1:28:38<27:44, 47.57s/row]generate:  78%|███████▊  | 120/154 [1:28:38<27:32, 48.59s/row]                                                              [121/154] generated 10 candidates
+generate:  78%|███████▊  | 120/154 [1:29:29<27:32, 48.59s/row]generate:  79%|███████▊  | 121/154 [1:29:29<27:06, 49.30s/row]                                                              [122/154] generated 10 candidates
+generate:  79%|███████▊  | 121/154 [1:30:03<27:06, 49.30s/row]generate:  79%|███████▉  | 122/154 [1:30:03<23:51, 44.74s/row]                                                              [123/154] generated 10 candidates
+generate:  79%|███████▉  | 122/154 [1:30:34<23:51, 44.74s/row]generate:  80%|███████▉  | 123/154 [1:30:34<20:55, 40.50s/row]                                                              [124/154] generated 10 candidates
+generate:  80%|███████▉  | 123/154 [1:31:25<20:55, 40.50s/row]generate:  81%|████████  | 124/154 [1:31:25<21:48, 43.61s/row]                                                              [125/154] generated 10 candidates
+generate:  81%|████████  | 124/154 [1:31:55<21:48, 43.61s/row]generate:  81%|████████  | 125/154 [1:31:55<19:12, 39.75s/row]                                                              [126/154] generated 10 candidates
+generate:  81%|████████  | 125/154 [1:32:38<19:12, 39.75s/row]generate:  82%|████████▏ | 126/154 [1:32:38<19:00, 40.73s/row]                                                              [127/154] generated 10 candidates
+generate:  82%|████████▏ | 126/154 [1:33:29<19:00, 40.73s/row]generate:  82%|████████▏ | 127/154 [1:33:29<19:40, 43.72s/row]                                                              [128/154] generated 10 candidates
+generate:  82%|████████▏ | 127/154 [1:34:14<19:40, 43.72s/row]generate:  83%|████████▎ | 128/154 [1:34:14<19:03, 44.00s/row]                                                              [129/154] generated 10 candidates
+generate:  83%|████████▎ | 128/154 [1:35:04<19:03, 44.00s/row]generate:  84%|████████▍ | 129/154 [1:35:04<19:10, 46.02s/row]                                                              [130/154] generated 10 candidates
+generate:  84%|████████▍ | 129/154 [1:35:52<19:10, 46.02s/row]generate:  84%|████████▍ | 130/154 [1:35:52<18:34, 46.42s/row]                                                              [131/154] generated 10 candidates
+generate:  84%|████████▍ | 130/154 [1:36:42<18:34, 46.42s/row]generate:  85%|████████▌ | 131/154 [1:36:42<18:16, 47.68s/row]                                                              [132/154] generated 10 candidates
+generate:  85%|████████▌ | 131/154 [1:37:33<18:16, 47.68s/row]generate:  86%|████████▌ | 132/154 [1:37:33<17:48, 48.56s/row]                                                              [133/154] generated 10 candidates
+generate:  86%|████████▌ | 132/154 [1:37:57<17:48, 48.56s/row]generate:  86%|████████▋ | 133/154 [1:37:57<14:23, 41.13s/row]                                                              [134/154] generated 10 candidates
+generate:  86%|████████▋ | 133/154 [1:38:48<14:23, 41.13s/row]generate:  87%|████████▋ | 134/154 [1:38:48<14:40, 44.02s/row]                                                              [135/154] generated 10 candidates
+generate:  87%|████████▋ | 134/154 [1:39:39<14:40, 44.02s/row]generate:  88%|████████▊ | 135/154 [1:39:39<14:36, 46.11s/row]                                                              [136/154] generated 10 candidates
+generate:  88%|████████▊ | 135/154 [1:40:29<14:36, 46.11s/row]generate:  88%|████████▊ | 136/154 [1:40:29<14:15, 47.53s/row]                                                              [137/154] generated 10 candidates
+generate:  88%|████████▊ | 136/154 [1:41:20<14:15, 47.53s/row]generate:  89%|████████▉ | 137/154 [1:41:20<13:44, 48.48s/row]                                                              [138/154] generated 10 candidates
+generate:  89%|████████▉ | 137/154 [1:42:11<13:44, 48.48s/row]generate:  90%|████████▉ | 138/154 [1:42:11<13:06, 49.14s/row]                                                              [139/154] generated 10 candidates
+generate:  90%|████████▉ | 138/154 [1:43:02<13:06, 49.14s/row]generate:  90%|█████████ | 139/154 [1:43:02<12:25, 49.69s/row]                                                              [140/154] generated 10 candidates
+generate:  90%|█████████ | 139/154 [1:43:35<12:25, 49.69s/row]generate:  91%|█████████ | 140/154 [1:43:35<10:25, 44.68s/row]                                                              [141/154] generated 10 candidates
+generate:  91%|█████████ | 140/154 [1:44:26<10:25, 44.68s/row]generate:  92%|█████████▏| 141/154 [1:44:26<10:04, 46.50s/row]                                                              [142/154] generated 10 candidates
+generate:  92%|█████████▏| 141/154 [1:45:16<10:04, 46.50s/row]generate:  92%|█████████▏| 142/154 [1:45:16<09:33, 47.78s/row]                                                              [143/154] generated 10 candidates
+generate:  92%|█████████▏| 142/154 [1:45:46<09:33, 47.78s/row]generate:  93%|█████████▎| 143/154 [1:45:46<07:44, 42.22s/row]                                                              [144/154] generated 10 candidates
+generate:  93%|█████████▎| 143/154 [1:46:36<07:44, 42.22s/row]generate:  94%|█████████▎| 144/154 [1:46:36<07:27, 44.78s/row]                                                              [145/154] generated 10 candidates
+generate:  94%|█████████▎| 144/154 [1:47:27<07:27, 44.78s/row]generate:  94%|█████████▍| 145/154 [1:47:27<07:00, 46.68s/row]                                                              [146/154] generated 10 candidates
+generate:  94%|█████████▍| 145/154 [1:48:18<07:00, 46.68s/row]generate:  95%|█████████▍| 146/154 [1:48:18<06:23, 47.91s/row]                                                              [147/154] generated 10 candidates
+generate:  95%|█████████▍| 146/154 [1:49:09<06:23, 47.91s/row]generate:  95%|█████████▌| 147/154 [1:49:09<05:41, 48.80s/row]                                                              [148/154] generated 10 candidates
+generate:  95%|█████████▌| 147/154 [1:50:00<05:41, 48.80s/row]generate:  96%|█████████▌| 148/154 [1:50:00<04:56, 49.46s/row]                                                              [149/154] generated 10 candidates
+generate:  96%|█████████▌| 148/154 [1:50:51<04:56, 49.46s/row]generate:  97%|█████████▋| 149/154 [1:50:51<04:09, 49.98s/row]                                                              [150/154] generated 10 candidates
+generate:  97%|█████████▋| 149/154 [1:51:42<04:09, 49.98s/row]generate:  97%|█████████▋| 150/154 [1:51:42<03:20, 50.20s/row]                                                              [151/154] generated 10 candidates
+generate:  97%|█████████▋| 150/154 [1:52:15<03:20, 50.20s/row]generate:  98%|█████████▊| 151/154 [1:52:15<02:15, 45.16s/row]                                                              [152/154] generated 10 candidates
+generate:  98%|█████████▊| 151/154 [1:53:10<02:15, 45.16s/row]generate:  99%|█████████▊| 152/154 [1:53:10<01:35, 47.89s/row]                                                              [153/154] generated 10 candidates
+generate:  99%|█████████▊| 152/154 [1:53:50<01:35, 47.89s/row]generate:  99%|█████████▉| 153/154 [1:53:50<00:45, 45.65s/row]                                                              [154/154] generated 10 candidates
+generate:  99%|█████████▉| 153/154 [1:54:37<00:45, 45.65s/row]generate: 100%|██████████| 154/154 [1:54:37<00:00, 45.96s/row]generate: 100%|██████████| 154/154 [1:54:37<00:00, 44.66s/row]
+wrote /workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_raw_predictions.json
+wrote /workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_raw_predictions.json.provenance.json
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=post_inference_join time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=post_inference_join time=$(date -u +%FT%TZ)"
+[?2004lSTAGE=post_inference_join time=2026-07-16T06:33:05Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py --predictions "$RAW" --public_dataset "$PUBLIC" --private_dataset "$PRIVATE" --output "$SCORED" --expected_rows 154 --expected_samples 10
+[?2004l{
+  "schema_version": "signature-scrubbed-post-inference-join-v1",
+  "post_inference_join": true,
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_stream_sha256": "b4c0be6ec347329bf5cbb71910d07c66dd0fe8b1392a3bb3610f3dbf61bdb32e",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_raw_predictions.json",
+      "sha256": "a1e0bc54b7a4acbefb02c7d7e95a0ee2613bf1ec86b34db8488824b78a2ef0a6",
+      "size_bytes": 2488589
+    },
+    "raw_inference_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_raw_predictions.json.provenance.json",
+      "sha256": "528192d45622ab212be5cc54ceac1b69de1d1767746d11fd688c496b62384bba",
+      "size_bytes": 6302
+    },
+    "public_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_signature_scrubbed_public.jsonl",
+      "sha256": "45756d00c0fc7f749081ca1236e715b1b9d33412a454cea27342ddf0ac2d657e",
+      "size_bytes": 4742045
+    },
+    "private_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_signature_scrubbed_private.jsonl",
+      "sha256": "91dc2eee2f06602e6cd95873c81802e0997fd3ff758b395aeab9c3da114df252",
+      "size_bytes": 4965445
+    }
+  },
+  "output": {
+    "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_predictions.json",
+    "sha256": "cbc62e45ef39027a9ec960e7114dd4970bff711751bbbeca094de93d975702ce",
+    "size_bytes": 2694763
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "2dff4599f98cc7ab8c65b87fe13b5845e2c90d79510229f67994aa36799cac61",
+    "size_bytes": 8118
+  }
+}
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=codebleu time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=codebleu time=$(date -u +%FT%TZ)" M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K"
+[?2004lSTAGE=codebleu time=2026-07-16T06:33:05Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/graph_codebleu_antigravity.py --predictions "$SCORED" | tee "$CODEBLEU"
+[?2004l{
+  "count": 154,
+  "samples_with_success": 154,
+  "mean_codebleu": 0.48396602445025255,
+  "min_codebleu": 0.3106204109986286,
+  "max_codebleu": 0.6405103254688083
+}
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/graph_codebleu_antigravity.py --predictions "$SCORED" --compiled_only --workers 64 | tee "$COMPILED_CODEBLEU"
+[?2004l{
+  "count": 154,
+  "samples_with_success": 95,
+  "mean_codebleu": 0.4372597575696906,
+  "min_codebleu": 0.29252388587610295,
+  "max_codebleu": 0.6022981949797112
+}
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=compile_at_k time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=compile_at_k time=$(date -u +%FT%TZ)"
+[?2004lSTAGE=compile_at_k time=2026-07-16T06:33:44Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/graph_compile_at_k_antigravity.py --predictions "$SCORED" --k_values 1,5 --workers 64 --timeout 30 --compile_mode jit_tests | tee "$COMPILEK"
+[?2004lUsing Dart binary: /usr/bin/dart | workers=64
+compile@k:   0%|          | 0/154 [00:00<?, ?row/s]compile@k:   1%|          | 1/154 [00:19<49:57, 19.59s/row]compile@k:   1%|▏         | 2/154 [00:22<24:12,  9.56s/row]compile@k:   9%|▉         | 14/154 [00:22<02:09,  1.08row/s]compile@k:  42%|████▏     | 65/154 [00:38<00:35,  2.54row/s]compile@k:  44%|████▎     | 67/154 [00:39<00:35,  2.44row/s]compile@k:  44%|████▍     | 68/154 [00:39<00:34,  2.46row/s]compile@k:  45%|████▍     | 69/154 [00:41<00:37,  2.27row/s]compile@k:  47%|████▋     | 72/154 [00:42<00:34,  2.38row/s]compile@k:  48%|████▊     | 74/154 [00:42<00:30,  2.59row/s]compile@k:  49%|████▉     | 76/154 [00:42<00:28,  2.74row/s]compile@k:  60%|█████▉    | 92/154 [00:43<00:09,  6.66row/s]compile@k:  69%|██████▉   | 106/154 [00:43<00:04, 10.67row/s]compile@k:  78%|███████▊  | 120/154 [00:44<00:02, 14.14row/s]compile@k:  84%|████████▍ | 129/154 [00:48<00:04,  5.69row/s]compile@k:  85%|████████▌ | 131/154 [00:48<00:04,  5.54row/s]compile@k:  86%|████████▋ | 133/154 [00:48<00:03,  5.92row/s]compile@k:  88%|████████▊ | 135/154 [00:49<00:03,  6.19row/s]compile@k:  94%|█████████▍| 145/154 [00:49<00:00, 10.90row/s]compile@k: 100%|██████████| 154/154 [00:49<00:00,  3.12row/s]
+[1/154] n=10, compiling=0, compile@1=0.0000
+[2/154] n=10, compiling=0, compile@1=0.0000
+[3/154] n=10, compiling=0, compile@1=0.0000
+[4/154] n=10, compiling=0, compile@1=0.0000
+[5/154] n=10, compiling=0, compile@1=0.0000
+[6/154] n=10, compiling=0, compile@1=0.0000
+[7/154] n=10, compiling=0, compile@1=0.0000
+[8/154] n=10, compiling=0, compile@1=0.0000
+[9/154] n=10, compiling=0, compile@1=0.0000
+[10/154] n=10, compiling=0, compile@1=0.0000
+[11/154] n=10, compiling=0, compile@1=0.0000
+[12/154] n=10, compiling=0, compile@1=0.0000
+[13/154] n=10, compiling=0, compile@1=0.0000
+[14/154] n=10, compiling=0, compile@1=0.0000
+[15/154] n=10, compiling=0, compile@1=0.0000
+[16/154] n=10, compiling=0, compile@1=0.0000
+[17/154] n=10, compiling=0, compile@1=0.0000
+[18/154] n=10, compiling=0, compile@1=0.0000
+[19/154] n=10, compiling=0, compile@1=0.0000
+[20/154] n=10, compiling=0, compile@1=0.0000
+[21/154] n=10, compiling=0, compile@1=0.0000
+[22/154] n=10, compiling=0, compile@1=0.0000
+[23/154] n=10, compiling=0, compile@1=0.0000
+[24/154] n=10, compiling=0, compile@1=0.0000
+[25/154] n=10, compiling=0, compile@1=0.0000
+[26/154] n=10, compiling=0, compile@1=0.0000
+[27/154] n=10, compiling=0, compile@1=0.0000
+[28/154] n=10, compiling=0, compile@1=0.0000
+[29/154] n=10, compiling=0, compile@1=0.0000
+[30/154] n=10, compiling=0, compile@1=0.0000
+[31/154] n=10, compiling=0, compile@1=0.0000
+[32/154] n=10, compiling=0, compile@1=0.0000
+[33/154] n=10, compiling=0, compile@1=0.0000
+[34/154] n=10, compiling=0, compile@1=0.0000
+[35/154] n=10, compiling=0, compile@1=0.0000
+[36/154] n=10, compiling=0, compile@1=0.0000
+[37/154] n=10, compiling=0, compile@1=0.0000
+[38/154] n=10, compiling=0, compile@1=0.0000
+[39/154] n=10, compiling=0, compile@1=0.0000
+[40/154] n=10, compiling=0, compile@1=0.0000
+[41/154] n=10, compiling=0, compile@1=0.0000
+[42/154] n=10, compiling=0, compile@1=0.0000
+[43/154] n=10, compiling=0, compile@1=0.0000
+[44/154] n=10, compiling=0, compile@1=0.0000
+[45/154] n=10, compiling=0, compile@1=0.0000
+[46/154] n=10, compiling=0, compile@1=0.0000
+[47/154] n=10, compiling=0, compile@1=0.0000
+[48/154] n=10, compiling=0, compile@1=0.0000
+[49/154] n=10, compiling=0, compile@1=0.0000
+[50/154] n=10, compiling=0, compile@1=0.0000
+[51/154] n=10, compiling=0, compile@1=0.0000
+[52/154] n=10, compiling=0, compile@1=0.0000
+[53/154] n=10, compiling=0, compile@1=0.0000
+[54/154] n=10, compiling=0, compile@1=0.0000
+[55/154] n=10, compiling=0, compile@1=0.0000
+[56/154] n=10, compiling=0, compile@1=0.0000
+[57/154] n=10, compiling=0, compile@1=0.0000
+[58/154] n=10, compiling=0, compile@1=0.0000
+[59/154] n=10, compiling=0, compile@1=0.0000
+[60/154] n=10, compiling=0, compile@1=0.0000
+[61/154] n=10, compiling=0, compile@1=0.0000
+[62/154] n=10, compiling=0, compile@1=0.0000
+[63/154] n=10, compiling=0, compile@1=0.0000
+[64/154] n=10, compiling=0, compile@1=0.0000
+[65/154] n=10, compiling=0, compile@1=0.0000
+[66/154] n=10, compiling=0, compile@1=0.0000
+[67/154] n=10, compiling=0, compile@1=0.0000
+[68/154] n=10, compiling=0, compile@1=0.0000
+[69/154] n=10, compiling=0, compile@1=0.0000
+[70/154] n=10, compiling=0, compile@1=0.0000
+[71/154] n=10, compiling=0, compile@1=0.0000
+[72/154] n=10, compiling=0, compile@1=0.0000
+[73/154] n=10, compiling=0, compile@1=0.0000
+[74/154] n=10, compiling=0, compile@1=0.0000
+[75/154] n=10, compiling=0, compile@1=0.0000
+[76/154] n=10, compiling=0, compile@1=0.0000
+[77/154] n=10, compiling=0, compile@1=0.0000
+[78/154] n=10, compiling=0, compile@1=0.0000
+[79/154] n=10, compiling=0, compile@1=0.0000
+[80/154] n=10, compiling=0, compile@1=0.0000
+[81/154] n=10, compiling=0, compile@1=0.0000
+[82/154] n=10, compiling=0, compile@1=0.0000
+[83/154] n=10, compiling=0, compile@1=0.0000
+[84/154] n=10, compiling=0, compile@1=0.0000
+[85/154] n=10, compiling=0, compile@1=0.0000
+[86/154] n=10, compiling=0, compile@1=0.0000
+[87/154] n=10, compiling=0, compile@1=0.0000
+[88/154] n=10, compiling=0, compile@1=0.0000
+[89/154] n=10, compiling=0, compile@1=0.0000
+[90/154] n=10, compiling=0, compile@1=0.0000
+[91/154] n=10, compiling=0, compile@1=0.0000
+[92/154] n=10, compiling=0, compile@1=0.0000
+[93/154] n=10, compiling=0, compile@1=0.0000
+[94/154] n=10, compiling=0, compile@1=0.0000
+[95/154] n=10, compiling=0, compile@1=0.0000
+[96/154] n=10, compiling=0, compile@1=0.0000
+[97/154] n=10, compiling=0, compile@1=0.0000
+[98/154] n=10, compiling=0, compile@1=0.0000
+[99/154] n=10, compiling=0, compile@1=0.0000
+[100/154] n=10, compiling=0, compile@1=0.0000
+[101/154] n=10, compiling=0, compile@1=0.0000
+[102/154] n=10, compiling=0, compile@1=0.0000
+[103/154] n=10, compiling=0, compile@1=0.0000
+[104/154] n=10, compiling=0, compile@1=0.0000
+[105/154] n=10, compiling=0, compile@1=0.0000
+[106/154] n=10, compiling=0, compile@1=0.0000
+[107/154] n=10, compiling=0, compile@1=0.0000
+[108/154] n=10, compiling=0, compile@1=0.0000
+[109/154] n=10, compiling=0, compile@1=0.0000
+[110/154] n=10, compiling=0, compile@1=0.0000
+[111/154] n=10, compiling=0, compile@1=0.0000
+[112/154] n=10, compiling=0, compile@1=0.0000
+[113/154] n=10, compiling=0, compile@1=0.0000
+[114/154] n=10, compiling=0, compile@1=0.0000
+[115/154] n=10, compiling=0, compile@1=0.0000
+[116/154] n=10, compiling=0, compile@1=0.0000
+[117/154] n=10, compiling=0, compile@1=0.0000
+[118/154] n=10, compiling=0, compile@1=0.0000
+[119/154] n=10, compiling=0, compile@1=0.0000
+[120/154] n=10, compiling=0, compile@1=0.0000
+[121/154] n=10, compiling=0, compile@1=0.0000
+[122/154] n=10, compiling=0, compile@1=0.0000
+[123/154] n=10, compiling=0, compile@1=0.0000
+[124/154] n=10, compiling=0, compile@1=0.0000
+[125/154] n=10, compiling=0, compile@1=0.0000
+[126/154] n=10, compiling=0, compile@1=0.0000
+[127/154] n=10, compiling=0, compile@1=0.0000
+[128/154] n=10, compiling=0, compile@1=0.0000
+[129/154] n=10, compiling=0, compile@1=0.0000
+[130/154] n=10, compiling=0, compile@1=0.0000
+[131/154] n=10, compiling=0, compile@1=0.0000
+[132/154] n=10, compiling=0, compile@1=0.0000
+[133/154] n=10, compiling=0, compile@1=0.0000
+[134/154] n=10, compiling=0, compile@1=0.0000
+[135/154] n=10, compiling=0, compile@1=0.0000
+[136/154] n=10, compiling=0, compile@1=0.0000
+[137/154] n=10, compiling=0, compile@1=0.0000
+[138/154] n=10, compiling=0, compile@1=0.0000
+[139/154] n=10, compiling=0, compile@1=0.0000
+[140/154] n=10, compiling=0, compile@1=0.0000
+[141/154] n=10, compiling=0, compile@1=0.0000
+[142/154] n=10, compiling=0, compile@1=0.0000
+[143/154] n=10, compiling=0, compile@1=0.0000
+[144/154] n=10, compiling=0, compile@1=0.0000
+[145/154] n=10, compiling=0, compile@1=0.0000
+[146/154] n=10, compiling=0, compile@1=0.0000
+[147/154] n=10, compiling=0, compile@1=0.0000
+[148/154] n=10, compiling=0, compile@1=0.0000
+[149/154] n=10, compiling=0, compile@1=0.0000
+[150/154] n=10, compiling=0, compile@1=0.0000
+[151/154] n=10, compiling=0, compile@1=0.0000
+[152/154] n=10, compiling=0, compile@1=0.0000
+[153/154] n=10, compiling=0, compile@1=0.0000
+[154/154] n=10, compiling=0, compile@1=0.0000
+{
+  "compile_at_1": 0.0,
+  "compile_at_5": 0.0,
+  "total_problems": 154
+}
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=pass_at_k time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=pass_at_k time=$(date -u +%FT%TZ)"
+[?2004lSTAGE=pass_at_k time=2026-07-16T06:34:34Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/graph_pass_at_k_antigravity.py --predictions "$SCORED" --k_values 1,5,10 --workers 64 --timeout 30 | tee "$PASSK"
+[?2004lUsing Dart binary: /usr/bin/dart | workers=64
+pass@k:   0%|          | 0/154 [00:00<?, ?row/s]pass@k:   1%|          | 1/154 [00:23<59:56, 23.50s/row]pass@k:  24%|██▍       | 37/154 [00:23<00:53,  2.17row/s]pass@k:  24%|██▍       | 37/154 [00:40<00:53,  2.17row/s]pass@k:  42%|████▏     | 65/154 [00:40<00:47,  1.87row/s]pass@k:  44%|████▍     | 68/154 [00:41<00:44,  1.93row/s]pass@k:  48%|████▊     | 74/154 [00:42<00:35,  2.24row/s]pass@k:  51%|█████     | 78/154 [00:43<00:30,  2.47row/s]pass@k:  55%|█████▌    | 85/154 [00:43<00:21,  3.20row/s]pass@k:  59%|█████▉    | 91/154 [00:43<00:15,  4.11row/s]pass@k:  61%|██████    | 94/154 [00:43<00:13,  4.56row/s]pass@k:  70%|███████   | 108/154 [00:44<00:05,  8.56row/s]pass@k:  82%|████████▏ | 127/154 [00:44<00:01, 15.62row/s]pass@k:  87%|████████▋ | 134/154 [00:49<00:03,  5.05row/s]pass@k:  92%|█████████▏| 142/154 [00:49<00:01,  6.58row/s]pass@k: 100%|██████████| 154/154 [00:49<00:00,  9.83row/s]pass@k: 100%|██████████| 154/154 [00:49<00:00,  3.12row/s]
+[1/154] n=10, passed=0, pass@1=0.0000
+[2/154] n=10, passed=0, pass@1=0.0000
+[3/154] n=10, passed=0, pass@1=0.0000
+[4/154] n=10, passed=0, pass@1=0.0000
+[5/154] n=10, passed=0, pass@1=0.0000
+[6/154] n=10, passed=0, pass@1=0.0000
+[7/154] n=10, passed=0, pass@1=0.0000
+[8/154] n=10, passed=0, pass@1=0.0000
+[9/154] n=10, passed=0, pass@1=0.0000
+[10/154] n=10, passed=0, pass@1=0.0000
+[11/154] n=10, passed=0, pass@1=0.0000
+[12/154] n=10, passed=0, pass@1=0.0000
+[13/154] n=10, passed=0, pass@1=0.0000
+[14/154] n=10, passed=0, pass@1=0.0000
+[15/154] n=10, passed=0, pass@1=0.0000
+[16/154] n=10, passed=0, pass@1=0.0000
+[17/154] n=10, passed=0, pass@1=0.0000
+[18/154] n=10, passed=0, pass@1=0.0000
+[19/154] n=10, passed=0, pass@1=0.0000
+[20/154] n=10, passed=0, pass@1=0.0000
+[21/154] n=10, passed=0, pass@1=0.0000
+[22/154] n=10, passed=0, pass@1=0.0000
+[23/154] n=10, passed=0, pass@1=0.0000
+[24/154] n=10, passed=0, pass@1=0.0000
+[25/154] n=10, passed=0, pass@1=0.0000
+[26/154] n=10, passed=0, pass@1=0.0000
+[27/154] n=10, passed=0, pass@1=0.0000
+[28/154] n=10, passed=0, pass@1=0.0000
+[29/154] n=10, passed=0, pass@1=0.0000
+[30/154] n=10, passed=0, pass@1=0.0000
+[31/154] n=10, passed=0, pass@1=0.0000
+[32/154] n=10, passed=0, pass@1=0.0000
+[33/154] n=10, passed=0, pass@1=0.0000
+[34/154] n=10, passed=0, pass@1=0.0000
+[35/154] n=10, passed=0, pass@1=0.0000
+[36/154] n=10, passed=0, pass@1=0.0000
+[37/154] n=10, passed=0, pass@1=0.0000
+[38/154] n=10, passed=0, pass@1=0.0000
+[39/154] n=10, passed=0, pass@1=0.0000
+[40/154] n=10, passed=0, pass@1=0.0000
+[41/154] n=10, passed=0, pass@1=0.0000
+[42/154] n=10, passed=0, pass@1=0.0000
+[43/154] n=10, passed=0, pass@1=0.0000
+[44/154] n=10, passed=0, pass@1=0.0000
+[45/154] n=10, passed=0, pass@1=0.0000
+[46/154] n=10, passed=0, pass@1=0.0000
+[47/154] n=10, passed=0, pass@1=0.0000
+[48/154] n=10, passed=0, pass@1=0.0000
+[49/154] n=10, passed=0, pass@1=0.0000
+[50/154] n=10, passed=0, pass@1=0.0000
+[51/154] n=10, passed=0, pass@1=0.0000
+[52/154] n=10, passed=0, pass@1=0.0000
+[53/154] n=10, passed=0, pass@1=0.0000
+[54/154] n=10, passed=0, pass@1=0.0000
+[55/154] n=10, passed=0, pass@1=0.0000
+[56/154] n=10, passed=0, pass@1=0.0000
+[57/154] n=10, passed=0, pass@1=0.0000
+[58/154] n=10, passed=0, pass@1=0.0000
+[59/154] n=10, passed=0, pass@1=0.0000
+[60/154] n=10, passed=0, pass@1=0.0000
+[61/154] n=10, passed=0, pass@1=0.0000
+[62/154] n=10, passed=0, pass@1=0.0000
+[63/154] n=10, passed=0, pass@1=0.0000
+[64/154] n=10, passed=0, pass@1=0.0000
+[65/154] n=10, passed=0, pass@1=0.0000
+[66/154] n=10, passed=0, pass@1=0.0000
+[67/154] n=10, passed=0, pass@1=0.0000
+[68/154] n=10, passed=0, pass@1=0.0000
+[69/154] n=10, passed=0, pass@1=0.0000
+[70/154] n=10, passed=0, pass@1=0.0000
+[71/154] n=10, passed=0, pass@1=0.0000
+[72/154] n=10, passed=0, pass@1=0.0000
+[73/154] n=10, passed=0, pass@1=0.0000
+[74/154] n=10, passed=0, pass@1=0.0000
+[75/154] n=10, passed=0, pass@1=0.0000
+[76/154] n=10, passed=0, pass@1=0.0000
+[77/154] n=10, passed=0, pass@1=0.0000
+[78/154] n=10, passed=0, pass@1=0.0000
+[79/154] n=10, passed=0, pass@1=0.0000
+[80/154] n=10, passed=0, pass@1=0.0000
+[81/154] n=10, passed=0, pass@1=0.0000
+[82/154] n=10, passed=0, pass@1=0.0000
+[83/154] n=10, passed=0, pass@1=0.0000
+[84/154] n=10, passed=0, pass@1=0.0000
+[85/154] n=10, passed=0, pass@1=0.0000
+[86/154] n=10, passed=0, pass@1=0.0000
+[87/154] n=10, passed=0, pass@1=0.0000
+[88/154] n=10, passed=0, pass@1=0.0000
+[89/154] n=10, passed=0, pass@1=0.0000
+[90/154] n=10, passed=0, pass@1=0.0000
+[91/154] n=10, passed=0, pass@1=0.0000
+[92/154] n=10, passed=0, pass@1=0.0000
+[93/154] n=10, passed=0, pass@1=0.0000
+[94/154] n=10, passed=0, pass@1=0.0000
+[95/154] n=10, passed=0, pass@1=0.0000
+[96/154] n=10, passed=0, pass@1=0.0000
+[97/154] n=10, passed=0, pass@1=0.0000
+[98/154] n=10, passed=0, pass@1=0.0000
+[99/154] n=10, passed=0, pass@1=0.0000
+[100/154] n=10, passed=0, pass@1=0.0000
+[101/154] n=10, passed=0, pass@1=0.0000
+[102/154] n=10, passed=0, pass@1=0.0000
+[103/154] n=10, passed=0, pass@1=0.0000
+[104/154] n=10, passed=0, pass@1=0.0000
+[105/154] n=10, passed=0, pass@1=0.0000
+[106/154] n=10, passed=0, pass@1=0.0000
+[107/154] n=10, passed=0, pass@1=0.0000
+[108/154] n=10, passed=0, pass@1=0.0000
+[109/154] n=10, passed=0, pass@1=0.0000
+[110/154] n=10, passed=0, pass@1=0.0000
+[111/154] n=10, passed=0, pass@1=0.0000
+[112/154] n=10, passed=0, pass@1=0.0000
+[113/154] n=10, passed=0, pass@1=0.0000
+[114/154] n=10, passed=0, pass@1=0.0000
+[115/154] n=10, passed=0, pass@1=0.0000
+[116/154] n=10, passed=0, pass@1=0.0000
+[117/154] n=10, passed=0, pass@1=0.0000
+[118/154] n=10, passed=0, pass@1=0.0000
+[119/154] n=10, passed=0, pass@1=0.0000
+[120/154] n=10, passed=0, pass@1=0.0000
+[121/154] n=10, passed=0, pass@1=0.0000
+[122/154] n=10, passed=0, pass@1=0.0000
+[123/154] n=10, passed=0, pass@1=0.0000
+[124/154] n=10, passed=0, pass@1=0.0000
+[125/154] n=10, passed=0, pass@1=0.0000
+[126/154] n=10, passed=0, pass@1=0.0000
+[127/154] n=10, passed=0, pass@1=0.0000
+[128/154] n=10, passed=0, pass@1=0.0000
+[129/154] n=10, passed=0, pass@1=0.0000
+[130/154] n=10, passed=0, pass@1=0.0000
+[131/154] n=10, passed=0, pass@1=0.0000
+[132/154] n=10, passed=0, pass@1=0.0000
+[133/154] n=10, passed=0, pass@1=0.0000
+[134/154] n=10, passed=0, pass@1=0.0000
+[135/154] n=10, passed=0, pass@1=0.0000
+[136/154] n=10, passed=0, pass@1=0.0000
+[137/154] n=10, passed=0, pass@1=0.0000
+[138/154] n=10, passed=0, pass@1=0.0000
+[139/154] n=10, passed=0, pass@1=0.0000
+[140/154] n=10, passed=0, pass@1=0.0000
+[141/154] n=10, passed=0, pass@1=0.0000
+[142/154] n=10, passed=0, pass@1=0.0000
+[143/154] n=10, passed=0, pass@1=0.0000
+[144/154] n=10, passed=0, pass@1=0.0000
+[145/154] n=10, passed=0, pass@1=0.0000
+[146/154] n=10, passed=0, pass@1=0.0000
+[147/154] n=10, passed=0, pass@1=0.0000
+[148/154] n=10, passed=0, pass@1=0.0000
+[149/154] n=10, passed=0, pass@1=0.0000
+[150/154] n=10, passed=0, pass@1=0.0000
+[151/154] n=10, passed=0, pass@1=0.0000
+[152/154] n=10, passed=0, pass@1=0.0000
+[153/154] n=10, passed=0, pass@1=0.0000
+[154/154] n=10, passed=0, pass@1=0.0000
+{
+  "pass_at_1": 0.0,
+  "pass_at_5": 0.0,
+  "pass_at_10": 0.0,
+  "total_problems": 154
+}
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=stats_csv time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "STAGE=stats_csv time=$(date -u +%FT%TZ)"
+[?2004lSTAGE=stats_csv time=2026-07-16T06:35:24Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m /venv/main/bin/python /workspace/scripts/evaluation/compile_statistical_results_antigravity.py --predictions "$SCORED" --output "$STATS" --workers 64 --timeout 30 --compile_mode jit_tests
+[?2004lUsing Dart binary: /usr/bin/dart
+Stats CSV workers=64
+stats CSV:   0%|          | 0/154 [00:00<?, ?row/s]stats CSV:   1%|          | 1/154 [00:19<49:46, 19.52s/row]stats CSV:   3%|▎         | 5/154 [00:20<07:50,  3.16s/row]stats CSV:  14%|█▎        | 21/154 [00:21<01:14,  1.79row/s]stats CSV:  25%|██▍       | 38/154 [00:22<00:32,  3.60row/s]stats CSV:  31%|███       | 48/154 [00:22<00:21,  4.97row/s]stats CSV:  42%|████▏     | 65/154 [00:37<00:44,  2.00row/s]stats CSV:  43%|████▎     | 66/154 [00:37<00:42,  2.05row/s]stats CSV:  44%|████▍     | 68/154 [00:38<00:42,  2.03row/s]stats CSV:  47%|████▋     | 72/154 [00:39<00:34,  2.38row/s]stats CSV:  48%|████▊     | 74/154 [00:39<00:29,  2.67row/s]stats CSV:  58%|█████▊    | 90/154 [00:39<00:10,  5.91row/s]stats CSV:  66%|██████▌   | 101/154 [00:40<00:06,  7.63row/s]stats CSV:  78%|███████▊  | 120/154 [00:41<00:02, 12.76row/s]stats CSV:  84%|████████▍ | 129/154 [00:45<00:04,  5.55row/s]stats CSV:  85%|████████▌ | 131/154 [00:46<00:04,  5.36row/s]stats CSV:  86%|████████▋ | 133/154 [00:46<00:03,  5.65row/s]stats CSV:  90%|█████████ | 139/154 [00:46<00:02,  7.19row/s]stats CSV: 100%|██████████| 154/154 [00:46<00:00,  3.32row/s]
+Successfully compiled per-problem statistics to: /workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_signature_scrubbed_stats.csv
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m sha256sum "$PUBLIC" "$PRIVATE" "$CHECKPOINT" "$RAW" "$RAW.provenance.json" "$SCORED" "$SCORED.provenance.json" "$CODEBLEU" "$COMPILED_CODEBLEU" "$COMPILEK" "$PASSK" "$STATS" > "$HASHES"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m trap - ERR
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "COMPLETE time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "COMPLETE time=$(date -u +%FT%TZ)"
+[?2004lCOMPLETE time=2026-07-16T06:36:16Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m 
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m 

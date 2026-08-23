@@ -1,0 +1,48 @@
+{
+  "schema": "anonymous-artifact-zenodo-publication-receipt-v3",
+  "status": "complete",
+  "validated_at_utc": "2026-08-06T12:14:55.8208271Z",
+  "record": {
+    "id": 21822791,
+    "doi": "10.5281/zenodo.21822791",
+    "concept_doi": "10.5281/zenodo.21796169",
+    "url": "https://zenodo.org/records/21822791",
+    "version": "3.0.0",
+    "publication_date": "2026-08-06",
+    "creator": "Anonymous Authors",
+    "access": "open",
+    "custom_rights_notice": "Version 3 notice and mixed file-scoped rights"
+  },
+  "archive": {
+    "filename": "paper_artifact_capsule_v3_seed47.zip",
+    "bytes": 52706628,
+    "md5": "47e2ebdd6a04c9c041ca08679a2ad35b",
+    "sha256": "a35b535cfb468d7a0e6216a078461d942ac7200648f5c75daec4210835d7604f",
+    "checksum_filename": "paper_artifact_capsule_v3_seed47.zip.sha256",
+    "checksum_file_bytes": 103,
+    "checksum_file_md5": "1147f075148a6981e3e0fa6de34aa966"
+  },
+  "validation": {
+    "public_api_without_credentials": true,
+    "public_download_without_credentials": true,
+    "download_sha256_matches_local_release": true,
+    "fresh_extraction_reproducer_passed": true,
+    "fresh_extraction_privacy_audit_passed": true,
+    "fresh_extraction_integrity_verifier_passed": true,
+    "raw_score_files_recomputed": 61,
+    "release_manifest_files_verified": 466,
+    "clean174_projection_bindings_verified": 33,
+    "seed47_extension_checks": 64,
+    "omitted_payload_registry_checks": 23,
+    "legacy_gold_prediction_payload_absent": true,
+    "seed47_gold_prediction_payload_absent": true,
+    "checkpoint_weights_absent": true
+  },
+  "version_history": {
+    "supersedes_record_id": 21806006,
+    "supersedes_doi": "10.5281/zenodo.21806006",
+    "superseded_version": "2.0.0",
+    "concept_doi": "10.5281/zenodo.21796169",
+    "latest_version_link": "https://zenodo.org/records/21822791/latest"
+  }
+}

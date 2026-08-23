@@ -1,0 +1,4 @@
+metric,value,n_tasks
+pass@1,0.012987,154
+pass@5,0.038085,154
+pass@10,0.051948,154

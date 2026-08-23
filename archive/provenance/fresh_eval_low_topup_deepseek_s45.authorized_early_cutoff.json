@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "run_id": "fresh_eval_low_topup_deepseek_s45",
+  "disposition": "authorized_early_cutoff",
+  "successful_target_completion": false,
+  "original_target_accepted": 1000,
+  "authorization_baseline_accepted": 489,
+  "authorized_increment": 114,
+  "authorized_cutoff_accepted": 603,
+  "retained_accepted": 603,
+  "retained_rejected": 1948,
+  "stop": {
+    "method": "single_controlled_interrupt_via_tmux_pane",
+    "signal": "SIGINT",
+    "forced_signal_used": false,
+    "source_pid": 167010,
+    "wrapper_pid": 167004,
+    "tmux_session": "fresh_eval_low_deepseek_s45",
+    "exit_observed_utc": "2026-07-17T02:05:43Z",
+    "source_process_exited": true,
+    "wrapper_process_exited": true,
+    "tmux_session_absent": true
+  },
+  "terminal_state": {
+    "log_records_keyboard_interrupt": true,
+    "status_sidecar_remains_stale_running": true,
+    "provider_circuit_breaker": "disabled",
+    "provider_circuit_breaker_reason": "http_402_insufficient_balance",
+    "source_relaunch_authorized": false
+  },
+  "configuration": {
+    "seed": 45,
+    "provider": "deepseek",
+    "model": "deepseek-v4-pro",
+    "target_stratum": "low",
+    "oversample": 8,
+    "workers": 4,
+    "dart_version": "3.11.5",
+    "stability_runs": 2,
+    "mutation_max": 8,
+    "mutation_min_kill": 0.5,
+    "gate_s_enabled": true,
+    "gate_s_loc_tolerance": 1.0,
+    "gate_s_branch_tolerance": 1.0,
+    "jaccard_threshold": 0.55,
+    "sequence_threshold": 0.7
+  },
+  "validation": {
+    "accepted_jsonl_valid": true,
+    "reject_jsonl_valid": true,
+    "accepted_task_ids_unique": true,
+    "all_accepted_target_stratum_low": true,
+    "all_accepted_provider_deepseek": true,
+    "all_accepted_model_deepseek_v4_pro": true,
+    "all_accepted_stability_runs_2": true,
+    "all_accepted_mutation_metadata_present": true,
+    "mutation_kill_rate_range": [0.5, 1.0],
+    "mutants_viable_range": [1, 8]
+  },
+  "final_snapshot": {
+    "remote_path": "/root/experiment_workspace/.sync_snapshots/fresh_eval_low_topup_deepseek_s45_20260717T020543Z",
+    "local_path": "archive/source_snapshots/fresh_eval_low_topup_deepseek_s45_20260717T020543Z",
+    "hashes_verified_remote": true,
+    "hashes_verified_local": true,
+    "files": {
+      "data/testing/fresh_eval_low_topup_deepseek_s45.failed_crlf_manifest.json": "489961d09d9aeba43c004a4c0ad5c18921a10aaeced3aecb074f80e1876bb9f5",
+      "data/testing/fresh_eval_low_topup_deepseek_s45.jsonl": "ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13",
+      "data/testing/fresh_eval_low_topup_deepseek_s45.jsonl.manifest.json": "a00878d01fdff14a7c23c6e9576ae5c0f6fa7ee2a1575c2d5f5aea19f88e848e",
+      "data/testing/fresh_eval_low_topup_deepseek_s45.jsonl.rejects.jsonl": "8d48f3ca5965bc017497f9ae79a89f242699d3c096ef983f041fc52fa9993d46",
+      "logs/fresh_eval_low_topup_deepseek_s45.log": "bb7cf860452e5c4d6f7aa9dee7fcc8f98aef830bd29f3dbf55cf7b40c7e4281f",
+      "logs/fresh_eval_low_topup_deepseek_s45.pid": "b0d35d7257afbdc74f195bc234b47cadbcd4655938e26ad7c0ecedba8b860883",
+      "logs/fresh_eval_low_topup_deepseek_s45.status": "6e331b35a5d79fae6f3b52027adce81ee83862e87f10e0ff21918c536c2b9130"
+    }
+  }
+}

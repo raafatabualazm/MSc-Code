@@ -1,0 +1,47 @@
+START_UTC=2026-07-17T02:45:32Z
+INPUT_TOOL_AND_ENV
+4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a  data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+eefb68b6abdd7d5b3c4f5907ad03c000f62d0c5f0e11002a2fda72ca292bd673  scripts/data/build_graph_v2_jsonl.py
+Python 3.12.3
+Version: 3.6.1
+{
+  "blocks": 13031,
+  "cfg_edges": 17666,
+  "dataflow_edges": 33072,
+  "dedupe_source": false,
+  "drop_invalid": true,
+  "external_direct_branches": 0,
+  "external_direct_calls": 619,
+  "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+  "graph_schema_version": "antigravity-graph-v2.1",
+  "indirect_calls": 34,
+  "input": "data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl",
+  "input_rows": 603,
+  "input_sha256": "4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a",
+  "internal_direct_calls": 37,
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 23.35304659498208,
+  "mean_cfg_edges_per_row": 31.659498207885303,
+  "mean_dataflow_edges_per_row": 59.26881720430107,
+  "output": "data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.jsonl",
+  "output_rows": 558,
+  "output_sha256": "162a02882798c99166d65e31344a0ca3cb4d9374a04e7589b1643604c3941020",
+  "pruned_blocks": 0,
+  "rejected": "data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.rejected.jsonl",
+  "rejected_rows": 45,
+  "rejected_sha256": "8248d5f597587294faa8702644b8bb3beb285369dcaf8eed1a9e8bebb570c2ab",
+  "symbol_entries": 558
+}
+GRAPH_RC=0
+FINAL_COUNTS_AND_HASHES
+     603 data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+     558 data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.jsonl
+      45 data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.rejected.jsonl
+    1206 total
+4d73b6028e335030e708a9790d07955d51022b11b156f29b454d13c4a352903a  data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl
+162a02882798c99166d65e31344a0ca3cb4d9374a04e7589b1643604c3941020  data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.jsonl
+8248d5f597587294faa8702644b8bb3beb285369dcaf8eed1a9e8bebb570c2ab  data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.rejected.jsonl
+351af9f79e4e46a3091d856f1d3e7fe2e32cb4c3b99d238aa2f1067210e408ca  data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.summary.json
+END_UTC=2026-07-17T02:45:39Z
+STATUS_FINALIZED_UTC=2026-07-17T02:46:06Z

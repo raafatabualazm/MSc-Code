@@ -1,0 +1,85 @@
+{
+  "schema": "qwen37_frontier_primary_alias_fallback_v5",
+  "purpose": "Symmetric paired 175-task K=10 primary estimator after a deterministic model-ID-specific API moderation boundary made the all-four-ID Opus allocation impossible",
+  "request_policy_source": {
+    "contract": "qwen37_primary_clean_contract_v4.json",
+    "sha256": "5c183322702c6e6a171400882f3aeb768525301c5168dc1ea8de7315ce006be0",
+    "qwen_completion_entry_sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15",
+    "request_cap_parameter": "max_completion_tokens",
+    "total_completion_cap": 12288,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 12298,
+    "thinking_budget": 8192
+  },
+  "primary_global_sample_allocation": [
+    {
+      "source": "clean_v4_base",
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 3,
+      "global_sample_indices": [0, 1, 2],
+      "run_directory_pattern": "qwen37_clean_v4_0517_{arm}_k3_mc12k_tol10_tb8k"
+    },
+    {
+      "source": "clean_v4_base",
+      "model": "qwen3.7-max-preview",
+      "local_k": 2,
+      "global_sample_indices": [3, 4],
+      "run_directory_pattern": "qwen37_clean_v4_preview_{arm}_k2_mc12k_tol10_tb8k"
+    },
+    {
+      "source": "clean_v5_supplement",
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 2,
+      "global_sample_indices": [5, 6],
+      "run_directory_pattern": "qwen37_clean_v5_supplement_0517_{arm}_k2_mc12k_tol10_tb8k"
+    },
+    {
+      "source": "clean_v5_supplement",
+      "model": "qwen3.7-max-preview",
+      "local_k": 3,
+      "global_sample_indices": [7, 8, 9],
+      "run_directory_pattern": "qwen37_clean_v5_supplement_preview_{arm}_k3_mc12k_tol10_tb8k"
+    }
+  ],
+  "primary_global_k_per_arm": 10,
+  "primary_model_totals_per_arm": {
+    "qwen3.7-max-2026-05-17": 5,
+    "qwen3.7-max-preview": 5
+  },
+  "paired_invariant": "Both enrichment arms use the identical model/global-index allocation. No response from qwen3.7-max-2026-05-20 or qwen3.7-max-2026-06-08 contributes to either primary arm.",
+  "moderation_boundary": {
+    "task_id": "sigless_6f74b303025c",
+    "affected_models": [
+      "qwen3.7-max-2026-05-20",
+      "qwen3.7-max-2026-06-08"
+    ],
+    "affected_arm": "opus",
+    "response_received": false,
+    "http_status": 400,
+    "provider_error_code": "data_inspection_failed",
+    "observed_under_max_tokens_pilot": true,
+    "reproduced_under_clean_max_completion_tokens_policy": true,
+    "retry_authorized": false,
+    "prompt_transformed": false
+  },
+  "unpaired_diagnostic_quarantine": {
+    "excluded_from_primary": true,
+    "models": [
+      "qwen3.7-max-2026-05-20",
+      "qwen3.7-max-2026-06-08"
+    ],
+    "clean_run_directory_patterns": [
+      "qwen37_clean_v4_0520_{arm}_k3_mc12k_tol10_tb8k",
+      "qwen37_clean_v4_0608_{arm}_k2_mc12k_tol10_tb8k"
+    ],
+    "policy": "Preserve all returned Codex responses and all response-less Opus rejection rows as exact diagnostics. Never merge them into primary pass@10, compile@10, or the paired arm comparison."
+  },
+  "legacy_invalid_policy_quarantine": {
+    "excluded_from_primary": true,
+    "run_directory_patterns": [
+      "qwen37_pool_*",
+      "qwen37_primary_v2_w2_*",
+      "qwen37_clean_v3_*"
+    ]
+  }
+}

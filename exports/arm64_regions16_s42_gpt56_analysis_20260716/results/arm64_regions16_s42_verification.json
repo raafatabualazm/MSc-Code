@@ -1,0 +1,72 @@
+{
+    "schema_version":  1,
+    "verified_at_utc":  "2026-07-16T14:03:20.1471096Z",
+    "source_host":  "98.218.15.126:24424",
+    "experiment":  "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16",
+    "checks":  {
+                   "status_complete":  true,
+                   "runner_sha256":  "31e378614ce07c01dfef24db3f4f3f077ce0d4a1c0165fb7777d17ce3a9a3ff6",
+                   "full_rows":  1714,
+                   "full_sha256":  "bd64a1e8d24dc93a89f05d7f58cbaa9b4a09c7232e0a85555561f9dbeaa1519b",
+                   "train_rows":  1371,
+                   "train_sha256":  "f21782dd60edc11988867659dd2d16a5f6b6d2f550594cae09ad7cf92b68dcb7",
+                   "eval_rows":  343,
+                   "eval_sha256":  "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac",
+                   "checkpoint_sha256":  "bc7ccbc6dbcae4755e93be7e685dd123b20a422085f9ec7793c1f456b6391085",
+                   "checkpoint_size_bytes":  924910291,
+                   "seed":  42,
+                   "decoder_revision":  "b968826d9c46dd6066d109eabc6255188de91218",
+                   "encoder_revision":  "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+                   "gnn_ablation":  "identity",
+                   "region_compression":  "linear_residual",
+                   "region_max_blocks":  16,
+                   "block_pooling":  "cls",
+                   "block_vectors_per_block":  4,
+                   "prefix_tokens_per_log2":  4,
+                   "prefix_gate_init":  0.2,
+                   "scoring_tests_visible_to_policy":  false,
+                   "compile_rows":  343,
+                   "compile_candidates_per_row":  [
+                                                      10
+                                                  ],
+                   "pass_rows":  343,
+                   "pass_candidates_per_row":  [
+                                                   10
+                                               ],
+                   "aligned_candidate_pool":  true,
+                   "compile_mode":  "jit_tests",
+                   "compile_at_1":  0.52944606413994166,
+                   "compile_at_5":  0.93074644823916042,
+                   "pass_at_1":  0.021282798833819241,
+                   "pass_at_5":  0.045282058401591926,
+                   "pass_at_10":  0.055393586005830907,
+                   "codebleu":  0.67232372727892,
+                   "compiled_only_codebleu":  0.66347233347375412,
+                   "compile_stats_rows":  343,
+                   "pass_stats_rows":  343,
+                   "stats_aligned":  true,
+                   "training_steps":  "88/88",
+                   "eval_losses":  [
+                                       0.4409,
+                                       0.4081,
+                                       0.3969,
+                                       0.3947
+                                   ],
+                   "model_hf_upload_verified":  true,
+                   "result_hf_upload_count":  5,
+                   "all_synced_hashes_match_remote":  true
+               },
+    "synced_artifact_sha256":  {
+                                   "arm64_regions16_s42.launcher.log":  "34d08c335ca05d98d9cdc247588fc1c5288c624db44e0b058dc8e2f607e01b22",
+                                   "arm64_regions16_s42.status":  "da00c994017db13828edd19d08b7aea32c477406ffc2385fcbf1d17ea0a0efca",
+                                   "arm64_s42_prefix_no_gine_regions16.log":  "88004bbc04595c91c6c24d8dfc173313223dec67c1d7405bb5ea39e4c4087e9a",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16.json":  "e41e39cc1c9695ed30443d463964b2d7c8ff807d25e1a98f19fa15d480f88b77",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json":  "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json.provenance.json":  "1fff9bff802b7851079c27d9a448a6b6e1dc0fa8f2b67fbdcc82b6d26952668b",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_stats.csv":  "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json":  "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json.provenance.json":  "221b99574f829ca71d14019e072746d267624f59e6fb74615a00b9ad02599b41",
+                                   "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_stats.csv":  "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+                                   "run_provenance.json":  "b68f66127a7de7b532e7bea3eb847f1d36df17efa6de9e75a9a85a207d47d9cb"
+                               }
+}

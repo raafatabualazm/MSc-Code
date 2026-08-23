@@ -1,0 +1,26 @@
+{
+  "canonical_reconciliation_sha256": "e88bfa858ad95ef8cd03ac28b419775e912aeb5999806f1bacb5539ac5b4bf3a",
+  "canonical_rows": 3306,
+  "gates": {
+    "all_3306_rows_reconciled_once": true,
+    "included_membership_matches_source_preparation": true,
+    "source_preparation_binds_v2_release": true,
+    "status_counts_exact": true
+  },
+  "phase0_rows": 3277,
+  "phase0_split_counts": {
+    "dev": 326,
+    "train": 2951
+  },
+  "schema": "phase0-s44-v3-canonical-membership-inheritance-v1",
+  "status_counts": {
+    "excluded": 15,
+    "included-dev": 326,
+    "included-train": 2951,
+    "quarantined": 14
+  },
+  "v2_preparation_manifest_sha256": "5dbb7035155ebebe6cf275ab72b6b5324aabac7ff7b58e289dda5493004d5c69",
+  "v2_prepared_checksums_sha256": "02d9718a28b7bd906ee5ed8977d228375369995c576d73187105bdeb7e147b4d",
+  "v2_release_manifest_sha256": "8dd229ea1fe651dfce658a86e0ad389f6ba304dfb57c4aa035f9f48ffc01ed5a",
+  "v2_root_checksums_sha256": "e54c7a51215153879e6d2544dc3052c594d389313fab32837d86a7b4dc42cadf"
+}

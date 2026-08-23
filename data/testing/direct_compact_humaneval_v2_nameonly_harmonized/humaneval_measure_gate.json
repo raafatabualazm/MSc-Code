@@ -1,0 +1,42 @@
+{
+  "bindings": {
+    "alignment_private_sha256": "1ae15b2628e199b86b0b8947bfbf31430e4500e3a7cd83da8b0585c78680bfa8",
+    "codebook_sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+    "compact_model_inputs_sha256": "a64da550550cf54a5d0a043da377a3574b30eec8adbafaa69491d671c99a9960",
+    "dfg_extractor_sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+    "harmonized_public_sha256": "bf651812e86520a9cc3b54207d76fc248fbe950068de06da724aadc85233fff0",
+    "preflight_report_sha256": "a5a5edbc1b8e8932de5b0b1fe5d1fa7c31e5cf7ec8c5ba2bc6d45f7cfa4d74ce"
+  },
+  "failures": 0,
+  "lossless_domain": "scrubbed_canonical_graph",
+  "measure_rows": 154,
+  "measure_tasks": 154,
+  "passed": true,
+  "quarantined": 0,
+  "raw_fallback_is_reversible": true,
+  "schema": "compact-humaneval-measure-gate-v1",
+  "source_tokens": {
+    "limit": 9000,
+    "max": 7766,
+    "min": 48,
+    "p50": 305,
+    "p95": 804,
+    "p99": 1294
+  },
+  "train_only_codebook_generalization": {
+    "canonical_instruction_positions": 18359,
+    "compact_positions": 62156,
+    "custom_atom_position_fraction": 0.6608694253169445,
+    "custom_atom_positions": 41077,
+    "fallback_instructions": 1418,
+    "fallback_per_row_max": 247,
+    "fallback_per_row_p50": 7,
+    "fallback_per_row_p95": 18,
+    "instruction_fallback_rate": 0.0772373222942426,
+    "interpretation": "Fallback is exact native-Qwen tokenization, not UNK or information loss.",
+    "row_fallback_rate": 1.0,
+    "rows_with_fallback": 154
+  },
+  "truncated_rows": 0,
+  "unknown_tokens": 0
+}

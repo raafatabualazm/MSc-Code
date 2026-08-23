@@ -1,0 +1,109 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/testing/grpo_data_cfg.jsonl --output data/testing/grpo_data_graphv2.jsonl --rejected data/testing/grpo_data_graphv2.rejected.jsonl --summary data/testing/grpo_data_graphv2.summary.json --expected_input_rows 154 --expected_output_rows 154 --max_block_instrs 24 --max_dataflow_edges 4096
+{
+  "blocks": 3892,
+  "cfg_edges": 5410,
+  "dataflow_edges": 13330,
+  "drop_invalid": false,
+  "extractor_sha256": "0b8f129e9e3060a6bc3974bf37ea5762ae0300584137c74890cee61e13ba65f1",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\testing\\grpo_data_cfg.jsonl",
+  "input_rows": 154,
+  "input_sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 4096,
+  "mean_blocks_per_row": 25.272727272727273,
+  "mean_cfg_edges_per_row": 35.12987012987013,
+  "mean_dataflow_edges_per_row": 86.55844155844156,
+  "output": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output_rows": 154,
+  "output_sha256": "f0fa10ae926b5f6b7d905c2ec7f072f0f9c63fb91922c0cb48d93b64c8599fb8",
+  "pruned_blocks": 1,
+  "rejected": "data\\testing\\grpo_data_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/testing/grpo_data_cfg.jsonl --output data/testing/grpo_data_graphv2.jsonl --rejected data/testing/grpo_data_graphv2.rejected.jsonl --summary data/testing/grpo_data_graphv2.summary.json --expected_input_rows 154 --expected_output_rows 154 --max_block_instrs 24 --max_dataflow_edges 4096
+{
+  "blocks": 3892,
+  "cfg_edges": 5410,
+  "dataflow_edges": 13330,
+  "drop_invalid": false,
+  "extractor_sha256": "0b8f129e9e3060a6bc3974bf37ea5762ae0300584137c74890cee61e13ba65f1",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\testing\\grpo_data_cfg.jsonl",
+  "input_rows": 154,
+  "input_sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 4096,
+  "mean_blocks_per_row": 25.272727272727273,
+  "mean_cfg_edges_per_row": 35.12987012987013,
+  "mean_dataflow_edges_per_row": 86.55844155844156,
+  "output": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output_rows": 154,
+  "output_sha256": "f0fa10ae926b5f6b7d905c2ec7f072f0f9c63fb91922c0cb48d93b64c8599fb8",
+  "pruned_blocks": 1,
+  "rejected": "data\\testing\\grpo_data_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/testing/grpo_data_cfg.jsonl --output data/testing/grpo_data_graphv2.jsonl --rejected data/testing/grpo_data_graphv2.rejected.jsonl --summary data/testing/grpo_data_graphv2.summary.json --expected_input_rows 154 --expected_output_rows 154 --max_block_instrs 24 --max_dataflow_edges 0
+{
+  "blocks": 3892,
+  "cfg_edges": 5410,
+  "dataflow_edges": 13330,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 0,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\testing\\grpo_data_cfg.jsonl",
+  "input_rows": 154,
+  "input_sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 25.272727272727273,
+  "mean_cfg_edges_per_row": 35.12987012987013,
+  "mean_dataflow_edges_per_row": 86.55844155844156,
+  "output": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output_rows": 154,
+  "output_sha256": "917a99f31b490292690ab0243296ed6d0072714ef76f0f060906cc2a978c550d",
+  "pruned_blocks": 1,
+  "rejected": "data\\testing\\grpo_data_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/testing/grpo_data_cfg.jsonl --output data/testing/grpo_data_graphv2.jsonl --rejected data/testing/grpo_data_graphv2.rejected.jsonl --summary data/testing/grpo_data_graphv2.summary.json --expected_input_rows 154 --expected_output_rows 154 --max_block_instrs 20 --max_dataflow_edges 0
+{
+  "blocks": 3917,
+  "cfg_edges": 5435,
+  "dataflow_edges": 13373,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 0,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\testing\\grpo_data_cfg.jsonl",
+  "input_rows": 154,
+  "input_sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 25.435064935064936,
+  "mean_cfg_edges_per_row": 35.29220779220779,
+  "mean_dataflow_edges_per_row": 86.83766233766234,
+  "output": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output_rows": 154,
+  "output_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "pruned_blocks": 1,
+  "rejected": "data\\testing\\grpo_data_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/audit_dataset_overlap_antigravity.py --train data/datasets/dart_all_rebuilt_train_unique.jsonl --benchmark data/datasets/dart_all_rebuilt_validation_unique.jsonl --output results/sft_source_train_validation_filter_graphv2.json --filtered_train data/datasets/dart_all_rebuilt_train_no_validation_overlap.jsonl --expected_filtered_rows 770
+{
+  "train_rows": 773,
+  "benchmark_rows": 83,
+  "duplicate_train_source_rows": 0,
+  "exact_overlap_pairs": 0,
+  "near_overlap_pairs": 4
+}

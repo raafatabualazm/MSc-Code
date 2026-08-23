@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed-scrub-v3-scoring-provenance-v1",
+  "arm": "name_only",
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16/pytorch_model.bin",
+    "sha256": "e8e872608f22ae8e1c5607d6179feeb5f133401fb2a7d1fc40fe8894d8c347fc",
+    "size_bytes": 924910291
+  },
+  "generation_seed": 42,
+  "compile_mode": "jit_tests",
+  "scorer_sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+  "dart_sdk_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+  "prompt_schema_version": "antigravity-v3-matched-function-contract",
+  "scoring_tests_visible_to_policy": false,
+  "policy_input_verified_public_only": true,
+  "row_count": 154,
+  "samples_per_row": 10,
+  "inputs": {
+    "predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_predictions.json",
+      "sha256": "7005141260a9845458a4407b6e5f7ccfd83eb81ba534bd32c3e96e9368ae0845",
+      "size_bytes": 1299745
+    },
+    "stats": {
+      "path": "/workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_stats.csv",
+      "sha256": "0534532ab1239f2dbcab59fa9ed46f5d9718497cb1b8608700d61abfc0e07f78",
+      "size_bytes": 23356
+    },
+    "inference_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_raw_predictions.json.provenance.json",
+      "sha256": "1f8ca611b8bbe921beab1ba78644bb9d7f52dfb6bbbe8c0b2fccb12f8429fbe4",
+      "size_bytes": 5833
+    },
+    "join_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_nameonly_predictions.json.provenance.json",
+      "sha256": "febf72c27221445653da778cd9018149685c69a682ba6bf81fc64d657b4dab2f",
+      "size_bytes": 2027
+    },
+    "public_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_nameonly_public.jsonl",
+      "sha256": "75c9a6c663c87c9f95ad3a98197abffba811debbb366eaa7966058ec3866a2b4",
+      "size_bytes": 4644803
+    },
+    "scorer": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+      "size_bytes": 18813
+    },
+    "dart_version": {
+      "path": "/workspace/logs/fixed_scrub_v3/dart_version.txt",
+      "sha256": "aec0deb0431af41549d28510392a11f7cbfc1d38fb9e29954bcd865d4b54802d",
+      "size_bytes": 82
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "alignment_private_sha256": "df582c575eba10880e9920fd80c16134895b1d6d09482d223d050b7d7878a984",
+  "audit": "sealed_v3_dev_instruction_codebook_fallback",
+  "bundle_contract_sha256": "bdfc16373fd55b708a6edb8210067238faeb975bd921c86016cbe9a74ab02dda",
+  "bundle_preflight_sha256": "778934a7f3abd95e7edc9cb12d8d44ff1f289e07386621d40ecab5e1a74210f7",
+  "codebook_sha256": "5197f9007c001686572d1efbcc672a455d29c4917538f30ba2255ea8ef7b591f",
+  "coverage": {
+    "codebook_hits": 69725,
+    "fallback": 410,
+    "fallback_rate": 0.005845868681827904,
+    "instructions": 70135,
+    "rows": 326,
+    "rows_with_fallback": 110,
+    "rows_with_fallback_rate": 0.3374233128834356
+  },
+  "coverage_by_family": {
+    "master": {
+      "codebook_hits": 49284,
+      "fallback": 291,
+      "fallback_rate": 0.005869894099848714,
+      "instructions": 49575,
+      "rows": 219,
+      "rows_with_fallback": 79,
+      "rows_with_fallback_rate": 0.3607305936073059
+    },
+    "topup_s45": {
+      "codebook_hits": 19623,
+      "fallback": 115,
+      "fallback_rate": 0.005826324855608471,
+      "instructions": 19738,
+      "rows": 100,
+      "rows_with_fallback": 29,
+      "rows_with_fallback_rate": 0.29
+    },
+    "topup_s46": {
+      "codebook_hits": 818,
+      "fallback": 4,
+      "fallback_rate": 0.004866180048661801,
+      "instructions": 822,
+      "rows": 7,
+      "rows_with_fallback": 2,
+      "rows_with_fallback_rate": 0.2857142857142857
+    }
+  },
+  "coverage_by_source_pool": {
+    "base_llm": {
+      "codebook_hits": 13582,
+      "fallback": 87,
+      "fallback_rate": 0.006364766991001536,
+      "instructions": 13669,
+      "rows": 50,
+      "rows_with_fallback": 20,
+      "rows_with_fallback_rate": 0.4
+    },
+    "null": {
+      "codebook_hits": 49284,
+      "fallback": 291,
+      "fallback_rate": 0.005869894099848714,
+      "instructions": 49575,
+      "rows": 219,
+      "rows_with_fallback": 79,
+      "rows_with_fallback_rate": 0.3607305936073059
+    },
+    "topup_s44": {
+      "codebook_hits": 2310,
+      "fallback": 21,
+      "fallback_rate": 0.009009009009009009,
+      "instructions": 2331,
+      "rows": 19,
+      "rows_with_fallback": 4,
+      "rows_with_fallback_rate": 0.21052631578947367
+    },
+    "topup_s45": {
+      "codebook_hits": 3731,
+      "fallback": 7,
+      "fallback_rate": 0.0018726591760299626,
+      "instructions": 3738,
+      "rows": 31,
+      "rows_with_fallback": 5,
+      "rows_with_fallback_rate": 0.16129032258064516
+    },
+    "topup_s46": {
+      "codebook_hits": 818,
+      "fallback": 4,
+      "fallback_rate": 0.004866180048661801,
+      "instructions": 822,
+      "rows": 7,
+      "rows_with_fallback": 2,
+      "rows_with_fallback_rate": 0.2857142857142857
+    }
+  },
+  "cross_checks": {
+    "alignment_dataset_partitions_match_preflight": true,
+    "alignment_family_partitions_match_preflight": true,
+    "alignment_rows_match_preflight_role": true,
+    "alignment_token_lengths_match_public_rows_and_preflight": true
+  },
+  "gates": {
+    "all_rows_within_sealed_token_limit": true
+  },
+  "passed": true,
+  "schema": "compact-qwen-v3-generalization-audit-v1",
+  "scope": "full-v3-release-alignment-derived-instruction-fallback",
+  "tokens": {
+    "kind": "full_v3_graph_plus_binary_pool_source_tokens",
+    "limit": 9000,
+    "max": 1945,
+    "min": 29,
+    "p50": 339,
+    "p95": 1073,
+    "p99": 1610,
+    "rows": 326,
+    "rows_over_limit": 0
+  }
+}

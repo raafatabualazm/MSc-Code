@@ -1,0 +1,89 @@
+{
+  "artifact": "true_kd_patch_v1",
+  "date": "2026-07-23",
+  "features": {
+    "dense_full_forward_kl": true,
+    "full_vocabulary": true,
+    "all_supervised_target_positions": true,
+    "eos_supervised": true,
+    "teacher_student_tokenizer_equality_required": true,
+    "temperature_squared_scaling": true,
+    "default_hard_ce_weight": 0.0,
+    "sparse_topk_tail_is_not_labeled_full_kd": true,
+    "legacy_qwen_logprobs_rejected_for_kd": true,
+    "unit_tests_passed": 18
+  },
+  "file_count": 14,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b",
+      "size_bytes": 23
+    },
+    {
+      "path": "examples/sparse_topk_tail_kd.manifest.example.json",
+      "sha256": "87cb67ca1f42e68681d98db97830d310edf9553df7ffc5332bae1a401268fdf2",
+      "size_bytes": 781
+    },
+    {
+      "path": "examples/sparse_topk_tail_kd.row.example.jsonl",
+      "sha256": "1831a4dc10777e176c64038c56b588b624a2c4e4da4d1a5fa7e85294f5f49c6e",
+      "size_bytes": 695
+    },
+    {
+      "path": "README.md",
+      "sha256": "0520da2dc8c7567f288929387ddd10f3fd687d890176be525f5f8f12a0e5014c",
+      "size_bytes": 6023
+    },
+    {
+      "path": "reports/verified_repairs_lp.audit.json",
+      "sha256": "28d18620c6ab7fd4b0329ba56500a435795f9337ae895c31159ea4c5bcd20595",
+      "size_bytes": 2451
+    },
+    {
+      "path": "run_dense_full_kd.sh",
+      "sha256": "114a5ba047f129c37b85476426bde7e16125fad880d24f3a21153ec7364f6090",
+      "size_bytes": 3071
+    },
+    {
+      "path": "run_true_kd.sh",
+      "sha256": "8290416d1caf5f784edfa134ca35e17aaab7517a75819fd51090ccb45165b322",
+      "size_bytes": 2689
+    },
+    {
+      "path": "scripts/data/check_kd_checkpoint_bindings.py",
+      "sha256": "c404ebec180654a615e62aa7df111e16bd3a2fae90e5af659702de84ac3d6783",
+      "size_bytes": 3385
+    },
+    {
+      "path": "scripts/data/validate_qwen_kd_artifacts.py",
+      "sha256": "44052412e65dcc9b5b929357525bd0eb08fda95f6e1433a39f3c6bcb4e1ccb6b",
+      "size_bytes": 20147
+    },
+    {
+      "path": "scripts/training/kd_objectives_antigravity.py",
+      "sha256": "68cee765122b82c50f7e80052f098ff8f5f84ddea696a62afccf7e0299ee798d",
+      "size_bytes": 9159
+    },
+    {
+      "path": "scripts/training/true_distribution_kd_antigravity.py",
+      "sha256": "d6b200aef7b806f9172cffd86337c5850be899903a52d7a83b1e052fc4e456df",
+      "size_bytes": 46747
+    },
+    {
+      "path": "tests/test_kd_data_validation.py",
+      "sha256": "746f6e42b2eef43594db7997f88c563d8571d22c893433eba4192cea2e6aa522",
+      "size_bytes": 7469
+    },
+    {
+      "path": "tests/test_kd_objectives.py",
+      "sha256": "f20fbf3f7ed1fdaeca2976460ea8b5e7a169e27ffbc2a219504add52debbac6a",
+      "size_bytes": 5487
+    },
+    {
+      "path": "tests/test_trainer_core.py",
+      "sha256": "23fc5b4ea07ce4d9fd86029041d4402d84a32a531f62297b14eb8d0c0adfa12f",
+      "size_bytes": 5939
+    }
+  ]
+}

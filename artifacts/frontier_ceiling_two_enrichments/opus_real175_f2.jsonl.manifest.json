@@ -1,0 +1,79 @@
+{
+  "artifacts": {
+    "codebook": {
+      "bytes": 3820649,
+      "mtime_ns": 1784492900315928200,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_split_v1\\compact_qwen_confirmatory_v1\\codebook.json",
+      "sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c"
+    },
+    "codec": {
+      "bytes": 20705,
+      "mtime_ns": 1784492539186597800,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scripts\\data\\build_compact_qwen_v1.py",
+      "sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4"
+    },
+    "constants": {
+      "bytes": 231101,
+      "mtime_ns": 1784732280000000000,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\pod_sync_20260723\\artifacts\\compact_fn0_rebuild\\real_constants.jsonl",
+      "sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13"
+    },
+    "contract": {
+      "bytes": 1495748,
+      "mtime_ns": 1784708443000000000,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\pod_sync_20260723\\artifacts\\compact_fn0_rebuild\\fn0_contract.json",
+      "sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "mtime_ns": 1784811192313429500,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\temp\\qwen3_8b_tokenizer.remote.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 1,
+    "task_ids": [
+      "sigless_d544567b9189"
+    ]
+  },
+  "created_at": "2026-07-25T15:33:02.258125Z",
+  "dataset": {
+    "bytes": 1422675,
+    "mtime_ns": 1784732287000000000,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\pod_sync_20260723\\artifacts\\compact_fn0_rebuild\\dev_fn0_real.jsonl",
+    "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001"
+  },
+  "f2_prompt_contract": {
+    "all_rows_within_limit": true,
+    "chat_overhead_reserve": 256,
+    "constant_prefix_token_cap": 256,
+    "max_prompt_tokens": 12000,
+    "maximum_estimated_prompt_tokens": 5448,
+    "maximum_task_id": "sigless_c8721da111a6",
+    "representation_schema": "lossless-semantic-f2",
+    "system_prompt": "Return only self-contained equivalent Dart fn0+imports/helpers; no main/tests/fences/prose. F2: Cn+n UTF8 prefix; strings/numbers=JSON; external J[n]=@Xn. E=entry BREFs; H lines=HREF+hex, HREF=#hex; M lines=MREF+ASCII, expand MREF substring first; D lines=IREF+instruction; S lines=SREF+refs/{inline}; B2 repeats BREF+instructions+CFG; X=end. CFG T/F/N/L/U/J+BREF=true/false/fallthrough/loop/unconditional/jump; n/f=to next; t/l+BREF=T/L target plus F next. Instruction=opcode[:operands]. ne/ae/np/be/ge/le/no/g add j. Aliases [s,o,u,+,*,x,v,_,/,i,>,k,r,f,<]=[movsd,comisd,movups,add,mulsd,xorps,movaps,subsd,divsd,cvtsi2sd,shr,movmskpd,roundsd,cvttsd2si,shl]; others literal. Regs [A,B,C,D,I,S,P,R,E,F,G,H,K,M,T,V]=[rax,rbx,rcx,rdx,rdi,rsi,rbp,rsp,r8,r9,r10,r11,r12,r13,r14,r15]; d/w/b narrows; Xn/Yn/Zn=xmm/ymm/zmm. [Q,D,W,B,X,Y,Z][ or SIZE+seg:[ means [QWORD,DWORD,WORD,BYTE,XMMWORD,YMMWORD,ZMMWORD] PTR; PTR [. #h=0xh; [S:,K:,U,X,R+]=[@STUB:,@SDK:,@U,@X,@REL+]; ~=@; %23/%7E/%25=#/~/%; @BREF=block; fn:@SELF=target; fn:Un=helper @Un. Bare jcc uses T (L loop); bare jmp uses U/J/L.",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "invariants": {
+    "all_artifact_hashes_verified": true,
+    "all_codec_roundtrips_verified": true,
+    "all_complete_prompts_within_limit": true,
+    "all_f2_semantic_roundtrips_verified": true,
+    "all_row_contract_hashes_verified": true,
+    "all_student_constant_prefixes_verified": true,
+    "cfg_explicit": true,
+    "f2_system_prompt_self_contained_and_hashed": true,
+    "opaque_source_ids_expanded": true
+  },
+  "output": {
+    "bytes": 717961,
+    "mtime_ns": 1784993582257101200,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\artifacts\\frontier_ceiling_two_enrichments\\opus_real175_f2.jsonl",
+    "sha256": "4aae71997aa98b4a273fdedca17d1df2266f18dd5a03fe164b9cf81e342648cd"
+  },
+  "rows": 175,
+  "schema": "verified-api-readable-compact-v2",
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+}

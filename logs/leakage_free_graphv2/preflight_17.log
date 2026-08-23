@@ -1,0 +1,119 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/audit_grpo_reward_antigravity.py --dataset data/datasets/synthetic_pool_reward_clean_graphv2.jsonl --report data/datasets/synthetic_reward_graphv2_splits/reward_static_audit.json
+{
+  "rows": 1725,
+  "static_failures": 0,
+  "assertions_min": 4,
+  "assertions_max": 14,
+  "helper_names": [
+    "expect",
+    "expectList",
+    "expectMap",
+    "expectSet"
+  ],
+  "static_failure_rows": []
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/style_match_synthetic_pool.py --synthetic data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_train.jsonl --real data/testing/grpo_data_graphv2.jsonl --output data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --summary data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl.summary.json --target_rows 256 --max_source_words 220 --max_asm_lines 700 --min_expects 4 --allow_extra_return_types 1 --seed 42
+{
+  "synthetic": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_train.jsonl",
+  "real": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_grpo256.jsonl",
+  "target_rows": 256,
+  "selected_rows": 256,
+  "real_return_counts": {
+    "bool": 28,
+    "List<String>": 11,
+    "double": 5,
+    "List<int>": 29,
+    "String": 25,
+    "String?": 2,
+    "int": 42,
+    "List<double>": 2,
+    "List<num>": 3,
+    "num": 2,
+    "List<List<int>>": 1,
+    "Map<String,int>": 1,
+    "List<Object>": 1,
+    "int?": 1,
+    "List<dynamic>": 1
+  },
+  "selected_return_counts": {
+    "Map<String,int>": 5,
+    "bool": 47,
+    "List<int>": 48,
+    "List<String>": 18,
+    "int": 70,
+    "String": 42,
+    "double": 10,
+    "Set<int>": 16
+  },
+  "real_profile": {
+    "src_median": 79.0,
+    "asm_median": 102.0,
+    "expect_median": 7.0
+  },
+  "selected_profile": {
+    "src_median": 76.0,
+    "asm_median": 116.0,
+    "expect_median": 8.0
+  },
+  "rejects": {
+    "source_words": 140,
+    "asm_lines": 8
+  },
+  "bucket_sizes_after_filters": {
+    "int": 189,
+    "double": 153,
+    "bool": 177,
+    "String": 133,
+    "List<int>": 162,
+    "List<String>": 140,
+    "Map<String,int>": 137,
+    "Set<int>": 141
+  },
+  "seed": 42
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/prepare_synthetic_reward_pool.py --input data/datasets/synthetic_pool_graphv2.jsonl --output data/datasets/synthetic_pool_reward_clean_graphv2.jsonl --split_dir data/datasets/synthetic_reward_graphv2_splits --split_prefix synthetic_reward_graphv2 --seed 42 --drop_invalid --report data/datasets/synthetic_reward_graphv2_splits/manifest.json
+{
+  "input": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+  "output": "data\\datasets\\synthetic_pool_reward_clean_graphv2.jsonl",
+  "rows": 1725,
+  "rewritten_rows": 172,
+  "rewritten_calls": 1375,
+  "rejected_rows": 1,
+  "rejects": [
+    {
+      "index": 1342,
+      "task_id": "syn_1342",
+      "function": "computeImbalancedArtRows",
+      "error": "only 2 candidate assertions; require at least 4"
+    }
+  ],
+  "helper_definition_rows": {
+    "expect": 1725,
+    "expectList": 1725,
+    "expectMap": 1725,
+    "expectSet": 1625
+  },
+  "input_sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621",
+  "output_sha256": "75e6deff3b0bf47298591c488e5547758690191943399ef517cbcef492351b8e",
+  "splits": {
+    "train": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_train.jsonl",
+      "rows": 1380,
+      "sha256": "92223efb449255b083968c74b5a84625cbe1199a93624fef7e75494c05ba363d"
+    },
+    "validation": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_validation.jsonl",
+      "rows": 172,
+      "sha256": "47076367a9a47ffdb838403b3253400127d51f841b61187cc7d2fd778dfa05c9"
+    },
+    "test": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_test.jsonl",
+      "rows": 173,
+      "sha256": "dcbf4d57135288a3747509c0571151cf6966adf2b09490ae1061da8aff4a8578"
+    }
+  }
+}

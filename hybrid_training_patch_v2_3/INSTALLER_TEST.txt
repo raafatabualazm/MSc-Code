@@ -1,0 +1,20 @@
+2026-07-23 installer integrity rerun
+====================================
+
+Command:
+  python apply_hybrid_patch.py --project-root <complete-temp-project> --dry-run
+
+Result:
+  dry run only; 20 patch files validated, no files changed
+
+The manifest size and SHA-256 were checked for all 20 installer files before
+the dry run. The current list includes both VeRPO additions:
+
+  scripts/training/verpo_judge_antigravity.py
+  scripts/training/build_verpo_repair_dataset_antigravity.py
+
+A separate temporary-project install verified:
+
+  - existing targets are backed up before replacement;
+  - all 20 installed files match their source SHA-256;
+  - a second dry run reports all 20 targets unchanged.

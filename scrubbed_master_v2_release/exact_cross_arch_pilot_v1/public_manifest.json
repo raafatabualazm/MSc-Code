@@ -1,0 +1,45 @@
+{
+  "builder": {
+    "graph_builder_sha256": "eefb68b6abdd7d5b3c4f5907ad03c000f62d0c5f0e11002a2fda72ca292bd673",
+    "networkx_version": "3.6.1",
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "script_sha256": "b862e32dfffc262b9577de933bd5d5a8a32514d020cb2b88b25e3b176767662f"
+  },
+  "counts": {
+    "aarch64_rows": 4,
+    "private_architecture_rows": 8,
+    "public_architecture_rows": 8,
+    "semantic_pairs": 4,
+    "x86_64_rows": 4
+  },
+  "extractor": {
+    "cfg_sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+    "combined_cfg_dfg_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "dfg_sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+    "max_block_instructions": 20,
+    "max_dfg_edges": 0,
+    "schema": "antigravity-graph-v2.1"
+  },
+  "public_address_policy": "candidate entry rebased to 0x100000; external absolute targets zeroed",
+  "public_leakage_gate": {
+    "forbidden_term_residues": [],
+    "forbidden_value_residues": [],
+    "passed": true
+  },
+  "runtime_validation": {
+    "aot_arm64": "not_run_no_native_or_qemu_runtime",
+    "aot_x64_all_pairs": "passed",
+    "jit_x64_all_pairs": "passed"
+  },
+  "schema": "exact-neutral-cross-arch-pairs-v1",
+  "symbol_policy": {
+    "self": "candidate / candidate+offset",
+    "self_nested": "candidate.local_N",
+    "snapshot_image": "runtime_image",
+    "trusted_runtime": "stub _iso_stub_* and dart:*",
+    "untrusted": "symbol_N",
+    "version": "cross-arch-symbol-scrub-v1"
+  },
+  "symbol_policy_sha256": "5f7cca2c1a6b864277ff4fdeeca5994441725bfdb02afc1685112788ee732f3a",
+  "toolchain_sha256": "ec0c79299dba124d52d5a35a3fc9d332e38d4fcb66e4978fdee3e4ab7fc0449e"
+}

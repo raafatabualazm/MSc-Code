@@ -1,0 +1,96 @@
+{
+  "created_unix": 1784115515,
+  "num_tasks": 600,
+  "oversample": 5,
+  "rng_seed": 43,
+  "providers": [
+    "openrouter:anthropic/claude-sonnet-4.6",
+    "azure:gpt-chat-latest",
+    "deepseek:deepseek-v4-pro"
+  ],
+  "temperature_openrouter_deepseek": 1.0,
+  "temperature_azure": "deployment_default",
+  "jac_thr": 0.55,
+  "seq_thr": 0.7,
+  "strata_mix": "low:0.34,mid:0.33,high:0.33",
+  "stability_runs": 2,
+  "mutation_max": 8,
+  "mutation_min_kill": 0.5,
+  "measured_distribution": {
+    "strata_block_ranges": {
+      "low": [
+        3,
+        14
+      ],
+      "mid": [
+        14,
+        25
+      ],
+      "high": [
+        25,
+        458
+      ]
+    },
+    "loc_bands": {
+      "low": [
+        4,
+        11
+      ],
+      "mid": [
+        9,
+        16
+      ],
+      "high": [
+        16,
+        23
+      ]
+    },
+    "rtype_weights": {
+      "bool": 28,
+      "List<String>": 11,
+      "double": 5,
+      "List<int>": 29,
+      "String": 25,
+      "String?": 2,
+      "int": 42,
+      "List<double>": 2,
+      "List<num>": 3,
+      "num": 2,
+      "List<List<int>>": 1,
+      "Map<String, int>": 1,
+      "int?": 1
+    },
+    "param_count_weights": {
+      "2": 36,
+      "1": 113,
+      "3": 5
+    }
+  },
+  "prompt_template_sha256": "9fbf5488f140229249a14b1fa66100f0e751252b225f24a69679308e9c2b3382",
+  "benchmark": {
+    "path": "data/testing/grpo_data_graphv2.jsonl",
+    "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+  },
+  "synthetic": {
+    "path": "data/datasets/synthetic_pool_graphv2.jsonl",
+    "sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621"
+  },
+  "banned_names": 3717,
+  "finished_unix": 1784130077,
+  "accepted": 600,
+  "counters": {
+    "attempted": 1356,
+    "gate_a": 490,
+    "gate_n": 31,
+    "gate_b": 279,
+    "gate_m": 13,
+    "gate_q": 641,
+    "gate_asm": 0,
+    "provider_none": 0,
+    "provider_reassigned": 1
+  },
+  "disabled_providers": [
+    "openrouter:anthropic/claude-sonnet-4.6"
+  ],
+  "output_sha256": "407abaf1a753a57839e0291020257e03f79377f2b1500035124f7e5e9cf9c7a4"
+}

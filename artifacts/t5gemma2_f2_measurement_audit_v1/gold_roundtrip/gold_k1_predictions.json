@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "sigless_6f74b303025c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:collection';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  int numNodes = 6;\n\n  List<List<int>> graph = List.generate(numNodes, (_) => <int>[]);\n  graph[5].add(2);\n  graph[5].add(0);\n  graph[4].add(0);\n  graph[4].add(1);\n  graph[2].add(3);\n  graph[3].add(1);\n\n  List<int> indegree = List.filled(numNodes, 0);\n  for (int u = 0; u < numNodes; u++) {\n    for (int v in graph[u]) {\n      indegree[v]++;\n    }\n  }\n\n  Queue<int> queue = Queue<int>();\n  for (int i = 0; i < numNodes; i++) {\n    if (indegree[i] == 0) {\n      queue.add(i);\n    }\n  }\n\n  List<int> topoOrder = <int>[];\n\n  while (queue.isNotEmpty) {\n    int u = queue.removeFirst();\n    topoOrder.add(u);\n\n    for (int v in graph[u]) {\n      indegree[v]--;\n      if (indegree[v] == 0) {\n        queue.add(v);\n      }\n    }\n  }\n\n  if (topoOrder.length == numNodes) {\n    print('Topological Sort: ${topoOrder.join(' ')}');\n  } else {\n    print('Graph contains a cycle, topological sort not possible.');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_1eae8c49db66",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(List<String> lines) {\n\n  \n  \n  final corrupted = <int>{};\n  for (var i = 0; i < lines.length; i++) {\n    final line = lines[i];\n    final sep = line.lastIndexOf('#');\n    if (sep < 0) {\n      corrupted.add(i);\n      continue;\n    }\n    final payload = line.substring(0, sep);\n    final checkStr = line.substring(sep + 1);\n    final declared = int.tryParse(checkStr);\n    if (checkStr.isEmpty || declared == null) {\n      corrupted.add(i);\n      continue;\n    }\n    var sum = 0;\n    for (final code in payload.codeUnits) {\n      sum += code;\n    }\n    if (sum % 97 != declared) {\n      corrupted.add(i);\n    }\n  }\n  return corrupted;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_8230c078962e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> requests) {\n  if (requests.isEmpty) {\n    return <int>[];\n  }\n\n  Map<int, int> blockCounts = <int, int>{};\n  Set<int> currentBlock = <int>{requests[0]};\n  int direction = 0;\n\n  for (int i = 1; i < requests.length; i++) {\n    int diff = requests[i] - requests[i - 1];\n    int nextDirection = diff == 0 ? direction : (diff > 0 ? 1 : -1);\n\n    if (direction != 0 && nextDirection != direction) {\n      for (int floor in currentBlock) {\n        blockCounts[floor] = (blockCounts[floor] ?? 0) + 1;\n      }\n      currentBlock = <int>{};\n    }\n\n    currentBlock.add(requests[i]);\n    direction = nextDirection;\n  }\n\n  for (int floor in currentBlock) {\n    blockCounts[floor] = (blockCounts[floor] ?? 0) + 1;\n  }\n\n  List<int> result = blockCounts.keys.toList();\n  result.sort((a, b) {\n    int countCompare = blockCounts[b]!.compareTo(blockCounts[a]!);\n    if (countCompare != 0) {\n      return countCompare;\n    }\n    return a.compareTo(b);\n  });\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ef71ae50a5fb",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(String stream) {\n  List<String> result = [];\n  int i = 0;\n\n  String bin(int value) {\n    if (value < 20) return 'dead';\n    if (value < 40) return 'weak';\n    if (value < 60) return 'fair';\n    if (value < 80) return 'good';\n    return 'excellent';\n  }\n\n  while (i < stream.length) {\n    while (i < stream.length && (stream[i] == ' ' || stream[i] == ';')) {\n      i++;\n    }\n\n    int start = i;\n    while (i < stream.length && RegExp(r'[A-Za-z0-9_]').hasMatch(stream[i])) {\n      i++;\n    }\n    if (start == i || i >= stream.length || stream[i] != '[') {\n      i++;\n      continue;\n    }\n\n    String id = stream.substring(start, i);\n    i++;\n    int strength = 0;\n    String last = '';\n\n    while (i < stream.length && stream[i] != ']') {\n      while (i < stream.length && (stream[i] == ' ' || stream[i] == ',')) {\n        i++;\n      }\n      if (i >= stream.length || stream[i] == ']') {\n        break;\n      }\n\n      String op = stream[i++];\n\n      if (op == '?' || op == '!') {\n        String current = op == '!' ? 'lost' : bin(strength);\n        if (current != last) {\n          result.add('$id:$current');\n          last = current;\n        }\n        if (op == '!') {\n          strength = 0;\n        }\n        continue;\n      }\n\n      int numStart = i;\n      while (i < stream.length && RegExp(r'[0-9]').hasMatch(stream[i])) {\n        i++;\n      }\n      if (numStart == i) {\n        continue;\n      }\n\n      int value = int.parse(stream.substring(numStart, i));\n      if (op == 'S') {\n        strength = value;\n      } else if (op == '+') {\n        strength += value;\n      } else if (op == '-') {\n        strength -= value;\n      }\n\n      if (strength < 0) {\n        strength = 0;\n      } else if (strength > 100) {\n        strength = 100;\n      }\n    }\n\n    while (i < stream.length && stream[i] != ';') {\n      i++;\n    }\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_0c28ea18fc09",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<String> names, List<int> amounts, int factor) {\n\n  \n  final result = <String, int>{};\n  for (var i = 0; i < names.length; i++) {\n    result[names[i]] = (result[names[i]] ?? 0) + amounts[i] * factor;\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_9dcc77211b03",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<List<String>> chart) {\n  if (chart.isEmpty) return \"\";\n  List<String> rows = [];\n  for (var row in chart) {\n    List<String> blocks = [];\n    int count = 0;\n    for (var seat in row) {\n      if (seat == \".\") {\n        count++;\n      } else {\n        if (count > 0) {\n          blocks.add(count.toString());\n          count = 0;\n        }\n      }\n    }\n    if (count > 0) {\n      blocks.add(count.toString());\n    }\n    rows.add(blocks.isEmpty ? \"NONE\" : blocks.join(\"|\"));\n  }\n  return rows.join(\"\\n\");\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_e3b7af399229",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<String> sortedDnaSequences, String prefix) {\n  if (sortedDnaSequences.isEmpty || prefix.isEmpty) return [];\n  int n = sortedDnaSequences.length;\n  int low = 0;\n  int high = n;\n  while (low < high) {\n    int mid = low + (high - low) ~/ 2;\n    if (sortedDnaSequences[mid].compareTo(prefix) < 0) {\n      low = mid + 1;\n    } else {\n      high = mid;\n    }\n  }\n  int start = low;\n  low = 0;\n  high = n;\n  while (low < high) {\n    int mid = low + (high - low) ~/ 2;\n    if (sortedDnaSequences[mid].startsWith(prefix)) {\n      low = mid + 1;\n    } else {\n      high = mid;\n    }\n  }\n  int end = low;\n  low = start;\n  while (low < end && !sortedDnaSequences[low].startsWith(prefix)) {\n    low++;\n  }\n  return sortedDnaSequences.sublist(low, end);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f2b582d1df68",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<List<double>> grid) {\n  if (grid.isEmpty) return [];\n  int rows = grid.length;\n  int cols = grid[0].length;\n  if (cols == 0) return [];\n  List<List<double>> peaks = [];\n  for (int r = 0; r < rows; r++) {\n    for (int c = 0; c < cols; c++) {\n      double h = grid[r][c];\n      bool isPeak = true;\n      if (r > 0 && grid[r - 1][c] >= h) isPeak = false;\n      if (r < rows - 1 && grid[r + 1][c] >= h) isPeak = false;\n      if (c > 0 && grid[r][c - 1] >= h) isPeak = false;\n      if (c < cols - 1 && grid[r][c + 1] >= h) isPeak = false;\n      if (isPeak) {\n        peaks.add([r.toDouble(), c.toDouble(), h]);\n      }\n    }\n  }\n  peaks.sort((a, b) {\n    if (b[2] != a[2]) return b[2].compareTo(a[2]);\n    if (a[0] != b[0]) return a[0].compareTo(b[0]);\n    return a[1].compareTo(b[1]);\n  });\n  return peaks.map((p) => '(${p[0].toInt()},${p[1].toInt()}):${p[2]}').toList();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_af8ea815d9ac",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(String input) {\n  Set<int> res = <int>{};\n  for (String t in input.split(' ')) {\n    if (t.isEmpty) continue;\n    String s = t.startsWith('\\$') ? t.substring(1) : t;\n    List<String> p = s.split('.');\n    int d = p[0].isEmpty ? 0 : int.parse(p[0]);\n    int c = 0;\n    if (p.length > 1) {\n      String cp = p[1];\n      if (cp.length >= 2) {\n        c = int.parse(cp.substring(0, 2));\n        if (cp.length >= 3 && int.parse(cp[2]) >= 5) c++;\n      } else if (cp.length == 1) {\n        c = int.parse(cp) * 10;\n      }\n    }\n    res.add(d * 100 + c);\n  }\n  return res;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ed4d7dcd5f20",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> signalStrengths) {\n  if (signalStrengths.isEmpty) return 0.0;\n  Map<String, int> bins = {\n    'excellent': 0,\n    'good': 0,\n    'fair': 0,\n    'poor': 0,\n  };\n  for (int strength in signalStrengths) {\n    if (strength >= -50) {\n      bins['excellent'] = bins['excellent']! + 1;\n    } else if (strength >= -60) {\n      bins['good'] = bins['good']! + 1;\n    } else if (strength >= -70) {\n      bins['fair'] = bins['fair']! + 1;\n    } else {\n      bins['poor'] = bins['poor']! + 1;\n    }\n  }\n  int total = signalStrengths.length;\n  double weightedSum = bins['excellent']! * 4.0 +\n                       bins['good']! * 3.0 +\n                       bins['fair']! * 2.0 +\n                       bins['poor']! * 1.0;\n  return weightedSum / total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ac1a3f90780a",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(\n    List<int> stocks,\n    List<int> dailyDemands,\n    List<int> supplierLeadTimes,\n    List<bool> isFrozen,\n    int priorityThreshold) {\n  int n = stocks.length;\n  \n  List<int> candidates = <int>[];\n  for (int i = 0; i < n; i++) {\n    if (!isFrozen[i]) {\n      candidates.add(i);\n    }\n  }\n\n  candidates.sort((a, b) {\n    int scoreA = dailyDemands[a] * supplierLeadTimes[a] - stocks[a];\n    int scoreB = dailyDemands[b] * supplierLeadTimes[b] - stocks[b];\n    if (scoreA != scoreB) return scoreB.compareTo(scoreA);\n    return dailyDemands[b].compareTo(dailyDemands[a]);\n  });\n  \n  int count = 0;\n  for (int i = 0; i < candidates.length; i++) {\n    int idx = candidates[i];\n    int score = dailyDemands[idx] * supplierLeadTimes[idx] - stocks[idx];\n    if (score >= priorityThreshold) {\n      count++;\n    } else {\n      break;\n    }\n  }\n  return count;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_2607923a35c2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(int row, int seat) {\n  int a = row;\n  int b = seat;\n  while (b != 0) {\n    int temp = b;\n    b = a % b;\n    a = temp;\n  }\n  return a == 1;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_9acafa491865",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n\n  \n  \n  String s1 = \"leetcode\";\n  List<String> wordDict1 = [\"leet\", \"code\"];\n\n  String s2 = \"applepenapple\";\n  List<String> wordDict2 = [\"apple\", \"pen\"];\n\n  String s3 = \"catsandog\";\n  List<String> wordDict3 = [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"];\n\n  String s4 = \"catsanddog\";\n  List<String> wordDict4 = [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"];\n\n  bool wordBreak(String s, List<String> wordDict) {\n    \n    Set<String> wordSet = wordDict.toSet();\n\n    List<bool> dp = List.filled(s.length + 1, false);\n    dp[0] = true; \n\n    for (int i = 1; i <= s.length; i++) {\n      \n      for (int j = 0; j < i; j++) {\n        \n        if (dp[j] && wordSet.contains(s.substring(j, i))) {\n          dp[i] = true;\n          break; \n        }\n      }\n    }\n    \n    return dp[s.length];\n  }\n\n  List<String> wordBreakII(String s, List<String> wordDict) {\n    Set<String> wordSet = wordDict.toSet();\n    Map<String, List<String>> memo = {};\n    \n    List<String> backtrack(String remaining) {\n      \n      if (memo.containsKey(remaining)) {\n        return memo[remaining]!;\n      }\n      \n      List<String> result = [];\n\n      if (remaining.isEmpty) {\n        result.add(\"\");\n        return result;\n      }\n\n      for (int i = 1; i <= remaining.length; i++) {\n        String prefix = remaining.substring(0, i);\n        \n        if (wordSet.contains(prefix)) {\n          String suffix = remaining.substring(i);\n          List<String> suffixWays = backtrack(suffix);\n          \n          for (String way in suffixWays) {\n            if (way.isEmpty) {\n              result.add(prefix);\n            } else {\n              result.add(\"$prefix $way\");\n            }\n          }\n        }\n      }\n      \n      memo[remaining] = result;\n      return result;\n    }\n    \n    return backtrack(s);\n  }\n\n  print(\"=== Word Break (Can Segment?) ===\");\n  print(\"String: '$s1', Dictionary: $wordDict1\");\n  print(\"Can segment: ${wordBreak(s1, wordDict1)}\");\n  print(\"\");\n  \n  print(\"String: '$s2', Dictionary: $wordDict2\");\n  print(\"Can segment: ${wordBreak(s2, wordDict2)}\");\n  print(\"\");\n  \n  print(\"String: '$s3', Dictionary: $wordDict3\");\n  print(\"Can segment: ${wordBreak(s3, wordDict3)}\");\n  print(\"\");\n  \n  print(\"String: '$s4', Dictionary: $wordDict4\");\n  print(\"Can segment: ${wordBreak(s4, wordDict4)}\");\n  print(\"\");\n\n  print(\"=== Word Break II (All Segmentations) ===\");\n  \n  String s5 = \"catsanddog\";\n  List<String> wordDict5 = [\"cat\", \"cats\", \"and\", \"sand\", \"dog\"];\n  List<String> segmentations = wordBreakII(s5, wordDict5);\n  print(\"String: '$s5', Dictionary: $wordDict5\");\n  print(\"All possible segmentations:\");\n  for (String seg in segmentations) {\n    print(\"  - $seg\");\n  }\n  print(\"\");\n  \n  String s6 = \"pineapplepenapple\";\n  List<String> wordDict6 = [\"apple\", \"pen\", \"applepen\", \"pine\", \"pineapple\"];\n  segmentations = wordBreakII(s6, wordDict6);\n  print(\"String: '$s6', Dictionary: $wordDict6\");\n  print(\"All possible segmentations:\");\n  for (String seg in segmentations) {\n    print(\"  - $seg\");\n  }\n  print(\"\");\n\n  int minWordBreaks(String s, List<String> wordDict) {\n    Set<String> wordSet = wordDict.toSet();\n    int n = s.length;\n\n    List<int> dp = List.filled(n + 1, n + 1); \n    dp[0] = 0; \n    \n    for (int i = 1; i <= n; i++) {\n      for (int j = 0; j < i; j++) {\n        if (dp[j] != n + 1 && wordSet.contains(s.substring(j, i))) {\n          dp[i] = dp[i] < dp[j] + 1 ? dp[i] : dp[j] + 1;\n        }\n      }\n    }\n    \n    return dp[n] == n + 1 ? -1 : dp[n];\n  }\n  \n  print(\"=== Minimum Word Breaks ===\");\n  print(\"String: '$s1', Dictionary: $wordDict1\");\n  int minBreaks = minWordBreaks(s1, wordDict1);\n  print(\"Minimum words needed: ${minBreaks == -1 ? 'Cannot segment' : minBreaks}\");\n  print(\"\");\n  \n  print(\"String: '$s4', Dictionary: $wordDict4\");\n  minBreaks = minWordBreaks(s4, wordDict4);\n  print(\"Minimum words needed: ${minBreaks == -1 ? 'Cannot segment' : minBreaks}\");\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_08a97c3f3f6b",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> rolls) {\n  List<int> sorted = [...rolls];\n  sorted.sort((int a, int b) {\n    int diffA = (a - 7).abs();\n    int diffB = (b - 7).abs();\n    if (diffA != diffB) return diffA.compareTo(diffB);\n    return b.compareTo(a);\n  });\n  return sorted.join(',');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_561333b633a8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<int> minutes) {\n  var sorted = List<int>.from(minutes);\n  sorted.sort((a, b) {\n    int minuteA = a % 60;\n    int minuteB = b % 60;\n    if (minuteA != minuteB) return minuteA.compareTo(minuteB);\n    return (a ~/ 60).compareTo(b ~/ 60);\n  });\n  return sorted.map((m) {\n    int h = m ~/ 60;\n    int min = m % 60;\n    return '${h.toString().padLeft(2, '0')}:${min.toString().padLeft(2, '0')}';;\n  }).toList();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_43bc373e09d3",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<String> destinations) {\n  Map<String, int> counts = {};\n  for (String dest in destinations) {\n    counts[dest] = (counts[dest] ?? 0) + 1;\n  }\n  List<String> sortedKeys = counts.keys.toList()..sort();\n  return sortedKeys.map((k) => '$k:${counts[k]}').join(',');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7968d9b30560",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<String> operations) {\n  Map<String, int> totals = {};\n  List<int> scaleStack = [1];\n  List<Map<String, int>> totalHistory = [];\n  List<List<int>> scaleHistory = [];\n\n  for (String op in operations) {\n    if (op == 'UNDO') {\n      if (totalHistory.isNotEmpty) {\n        totals = totalHistory.removeLast();\n        scaleStack = scaleHistory.removeLast();\n      }\n      continue;\n    }\n\n    totalHistory.add(Map<String, int>.from(totals));\n    scaleHistory.add(List<int>.from(scaleStack));\n\n    List<String> parts = op.split(' ');\n\n    if (parts[0] == 'BEGIN') {\n      int factor = int.parse(parts[1]);\n      scaleStack.add(scaleStack.last * factor);\n    } else if (parts[0] == 'END') {\n      if (scaleStack.length > 1) {\n        scaleStack.removeLast();\n      }\n    } else if (parts[0] == 'ADD') {\n      String ingredient = parts[1];\n      int amount = int.parse(parts[2]) * scaleStack.last;\n      totals[ingredient] = (totals[ingredient] ?? 0) + amount;\n    }\n  }\n\n  List<String> result = [];\n  List<String> keys = totals.keys.toList()..sort();\n\n  for (String key in keys) {\n    result.add('$key=${totals[key]}');\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_682c5301dfb2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> rolls) {\n  \n  int state = 0;\n  int roundPoints = 0;\n  double total = 0.0;\n\n  for (int roll in rolls) {\n    if (state == 2) {\n      state = 0; \n    }\n\n    if (state == 0) {\n      if (roll == 1) {\n        state = 2; \n      } else if (roll != 6) {\n        roundPoints = roll;\n        state = 1; \n      }\n      \n    } else if (state == 1) {\n      if (roll == 1) {\n        roundPoints = 0;\n        state = 2; \n      } else if (roll == 6) {\n        total += roundPoints * 0.5; \n        roundPoints = 0;\n        state = 0; \n      } else {\n        roundPoints += roll; \n      }\n    }\n  }\n\n  return total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_37c22f197b0e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  List<int> numbers = List.generate(10, (i) => i + 1);\n  print('Original list: $numbers');\n\n  List<int> shuffled = List.from(numbers);\n\n  Random random = Random(0);\n  \n  for (int i = shuffled.length - 1; i > 0; i--) {\n    \n    int j = random.nextInt(i + 1);\n\n    int temp = shuffled[i];\n    shuffled[i] = shuffled[j];\n    shuffled[j] = temp;\n  }\n  \n  print('Shuffled list: $shuffled');\n\n  print('\\nMultiple shuffles of the same list:');\n  for (int round = 1; round <= 5; round++) {\n    List<int> testList = List.from(numbers);\n\n    for (int i = testList.length - 1; i > 0; i--) {\n      int j = random.nextInt(i + 1);\n      int temp = testList[i];\n      testList[i] = testList[j];\n      testList[j] = temp;\n    }\n    \n    print('Shuffle $round: $testList');\n  }\n\n  List<String> letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];\n  print('\\nOriginal letters: $letters');\n  \n  List<String> shuffledLetters = List.from(letters);\n  for (int i = shuffledLetters.length - 1; i > 0; i--) {\n    int j = random.nextInt(i + 1);\n    String temp = shuffledLetters[i];\n    shuffledLetters[i] = shuffledLetters[j];\n    shuffledLetters[j] = temp;\n  }\n  \n  print('Shuffled letters: $shuffledLetters');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_34e9dc99606e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  String text = \"HERE IS A SIMPLE EXAMPLE\";\n  String pattern = \"EXAMPLE\";\n\n  List<int> boyerMooreSearch(String text, String pattern) {\n    int n = text.length;\n    int m = pattern.length;\n    if (m == 0 || n == 0 || m > n) return [];\n\n    const int ALPHABET_SIZE = 256;\n    List<int> badChar = List.filled(ALPHABET_SIZE, -1);\n    for (int i = 0; i < m; i++) {\n      badChar[pattern.codeUnitAt(i)] = i;\n    }\n\n    List<int> result = [];\n    int s = 0; \n\n    while (s <= (n - m)) {\n      int j = m - 1;\n\n      while (j >= 0 && pattern[j] == text[s + j]) {\n        j--;\n      }\n\n      if (j < 0) {\n        result.add(s);\n        \n        s += (s + m < n)\n            ? m - badChar[text.codeUnitAt(s + m)]\n            : 1;\n      } else {\n        int badCharIdx = text.codeUnitAt(s + j);\n        s += (j - badChar[badCharIdx]).clamp(1, m);\n      }\n    }\n    return result;\n  }\n\n  List<int> positions = boyerMooreSearch(text, pattern);\n\n  if (positions.isEmpty) {\n    print(\"Pattern not found.\");\n  } else {\n    print(\"Pattern found at positions: ${positions.join(', ')}\");\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6ad70e03dabe",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n\n  \n  const men   = ['A', 'B', 'C', 'D'];\n  const women = ['W', 'X', 'Y', 'Z'];\n\n  final menPrefs = <String, List<String>>{\n    'A': ['W', 'X', 'Y', 'Z'],\n    'B': ['X', 'W', 'Y', 'Z'],\n    'C': ['W', 'Y', 'Z', 'X'],\n    'D': ['Z', 'Y', 'X', 'W'],\n  };\n\n  final womenPrefs = <String, List<String>>{\n    'W': ['B', 'A', 'D', 'C'],\n    'X': ['C', 'B', 'A', 'D'],\n    'Y': ['A', 'C', 'B', 'D'],\n    'Z': ['A', 'B', 'C', 'D'],\n  };\n\n  final womenRank = <String, Map<String, int>>{};\n  for (final w in women) {\n    final ranking = <String, int>{};\n    final prefs = womenPrefs[w]!;\n    for (var i = 0; i < prefs.length; i++) {\n      ranking[prefs[i]] = i;          \n    }\n    womenRank[w] = ranking;\n  }\n\n  final engagedWomen = <String, String>{};          \n  final engagedMen   = <String, String>{};          \n  final freeMen      = List<String>.of(men);        \n  final nextIndex    = {for (var m in men) m: 0};   \n\n  while (freeMen.isNotEmpty) {\n    final man   = freeMen.removeAt(0);\n    final prefs = menPrefs[man]!;\n    final i     = nextIndex[man]!;\n    final woman = prefs[i];               \n    nextIndex[man] = i + 1;               \n\n    if (!engagedWomen.containsKey(woman)) {\n      \n      engagedWomen[woman] = man;\n      engagedMen[man]     = woman;\n    } else {\n      \n      final currentFiance = engagedWomen[woman]!;\n      final rank          = womenRank[woman]!;\n      if (rank[man]! < rank[currentFiance]!) {\n        \n        engagedWomen[woman] = man;\n        engagedMen\n          ..remove(currentFiance)\n          ..[man] = woman;\n        freeMen.add(currentFiance);       \n      } else {\n        \n        freeMen.add(man);\n      }\n    }\n  }\n\n  print('Stable matches:');\n  for (final man in men) {\n    print('$man → ${engagedMen[man]}');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_217ef71865c3",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String layout) {\n  Map<String, int> counts = {};\n  int currentCount = 0;\n  bool hasNumber = false;\n  for (int i = 0; i < layout.length; i++) {\n    String char = layout[i];\n    int code = char.codeUnitAt(0);\n    if (code >= 48 && code <= 57) {\n      currentCount = currentCount * 10 + (code - 48);\n      hasNumber = true;\n    } else {\n      counts[char] = (counts[char] ?? 0) + (hasNumber ? currentCount : 1);\n      currentCount = 0;\n      hasNumber = false;\n    }\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_295a1f5c7259",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(String dna) {\n  const stop = {'TAA', 'TAG', 'TGA'};\n  final r = <String>[];\n  for (var i = 0; i < dna.length; i += 3) {\n    if (i + 3 > dna.length) { r.add('TRUNCATED:${dna.substring(i)}'); break; }\n    final c = dna.substring(i, i + 3);\n    if (!RegExp(r'^[ACGT]{3}$').hasMatch(c)) r.add('INVALID:$c');\n    else if (c == 'ATG') r.add('START');\n    else if (stop.contains(c)) r.add('STOP');\n    else r.add('CODON:$c');\n  }\n  return r;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_3b143aa33af0",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<String> suggestions, int k) {\n  final entries = suggestions.map((s) {\n    final parts = s.split(':');\n    return MapEntry(parts[0], int.parse(parts[1]));\n  }).toList();\n  entries.sort((a, b) {\n    final cmp = a.value.compareTo(b.value);\n    return cmp != 0 ? cmp : a.key.compareTo(b.key);\n  });\n  return entries[k].value;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6e4974ba05d6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<String> grid) {\n  if (grid.isEmpty) return 0;\n  int n = grid.length;\n  List<int> solve(int r, int c, int size) {\n    int ones = 0;\n    for (int i = r; i < r + size; i++) {\n      for (int j = c; j < c + size; j++) {\n        if (grid[i][j] == '1') ones++;\n      }\n    }\n    if (size < 2 || size % 2 != 0) {\n      return [ones, ones];\n    }\n    int half = size ~/ 2;\n    List<int> tl = solve(r, c, half);\n    List<int> tr = solve(r, c + half, half);\n    List<int> bl = solve(r + half, c, half);\n    List<int> br = solve(r + half, c + half, half);\n    int splitValue = tl[0] + tr[0] + bl[0] + br[0];\n    int uniformCount = 0;\n    int halfArea = half * half;\n    if (tl[1] == 0 || tl[1] == halfArea) uniformCount++;\n    if (tr[1] == 0 || tr[1] == halfArea) uniformCount++;\n    if (bl[1] == 0 || bl[1] == halfArea) uniformCount++;\n    if (br[1] == 0 || br[1] == halfArea) uniformCount++;\n    splitValue += uniformCount * half;\n    return [splitValue > ones ? splitValue : ones, ones];\n  }\n  return solve(0, 0, n)[0];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_40ffe3504975",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> moves) {\n  List<int> stack = [];\n  for (int move in moves) {\n    if (move < 0 || move >= 64) {\n      if (stack.isNotEmpty) stack.removeLast();\n      continue;\n    }\n    int row = move ~/ 8;\n    int col = move % 8;\n    bool isDark = (row + col) % 2 == 1;\n    if (stack.isEmpty) {\n      stack.add(move);\n      continue;\n    }\n    int prev = stack.last;\n    int prow = prev ~/ 8;\n    int pcol = prev % 8;\n    bool pDark = (prow + pcol) % 2 == 1;\n    if (isDark != pDark) {\n      stack.add(move);\n    } else {\n      stack.removeLast();\n    }\n  }\n  return stack.length;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5c47cc5132ae",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String sequence) {\n  List<String> valid = [];\n  for (int i = 0; i < sequence.length; i++) {\n    String ch = sequence[i].toUpperCase();\n    if (ch == 'A' || ch == 'C' || ch == 'G' || ch == 'T') {\n      valid.add(ch);\n    }\n  }\n  if (valid.isEmpty) return {};\n  List<String> deduped = [];\n  deduped.add(valid[0]);\n  for (int i = 1; i < valid.length; i++) {\n    if (valid[i] != valid[i - 1]) {\n      deduped.add(valid[i]);\n    }\n  }\n  Map<String, int> counts = {'A': 0, 'C': 0, 'G': 0, 'T': 0};\n  for (int i = 0; i < deduped.length - 1; i += 2) {\n    if (i + 1 < deduped.length) {\n      String b1 = deduped[i];\n      String b2 = deduped[i + 1];\n      if (b1 != b2) {\n        counts[b1] = counts[b1]! + 1;\n        counts[b2] = counts[b2]! + 1;\n      }\n    }\n  }\n  Map<String, int> result = {};\n  counts.forEach((k, v) {\n    if (v > 0) result[k] = v;\n  });\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_0dc17d9531b9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nenum Weather { sunny, cloudy, rainy, snowy }\n\nextension WeatherExt on Weather {\n  /// An emoji that visually represents the weather state.\n  String get emoji {\n    switch (this) {\n      case Weather.sunny:\n        return '☀️';\n      case Weather.cloudy:\n        return '☁️';\n      case Weather.rainy:\n        return '🌧️';\n      case Weather.snowy:\n        return '❄️';\n    }\n  }\n\n  /// A user-friendly description that combines the enum name and its emoji.\n  String get label => '${name[0].toUpperCase()}${name.substring(1)} $emoji';\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  for (final weather in Weather.values) {\n    print(weather.label);\n  }\n\n  const current = Weather.rainy;\n  print('\\nCurrent weather: ${current.label}');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_e989552bfd91",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(String hand) {\n  if (hand.isEmpty) return [];\n  final cards = hand.split(' ');\n  final suitCounts = <String, int>{};\n  for (final card in cards) {\n    if (card.isEmpty) continue;\n    final suit = card[card.length - 1];\n    suitCounts[suit] = (suitCounts[suit] ?? 0) + 1;\n  }\n  final result = <int>[];\n  for (final card in cards) {\n    if (card.isEmpty) continue;\n    final rankStr = card.substring(0, card.length - 1);\n    final suit = card[card.length - 1];\n    int rankValue;\n    switch (rankStr) {\n      case 'A': rankValue = 14; break;\n      case 'K': rankValue = 13; break;\n      case 'Q': rankValue = 12; break;\n      case 'J': rankValue = 11; break;\n      case 'T': rankValue = 10; break;\n      default: rankValue = int.parse(rankStr); break;\n    }\n    result.add(rankValue + suitCounts[suit]!);\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_588a3df34892",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> availableDays, int minGap, int maxGap) {\n  if (availableDays.isEmpty) {\n    return 0;\n  }\n  \n  final int n = availableDays.length;\n  final List<int> dpLen = List.filled(n, 1);\n  final List<int> dpSum = List.filled(n, 0);\n  \n  for (int i = 0; i < n; i++) {\n    dpSum[i] = availableDays[i];\n    int bestLen = 1;\n    int bestSum = availableDays[i];\n    \n    for (int j = i - 1; j >= 0; j--) {\n      final int diff = availableDays[i] - availableDays[j];\n      if (diff > maxGap) {\n        break;\n      }\n      if (diff >= minGap) {\n        final int candLen = dpLen[j] + 1;\n        final int candSum = dpSum[j] + availableDays[i];\n        if (candLen > bestLen || (candLen == bestLen && candSum > bestSum)) {\n          bestLen = candLen;\n          bestSum = candSum;\n        }\n      }\n    }\n    dpLen[i] = bestLen;\n    dpSum[i] = bestSum;\n  }\n  \n  int maxLen = 0;\n  int maxSum = 0;\n  for (int i = 0; i < n; i++) {\n    if (dpLen[i] > maxLen) {\n      maxLen = dpLen[i];\n      maxSum = dpSum[i];\n    } else if (dpLen[i] == maxLen && dpSum[i] > maxSum) {\n      maxSum = dpSum[i];\n    }\n  }\n  \n  return maxSum;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7f5464d20af0",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final Map<String, List<String>> rolePermissions = {\n    'admin': ['read', 'write', 'delete', 'manage_users'],\n    'editor': ['read', 'write'],\n    'viewer': ['read'],\n  };\n\n  final Map<String, String> users = {\n    'alice': 'admin',\n    'bob': 'editor',\n    'carol': 'viewer',\n    'dave': 'unknown', \n  };\n\n  bool hasPermission(String username, String permission) {\n    final role = users[username];\n    if (role == null || !rolePermissions.containsKey(role)) {\n      return false;\n    }\n    return rolePermissions[role]!.contains(permission);\n  }\n\n  final testCases = [\n    {'user': 'alice', 'permission': 'delete'},\n    {'user': 'bob', 'permission': 'write'},\n    {'user': 'carol', 'permission': 'write'},\n    {'user': 'carol', 'permission': 'read'},\n    {'user': 'dave', 'permission': 'read'},\n    {'user': 'alice', 'permission': 'manage_users'},\n    {'user': 'bob', 'permission': 'delete'},\n  ];\n\n  for (var test in testCases) {\n    final user = test['user']!;\n    final perm = test['permission']!;\n    final allowed = hasPermission(user, perm);\n    print(\n        'User \"$user\" with role \"${users[user] ?? 'none'}\" ${allowed ? \"CAN\" : \"CANNOT\"} perform \"$perm\".');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c06bd1b6353c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> readings, int threshold) {\n  if (readings.isEmpty) return \"0:0\";\n  int n = readings.length;\n  List<int> dpLen = List.filled(n, 1);\n  List<int> dpSum = List.filled(n, 0);\n  for (int i = 0; i < n; i++) {\n    dpSum[i] = readings[i];\n  }\n  for (int i = 1; i < n; i++) {\n    for (int j = 0; j < i; j++) {\n      if ((readings[i] - readings[j]).abs() <= threshold) {\n        int newLen = dpLen[j] + 1;\n        int newSum = dpSum[j] + readings[i];\n        if (newLen > dpLen[i] || (newLen == dpLen[i] && newSum < dpSum[i])) {\n          dpLen[i] = newLen;\n          dpSum[i] = newSum;\n        }\n      }\n    }\n  }\n  int bestLen = 0;\n  int bestSum = 0;\n  for (int i = 0; i < n; i++) {\n    if (dpLen[i] > bestLen || (dpLen[i] == bestLen && dpSum[i] < bestSum)) {\n      bestLen = dpLen[i];\n      bestSum = dpSum[i];\n    }\n  }\n  return \"$bestLen:$bestSum\";\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7ce0645c7c59",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<List<String>> deckRows) {\n  int matchingRows = 0;\n\n  for (List<String> row in deckRows) {\n    if (row.isEmpty) {\n      continue;\n    }\n\n    String suit = row[0].substring(row[0].length - 1);\n    bool allMatch = true;\n\n    for (String card in row) {\n      if (card.substring(card.length - 1) != suit) {\n        allMatch = false;\n        break;\n      }\n    }\n\n    if (allMatch) {\n      matchingRows++;\n    }\n  }\n\n  return matchingRows;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_842d8bd3822e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> moduleSequence) {\n  if (moduleSequence.isEmpty) return 0.0;\n  int runCount = 1;\n  int prev = moduleSequence[0];\n  for (int i = 1; i < moduleSequence.length; i++) {\n    if (moduleSequence[i] != prev) {\n      runCount++;\n      prev = moduleSequence[i];\n    }\n  }\n  return moduleSequence.length / runCount;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f19a1cde385c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> sizes, int bucketWidth, int minCount) {\n\n  \n  final Map<int, int> counts = {};\n  for (final size in sizes) {\n    final bucket = size ~/ bucketWidth;\n    counts[bucket] = (counts[bucket] ?? 0) + 1;\n  }\n  final List<int> qualifying = [];\n  counts.forEach((bucket, count) {\n    if (count >= minCount) {\n      qualifying.add(bucket);\n    }\n  });\n  qualifying.sort((a, b) {\n    final diff = counts[b]! - counts[a]!;\n    if (diff != 0) {\n      return diff;\n    }\n    return a - b;\n  });\n  return qualifying.map((bucket) => bucket * bucketWidth).toList();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_66f0c3982031",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(String grid) {\n  if (grid.isEmpty) return 0;\n  final cellPattern = RegExp(r'^([WDM])(\\d)$');\n  int total = 0;\n  final rows = grid.split('|');\n  for (final row in rows) {\n    if (row.isEmpty) continue;\n    final cells = row.split(',');\n    int rowSum = 0;\n    bool valid = true;\n    for (final cell in cells) {\n      final m = cellPattern.firstMatch(cell);\n      if (m == null) {\n        valid = false;\n        break;\n      }\n      final type = m.group(1)!;\n      final digit = int.parse(m.group(2)!);\n      if (type == 'W') {\n        rowSum += digit * 2;\n      } else if (type == 'M') {\n        rowSum += digit * 3;\n      } else {\n        rowSum -= digit;\n      }\n    }\n    if (valid) total += rowSum;\n  }\n  return total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6ca6f0196a67",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(String input) {\n  if (input.isEmpty) return '';\n  Set<int> floors = {};\n  for (var t in input.split(',')) {\n    t = t.trim();\n    if (t == 'G') floors.add(0);\n    else if (t.startsWith('B')) floors.add(-int.parse(t.substring(1)));\n    else floors.add(int.parse(t));\n  }\n  var sorted = floors.toList()..sort();\n  return sorted.map((f) => f == 0 ? 'G' : f < 0 ? 'B${-f}' : '$f').join(',');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_8cc4767c9e31",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> signals, List<int> binBoundaries, int binIndex, int k) {\n  \n  if (binBoundaries.length < 2) return -1;\n  if (binIndex < 0 || binIndex >= binBoundaries.length - 1) return -1;\n\n  int binLow = binBoundaries[binIndex];\n  int binHigh = binBoundaries[binIndex + 1] - 1; \n\n  if (binLow > binHigh) return -1; \n\n  int countInBin = 0;\n  for (int s in signals) {\n    if (s >= binLow && s <= binHigh) countInBin++;\n  }\n\n  if (k <= 0 || k > countInBin) return -1;\n\n  int low = binLow;\n  int high = binHigh;\n  while (low < high) {\n    \n    int mid = low + ((high - low + 1) >> 1);\n    int count = 0;\n    for (int s in signals) {\n      if (s >= mid && s <= binHigh) count++;\n    }\n    if (count >= k) {\n      low = mid; \n    } else {\n      high = mid - 1; \n    }\n  }\n  return low;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_689fa1a18517",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0(List<String> args) {\n\n  \n  late int k;\n  late List<String> items;\n\n  if (args.isEmpty) {\n    items = ['A', 'B', 'C', 'D'];\n    k = 2;\n    print('No args provided. Using default input: k=$k, items=$items');\n    print('Usage: dart run <file.dart> <k> <item1> <item2> ...');\n  } else {\n    final parsedK = int.tryParse(args[0]);\n    if (parsedK == null) {\n      print('First argument must be an integer k (size of combinations). Got: ${args[0]}');\n      print('Usage: dart run <file.dart> <k> <item1> <item2> ...');\n      return;\n    }\n    k = parsedK;\n    items = args.length > 1 ? args.sublist(1) : <String>[];\n  }\n\n  final n = items.length;\n\n  if (k < 0 || k > n) {\n    print('k must be between 0 and n (inclusive). n=$n, k=$k');\n    return;\n  }\n\n  if (k == 0) {\n    print('[]');\n    print('Total combinations: 1');\n    return;\n  }\n\n  \n  final indices = List<int>.generate(k, (i) => i);\n  int count = 0;\n\n  while (true) {\n    \n    final combo = List<String>.generate(k, (i) => items[indices[i]]);\n    print(combo);\n    count++;\n\n    int i = k - 1;\n    while (i >= 0 && indices[i] == i + n - k) {\n      i--;\n    }\n    if (i < 0) break; \n\n    indices[i]++;\n    for (int j = i + 1; j < k; j++) {\n      indices[j] = indices[j - 1] + 1;\n    }\n  }\n\n  print('Total combinations: $count');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_a6a008b7b43f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];\n  const hours = [\n    '00', '01', '02', '03', '04', '05', '06', '07', '08', '09',\n    '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',\n    '20', '21', '22', '23'\n  ];\n  final rand = Random(0);\n\n  List<List<int>> activity = List.generate(\n    7,\n    (_) => List.generate(24, (_) => rand.nextInt(20)),\n  );\n\n  int maxActivity = activity.expand((d) => d).reduce(max);\n\n  int heatLevel(int count) {\n    if (count == 0) return 0;\n    if (count < maxActivity * 0.33) return 1;\n    if (count < maxActivity * 0.66) return 2;\n    return 3;\n  }\n\n  const heatChars = [' ', '.', '*', '#'];\n\n  print('User Activity Heatmap (Day x Hour)');\n  print('      ' + hours.map((h) => h.padLeft(2)).join(' '));\n  print('     +' + '-' * (hours.length * 3 - 1));\n\n  for (int d = 0; d < 7; d++) {\n    String row = days[d].padRight(3) + ' |';\n    for (int h = 0; h < 24; h++) {\n      int level = heatLevel(activity[d][h]);\n      row += ' ${heatChars[level]} ';\n    }\n    print(row);\n  }\n\n  print('\\nLegend:');\n  print('  \" \" = no activity');\n  print('  \".\" = low');\n  print('  \"*\" = medium');\n  print('  \"#\" = high');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b03bf3bb9c5b",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(String dna) {\n  final result = <int>{};\n  int i = 0;\n  while (i < dna.length) {\n    final ch = dna[i];\n    if (ch != 'A' && ch != 'C' && ch != 'G' && ch != 'T') {\n      i++;\n      continue;\n    }\n    final start = i;\n    var gcCount = 0;\n    while (i < dna.length) {\n      final base = dna[i];\n      if (base != 'A' && base != 'C' && base != 'G' && base != 'T') {\n        break;\n      }\n      if (base == 'G' || base == 'C') {\n        gcCount++;\n      }\n      i++;\n    }\n    final length = i - start;\n    if (length >= 4 && gcCount * 2 > length) {\n      result.add(start);\n    }\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c5fe1b2b12ae",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(int startDay, int endDay, int periodDays, int modulesPerScan) {\n\n  \n  if (endDay < startDay) return 0.0;\n  int total = 0;\n  for (int d = startDay; d <= endDay; d++) {\n    if ((d - startDay) % periodDays == 0) {\n      total += modulesPerScan;\n    }\n  }\n  int days = endDay - startDay + 1;\n  return total / days;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_8d0cf57a5b8f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> positions) {\n  Set<int> occupied = positions.toSet();\n  Set<int> attacked = {};\n  const offsets = [\n    [1, 2], [1, -2], [-1, 2], [-1, -2],\n    [2, 1], [2, -1], [-2, 1], [-2, -1],\n  ];\n  for (int pos in occupied) {\n    int f = pos % 8;\n    int r = pos ~/ 8;\n    for (List<int> off in offsets) {\n      int nf = f + off[0];\n      int nr = r + off[1];\n      if (nf >= 0 && nf < 8 && nr >= 0 && nr < 8) {\n        int target = nr * 8 + nf;\n        if (!occupied.contains(target)) {\n          attacked.add(target);\n        }\n      }\n    }\n  }\n  List<int> result = attacked.toList();\n  result.sort();\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7e986e1787e9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String notation) {\n  const ranks = {'2','3','4','5','6','7','8','9','T','J','Q','K','A'};\n  const suits = {'H': 'Hearts', 'S': 'Spades', 'D': 'Diamonds', 'C': 'Clubs'};\n  int state = 0; \n  String pendingSuit = '';\n  final counts = <String, int>{'Hearts': 0, 'Spades': 0, 'Diamonds': 0, 'Clubs': 0};\n  for (int i = 0; i < notation.length; i++) {\n    final ch = notation[i].toUpperCase();\n    if (state == 0) {\n      if (ranks.contains(ch)) state = 1;\n    } else {\n      if (suits.containsKey(ch)) {\n        counts[suits[ch]!] = counts[suits[ch]!]! + 1;\n      }\n      state = 0;\n    }\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_172bb23be947",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  Map<int, List<int>> graph = {\n    0: [1, 2],\n    1: [0, 3, 4],\n    2: [0, 5],\n    3: [1],\n    4: [1, 5],\n    5: [2, 4]\n  };\n\n  Set<int> visited = {};\n\n  List<int> traversalOrder = [];\n\n  List<int> stack = [];\n\n  void dfsRecursive(int node) {\n    visited.add(node);\n    traversalOrder.add(node);\n    \n    if (graph.containsKey(node)) {\n      for (int neighbor in graph[node]!) {\n        if (!visited.contains(neighbor)) {\n          dfsRecursive(neighbor);\n        }\n      }\n    }\n  }\n\n  void dfsIterative(int startNode) {\n    Set<int> visitedIter = {};\n    List<int> iterativeOrder = [];\n    stack.add(startNode);\n    \n    while (stack.isNotEmpty) {\n      int current = stack.removeLast();\n      \n      if (!visitedIter.contains(current)) {\n        visitedIter.add(current);\n        iterativeOrder.add(current);\n        \n        if (graph.containsKey(current)) {\n          \n          for (int i = graph[current]!.length - 1; i >= 0; i--) {\n            int neighbor = graph[current]![i];\n            if (!visitedIter.contains(neighbor)) {\n              stack.add(neighbor);\n            }\n          }\n        }\n      }\n    }\n    \n    print('Iterative DFS traversal: $iterativeOrder');\n  }\n\n  void findAllComponents() {\n    Set<int> allVisited = {};\n    List<List<int>> components = [];\n    \n    for (int node in graph.keys) {\n      if (!allVisited.contains(node)) {\n        Set<int> componentVisited = {};\n        List<int> component = [];\n        List<int> componentStack = [node];\n        \n        while (componentStack.isNotEmpty) {\n          int current = componentStack.removeLast();\n          \n          if (!componentVisited.contains(current)) {\n            componentVisited.add(current);\n            component.add(current);\n            allVisited.add(current);\n            \n            if (graph.containsKey(current)) {\n              for (int neighbor in graph[current]!) {\n                if (!componentVisited.contains(neighbor)) {\n                  componentStack.add(neighbor);\n                }\n              }\n            }\n          }\n        }\n        \n        components.add(component);\n      }\n    }\n    \n    print('\\nConnected components:');\n    for (int i = 0; i < components.length; i++) {\n      print('Component ${i + 1}: ${components[i]}');\n    }\n  }\n\n  bool hasPath(int start, int end) {\n    if (!graph.containsKey(start) || !graph.containsKey(end)) {\n      return false;\n    }\n    \n    Set<int> pathVisited = {};\n    List<int> pathStack = [start];\n    \n    while (pathStack.isNotEmpty) {\n      int current = pathStack.removeLast();\n      \n      if (current == end) {\n        return true;\n      }\n      \n      if (!pathVisited.contains(current)) {\n        pathVisited.add(current);\n        \n        if (graph.containsKey(current)) {\n          for (int neighbor in graph[current]!) {\n            if (!pathVisited.contains(neighbor)) {\n              pathStack.add(neighbor);\n            }\n          }\n        }\n      }\n    }\n    \n    return false;\n  }\n\n  print('Graph structure:');\n  graph.forEach((node, neighbors) {\n    print('Node $node -> $neighbors');\n  });\n  \n  print('\\n--- Depth-First Search Demo ---\\n');\n\n  print('Starting recursive DFS from node 0:');\n  dfsRecursive(0);\n  print('Recursive DFS traversal: $traversalOrder');\n  \n  print('\\nStarting iterative DFS from node 0:');\n  dfsIterative(0);\n\n  findAllComponents();\n\n  print('\\n--- Path Existence Tests ---');\n  print('Path from 0 to 5: ${hasPath(0, 5)}');\n  print('Path from 3 to 5: ${hasPath(3, 5)}');\n  print('Path from 3 to 2: ${hasPath(3, 2)}');\n\n  Map<int, List<int>> disconnectedGraph = {\n    0: [1],\n    1: [0],\n    2: [3],\n    3: [2],\n    4: []\n  };\n  \n  print('\\n--- Disconnected Graph Test ---');\n  print('Disconnected graph structure:');\n  disconnectedGraph.forEach((node, neighbors) {\n    print('Node $node -> $neighbors');\n  });\n\n  Set<int> disconnectedVisited = {};\n  List<List<int>> disconnectedComponents = [];\n  \n  for (int node in disconnectedGraph.keys) {\n    if (!disconnectedVisited.contains(node)) {\n      List<int> component = [];\n      List<int> componentStack = [node];\n      Set<int> componentVisited = {};\n      \n      while (componentStack.isNotEmpty) {\n        int current = componentStack.removeLast();\n        \n        if (!componentVisited.contains(current)) {\n          componentVisited.add(current);\n          component.add(current);\n          disconnectedVisited.add(current);\n          \n          if (disconnectedGraph.containsKey(current)) {\n            for (int neighbor in disconnectedGraph[current]!) {\n              if (!componentVisited.contains(neighbor)) {\n                componentStack.add(neighbor);\n              }\n            }\n          }\n        }\n      }\n      \n      disconnectedComponents.add(component);\n    }\n  }\n  \n  print('\\nConnected components in disconnected graph:');\n  for (int i = 0; i < disconnectedComponents.length; i++) {\n    print('Component ${i + 1}: ${disconnectedComponents[i]}');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5f0732a851d6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(int initialChampion, List<int> events) {\n  int champion = initialChampion;\n  Set<int> history = {initialChampion};\n  List<int> undoStack = [];\n  for (int event in events) {\n    if (event == -1) {\n      if (undoStack.isNotEmpty) {\n        champion = undoStack.removeLast();\n        history.add(champion);\n      }\n    } else if (event > 0) {\n      undoStack.add(champion);\n      if (event > champion) {\n        champion = event;\n      }\n      history.add(champion);\n    }\n  }\n  return history;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_761f28484d46",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<String> rows) {\n  if (rows.isEmpty) return [];\n\n  Set<String> filled = {};\n  for (int r = 0; r < rows.length; r++) {\n    for (int c = 0; c < rows[r].length; c++) {\n      if (rows[r][c] == '#') filled.add('$r,$c');\n    }\n  }\n  if (filled.isEmpty) return [];\n\n  List<List<List<int>>> components = [];\n  Set<String> visited = {};\n  List<List<int>> dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]];\n\n  for (var key in filled) {\n    if (visited.contains(key)) continue;\n    List<List<int>> comp = [];\n    List<String> queue = [key];\n    visited.add(key);\n    while (queue.isNotEmpty) {\n      String cur = queue.removeAt(0);\n      var p = cur.split(',');\n      int cr = int.parse(p[0]), cc = int.parse(p[1]);\n      comp.add([cr, cc]);\n      for (var d in dirs) {\n        int nr = cr + d[0], nc = cc + d[1];\n        String nk = '$nr,$nc';\n        if (filled.contains(nk) && !visited.contains(nk)) {\n          visited.add(nk);\n          queue.add(nk);\n        }\n      }\n    }\n    components.add(comp);\n  }\n\n  if (components.length < 2) return [];\n\n  List<int> result = [];\n  for (int i = 0; i < components.length; i++) {\n    for (int j = i + 1; j < components.length; j++) {\n      int best = 0x7FFFFFFF;\n      for (var a in components[i]) {\n        for (var b in components[j]) {\n          int d = (a[0] - b[0]).abs() + (a[1] - b[1]).abs();\n          if (d < best) best = d;\n        }\n      }\n      result.add(best);\n    }\n  }\n  result.sort();\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_1f311da5c92c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(List<List<bool>> seats) {\n  for (int col = 0; seats.isNotEmpty && col < seats[0].length; col++) {\n    bool empty = true;\n    for (int row = 0; row < seats.length; row++) {\n      if (seats[row][col]) {\n        empty = false;\n        break;\n      }\n    }\n    if (empty) {\n      return true;\n    }\n  }\n  return false;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5b084bc217a7",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0(List<String> args) {\n  if (args.isEmpty) {\n    print('Usage: dart run script.dart <N>');\n    return;\n  }\n\n  int N;\n  try {\n    N = int.parse(args[0]);\n    if (N < 1) {\n      print('N must be a positive integer.');\n      return;\n    }\n  } catch (e) {\n    print('Invalid input: $e');\n    return;\n  }\n\n  List<int> queens = List.filled(N, -1);\n\n  bool isSafe(int row, int col) {\n    for (int i = 0; i < row; i++) {\n      if (queens[i] == col) {\n        return false; \n      }\n      if ((queens[i] - col).abs() == (row - i)) {\n        return false; \n      }\n    }\n    return true;\n  }\n\n  void printBoard() {\n    for (int i = 0; i < N; i++) {\n      String row = '';\n      for (int j = 0; j < N; j++) {\n        row += (queens[i] == j) ? 'Q ' : '. ';\n      }\n      print(row.trim());\n    }\n    print('');\n  }\n\n  int solutions = 0;\n  void solve(int row) {\n    if (row == N) {\n      solutions++;\n      print('Solution $solutions:');\n      printBoard();\n      return;\n    }\n\n    for (int col = 0; col < N; col++) {\n      if (isSafe(row, col)) {\n        queens[row] = col;\n        solve(row + 1);\n        queens[row] = -1; \n      }\n    }\n  }\n\n  print('Solving N-Queens for N=$N...');\n  solve(0);\n  print('Total solutions: $solutions');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_813393f0ede5",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> durations, int k) {\n  int n = durations.length;\n  if (n < 2 || k < 1 || k > n * (n - 1) ~/ 2) {\n    return {'mashupDuration': -1, 'pairCount': 0};\n  }\n  int low = durations[0] + durations[1];\n  int high = durations[n - 2] + durations[n - 1];\n  int ans = high;\n  \n  while (low <= high) {\n    int mid = low + (high - low) ~/ 2;\n    int count = 0;\n    int right = n - 1;\n    for (int left = 0; left < n; left++) {\n      while (right > left && durations[left] + durations[right] > mid) {\n        right--;\n      }\n      if (right <= left) break;\n      count += (right - left);\n    }\n    if (count >= k) {\n      ans = mid;\n      high = mid - 1;\n    } else {\n      low = mid + 1;\n    }\n  }\n  \n  int countPairs(int limit) {\n    int c = 0;\n    int r = n - 1;\n    for (int l = 0; l < n; l++) {\n      while (r > l && durations[l] + durations[r] > limit) {\n        r--;\n      }\n      if (r <= l) break;\n      c += (r - l);\n    }\n    return c;\n  }\n  \n  return {'mashupDuration': ans, 'pairCount': countPairs(ans) - countPairs(ans - 1)};\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c533ec05295f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> arrivalDays, List<int> packetSizes) {\n  if (arrivalDays.isEmpty) {\n    return {'totalSize': 0, 'daySpan': 0, 'numIntervals': 0};\n  }\n  int totalSize = 0;\n  List<int> days = List.from(arrivalDays);\n  for (int s in packetSizes) {\n    totalSize += s;\n  }\n  List<int> sortedDays = List.from(days)..sort();\n  int minDay = sortedDays.first;\n  int maxDay = sortedDays.last;\n  int daySpan = maxDay - minDay + 1;\n  int numIntervals = 1;\n  for (int i = 1; i < sortedDays.length; i++) {\n    if (sortedDays[i] > sortedDays[i - 1] + 1) {\n      numIntervals++;\n    }\n  }\n  return {'totalSize': totalSize, 'daySpan': daySpan, 'numIntervals': numIntervals};\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f313c6aa6b38",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> targets, int startTemp, int maxStep) {\n  List<int> best = <int>[];\n  int bestCost = -1;\n\n  void search(int index, int currentTemp, List<int> path, int cost) {\n    if (index == targets.length) {\n      if (bestCost == -1 || cost < bestCost) {\n        bestCost = cost;\n        best = List<int>.from(path);\n      }\n      return;\n    }\n\n    int low = currentTemp - maxStep;\n    int high = currentTemp + maxStep;\n\n    for (int next = low; next <= high; next++) {\n      int nextCost = cost + (targets[index] - next).abs();\n\n      if (bestCost != -1 && nextCost > bestCost) {\n        continue;\n      }\n\n      path.add(next);\n      search(index + 1, next, path, nextCost);\n      path.removeLast();\n    }\n  }\n\n  search(0, startTemp, <int>[], 0);\n  return best;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7da06c701a11",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(String dna) {\n  if (dna.length < 2) return 0.0;\n  double prev2 = 0.0;\n  double prev1 = 0.0;\n  for (int i = 1; i < dna.length; i++) {\n    double pairScore = 0.0;\n    String a = dna[i - 1];\n    String b = dna[i];\n    if ((a == 'A' && b == 'T') || (a == 'T' && b == 'A') ||\n        (a == 'G' && b == 'C') || (a == 'C' && b == 'G')) {\n      pairScore = 0.5;\n    }\n    double current = prev1 > prev2 + pairScore ? prev1 : prev2 + pairScore;\n    prev2 = prev1;\n    prev1 = current;\n  }\n  return prev1;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_32c65c037f11",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\nclass Quaternion {\n  final double w, x, y, z;\n\n  const Quaternion(this.w, this.x, this.y, this.z);\n\n  Quaternion operator +(Quaternion other) =>\n      Quaternion(w + other.w, x + other.x, y + other.y, z + other.z);\n\n  Quaternion operator -(Quaternion other) =>\n      Quaternion(w - other.w, x - other.x, y - other.y, z - other.z);\n\n  Quaternion operator *(dynamic other) {\n    if (other is double || other is int) {\n      return Quaternion(w * other, x * other, y * other, z * other);\n    } else if (other is Quaternion) {\n      \n      return Quaternion(\n        w * other.w - x * other.x - y * other.y - z * other.z,\n        w * other.x + x * other.w + y * other.z - z * other.y,\n        w * other.y - x * other.z + y * other.w + z * other.x,\n        w * other.z + x * other.y - y * other.x + z * other.w,\n      );\n    } else {\n      throw ArgumentError('Unsupported operand type');\n    }\n  }\n\n  double norm() => sqrt(w * w + x * x + y * y + z * z);\n\n  Quaternion normalized() {\n    var n = norm();\n    if (n == 0) throw StateError('Cannot normalize zero quaternion');\n    return Quaternion(w / n, x / n, y / n, z / n);\n  }\n\n  Quaternion conjugate() => Quaternion(w, -x, -y, -z);\n\n  Quaternion inverse() {\n    var n2 = w * w + x * x + y * y + z * z;\n    if (n2 == 0) throw StateError('Cannot invert zero quaternion');\n    var conj = conjugate();\n    return Quaternion(conj.w / n2, conj.x / n2, conj.y / n2, conj.z / n2);\n  }\n\n  List<double> rotateVector(List<double> v) {\n    var qVec = Quaternion(0, v[0], v[1], v[2]);\n    var res = this * qVec * inverse();\n    return [res.x, res.y, res.z];\n  }\n\n  @override\n  String toString() => '($w, $x, $y, $z)';\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  var q1 = Quaternion(1, 2, 3, 4);\n  var q2 = Quaternion(0.5, -1, 2, -0.5);\n\n  print('q1 = $q1');\n  print('q2 = $q2');\n\n  var qAdd = q1 + q2;\n  print('q1 + q2 = $qAdd');\n\n  var qSub = q1 - q2;\n  print('q1 - q2 = $qSub');\n\n  var qScalar = q1 * 2.0;\n  print('q1 * 2 = $qScalar');\n\n  var qMul = q1 * q2;\n  print('q1 * q2 = $qMul');\n\n  print('norm(q1) = ${q1.norm()}');\n\n  var qNorm = q1.normalized();\n  print('normalized(q1) = $qNorm');\n\n  print('conjugate(q1) = ${q1.conjugate()}');\n\n  print('inverse(q1) = ${q1.inverse()}');\n\n  double angle = pi / 2;\n  var qRot = Quaternion(\n    cos(angle / 2),\n    0,\n    0,\n    sin(angle / 2),\n  );\n  var v = [1.0, 0.0, 0.0];\n  var vRot = qRot.rotateVector(v);\n  print('Rotating $v by 90° around z-axis: $vRot');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_800a63a44bf8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> scanLog) {\n  final stack = <int>[];\n  for (final digit in scanLog) {\n    if (digit == 0) {\n      if (stack.isNotEmpty) {\n        stack.removeLast();\n      }\n    } else if (digit == 7) {\n      if (stack.isNotEmpty) {\n        stack.add(stack.last);\n      }\n    } else if (digit == 9) {\n      if (stack.length >= 2) {\n        final top = stack.removeLast();\n        final next = stack.removeLast();\n        stack.add(next * 10 + top);\n      }\n    } else if (digit >= 1 && digit <= 8) {\n      stack.add(digit);\n    }\n  }\n  var sum = 0;\n  for (final value in stack) {\n    sum += value;\n  }\n  return sum;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ae3f6b074a1d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<String> phases) {\n  final counts = <String, int>{};\n  if (phases.isEmpty) return counts;\n  String current = phases[0];\n  counts[current] = 1;\n  for (int i = 1; i < phases.length; i++) {\n    if (phases[i] != current) {\n      current = phases[i];\n      counts[current] = (counts[current] ?? 0) + 1;\n    }\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bdb5051ba702",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(List<int> entries) {\n  if (entries.isEmpty) return {0};\n  Set<int> prev2 = {0};\n  Set<int> prev1 = {0, entries[0]};\n  for (int i = 1; i < entries.length; i++) {\n    Set<int> curr = {};\n    for (int p2 in prev2) {\n      curr.add(p2);\n    }\n    for (int p1 in prev1) {\n      curr.add(p1);\n      curr.add(p1 + entries[i]);\n    }\n    prev2 = prev1;\n    prev1 = curr;\n  }\n  return prev1;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5a81bb01e5b7",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(String dna) {\n  final counts = <String, int>{};\n  for (final base in dna.split('')) {\n    if ('ATCG'.contains(base)) {\n      counts[base] = (counts[base] ?? 0) + 1;\n    }\n  }\n  const order = ['A', 'C', 'G', 'T'];\n  final parts = <String>[];\n  for (final base in order) {\n    final c = counts[base];\n    if (c != null && c > 0) parts.add('$base:$c');\n  }\n  return parts.join(' ');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_3cc19bbfa30f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> rects) {\n  int totalOverlap = 0;\n  int n = rects.length ~/ 7;\n  for (int i = 0; i < n; i++) {\n    int x1A = rects[i * 7];\n    int y1A = rects[i * 7 + 1];\n    int x2A = rects[i * 7 + 2];\n    int y2A = rects[i * 7 + 3];\n    int rA = rects[i * 7 + 4];\n    int gA = rects[i * 7 + 5];\n    int bA = rects[i * 7 + 6];\n\n    for (int j = i + 1; j < n; j++) {\n      if (rA == rects[j * 7 + 4] && gA == rects[j * 7 + 5] && bA == rects[j * 7 + 6]) {\n        int x1B = rects[j * 7];\n        int y1B = rects[j * 7 + 1];\n        int x2B = rects[j * 7 + 2];\n        int y2B = rects[j * 7 + 3];\n\n        int left = x1A > x1B ? x1A : x1B;\n        int right = x2A < x2B ? x2A : x2B;\n        int top = y1A > y1B ? y1A : y1B;\n        int bottom = y2A < y2B ? y2A : y2B;\n\n        int overlapX = right > left ? right - left : 0;\n        int overlapY = bottom > top ? bottom - top : 0;\n\n        totalOverlap += overlapX * overlapY;\n      }\n    }\n  }\n  return totalOverlap;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ca058cccbe26",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> ranks) {\n  Map<int, int> freq = {};\n  for (int r in ranks) {\n    freq[r] = (freq[r] ?? 0) + 1;\n  }\n  List<int> counts = freq.values.where((c) => c >= 2).toList();\n  counts.sort();\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b33d2de9af80",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0(List<String> args) {\n  \n  if (args.length != 2) {\n    print('Usage: dart modular_inverse.dart <a> <m>');\n    return;\n  }\n\n  final a = BigInt.parse(args[0]);\n  final m = BigInt.parse(args[1]);\n\n  if (m <= BigInt.one) {\n    print('Modulus must be greater than 1.');\n    return;\n  }\n\n  BigInt u1 = BigInt.one,  u2 = BigInt.zero, u3 = a % m;\n  BigInt v1 = BigInt.zero, v2 = BigInt.one,  v3 = m;\n\n  while (v3 != BigInt.zero) {\n    final q  = u3 ~/ v3;              \n    final t1 = u1 - q * v1;\n    final t2 = u2 - q * v2;\n    final t3 = u3 - q * v3;\n\n    u1 = v1;  u2 = v2;  u3 = v3;\n    v1 = t1;  v2 = t2;  v3 = t3;\n  }\n\n  if (u3 != BigInt.one) {\n    print('No modular inverse exists because gcd($a, $m) = $u3 ≠ 1.');\n    return;\n  }\n\n  var inverse = u1 % m;\n  if (inverse < BigInt.zero) inverse += m;\n\n  print(inverse);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c25abcd9a325",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> containerWeights, int k) {\n  bool canShip(int capacity) {\n    int shipments = 1;\n    int currentLoad = 0;\n    for (int w in containerWeights) {\n      if (currentLoad + w > capacity) {\n        shipments++;\n        currentLoad = w;\n        if (shipments > k) return false;\n      } else {\n        currentLoad += w;\n      }\n    }\n    return true;\n  }\n\n  int low = containerWeights.reduce((a, b) => a > b ? a : b);\n  int high = containerWeights.reduce((a, b) => a + b);\n  while (low < high) {\n    int mid = low + ((high - low) >> 1);\n    if (canShip(mid)) {\n      high = mid;\n    } else {\n      low = mid + 1;\n    }\n  }\n  return low;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6d8c4ba351c5",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(String barcode, int mask) {\n  Set<int> result = <int>{};\n\n  for (int i = 0; i < barcode.length; i++) {\n    int digit = barcode.codeUnitAt(i) - 48;\n    if (digit < 0 || digit > 9) {\n      continue;\n    }\n\n    int shift = i % 4;\n    int rotated = ((digit << shift) | (digit >> (4 - shift))) & 15;\n\n    if (((mask >> digit) & 1) == 1) {\n      rotated ^= 1;\n    }\n\n    int bits = 0;\n    int value = rotated;\n    while (value > 0) {\n      bits += value & 1;\n      value >>= 1;\n    }\n\n    if (bits % 2 == 0) {\n      result.add(digit);\n    } else if ((rotated & 8) != 0) {\n      result.remove(digit);\n    }\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_a247e5f7ba82",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(String input, String dictionaryWord) {\n  int matches = 0;\n  int i = 0;\n  int j = 0;\n  while (i < input.length && j < dictionaryWord.length) {\n    if (input[i] == dictionaryWord[j]) {\n      matches++;\n      i++;\n      j++;\n    } else if (input.codeUnitAt(i) < dictionaryWord.codeUnitAt(j)) {\n      i++;\n    } else {\n      j++;\n    }\n  }\n  int total = input.length + dictionaryWord.length;\n  if (total == 0) return 1.0;\n  return 2.0 * matches / total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_2285fc4955db",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(int cellCount, List<int> chargeCycles, int minTotalActive, int minConsecutivePairs) {\n  Set<int> degraded = {};\n  int numCycles = chargeCycles.length;\n  if (numCycles == 0 || cellCount <= 0) {\n    return degraded;\n  }\n  for (int cell = 0; cell < cellCount; cell++) {\n    int history = 0;\n    for (int j = 0; j < numCycles; j++) {\n      if (((chargeCycles[j] >> cell) & 1) == 1) {\n        history |= (1 << j);\n      }\n    }\n    int totalActive = 0;\n    int temp = history;\n    while (temp != 0) {\n      totalActive += temp & 1;\n      temp >>= 1;\n    }\n    int paired = history & (history >> 1);\n    int consecutivePairs = 0;\n    temp = paired;\n    while (temp != 0) {\n      consecutivePairs += temp & 1;\n      temp >>= 1;\n    }\n    if (totalActive >= minTotalActive && consecutivePairs >= minConsecutivePairs) {\n      degraded.add(cell);\n    }\n  }\n  return degraded;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_97decd4f7443",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const identifiers = <String>[\n    'alpha',\n    'beta',\n    'gamma',\n    'alpha',  \n    'delta',\n    'beta'    \n  ];\n\n  \n  final Map<Symbol, int> symbolIds = <Symbol, int>{};\n  var nextId = 0;\n\n  for (final id in identifiers) {\n    symbolIds.putIfAbsent(Symbol(id), () => nextId++);\n  }\n\n  print('=== Symbol table ===');\n  symbolIds.forEach((sym, id) {\n    \n    final name = sym.toString()\n                    .replaceAll('Symbol(\"', '')\n                    .replaceAll('\")', '');\n    print('identifier \"$name\" => id $id');\n  });\n\n  \n\n  print('\\nEquality check: #alpha == Symbol(\\'alpha\\') → ${#alpha == Symbol('alpha')}');\n\n  \n  final lookup = symbolIds[Symbol('beta')];\n  print('Lookup with a new Symbol(\\'beta\\') returned id $lookup');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_79bfe84158a3",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String input) {\n  if (input.isEmpty) return {};\n  final result = <String, int>{};\n  final entries = input.split(';');\n  for (var entry in entries) {\n    final trimmed = entry.trim();\n    if (trimmed.isEmpty) continue;\n    int colonIndex = trimmed.indexOf(':');\n    String name;\n    int quantity;\n    if (colonIndex == -1) {\n      name = trimmed;\n      quantity = 1;\n    } else {\n      name = trimmed.substring(0, colonIndex).trim();\n      String qStr = trimmed.substring(colonIndex + 1).trim();\n      if (qStr.isEmpty) {\n        quantity = 1;\n      } else {\n        int? parsed = int.tryParse(qStr);\n        if (parsed != null && parsed >= 0) {\n          quantity = parsed;\n        } else {\n          quantity = 1;\n        }\n      }\n    }\n    if (name.isEmpty) continue;\n    result[name] = (result[name] ?? 0) + quantity;\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6dfdaa80a5a8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> entries, int windowSize, int targetSum) {\n  if (entries.length < windowSize || windowSize <= 0) return [];\n  List<int> result = [];\n  int windowSum = 0;\n  for (int i = 0; i < entries.length; i++) {\n    windowSum += entries[i];\n    if (i >= windowSize) {\n      windowSum -= entries[i - windowSize];\n    }\n    if (i >= windowSize - 1 && windowSum == targetSum) {\n      result.add(i - windowSize + 1);\n    }\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_52260deec95d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(int deckSize, int step) {\n  int a = deckSize;\n  int b = step;\n  while (b != 0) {\n    int temp = b;\n    b = a % b;\n    a = temp;\n  }\n  int gcd = a;\n  return {\n    \"gcd\": gcd,\n    \"uniquePositions\": deckSize ~/ gcd,\n    \"cycleCount\": gcd,\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_96546ea01643",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> signals) {\n  int excellent = 0, good = 0, fair = 0, poor = 0, noSignal = 0;\n  for (int s in signals) {\n    if (s >= -50) {\n      excellent++;\n    } else if (s >= -60) {\n      good++;\n    } else if (s >= -70) {\n      fair++;\n    } else if (s >= -80) {\n      poor++;\n    } else {\n      noSignal++;\n    }\n  }\n  return 'Excellent: $excellent, Good: $good, Fair: $fair, Poor: $poor, NoSignal: $noSignal';\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_083954eb2fb3",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> packets) {\n  double avg(List<int> p, int start, int end) {\n    final count = end - start;\n    if (count == 0) return 0.0;\n    if (count == 1) return p[start].toDouble();\n    final mid = start + count ~/ 2;\n    final left = avg(p, start, mid);\n    final right = avg(p, mid, end);\n    return (left * (mid - start) + right * (end - mid)) / count;\n  }\n  return avg(packets, 0, packets.length);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_a348fccf3353",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nextension IntExtensions on int {\n  /// Returns true if the integer is even.\n  bool get isEven => this % 2 == 0;\n\n  /// Returns true if the integer is odd.\n  bool get isOdd => !isEven;\n\n  /// Square of the integer.\n  int get squared => this * this;\n\n  /// Runs [action] exactly `this` times, providing the current\n  /// 0-based index on each iteration.\n  void times(void Function(int index) action) {\n    for (var i = 0; i < this; i++) {\n      action(i);\n    }\n  }\n}\n\nextension StringExtensions on String {\n  /// Capitalizes the first character and returns a new string.\n  String capitalize() =>\n      isEmpty ? this : '${this[0].toUpperCase()}${substring(1)}';\n\n  /// Returns true if the string reads the same backward as forward.\n  bool get isPalindrome => this == split('').reversed.join();\n}\n\nextension NumListExtensions on List<num> {\n  /// Sum of all numeric elements in the list.\n  num get sum => fold<num>(0, (prev, element) => prev + element);\n\n  /// Average value of the elements in the list.\n  double get average => isEmpty ? 0 : sum / length;\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const number = 7;\n  print('$number is even?  => ${number.isEven}');\n  print('$number squared  => ${number.squared}');\n  print('\\nRunning an action $number times:');\n  number.times((i) => print('  iteration #$i'));\n\n  const raw = 'radar';\n  print('\\nRaw string        => \"$raw\"');\n  print('Capitalized       => \"${raw.capitalize()}\"');\n  print('Is palindrome?    => ${raw.isPalindrome}');\n\n  final values = [1, 2, 3, 4, 5];\n  print('\\nValues            => $values');\n  print('Sum               => ${values.sum}');\n  print('Average           => ${values.average}');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_1b1ea7b75cff",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> shelfCodes) {\n  final sorted = List<int>.from(shelfCodes);\n\n  int digit(int code, int divisor) {\n    return (code.abs() ~/ divisor) % 10;\n  }\n\n  sorted.sort((a, b) {\n    final shelfA = digit(a, 1);\n    final shelfB = digit(b, 1);\n    final overflowA = shelfA == 0 ? 1 : 0;\n    final overflowB = shelfB == 0 ? 1 : 0;\n    if (overflowA != overflowB) return overflowA - overflowB;\n\n    final roomA = digit(a, 1000);\n    final roomB = digit(b, 1000);\n    if (roomA != roomB) return roomA.compareTo(roomB);\n\n    final aisleA = digit(a, 100);\n    final aisleB = digit(b, 100);\n    final oddGroupA = aisleA.isOdd ? 0 : 1;\n    final oddGroupB = aisleB.isOdd ? 0 : 1;\n    if (oddGroupA != oddGroupB) return oddGroupA - oddGroupB;\n    if (aisleA != aisleB) {\n      return oddGroupA == 0 ? aisleA.compareTo(aisleB) : aisleB.compareTo(aisleA);\n    }\n\n    final bayA = digit(a, 10);\n    final bayB = digit(b, 10);\n    if (bayA != bayB) return bayA.compareTo(bayB);\n    if (shelfA != shelfB) return shelfB.compareTo(shelfA);\n    return a.compareTo(b);\n  });\n\n  return sorted;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f8e93c6852a8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(String instructions) {\n  List<double> stack = [];\n  for (int i = 0; i < instructions.length; i++) {\n    String c = instructions[i];\n    if (c == 'B') {\n      if (stack.isNotEmpty) stack.removeLast();\n    } else if (c == 'D') {\n      if (stack.isNotEmpty) stack.add(stack.last);\n    } else if (c == 'R') {\n      for (int l = 0, r = stack.length - 1; l < r; l++, r--) {\n        double temp = stack[l];\n        stack[l] = stack[r];\n        stack[r] = temp;\n      }\n    } else if (c == 'M' && stack.length >= 2) {\n      double b = stack.removeLast();\n      double a = stack.removeLast();\n      stack.add((a + b) / 2.0);\n    } else if (c == 'P' && stack.length >= 2) {\n      double b = stack.removeLast();\n      double a = stack.removeLast();\n      stack.add(a * b);\n    } else if (c == 'C' && stack.length >= 2) {\n      double b = stack.removeLast();\n      double a = stack.removeLast();\n      stack.addAll(a == b ? [a * 2.0] : [a, b]);\n    } else if (c == 'S' && stack.isNotEmpty) {\n      double sum = 0.0;\n      for (double v in stack) sum += v;\n      stack.clear();\n      stack.add(sum);\n    } else {\n      int code = c.codeUnitAt(0);\n      if (code >= 48 && code <= 57) stack.add((code - 48).toDouble());\n    }\n  }\n  if (stack.isEmpty) return 0.0;\n  double total = 0.0;\n  for (double v in stack) total += v;\n  return total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_8bf7f40ca356",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final List<int> items = [1, 2, 3, 4];\n  final int k = 2;\n\n  List<List<T>> combinations<T>(List<T> elements, int k) {\n    List<List<T>> result = [];\n    void combine(int start, List<T> current) {\n      if (current.length == k) {\n        result.add(List<T>.from(current));\n        return;\n      }\n      for (int i = start; i < elements.length; i++) {\n        current.add(elements[i]);\n        combine(i + 1, current);\n        current.removeLast();\n      }\n    }\n    combine(0, []);\n    return result;\n  }\n\n  List<List<int>> combs = combinations(items, k);\n  print('Combinations of $items taken $k at a time:');\n  for (var c in combs) {\n    print(c);\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_dda92f9b56cf",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> actions) {\n  List<int> stack = [];\n  int completedRounds = 0;\n  int totalScore = 0;\n  for (int action in actions) {\n    if (action > 0) {\n      stack.add(action);\n      if (stack.length >= 2) {\n        int d2 = stack.removeLast();\n        int d1 = stack.removeLast();\n        int sum = d1 + d2;\n        if (sum == 7 || sum == 11) {\n          completedRounds += 1;\n          totalScore += 15;\n        } else {\n          totalScore += sum;\n          stack.add(d1);\n          stack.add(d2);\n        }\n      }\n    } else if (action == 0 && stack.isNotEmpty) {\n      stack.removeLast();\n    }\n  }\n  int remaining = stack.length;\n  int finalScore = totalScore + (remaining ~/ 2);\n  return {\"completedRounds\": completedRounds, \"totalScore\": finalScore, \"remainingDice\": remaining};\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_29facc14bbd7",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<String> passwords) {\n  Map<int, int> frequency = {};\n  for (final pw in passwords) {\n    int satisfied = 0;\n    \n    if (pw.length >= 8) satisfied++;\n    \n    int upperCount = 0;\n    int digitCount = 0;\n    for (final code in pw.codeUnits) {\n      if (code >= 65 && code <= 90) {\n        upperCount++;\n      } else if (code >= 48 && code <= 57) {\n        digitCount++;\n      }\n    }\n    if (upperCount >= 2) satisfied++;\n    if (digitCount >= 2) satisfied++;\n    frequency[satisfied] = (frequency[satisfied] ?? 0) + 1;\n  }\n  final result = List.filled(4, 0);\n  for (final entry in frequency.entries) {\n    result[entry.key] = entry.value;\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_03890dcefaec",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> signals, int k) {\n  const binNames = [\"excellent\", \"good\", \"fair\", \"poor\", \"unusable\"];\n  const binMins = [-50, -60, -70, -80, -100];\n\n  int firstIndexLessThan(int threshold) {\n    int low = 0;\n    int high = signals.length;\n    while (low < high) {\n      int mid = (low + high) >> 1;\n      if (signals[mid] < threshold) {\n        high = mid;\n      } else {\n        low = mid + 1;\n      }\n    }\n    return low;\n  }\n\n  List<int> starts = List.filled(binNames.length, 0);\n  starts[0] = 0;\n  for (int i = 1; i < binNames.length; i++) {\n    starts[i] = firstIndexLessThan(binMins[i - 1]);\n  }\n\n  Map<String, int> result = {};\n  for (int i = 0; i < binNames.length; i++) {\n    int start = starts[i];\n    int end = (i == binNames.length - 1) ? signals.length - 1 : starts[i + 1] - 1;\n    int count = end - start + 1;\n    if (count >= k && k > 0) {\n      result[binNames[i]] = signals[start + k - 1];\n    } else {\n      result[binNames[i]] = -1;\n    }\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_0676ce351471",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  int n = 100;\n\n  List<bool> isPrime = List.filled(n + 1, true);\n  isPrime[0] = false; \n  isPrime[1] = false; \n\n  for (int i = 2; i * i <= n; i++) {\n    \n    if (isPrime[i]) {\n      \n      for (int j = i * i; j <= n; j += i) {\n        isPrime[j] = false;\n      }\n    }\n  }\n\n  List<int> primes = [];\n  for (int i = 2; i <= n; i++) {\n    if (isPrime[i]) {\n      primes.add(i);\n    }\n  }\n\n  print('Prime numbers up to $n:');\n  print(primes);\n  print('Total count of primes: ${primes.length}');\n\n  List<int> testNumbers = [17, 24, 29, 35, 47, 50, 73, 91, 97];\n  print('\\nPrimality test for specific numbers:');\n  for (int num in testNumbers) {\n    if (num <= n) {\n      print('$num is ${isPrime[num] ? \"prime\" : \"not prime\"}');\n    } else {\n      print('$num is outside the range (> $n)');\n    }\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_a507056ae077",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  for (var i = 1; i <= 10; i++) {\n    if (i % 2 != 0) {\n      print(\"$i is odd\");\n    } else {\n      print(\"$i is even\");\n    }\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_cc73707101e6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> digits) { if (digits.isEmpty) return []; final freq = <int, int>{}; for (final d in digits) { freq[d] = (freq[d] ?? 0) + 1; } int maxFreq = 0; freq.forEach((_, v) { if (v > maxFreq) maxFreq = v; }); final result = <int>[]; freq.forEach((k, v) { if (v == maxFreq) result.add(k); }); result.sort(); return result; }\n"
+    ]
+  },
+  {
+    "id": "sigless_9588ecf888b2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<String> entries) {\n  List<int> stack = [];\n  int balance = 0;\n  List<String> audit = [];\n  for (String e in entries) {\n    if (e == '[') {\n      stack.add(balance);\n      balance = 0;\n      audit.add('OPEN');\n    } else if (e == ']') {\n      int sub = balance;\n      int parent = stack.isEmpty ? 0 : stack.removeLast();\n      int result;\n      if (sub >= 0) {\n        result = parent + sub;\n      } else {\n        result = parent;\n      }\n      balance = result;\n      audit.add('CLOSE:net=$sub,result=$result');\n    } else if (e.startsWith('C:')) {\n      balance += int.parse(e.substring(2));\n    } else if (e.startsWith('D:')) {\n      balance -= int.parse(e.substring(2));\n    }\n  }\n  audit.add('FINAL:$balance');\n  return audit;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_4708b0b01b11",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(String origin, int k) {\n  int file = origin.codeUnitAt(0) - 97;\n  int rank = origin.codeUnitAt(1) - 49;\n  int low = 0;\n  int high = 7;\n  int d = 0;\n  while (low <= high) {\n    int mid = (low + high) ~/ 2;\n    int cnt = 0;\n    for (int f = 0; f < 8; f++) {\n      for (int r = 0; r < 8; r++) {\n        if ((f - file).abs() <= mid && (r - rank).abs() <= mid) cnt++;\n      }\n    }\n    if (cnt >= k) {\n      d = mid;\n      high = mid - 1;\n    } else {\n      low = mid + 1;\n    }\n  }\n  List<String> res = [];\n  for (int f = 0; f < 8; f++) {\n    for (int r = 0; r < 8; r++) {\n      if ((f - file).abs() <= d && (r - rank).abs() <= d) {\n        String sq = String.fromCharCode(97 + f) + (r + 1).toString();\n        res.add(sq);\n      }\n    }\n  }\n  res.sort();\n  return res.sublist(0, k);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_a4594aa05a9c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(List<int> ratings, int upsetThreshold, int minRating) {\n  int n = ratings.length;\n  if (n == 0) return <int>{};\n  if (n == 1) return {0};\n  List<Set<int>> current = List<Set<int>>.generate(n, (i) => {i});\n  while (current.length > 1) {\n    List<Set<int>> next = <Set<int>>[];\n    for (int i = 0; i < current.length; i += 2) {\n      Set<int> winners = <int>{};\n      for (int l in current[i]) {\n        for (int r in current[i + 1]) {\n          int rl = ratings[l];\n          int rr = ratings[r];\n          int diff = (rl - rr).abs();\n          if (rl == rr) {\n            winners.add(l);\n            winners.add(r);\n          } else if (rl > rr) {\n            winners.add(l);\n            if (diff <= upsetThreshold && rr >= minRating) {\n              winners.add(r);\n            }\n          } else {\n            winners.add(r);\n            if (diff <= upsetThreshold && rl >= minRating) {\n              winners.add(l);\n            }\n          }\n        }\n      }\n      next.add(winners);\n    }\n    current = next;\n  }\n  return current[0];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_0d23ec54c1ec",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(int votesA, int votesB) {\n  int totalVotes = votesA + votesB;\n  if (totalVotes <= 100) return false;\n  \n  int margin = votesA > votesB ? votesA - votesB : votesB - votesA;\n  if (margin < 2) return false;\n  if (margin == 2) return true;\n  if (margin % 2 == 0) return false;\n  \n  for (int i = 3; i * i <= margin; i += 2) {\n    if (margin % i == 0) return false;\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_2b4ce9b63420",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(List<String> rows) {\n  Set<int> signatures = {};\n  for (var row in rows) {\n    int sig = 0;\n    int pos = 1;\n    for (int i = 0; i < row.length; i++) {\n      if (row[i] != ' ') {\n        sig |= pos;\n      }\n      pos <<= 1;\n    }\n    signatures.add(sig);\n  }\n  return signatures;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d19512840646",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<String> codes, String prefix, int startNum) {\n  if (codes.isEmpty) {\n    return '${prefix}-${startNum.toString().padLeft(3, '0')}';\n  }\n  int low = 0;\n  int high = codes.length - 1;\n  int result = codes.length;\n  while (low <= high) {\n    int mid = low + (high - low) ~/ 2;\n    String code = codes[mid];\n    int actualNum = int.parse(code.substring(code.indexOf('-') + 1));\n    int expectedNum = startNum + mid;\n    if (actualNum > expectedNum) {\n      result = mid;\n      high = mid - 1;\n    } else {\n      low = mid + 1;\n    }\n  }\n  int missingNum = startNum + result;\n  return '${prefix}-${missingNum.toString().padLeft(3, '0')}';\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_254a6441f2f8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<String> logs) {\n  Map<String, Set<String>> serverErrors = {};\n  for (var line in logs) {\n    final parts = line.split(' ');\n    if (parts.length != 2) continue;\n    final server = parts[0];\n    final code = parts[1];\n    if (code == 'OK' || server.isEmpty) continue;\n    serverErrors.putIfAbsent(server, () => <String>{}).add(code);\n  }\n  final servers = serverErrors.keys.toList()..sort();\n  String best = 'NONE';\n  int bestCount = 0;\n  for (int i = 0; i < servers.length; i++) {\n    for (int j = i + 1; j < servers.length; j++) {\n      final s1 = servers[i];\n      final s2 = servers[j];\n      final count = serverErrors[s1]!.intersection(serverErrors[s2]!).length;\n      if (count > bestCount) {\n        bestCount = count;\n        best = '$s1-$s2';\n      } else if (count == bestCount && count > 0) {\n        final fn0 = '$s1-$s2';\n        if (fn0.compareTo(best) < 0) best = fn0;\n      }\n    }\n  }\n  return best;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bd2a15378da9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<List<int>> cells) {\n  if (cells.isEmpty) return 0.0;\n  int minSum = cells[0][0] + cells[0][1];\n  int maxSum = minSum;\n  int minDiff = cells[0][0] - cells[0][1];\n  int maxDiff = minDiff;\n  for (var cell in cells) {\n    int sum = cell[0] + cell[1];\n    int diff = cell[0] - cell[1];\n    if (sum < minSum) minSum = sum;\n    if (sum > maxSum) maxSum = sum;\n    if (diff < minDiff) minDiff = diff;\n    if (diff > maxDiff) maxDiff = diff;\n  }\n  int diameter = maxSum - minSum;\n  int diffSpan = maxDiff - minDiff;\n  if (diffSpan > diameter) diameter = diffSpan;\n  return diameter.toDouble();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_81915896d27e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<bool> modules) {\n  int left = 0;\n  int right = modules.length;\n  while (left < right) {\n    int mid = left + (right - left) ~/ 2;\n    if (modules[mid]) {\n      right = mid;\n    } else {\n      left = mid + 1;\n    }\n  }\n  return left;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_e1ba6073c24a",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> hashes, int maxLoad) {\n\n  \n\n  \n  final cap = maxLoad < 1 ? 1 : maxLoad;\n  final folded = <int>[];\n  for (final h in hashes) {\n    folded.add((h ^ (h >>> 16)) & 0xFFFF);\n  }\n  var n = 1;\n  while (true) {\n    final counts = List<int>.filled(n, 0);\n    final distinct = List<Set<int>>.generate(n, (_) => <int>{});\n    final mask = n - 1;\n    for (final h in folded) {\n      final idx = h & mask;\n      counts[idx]++;\n      distinct[idx].add(h);\n    }\n    var needSplit = false;\n    for (var i = 0; i < n; i++) {\n      if (counts[i] > cap && distinct[i].length > 1) {\n        needSplit = true;\n        break;\n      }\n    }\n    if (!needSplit || n >= 1 << 16) {\n      return counts;\n    }\n    n <<= 1;\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_3a3a9c12bb06",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<String> asciiRows) {\n  if (asciiRows.isEmpty || asciiRows.any((row) => row.isEmpty)) {\n    return 0;\n  }\n  int height = asciiRows.length;\n  int width = asciiRows[0].length;\n  for (var row in asciiRows) {\n    if (row.length != width) return 0;\n  }\n  int count = 0;\n  for (int y = 1; y < height - 1; y++) {\n    for (int x = 1; x < width - 1; x++) {\n      if (asciiRows[y][x] == '*') {\n        bool top = asciiRows[y - 1][x] != ' ';\n        bool bottom = asciiRows[y + 1][x] != ' ';\n        bool left = asciiRows[y][x - 1] != ' ';\n        bool right = asciiRows[y][x + 1] != ' ';\n        if (top && bottom && left && right) {\n          count++;\n        }\n      }\n    }\n  }\n  return count;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_288bf7a714e1",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<String> matches) {\n  final Map<String, int> losses = <String, int>{};\n  final Map<String, int> eliminatedAt = <String, int>{};\n  final Set<String> eliminated = <String>{};\n  final Set<String> seenMatches = <String>{};\n\n  for (final String raw in matches) {\n    final List<String> parts = raw.split('|');\n    if (parts.length != 3) {\n      continue;\n    }\n\n    final int? stage = int.tryParse(parts[0].trim());\n    final String winner = parts[1].trim();\n    final String loser = parts[2].trim();\n\n    if (stage == null || stage <= 0) {\n      continue;\n    }\n\n    if (winner.isEmpty || loser.isEmpty || winner == loser) {\n      continue;\n    }\n\n    final String signature = '$stage|$winner|$loser';\n    if (seenMatches.contains(signature)) {\n      continue;\n    }\n    seenMatches.add(signature);\n\n    if (eliminated.contains(winner) || eliminated.contains(loser)) {\n      continue;\n    }\n\n    losses[winner] = losses[winner] ?? 0;\n    losses[loser] = (losses[loser] ?? 0) + 1;\n\n    if (losses[loser] == 2) {\n      eliminated.add(loser);\n      eliminatedAt[loser] = stage;\n    }\n  }\n\n  return eliminatedAt;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_35088d24eba1",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(int issueDay, int validDuration, List<int> accessLog) {\n  List<int> validDays = [];\n  int endDay = issueDay + validDuration;\n  for (int day in accessLog) {\n    if (day > issueDay && day < endDay) {\n      int weekDay = day % 7;\n      if (weekDay != 5 && weekDay != 6) {\n        validDays.add(day);\n      }\n    }\n  }\n  return validDays;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_64a085399724",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> gridRows, int baseMask, int bitWidth) {\n  if (gridRows.isEmpty) return 0.0;\n  int widthMask = (1 << bitWidth) - 1;\n  int cleanMask = baseMask & widthMask;\n  int maskBits = 0;\n  for (int t = cleanMask; t != 0; t >>= 1) { maskBits += t & 1; }\n  if (maskBits == 0) return 0.0;\n  int totalMoist = 0;\n  for (int i = 0; i < gridRows.length; i++) {\n    int shift = i % bitWidth;\n    int rotatedMask = shift == 0 ? cleanMask :\n        ((cleanMask << shift) & widthMask) | (cleanMask >> (bitWidth - shift));\n    int overlap = gridRows[i] & rotatedMask;\n    for (int t = overlap; t != 0; t >>= 1) { totalMoist += t & 1; }\n  }\n  return totalMoist / (maskBits * gridRows.length);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d544567b9189",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n\n  final Map<int, Map<int, double>> graph = {\n    0: {1: 4, 2: 1},\n    1: {3: 1},\n    2: {1: 2, 3: 5},\n    3: {}\n  };\n\n  final int source = 0;\n\n  final Map<int, double> distances = {};\n  \n  final Map<int, int?> previous = {};\n  \n  final Set<int> visited = {};\n\n  for (var node in graph.keys) {\n    distances[node] = double.infinity;\n    previous[node] = null;\n  }\n  distances[source] = 0;\n\n  while (visited.length < graph.length) {\n    \n    int? u;\n    double minDist = double.infinity;\n    for (var node in graph.keys) {\n      if (!visited.contains(node) && distances[node]! < minDist) {\n        minDist = distances[node]!;\n        u = node;\n      }\n    }\n    \n    if (u == null) break;\n\n    visited.add(u);\n\n    for (var entry in graph[u]!.entries) {\n      var v = entry.key;\n      var weight = entry.value;\n      if (!visited.contains(v)) {\n        var alt = distances[u]! + weight;\n        if (alt < distances[v]!) {\n          distances[v] = alt;\n          previous[v] = u;\n        }\n      }\n    }\n  }\n\n  List<int> getPath(int target) {\n    var path = <int>[];\n    int? current = target;\n    while (current != null) {\n      path.insert(0, current);\n      current = previous[current];\n    }\n    return path;\n  }\n\n  for (var node in graph.keys) {\n    if (distances[node] == double.infinity) {\n      print('Node $node is unreachable from source $source.');\n    } else {\n      var path = getPath(node);\n      print(\n        'Shortest path from $source to $node: '\n        'distance = ${distances[node]}, path = $path'\n      );\n    }\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_73f9e7c2b2e2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(Map<String, int> perServing, int servings) {\n  final scaled = <String, int>{};\n  perServing.forEach((ingredient, amount) {\n    scaled[ingredient] = amount * servings;\n  });\n  final entries = scaled.entries.toList();\n  entries.sort((a, b) {\n    final cmp = b.value.compareTo(a.value);\n    if (cmp != 0) return cmp;\n    return a.key.compareTo(b.key);\n  });\n  return Map.fromEntries(entries);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_719577f723ab",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> packetSizes) {\n  int sumDev = 0;\n  int count = 0;\n  for (final size in packetSizes) {\n    if (size >= 64) {\n      sumDev += (size - 1500).abs();\n      count++;\n    }\n  }\n  return count == 0 ? 0.0 : sumDev / count;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_2f380f310be1",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(String isin) {\n  int j = 0, v = 0;\n  List<int> s = List.filled(24, 0);\n\n  for (int i = 0; i < 12; i++) {\n    int k = isin.codeUnitAt(i);\n    if (k >= '0'.codeUnitAt(0) && k <= '9'.codeUnitAt(0)) {\n      if (i < 2) return false;\n      s[j++] = k - '0'.codeUnitAt(0);\n    } else if (k >= 'A'.codeUnitAt(0) && k <= 'Z'.codeUnitAt(0)) {\n      if (i == 11) return false;\n      k -= 'A'.codeUnitAt(0) - 10;\n      s[j++] = k ~/ 10;\n      s[j++] = k % 10;\n    } else {\n      return false;\n    }\n  }\n\n  if (isin.length > 12) return false;\n\n  for (int i = j - 2; i >= 0; i -= 2) {\n    int k = 2 * s[i];\n    v += k > 9 ? k - 9 : k;\n  }\n\n  for (int i = j - 1; i >= 0; i -= 2) {\n    v += s[i];\n  }\n\n  return v % 10 == 0;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_cd4130196f1f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String bracket) {\n  final wins = <String, int>{};\n  final stack = <String>[];\n\n  for (var i = 0; i < bracket.length; i++) {\n    final ch = bracket[i];\n    if (ch == '(') {\n      stack.add('(');\n    } else if (ch == ')') {\n      final right = stack.removeLast();\n      final left = stack.removeLast();\n      stack.removeLast(); \n      final winner = left.codeUnitAt(0) >= right.codeUnitAt(0) ? left : right;\n      wins[winner] = (wins[winner] ?? 0) + 1;\n      stack.add(winner);\n    } else if (ch.compareTo('A') >= 0 && ch.compareTo('Z') <= 0) {\n      final player = ch;\n      wins.putIfAbsent(player, () => 0);\n      stack.add(player);\n    }\n  }\n\n  return wins;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_af300e5a0f21",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  List<int> arr = [12, 11, 13, 5, 6, 7];\n  print('Original array: $arr');\n\n  void heapify(List<int> arr, int n, int i) {\n    int largest = i;\n    int left = 2 * i + 1;\n    int right = 2 * i + 2;\n\n    if (left < n && arr[left] > arr[largest]) {\n      largest = left;\n    }\n\n    if (right < n && arr[right] > arr[largest]) {\n      largest = right;\n    }\n\n    if (largest != i) {\n      int temp = arr[i];\n      arr[i] = arr[largest];\n      arr[largest] = temp;\n      heapify(arr, n, largest);\n    }\n  }\n\n  int n = arr.length;\n  for (int i = n ~/ 2 - 1; i >= 0; i--) {\n    heapify(arr, n, i);\n  }\n\n  for (int i = n - 1; i > 0; i--) {\n    \n    int temp = arr[0];\n    arr[0] = arr[i];\n    arr[i] = temp;\n\n    heapify(arr, i, 0);\n  }\n\n  print('Sorted array: $arr');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_8c5d7927d750",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<String> rows) {\n  int totalScore = 0;\n  for (String row in rows) {\n    List<List<int>> stack = [];\n    for (int i = 0; i < row.length; i++) {\n      String ch = row[i];\n      if (ch == '[') {\n        stack.add([1, stack.length]);\n      } else if (ch == '{') {\n        stack.add([2, stack.length * 2]);\n      } else if (ch == ']' && stack.isNotEmpty && stack.last[0] == 1) {\n        totalScore += stack.removeLast()[1];\n      } else if (ch == '}' && stack.isNotEmpty && stack.last[0] == 2) {\n        totalScore += stack.removeLast()[1];\n      }\n    }\n  }\n  return totalScore;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c4383a715ff3",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> dailyMasks, int referenceMask) {\n  const int mask24 = 0xFFFFFF;\n\n  int rotateLeft24(int value, int shift) {\n    value &= mask24;\n    shift %= 24;\n    if (shift == 0) {\n      return value;\n    }\n    return ((value << shift) | (value >> (24 - shift))) & mask24;\n  }\n\n  int popcount(int value) {\n    value &= mask24;\n    int count = 0;\n    while (value != 0) {\n      value &= value - 1;\n      count++;\n    }\n    return count;\n  }\n\n  int transitionCount(int value) {\n    value &= mask24;\n    int rotated = rotateLeft24(value, 1);\n    return popcount(value ^ rotated);\n  }\n\n  if (dailyMasks.isEmpty) {\n    return 'empty';\n  }\n\n  referenceMask &= mask24;\n  List<String> parts = <String>[];\n\n  for (int day = 0; day < dailyMasks.length; day++) {\n    int current = dailyMasks[day] & mask24;\n    int bestShift = 0;\n    int bestDiff = 25;\n    int bestTransitions = 100;\n\n    for (int shift = 0; shift < 24; shift++) {\n      int rotated = rotateLeft24(current, shift);\n      int diff = popcount(rotated ^ referenceMask);\n      int transitions = transitionCount(rotated);\n\n      if (diff < bestDiff ||\n          (diff == bestDiff && transitions < bestTransitions) ||\n          (diff == bestDiff &&\n              transitions == bestTransitions &&\n              shift < bestShift)) {\n        bestDiff = diff;\n        bestTransitions = transitions;\n        bestShift = shift;\n      }\n    }\n\n    if (bestDiff == 0) {\n      parts.add('D$day@$bestShift');\n    } else {\n      parts.add('D$day@$bestShift:$bestDiff');\n    }\n  }\n\n  return parts.join(',');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bd986d86cebb",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<Map<String, int>> sessions) {\n  var valid = sessions.where((s) => s['start'] != s['end']).toList();\n  if (valid.isEmpty) return 0.0;\n  var partitioned = valid.fold<(List<Map<String, int>>, List<Map<String, int>>)>(\n    (<Map<String, int>>[], <Map<String, int>>[]),\n    (acc, s) => s['end']! > s['start']! \n        ? ([...acc.$1, s], acc.$2) \n        : (acc.$1, [...acc.$2, s]),\n  );\n  var chargeSessions = partitioned.$1;\n  var dischargeSessions = partitioned.$2;\n  var charged = chargeSessions.map((s) => s['end']! - s['start']!).fold(0, (a, b) => a + b);\n  var discharged = dischargeSessions.map((s) => s['start']! - s['end']!).fold(0, (a, b) => a + b);\n  if (charged == 0) return 0.0;\n  return discharged / charged;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bcebeb9e6334",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(List<List<int>> maze, int target) {\n  if (maze.isEmpty || maze[0].isEmpty) return false;\n  int rows = maze.length;\n  int cols = maze[0].length;\n  int left = 0;\n  int right = rows * cols - 1;\n  while (left <= right) {\n    int mid = left + ((right - left) ~/ 2);\n    int row = mid ~/ cols;\n    int col = mid % cols;\n    if (maze[row][col] == target) return true;\n    if (maze[row][col] < target) {\n      left = mid + 1;\n    } else {\n      right = mid - 1;\n    }\n  }\n  return false;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d705d736995d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> gridRows, int probeMask) {\n  final counts = <int>[];\n  for (var row in gridRows) {\n    var masked = row & probeMask;\n    var pop = 0;\n    while (masked != 0) {\n      masked &= masked - 1;\n      pop++;\n    }\n    counts.add(pop);\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b03a8afc1094",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(int team, int n, int matchResults, int playedMask) {\n  if (n < 2 || (n & (n - 1)) != 0) return false;\n  if (team < 1 || team > n) return false;\n  int leaf = n + team - 1;\n  while (leaf > 1) {\n    int parent = leaf >> 1;\n    int matchIndex = parent;\n    int bit = 1 << (matchIndex - 1);\n    if ((playedMask & bit) != 0) {\n      bool leftWon = (matchResults & bit) != 0;\n      if ((leaf & 1) == 0) {\n        if (!leftWon) return false;\n      } else {\n        if (leftWon) return false;\n      }\n    }\n    leaf = parent;\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_fa4972c4e52e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(List<String> logs) {\n  Map<String, int> counts = {};\n  for (String log in logs) {\n    List<String> parts = log.split(' ');\n    if (parts.isNotEmpty) {\n      String level = parts[0].replaceAll(':', '');\n      counts[level] = (counts[level] ?? 0) + 1;\n    }\n  }\n  List<String> result = counts.entries.map((e) => '${e.key}:${e.value}').toList();\n  result.sort();\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_993f7ab38cdd",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  String text = \"ABABDABACDABABCABAB\";\n  String pattern = \"ABABCABAB\";\n\n  List<int> computeLPS(String pattern) {\n    int m = pattern.length;\n    List<int> lps = List.filled(m, 0);\n    int len = 0;\n    int i = 1;\n    \n    while (i < m) {\n      if (pattern[i] == pattern[len]) {\n        len++;\n        lps[i] = len;\n        i++;\n      } else {\n        if (len != 0) {\n          len = lps[len - 1];\n        } else {\n          lps[i] = 0;\n          i++;\n        }\n      }\n    }\n    return lps;\n  }\n\n  List<int> kmpSearch(String text, String pattern) {\n    List<int> matches = [];\n    int n = text.length;\n    int m = pattern.length;\n    \n    if (m == 0) return matches;\n    \n    List<int> lps = computeLPS(pattern);\n    \n    int i = 0; \n    int j = 0; \n    \n    while (i < n) {\n      if (text[i] == pattern[j]) {\n        i++;\n        j++;\n      }\n      \n      if (j == m) {\n        matches.add(i - j);\n        j = lps[j - 1];\n      } else if (i < n && text[i] != pattern[j]) {\n        if (j != 0) {\n          j = lps[j - 1];\n        } else {\n          i++;\n        }\n      }\n    }\n    \n    return matches;\n  }\n\n  print(\"Text: $text\");\n  print(\"Pattern: $pattern\");\n  print(\"Pattern length: ${pattern.length}\");\n\n  List<int> lps = computeLPS(pattern);\n  print(\"\\nLPS array for pattern:\");\n  for (int i = 0; i < pattern.length; i++) {\n    print(\"  ${pattern[i]}: ${lps[i]}\");\n  }\n\n  List<int> matches = kmpSearch(text, pattern);\n  \n  print(\"\\nPattern found at indices: $matches\");\n\n  print(\"\\nVerification:\");\n  for (int index in matches) {\n    String matched = text.substring(index, index + pattern.length);\n    print(\"  At index $index: '$matched'\");\n  }\n\n  print(\"\\n--- Additional Test Cases ---\");\n\n  String text1 = \"AAABAAA\";\n  String pattern1 = \"AAA\";\n  List<int> matches1 = kmpSearch(text1, pattern1);\n  print(\"\\nText: '$text1', Pattern: '$pattern1'\");\n  print(\"Matches at: $matches1\");\n\n  String text2 = \"ABCDEFG\";\n  String pattern2 = \"XYZ\";\n  List<int> matches2 = kmpSearch(text2, pattern2);\n  print(\"\\nText: '$text2', Pattern: '$pattern2'\");\n  print(\"Matches at: $matches2\");\n\n  String text3 = \"AABAACAADAABAABA\";\n  String pattern3 = \"A\";\n  List<int> matches3 = kmpSearch(text3, pattern3);\n  print(\"\\nText: '$text3', Pattern: '$pattern3'\");\n  print(\"Matches at: $matches3\");\n\n  String text4 = \"AAAA\";\n  String pattern4 = \"AA\";\n  List<int> matches4 = kmpSearch(text4, pattern4);\n  print(\"\\nText: '$text4', Pattern: '$pattern4'\");\n  print(\"Matches at: $matches4\");\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_95105e48c1e8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  print('Yuletide holidays must be allowed in the following years:');\n  for (var year = 2008; year < 2121; year++) {\n    var date = DateTime(year, 12, 25);\n    if (date.weekday == DateTime.sunday) {\n      print(year);\n    }\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_9e128db660ea",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nBigInt fn0(BigInt n) {\n  if (n == BigInt.zero) {\n    return BigInt.one;\n  }\n\n  BigInt result = BigInt.one;\n  for (BigInt i = n; i > BigInt.zero; i = i - BigInt.one) {\n    result *= i;\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_949e6c11e478",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> itemFlags) {\n  int inStock = 0;\n  int fragileHazmat = 0;\n  int singleFlagCount = 0;\n  int allFlagsCount = 0;\n  int noFlagsCount = 0;\n  int xorChecksum = 0;\n  int zoneConflict = 0;\n\n  const int mask8 = 0xFF;\n  const int inStockBit = 1;\n  const int fragileBit = 2;\n  const int tempControlledBit = 4;\n  const int hazmatBit = 8;\n  const int backorderBit = 16;\n\n  for (int flags in itemFlags) {\n    int masked = flags & mask8;\n    xorChecksum ^= masked;\n\n    if ((masked & inStockBit) != 0) inStock++;\n    if ((masked & fragileBit) != 0 && (masked & hazmatBit) != 0) fragileHazmat++;\n    if (masked == mask8) allFlagsCount++;\n    if (masked == 0) noFlagsCount++;\n    if ((masked & tempControlledBit) != 0 && (masked & backorderBit) != 0) zoneConflict++;\n\n    if (masked != 0 && (masked & (masked - 1)) == 0) singleFlagCount++;\n  }\n\n  return {\n    'inStock': inStock,\n    'fragileHazmat': fragileHazmat,\n    'singleFlagCount': singleFlagCount,\n    'allFlagsCount': allFlagsCount,\n    'noFlagsCount': noFlagsCount,\n    'xorChecksum': xorChecksum,\n    'zoneConflict': zoneConflict,\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_55cc112cbb2c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> manifest) {\n  final seen = <int>{};\n  final duplicates = <int>{};\n  for (final item in manifest) {\n    if (!seen.add(item)) {\n      duplicates.add(item);\n    }\n  }\n  return seen.length - duplicates.length;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c45cfc4290f2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0(List<String> args) {\n  final int n = args.isNotEmpty ? int.tryParse(args[0]) ?? 20 : 20;\n  if (n < 0) {\n    print('Please provide a non-negative integer (e.g., \"dart run main.dart 20\").');\n    return;\n  }\n\n  final Map<int, BigInt> memo = {0: BigInt.zero, 1: BigInt.one};\n\n  BigInt fib(int k) {\n    final cached = memo[k];\n    if (cached != null) return cached;\n    final value = fib(k - 1) + fib(k - 2);\n    memo[k] = value;\n    return value;\n  }\n\n  for (int i = 0; i <= n; i++) {\n    print('F($i) = ${fib(i)}');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d1f52bab434e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(String password) {\n  final repeats = <int>{};\n  if (password.length < 2) {\n    return repeats;\n  }\n  for (var i = 1; i < password.length; i++) {\n    final prev = password[i - 1].toLowerCase();\n    final curr = password[i].toLowerCase();\n    if (prev == curr) {\n      repeats.add(i + 1);\n    }\n  }\n  return repeats;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_696808df1978",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<bool> modules) {\n  final runs = <int>[];\n  var count = 0;\n  for (final m in modules) {\n    if (m) { count++; continue; }\n    if (count > 0) { runs.add(count); count = 0; }\n  }\n  if (count > 0) runs.add(count);\n  return runs.join(',');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_840847bedc74",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<List<int>> greenPhaseGrid, int time) {\n  int count = 0;\n  for (final row in greenPhaseGrid) {\n    for (final phase in row) {\n      final cycle = 2 * phase + 3;\n      if (time % cycle < phase) {\n        count++;\n      }\n    }\n  }\n  return count;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_eee05f5f93cc",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(Map<String, int> dailyLimits, List<String> shipments) {\n  final counts = <String, int>{};\n  for (final item in shipments) {\n    final limit = dailyLimits[item];\n    if (limit == null) return false;\n    final current = (counts[item] ?? 0) + 1;\n    if (current > limit) return false;\n    counts[item] = current;\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d61f01ff1856",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<double> amounts) {\n  Map<String, int> counts = {};\n  for (double amount in amounts) {\n    if (amount <= 0) {\n      continue;\n    }\n    double scaled = amount * 4;\n    int roundedScaled;\n    double frac = scaled - scaled.floor();\n    if (frac < 0.5) {\n      roundedScaled = scaled.floor();\n    } else {\n      roundedScaled = scaled.ceil();\n    }\n    double rounded = roundedScaled / 4.0;\n    String key = rounded.toStringAsFixed(2);\n    if (counts.containsKey(key)) {\n      counts[key] = counts[key]! + 1;\n    } else {\n      counts[key] = 1;\n    }\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_79a8dd260f8c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\n/// Simulates a basic in-app A/B testing mechanism.\n/// Assigns users randomly to group 'A' or 'B' and prints the variant to show.\n///\n/// In a real app, you'd persist the assignment per-user and report analytics.\n/// This script demonstrates the core random assignment and variant logic.\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n\n  final userId = Random(0).nextInt(1000000);\n\n  \n  int hashUserId(int id) {\n    \n    int hash = id ^ (id >> 16);\n    return hash & 0x7FFFFFFF;\n  }\n\n  String assignVariant(int id) {\n    int hash = hashUserId(id);\n    return (hash % 2 == 0) ? 'A' : 'B';\n  }\n\n  void showVariant(String variant) {\n    if (variant == 'A') {\n      print('User #$userId assigned to VARIANT A: Show blue button.');\n    } else {\n      print('User #$userId assigned to VARIANT B: Show green button.');\n    }\n  }\n\n  final variant = assignVariant(userId);\n  showVariant(variant);\n\n  \n\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5628428fcb9e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> trainMinutes, int windowSize) {\n  if (trainMinutes.isEmpty || windowSize <= 0) return 0;\n  final freq = <int, int>{};\n  for (final m in trainMinutes) {\n    freq[m] = (freq[m] ?? 0) + 1;\n  }\n  final sortedMinutes = freq.keys.toList()..sort();\n  final counts = <int>[];\n  for (final m in sortedMinutes) {\n    counts.add(freq[m]!);\n  }\n  int total = 0;\n  int right = 0;\n  int windowSum = 0;\n  for (int left = 0; left < sortedMinutes.length; left++) {\n    if (right < left) {\n      right = left;\n      windowSum = 0;\n    }\n    while (right < sortedMinutes.length &&\n        sortedMinutes[right] < sortedMinutes[left] + windowSize) {\n      windowSum += counts[right];\n      right++;\n    }\n    total += windowSum;\n    windowSum -= counts[left];\n  }\n  return total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_459decc7079c",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:typed_data';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  bool isLittleEndian = _detectHostEndianness();\n  print('Host system is ${isLittleEndian ? 'little-endian' : 'big-endian'}');\n\n  int value = 0x12345678;\n\n  List<int> littleEndianBytes = _intToBytes(value, Endian.little);\n  print('Little-endian bytes: ${littleEndianBytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ')}');\n\n  List<int> bigEndianBytes = _intToBytes(value, Endian.big);\n  print('Big-endian bytes: ${bigEndianBytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ')}');\n\n  int fromLittle = _bytesToInt(littleEndianBytes, Endian.little);\n  print('Value from little-endian bytes: 0x${fromLittle.toRadixString(16)}');\n\n  int fromBig = _bytesToInt(bigEndianBytes, Endian.big);\n  print('Value from big-endian bytes: 0x${fromBig.toRadixString(16)}');\n\n  List<int> swapped = _swapEndianness(littleEndianBytes);\n  print('Swapped from little to big: ${swapped.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ')}');\n}\n\nbool _detectHostEndianness() {\n  Uint8List bytes = Uint8List(2);\n  ByteData byteData = ByteData.view(bytes.buffer);\n  byteData.setUint16(0, 1, Endian.little); \n  \n  return bytes[0] == 1;\n}\n\nList<int> _intToBytes(int value, Endian endian) {\n  Uint8List bytes = Uint8List(4);\n  ByteData byteData = ByteData.view(bytes.buffer);\n  byteData.setInt32(0, value, endian);\n  return bytes;\n}\n\nint _bytesToInt(List<int> bytes, Endian endian) {\n  if (bytes.length != 4) throw ArgumentError('Must be 4 bytes');\n  Uint8List uint8List = Uint8List.fromList(bytes);\n  ByteData byteData = ByteData.view(uint8List.buffer);\n  return byteData.getInt32(0, endian);\n}\n\nList<int> _swapEndianness(List<int> bytes) {\n  if (bytes.length != 4) throw ArgumentError('Must be 4 bytes');\n  return bytes.reversed.toList();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_897c175fe34d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> crateWeights, int maxItemsPerManifest) {\n  int n = crateWeights.length;\n  if (n == 0) {\n    return 0;\n  }\n\n  List<int> dp = List<int>.filled(n + 1, 1 << 30);\n  dp[0] = 0;\n\n  for (int i = 1; i <= n; i++) {\n    int currentMax = 0;\n    int currentSum = 0;\n\n    for (int size = 1; size <= maxItemsPerManifest && size <= i; size++) {\n      int weight = crateWeights[i - size];\n      if (weight > currentMax) {\n        currentMax = weight;\n      }\n\n      currentSum += weight;\n      int capacity = currentMax * size;\n      int waste = capacity - currentSum;\n\n      int fn0 = dp[i - size] + waste;\n      if (fn0 < dp[i]) {\n        dp[i] = fn0;\n      }\n    }\n  }\n\n  return dp[n];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f9772127b371",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const permissions = {\n    'read': 1,\n    'write': 2,\n    'delete': 4,\n    'admin': 8,\n  };\n\n  final roles = {\n    'viewer': ['read'],\n    'editor': ['read', 'write'],\n    'moderator': ['read', 'write', 'delete'],\n    'admin': ['read', 'write', 'delete', 'admin'],\n  };\n\n  final users = {\n    'alice': 'admin',\n    'bob': 'editor',\n    'charlie': 'viewer',\n    'diana': 'moderator',\n  };\n\n  final resources = {\n    'document1': ['read'],\n    'document2': ['read', 'write'],\n    'sensitive_data': ['read', 'admin'],\n    'user_management': ['admin'],\n    'content_moderation': ['delete'],\n  };\n\n  int getRolePermissions(String role) {\n    if (!roles.containsKey(role)) return 0;\n    \n    int permissionMask = 0;\n    for (String perm in roles[role]!) {\n      permissionMask |= permissions[perm] ?? 0;\n    }\n    return permissionMask;\n  }\n\n  int getResourceRequirements(String resource) {\n    if (!resources.containsKey(resource)) return 0;\n    \n    int requiredMask = 0;\n    for (String perm in resources[resource]!) {\n      requiredMask |= permissions[perm] ?? 0;\n    }\n    return requiredMask;\n  }\n\n  bool hasAccess(String username, String resource) {\n    if (!users.containsKey(username)) {\n      print('  ❌ User \"$username\" not found');\n      return false;\n    }\n    \n    String userRole = users[username]!;\n    int userPermissions = getRolePermissions(userRole);\n    int requiredPermissions = getResourceRequirements(resource);\n\n    return (userPermissions & requiredPermissions) == requiredPermissions;\n  }\n\n  void displayUserPermissions(String username) {\n    if (!users.containsKey(username)) {\n      print('User \"$username\" not found\\n');\n      return;\n    }\n    \n    String userRole = users[username]!;\n    int userPermissions = getRolePermissions(userRole);\n    \n    print('User: $username');\n    print('Role: $userRole');\n    print('Permissions:');\n    \n    permissions.forEach((permName, permValue) {\n      if ((userPermissions & permValue) != 0) {\n        print('  ✓ $permName');\n      } else {\n        print('  ✗ $permName');\n      }\n    });\n    print('');\n  }\n\n  void attemptAction(String username, String action, String resource) {\n    print('$username attempts to $action \"$resource\"...');\n\n    final actionPermissions = {\n      'view': ['read'],\n      'edit': ['write'],\n      'remove': ['delete'],\n      'manage': ['admin'],\n    };\n    \n    if (!actionPermissions.containsKey(action)) {\n      print('  ❌ Unknown action: $action\\n');\n      return;\n    }\n\n    if (!users.containsKey(username)) {\n      print('  ❌ User not found\\n');\n      return;\n    }\n\n    if (!resources.containsKey(resource)) {\n      print('  ❌ Resource not found\\n');\n      return;\n    }\n\n    String userRole = users[username]!;\n    int userPermissions = getRolePermissions(userRole);\n    \n    bool canPerformAction = true;\n    for (String requiredPerm in actionPermissions[action]!) {\n      int permValue = permissions[requiredPerm] ?? 0;\n      if ((userPermissions & permValue) == 0) {\n        canPerformAction = false;\n        break;\n      }\n    }\n\n    if (canPerformAction && hasAccess(username, resource)) {\n      print('  ✅ Access GRANTED (Role: $userRole)\\n');\n    } else {\n      print('  ❌ Access DENIED (Insufficient permissions)\\n');\n    }\n  }\n\n  print('=== Role-Based Access Control System ===\\n');\n  \n  print('--- User Permissions Overview ---\\n');\n  for (String user in users.keys) {\n    displayUserPermissions(user);\n  }\n  \n  print('--- Access Control Tests ---\\n');\n\n  attemptAction('alice', 'view', 'document1');\n  attemptAction('alice', 'manage', 'user_management');\n  attemptAction('bob', 'edit', 'document2');\n  attemptAction('bob', 'manage', 'user_management');\n  attemptAction('charlie', 'view', 'document1');\n  attemptAction('charlie', 'edit', 'document2');\n  attemptAction('diana', 'remove', 'content_moderation');\n  attemptAction('diana', 'manage', 'user_management');\n  \n  print('--- Resource Access Matrix ---\\n');\n\n  print('User/Resource Access Matrix:');\n  print('-' * 70);\n\n  String header = 'User'.padRight(12);\n  for (String resource in resources.keys) {\n    header += resource.padRight(20);\n  }\n  print(header);\n  print('-' * 70);\n\n  for (String user in users.keys) {\n    String row = user.padRight(12);\n    for (String resource in resources.keys) {\n      if (hasAccess(user, resource)) {\n        row += '✅'.padRight(20);\n      } else {\n        row += '❌'.padRight(20);\n      }\n    }\n    print(row);\n  }\n  \n  print('\\n--- Permission Inheritance Demo ---\\n');\n\n  print('Role Hierarchy:');\n  print('  Admin    -> [read, write, delete, admin]');\n  print('  Moderator -> [read, write, delete]');\n  print('  Editor   -> [read, write]');\n  print('  Viewer   -> [read]\\n');\n\n  print('--- Permission Elevation Scenario ---\\n');\n  \n  String testUser = 'bob';\n  print('Current role for $testUser: ${users[testUser]}');\n  print('Attempting to access admin resource...');\n  if (hasAccess(testUser, 'user_management')) {\n    print('  ✅ Access granted\\n');\n  } else {\n    print('  ❌ Access denied\\n');\n  }\n  \n  print('Elevating $testUser to admin role...');\n  users[testUser] = 'admin';\n  print('New role for $testUser: ${users[testUser]}');\n  print('Attempting to access admin resource again...');\n  if (hasAccess(testUser, 'user_management')) {\n    print('  ✅ Access granted\\n');\n  } else {\n    print('  ❌ Access denied\\n');\n  }\n\n  users[testUser] = 'editor';\n  \n  print('--- Audit Log ---\\n');\n\n  final auditLog = [\n    {'timestamp': '2024-01-01 10:00:00', 'user': 'alice', 'action': 'CREATE', 'resource': 'document1', 'status': 'SUCCESS'},\n    {'timestamp': '2024-01-01 10:05:00', 'user': 'bob', 'action': 'EDIT', 'resource': 'document2', 'status': 'SUCCESS'},\n    {'timestamp': '2024-01-01 10:10:00', 'user': 'charlie', 'action': 'DELETE', 'resource': 'document1', 'status': 'DENIED'},\n    {'timestamp': '2024-01-01 10:15:00', 'user': 'diana', 'action': 'DELETE', 'resource': 'content_moderation', 'status': 'SUCCESS'},\n  ];\n  \n  print('Recent Access Attempts:');\n  for (var entry in auditLog) {\n    String status = entry['status'] == 'SUCCESS' ? '✅' : '❌';\n    print('  $status [${entry['timestamp']}] ${entry['user']} -> ${entry['action']} ${entry['resource']}');\n  }\n  \n  print('\\n=== System Summary ===');\n  print('Total Users: ${users.length}');\n  print('Total Roles: ${roles.length}');\n  print('Total Resources: ${resources.length}');\n  print('Total Permissions: ${permissions.length}');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_e087cd483fa1",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  int value = 0x12345678;\n  \n  print('Original value: 0x${value.toRadixString(16).toUpperCase()}');\n  print('Binary: ${value.toRadixString(2).padLeft(32, '0')}');\n  print('');\n\n  List<int> toBigEndianBytes(int value) {\n    return [\n      (value >> 24) & 0xFF,\n      (value >> 16) & 0xFF,\n      (value >> 8) & 0xFF,\n      value & 0xFF,\n    ];\n  }\n\n  List<int> toLittleEndianBytes(int value) {\n    return [\n      value & 0xFF,\n      (value >> 8) & 0xFF,\n      (value >> 16) & 0xFF,\n      (value >> 24) & 0xFF,\n    ];\n  }\n\n  int fromBigEndianBytes(List<int> bytes) {\n    return (bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | bytes[3];\n  }\n\n  int fromLittleEndianBytes(List<int> bytes) {\n    return (bytes[3] << 24) | (bytes[2] << 16) | (bytes[1] << 8) | bytes[0];\n  }\n\n  int swap32(int value) {\n    return ((value & 0xFF) << 24) |\n           ((value & 0xFF00) << 8) |\n           ((value & 0xFF0000) >> 8) |\n           ((value >> 24) & 0xFF);\n  }\n\n  int swap16(int value) {\n    return ((value & 0xFF) << 8) | ((value >> 8) & 0xFF);\n  }\n\n  bool isLittleEndian() {\n    var bytes = toLittleEndianBytes(0x01020304);\n    return bytes[0] == 0x04;\n  }\n\n  print('Big Endian Operations:');\n  print('=' * 30);\n  var bigEndianBytes = toBigEndianBytes(value);\n  print('To bytes: [${bigEndianBytes.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n  var reconstructedBE = fromBigEndianBytes(bigEndianBytes);\n  print('From bytes: 0x${reconstructedBE.toRadixString(16).toUpperCase()}');\n  print('');\n\n  print('Little Endian Operations:');\n  print('=' * 30);\n  var littleEndianBytes = toLittleEndianBytes(value);\n  print('To bytes: [${littleEndianBytes.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n  var reconstructedLE = fromLittleEndianBytes(littleEndianBytes);\n  print('From bytes: 0x${reconstructedLE.toRadixString(16).toUpperCase()}');\n  print('');\n\n  print('Endianness Swapping:');\n  print('=' * 30);\n  var swapped32 = swap32(value);\n  print('32-bit swap of 0x${value.toRadixString(16).toUpperCase()}: 0x${swapped32.toRadixString(16).toUpperCase()}');\n  var swappedBack = swap32(swapped32);\n  print('Swap back: 0x${swappedBack.toRadixString(16).toUpperCase()}');\n  \n  int value16 = 0xABCD;\n  var swapped16 = swap16(value16);\n  print('16-bit swap of 0x${value16.toRadixString(16).toUpperCase()}: 0x${swapped16.toRadixString(16).toUpperCase()}');\n  print('');\n\n  print('System Information:');\n  print('=' * 30);\n  print('System is ${isLittleEndian() ? \"Little Endian\" : \"Big Endian\"}');\n  print('');\n\n  print('Network Byte Order Example:');\n  print('=' * 30);\n  int port = 8080;\n  print('Host port: $port');\n\n  var networkBytes = [(port >> 8) & 0xFF, port & 0xFF];\n  print('Network bytes: [${networkBytes.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n\n  int hostPort = (networkBytes[0] << 8) | networkBytes[1];\n  print('Back to host: $hostPort');\n  print('');\n\n  print('Float Endianness Example:');\n  print('=' * 30);\n  double floatValue = 3.14159;\n\n  var buffer = List<int>.filled(8, 0);\n  var floatBits = floatValue.toString(); \n  print('Float value: $floatValue');\n\n  int floatAsInt = 0x40490FDB; \n  var floatBE = toBigEndianBytes(floatAsInt);\n  var floatLE = toLittleEndianBytes(floatAsInt);\n  \n  print('As Big Endian bytes: [${floatBE.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n  print('As Little Endian bytes: [${floatLE.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n  print('');\n\n  print('Array Endianness Conversion:');\n  print('=' * 30);\n  List<int> data = [0x1234, 0x5678, 0xABCD, 0xEF01];\n  print('Original 16-bit values: [${data.map((v) => '0x${v.toRadixString(16).toUpperCase()}').join(', ')}]');\n  \n  List<int> swappedData = data.map((v) => swap16(v)).toList();\n  print('Swapped values: [${swappedData.map((v) => '0x${v.toRadixString(16).toUpperCase()}').join(', ')}]');\n\n  List<int> byteStream = [];\n  for (var val in data) {\n    byteStream.add((val >> 8) & 0xFF);\n    byteStream.add(val & 0xFF);\n  }\n  print('Byte stream (BE): [${byteStream.map((b) => '0x${b.toRadixString(16).toUpperCase().padLeft(2, '0')}').join(', ')}]');\n\n  List<int> reconstructed = [];\n  for (int i = 0; i < byteStream.length; i += 2) {\n    reconstructed.add((byteStream[i] << 8) | byteStream[i + 1]);\n  }\n  print('Reconstructed: [${reconstructed.map((v) => '0x${v.toRadixString(16).toUpperCase()}').join(', ')}]');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c8721da111a6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:collection';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  List<Set<String>> transactions = [\n    {'Milk', 'Bread', 'Butter'},\n    {'Bread', 'Butter'},\n    {'Milk', 'Bread'},\n    {'Milk', 'Butter'},\n    {'Milk', 'Bread', 'Butter'},\n    {'Bread'},\n  ];\n\n  double minSupport = 0.5; \n  int totalTransactions = transactions.length;\n  int minSupportCount = (minSupport * totalTransactions).ceil();\n\n  Map<Set<String>, int> itemSupport = {};\n  for (var transaction in transactions) {\n    for (var item in transaction) {\n      Set<String> itemSet = {item};\n      itemSupport[itemSet] = (itemSupport[itemSet] ?? 0) + 1;\n    }\n  }\n\n  List<Set<String>> frequentItemsets = [];\n  Map<int, List<Set<String>>> frequentBySize = {};\n  List<Set<String>> prevFrequent = itemSupport.entries\n      .where((entry) => entry.value >= minSupportCount)\n      .map((entry) => entry.key)\n      .toList();\n  frequentItemsets.addAll(prevFrequent);\n  frequentBySize[1] = prevFrequent;\n\n  List<Set<String>> generateCandidates(List<Set<String>> prevFrequent, int k) {\n    List<Set<String>> candidates = [];\n    for (int i = 0; i < prevFrequent.length; i++) {\n      for (int j = i + 1; j < prevFrequent.length; j++) {\n        List<String> list1 = prevFrequent[i].toList()..sort();\n        List<String> list2 = prevFrequent[j].toList()..sort();\n        bool canJoin = true;\n        for (int m = 0; m < k - 2; m++) {\n          if (list1[m] != list2[m]) {\n            canJoin = false;\n            break;\n          }\n        }\n        if (canJoin && list1[k - 2] != list2[k - 2]) {\n          Set<String> newCandidate = Set.from(list1)..add(list2[k - 2]);\n          candidates.add(newCandidate);\n        }\n      }\n    }\n    return candidates;\n  }\n\n  Map<Set<String>, int> countSupport(List<Set<String>> candidates, List<Set<String>> transactions) {\n    Map<Set<String>, int> support = {};\n    for (var fn0 in candidates) {\n      support[fn0] = 0;\n      for (var transaction in transactions) {\n        if (transaction.containsAll(fn0)) {\n          support[fn0] = support[fn0]! + 1;\n        }\n      }\n    }\n    return support;\n  }\n\n  int k = 2;\n  while (prevFrequent.isNotEmpty) {\n    List<Set<String>> candidates = generateCandidates(prevFrequent, k);\n    Map<Set<String>, int> support = countSupport(candidates, transactions);\n    prevFrequent = support.entries\n        .where((entry) => entry.value >= minSupportCount)\n        .map((entry) => entry.key)\n        .toList();\n    if (prevFrequent.isNotEmpty) {\n      frequentItemsets.addAll(prevFrequent);\n      frequentBySize[k] = prevFrequent;\n    }\n    k++;\n  }\n\n  double minConfidence = 0.7;\n  List<String> rules = [];\n  for (var itemset in frequentItemsets) {\n    if (itemset.length < 2) continue;\n    \n    for (int i = 1; i < (1 << itemset.length) - 1; i++) { \n      Set<String> antecedent = {};\n      Set<String> consequent = Set.from(itemset);\n      List<String> items = itemset.toList();\n      for (int j = 0; j < items.length; j++) {\n        if ((i & (1 << j)) != 0) {\n          antecedent.add(items[j]);\n          consequent.remove(items[j]);\n        }\n      }\n      if (antecedent.isEmpty || consequent.isEmpty) continue;\n\n      int suppAntecedent = 0;\n      int suppItemset = 0;\n      for (var t in transactions) {\n        if (t.containsAll(antecedent)) suppAntecedent++;\n        if (t.containsAll(itemset)) suppItemset++;\n      }\n      double confidence = suppItemset / suppAntecedent;\n      if (confidence >= minConfidence) {\n        rules.add('${antecedent.join(\", \")} => ${consequent.join(\", \")} (support: ${suppItemset / totalTransactions}, confidence: $confidence)');\n      }\n    }\n  }\n\n  print('Frequent Itemsets:');\n  for (var itemset in frequentItemsets) {\n    print(itemset);\n  }\n  print('\\nAssociation Rules:');\n  for (var rule in rules) {\n    print(rule);\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_39b2bb878943",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> visibility) {\n  int n = visibility.length;\n  if (n == 0) return [];\n  if (n == 1) return [0];\n  List<int> dp = List<int>.filled(n, 0);\n  List<List<int>> prev = List<List<int>>.filled(n, []);\n  dp[0] = visibility[0];\n  prev[0] = [0];\n  dp[1] = visibility[0] > visibility[1] ? visibility[0] : visibility[1];\n  prev[1] = visibility[0] > visibility[1] ? [0] : [1];\n  for (int i = 2; i < n; i++) {\n    int skip = dp[i - 1];\n    int take = dp[i - 2] + visibility[i];\n    if (take > skip) {\n      dp[i] = take;\n      prev[i] = List<int>.from(prev[i - 2])..add(i);\n    } else {\n      dp[i] = skip;\n      prev[i] = List<int>.from(prev[i - 1]);\n    }\n  }\n  return prev[n - 1];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_fc85f3ba4f9a",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  String jsonString = '''\n  {\n    \"users\": [\n      {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"age\": 30\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Jane Smith\",\n        \"email\": \"jane@example.com\",\n        \"age\": 25\n      }\n    ]\n  }\n  ''';\n\n  Map<String, dynamic> importedData = jsonDecode(jsonString);\n\n  List<dynamic> users = importedData['users'];\n\n  print('Imported data from JSON:');\n  for (var user in users) {\n    print('ID: ${user['id']}, Name: ${user['name']}, Email: ${user['email']}, Age: ${user['age']}');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_877a173b0a13",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> packetSizes, int limit) {\n  int left = 0;\n  int right = packetSizes.length - 1;\n  int bestIndex = -1;\n\n  while (left <= right) {\n    int mid = (left + right) ~/ 2;\n    if (packetSizes[mid] <= limit) {\n      bestIndex = mid;\n      left = mid + 1;\n    } else {\n      right = mid - 1;\n    }\n  }\n\n  return {\n    'index': bestIndex,\n    'size': bestIndex == -1 ? -1 : packetSizes[bestIndex]\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f35b198c6f09",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  List<int> arr = [4, 2, 2, 8, 3, 3, 1];\n\n  if (arr.isEmpty) {\n    print('Sorted array: []');\n    return;\n  }\n\n  int minVal = arr[0];\n  int maxVal = arr[0];\n  for (var v in arr) {\n    if (v < minVal) minVal = v;\n    if (v > maxVal) maxVal = v;\n  }\n\n  int range = maxVal - minVal + 1;\n  List<int> count = List<int>.filled(range, 0);\n  for (var v in arr) {\n    count[v - minVal]++;\n  }\n\n  List<int> sorted = <int>[];\n  for (int i = 0; i < range; i++) {\n    for (int j = 0; j < count[i]; j++) {\n      sorted.add(i + minVal);\n    }\n  }\n\n  print('Original array: $arr');\n  print('Sorted array:   $sorted');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f12cc1905252",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(int x, int y, int cx, int cy, int innerRadius, int outerRadius) {\n  if (innerRadius < 0 || outerRadius < 0) return false;\n  if (innerRadius >= outerRadius) return false;\n  int manhattanDist = (x - cx).abs() + (y - cy).abs();\n  return manhattanDist > innerRadius && manhattanDist <= outerRadius;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_2d693beca98e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> shelfXs, List<int> shelfYs) {\n  if (shelfXs.isEmpty || shelfYs.isEmpty) {\n    return 0.0;\n  }\n  int minX = shelfXs[0];\n  int maxX = shelfXs[0];\n  int minY = shelfYs[0];\n  int maxY = shelfYs[0];\n  for (int i = 1; i < shelfXs.length; i++) {\n    if (shelfXs[i] < minX) minX = shelfXs[i];\n    if (shelfXs[i] > maxX) maxX = shelfXs[i];\n    if (shelfYs[i] < minY) minY = shelfYs[i];\n    if (shelfYs[i] > maxY) maxY = shelfYs[i];\n  }\n  return ((maxX - minX) * (maxY - minY)).toDouble();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_ca1164247b57",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String maze) {\n  Map<String, int> counts = {};\n  if (maze.isEmpty) return counts;\n\n  List<String> rawRows = maze.replaceAll('\\r', '').split('\\n');\n  List<String> rows = rawRows.where((r) => r.isNotEmpty).toList();\n  int numRows = rows.length;\n  if (numRows < 3) return counts;\n\n  List<List<String>> grid = [];\n  int numCols = -1;\n  for (String row in rows) {\n    List<String> cells = row.split('|');\n    if (numCols == -1) numCols = cells.length;\n    if (cells.length == numCols) grid.add(cells);\n  }\n\n  if (numCols < 3) return counts;\n\n  for (int r = 1; r < numRows - 1; r++) {\n    for (int c = 1; c < numCols - 1; c++) {\n      String cell = grid[r][c];\n      if (cell == '.') continue;\n\n      bool adjacent = grid[r - 1][c] == '.' ||\n          grid[r + 1][c] == '.' ||\n          grid[r][c - 1] == '.' ||\n          grid[r][c + 1] == '.';\n\n      if (adjacent) {\n        counts[cell] = (counts[cell] ?? 0) + 1;\n      }\n    }\n  }\n  return counts;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_1c2de2da855e",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(int playerAItems, int playerBItems) {\n  if (playerAItems < 1 || playerBItems < 1) return false;\n  int a = playerAItems;\n  int b = playerBItems;\n  while (b != 0) {\n    final temp = b;\n    b = a % b;\n    a = temp;\n  }\n  return a > 1;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_fde9338419bb",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(int code) {\n\n  int low = code & 0xFFF;\n  int check = (code >> 12) & 0xF;\n  int pop = 0;\n  for (int i = 0; i < 12; i++) {\n    if (((low >> i) & 1) == 1) {\n      pop++;\n    }\n  }\n  if (pop != check) {\n    return 'INVALID';\n  }\n  int id = code & 0xFF;\n  List<String> flags = [];\n  if (((code >> 8) & 1) == 1) flags.add('RESERVED');\n  if (((code >> 9) & 1) == 1) flags.add('FRAGILE');\n  if (((code >> 10) & 1) == 1) flags.add('OVERSIZE');\n  if (((code >> 11) & 1) == 1) flags.add('ARCHIVED');\n  String flagPart = flags.isEmpty ? 'NONE' : flags.join('+');\n  return 'S$id:$flagPart';\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_caabd71fcc51",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<List<int>> grid, int dryThreshold) {\n  if (grid.isEmpty) {\n    return {\n      'highestPriorityRow': -1,\n      'lowestPriorityRow': -1,\n      'rowsNeedingReview': 0,\n    };\n  }\n\n  List<Map<String, int>> summaries = [];\n  int reviewCount = 0;\n\n  for (int i = 0; i < grid.length; i++) {\n    List<int> row = grid[i];\n    int dryCells = 0;\n    int total = 0;\n    int minValue = row[0];\n    int maxValue = row[0];\n\n    for (int value in row) {\n      total += value;\n      if (value <= dryThreshold) {\n        dryCells++;\n      }\n      if (value < minValue) {\n        minValue = value;\n      }\n      if (value > maxValue) {\n        maxValue = value;\n      }\n    }\n\n    if (dryCells * 2 >= row.length) {\n      reviewCount++;\n    }\n\n    summaries.add({\n      'index': i,\n      'dryCells': dryCells,\n      'range': maxValue - minValue,\n      'total': total,\n    });\n  }\n\n  summaries.sort((a, b) {\n    if (a['dryCells'] != b['dryCells']) {\n      return b['dryCells']!.compareTo(a['dryCells']!);\n    }\n    if (a['range'] != b['range']) {\n      return b['range']!.compareTo(a['range']!);\n    }\n    if (a['total'] != b['total']) {\n      return a['total']!.compareTo(b['total']!);\n    }\n    return a['index']!.compareTo(b['index']!);\n  });\n\n  return {\n    'highestPriorityRow': summaries.first['index']!,\n    'lowestPriorityRow': summaries.last['index']!,\n    'rowsNeedingReview': reviewCount,\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f5884d232b82",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(int rows, int cols, int step) {\n  if (rows <= 0 || cols <= 0) return [];\n  int n = rows * cols;\n  int a = n;\n  int b = step;\n  while (b != 0) {\n    int temp = b;\n    b = a % b;\n    a = temp;\n  }\n  int count = n ~/ a;\n  List<String> cells = [];\n  for (int i = 0; i < count; i++) {\n    int idx = (i * step) % n;\n    cells.add('${idx ~/ cols},${idx % cols}');\n  }\n  cells.sort();\n  return cells;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f00a8eba1899",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(String log) {\n  Map<String, int> result = {\"low\": 0, \"moderate\": 0, \"high\": 0, \"extreme\": 0};\n  if (log.isEmpty) return result;\n\n  List<String> entries = log.split(\",\");\n  for (String entry in entries) {\n    List<String> parts = entry.split(\":\");\n    if (parts.length != 2) continue;\n    String station = parts[0].trim();\n    if (station.isEmpty) continue;\n\n    double? height = double.tryParse(parts[1].trim());\n    if (height == null || height < 0) continue;\n\n    if (height < 2.0) {\n      result[\"low\"] = result[\"low\"]! + 1;\n    } else if (height < 5.0) {\n      result[\"moderate\"] = result[\"moderate\"]! + 1;\n    } else if (height < 8.0) {\n      result[\"high\"] = result[\"high\"]! + 1;\n    } else {\n      result[\"extreme\"] = result[\"extreme\"]! + 1;\n    }\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_00029a7e6212",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(String encoded) {\n  Set<int> floors = {};\n  int i = 0;\n  while (i < encoded.length) {\n    int countStart = i;\n    while (i < encoded.length && encoded.codeUnitAt(i) >= 48 && encoded.codeUnitAt(i) <= 57) {\n      i++;\n    }\n    if (i == countStart) {\n      i++;\n      continue;\n    }\n    String countStr = encoded.substring(countStart, i);\n    int count = int.parse(countStr);\n    if (i >= encoded.length) {\n      break;\n    }\n    String letter = encoded[i];\n    i++;\n    int code = letter.codeUnitAt(0);\n    if (code >= 97 && code <= 122) {\n      int floor = code - 96;\n      if (floor >= 1 && floor <= 26 && count > 0) {\n        floors.add(floor);\n      }\n    }\n  }\n  return floors;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_92c2979883a9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> baseAmounts, int targetServings) {\n  if (baseAmounts.isEmpty) return [];\n  int n = baseAmounts.length;\n  List<int> dp = List.filled(targetServings + 1, -1);\n  dp[0] = 0;\n  List<List<int>> prev = List.generate(targetServings + 1, (_) => List.filled(n, 0));\n  for (int i = 0; i < n; i++) {\n    int amt = baseAmounts[i];\n    for (int s = amt; s <= targetServings; s++) {\n      if (dp[s - amt] != -1) {\n        int fn0 = dp[s - amt] + 1;\n        if (dp[s] == -1 || fn0 < dp[s]) {\n          dp[s] = fn0;\n          for (int k = 0; k < n; k++) prev[s][k] = prev[s - amt][k];\n          prev[s][i] += amt;\n        }\n      }\n    }\n  }\n  int best = 0;\n  int bestDiff = (targetServings - 0).abs();\n  for (int s = 0; s <= targetServings; s++) {\n    if (dp[s] != -1) {\n      int diff = (targetServings - s).abs();\n      if (diff < bestDiff || (diff == bestDiff && s > best)) {\n        best = s;\n        bestDiff = diff;\n      }\n    }\n  }\n  return prev[best];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_294c09c37fca",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> moistureLevels, int deficitThreshold) {\n  if (moistureLevels.isEmpty) {\n    return {'totalDeficitDays': 0, 'distinctIntervals': 0, 'longestInterval': 0};\n  }\n  int n = moistureLevels.length;\n  List<int> starts = [];\n  List<int> ends = [];\n  bool inInterval = false;\n  int start = -1;\n  for (int day = 0; day < n; day++) {\n    if (moistureLevels[day] < deficitThreshold) {\n      if (!inInterval) {\n        inInterval = true;\n        start = day;\n      }\n    } else {\n      if (inInterval) {\n        inInterval = false;\n        starts.add(start);\n        ends.add(day - 1);\n      }\n    }\n  }\n  if (inInterval) {\n    starts.add(start);\n    ends.add(n - 1);\n  }\n  int totalDays = 0;\n  int numIntervals = starts.length;\n  int maxLen = 0;\n  for (int i = 0; i < numIntervals; i++) {\n    int len = ends[i] - starts[i] + 1;\n    totalDays += len;\n    if (len > maxLen) maxLen = len;\n  }\n  int merged = 0;\n  if (numIntervals > 1) {\n    for (int i = 1; i < numIntervals; i++) {\n      if (starts[i] <= ends[i - 1] + 2) merged++;\n    }\n  }\n  return {'totalDeficitDays': totalDays, 'distinctIntervals': numIntervals - merged, 'longestInterval': maxLen};\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_15d4ae2f8443",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\nclass Point {\n  final double x, y;\n  Point(this.x, this.y);\n  @override\n  String toString() => 'Point($x, $y)';\n}\n\nclass Rectangle {\n  final double x, y, halfWidth, halfHeight;\n  Rectangle(this.x, this.y, this.halfWidth, this.halfHeight);\n\n  bool contains(Point p) {\n    return (p.x >= x - halfWidth &&\n            p.x <= x + halfWidth &&\n            p.y >= y - halfHeight &&\n            p.y <= y + halfHeight);\n  }\n\n  bool intersects(Rectangle range) {\n    return !(range.x - range.halfWidth > x + halfWidth ||\n             range.x + range.halfWidth < x - halfWidth ||\n             range.y - range.halfHeight > y + halfHeight ||\n             range.y + range.halfHeight < y - halfHeight);\n  }\n\n  @override\n  String toString() =>\n      'Rectangle(center: ($x, $y), halfWidth: $halfWidth, halfHeight: $halfHeight)';\n}\n\nclass Quadtree {\n  final Rectangle boundary;\n  final int capacity;\n  final List<Point> points = [];\n  bool divided = false;\n  Quadtree? northeast, northwest, southeast, southwest;\n\n  Quadtree(this.boundary, this.capacity);\n\n  void subdivide() {\n    final x = boundary.x;\n    final y = boundary.y;\n    final hw = boundary.halfWidth / 2;\n    final hh = boundary.halfHeight / 2;\n\n    northeast = Quadtree(Rectangle(x + hw, y - hh, hw, hh), capacity);\n    northwest = Quadtree(Rectangle(x - hw, y - hh, hw, hh), capacity);\n    southeast = Quadtree(Rectangle(x + hw, y + hh, hw, hh), capacity);\n    southwest = Quadtree(Rectangle(x - hw, y + hh, hw, hh), capacity);\n\n    divided = true;\n  }\n\n  void insert(Point p) {\n    if (!boundary.contains(p)) {\n      return;\n    }\n    if (points.length < capacity) {\n      points.add(p);\n    } else {\n      if (!divided) {\n        subdivide();\n      }\n      northeast!.insert(p);\n      northwest!.insert(p);\n      southeast!.insert(p);\n      southwest!.insert(p);\n    }\n  }\n\n  List<Point> query(Rectangle range, [List<Point>? found]) {\n    found ??= [];\n    if (!boundary.intersects(range)) {\n      return found;\n    }\n    for (var p in points) {\n      if (range.contains(p)) {\n        found.add(p);\n      }\n    }\n    if (divided) {\n      northeast!.query(range, found);\n      northwest!.query(range, found);\n      southeast!.query(range, found);\n      southwest!.query(range, found);\n    }\n    return found;\n  }\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final boundary = Rectangle(0, 0, 200, 200);\n  final qt = Quadtree(boundary, 4);\n\n  final rand = Random(0);\n  for (var i = 0; i < 25; i++) {\n    final x = rand.nextDouble() * 400 - 200;\n    final y = rand.nextDouble() * 400 - 200;\n    qt.insert(Point(x, y));\n  }\n\n  final range = Rectangle(0, 0, 50, 50);\n  final pointsFound = qt.query(range);\n\n  print('Points within range $range:');\n  for (var p in pointsFound) {\n    print('  $p');\n  }\n  print('Total points found: ${pointsFound.length}');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_fcd2fb050bf6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<String> shelfCodes) {\n  List<String> sorted = List<String>.from(shelfCodes);\n  sorted.sort((a, b) {\n    if (a.length != b.length) {\n      return a.length - b.length;\n    }\n    return a.compareTo(b);\n  });\n\n  Map<String, int> ranks = {};\n  for (int i = 0; i < sorted.length; i++) {\n    ranks[sorted[i]] = i + 1;\n  }\n  return ranks;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_4b8ae6c364f9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<String> ops) {\n  final stack = <double>[];\n  for (final op in ops) {\n    if (op == 'CANCEL') {\n      if (stack.isNotEmpty) stack.removeLast();\n    } else {\n      stack.add(double.parse(op.split(' ')[1]));\n    }\n  }\n  double total = 0.0;\n  for (final d in stack) {\n    total += d;\n  }\n  return total;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_5af03fd8ef7b",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(int rowByte) {\n  const int ideal = 0x55; \n  final int diff = (rowByte & 0xFF) ^ ideal;\n  int mismatches = 0;\n  int mask = diff;\n  while (mask != 0) {\n    mismatches++;\n    mask &= mask - 1;\n  }\n  return (8 - mismatches) / 8.0;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d34ebc7ed34a",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nenum Planet {\n  mercury(3.303e+23, 2.4397e6),\n  venus(4.869e+24, 6.0518e6),\n  earth(5.976e+24, 6.37814e6),\n  mars(6.421e+23, 3.3972e6),\n  jupiter(1.9e+27, 7.1492e7),\n  saturn(5.688e+26, 6.0268e7),\n  uranus(8.686e+25, 2.5559e7),\n  neptune(1.024e+26, 2.4746e7);\n\n  final double mass;   \n  final double radius; \n\n  static const double _G = 6.67300e-11;\n\n  const Planet(this.mass, this.radius);\n\n  double surfaceGravity() => _G * mass / (radius * radius);\n\n  double surfaceWeight(double otherMass) => otherMass * surfaceGravity();\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const double myMass = 70; \n  for (var planet in Planet.values) {\n    final weight = planet.surfaceWeight(myMass);\n    print(\n      'On ${planet.name[0].toUpperCase()}${planet.name.substring(1)} '\n      'you would weigh ${weight.toStringAsFixed(2)} kg'\n    );\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_808d6c1c9b6a",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> readings, int startIndex, int duration) {\n  int bestDay = -1;\n  int bestHeight = -1;\n  int end = startIndex + duration;\n  for (int i = startIndex; i < end && i < readings.length; i++) {\n    if (i >= 0 && readings[i] > bestHeight) {\n      bestHeight = readings[i];\n      bestDay = i;\n    }\n  }\n  if (bestDay == -1) return \"No readings\";\n  return \"Day $bestDay: ${bestHeight}cm\";\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_26315cbfcfbf",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:math';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  const int k = 3;               \n  const int maxIterations = 100; \n  final random = Random(42);     \n\n  final data = <List<double>>[\n    [1.0, 1.0],\n    [1.5, 2.0],\n    [3.0, 4.0],\n    [5.0, 7.0],\n    [3.5, 5.0],\n    [4.5, 5.0],\n    [3.5, 4.5],\n    [4.5, 4.0],\n    [3.5, 3.0],\n    [2.5, 2.0],\n    [3.5, 2.0],\n    [2.0, 3.0],\n  ];\n\n  double distance(List<double> a, List<double> b) {\n    var sum = 0.0;\n    for (var i = 0; i < a.length; i++) {\n      final diff = a[i] - b[i];\n      sum += diff * diff;\n    }\n    return sqrt(sum);\n  }\n\n  final centroids = <List<double>>[];\n  final chosenIndices = <int>{};\n  while (centroids.length < k) {\n    final idx = random.nextInt(data.length);\n    if (chosenIndices.add(idx)) {\n      centroids.add(List<double>.from(data[idx]));\n    }\n  }\n\n  var assignments = List<int>.filled(data.length, -1);\n  var iteration = 0;\n  var changed = true;\n\n  while (changed && iteration < maxIterations) {\n    changed = false;\n\n    for (var i = 0; i < data.length; i++) {\n      var bestCluster = -1;\n      var bestDistance = double.infinity;\n\n      for (var c = 0; c < k; c++) {\n        final d = distance(data[i], centroids[c]);\n        if (d < bestDistance) {\n          bestDistance = d;\n          bestCluster = c;\n        }\n      }\n\n      if (assignments[i] != bestCluster) {\n        assignments[i] = bestCluster;\n        changed = true;\n      }\n    }\n\n    final sums = List.generate(k, (_) => List<double>.filled(data[0].length, 0));\n    final counts = List<int>.filled(k, 0);\n\n    for (var i = 0; i < data.length; i++) {\n      final cluster = assignments[i];\n      counts[cluster]++;\n      for (var dim = 0; dim < data[i].length; dim++) {\n        sums[cluster][dim] += data[i][dim];\n      }\n    }\n\n    for (var c = 0; c < k; c++) {\n      if (counts[c] == 0) continue; \n      for (var dim = 0; dim < centroids[c].length; dim++) {\n        centroids[c][dim] = sums[c][dim] / counts[c];\n      }\n    }\n\n    iteration++;\n  }\n\n  print('Converged in $iteration iteration(s).');\n  for (var c = 0; c < k; c++) {\n    print('Cluster $c centroid: ${centroids[c]}');\n    final pts = [\n      for (var i = 0; i < data.length; i++)\n        if (assignments[i] == c) data[i]\n    ];\n    print('  Points: $pts\\n');\n  }\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_f70dce70d2e6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<List<int>> mazeGrid) {\n  int maxSegLen = 0;\n  int minSegLen = 0;\n  int totalPassable = 0;\n  int maxSegScore = 0;\n  int segCount = 0;\n  bool foundFirst = false;\n\n  for (int row = 0; row < mazeGrid.length; row++) {\n    List<int> cells = mazeGrid[row];\n    int left = 0;\n    while (left < cells.length) {\n      while (left < cells.length && cells[left] == -1) {\n        left++;\n      }\n      if (left >= cells.length) break;\n      int right = left;\n      int segLen = 0;\n      int segScore = 0;\n      while (right < cells.length && cells[right] != -1) {\n        segLen++;\n        segScore += cells[right];\n        right++;\n      }\n      totalPassable += segLen;\n      segCount++;\n      if (segLen > maxSegLen) maxSegLen = segLen;\n      if (!foundFirst) {\n        minSegLen = segLen;\n        foundFirst = true;\n      } else if (segLen < minSegLen) {\n        minSegLen = segLen;\n      }\n      if (segScore > maxSegScore) maxSegScore = segScore;\n      left = right;\n    }\n  }\n\n  if (!foundFirst) {\n    return {\n      \"maxSegmentLength\": 0,\n      \"minSegmentLength\": 0,\n      \"totalPassableCells\": 0,\n      \"maxSegmentScore\": 0,\n      \"segmentCount\": 0\n    };\n  }\n\n  return {\n    \"maxSegmentLength\": maxSegLen,\n    \"minSegmentLength\": minSegLen,\n    \"totalPassableCells\": totalPassable,\n    \"maxSegmentScore\": maxSegScore,\n    \"segmentCount\": segCount\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_192fbb20f4b6",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nSet<int> fn0(List<String> shelfCodes, int threshold) {\n  final Set<int> indexes = <int>{};\n\n  for (final code in shelfCodes) {\n    final parts = code.split('-');\n    if (parts.length != 2 || parts[0].isEmpty || parts[1].isEmpty) {\n      continue;\n    }\n\n    final int letterScore = parts[0]\n        .toUpperCase()\n        .codeUnits\n        .fold(0, (sum, unit) {\n      if (unit >= 65 && unit <= 90) {\n        return sum + (unit - 64);\n      }\n      return sum;\n    });\n\n    int digitScore = 0;\n    for (final unit in parts[1].codeUnits) {\n      if (unit >= 48 && unit <= 57) {\n        digitScore += unit - 48;\n      }\n    }\n\n    if (digitScore == 0 && letterScore < threshold) {\n      continue;\n    }\n\n    final int combined = letterScore.isEven\n        ? letterScore - digitScore\n        : letterScore + digitScore;\n\n    if (combined >= threshold) {\n      indexes.add(combined);\n    } else if (combined < 0) {\n      indexes.add(-combined);\n    }\n  }\n\n  return indexes;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c6fed62b2c1d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(List<int> readings, int minCycleDrop) {\n  if (minCycleDrop <= 0) {\n    return false;\n  }\n\n  if (readings.isEmpty) {\n    return true;\n  }\n\n  List<int> compressed = <int>[];\n  for (int value in readings) {\n    if (value < 0 || value > 100) {\n      return false;\n    }\n\n    if (compressed.isEmpty || compressed.last != value) {\n      compressed.add(value);\n    }\n  }\n\n  if (compressed.length < 2) {\n    return true;\n  }\n\n  List<int> pendingRecoveryPeaks = <int>[];\n  int peak = compressed.first;\n  int trough = compressed.first;\n  bool descending = false;\n\n  for (int i = 1; i < compressed.length; i++) {\n    int current = compressed[i];\n    int previous = compressed[i - 1];\n\n    if (current < previous) {\n      descending = true;\n      trough = current < trough ? current : trough;\n\n      if (current > peak) {\n        peak = current;\n        trough = current;\n      }\n    } else {\n      if (descending) {\n        int drop = peak - trough;\n        if (drop >= minCycleDrop) {\n          pendingRecoveryPeaks.add(peak);\n        }\n      }\n\n      descending = false;\n\n      while (pendingRecoveryPeaks.isNotEmpty &&\n          current >= pendingRecoveryPeaks.last) {\n        pendingRecoveryPeaks.removeLast();\n      }\n\n      if (current >= peak) {\n        peak = current;\n        trough = current;\n      }\n    }\n\n    if (!descending && current > peak) {\n      peak = current;\n      trough = current;\n    }\n  }\n\n  if (descending && peak - trough >= minCycleDrop) {\n    pendingRecoveryPeaks.add(peak);\n  }\n\n  return pendingRecoveryPeaks.isEmpty;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_07dd80fcc8e7",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(int currentFloor, int direction, List<int> requests, Set<int> expressFloors) {\n  if (requests.isEmpty) return <String>[];\n  String label(int f) => f < 0 ? 'B${-f}' : f == 0 ? 'G' : '$f';\n\n  List<int> scan(List<int> floors, int dir) {\n    if (floors.isEmpty) return <int>[];\n    var same = floors.where((f) => (f - currentFloor) * dir > 0).toList();\n    var opp = floors.where((f) => (f - currentFloor) * dir < 0).toList();\n    var here = floors.where((f) => f == currentFloor).toList();\n    same.sort(dir > 0 ? (a, b) => a.compareTo(b) : (a, b) => b.compareTo(a));\n    opp.sort(dir > 0 ? (a, b) => b.compareTo(a) : (a, b) => a.compareTo(b));\n    return [...here, ...same, ...opp];\n  }\n\n  Set<int> seen = {};\n  List<int> express = [], normal = [];\n  for (int f in requests) {\n    if (seen.add(f)) {\n      (expressFloors.contains(f) ? express : normal).add(f);\n    }\n  }\n\n  return [...scan(express, direction), ...scan(normal, direction)].map(label).toList();\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6dbf14b60080",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<List<double>> grid, double threshold) {\n  if (grid.isEmpty) return 0.0;\n  int totalCells = 0;\n  int dryCells = 0;\n  for (final row in grid) {\n    for (final moisture in row) {\n      totalCells += 1;\n      if (moisture <= threshold) {\n        dryCells += 1;\n      }\n    }\n  }\n  if (totalCells == 0) return 0.0;\n  return dryCells / totalCells;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_c4f8a1d2a501",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<int> sortedBarcodes, int targetBarcode) {\n  int left = 0;\n  int right = sortedBarcodes.length - 1;\n  int nearestDiff = -1;\n  int foundIndex = -1;\n  \n  while (left <= right) {\n    int mid = left + (right - left) ~/ 2;\n    int diff = (sortedBarcodes[mid] - targetBarcode).abs();\n    \n    if (nearestDiff == -1 || diff < nearestDiff) {\n      nearestDiff = diff;\n    }\n    \n    if (sortedBarcodes[mid] == targetBarcode) {\n      foundIndex = mid;\n      break;\n    } else if (sortedBarcodes[mid] < targetBarcode) {\n      left = mid + 1;\n    } else {\n      right = mid - 1;\n    }\n  }\n  \n  return {\n    \"found\": foundIndex >= 0 ? 1 : 0,\n    \"index\": foundIndex,\n    \"nearestDiff\": nearestDiff\n  };\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b6b6f07b0ff9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(String row) {\n  int gcd(int a, int b) {\n    while (b != 0) {\n      int t = b;\n      b = a % b;\n      a = t;\n    }\n    return a;\n  }\n  List<String> segments = row.split(' ').where((s) => s.isNotEmpty).toList();\n  if (segments.isEmpty) return 0;\n  List<int> lengths = segments.map((s) => s.length).toList();\n  int result = lengths[0];\n  for (int i = 1; i < lengths.length; i++) {\n    result = gcd(result, lengths[i]);\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_94c9c9421304",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<List<int>> districts) {\n  if (districts.isEmpty) return 0;\n  final Set<int> xSet = {};\n  for (final rect in districts) {\n    xSet.add(rect[0]);\n    xSet.add(rect[2]);\n  }\n  final List<int> xs = xSet.toList()..sort();\n  int totalArea = 0;\n  for (int i = 0; i < xs.length - 1; i++) {\n    final int xLeft = xs[i];\n    final int xRight = xs[i + 1];\n    if (xLeft == xRight) continue;\n    final List<List<int>> yIntervals = [];\n    for (final rect in districts) {\n      if (rect[0] <= xLeft && rect[2] >= xRight) {\n        yIntervals.add([rect[1], rect[3]]);\n      }\n    }\n    if (yIntervals.isEmpty) continue;\n    yIntervals.sort((a, b) => a[0].compareTo(b[0]));\n    int curStart = yIntervals[0][0];\n    int curEnd = yIntervals[0][1];\n    int unionY = 0;\n    for (int j = 1; j < yIntervals.length; j++) {\n      final int start = yIntervals[j][0];\n      final int end = yIntervals[j][1];\n      if (start <= curEnd) {\n        if (end > curEnd) curEnd = end;\n      } else {\n        unionY += curEnd - curStart;\n        curStart = start;\n        curEnd = end;\n      }\n    }\n    unionY += curEnd - curStart;\n    totalArea += (xRight - xLeft) * unionY;\n  }\n  return totalArea;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_6d83ced1ddc9",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(String morse) {\n  if (morse.isEmpty) return false;\n  for (int i = 0; i < morse.length; i++) {\n    if (morse[i] != '.' && morse[i] != '-') {\n      return false;\n    }\n  }\n  int value = 0;\n  for (int i = 0; i < morse.length; i++) {\n    value <<= 1;\n    if (morse[i] == '-') {\n      value |= 1;\n    }\n  }\n  if (value <= 1) return false;\n  if (value == 2) return true;\n  if (value % 2 == 0) return false;\n  for (int i = 3; i * i <= value; i += 2) {\n    if (value % i == 0) {\n      return false;\n    }\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_37e2ca3dea18",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<String> fn0(int scheduleMask, int holdOverride) {\n  List<String> result = [];\n  int currentTemp = 68;\n  int hour = 0;\n  bool held = false;\n  int heldTemp = 68;\n  int holdBits = holdOverride & 0xF;\n  bool holdEnabled = (holdOverride >> 4) & 1 == 1;\n  int holdStart = (holdOverride >> 8) & 0x1F;\n  int holdEnd = (holdOverride >> 16) & 0x1F;\n  if (holdStart > 23) holdStart = 23;\n  if (holdEnd > 23) holdEnd = 23;\n  while (hour < 24) {\n    if (holdEnabled && hour >= holdStart && (!held || holdStart == hour)) {\n      if (!held) {\n        held = true;\n        heldTemp = holdBits + 60;\n      }\n      currentTemp = heldTemp;\n    } else if (holdEnabled && held && hour > holdEnd) {\n      held = false;\n    }\n    if (!held) {\n      int blockIndex = hour ~/ 4;\n      int shift = (3 - (hour % 4)) * 2;\n      int tempCode = (scheduleMask >> (blockIndex * 8 + shift)) & 0x3;\n      currentTemp = 62 + tempCode * 4;\n    }\n    String period = '';\n    if (hour >= 6 && hour < 9) {\n      period = 'morning';\n    } else if (hour >= 9 && hour < 17) {\n      period = 'day';\n    } else if (hour >= 17 && hour < 22) {\n      period = 'evening';\n    } else {\n      period = 'night';\n    }\n    result.add('$hour:00 $period ${currentTemp}°F');\n    hour++;\n  }\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_27d7320a3bdf",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> sortedReadings, int threshold) {\n  int left = 0;\n  int right = sortedReadings.length;\n  while (left < right) {\n    int mid = left + (right - left) ~/ 2;\n    if (sortedReadings[mid] < threshold) {\n      left = mid + 1;\n    } else {\n      right = mid;\n    }\n  }\n  return sortedReadings.sublist(left);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_88aae2bb0dda",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(List<String> ingredients, List<int> requiredPerBatch, List<int> pantryStock, List<int> packageSizes, int batches) {\n  if (ingredients.length != requiredPerBatch.length ||\n      ingredients.length != pantryStock.length ||\n      batches < 0) {\n    return {};\n  }\n\n  int maxPack = 0;\n  for (final size in packageSizes) {\n    if (size > maxPack) {\n      maxPack = size;\n    }\n  }\n\n  final result = <String, int>{};\n\n  for (int i = 0; i < ingredients.length; i++) {\n    final need = requiredPerBatch[i] * batches - pantryStock[i];\n\n    if (need <= 0) {\n      result[ingredients[i]] = 0;\n      continue;\n    }\n\n    if (packageSizes.isEmpty) {\n      result[ingredients[i]] = -1;\n      continue;\n    }\n\n    final limit = need + maxPack * maxPack;\n    final dp = List<int>.filled(limit + 1, limit + 1);\n    dp[0] = 0;\n\n    for (int sum = 0; sum <= limit; sum++) {\n      if (dp[sum] == limit + 1) {\n        continue;\n      }\n\n      for (final pack in packageSizes) {\n        final next = sum + pack;\n        if (next <= limit && dp[sum] + 1 < dp[next]) {\n          dp[next] = dp[sum] + 1;\n        }\n      }\n    }\n\n    int bestSum = -1;\n    int bestWaste = limit + 1;\n    int bestPackages = limit + 1;\n\n    for (int sum = need; sum <= limit; sum++) {\n      if (dp[sum] == limit + 1) {\n        continue;\n      }\n\n      final waste = sum - need;\n      if (waste < bestWaste ||\n          (waste == bestWaste && dp[sum] < bestPackages)) {\n        bestWaste = waste;\n        bestPackages = dp[sum];\n        bestSum = sum;\n      }\n    }\n\n    result[ingredients[i]] = bestSum;\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_809d366ff6f0",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> ledger, int k, int target) {\n  final n = ledger.length;\n  if (n < k) return [];\n  int windowSum = 0;\n  for (int i = 0; i < k; i++) {\n    windowSum += ledger[i];\n  }\n  if (windowSum == target) return [0, k - 1];\n  for (int i = 1; i <= n - k; i++) {\n    windowSum = windowSum - ledger[i - 1] + ledger[i + k - 1];\n    if (windowSum == target) {\n      return [i, i + k - 1];\n    }\n  }\n  return [];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7412fc8a275b",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(String word, List<String> candidates, Map<String, double> frequencies) {\n  if (candidates.isEmpty) return 0.0;\n  var sortedCandidates = List<String>.from(candidates);\n  sortedCandidates.sort((a, b) {\n    double scoreA = frequencies[a] ?? 0.0;\n    double scoreB = frequencies[b] ?? 0.0;\n    return scoreB.compareTo(scoreA);\n  });\n  return frequencies[sortedCandidates.first] ?? 0.0;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_dd676587e3c2",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(List<int> cards) {\n  if (cards.length % 2 != 0) return false;\n  if (cards.isEmpty) return true;\n  for (int i = 1; i < cards.length; i++) {\n    if (cards[0] + cards[i] == 13) {\n      List<int> remaining = List.from(cards);\n      remaining.removeAt(0);\n      remaining.removeAt(i - 1);\n      if (fn0(remaining)) return true;\n    }\n  }\n  return false;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_4cb006480238",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(String maze) {\n  List<String> rows = maze.split('|');\n  List<List<String>> grid = [];\n  for (int i = 0; i < rows.length; i++) {\n    grid.add(rows[i].split(','));\n  }\n  int numRows = grid.length;\n  if (numRows == 0) return false;\n  int numCols = grid[0].length;\n  if (numCols == 0) return false;\n  for (int r = 0; r < numRows; r++) {\n    if (grid[r].length != numCols) return false;\n  }\n  for (int r = 0; r < numRows; r++) {\n    for (int c = 0; c < numCols; c++) {\n      String token = grid[r][c];\n      Set<String> seen = {};\n      for (int i = 0; i < token.length; i++) {\n        String ch = token[i];\n        if (ch != 'N' && ch != 'S' && ch != 'E' && ch != 'W') return false;\n        if (!seen.add(ch)) return false;\n      }\n    }\n  }\n  for (int c = 0; c < numCols; c++) {\n    if (grid[0][c].contains('N')) return false;\n    if (grid[numRows - 1][c].contains('S')) return false;\n  }\n  for (int r = 0; r < numRows; r++) {\n    if (grid[r][0].contains('W')) return false;\n    if (grid[r][numCols - 1].contains('E')) return false;\n  }\n  for (int r = 0; r < numRows; r++) {\n    for (int c = 0; c < numCols; c++) {\n      String token = grid[r][c];\n      if (c + 1 < numCols) {\n        if (token.contains('E') != grid[r][c + 1].contains('W')) return false;\n      }\n      if (r + 1 < numRows) {\n        if (token.contains('S') != grid[r + 1][c].contains('N')) return false;\n      }\n    }\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_adc978f7e65b",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nbool fn0(List<int> durations, int modulo) {\n  if (durations.isEmpty || modulo < 2) return false;\n  if (!_isPrimeNumber(modulo)) return false;\n\n  int currentSum = 0;\n  Set<int> seen = {};\n\n  for (int i = 0; i < durations.length; i++) {\n    if (durations[i] <= 0) return false;\n    currentSum = (currentSum + (durations[i] % modulo)) % modulo;\n\n    if (seen.contains(currentSum)) {\n      return false;\n    }\n    seen.add(currentSum);\n  }\n\n  return currentSum == 0;\n}\n\nbool _isPrimeNumber(int n) {\n  if (n < 2) return false;\n  if (n == 2 || n == 3) return true;\n  if (n % 2 == 0 || n % 3 == 0) return false;\n  for (int i = 5; i * i <= n; i += 6) {\n    if (n % i == 0 || n % (i + 2) == 0) return false;\n  }\n  return true;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_7e997d06e5bd",
+    "predictions": [
+      "import 'dart:convert';\nimport 'dart:async';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nFuture<void> fn0() async {\n  \n  Stream<int> countStream(int max) async* {\n    for (int i = 1; i <= max; i++) {\n      await Future.delayed(Duration(milliseconds: 300));\n      yield i;\n    }\n  }\n\n  print('Counting:');\n  await for (final value in countStream(5)) {\n    print('Value: $value');\n  }\n  print('Done.');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_edd7ed243c48",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\nimport 'dart:collection';\n\nclass TreeNode<T> {\n  T value;\n  final List<TreeNode<T>> children;\n  TreeNode(this.value, [List<TreeNode<T>>? children])\n      : children = children ?? [];\n}\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n\n  \n\n  \n  final root = TreeNode<int>(1);\n  root.children.addAll([\n    TreeNode<int>(2, [TreeNode<int>(5), TreeNode<int>(6)]),\n    TreeNode<int>(3),\n    TreeNode<int>(4, [TreeNode<int>(7), TreeNode<int>(8)])\n  ]);\n\n  final queue = Queue<TreeNode<int>>();\n  queue.add(root);\n\n  final bfsOrder = <int>[];\n\n  while (queue.isNotEmpty) {\n    final node = queue.removeFirst();\n    bfsOrder.add(node.value);\n    queue.addAll(node.children);\n  }\n\n  print('Breadth-first traversal: $bfsOrder');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b721d6a533f8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(String rle) {\n  if (rle.isEmpty) return 0;\n  int idx = 0;\n  int checksum = 0;\n  int i = 0;\n  const int M = 104729;\n  const int inv6 = 17455;\n\n  int sumSq(int n) {\n    if (n <= 0) return 0;\n    int a = n % M;\n    int b = (n + 1) % M;\n    int c = (2 * n + 1) % M;\n    int res = (a * b) % M;\n    res = (res * c) % M;\n    res = (res * inv6) % M;\n    return res;\n  }\n\n  while (i < rle.length) {\n    int start = i;\n    while (i < rle.length && rle.codeUnitAt(i) >= 48 && rle.codeUnitAt(i) <= 57) {\n      i++;\n    }\n    if (i == start) return -1;\n    int count = int.parse(rle.substring(start, i));\n    if (i >= rle.length) return -1;\n    String color = rle[i];\n    i++;\n    if (color != 'W' && color != 'B') return -1;\n\n    if (color == 'B' && count > 0) {\n      int endIdx = idx + count;\n      int total = (sumSq(endIdx) - sumSq(idx)) % M;\n      if (total < 0) total += M;\n      checksum = (checksum + total) % M;\n    }\n    idx += count;\n  }\n  return checksum;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bcb6f4de3081",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> cents, int targetRoundedCents) {\n  if (cents.isEmpty || targetRoundedCents % 5 != 0) {\n    return [-1, -1];\n  }\n  \n  int L = targetRoundedCents - 2;\n  int R = targetRoundedCents + 2;\n  \n  int minLen = 999999999;\n  int maxLen = -1;\n  \n  int leftMin = 0;\n  int sumMin = 0;\n  int leftMax = 0;\n  int sumMax = 0;\n  \n  for (int right = 0; right < cents.length; right++) {\n    sumMin += cents[right];\n    while (leftMin <= right && sumMin > R) {\n      sumMin -= cents[leftMin];\n      leftMin++;\n    }\n    \n    sumMax += cents[right];\n    while (leftMax <= right && sumMax >= L) {\n      sumMax -= cents[leftMax];\n      leftMax++;\n    }\n    \n    if (leftMin <= leftMax - 1) {\n      int currentMinLen = right - leftMax + 2;\n      int currentMaxLen = right - leftMin + 1;\n      if (currentMinLen < minLen) minLen = currentMinLen;\n      if (currentMaxLen > maxLen) maxLen = currentMaxLen;\n    }\n  }\n  \n  if (maxLen == -1) {\n    return [-1, -1];\n  }\n  \n  return [minLen, maxLen];\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_fe5faa93760d",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nMap<String, int> fn0(int bitboard) {\n  const int lightMask = 0x55AA55AA55AA55AA;\n  int lightCount = 0;\n  int darkCount = 0;\n  int lightBits = bitboard & lightMask;\n  int darkBits = bitboard & ~lightMask;\n  while (lightBits != 0) {\n    lightCount += lightBits & 1;\n    lightBits >>= 1;\n  }\n  while (darkBits != 0) {\n    darkCount += darkBits & 1;\n    darkBits >>= 1;\n  }\n  return {\"light\": lightCount, \"dark\": darkCount};\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_d59fd5c25caf",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<double> positions) {\n  if (positions.length < 2) return 0.0;\n  final sorted = [...positions]..sort();\n  final gaps = <double>[];\n  for (int i = 1; i < sorted.length; i++) {\n    gaps.add(sorted[i] - sorted[i - 1]);\n  }\n  final total = gaps.fold(0.0, (a, b) => a + b);\n  return total / (sorted.length - 1);\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_bf3de39765c8",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nList<int> fn0(List<int> leaders, int stabilityWindow) {\n  if (leaders.isEmpty) {\n    return <int>[];\n  }\n\n  final List<List<int>> segments = <List<int>>[];\n  int current = leaders[0];\n  int length = 1;\n\n  for (int i = 1; i < leaders.length; i++) {\n    if (leaders[i] == current) {\n      length++;\n    } else {\n      segments.add(<int>[current, length]);\n      current = leaders[i];\n      length = 1;\n    }\n  }\n  segments.add(<int>[current, length]);\n\n  final Map<int, int> appearances = <int, int>{};\n  for (final List<int> segment in segments) {\n    appearances[segment[0]] = (appearances[segment[0]] ?? 0) + 1;\n  }\n\n  final List<List<int>> filtered = <List<int>>[];\n\n  for (int i = 0; i < segments.length; i++) {\n    final int fn0 = segments[i][0];\n    final int span = segments[i][1];\n    final bool edgeSegment = i == 0 || i == segments.length - 1;\n\n    final bool keep = span >= stabilityWindow ||\n        (appearances[fn0] ?? 0) > 1 ||\n        edgeSegment;\n\n    if (!keep) {\n      continue;\n    }\n\n    if (filtered.isNotEmpty && filtered.last[0] == fn0) {\n      filtered.last[1] += span;\n    } else {\n      filtered.add(<int>[fn0, span]);\n    }\n  }\n\n  final List<int> result = <int>[];\n  for (final List<int> segment in filtered) {\n    result.add(segment[0]);\n    result.add(segment[1]);\n  }\n\n  return result;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_b885d1ba1001",
+    "predictions": [
+      "import 'dart:convert';\nimport 'dart:async';\n\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nFuture<void> fn0() async {\n  \n  Stream<int> numberGenerator(int start, int end, Duration interval) async* {\n    for (int i = start; i <= end; i++) {\n      await Future.delayed(interval);\n      yield i;\n    }\n  }\n\n  Stream<int> oddFilter(Stream<int> input) async* {\n    await for (var value in input) {\n      if (value % 2 == 1) {\n        yield value;\n      }\n    }\n  }\n\n  Stream<int> combinedOddStream() async* {\n    yield* oddFilter(numberGenerator(1, 5, Duration(milliseconds: 500)));\n    yield* oddFilter(numberGenerator(6, 10, Duration(milliseconds: 500)));\n  }\n\n  print('Starting combined odd number stream...');\n  await for (var odd in combinedOddStream()) {\n    print('Odd number: $odd');\n  }\n  print('Stream processing complete.');\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_3af6f6ae5576",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> available, List<int> needed) {\n  if (available.isEmpty) return 0;\n  if (available.length == 1) {\n    return available[0] ~/ needed[0];\n  }\n  int mid = available.length ~/ 2;\n  int left = fn0(available.sublist(0, mid), needed.sublist(0, mid));\n  int right = fn0(available.sublist(mid), needed.sublist(mid));\n  return left < right ? left : right;\n}\n"
+    ]
+  },
+  {
+    "id": "sigless_54c0d3ca981f",
+    "predictions": [
+      "import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final numbers = [-5, 0, 42, 150];\n\n  for (final number in numbers) {\n    \n    switch (number) {\n      case < 0:\n        print('$number is negative.');\n      case == 0:\n        print('$number is zero.');\n      case > 0 && <= 100:\n        print('$number is positive and up to 100.');\n      case > 100:\n        print('$number is large positive.');\n    }\n  }\n}\n"
+    ]
+  }
+]

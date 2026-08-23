@@ -1,0 +1,2 @@
+$ PYTHONDONTWRITEBYTECODE=1 python -m compileall -q -f .
+compileall: OK

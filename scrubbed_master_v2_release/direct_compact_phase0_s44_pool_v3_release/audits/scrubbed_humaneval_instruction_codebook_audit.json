@@ -1,0 +1,59 @@
+{
+  "audit": "scrubbed_humaneval_instruction_codebook_coverage",
+  "bundle_contract_sha256": "4a310b98d6c1915bfb027c8da443ef2b9eb6a27eba5bd2044316413cd1c7d5e8",
+  "codebook_sha256": "af874d8f4de76785a16c36f4c5c4e158693d1bdf180f7381a3151831cfd249bd",
+  "coverage": {
+    "codebook_hits": 18439,
+    "fallback": 190,
+    "fallback_rate": 0.010199151860003221,
+    "instructions": 18629,
+    "rows": 154,
+    "rows_with_fallback": 32,
+    "rows_with_fallback_rate": 0.2077922077922078
+  },
+  "current_extractor_route": "current_combined_v2",
+  "current_extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+  "dfg_edges_regenerated_and_matched_edge_for_edge": 13616,
+  "exact_canonical_and_dfg_roundtrip_rows": 154,
+  "fallback_representation": {
+    "encoding": "native-qwen-token-ids-between-reserved-<R>-and-<E>-atoms",
+    "exact_native_token_roundtrip_occurrences": 190,
+    "instruction_occurrences": 190,
+    "native_qwen_payload_tokens": 1766,
+    "reversible": true,
+    "tokens_per_fallback_instruction": {
+      "max": 21,
+      "min": 4,
+      "p50": 7,
+      "p95": 18
+    },
+    "unique_instruction_strings": 166
+  },
+  "full_v3_source_token_measurement": false,
+  "gates": {
+    "all_dfgs_regenerated_edge_for_edge": true,
+    "all_fallback_payloads_native_token_roundtrip_exactly": true,
+    "all_prompts_name_only": true,
+    "all_rows_current_extractor": true,
+    "all_targets_candidate": true,
+    "all_task_ids_unique": true,
+    "canonical_154_row_dataset_hash_matched": true
+  },
+  "graph_representation": "v2-canonical-graph-shared-by-v3",
+  "input_binding": {
+    "name": "grpo_data_graphv2_signature_scrubbed_private.jsonl",
+    "sha256": "91dc2eee2f06602e6cd95873c81802e0997fd3ff758b395aeab9c3da114df252",
+    "size_bytes": 4965445
+  },
+  "non_claims": {
+    "full_v3_binary_pool_stream_was_available": false,
+    "full_v3_source_token_count_was_measured": false,
+    "human_eval_9000_token_gate_was_evaluated": false
+  },
+  "passed": true,
+  "rows": 154,
+  "schema": "compact-qwen-v3-generalization-audit-v1",
+  "scope": "instruction_codebook_coverage_only",
+  "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+  "unique_task_ids": 154
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "qwen37_frontier_primary_pool_v2",
+  "purpose": "Paired 175-task K=10 frontier-ceiling evaluation over two sealed enrichment arms using only the documented qwen3.7-max-preview/qwen3.7-max-2026-05-17 text-weight equivalence class",
+  "selection_basis": {
+    "primary_models": [
+      "qwen3.7-max-2026-05-17",
+      "qwen3.7-max-preview"
+    ],
+    "documented_alias_equivalence": "Alibaba currently documents qwen3.7-max-preview as equivalent to qwen3.7-max-2026-05-17.",
+    "observed_endpoint_boundary": "qwen3.7-max-2026-05-20 and qwen3.7-max-2026-06-08 produced a repeated response-less HTTP 400 data_inspection_failed boundary for the same sealed Opus prompt; their shards are diagnostic only and are excluded from the primary estimator."
+  },
+  "generation_policy": {
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_output_tokens": 12288,
+    "enable_thinking": true,
+    "thinking_budget": 8192
+  },
+  "primary_global_sample_allocation": [
+    {
+      "wave": 1,
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 3,
+      "global_sample_indices": [0, 1, 2],
+      "run_directory_pattern": "qwen37_pool_0517_{arm}_k3_tb8k",
+      "source_contract_sha256": "68ec0e3f2f84b92ebbfd5169636914822fb06c422946e85aa68c5e5adbb6925b"
+    },
+    {
+      "wave": 1,
+      "model": "qwen3.7-max-preview",
+      "local_k": 2,
+      "global_sample_indices": [3, 4],
+      "run_directory_pattern": "qwen37_pool_preview_{arm}_k2_tb8k",
+      "source_contract_sha256": "68ec0e3f2f84b92ebbfd5169636914822fb06c422946e85aa68c5e5adbb6925b"
+    },
+    {
+      "wave": 2,
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 2,
+      "global_sample_indices": [5, 6],
+      "run_directory_pattern": "qwen37_primary_v2_w2_0517_{arm}_k2_tb8k"
+    },
+    {
+      "wave": 2,
+      "model": "qwen3.7-max-preview",
+      "local_k": 3,
+      "global_sample_indices": [7, 8, 9],
+      "run_directory_pattern": "qwen37_primary_v2_w2_preview_{arm}_k3_tb8k"
+    }
+  ],
+  "primary_global_k_per_arm": 10,
+  "paired_invariant": "The exact same wave/model/global-sample allocation and generation policy are applied to both sealed enrichment arms.",
+  "independence_invariant": "Wave 2 uses fresh provider calls, distinct output directories, distinct systemd units, and distinct response IDs; it never reuses Wave 1 terminal responses.",
+  "diagnostic_quarantine": [
+    {
+      "model": "qwen3.7-max-2026-05-20",
+      "run_directory_pattern": "qwen37_pool_0520_{arm}_k3_tb8k",
+      "excluded_from_primary": true
+    },
+    {
+      "model": "qwen3.7-max-2026-06-08",
+      "run_directory_pattern": "qwen37_pool_0608_{arm}_k2_tb8k",
+      "excluded_from_primary": true
+    }
+  ],
+  "reporting": {
+    "primary": "Pooled pass@10 and compile@10 for each enrichment arm over the four declared primary shards only",
+    "required_diagnostics": [
+      "Per-wave and per-model compile and pass rates",
+      "Per-wave and per-model token usage",
+      "Resolved model identities",
+      "Finish-reason distribution",
+      "Paired task-level arm comparison",
+      "Separate quarantined status for qwen3.7-max-2026-05-20 and qwen3.7-max-2026-06-08"
+    ]
+  }
+}

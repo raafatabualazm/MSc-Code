@@ -1,0 +1,45 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.data.test_graph_v2_integrity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 13:31:58.844000 18440 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+........................
+----------------------------------------------------------------------
+Ran 24 tests in 0.133s
+
+OK
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.data.test_graph_v2_integrity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 13:34:05.738000 38532 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+........................
+----------------------------------------------------------------------
+Ran 24 tests in 0.143s
+
+OK
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.data.test_graph_v2_integrity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:14:22.571000 25108 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 0.220s
+
+OK
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.data.test_graph_v2_integrity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:18:04.566000 32004 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 0.202s
+
+OK
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.data.test_graph_v2_integrity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 15:23:33.465000 5272 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 0.208s
+
+OK

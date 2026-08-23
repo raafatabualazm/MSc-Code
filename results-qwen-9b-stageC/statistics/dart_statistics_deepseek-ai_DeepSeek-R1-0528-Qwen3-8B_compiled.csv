@@ -1,0 +1,2 @@
+Model,Min,Max,Average,Standard_Deviation,Samples_With_Success,Total_Samples
+deepseek-ai/DeepSeek-R1-0528-Qwen3-8B,0.10233229576653977,0.9101562047226032,0.5852638775272604,0.14934965180294574,79,126

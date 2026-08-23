@@ -1,0 +1,51 @@
+{
+  "blocks": 91895,
+  "cfg_edges": 126931,
+  "dataflow_edges": 306958,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 0,
+  "external_direct_calls": 7303,
+  "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+  "graph_schema_version": "antigravity-graph-v2.1",
+  "indirect_calls": 424,
+  "input": "data/datasets/flutter_function_assembly_pool.jsonl",
+  "input_rows": 1714,
+  "input_sha256": "835d6601c7d6c24d9c3722b499f980afe581a0f5e58ecaf0f268dd87fe85c1db",
+  "internal_direct_calls": 100,
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 53.61435239206534,
+  "mean_cfg_edges_per_row": 74.05542590431739,
+  "mean_dataflow_edges_per_row": 179.08868144690783,
+  "output": "data/datasets/arm64_graphv2/flutter_function_assembly_pool_graphv2.jsonl",
+  "output_rows": 1714,
+  "output_sha256": "3c575a482045a9dc7002fb59f0e395465d4a6c8fa5b74aa74715b8b1fd199e63",
+  "pruned_blocks": 7,
+  "rejected": "data/datasets/arm64_graphv2/flutter_function_assembly_pool_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "symbol_entries": 2339
+}
+	Command being timed: ".venv/bin/python scripts/data/build_graph_v2_jsonl.py --input data/datasets/flutter_function_assembly_pool.jsonl --output data/datasets/arm64_graphv2/flutter_function_assembly_pool_graphv2.jsonl --rejected data/datasets/arm64_graphv2/flutter_function_assembly_pool_graphv2.rejected.jsonl --summary data/datasets/arm64_graphv2/flutter_function_assembly_pool_graphv2.summary.json --expected_input_rows 1714 --expected_output_rows 1714 --max_block_instrs 20 --max_dataflow_edges 0"
+	User time (seconds): 51.54
+	System time (seconds): 0.39
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:52.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 40976
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 12037
+	Voluntary context switches: 5
+	Involuntary context switches: 313
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 204016
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

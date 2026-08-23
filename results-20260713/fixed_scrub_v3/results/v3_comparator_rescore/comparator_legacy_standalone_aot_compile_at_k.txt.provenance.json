@@ -1,0 +1,69 @@
+{
+  "schema_version": "fixed-scrub-v3-standalone-compile-provenance-v1",
+  "diagnostic_role": "secondary_standalone_compile",
+  "diagnostic_only": true,
+  "standalone_compile_mode": "legacy",
+  "k_values": [
+    1,
+    5,
+    10
+  ],
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_count": 1540,
+  "candidate_stream_sha256": "398e3ab262cbe4d88f84ecc060284866abf27a3f0126728730362d89a047a44a",
+  "scorer_sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+  "dart_sdk_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+  "result": {
+    "compile_at_1": 0.5149350649350652,
+    "compile_at_5": 0.8098072562358278,
+    "compile_at_10": 0.8766233766233766,
+    "total_problems": 154
+  },
+  "validated_invariants": {
+    "candidate_only_pool": true,
+    "candidate_stream_preserved": true,
+    "opaque_row_identifiers": true,
+    "tests_absent": true,
+    "all_row_counts_present": true,
+    "compile_at_k_recomputed_from_row_counts": true,
+    "primary_aligned_jit_analysis_modified": false
+  },
+  "inputs": {
+    "source_predictions": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_predictions.json",
+      "sha256": "474dac0836c3810fa6fdad176c60021e08e0f3d722365672927c1f36484e0118",
+      "size_bytes": 1064404
+    },
+    "candidate_pool": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_standalone_candidate_pool.json",
+      "sha256": "caf67104218141e6c15baa2d5c1a354487c900289525cec299061a69620e9765",
+      "size_bytes": 779806
+    },
+    "projection_provenance": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_standalone_candidate_pool.json.provenance.json",
+      "sha256": "079b1667074321efbd7b394d685dc561c45bf27e1ee54b7279ddb059b75d4077",
+      "size_bytes": 1291
+    },
+    "compile_stdout": {
+      "path": "/workspace/results/v3_comparator_rescore/comparator_legacy_standalone_aot_compile_at_k.txt",
+      "sha256": "faf7c05a4e0144b125cfecab4f223c6c3c19ee3193644b070384b08da6337102",
+      "size_bytes": 7137
+    },
+    "scorer": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+      "size_bytes": 18813
+    },
+    "projector": {
+      "path": "/workspace/scripts/evaluation/project_fixed_scrub_v3_standalone_pool.py",
+      "sha256": "2068cfbd6a3a31a53332fab6d64feaf1d0ac8066b52a052b5ec98c1fff88c2a4",
+      "size_bytes": 7427
+    },
+    "dart_version": {
+      "path": "/workspace/logs/fixed_scrub_v3/dart_version.txt",
+      "sha256": "aec0deb0431af41549d28510392a11f7cbfc1d38fb9e29954bcd865d4b54802d",
+      "size_bytes": 82
+    }
+  }
+}

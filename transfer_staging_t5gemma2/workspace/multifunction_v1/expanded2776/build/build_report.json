@@ -1,0 +1,197 @@
+{
+  "counts": {
+    "expanded_rows": 2776,
+    "heldout_rows": 175,
+    "parent_rows": 1580,
+    "raw_fallback_instruction_occurrences": 1588,
+    "raw_fallback_unique_instructions": 1199,
+    "supplemental_blocks": 74804,
+    "supplemental_functions": 1481,
+    "supplemental_interfunction_transfers": 23438,
+    "supplemental_machine_instructions": 257991,
+    "supplemental_rows": 1196
+  },
+  "expansion_seal": {
+    "bytes": 8745,
+    "path": "/workspace/multifunction_v1/expanded2776/build/expansion_build.seal.json",
+    "sha256": "314b1ecd9214134a0e1000279dc10f607969482273b5745e69400cda5b3e3c27"
+  },
+  "family_counts": {
+    "master": 198,
+    "topup_s45": 894,
+    "topup_s46": 104
+  },
+  "inputs": {
+    "adapter_script": {
+      "bytes": 105932,
+      "path": "/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_multifunction_binary_compact.py",
+      "sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66"
+    },
+    "constants": {
+      "bytes": 617014,
+      "path": "/workspace/multifunction_v1/expanded2776/constants/attested_pool_constants_1196.jsonl",
+      "sha256": "d476fbef487d52b3076a96718fcdf530e304780f9eaf3b056bcb2a937111e0ca"
+    },
+    "expansion_builder": {
+      "bytes": 57689,
+      "path": "/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_phase0_2776_multifunction_expansion.py",
+      "sha256": "c68f7ae1b278ed65ae2ff7585f95fbcf85dd6028738623f10db0f163af940b51"
+    },
+    "extractor_script": {
+      "bytes": 94108,
+      "path": "/workspace/scripts/data/extract_dart_aot_user_function_bundle.py",
+      "sha256": "ff3cd323eb3045da0a9bf8b3489f8e867cbf3ae3dfd12181fc6c2004423af2a5"
+    },
+    "frontier_f2": {
+      "bytes": 48069,
+      "path": "/workspace/frontier_ceiling_patch_v1/frontier_f2.py",
+      "sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+    },
+    "frozen_codebook": {
+      "bytes": 3537474,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_codebook.json",
+      "sha256": "c36f9aadc3308c9916070c2088704d4b5bf6410be84d8df6c7831ed448ed0e14"
+    },
+    "frozen_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb"
+    },
+    "function_bundles": {
+      "bytes": 39468447,
+      "path": "/workspace/multifunction_v1/expanded2776/extraction/user_function_bundles_1196.jsonl",
+      "sha256": "017ead513f6d24221d0215111e402693d0fb7aa290b6e5f080af85ddb56de354"
+    },
+    "heldout_dataset": {
+      "bytes": 1802107,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+      "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7"
+    },
+    "heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json",
+      "sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a"
+    },
+    "inline_cfg_codec": {
+      "bytes": 9169,
+      "path": "/workspace/scripts/data/build_multifunction_compact_v2.py",
+      "sha256": "b2e0e33a56c470ac54257a0fc2124bcc2b9d58639a58416d33c7fbbf74d2ca52"
+    },
+    "parent_dataset": {
+      "bytes": 16562502,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.jsonl",
+      "sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18"
+    },
+    "parent_f2": {
+      "bytes": 9606976,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl",
+      "sha256": "f86032533f7f3e1bade9280e5bf6e28858daf25e34167837fec160a34b2370ba"
+    },
+    "parent_f2_manifest": {
+      "bytes": 7455,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl.manifest.json",
+      "sha256": "231227e9aa6f31c793ff097e8167972975e9f94871c9ea682d6a0dc996ed4af8"
+    },
+    "parent_seal": {
+      "bytes": 2963,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.seal.json",
+      "sha256": "14f2cc5ddcb63c8ad25f6a5c9bb6209af111dafbb0827523a24d8089585a94a5"
+    },
+    "selection_seal": {
+      "bytes": 6105,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/expansion_selection.seal.json",
+      "sha256": "ebaeb9b007d7219da6bfa890ae5f14fbc4b03430e153790b237f108caee8e506"
+    },
+    "supplemental_base": {
+      "bytes": 4584561,
+      "path": "/workspace/multifunction_v1/expanded2776/sanitized/supplemental_train_imitation_1196.jsonl",
+      "sha256": "aba5f1ba004aa3cbdec0a19f52bb2d4f9dcbbb5b4caa9e086a20d25e4c55165d"
+    },
+    "supplemental_base_seal": {
+      "bytes": 1547,
+      "path": "/workspace/multifunction_v1/expanded2776/sanitized/supplemental_train_imitation_1196.seal.json",
+      "sha256": "67f9d37ca5c470ec6085308ddf52fc660f1f5973c79f226477e3d89299891d63"
+    },
+    "supplemental_manifest": {
+      "bytes": 539036,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_task_manifest_1196.jsonl",
+      "sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "path": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "outputs": {
+    "expanded_dataset": {
+      "bytes": 27125119,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl",
+      "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904"
+    },
+    "expanded_f2": {
+      "bytes": 15699004,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl",
+      "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe"
+    },
+    "expanded_f2_manifest": {
+      "bytes": 9244,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl.manifest.json",
+      "sha256": "ccc73f06772d8df6cc80b48b3bc0af2e6a6c8069bfe3c7cd483de8c7b0c7a582"
+    },
+    "expanded_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.seal.json",
+      "sha256": "e61d9a5070bc0eb824e4cfcaec727f3569507149a1f09502f3220f023944e4e5"
+    },
+    "supplemental_dataset": {
+      "bytes": 10562617,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_supplemental_1196.jsonl",
+      "sha256": "d0d6bc677ecb7a55a24d77269b786e4944f39d2538875359c46338fb595d62ca"
+    },
+    "supplemental_f2": {
+      "bytes": 6092028,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_supplemental_1196_f2.jsonl",
+      "sha256": "f9447408fcfbc381019ea84a2fefdbc60ebb407e59559d5f00119e3569d97900"
+    },
+    "supplemental_f2_manifest": {
+      "bytes": 8980,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_supplemental_1196_f2.jsonl.manifest.json",
+      "sha256": "b513a140f405164598f6e2ea8ad222e872e8112eba71048062d3897075291148"
+    },
+    "supplemental_seal": {
+      "bytes": 3058,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_supplemental_1196.seal.json",
+      "sha256": "bafeb10cabbbdd0c244ca8e6d83b9dbcb5dbda69f76d01e624327a7a1dbbde89"
+    }
+  },
+  "passed": true,
+  "schema": "binary-multifunction-compact-expansion-v1",
+  "tokens": {
+    "api_f2_prompt": {
+      "limit": 12000,
+      "max": 10482,
+      "min": 818,
+      "p50": 1728,
+      "p95": 3379,
+      "p99": 4493
+    },
+    "binary_prefix": {
+      "cap": null,
+      "max": 648,
+      "p95": 162
+    },
+    "graph": {
+      "max": 6735,
+      "p95": 1128
+    },
+    "student": {
+      "limit": 9000,
+      "max": 7350,
+      "min": 52,
+      "p50": 401,
+      "p95": 1258,
+      "p99": 2185
+    }
+  }
+}

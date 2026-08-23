@@ -1,0 +1,67 @@
+{
+  "schema": "paid_api_probe_receipt_v1",
+  "audit_status": "incomplete_raw_receipt",
+  "started_at_utc": "2026-07-25T19:56:47.353Z",
+  "completed_at_utc": "2026-07-25T19:56:50.036Z",
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "api_surface": "OpenAI-compatible chat.completions.create",
+  "sdk": {
+    "name": "openai",
+    "version": "1.72.0",
+    "max_retries": 0
+  },
+  "request": {
+    "model_requested": "deepseek-v4-pro",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with exactly: OK"
+      }
+    ],
+    "max_tokens": 131072,
+    "temperature": 0,
+    "timeout_seconds": 120
+  },
+  "response": {
+    "model_resolved": null,
+    "model_resolved_status": "not_retained_by_probe_output",
+    "response_id_present": true,
+    "response_id_sha256": null,
+    "response_id_sha256_status": "unrecoverable_from_retained_probe_output",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 9,
+      "completion_tokens": 27,
+      "total_tokens": 36
+    },
+    "content_retained": false,
+    "raw_response_retained": false
+  },
+  "result": {
+    "max_tokens_131072_request_accepted": true,
+    "claim_limit": "This proves that this endpoint accepted the parameter for this short prompt; it does not prove that a 131072-token completion was generated."
+  },
+  "billing": {
+    "paid_api_call": true,
+    "exact_charge_usd": null,
+    "exact_charge_status": "not_returned_by_api",
+    "estimated_uncached_charge_usd_at_documented_2026_07_25_rates": 0.000027405
+  },
+  "authorization_audit": {
+    "user_context": "The user asked whether the frontier run should use a 64K or 128K output cap.",
+    "assigned_subtask_mode": "read-only acceptance review",
+    "scope_assessment": "The paid capability probe exceeded the narrower read-only subtask instruction. It should not have been made without explicit approval from the parent agent.",
+    "follow_up": "No repeat probe is required. Future probes must preserve the raw response and receive explicit authorization."
+  },
+  "credential_handling": {
+    "source": "local data.env",
+    "api_key_persisted_in_receipt": false
+  },
+  "session_evidence": {
+    "session_path": "C:\\Users\\Raafat Abualazm\\.codex\\sessions\\2026\\07\\25\\rollout-2026-07-25T22-03-45-019f9aa9-7787-7b72-8af7-b45dccf60847.jsonl",
+    "request_event_line": 7414,
+    "response_event_line": 7415,
+    "tool_call_id": "call_WTrRJWOi38yaVOZPvJxaKdr0"
+  }
+}

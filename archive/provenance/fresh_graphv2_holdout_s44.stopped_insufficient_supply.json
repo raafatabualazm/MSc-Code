@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "stage": "fresh_graphv2_holdout_seal",
+  "recorded_utc": "2026-07-17T03:12:37Z",
+  "outcome": "stopped_insufficient_leakage_clean_supply",
+  "policy_action": "Offline build stopped; no additional source generation was launched.",
+  "configuration": {
+    "seed": 44,
+    "quotas": {
+      "low": 170,
+      "mid": 170,
+      "high": 160
+    },
+    "realized_strata": {
+      "low_max_cfg_blocks": 14,
+      "mid_max_cfg_blocks": 25
+    },
+    "leakage_thresholds": {
+      "token_jaccard": 0.55,
+      "sequence_matcher": 0.7
+    }
+  },
+  "supply_audit": {
+    "candidate_rows": 1470,
+    "eligible_rows": 1442,
+    "externally_excluded_rows": 28,
+    "pre_run_leakage_clean_supply": {
+      "low": 56,
+      "mid": 205,
+      "high": 651
+    },
+    "with_retained_s45_leakage_clean_supply": {
+      "low": 157,
+      "mid": 429,
+      "high": 856
+    },
+    "shortfall": {
+      "low": 13
+    }
+  },
+  "inputs": [
+    {
+      "path": "data/testing/fresh_eval_llm_graphv2.jsonl",
+      "rows": 588,
+      "sha256": "9d1fec926ce5721bdc13e3293720f7e21d8057fe57236bc58f569fb8bb88d9f2"
+    },
+    {
+      "path": "data/testing/fresh_eval_lowmid_topup_s44_graphv2.jsonl",
+      "rows": 324,
+      "sha256": "6bdef7b566fc5c083fb09f4329d359139a5e028f2b643d33c9e7ec2b1c1d1cb4"
+    },
+    {
+      "path": "data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.jsonl",
+      "rows": 558,
+      "sha256": "162a02882798c99166d65e31344a0ca3cb4d9374a04e7589b1643604c3941020"
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "data/testing/grpo_data_graphv2.jsonl",
+      "rows": 154,
+      "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+    },
+    {
+      "path": "data/datasets/synthetic_pool_graphv2.jsonl",
+      "rows": 1726,
+      "sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621"
+    }
+  ],
+  "implementation": {
+    "seal_script": {
+      "path": "scripts/data/seal_fresh_graphv2_holdout.py",
+      "sha256": "92d8c06fc1851353b2ad02f98b9c279d972e793f0a599d69d073198e56595eb2"
+    },
+    "toolchain_provenance": {
+      "path": "archive/provenance/fresh_graphv2_holdout_toolchain_20260717.json",
+      "sha256": "8cb443dd17deb8af306fae877b9e3b7088fde40c2e4d502ed0832da2f87c5ef9"
+    }
+  },
+  "failure_log": {
+    "path": "logs/fresh_graphv2_holdout_s44.log",
+    "sha256": "359d4feedcf1d2c13711258f80ffbddce867caebfe216f71f6262fb2807788a8"
+  },
+  "outputs": {
+    "holdout_jsonl_created": false,
+    "selection_manifest_created": false
+  },
+  "process_verification": {
+    "seal_processes": 0,
+    "source_generation_processes": 0,
+    "verified_utc": "2026-07-17T03:12:37Z"
+  }
+}

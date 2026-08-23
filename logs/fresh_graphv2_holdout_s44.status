@@ -1,0 +1,16 @@
+STOPPED
+exit_code=1
+ended_at=2026-07-17T03:12:37Z
+mode=insufficient_leakage_clean_supply
+candidate_rows=1470
+eligible_rows=1442
+eligible_low=157
+eligible_mid=429
+eligible_high=856
+required_low=170
+required_mid=170
+required_high=160
+missing_low=13
+output_created=false
+manifest_created=false
+source_relaunch=false

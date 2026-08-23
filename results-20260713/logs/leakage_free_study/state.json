@@ -1,0 +1,82 @@
+{
+  "completed": {
+    "preflight_01": {
+      "log": "/workspace/logs/leakage_free_study/preflight_01.log",
+      "time": 1783729048.8432748
+    },
+    "preflight_02": {
+      "log": "/workspace/logs/leakage_free_study/preflight_02.log",
+      "time": 1783729055.563546
+    },
+    "preflight_03": {
+      "log": "/workspace/logs/leakage_free_study/preflight_03.log",
+      "time": 1783729058.018761
+    },
+    "preflight_04": {
+      "log": "/workspace/logs/leakage_free_study/preflight_04.log",
+      "time": 1783729061.0274756
+    },
+    "preflight_05": {
+      "log": "/workspace/logs/leakage_free_study/preflight_05.log",
+      "time": 1783729067.2799404
+    },
+    "preflight_06": {
+      "log": "/workspace/logs/leakage_free_study/preflight_06.log",
+      "time": 1783729068.5087974
+    },
+    "preflight_07": {
+      "log": "/workspace/logs/leakage_free_study/preflight_07.log",
+      "time": 1783729071.4006858
+    },
+    "preflight_08": {
+      "log": "/workspace/logs/leakage_free_study/preflight_08.log",
+      "time": 1783729073.5634534
+    },
+    "preflight_09": {
+      "log": "/workspace/logs/leakage_free_study/preflight_09.log",
+      "time": 1783729074.4129677
+    },
+    "preflight_10": {
+      "log": "/workspace/logs/leakage_free_study/preflight_10.log",
+      "time": 1783729075.4135487
+    },
+    "preflight_11": {
+      "log": "/workspace/logs/leakage_free_study/preflight_11.log",
+      "time": 1783729076.5135345
+    },
+    "preflight_full_reward_parity": {
+      "log": "/workspace/logs/leakage_free_study/preflight_full_reward_parity.log",
+      "time": 1783729241.5200856
+    },
+    "reference_s42": {
+      "log": "/workspace/logs/leakage_free_study/reference_s42.log",
+      "time": 1783746477.407637
+    },
+    "signature_reference_s42": {
+      "log": "/workspace/logs/leakage_free_study/signature_reference_s42.log",
+      "time": 1783753361.171988
+    },
+    "core_s42_text": {
+      "log": "/workspace/logs/leakage_free_study/core_s42_text.log",
+      "time": 1783766153.1904716
+    }
+  },
+  "failed": {
+    "preflight_01": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_study/preflight_01.log"
+    },
+    "preflight_02": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_study/preflight_02.log"
+    },
+    "preflight_11": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_study/preflight_11.log"
+    },
+    "reference_s42": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_study/reference_s42.log"
+    }
+  }
+}

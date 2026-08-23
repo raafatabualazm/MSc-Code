@@ -1,0 +1,43 @@
+{
+  "schema": "compact-qwen-v1-preflight",
+  "rows_retained": 2197,
+  "rows_by_role": {
+    "fit": 2197
+  },
+  "quarantined": 14,
+  "quarantine_reasons": {
+    "unknown_or_corrupt_mnemonic:local_2": 2,
+    "unknown_or_corrupt_mnemonic:local_3": 2,
+    "unknown_or_corrupt_mnemonic:local_0": 8,
+    "unknown_or_corrupt_mnemonic:local_1": 2
+  },
+  "failures_count": 0,
+  "failure_examples": [],
+  "tokens": {
+    "min": 47,
+    "p50": 405,
+    "p95": 1445,
+    "p99": 2287,
+    "max": 7272,
+    "limit": 9000
+  },
+  "codebook_expansion_leakage_scan": {
+    "candidate": 0,
+    "file_uri": 0,
+    "absolute_symbol_address": 0,
+    "private_field_terms": 0
+  },
+  "passed": true,
+  "exploratory_full_release_fit": true,
+  "contract": {
+    "compact_codec_sha256": "507542bf0f39df77555884a7f98f49513bf0a03c455fc7db16583b3fbdd3042b",
+    "compact_codebook_sha256": "ec4bbae58c636011186045f703adac69319ce5901c385d607a5721a0104de5d8",
+    "compact_tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "base_vocab_size": 151936,
+    "tokenizer_vocab_size": 151669,
+    "model_vocab_size": 151936,
+    "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "source_token_expansion_count": 20494,
+    "runtime_symbol_policy_sha256": null
+  }
+}

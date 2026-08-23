@@ -1,0 +1,46 @@
+{
+  "schema": "antigravity-pass-stability-corrections-v1",
+  "stability_runs": 3,
+  "bulk_audit": {
+    "evidence": "all_clean_pass_stability3.json",
+    "run_count": 15,
+    "archived_passing_candidates_checked": 3450,
+    "stable_passing_candidates": 3449,
+    "invalidated_candidates": 1
+  },
+  "corrections": [
+    {
+      "stem": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges",
+      "row_one_based": 150,
+      "problem_id": "158",
+      "candidate_one_based": 4,
+      "field": "pass",
+      "archived_value": 1,
+      "corrected_value": 0,
+      "reason": "Candidate uses Random().nextBool() for deterministic tie-breaking and failed every stability-qualified replay.",
+      "evidence": "stability_s44_noedges_row150.json"
+    }
+  ],
+  "diagnostics": {
+    "single_run_task158": {
+      "evidence": "task158_stability1.json",
+      "repeats": 20,
+      "positive_repeats": 1
+    },
+    "stable3_task158": {
+      "evidence": "task158_stability3.json",
+      "repeats": 20,
+      "positive_repeats": 0
+    },
+    "other_passing_random_candidates": {
+      "checked": 3,
+      "repeats_each": 5,
+      "all_remained_passing": true,
+      "evidence": [
+        "stability_s42_expanded_row23.json",
+        "stability_s42_noedges_row38.json",
+        "stability_s44_cfg_row39.json"
+      ]
+    }
+  }
+}

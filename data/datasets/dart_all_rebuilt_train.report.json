@@ -1,0 +1,19 @@
+{
+  "assembly_lines_max": 2908,
+  "assembly_lines_median": 212,
+  "assembly_lines_min": 16,
+  "dart_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"windows_x64\"",
+  "gdb_version": "GNU gdb (GDB) 17.1",
+  "input": "data\\datasets\\dart_all_cfg_clean_train.jsonl",
+  "input_rows": 1081,
+  "input_sha256": "e3137a9c70570aff43aed0d7dc59b342e199ae6f7b4555d9704c39af3fcbdc0e",
+  "output": "data\\datasets\\dart_all_rebuilt_train.jsonl",
+  "output_rows": 897,
+  "output_sha256": "210479b11d97be2fc0092d9e322cd8e76d725c4ffda2ba59e1c566f47f462929",
+  "rejected": "data\\datasets\\dart_all_rebuilt_train.rejected.json",
+  "rejected_rows": 184,
+  "retries": 1,
+  "schema": "antigravity-sft-assembly-rebuild-v1",
+  "selected_rows": 1081,
+  "workers": 16
+}

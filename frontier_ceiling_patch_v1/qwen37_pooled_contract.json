@@ -1,0 +1,46 @@
+{
+  "schema": "qwen37_frontier_text_family_pool_v1",
+  "purpose": "Paired 175-task K=10 frontier-ceiling evaluation over two sealed enrichment arms",
+  "text_capability_assumption": "The supplied snapshot updates affect vision-language capability only; exact snapshot identity is still retained for stratified diagnostics.",
+  "generation_policy": {
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_output_tokens": 12288,
+    "enable_thinking": true,
+    "thinking_budget": 8192
+  },
+  "global_sample_allocation": [
+    {
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 3,
+      "global_sample_indices": [0, 1, 2]
+    },
+    {
+      "model": "qwen3.7-max-preview",
+      "local_k": 2,
+      "global_sample_indices": [3, 4],
+      "alias_note": "Alibaba currently documents this alias as equivalent to qwen3.7-max-2026-05-17."
+    },
+    {
+      "model": "qwen3.7-max-2026-05-20",
+      "local_k": 3,
+      "global_sample_indices": [5, 6, 7]
+    },
+    {
+      "model": "qwen3.7-max-2026-06-08",
+      "local_k": 2,
+      "global_sample_indices": [8, 9]
+    }
+  ],
+  "paired_invariant": "The exact same model-to-global-sample allocation is used for both enrichment arms.",
+  "reporting": {
+    "primary": "Pooled family pass@10 and compile@10 for each enrichment arm",
+    "required_diagnostics": [
+      "Per-snapshot compile and pass rates",
+      "Per-snapshot token usage",
+      "Resolved model identities",
+      "Finish-reason distribution",
+      "Paired task-level arm comparison"
+    ]
+  }
+}

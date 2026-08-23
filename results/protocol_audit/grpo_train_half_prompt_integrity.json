@@ -1,0 +1,15 @@
+{
+  "dataset": {
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\grpo_data_rl_train_half_cfg.jsonl",
+    "sha256": "6c22c7e1a9c97e6b0c2941a81fec5cf564337df1bd460d938fc897c02efd7392",
+    "size_bytes": 1493824
+  },
+  "leaked_rows": [],
+  "passed": true,
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "prompt_stream_sha256": "3ac59fa9dae2dfc055d7babc50b149d9c6266c3b29b2adc9ab39b257d79c99f3",
+  "rows": 77,
+  "rows_leaking_scoring_tests": 0,
+  "rows_with_candidate_assertions": 77,
+  "rows_with_tests": 77
+}

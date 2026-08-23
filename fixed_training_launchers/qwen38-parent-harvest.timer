@@ -1,0 +1,11 @@
+[Unit]
+Description=Resume Qwen3.8 parent harvest after weekly quota reset
+
+[Timer]
+OnCalendar=2026-07-29 21:20:30 UTC
+AccuracySec=1s
+Persistent=true
+Unit=qwen38-parent-harvest.service
+
+[Install]
+WantedBy=timers.target

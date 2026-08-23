@@ -1,0 +1,63 @@
+{
+  "experiment": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text",
+  "config": {
+    "name": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text",
+    "decoder": "Qwen/Qwen3-8B",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "4",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/grpo_data_graphv2.jsonl",
+    "pass_at_k": "data/testing/grpo_data_graphv2.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 10,
+    "pass_at_k": 10,
+    "generation_batch_size": 10,
+    "eval_max_new_tokens": 768,
+    "compile_mode": "jit_tests"
+  },
+  "predictions": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text_compile_predictions.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text_pass_predictions.json"
+  },
+  "provenance": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text_compile_predictions.json.provenance.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_text_pass_predictions.json.provenance.json",
+    "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "encoder_revision": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+    "seed": 44
+  },
+  "codebleu": {
+    "count": 154,
+    "samples_with_success": 154,
+    "mean_codebleu": 0.6395010729806669,
+    "min_codebleu": 0.5035396258044449,
+    "max_codebleu": 0.8075572496867339
+  },
+  "codebleu_compiled_only": {
+    "count": 154,
+    "samples_with_success": 46,
+    "mean_codebleu": 0.6063385813101969,
+    "min_codebleu": 0.37961662838880794,
+    "max_codebleu": 0.7474622268079647
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.6240259740259743,
+    "compile_at_5": 0.8855132962275819,
+    "total_problems": 154
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.12272727272727274,
+    "pass_at_5": 0.20403009688723978,
+    "pass_at_10": 0.22727272727272727,
+    "total_problems": 154
+  }
+}

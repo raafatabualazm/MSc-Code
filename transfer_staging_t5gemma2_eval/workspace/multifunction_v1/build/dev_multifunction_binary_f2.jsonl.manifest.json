@@ -1,0 +1,151 @@
+{
+  "artifacts": {
+    "base_dev": {
+      "bytes": 1326593,
+      "path": "/workspace/temp/codex_harness_sanitize_dual_20260723/output/dev_fn0_whole_real_executable.jsonl",
+      "sha256": "eb39335541dc4efc385a69a138d774bd1777c6743d7e423bf265db8ce7c7bc88",
+      "size_bytes": 1326593
+    },
+    "base_dev_seal": {
+      "bytes": 895,
+      "path": "/workspace/temp/codex_harness_sanitize_dual_20260723/output/dev_fn0_whole_real_executable.seal.json",
+      "sha256": "8531dc6e1ed871b0a879ea50f296d703cbb309bcac1093c73b8f234c3493abf1",
+      "size_bytes": 895
+    },
+    "base_train": {
+      "bytes": 12421531,
+      "path": "/workspace/temp/codex_harness_sanitize_dual_20260723/output/train_fn0_whole_real_imitation.jsonl",
+      "sha256": "0a2d94e279ae04cb1e9ea656ff5222401e6970f41a519e9234ea74f8053c3db4",
+      "size_bytes": 12421531
+    },
+    "base_train_seal": {
+      "bytes": 1094,
+      "path": "/workspace/temp/codex_harness_sanitize_dual_20260723/output/train_fn0_whole_real_imitation.seal.json",
+      "sha256": "0bfd2007657a7523f2754a42d9527501dd1fa76ca5c3f6b876b63768e2b18c32",
+      "size_bytes": 1094
+    },
+    "codebook": {
+      "bytes": 3820649,
+      "path": "/workspace/direct_compact_stage/scrubbed_master_v2_release/direct_compact_split_v1/compact_qwen_confirmatory_v1/codebook.json",
+      "sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+      "size_bytes": 3820649
+    },
+    "codec": {
+      "bytes": 20705,
+      "path": "/workspace/direct_compact_stage/scripts/data/build_compact_qwen_v1.py",
+      "sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4",
+      "size_bytes": 20705
+    },
+    "constants": {
+      "bytes": 957052,
+      "path": "/workspace/multifunction_v1/constants_v5/attested_pool_constants_1755.jsonl",
+      "sha256": "2b5dc0d353e5f7cb70bb79cb398406b16a92b524e4252fdbca01bd48a7c7b857",
+      "size_bytes": 957052
+    },
+    "contract": {
+      "bytes": 1495748,
+      "path": "/workspace/artifacts/compact_fn0_rebuild/fn0_contract.json",
+      "sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02",
+      "size_bytes": 1495748
+    },
+    "extractor_script": {
+      "bytes": 94108,
+      "path": "/workspace/scripts/data/extract_dart_aot_user_function_bundle.py",
+      "sha256": "ff3cd323eb3045da0a9bf8b3489f8e867cbf3ae3dfd12181fc6c2004423af2a5",
+      "size_bytes": 94108
+    },
+    "frontier_f2": {
+      "bytes": 48069,
+      "path": "/workspace/frontier_ceiling_patch_v1/frontier_f2.py",
+      "sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce",
+      "size_bytes": 48069
+    },
+    "function_bundles": {
+      "bytes": 83965808,
+      "path": "/workspace/multifunction_v1/extraction_v2/user_function_bundles_1755.jsonl",
+      "sha256": "d2a019fe14e500bf1d242367e3b52b644f3e166bb8e3b5ad47e980e6ccb688d2",
+      "size_bytes": 83965808
+    },
+    "inline_cfg_codec": {
+      "bytes": 9169,
+      "path": "/workspace/scripts/data/build_multifunction_compact_v2.py",
+      "sha256": "b2e0e33a56c470ac54257a0fc2124bcc2b9d58639a58416d33c7fbbf74d2ca52",
+      "size_bytes": 9169
+    },
+    "representation_codebook": {
+      "bytes": 3537474,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_codebook.json",
+      "sha256": "c36f9aadc3308c9916070c2088704d4b5bf6410be84d8df6c7831ed448ed0e14",
+      "size_bytes": 3537474
+    },
+    "representation_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+      "size_bytes": 2875794
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "path": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "size_bytes": 11422654
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 0,
+    "task_ids": []
+  },
+  "created_at": "2026-07-23T16:46:19.047029Z",
+  "dataset": {
+    "bytes": 1802107,
+    "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+    "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "size_bytes": 1802107
+  },
+  "f2_prompt_contract": {
+    "all_rows_within_limit": true,
+    "chat_overhead_reserve": 256,
+    "constant_prefix_token_cap": null,
+    "max_prompt_tokens": 12000,
+    "maximum_estimated_prompt_tokens": 8038,
+    "maximum_task_id": "sigless_f9772127b371",
+    "representation_schema": "lossless-semantic-f2",
+    "system_prompt": "Return only self-contained equivalent Dart fn0+imports/helpers; no main/tests/fences/prose. F2: Cn+n UTF8 prefix; strings/numbers=JSON; external J[n]=@Xn. E=entry BREFs; H lines=HREF+hex, HREF=#hex; M lines=MREF+ASCII, expand MREF substring first; D lines=IREF+instruction; S lines=SREF+refs/{inline}; B2 repeats BREF+instructions+CFG; X=end. CFG T/F/N/L/U/J+BREF=true/false/fallthrough/loop/unconditional/jump; n/f=to next; t/l+BREF=T/L target plus F next. Instruction=opcode[:operands]. ne/ae/np/be/ge/le/no/g add j. Aliases [s,o,u,+,*,x,v,_,/,i,>,k,r,f,<]=[movsd,comisd,movups,add,mulsd,xorps,movaps,subsd,divsd,cvtsi2sd,shr,movmskpd,roundsd,cvttsd2si,shl]; others literal. Regs [A,B,C,D,I,S,P,R,E,F,G,H,K,M,T,V]=[rax,rbx,rcx,rdx,rdi,rsi,rbp,rsp,r8,r9,r10,r11,r12,r13,r14,r15]; d/w/b narrows; Xn/Yn/Zn=xmm/ymm/zmm. [Q,D,W,B,X,Y,Z][ or SIZE+seg:[ means [QWORD,DWORD,WORD,BYTE,XMMWORD,YMMWORD,ZMMWORD] PTR; PTR [. #h=0xh; [S:,K:,U,X,R+]=[@STUB:,@SDK:,@U,@X,@REL+]; ~=@; %23/%7E/%25=#/~/%; @BREF=block; fn:@SELF=target; fn:Un=helper @Un. Bare jcc uses T (L loop); bare jmp uses U/J/L.",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "invariants": {
+    "all_artifact_hashes_verified": true,
+    "all_codec_roundtrips_verified": true,
+    "all_complete_prompts_within_limit": true,
+    "all_external_symbols_retained": true,
+    "all_f2_semantic_roundtrips_verified": true,
+    "all_row_contract_hashes_verified": true,
+    "all_student_constant_prefixes_verified": true,
+    "all_user_functions_retained": true,
+    "cfg_explicit": true,
+    "f2_system_prompt_self_contained_and_hashed": true,
+    "keyed_private_source_symbol_attestation_used": true,
+    "opaque_source_ids_expanded": true,
+    "raw_source_names_not_serialized": true,
+    "train_dev_representation_contract_identical": true,
+    "transfer_table_redundancy_proven": true
+  },
+  "output": {
+    "bytes": 1055387,
+    "path": "/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl",
+    "sha256": "6ba98eb496af2ef36ca1a0d460bf6e64b715c42f0b9216c64b4a8fc300ccffab",
+    "size_bytes": 1055387
+  },
+  "rows": 175,
+  "schema": "verified-api-readable-compact-v2",
+  "source_symbol_attestation": {
+    "attestation_file_sha256": "4aabcd4576ceaefbc1460e7aee7a5876c4acbeab9b0d834048b45f691fdb2c02",
+    "binding_sha256_sequence": "d526029a16e102c5c9bfb2e71d16ea9d6541f009da9c378621ccb34ce9c763be",
+    "is_keyed": true,
+    "key_id_sha256": "02347c2e61fe0c0402027edb0ac5718b00c42da81ddd308ec133fab67dd974ab",
+    "raw_names_serialized": false,
+    "used": true
+  },
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+}

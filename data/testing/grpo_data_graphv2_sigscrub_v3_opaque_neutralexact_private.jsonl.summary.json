@@ -1,0 +1,26 @@
+{
+  "schema": "dart-signature-scrubbed-v3",
+  "effective_id_salt_sha256": "12ac1be460c93914d8ecd39fb7cb370094cc2166ba47d67beff4ccbcece2b2eb",
+  "benchmark_kind": "existing_ablation",
+  "public_signature_mode": "neutral_exact",
+  "target_name": "fn0",
+  "shuffle_public_seed": 4343,
+  "input": "/root/fixed_scrub_build/data/testing/grpo_data_graphv2.jsonl",
+  "input_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "freeze_manifest_sha256": null,
+  "input_rows": 154,
+  "accepted_rows": 154,
+  "rejected_rows": 0,
+  "prepare_only": false,
+  "private_output": "/root/fixed_scrub_build/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_neutralexact_private.jsonl",
+  "public_output": "/root/fixed_scrub_build/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_neutralexact_public.jsonl",
+  "assembly_mode": "rename_frozen",
+  "toolchain": {
+    "assembly_derivation": "text_rename_of_frozen_benchmark_assembly",
+    "asserted_frozen_dart_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+    "asserted_frozen_gdb_version": "GNU gdb (GDB) 17.1",
+    "asserted_frozen_toolchain_version": "dart-3.11.5|gdb-17.1|extractor-3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d"
+  },
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "builder_sha256": "943b6bd2bd9f1630472ff4103f7c49045e4d67fd7ea30363f227280ba45c94de"
+}

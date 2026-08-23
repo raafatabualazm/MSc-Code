@@ -1,0 +1,54 @@
+{
+  "schema": "qwen37-length-repair-contract-v5",
+  "purpose": "Outcome-blind adaptive-cap overlay for Qwen primary slots whose sealed 12K response ended only because of the total completion cap.",
+  "primary_meta_contract": "qwen37_primary_alias_fallback_contract_v5.json",
+  "primary_meta_contract_sha256": "6218118c8e9e7b67079df2b848626ea8a71deaf128353bbc8757d9553a6cdbae",
+  "selection": {
+    "source_scope": "the eight exact primary source shards named by the primary meta contract",
+    "trigger": "source terminal finish_reason == length",
+    "outcome_blind": true,
+    "source_outcomes_must_not_be_read_for_selection": true,
+    "non_length_resampling": false,
+    "maximum_terminal_repair_responses_per_source_slot": 1
+  },
+  "request": {
+    "same_exact_source_prompt": true,
+    "same_exact_source_model": true,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "request_cap_parameter": "max_completion_tokens",
+    "max_tokens_absent": true,
+    "requested_total_completion_cap": 24576,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 24586,
+    "thinking_budget": 8192,
+    "enable_thinking": true
+  },
+  "acceptance": {
+    "required_finish_reason": "stop",
+    "reasoning_tokens_required": true,
+    "reasoning_tokens_minimum": 1,
+    "reasoning_tokens_maximum": 8192,
+    "reasoning_content_required_nonempty": true,
+    "if_24576_is_unsupported_or_still_length": "fail_closed",
+    "model_fallback": false,
+    "prompt_transformation": false
+  },
+  "estimation": {
+    "adaptive_primary_slot_mapping": "replace each original length slot with its same-slot repair outcome",
+    "original_non_length_slots": "unchanged",
+    "fixed_12k_estimator": "may be reported separately",
+    "adaptive_24k_estimator": "requires a terminal evaluated repair for every observed primary length slot and no foreign repair slots",
+    "cost_accounting": "count both original and repair provider usage",
+    "performance_accounting": "count exactly one outcome per global slot"
+  },
+  "implementation": {
+    "repair_runner": "qwen37_length_repair_v5.py",
+    "repair_runner_sha256": "47e21d60c9330a7eff03d2578bd10261fbbd90e218ad0496abdc689159521b38",
+    "primary_status_helper": "qwen37_primary_alias_status_v5.py",
+    "primary_status_helper_sha256": "5d2d1882661abcf339fa7b67e0fdfe98cbd757a5292e98986489d414a4b26fd0",
+    "shared_runner_sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead",
+    "core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258",
+    "qwen_completion_entry_sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15"
+  }
+}

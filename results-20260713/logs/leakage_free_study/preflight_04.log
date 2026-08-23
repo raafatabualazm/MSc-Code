@@ -1,0 +1,78 @@
+
+$ /venv/main/bin/python generate_synthetic_tasks_parallel.py --self-test
+========== SELF TEST ==========
+[dart] -> /usr/bin/dart
+  version: Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on "linux_x64"
+[gdb] -> /usr/bin/gdb
+  version: GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+
+--- Gate B: reference validation (workdir /workspace/gate_tmp/dartgen_u4kxtvl7) ---
+  $ dart run --enable-asserts ...  -> rc=0
+  $ dart /workspace/gate_tmp/dartgen_u4kxtvl7/validate.dart ...  -> rc=0
+  GATE B OK
+
+--- Gate E: compile + gdb (trying both output kinds) ---
+  $ dart compile aot-snapshot ...  -> rc=0
+  $ gdb ... (aot-snapshot)  -> rc=0, symbols: YES
+    --- dump head (diff this against an eval entry!) ---
+    All functions matching regular expression "tallyCargoWeights":
+    
+    File file:///workspace/gate_tmp/dartgen_u4kxtvl7/selftest.dart:
+    1:	static void tallyCargoWeights(void);
+    Dump of assembler code for function tallyCargoWeights:
+       0x0000000000093520 <+0>:	push   rbp
+       0x0000000000093521 <+1>:	mov    rbp,rsp
+       0x0000000000093524 <+4>:	sub    rsp,0x18
+       0x0000000000093528 <+8>:	cmp    rsp,QWORD PTR [r14+0x48]
+       0x000000000009352c <+12>:	jbe    0x935ef <tallyCargoWeights+207>
+       0x0000000000093532 <+18>:	mov    rdi,QWORD PTR [rbp+0x18]
+       0x0000000000093536 <+22>:	mov    ecx,DWORD PTR [rdi-0x1]
+    ... (67 lines total)
+  $ dart compile exe ...  -> rc=0
+  $ gdb ... (exe)  -> rc=1, symbols: NO
+    This GDB supports auto-downloading debuginfo from the following URLs:
+      <https://debuginfod.ubuntu.com>
+    Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+    Debuginfod has been disabled.
+  GATE E OK via `dart compile aot-snapshot`
+
+========== SELF TEST PASSED ==========
+
+$ /venv/main/bin/python generate_synthetic_tasks_parallel.py --self-test
+========== SELF TEST ==========
+[dart] -> /usr/bin/dart
+  version: Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on "linux_x64"
+[gdb] -> /usr/bin/gdb
+  version: GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+
+--- Gate B: reference validation (workdir /workspace/gate_tmp/dartgen_4g247z8_) ---
+  $ dart run --enable-asserts ...  -> rc=0
+  $ dart /workspace/gate_tmp/dartgen_4g247z8_/validate.dart ...  -> rc=0
+  GATE B OK
+
+--- Gate E: compile + gdb (trying both output kinds) ---
+  $ dart compile aot-snapshot ...  -> rc=0
+  $ gdb ... (aot-snapshot)  -> rc=0, symbols: YES
+    --- dump head (diff this against an eval entry!) ---
+    All functions matching regular expression "tallyCargoWeights":
+    
+    File file:///workspace/gate_tmp/dartgen_4g247z8_/selftest.dart:
+    1:	static void tallyCargoWeights(void);
+    Dump of assembler code for function tallyCargoWeights:
+       0x0000000000093520 <+0>:	push   rbp
+       0x0000000000093521 <+1>:	mov    rbp,rsp
+       0x0000000000093524 <+4>:	sub    rsp,0x18
+       0x0000000000093528 <+8>:	cmp    rsp,QWORD PTR [r14+0x48]
+       0x000000000009352c <+12>:	jbe    0x935ef <tallyCargoWeights+207>
+       0x0000000000093532 <+18>:	mov    rdi,QWORD PTR [rbp+0x18]
+       0x0000000000093536 <+22>:	mov    ecx,DWORD PTR [rdi-0x1]
+    ... (67 lines total)
+  $ dart compile exe ...  -> rc=0
+  $ gdb ... (exe)  -> rc=1, symbols: NO
+    This GDB supports auto-downloading debuginfo from the following URLs:
+      <https://debuginfod.ubuntu.com>
+    Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+    Debuginfod has been disabled.
+  GATE E OK via `dart compile aot-snapshot`
+
+========== SELF TEST PASSED ==========

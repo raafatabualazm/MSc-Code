@@ -1,0 +1,37 @@
+{
+  "schema": "qwen37-capacity-adopted-outcome-reconciliation-contract-v1",
+  "purpose": "Provider-free repair of missing capacity outcome bookkeeping for effective terminals adopted from the clean Qwen diagnostic runs",
+  "parents": {
+    "capacity_entry": "qwen37_capacity_fallback_v6.py",
+    "capacity_entry_sha256": "6b2d642be25bb7b2e97daddf70e9a2245a8ff09e5f0c6e5e32c09afc92159521",
+    "capacity_contract": "qwen37_capacity_fallback_contract_v6.json",
+    "capacity_contract_sha256": "cea8acaa785ddc2685a5da8b4426dce41837a25af2e7dd9639dd70f632d59631",
+    "evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6"
+  },
+  "scope": {
+    "eligible_effective_origin": "adopted_clean_diagnostic",
+    "only_effective_terminals_missing_from_capacity_outcomes_are_selected": true,
+    "fresh_capacity_alias_responses_are_ineligible": true,
+    "provider_imports": false,
+    "provider_calls": 0,
+    "source_journals_modified": false,
+    "base_capacity_journals_modified": false,
+    "output_is_a_separate_append_only_overlay": true
+  },
+  "verification": {
+    "selection_id_arm_task_and_global_index_match": true,
+    "diagnostic_directory_is_deterministic_from_partition_and_arm": true,
+    "diagnostic_config_slot_policy_and_endpoint_hashes_match_effective": true,
+    "diagnostic_terminal_canonical_hash_matches_effective": true,
+    "diagnostic_outcome_canonical_hash_matches_legacy_effective_binding": true,
+    "terminal_and_outcome_attempt_response_code_and_finish_fields_match": true,
+    "compiled_passed_attestation_and_all_stability_runs_are_copied": true,
+    "duplicate_or_ambiguous_source_evidence_fails_closed": true
+  },
+  "consumer_policy": {
+    "overlay_rows_have_capacity_candidate_outcome_schema": true,
+    "legacy_effective_binding_is_verified_against_source_outcome_sha256": true,
+    "overlay_must_exactly_cover_missing_adopted_capacity_outcomes": true,
+    "metrics_remain_withheld_until_the_full_3500_slot_contract_is_complete": true
+  }
+}

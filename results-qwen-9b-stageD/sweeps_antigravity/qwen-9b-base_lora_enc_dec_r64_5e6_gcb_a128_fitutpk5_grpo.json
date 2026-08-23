@@ -1,0 +1,55 @@
+{
+  "experiment": "qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5",
+  "config": {
+    "name": "qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5",
+    "decoder": "Qwen/Qwen3.5-9B-Base",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "1",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/compile-test2.jsonl",
+    "pass_at_k": "data/testing/grpo_data.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 5,
+    "pass_at_k": 10,
+    "generation_batch_size": 4,
+    "eval_max_new_tokens": 768
+  },
+  "predictions": {
+    "compile_codebleu": "/workspace/results/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5_grpo_compile_predictions.json",
+    "pass_at_k": "/workspace/results/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5_grpo_pass_predictions.json"
+  },
+  "codebleu": {
+    "count": 126,
+    "samples_with_success": 126,
+    "mean_codebleu": 0.6707252655501988,
+    "min_codebleu": 0.19467266991419552,
+    "max_codebleu": 0.8842048483680673
+  },
+  "codebleu_compiled_only": {
+    "count": 126,
+    "samples_with_success": 91,
+    "mean_codebleu": 0.6496329899685587,
+    "min_codebleu": 0.1257017675031916,
+    "max_codebleu": 0.8842048483680673
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.36031746031746054,
+    "compile_at_5": 0.7222222222222222,
+    "total_problems": 126
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.1551948051948053,
+    "pass_at_5": 0.2747113997113997,
+    "pass_at_10": 0.3246753246753247,
+    "total_problems": 154
+  }
+}

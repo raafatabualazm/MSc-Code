@@ -1,0 +1,49 @@
+{
+  "completed": {
+    "preflight_01": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_01.log",
+      "time": 1783719963.5886765
+    },
+    "preflight_02": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_02.log",
+      "time": 1783719982.9670627
+    },
+    "preflight_03": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_03.log",
+      "time": 1783719988.912175
+    },
+    "preflight_04": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_04.log",
+      "time": 1783719993.469131
+    },
+    "preflight_05": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_05.log",
+      "time": 1783720010.6413658
+    },
+    "preflight_06": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_06.log",
+      "time": 1783720012.158784
+    },
+    "preflight_07": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_07.log",
+      "time": 1783720015.4207225
+    },
+    "preflight_08": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_08.log",
+      "time": 1783720016.5024087
+    },
+    "preflight_09": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_09.log",
+      "time": 1783720017.756022
+    },
+    "preflight_10": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_10.log",
+      "time": 1783720019.007655
+    },
+    "preflight_full_reward_parity": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_study\\preflight_full_reward_parity.log",
+      "time": 1783720230.7438262
+    }
+  },
+  "failed": {}
+}

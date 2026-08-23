@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "no_optimizer_update": true,
+  "batches": 8,
+  "seed": 42,
+  "group_size": 16,
+  "reward_mode": "binary",
+  "reward": {
+    "perfect": 1.0,
+    "binary_fail": -1.0
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_new_tokens": 768
+  },
+  "pass_stability_runs": 3,
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin",
+    "size_bytes": 903604927,
+    "sha256": "6bfda91d8893988e36b697c766d39e477ecb2304783343ab588b0e92ea27ebfa"
+  },
+  "dataset": {
+    "path": "/workspace/data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl",
+    "size_bytes": 7327213,
+    "sha256": "756f7c1b7802dc9f36aab9f47dcfc2f97e10dbeda7b16168f7decd2b79cfb701"
+  },
+  "reward_implementation": {
+    "trainer": {
+      "path": "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py",
+      "size_bytes": 105201,
+      "sha256": "7d894520064c97db6d97447dd2b5efd887e0637e87e93ec57846155581bf3816"
+    },
+    "jit_evaluator": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "size_bytes": 18630,
+      "sha256": "5ad4a6fdfd946c059568ae3e18efbf855d563ac241871732c26887a2d2a516e8"
+    }
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "signal_group_rate_mean": 0.375,
+  "perfect_sample_rate_mean": 0.1640625,
+  "compiled_sample_rate_mean": 0.84375,
+  "compiled_known_fraction_mean": 1.0,
+  "pass_ratio_mean": 0.1640625
+}

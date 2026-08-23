@@ -1,0 +1,38 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/evaluation/audit_prompt_integrity_antigravity.py --dataset data/testing/grpo_data_cfg.jsonl --output results/protocol_audit_154_clean.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 00:15:13.671000 12456 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "dataset": {
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\grpo_data_cfg.jsonl",
+    "size_bytes": 3228962,
+    "sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f"
+  },
+  "rows": 154,
+  "rows_with_tests": 154,
+  "rows_with_candidate_assertions": 154,
+  "rows_leaking_scoring_tests": 0,
+  "leaked_rows": [],
+  "prompt_stream_sha256": "7cbd12ba2bd0dd98281ea39e8389492909b7226fde94c80eae98d1c09fe5ade4",
+  "passed": true
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/evaluation/audit_prompt_integrity_antigravity.py --dataset data/testing/grpo_data_cfg.jsonl --output results/protocol_audit_154_clean.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 00:46:42.804000 14544 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+{
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "dataset": {
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\data\\testing\\grpo_data_cfg.jsonl",
+    "size_bytes": 3228962,
+    "sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f"
+  },
+  "rows": 154,
+  "rows_with_tests": 154,
+  "rows_with_candidate_assertions": 154,
+  "rows_leaking_scoring_tests": 0,
+  "leaked_rows": [],
+  "prompt_stream_sha256": "7cbd12ba2bd0dd98281ea39e8389492909b7226fde94c80eae98d1c09fe5ade4",
+  "passed": true
+}

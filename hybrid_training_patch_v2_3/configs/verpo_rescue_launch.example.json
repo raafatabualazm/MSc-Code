@@ -1,0 +1,116 @@
+{
+  "schema": "direct-compact-verpo-rescue-launch-config-v1",
+  "project_root": "/workspace/antigravity",
+  "output_root": "/workspace/artifacts/direct_compact_verpo_rescue",
+  "inputs": {
+    "base_inference": {
+      "path": "/workspace/artifacts/base_student/inference.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "base_provenance": {
+      "path": "/workspace/artifacts/base_student/inference.json.provenance.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "rollout": {
+      "path": "/workspace/data/verpo/rollout.jsonl",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "rollout_seal": {
+      "path": "/workspace/data/verpo/rollout.seal.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "f2": {
+      "path": "/workspace/data/verpo/f2.jsonl",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "f2_manifest": {
+      "path": "/workspace/data/verpo/f2.manifest.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "feedback_view_report": {
+      "path": "/workspace/data/verpo/feedback_view.report.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "private_holdback": {
+      "path": "/workspace/private/verpo/reward_holdback.jsonl",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "contract": {
+      "path": "/workspace/data/compact/contract.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "dataset": {
+      "path": "/workspace/data/compact/model_public.jsonl",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "alignment": {
+      "path": "/workspace/private/compact/alignment.jsonl",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "codebook": {
+      "path": "/workspace/data/compact/codebook.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "codec_artifact": {
+      "path": "/workspace/data/compact/codec.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "tokenizer_json": {
+      "path": "/workspace/data/compact/tokenizer.json",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    },
+    "source_overlay": {
+      "path": "/workspace/checkpoints/student/source_overlay.pt",
+      "sha256": "REPLACE_WITH_EXACT_SHA256"
+    }
+  },
+  "plan": {
+    "select_k": 4,
+    "repairs_per_candidate": 4,
+    "max_groups": 100,
+    "seed": 260103525,
+    "reward_timeout": 20,
+    "stability_runs": 1,
+    "workers": 8,
+    "mcnemar_minimum_difference": 0.05,
+    "mcnemar_assumed_discordance": 0.1,
+    "mcnemar_alpha": 0.05,
+    "mcnemar_power": 0.8
+  },
+  "judge": {
+    "model": "REPLACE_WITH_PINNED_JUDGE_MODEL",
+    "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+    "api_style": "openai_compatible_chat",
+    "max_tokens": 4096,
+    "timeout_seconds": 180,
+    "max_retries": 0,
+    "thinking_mode": "enabled",
+    "reasoning_effort": "high"
+  },
+  "inference": {
+    "decoder_model": "/workspace/checkpoints/student/base_model",
+    "decoder_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+    "tokenizer": "/workspace/checkpoints/student/base_model",
+    "tokenizer_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+    "decoder_adapter": "/workspace/checkpoints/student/adapter",
+    "attn_implementation": "flash_attention_2",
+    "max_new_tokens": 4096,
+    "temperature": 0.8,
+    "top_p": 1.0,
+    "top_k": 0,
+    "seed": 260103525,
+    "role": "fit",
+    "direct_prompt_mode": "code_only_v1",
+    "precision": "bf16",
+    "device": "cuda"
+  },
+  "score": {
+    "reward_timeout": 20,
+    "stability_runs": 1,
+    "workers": 8
+  },
+  "transfer": {
+    "min_unique_repairs": 400,
+    "allow_low_coverage_smoke": false
+  }
+}

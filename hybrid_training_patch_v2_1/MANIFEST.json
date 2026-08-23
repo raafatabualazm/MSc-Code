@@ -1,0 +1,202 @@
+{
+  "critique_2_fixes": {
+    "default_bootstrap_confidence": 0.95,
+    "default_bootstrap_iterations": 10000,
+    "default_min_effective_pairs": 8,
+    "default_min_gate_rows": 96,
+    "default_sign_test_alpha": 0.05,
+    "legacy_attention_checkpoint_expansion": "explicit_zero_output_lora_b_only",
+    "paired_exact_test": true,
+    "paired_task_bootstrap": true,
+    "qwen_lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "file_count": 29,
+  "files": [
+    {
+      "path": "CHANGELOG_V2_1.md",
+      "sha256": "0ec335fd5e08751bc034ff6c316dc5d4dca74f860d63137625adbbf608e76077",
+      "size_bytes": 3525
+    },
+    {
+      "path": "COMPILE_RESULTS.txt",
+      "sha256": "2b232a97011d19f21a19ec08e8d35290bdc584132400b86df7ecf7095a886683",
+      "size_bytes": 72
+    },
+    {
+      "path": "CRITIQUE2_FIXES.diff",
+      "sha256": "98a6c57a904ce72f9c2d6f848447f38a51f120e15708cfb735648a8f0b479409",
+      "size_bytes": 82899
+    },
+    {
+      "path": "HYBRID_TRAINING_PATCH_V2_1.diff",
+      "sha256": "98a6c57a904ce72f9c2d6f848447f38a51f120e15708cfb735648a8f0b479409",
+      "size_bytes": 82899
+    },
+    {
+      "path": "INSTALLER_TEST.txt",
+      "sha256": "2b21c9ecd07dae2a64ac159c08650e65f5e0cdc5fea11b8cf3b78fd5de562118",
+      "size_bytes": 2323
+    },
+    {
+      "path": "README_HYBRID_TRAINING.md",
+      "sha256": "40310f7233b059053a71ecdf82982bd28cc6839bbbd30e05dcb6fd6cfd6991f2",
+      "size_bytes": 18928
+    },
+    {
+      "path": "TEST_RESULTS.txt",
+      "sha256": "66dee56f27d91e8b3b5d9d85291c5659d2114ded897b496418a06a7bfef2f5f1",
+      "size_bytes": 5608
+    },
+    {
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "007d6e5a198bc5627f1d72fda999d7c398ad5f31632c3c621eae8b40d2ad564b",
+      "size_bytes": 2621
+    },
+    {
+      "path": "apply_hybrid_patch.py",
+      "sha256": "3fb298f1f9abc04a5b6c7463baeadc4df4c0deb5aff13279d91dd695818333b4",
+      "size_bytes": 4641
+    },
+    {
+      "path": "requirements-hybrid.txt",
+      "sha256": "cc138503338f55a6f32ebec5416b2bc597b4f9e6c93fe428b15606e66f045341",
+      "size_bytes": 156
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "scripts/evaluation/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "scripts/evaluation/audit_grpo_reward_antigravity.py",
+      "sha256": "bd86a494e7830ade92c91948ffe06e82f0019938ba058c53fb8a0f08fa03e0f4",
+      "size_bytes": 8546
+    },
+    {
+      "path": "scripts/evaluation/functional_graph_gate_antigravity.py",
+      "sha256": "11d295e0d961f6e03e9702b887ebafb3b072b3b6642c43e9c0273ed60c672bb6",
+      "size_bytes": 43439
+    },
+    {
+      "path": "scripts/evaluation/graph_inference_antigravity.py",
+      "sha256": "104ab58bf0293674214fc5e7d4c503f110cae7d40c8c9c8a5f2112ae167d2526",
+      "size_bytes": 38204
+    },
+    {
+      "path": "scripts/evaluation/prepare_neutral_evaluation_antigravity.py",
+      "sha256": "87bbfbb8cea046d6136c9e3fdb5098113d27f3968f5577eb829718ea0f0beb54",
+      "size_bytes": 5181
+    },
+    {
+      "path": "scripts/evaluation/probe_graph_representations_antigravity.py",
+      "sha256": "1e869849f19fe0071891e9b40584df7a3352b7ee6660aea498c86936d91aeb50",
+      "size_bytes": 21027
+    },
+    {
+      "path": "scripts/evaluation/run_sweeps_antigravity.py",
+      "sha256": "49e9359b0c71ba9854fa873c53651aafdde738ef25a25441ae7d795bf6cdd805",
+      "size_bytes": 85869
+    },
+    {
+      "path": "scripts/training/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "scripts/training/build_balanced_sft_mix_antigravity.py",
+      "sha256": "3a9ef373eafbef14cc584ee0c6d72b106c8e0ae204e0c6c66bdc7f978a73c3fa",
+      "size_bytes": 10022
+    },
+    {
+      "path": "scripts/training/checkpoint_contract.py",
+      "sha256": "d6b2eb3f3f6131416aec757e4302fdc0103131f2aa3aff31f2342fa10db9acee",
+      "size_bytes": 4750
+    },
+    {
+      "path": "scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+      "sha256": "5ece6f47bd55d7e8e7b353c4931bed24748b6bb03b0b11d1e0eac9709d4b8506",
+      "size_bytes": 95249
+    },
+    {
+      "path": "scripts/training/graph_grpo_decompiler_antigravity.py",
+      "sha256": "b1b7fe05c9f1a9817561eb222314b8da23bc64fb4de779b345c190f7de599c87",
+      "size_bytes": 121193
+    },
+    {
+      "path": "scripts/training/graph_positions.py",
+      "sha256": "fa5f6080781f3a4b706a3375bb2c13b0fa65139b3a8aeee16bc2e2c5623a4af4",
+      "size_bytes": 1011
+    },
+    {
+      "path": "scripts/training/hybrid_data_controls.py",
+      "sha256": "b61ba1652d35010856a1f77af9dcd4d580d6722ebb2f842ce8a109d1e3a95530",
+      "size_bytes": 57849
+    },
+    {
+      "path": "scripts/training/prepare_hybrid_training_data_antigravity.py",
+      "sha256": "14efce0480dcb71af52300aab676371e220d65b62a65ee3b6f1e2ee7e5be5743",
+      "size_bytes": 20564
+    },
+    {
+      "path": "scripts/training/run_hybrid_curriculum_antigravity.py",
+      "sha256": "56b01554113b0b8ebc72401fd64e05904d58057281e927d6cbd09a97cac7639b",
+      "size_bytes": 66325
+    },
+    {
+      "path": "scripts/training/teacher_repair_dataset_antigravity.py",
+      "sha256": "92532a58c00bf48e1a32781b18596f2e7004744e22a65b05032b32b1ff9fd319",
+      "size_bytes": 51118
+    },
+    {
+      "path": "tests/test_hybrid_patch.py",
+      "sha256": "3ffbb41b864e4f98a1e77aa17725bd8755bc7ed5344ed8de9e830fb6fab8061e",
+      "size_bytes": 64097
+    }
+  ],
+  "generated_at_utc": "2026-07-17T01:43:32Z",
+  "overlay_files": [
+    "scripts/training/graph_positions.py",
+    "scripts/training/checkpoint_contract.py",
+    "scripts/training/hybrid_data_controls.py",
+    "scripts/training/prepare_hybrid_training_data_antigravity.py",
+    "scripts/training/build_balanced_sft_mix_antigravity.py",
+    "scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+    "scripts/training/graph_grpo_decompiler_antigravity.py",
+    "scripts/training/teacher_repair_dataset_antigravity.py",
+    "scripts/training/run_hybrid_curriculum_antigravity.py",
+    "scripts/evaluation/audit_grpo_reward_antigravity.py",
+    "scripts/evaluation/prepare_neutral_evaluation_antigravity.py",
+    "scripts/evaluation/probe_graph_representations_antigravity.py",
+    "scripts/evaluation/functional_graph_gate_antigravity.py",
+    "scripts/evaluation/graph_inference_antigravity.py",
+    "scripts/evaluation/run_sweeps_antigravity.py"
+  ],
+  "package": "hybrid_training_patch_v2_1",
+  "schema_version": 3,
+  "supersedes": {
+    "archive": "hybrid_training_patch_v2_20260716.zip",
+    "sha256": "9e8c62e64a1fd086ae82adffc9c06fca2c22de36bbe2b6d7041e62d82c538428"
+  },
+  "validation": {
+    "installer_backup_test": "passed",
+    "installer_digest_matches": 15,
+    "installer_overlay_files": 15,
+    "python_compileall_status": "passed",
+    "unit_test_status": "passed",
+    "unit_tests": 31
+  },
+  "version": "2.1"
+}

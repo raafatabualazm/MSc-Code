@@ -1,0 +1,315 @@
+{
+  "artifacts": {
+    "adapter_script": {
+      "bytes": 105932,
+      "path": "/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_multifunction_binary_compact.py",
+      "sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66"
+    },
+    "constants": {
+      "bytes": 617014,
+      "path": "/workspace/multifunction_v1/expanded2776/constants/attested_pool_constants_1196.jsonl",
+      "sha256": "d476fbef487d52b3076a96718fcdf530e304780f9eaf3b056bcb2a937111e0ca"
+    },
+    "expansion_builder": {
+      "bytes": 57689,
+      "path": "/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_phase0_2776_multifunction_expansion.py",
+      "sha256": "c68f7ae1b278ed65ae2ff7585f95fbcf85dd6028738623f10db0f163af940b51"
+    },
+    "extractor_script": {
+      "bytes": 94108,
+      "path": "/workspace/scripts/data/extract_dart_aot_user_function_bundle.py",
+      "sha256": "ff3cd323eb3045da0a9bf8b3489f8e867cbf3ae3dfd12181fc6c2004423af2a5"
+    },
+    "frontier_f2": {
+      "bytes": 48069,
+      "path": "/workspace/frontier_ceiling_patch_v1/frontier_f2.py",
+      "sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+    },
+    "frozen_codebook": {
+      "bytes": 3537474,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_codebook.json",
+      "sha256": "c36f9aadc3308c9916070c2088704d4b5bf6410be84d8df6c7831ed448ed0e14"
+    },
+    "frozen_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb"
+    },
+    "function_bundles": {
+      "bytes": 39468447,
+      "path": "/workspace/multifunction_v1/expanded2776/extraction/user_function_bundles_1196.jsonl",
+      "sha256": "017ead513f6d24221d0215111e402693d0fb7aa290b6e5f080af85ddb56de354"
+    },
+    "heldout_dataset": {
+      "bytes": 1802107,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+      "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7"
+    },
+    "heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json",
+      "sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a"
+    },
+    "inline_cfg_codec": {
+      "bytes": 9169,
+      "path": "/workspace/scripts/data/build_multifunction_compact_v2.py",
+      "sha256": "b2e0e33a56c470ac54257a0fc2124bcc2b9d58639a58416d33c7fbbf74d2ca52"
+    },
+    "parent_dataset": {
+      "bytes": 16562502,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.jsonl",
+      "sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18"
+    },
+    "parent_f2": {
+      "bytes": 9606976,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl",
+      "sha256": "f86032533f7f3e1bade9280e5bf6e28858daf25e34167837fec160a34b2370ba"
+    },
+    "parent_f2_manifest": {
+      "bytes": 7455,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary_f2.jsonl.manifest.json",
+      "sha256": "231227e9aa6f31c793ff097e8167972975e9f94871c9ea682d6a0dc996ed4af8"
+    },
+    "parent_seal": {
+      "bytes": 2963,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.seal.json",
+      "sha256": "14f2cc5ddcb63c8ad25f6a5c9bb6209af111dafbb0827523a24d8089585a94a5"
+    },
+    "representation_codebook": {
+      "bytes": 3537474,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_codebook.json",
+      "sha256": "c36f9aadc3308c9916070c2088704d4b5bf6410be84d8df6c7831ed448ed0e14"
+    },
+    "representation_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb"
+    },
+    "selection_seal": {
+      "bytes": 6105,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/expansion_selection.seal.json",
+      "sha256": "ebaeb9b007d7219da6bfa890ae5f14fbc4b03430e153790b237f108caee8e506"
+    },
+    "supplemental_base": {
+      "bytes": 4584561,
+      "path": "/workspace/multifunction_v1/expanded2776/sanitized/supplemental_train_imitation_1196.jsonl",
+      "sha256": "aba5f1ba004aa3cbdec0a19f52bb2d4f9dcbbb5b4caa9e086a20d25e4c55165d"
+    },
+    "supplemental_base_seal": {
+      "bytes": 1547,
+      "path": "/workspace/multifunction_v1/expanded2776/sanitized/supplemental_train_imitation_1196.seal.json",
+      "sha256": "67f9d37ca5c470ec6085308ddf52fc660f1f5973c79f226477e3d89299891d63"
+    },
+    "supplemental_manifest": {
+      "bytes": 539036,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_task_manifest_1196.jsonl",
+      "sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "path": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 0,
+    "task_ids": []
+  },
+  "capacity_contract_migration": {
+    "all_non_capacity_fields_byte_semantically_identical": true,
+    "allowed_changed_fields": [
+      "max_target_tokens",
+      "max_total_tokens"
+    ],
+    "capacity_values": {
+      "max_target_tokens": {
+        "source": 3072,
+        "target": 24576
+      },
+      "max_total_tokens": {
+        "source": 12288,
+        "target": 36864
+      }
+    },
+    "created_at": "2026-07-24T00:57:15.526990Z",
+    "invariants": {
+      "heldout_dataset_untouched": true,
+      "heldout_seal_changed_only_contract_sha256": true,
+      "no_training_or_generation_performed": true,
+      "parent_train_seal_changed_only_contract_sha256": true,
+      "train_dataset_bytes_identical": true,
+      "train_f2_bytes_identical": true
+    },
+    "observed_changed_fields": [
+      "max_target_tokens",
+      "max_total_tokens"
+    ],
+    "schema": "binary-multifunction-executable-capacity-migration-v1",
+    "source_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/expanded2776/executable/compact_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+      "size_bytes": 2875794
+    },
+    "source_executable_report": {
+      "bytes": 5117,
+      "path": "/workspace/multifunction_v1/expanded2776/executable/executable_view.build.json",
+      "sha256": "b05fe6c596a679407f8f39b6436943407d7b289935167f511ef52fa6db01291d",
+      "size_bytes": 5117
+    },
+    "source_heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json",
+      "sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+      "size_bytes": 2756
+    },
+    "source_parent_train_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.seal.json",
+      "sha256": "e61d9a5070bc0eb824e4cfcaec727f3569507149a1f09502f3220f023944e4e5",
+      "size_bytes": 3643
+    },
+    "target_contract": {
+      "bytes": 2875795,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/compact_contract.json",
+      "sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+      "size_bytes": 2875795
+    },
+    "target_heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/dev_multifunction_binary_target24k.seal.json",
+      "sha256": "4bbbb4639d8845f1716a61edb77a139c4f97c31b3cc57d54bb6221eac75bc29f",
+      "size_bytes": 2756
+    },
+    "target_parent_train_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/fit2776_expansion.target24k.seal.json",
+      "sha256": "ef776299f5b9eff5955896f7f22f78c49be9b198fce246ddc226b48facf87478",
+      "size_bytes": 3643
+    }
+  },
+  "created_at": "2026-07-24T00:57:15.530840Z",
+  "dataset": {
+    "bytes": 27082103,
+    "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable.jsonl",
+    "sha256": "04a81d4a36b06d157d3bf365527b4159a18cb41a2ef620cca7975b9befcc1d2b",
+    "size_bytes": 27082103
+  },
+  "derivation": {
+    "excluded_task_ids": [
+      "sigless_67bb88ce699e",
+      "sigless_bfde11b99b84"
+    ],
+    "excluded_task_ids_sha256": "4907b672737c0b2886b80dd4a4f8f9136b1e8b02f1a66793123f423b843c7b28",
+    "expanded_selection_seal": {
+      "bytes": 6105,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/expansion_selection.seal.json",
+      "sha256": "ebaeb9b007d7219da6bfa890ae5f14fbc4b03430e153790b237f108caee8e506",
+      "size_bytes": 6105
+    },
+    "output_rows": 2774,
+    "output_task_ids_sha256": "6251f9faa39f212fcf8b9b176579ba5d970e7b98d377ab85b2b74c4c34877b2d",
+    "parent_build_report": {
+      "bytes": 8012,
+      "path": "/workspace/multifunction_v1/expanded2776/build/build_report.json",
+      "sha256": "25ec8cc0e18c72b4a03b5b9bd448e853eaab7adbd4dd25c0e91a7bd8cbec70c9",
+      "size_bytes": 8012
+    },
+    "parent_build_schema": "binary-multifunction-compact-expansion-v1",
+    "parent_dataset": {
+      "bytes": 27125119,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl",
+      "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904",
+      "size_bytes": 27125119
+    },
+    "parent_dataset_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.seal.json",
+      "sha256": "e61d9a5070bc0eb824e4cfcaec727f3569507149a1f09502f3220f023944e4e5",
+      "size_bytes": 3643
+    },
+    "parent_f2": {
+      "bytes": 15699004,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl",
+      "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe",
+      "size_bytes": 15699004
+    },
+    "parent_f2_manifest": {
+      "bytes": 9244,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl.manifest.json",
+      "sha256": "ccc73f06772d8df6cc80b48b3bc0af2e6a6c8069bfe3c7cd483de8c7b0c7a582",
+      "size_bytes": 9244
+    },
+    "parent_rows": 2776,
+    "parent_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+    "row_content_transform": "identity",
+    "schema": "binary-multifunction-executable-subset-v1",
+    "selection": "stable_parent_order_minus_exact_audited_ids"
+  },
+  "expansion_partition": "frozen_parent_then_supplemental",
+  "f2_prompt_contract": {
+    "all_rows_within_limit": true,
+    "chat_overhead_reserve": 256,
+    "constant_prefix_token_cap": null,
+    "max_prompt_tokens": 12000,
+    "maximum_estimated_prompt_tokens": 11591,
+    "maximum_task_id": "sigless_1bba4dc0b268",
+    "representation_schema": "lossless-semantic-f2",
+    "system_prompt": "Return only self-contained equivalent Dart fn0+imports/helpers; no main/tests/fences/prose. F2: Cn+n UTF8 prefix; strings/numbers=JSON; external J[n]=@Xn. E=entry BREFs; H lines=HREF+hex, HREF=#hex; M lines=MREF+ASCII, expand MREF substring first; D lines=IREF+instruction; S lines=SREF+refs/{inline}; B2 repeats BREF+instructions+CFG; X=end. CFG T/F/N/L/U/J+BREF=true/false/fallthrough/loop/unconditional/jump; n/f=to next; t/l+BREF=T/L target plus F next. Instruction=opcode[:operands]. ne/ae/np/be/ge/le/no/g add j. Aliases [s,o,u,+,*,x,v,_,/,i,>,k,r,f,<]=[movsd,comisd,movups,add,mulsd,xorps,movaps,subsd,divsd,cvtsi2sd,shr,movmskpd,roundsd,cvttsd2si,shl]; others literal. Regs [A,B,C,D,I,S,P,R,E,F,G,H,K,M,T,V]=[rax,rbx,rcx,rdx,rdi,rsi,rbp,rsp,r8,r9,r10,r11,r12,r13,r14,r15]; d/w/b narrows; Xn/Yn/Zn=xmm/ymm/zmm. [Q,D,W,B,X,Y,Z][ or SIZE+seg:[ means [QWORD,DWORD,WORD,BYTE,XMMWORD,YMMWORD,ZMMWORD] PTR; PTR [. #h=0xh; [S:,K:,U,X,R+]=[@STUB:,@SDK:,@U,@X,@REL+]; ~=@; %23/%7E/%25=#/~/%; @BREF=block; fn:@SELF=target; fn:Un=helper @Un. Bare jcc uses T (L loop); bare jmp uses U/J/L.",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "invariants": {
+    "all_artifact_hashes_verified": true,
+    "all_codec_roundtrips_verified": true,
+    "all_complete_prompts_within_limit": true,
+    "all_external_symbols_retained": true,
+    "all_f2_semantic_roundtrips_verified": true,
+    "all_remaining_rows_byte_identical_to_parent": true,
+    "all_row_contract_hashes_verified": true,
+    "all_student_constant_prefixes_verified": true,
+    "all_user_functions_retained": true,
+    "cfg_explicit": true,
+    "exact_audited_execution_exclusions_applied": true,
+    "f2_system_prompt_self_contained_and_hashed": true,
+    "frozen_parent_codebook_unchanged": true,
+    "heldout_175_disjoint_and_untouched": true,
+    "keyed_private_source_symbol_attestation_used": true,
+    "lossless_raw_instruction_fallback_permitted": true,
+    "opaque_source_ids_expanded": true,
+    "raw_source_names_not_serialized": true,
+    "train_dev_representation_contract_identical": true,
+    "transfer_table_redundancy_proven": true
+  },
+  "ordered_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+  "output": {
+    "bytes": 15673877,
+    "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable_f2.jsonl",
+    "sha256": "12dfaf3e3bffc94bf68d9ea6a858548522c44e157f0f4da80a7cbed2acb6e221",
+    "size_bytes": 15673877
+  },
+  "rows": 2774,
+  "schema": "verified-api-readable-compact-v2",
+  "selection_seal_sha256": "ebaeb9b007d7219da6bfa890ae5f14fbc4b03430e153790b237f108caee8e506",
+  "source_symbol_attestation": {
+    "is_keyed": true,
+    "key_id_sha256": "02347c2e61fe0c0402027edb0ac5718b00c42da81ddd308ec133fab67dd974ab",
+    "partitions": [
+      {
+        "manifest_sha256": "231227e9aa6f31c793ff097e8167972975e9f94871c9ea682d6a0dc996ed4af8",
+        "name": "frozen_parent",
+        "rows": 1580
+      },
+      {
+        "attestation_file_sha256": "56d52e420b04d0d11d9632aaffa37fabf2ced1f34d5da759e00692a27b2f5013",
+        "binding_sha256_sequence": "c0de58a4a8cd85d7cd2739fe932a63e118a20d584cd67a5e2dec0ce87216ec62",
+        "name": "supplemental",
+        "rows": 1196
+      }
+    ],
+    "raw_names_serialized": false,
+    "used": true
+  },
+  "task_set_sha256": "6251f9faa39f212fcf8b9b176579ba5d970e7b98d377ab85b2b74c4c34877b2d",
+  "training_objective_scope": "executable_reward_only"
+}

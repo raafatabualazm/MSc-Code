@@ -1,0 +1,45 @@
+{
+  "schema": "qwen37-capacity-adopted-outcome-extension-v1",
+  "purpose": "Seal the provider-free adopted-diagnostic outcome reconciliation and its merged-status consumer without changing the active v6 provider runner, existing capacity provenance, or existing v7 repair epochs",
+  "immutable_parents": {
+    "capacity_entry": "qwen37_capacity_fallback_v6.py",
+    "capacity_entry_sha256": "6b2d642be25bb7b2e97daddf70e9a2245a8ff09e5f0c6e5e32c09afc92159521",
+    "capacity_contract": "qwen37_capacity_fallback_contract_v6.json",
+    "capacity_contract_sha256": "cea8acaa785ddc2685a5da8b4426dce41837a25af2e7dd9639dd70f632d59631",
+    "prior_status": "qwen37_primary_effective_status_v7.py",
+    "prior_status_sha256": "f8efd980737e4efc9a41c521c12ec62a69fa098f8de698021a840861c03cb1b2",
+    "modified": false
+  },
+  "reconciliation": {
+    "entry": "qwen37_capacity_adopted_outcome_reconciliation_v1.py",
+    "entry_sha256": "a5bc531c71652d0fb881d748863ad91c08f8eb155905250226dc0507346e7457",
+    "contract": "qwen37_capacity_adopted_outcome_reconciliation_contract_v1.json",
+    "contract_sha256": "344ac01c949f76e351cb1040d018d075875dcfbc2b08bc16483f9a28661c2b74",
+    "provider_imports": false,
+    "provider_calls": 0,
+    "base_capacity_journals_modified": false,
+    "source_journals_modified": false
+  },
+  "effective_status": {
+    "entry": "qwen37_primary_effective_status_v8.py",
+    "entry_sha256": "0b972aee9000af129394f7c02162d6e704e7bd2c3b138ccf809a0f124b5f7734",
+    "requires_reconciliation_to_exactly_equal_missing_adopted_outcomes": true,
+    "rejects_missing_non_adopted_outcomes": true,
+    "metrics_remain_withheld_until_exactly_3500_effective_slots": true
+  },
+  "monitor": {
+    "entry": "qwen37_capacity_adopted_outcome_monitor_v1.py",
+    "entry_sha256": "836835ceccfd08c93d2a6f97c7c1a484b9a82e9343d7aca1e5001dc29109b446",
+    "poll_interval_seconds": 15,
+    "provider_imports": false,
+    "provider_calls": 0,
+    "fail_closed_and_restart_on_failure": true
+  },
+  "operational_scope": {
+    "active_v6_workers_restarted": false,
+    "active_v7_workers_restarted": false,
+    "provider_request_policy_changed": false,
+    "target_selection_changed": false,
+    "length_repair_policy_changed": false
+  }
+}

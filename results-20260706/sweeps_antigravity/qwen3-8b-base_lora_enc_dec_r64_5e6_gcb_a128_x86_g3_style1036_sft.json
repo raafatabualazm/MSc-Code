@@ -1,0 +1,55 @@
+{
+  "experiment": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft",
+  "config": {
+    "name": "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft",
+    "decoder": "Qwen/Qwen3-8B-Base",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "1",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/compile-test2_cfg.jsonl",
+    "pass_at_k": "data/testing/grpo_data_cfg.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 5,
+    "pass_at_k": 10,
+    "generation_batch_size": 64,
+    "eval_max_new_tokens": 768
+  },
+  "predictions": {
+    "compile_codebleu": "/teamspace/studios/this_studio/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft_compile_predictions.json",
+    "pass_at_k": "/teamspace/studios/this_studio/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft_pass_predictions.json"
+  },
+  "codebleu": {
+    "count": 126,
+    "samples_with_success": 126,
+    "mean_codebleu": 0.5708957922557538,
+    "min_codebleu": 0.07374071797639721,
+    "max_codebleu": 0.799094898755468
+  },
+  "codebleu_compiled_only": {
+    "count": 126,
+    "samples_with_success": 55,
+    "mean_codebleu": 0.5566896163224737,
+    "min_codebleu": 0.12379037635031302,
+    "max_codebleu": 0.786295982620738
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.11587301587301574,
+    "compile_at_5": 0.4365079365079365,
+    "total_problems": 126
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.032467532467532464,
+    "pass_at_5": 0.09722222222222222,
+    "pass_at_10": 0.13636363636363635,
+    "total_problems": 154
+  }
+}

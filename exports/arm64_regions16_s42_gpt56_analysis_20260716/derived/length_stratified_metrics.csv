@@ -1,0 +1,5 @@
+dimension,bin,rows,reference_length_min,reference_length_mean,reference_length_max,compile_at_1,compile_at_5,pass_at_1,pass_at_5,pass_at_10,tasks_with_any_compile,tasks_with_any_pass,any_compile_rate,any_pass_rate,mean_codebleu_all_candidates
+reference_length,lt700,94,368,595.149,696,0.64893617,0.977119216,0.036170213,0.093380615,0.117021277,94,11,1.0,0.117021277,0.576737543
+reference_length,700_999,83,701,818.024,996,0.577108434,0.962516734,0.046987952,0.081373111,0.096385542,83,8,1.0,0.096385542,0.584668289
+reference_length,1000_1299,78,1000,1131.808,1296,0.48974359,0.918599919,0.0,0.0,0.0,76,0,0.974358974,0.0,0.592660808
+reference_length,ge1300,88,1300,1625.591,2745,0.392045455,0.862012987,0.0,0.0,0.0,86,0,0.977272727,0.0,0.614411307

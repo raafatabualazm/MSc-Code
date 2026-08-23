@@ -1,0 +1,100 @@
+{
+  "schema": "t5gemma2-contract-only-preregistration-v1",
+  "status": "sealed_before_generation",
+  "registered_date_utc": "2026-08-04",
+  "registered_before_any_contract_only_gpu_generation": true,
+  "view": {
+    "name": "typed_contract_only",
+    "historical_typed_prompt_bytes_unchanged": true,
+    "binary_payload_text": "",
+    "binary_payload_utf8_hex": "",
+    "binary_payload_utf8_bytes": 0,
+    "binary_payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "binary_payload_task_invariant": true,
+    "f2_constants_structure_and_external_identities_withheld": true,
+    "gold_interface_types_and_arity_visible": true,
+    "semantic_parameter_names_visible": false,
+    "expected_ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "expected_ordered_source_sha256s_sha256": "5da3f58c3d9d2c936fd5c02dbb54618a36aed493daa52315098b2e461f39708f",
+    "expected_row_transformations_sha256": "b563744ca311992983d8c244a41c50fde38befbf6c09f0e8f8cd19fea30d719c",
+    "expected_arity_histogram": {"0": 33, "1": 82, "2": 39, "3": 13, "4": 5, "5": 2, "6": 1}
+  },
+  "design": {
+    "smoke_seed": 42,
+    "smoke_tasks": 5,
+    "smoke_scored": true,
+    "seeds": [42, 43],
+    "tasks_per_full_seed": 175,
+    "k": 10,
+    "generation_batch_size": 10,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "top_k": 0,
+    "max_source_tokens": 32768,
+    "max_new_tokens": 4096,
+    "attention_implementation": "sdpa",
+    "bf16": true,
+    "scorer_workers": 32,
+    "timeout_seconds": 30,
+    "stability_runs": 2,
+    "same_seed_sample_coordinates": true,
+    "primary_endpoint": "pass_at_10",
+    "secondary_endpoint": "compile_at_10"
+  },
+  "checkpoint": {
+    "identity": "original_enriched_sft_2epoch_optstep348",
+    "name": "checkpoint-optstep-000348",
+    "run_contract_schema": "t5gemma2-enriched-sft-run-v1",
+    "run_contract_canonical_sha256": "21613e2c7513e203e31a4690f84b0e6d11fa1c7fa6a20725d859486a30bccac3",
+    "base_model": "google/t5gemma-2-4b-4b",
+    "base_model_revision": "487d4acf21a4d70c70bf534265b5263c9424979e",
+    "file_sha256": {
+      "run_contract.json": "562c3da5f89428e6a7263ad8ec79dde9c8b6eb25c77949606277d7d80aecea4f",
+      "adapter/adapter_model.safetensors": "83d8152edc7236a144fcb7b321f03c4dc5fcf90a1e866fa334338938ee0bdcdc",
+      "adapter/adapter_config.json": "c21ee4458e7c9fe1321337ce22409ee2a03dfe37299c25cfc7c468a490ffb4c3",
+      "tokenizer/tokenizer.json": "f5b325224482ec441ec5fbe2a5ac08c3758e0f9605f6e54368e31f736fcfb01d"
+    }
+  },
+  "sealed_inputs": {
+    "dataset_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "dataset_seal_sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+    "f2_sha256": "6ba98eb496af2ef36ca1a0d460bf6e64b715c42f0b9216c64b4a8fc300ccffab",
+    "f2_manifest_sha256": "777078c9ba759f45db8908b44990306e4fa403c0bd3b825546029ea7bd49ef44"
+  },
+  "sealed_predecessor": {
+    "report_schema": "t5gemma2-f2-intervention-multiseed-report-v1",
+    "report_sha256": "17645716115052bb48a906a4c7231c76ec28a9d7b66dc55bc53e669e990bee63",
+    "reporter_sha256": "89b2b9e6f03dc3c08db072a107cc858bf0506aaeaed6fb90bca2f44600864d8a",
+    "model_visible_source_bytes_identical_across_seeds": true,
+    "full_input_view_records_identical_across_seeds": false,
+    "only_permitted_metadata_drift": "row_transformations_sha256"
+  },
+  "hypotheses": {
+    "compile_at_10_strong_pattern_interval": [160, 172],
+    "pass_at_10_strong_pattern_interval": [1, 3],
+    "strong_pattern_gate": "compile@10 >= 160 and pass@10 <= 3 in each full seed",
+    "rationale": "Gold types and arity should preserve much of compilation while removal of all task-specific F2 content should sharply reduce correctness."
+  },
+  "primary_contrasts": [
+    {
+      "left": "typed_contract_only",
+      "right": "same_seed_typed_plus_f2",
+      "test": "per-seed exact two-sided McNemar",
+      "primary_metric": "pass_at_10"
+    },
+    {
+      "left": "typed_contract_only",
+      "right": "same_seed_baseline_f2",
+      "test": "per-seed exact two-sided McNemar",
+      "primary_metric": "pass_at_10"
+    }
+  ],
+  "interpretation_branches": {
+    "gated_high_compile_low_pass": "If the strong-pattern gate holds and typed+F2 has a significant same-seed correctness advantage in both seeds, state only that task-specific F2 content contributes correctness beyond an oracle type/arity contract under this frozen policy.",
+    "compile_collapse": "If compile@10 falls below 160 in either seed, label the result missing-input/OOD-confounded and do not make a channel-specific headline claim.",
+    "contract_only_correctness_above_gate": "If pass@10 exceeds 3 in either seed, report substantial type-or-benchmark-prior performance and re-interpret the typed-contract result before submission.",
+    "no_equivalence": "With n=2, never describe compilation as equivalent; report counts, descriptive sample SD, and paired tables."
+  },
+  "oracle_caveat": "This is a gold-derived oracle control: it bounds what a perfect type-and-arity recovery front-end could provide, and is not a deployable binary-decompilation result because no type-recovery front-end is evaluated.",
+  "out_of_distribution_caveat": "The empty-binary condition is out of distribution for this frozen policy. A performance drop establishes dependence on the task-specific binary-channel condition; by itself it does not prove semantic decoding of F2."
+}

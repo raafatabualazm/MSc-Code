@@ -1,0 +1,12 @@
+{
+  "arm": "gold_evaluator_roundtrip",
+  "evaluation_dataset_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+  "gold_targets_serialized_to_model": false,
+  "model_generation_used": false,
+  "num_rows": 175,
+  "num_samples": 1,
+  "output_sha256": "d16d78ce3955df2a6c58623c66b84ffacfe13573240dda19df6c8474d9dcdc52",
+  "purpose": "evaluator_integrity_only",
+  "schema": "direct-compact-inference-v1",
+  "training_allowed": false
+}

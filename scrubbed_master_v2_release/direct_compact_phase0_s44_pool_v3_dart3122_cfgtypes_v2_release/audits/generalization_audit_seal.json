@@ -1,0 +1,115 @@
+{
+  "all_passed": true,
+  "bundle_bindings": {
+    "SHA256SUMS.txt": {
+      "name": "SHA256SUMS.txt",
+      "sha256": "b2ac422b647c3b21ca0bf48a8f626c379f8140dcbc1ae70184c84adf84c3deeb",
+      "size_bytes": 703
+    },
+    "alignment_private.jsonl": {
+      "name": "alignment_private.jsonl",
+      "sha256": "df582c575eba10880e9920fd80c16134895b1d6d09482d223d050b7d7878a984",
+      "size_bytes": 4386439
+    },
+    "codebook.json": {
+      "name": "codebook.json",
+      "sha256": "5197f9007c001686572d1efbcc672a455d29c4917538f30ba2255ea8ef7b591f",
+      "size_bytes": 2811329
+    },
+    "compact_contract.json": {
+      "name": "compact_contract.json",
+      "sha256": "bdfc16373fd55b708a6edb8210067238faeb975bd921c86016cbe9a74ab02dda",
+      "size_bytes": 2296303
+    },
+    "compact_model_inputs.jsonl": {
+      "name": "compact_model_inputs.jsonl",
+      "sha256": "f48c6fa05865276e398f843d73d45f36318e1f8a4c79486e291a7f50a0655e77",
+      "size_bytes": 10995944
+    },
+    "current_cfg_extractor": {
+      "name": "cfg_extractor.py",
+      "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+      "size_bytes": 40627
+    },
+    "current_dfg_extractor": {
+      "name": "dfg_extractor.py",
+      "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+      "size_bytes": 23048
+    },
+    "failures.jsonl": {
+      "name": "failures.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "graph_codec_dependency": {
+      "name": "build_compact_qwen_v2.py",
+      "sha256": "0a8cde3bfb7ec08c45115d4226a45f4b2c1b192a5277270af866237641c419b3",
+      "size_bytes": 39274
+    },
+    "legacy_cfg_extractor": {
+      "name": "cfg_extractor.py",
+      "sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce",
+      "size_bytes": 22143
+    },
+    "legacy_dfg_extractor": {
+      "name": "dfg_extractor.py",
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+      "size_bytes": 17964
+    },
+    "pool_reconciliation_private.jsonl": {
+      "name": "pool_reconciliation_private.jsonl",
+      "sha256": "1d6aa5d5075ff0bcd6ac944bc2f9e31faa2c8a796888f137f6951a3b819c2a79",
+      "size_bytes": 10013408
+    },
+    "preflight_report.json": {
+      "name": "preflight_report.json",
+      "sha256": "778934a7f3abd95e7edc9cb12d8d44ff1f289e07386621d40ecab5e1a74210f7",
+      "size_bytes": 8743
+    },
+    "quarantine.jsonl": {
+      "name": "quarantine.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "release_builder": {
+      "name": "build_compact_qwen_v3_release.py",
+      "sha256": "5fc3fee1e5efaeaaec9c13d212468bd2d66600e27b556565cf5c8e7ebcae81f9",
+      "size_bytes": 60267
+    },
+    "tokenizer": {
+      "name": "tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "size_bytes": 11422654
+    },
+    "v3_codec": {
+      "name": "build_compact_qwen_v3_cfgtypes_v2.py",
+      "sha256": "b30f531761fbc0497e20eea8873f787bbfe3fa8e9fbdbc5ad97c8ad78e55325e",
+      "size_bytes": 13540
+    }
+  },
+  "humaneval_binding": {
+    "name": "grpo_data_graphv2_signature_scrubbed_private.jsonl",
+    "sha256": "91dc2eee2f06602e6cd95873c81802e0997fd3ff758b395aeab9c3da114df252",
+    "size_bytes": 4965445
+  },
+  "reports": {
+    "dev_fallback_audit.json": {
+      "passed": true,
+      "sha256": "125da06a78b432d32f8b96d624be9ae0884fca3118e5709f582e937f45fdbe3c"
+    },
+    "scrubbed_humaneval_instruction_codebook_audit.json": {
+      "passed": true,
+      "sha256": "2dd1d844c44ea5b0232501eb89b0ef6573b132de088413d3075abe623edde81b"
+    },
+    "topup_family_source_pool_fallback_audit.json": {
+      "passed": true,
+      "sha256": "ec7421595a1af7bcb54ae3d0a431af78cb8e0c3a2ee5cb079fc34cbdc9c82914"
+    }
+  },
+  "schema": "compact-qwen-v3-generalization-audit-seal-v1",
+  "script": {
+    "name": "audit_compact_qwen_v3_generalization.py",
+    "sha256": "ad5546e2a9f98aff739f898fc96fad7c8ec49770fd39bec7e2629251001bc53d",
+    "size_bytes": 42115
+  }
+}

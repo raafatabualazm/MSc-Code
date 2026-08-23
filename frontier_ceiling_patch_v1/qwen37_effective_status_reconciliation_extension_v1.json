@@ -1,0 +1,33 @@
+{
+  "schema": "qwen37-effective-status-reconciliation-extension-v1",
+  "purpose": "Bind the provider-free original-terminal outcome reconciliation into the merged effective-status layer without mutating the already-sealed capacity-length repair contract or invalidating existing repair endpoint epochs.",
+  "parent_capacity_length_contract": {
+    "path": "qwen37_capacity_length_contract_v7.json",
+    "sha256": "b69b5cf91f33e785f78e965eb67c814372fa774ded4d19114eddf49ba9149809",
+    "original_informational_merged_status_sha256": "fafa9d84a6633a990754363f25d947794143416c1f7224684daa56ee5ec0e363",
+    "modified": false
+  },
+  "effective_merged_status": {
+    "path": "qwen37_primary_effective_status_v7.py",
+    "sha256": "f8efd980737e4efc9a41c521c12ec62a69fa098f8de698021a840861c03cb1b2",
+    "requires_exact_source_plus_reconciliation_outcome_coverage": true,
+    "metrics_remain_withheld_until_exactly_3500_effective_slots": true
+  },
+  "original_outcome_reconciliation": {
+    "entry": "qwen37_original_outcome_reconciliation_v1.py",
+    "entry_sha256": "b8244a8092c76da6cfa1d849b64c64ad9e7a56f8d0016c04672e20e1b3721441",
+    "contract": "qwen37_original_outcome_reconciliation_contract_v1.json",
+    "contract_sha256": "ebbb10cfa939c1fa4fbdd26e46f058960a7b1841a56d53cb6c476184f1644825",
+    "expected_reconciled_slots": 6,
+    "provider_calls": 0,
+    "source_journals_modified": false
+  },
+  "scope": {
+    "capacity_selection_changed": false,
+    "capacity_request_policy_changed": false,
+    "capacity_length_selection_changed": false,
+    "capacity_length_request_policy_changed": false,
+    "existing_capacity_length_epoch_provenance_changed": false,
+    "merged_status_consumer_only": true
+  }
+}

@@ -1,0 +1,8 @@
+PASS paired row order maps to one 154-source permutation
+PASS 154x2 public rows are private-field/fingerprint clean; target=fn0; known stale bindings=['121', '153']
+PASS 154 paired CFGs preserve instructions modulo symbols and exact edges
+PASS prompt schema antigravity-v3-matched-function-contract; 154 matched assembly_mode=none prompt pairs
+PASS frozen toolchain stamps are complete and uniform: Dart=Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on "linux_x64"; GDB=GNU gdb (GDB) 17.1
+PASS aligned-JIT classifier includes front-end crash diagnostics
+PASS JIT exact sets: stubs compile 150/154; references compile 151/154, pass 142/154
+PASS fixed-scrub-v3 acceptance gate

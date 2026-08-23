@@ -1,0 +1,12 @@
+{
+  "train": "data\\datasets\\synthetic_pool_reward_clean_cfg.jsonl",
+  "benchmark": "data\\testing\\grpo_data_cfg.jsonl",
+  "train_rows": 1725,
+  "benchmark_rows": 154,
+  "normalization": "comments/whitespace removed; identifiers/literals normalized; token 7-gram Jaccard",
+  "exact_overlap_pairs": 0,
+  "exact_overlaps": [],
+  "near_threshold": 0.8,
+  "near_overlap_pairs": 0,
+  "near_overlaps": []
+}

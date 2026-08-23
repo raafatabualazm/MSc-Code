@@ -1,0 +1,77 @@
+{
+  "adapter_contract_sha256": "255af3f968fc04e5f6f80c78ebc1912355d7785aad230ed81a84c59680218cae",
+  "adapter_script_sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66",
+  "append_only_prefix": {
+    "exact_parent_dataset_prefix": true,
+    "exact_parent_f2_prefix": true,
+    "parent_dataset_bytes": 16562502,
+    "parent_dataset_sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18",
+    "parent_f2_bytes": 9606976,
+    "parent_f2_sha256": "f86032533f7f3e1bade9280e5bf6e28858daf25e34167837fec160a34b2370ba"
+  },
+  "contract_sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+  "executable_reward_eligible_rows": 2774,
+  "execution_ineligible_task_ids": [
+    "sigless_67bb88ce699e",
+    "sigless_bfde11b99b84"
+  ],
+  "expansion_builder_sha256": "c68f7ae1b278ed65ae2ff7585f95fbcf85dd6028738623f10db0f163af940b51",
+  "expansion_partition": "frozen_parent_then_supplemental",
+  "f2_manifest": {
+    "bytes": 9244,
+    "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl.manifest.json",
+    "sha256": "ccc73f06772d8df6cc80b48b3bc0af2e6a6c8069bfe3c7cd483de8c7b0c7a582"
+  },
+  "f2_output": {
+    "bytes": 15699004,
+    "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl",
+    "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe"
+  },
+  "frontier_f2_schema": "lossless-semantic-f2",
+  "heldout_commitment": {
+    "dataset_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "measure_only": true,
+    "ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "rows": 175,
+    "seal_sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+    "task_set_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70"
+  },
+  "heldout_measure_only": false,
+  "ordered_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+  "output": {
+    "bytes": 27125119,
+    "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl",
+    "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904"
+  },
+  "output_sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904",
+  "raw_source_names_serialized": false,
+  "representation_schema": "binary-multifunction-v1-semantic-adapter-v1",
+  "rows": 2776,
+  "sanitation_partitions": [
+    {
+      "execution_ineligible_task_ids": [
+        "sigless_67bb88ce699e",
+        "sigless_bfde11b99b84"
+      ],
+      "name": "frozen_parent",
+      "rows": 1580,
+      "seal_sha256": "14f2cc5ddcb63c8ad25f6a5c9bb6209af111dafbb0827523a24d8089585a94a5"
+    },
+    {
+      "execution_ineligible_task_ids": [],
+      "name": "supplemental",
+      "rows": 1196,
+      "seal_sha256": "67f9d37ca5c470ec6085308ddf52fc660f1f5973c79f226477e3d89299891d63"
+    }
+  ],
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "fit",
+  "selection_seal_sha256": "ebaeb9b007d7219da6bfa890ae5f14fbc4b03430e153790b237f108caee8e506",
+  "sorted_task_set_sha256": "30aaa2c4d469efce648bd53bb40cecd754c5e9a3d0258ae4a00a02eae205f019",
+  "source_symbol_attestation_is_keyed": true,
+  "source_symbol_attestation_key_id_sha256": "02347c2e61fe0c0402027edb0ac5718b00c42da81ddd308ec133fab67dd974ab",
+  "source_symbol_attestation_used": true,
+  "task_set_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+  "training_allowed": true,
+  "training_objective_scope": "sequence_imitation_all_train"
+}

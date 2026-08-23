@@ -1,0 +1,114 @@
+{
+  "architecture": "native_encoder_decoder",
+  "dataset": {
+    "dataset": {
+      "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904"
+    },
+    "f2": {
+      "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe"
+    },
+    "heldout": {
+      "exact_acceptance_test_overlap": 0,
+      "exact_gold_source_overlap": 0,
+      "model_visible": false,
+      "rows": 175,
+      "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+      "task_id_overlap": 0,
+      "task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+    },
+    "input_rows": 2776,
+    "model_hidden_fields": [
+      "acceptance_tests",
+      "dart_source",
+      "feedback_tests",
+      "gold",
+      "holdback_tests",
+      "reference",
+      "supervised_target",
+      "tests"
+    ],
+    "model_visible_fields": [
+      "opaque_typed_contract",
+      "F2.text"
+    ],
+    "opaque_contract": {
+      "arity_histogram": {
+        "0": 356,
+        "1": 1495,
+        "11": 1,
+        "2": 667,
+        "3": 167,
+        "4": 53,
+        "5": 20,
+        "6": 8,
+        "7": 2,
+        "8": 5,
+        "9": 1
+      },
+      "contracts_sha256": "b6168a949d64a1f0053c6db1fff53d6db60a407cef519837db0e4e6610062fa9",
+      "parameter_name_policy": "p{zero_based_index}",
+      "rows": 2775,
+      "schema": "dart-typed-opaque-contract-v1",
+      "semantic_function_name_exposed": false,
+      "semantic_parameter_names_exposed": false
+    },
+    "reference_target_field": "dart_source",
+    "rows": 2775,
+    "schema": "t5gemma2-typed-opaque-contract-sft-run-v1",
+    "source_sha256s_sha256": "e9887920297933db11b178ff516a0930cbdf9e38512cf6a66025d96071b5d50e",
+    "target_sha256s_sha256": "2302efd6a2dd0462a2e608126774235338cc143810ae64c18e473da3aafcfbcb",
+    "task_ids_sha256": "e35ad29024220f9c9ddab80ecdc0cc242fb4d5954affb7238cdccaf4dba223ca",
+    "training_exclusions": {
+      "acceptance_tests_sha256": [
+        "728fb5fc2801e3c1699870b6995f60f5b21c19e84b13a819ee08ee94bf1a237d"
+      ],
+      "count": 1,
+      "reason": "exact heldout acceptance-test duplicate",
+      "task_ids": [
+        "sigless_6b1dd0c6b6fc"
+      ],
+      "task_ids_sha256": "0ac04f2a26635d929e5882689c3faa1b6616fd236fd37954653f7d242a376c4b"
+    }
+  },
+  "model": "google/t5gemma-2-4b-4b",
+  "model_revision": "487d4acf21a4d70c70bf534265b5263c9424979e",
+  "no_frontier_api": true,
+  "runtime": {
+    "cuda": "12.8",
+    "peft": "0.18.0",
+    "torch": "2.8.0+cu128",
+    "trainer_profile": "typed_opaque_contract_fresh_base",
+    "trainer_sha256": "bee03f83b4b86baaf60110e8b7d387e80550c43f07d675bc71710a17fba9fc66",
+    "training_engine_sha256": "dd4026b2e86a8c3280af5e4379f1cd8a07615e69f9d1959fd1e5ee7dc4f245e2",
+    "transformers": "5.9.0"
+  },
+  "schema": "t5gemma2-typed-opaque-contract-sft-run-v1",
+  "source_truncation": false,
+  "status": "preflight_complete",
+  "target_truncation": false,
+  "tests_exposed_to_model": false,
+  "tokenization": {
+    "eos_supervised": true,
+    "rows": 2775,
+    "source_tokens": {
+      "max": 13285,
+      "mean": 1935.7005405405405
+    },
+    "target_special_tokens": "none_plus_exactly_one_terminal_eos",
+    "target_tokens": {
+      "max": 3343,
+      "mean": 294.5538738738739
+    },
+    "truncated_rows": 0
+  },
+  "tokenizer": {
+    "bos_token_id": 2,
+    "class": "GemmaTokenizer",
+    "eos_token_id": 1,
+    "pad_token_id": 0,
+    "resolved_commit": "",
+    "special_tokens_map_sha256": "a237afa0a3964f4db32b59e1031adcc948cf01b552badfdf5a96092422a19884",
+    "vocab_sha256": "aacdb7cfcf76c202d7f7a157fda1392c83138d20e0d2b433a062e8dfd99b4c91",
+    "vocab_size": 262144
+  }
+}

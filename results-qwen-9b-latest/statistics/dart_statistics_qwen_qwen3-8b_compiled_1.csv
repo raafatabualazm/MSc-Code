@@ -1,0 +1,2 @@
+Model,Min,Max,Average,Standard_Deviation,Samples_With_Success,Total_Samples
+qwen/qwen3-8b,0.4126277584780469,0.8868982607863486,0.6465660631043586,0.10217288847650241,55,126

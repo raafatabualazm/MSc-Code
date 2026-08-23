@@ -1,0 +1,63 @@
+{
+  "schema": "qwen37_frontier_primary_clean_completion_cap_v3",
+  "purpose": "Paired 175-task K=10 frontier-ceiling evaluation over two sealed enrichment arms using the documented qwen3.7-max-preview/qwen3.7-max-2026-05-17 text-weight equivalence class and the Qwen thinking-model completion cap",
+  "request_policy": {
+    "request_cap_parameter": "max_completion_tokens",
+    "max_tokens_absent": true,
+    "total_completion_cap": 12288,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 12298,
+    "enable_thinking": true,
+    "thinking_budget": 8192,
+    "reasoning_and_final_share_completion_cap": true,
+    "reasoning_tokens_usage_required": true,
+    "answer_tokens_derived_and_preserved": true,
+    "finite_runner_budget": 0,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "runtime_identity": {
+    "qwen_completion_entry": "frontier_passk_qwen_completion.py",
+    "qwen_completion_entry_sha256": "a1115b69abed4db79e6c39db2e1cd83c8175f33a6cb8a5d749ec646826bc5709",
+    "shared_frontier_runner_sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead",
+    "shared_frontier_core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258",
+    "frontier_f2_sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+  },
+  "primary_global_sample_allocation": [
+    {
+      "model": "qwen3.7-max-2026-05-17",
+      "local_k": 5,
+      "global_sample_indices": [0, 1, 2, 3, 4],
+      "run_directory_pattern": "qwen37_clean_v3_0517_{arm}_k5_mc12k_tb8k"
+    },
+    {
+      "model": "qwen3.7-max-preview",
+      "local_k": 5,
+      "global_sample_indices": [5, 6, 7, 8, 9],
+      "run_directory_pattern": "qwen37_clean_v3_preview_{arm}_k5_mc12k_tb8k",
+      "alias_note": "Alibaba documents this alias as equivalent to qwen3.7-max-2026-05-17."
+    }
+  ],
+  "primary_global_k_per_arm": 10,
+  "paired_invariant": "The exact same model/global-sample allocation, completion cap, thinking budget, sampling policy, and sealed task sequence are applied to both enrichment arms.",
+  "invalid_policy_pilot_quarantine": {
+    "excluded_from_primary": true,
+    "reason": "These runs sent max_tokens with thinking enabled. Provider usage demonstrated that reasoning and final-answer accounting did not obey the runner's assumed total-completion cap, so their request/validation policy is not comparable to the clean estimator.",
+    "run_directory_patterns": [
+      "qwen37_pool_*",
+      "qwen37_primary_v2_w2_*"
+    ],
+    "preservation_policy": "Preserve journals and artifacts read-only; never merge their candidates or outcomes into this primary estimator."
+  },
+  "reporting": {
+    "primary": "Pooled pass@10 and compile@10 for each enrichment arm over only the two clean K=5 shards",
+    "required_diagnostics": [
+      "Per-model compile and pass rates",
+      "Per-model token usage and reasoning-token usage",
+      "Resolved model identities",
+      "Finish-reason distribution",
+      "Paired task-level arm comparison",
+      "Separate inventory of invalid-policy pilot artifacts"
+    ]
+  }
+}

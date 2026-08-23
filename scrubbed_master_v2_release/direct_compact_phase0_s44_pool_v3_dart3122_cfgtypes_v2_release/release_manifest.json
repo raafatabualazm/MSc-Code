@@ -1,0 +1,306 @@
+{
+  "contract": {
+    "codebook_sha256": "5197f9007c001686572d1efbcc672a455d29c4917538f30ba2255ea8ef7b591f",
+    "codec_sha256": "b30f531761fbc0497e20eea8873f787bbfe3fa8e9fbdbc5ad97c8ad78e55325e",
+    "lossless_domain": "scrubbed-canonical-graph-v2-plus-complete-source-blind-pool-values-at-canonical-graph-retained-fixed-r15-uses-v1",
+    "max_source_tokens": 9000,
+    "schema": "direct-compact-causal-v3",
+    "sha256": "bdfc16373fd55b708a6edb8210067238faeb975bd921c86016cbe9a74ab02dda",
+    "target_architecture": "x86_64",
+    "target_function": "candidate",
+    "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "counts": {
+    "canonical_input": 3306,
+    "canonical_statuses": {
+      "excluded": 15,
+      "included-dev": 326,
+      "included-train": 2951,
+      "quarantined": 14
+    },
+    "included_dev": 326,
+    "included_train": 2951,
+    "model_rows": 3277,
+    "supervised_dev": 326,
+    "supervised_train": 2951
+  },
+  "deterministic": true,
+  "external_aot_payload": {
+    "aot_manifest": {
+      "path": "binary_build/aot_manifest.jsonl",
+      "sha256": "e5bdb05eaf08281113298b9f37f26960a6f630b258de51eee92e672af722e633"
+    },
+    "binary_build_seal": {
+      "path": "binary_build/binary_build_manifest.json",
+      "sha256": "f44f4d574aec0dc6faa465fd3514d594cc1b7b72536b6300278c151c62879c15"
+    },
+    "policy": "external-hash-bound-only",
+    "rows": 3277,
+    "shipped": false,
+    "size_bytes": 2699635168
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "1d106467fb4f18809b57041f14ba862a4a0800a0dee6da7da7b1beaea8a4518f",
+      "size_bytes": 1494
+    },
+    {
+      "path": "audits/SHA256SUMS.txt",
+      "sha256": "ba52af5e671bc0e694f952a1c7cdfbffc6a69d1a93e3bc152a2641b67b79482b",
+      "size_bytes": 415
+    },
+    {
+      "path": "audits/dev_fallback_audit.json",
+      "sha256": "125da06a78b432d32f8b96d624be9ae0884fca3118e5709f582e937f45fdbe3c",
+      "size_bytes": 3412
+    },
+    {
+      "path": "audits/generalization_audit_seal.json",
+      "sha256": "b7896986e3939e017dd2b8ae9de4ee1a4de8204b2d5eac07082847718770a7bb",
+      "size_bytes": 4135
+    },
+    {
+      "path": "audits/scrubbed_humaneval_instruction_codebook_audit.json",
+      "sha256": "2dd1d844c44ea5b0232501eb89b0ef6573b132de088413d3075abe623edde81b",
+      "size_bytes": 2235
+    },
+    {
+      "path": "audits/topup_family_source_pool_fallback_audit.json",
+      "sha256": "ec7421595a1af7bcb54ae3d0a431af78cb8e0c3a2ee5cb079fc34cbdc9c82914",
+      "size_bytes": 3892
+    },
+    {
+      "path": "binary_build/BINARY_BUILD_SHA256SUMS.txt",
+      "sha256": "7b38dfa3948123f3e565537767c1f2d73ad2f7dbe04f8ef8e40a15fdd1a34f63",
+      "size_bytes": 1016
+    },
+    {
+      "path": "binary_build/aot_manifest.jsonl",
+      "rows": 3277,
+      "sha256": "e5bdb05eaf08281113298b9f37f26960a6f630b258de51eee92e672af722e633",
+      "size_bytes": 3306958
+    },
+    {
+      "path": "binary_build/binary_build_manifest.json",
+      "sha256": "f44f4d574aec0dc6faa465fd3514d594cc1b7b72536b6300278c151c62879c15",
+      "size_bytes": 4307
+    },
+    {
+      "path": "binary_build/dart_toolchain_manifest.json",
+      "sha256": "7a4e2d16214d4934c7d97c81239b35b66d6b0df64a5fb8bbdf2fbd380888c677",
+      "size_bytes": 2229
+    },
+    {
+      "path": "binary_build/manifests/dev.json",
+      "sha256": "7f7e95fb925b4c0d133db0655fe49e22959d51080709940d86f88b0a7c9236da",
+      "size_bytes": 1168
+    },
+    {
+      "path": "binary_build/manifests/train.json",
+      "sha256": "c305ad9b526571fd21a9826c2edefa24aae54c79ec2fc4014e6d57ae5f5402cc",
+      "size_bytes": 1183
+    },
+    {
+      "path": "binary_build/pool_extractor_manifest.json",
+      "sha256": "4e6f558a44bfb95357cf00ac18e170172919b4b809f348846928d3e3083b25a7",
+      "size_bytes": 750
+    },
+    {
+      "path": "binary_build/pool_reconciliation_private.jsonl",
+      "rows": 3277,
+      "sha256": "c8d7db84ac645bacc27bcf69e9f42f917516202177ef06c1c1c97fc19d927471",
+      "size_bytes": 4139907
+    },
+    {
+      "path": "binary_build/prepared/dev_codec_private.jsonl",
+      "rows": 326,
+      "sha256": "e1ee9b352b06ba2b9b99a68ad767ced263b0ddb311b6372b2ca9b7c42332d338",
+      "size_bytes": 13683003
+    },
+    {
+      "path": "binary_build/prepared/train_codec_private.jsonl",
+      "rows": 2951,
+      "sha256": "90a39e089a104ae30526f0b043da28a7931e6aaf59302c11ef4fda82df41d216",
+      "size_bytes": 137451482
+    },
+    {
+      "path": "binary_build/quarantine/dev.jsonl",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "binary_build/quarantine/train.jsonl",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "canonical_membership/SHA256SUMS.txt",
+      "sha256": "1055dfa6612ae86af1008546f30e650010d320919704a796dd0dc9b2ea1a56c3",
+      "size_bytes": 267
+    },
+    {
+      "path": "canonical_membership/inheritance_seal.json",
+      "sha256": "2fee360eb62ebe24416fc0e2d5466c5134657e968156321644328d6aba5adaf4",
+      "size_bytes": 1015
+    },
+    {
+      "path": "canonical_membership/preparation_manifest.json",
+      "sha256": "5dbb7035155ebebe6cf275ab72b6b5324aabac7ff7b58e289dda5493004d5c69",
+      "size_bytes": 8736
+    },
+    {
+      "path": "canonical_membership/reconciliation.jsonl",
+      "rows": 3306,
+      "sha256": "e88bfa858ad95ef8cd03ac28b419775e912aeb5999806f1bacb5539ac5b4bf3a",
+      "size_bytes": 2425225
+    },
+    {
+      "path": "compact/SHA256SUMS.txt",
+      "sha256": "b2ac422b647c3b21ca0bf48a8f626c379f8140dcbc1ae70184c84adf84c3deeb",
+      "size_bytes": 703
+    },
+    {
+      "path": "compact/alignment_private.jsonl",
+      "rows": 3277,
+      "sha256": "df582c575eba10880e9920fd80c16134895b1d6d09482d223d050b7d7878a984",
+      "size_bytes": 4386439
+    },
+    {
+      "path": "compact/codebook.json",
+      "sha256": "5197f9007c001686572d1efbcc672a455d29c4917538f30ba2255ea8ef7b591f",
+      "size_bytes": 2811329
+    },
+    {
+      "path": "compact/compact_contract.json",
+      "sha256": "bdfc16373fd55b708a6edb8210067238faeb975bd921c86016cbe9a74ab02dda",
+      "size_bytes": 2296303
+    },
+    {
+      "path": "compact/compact_model_inputs.jsonl",
+      "rows": 3277,
+      "sha256": "f48c6fa05865276e398f843d73d45f36318e1f8a4c79486e291a7f50a0655e77",
+      "size_bytes": 10995944
+    },
+    {
+      "path": "compact/failures.jsonl",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "compact/pool_reconciliation_private.jsonl",
+      "rows": 3277,
+      "sha256": "1d6aa5d5075ff0bcd6ac944bc2f9e31faa2c8a796888f137f6951a3b819c2a79",
+      "size_bytes": 10013408
+    },
+    {
+      "path": "compact/preflight_report.json",
+      "sha256": "778934a7f3abd95e7edc9cb12d8d44ff1f289e07386621d40ecab5e1a74210f7",
+      "size_bytes": 8743
+    },
+    {
+      "path": "compact/quarantine.jsonl",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "source_preparation/SOURCE_SHA256SUMS.txt",
+      "sha256": "b3303946db4de901ebb17c57ec02a7eff27f96293f6975ce289c56b04b25bb84",
+      "size_bytes": 502
+    },
+    {
+      "path": "source_preparation/prepared/dev_private_labels.jsonl",
+      "rows": 326,
+      "sha256": "f44a7a2ea3f71ae4368a73eefa14924975d68ec10a5845c0cf05412c6c6704fe",
+      "size_bytes": 294312
+    },
+    {
+      "path": "source_preparation/prepared/train_private_labels.jsonl",
+      "rows": 2951,
+      "sha256": "cbeec4154b21604ea9e6989552035b006a112ffb0a4079b2a44adef75997b123",
+      "size_bytes": 2740273
+    },
+    {
+      "path": "source_preparation/private_build_inputs/dev.jsonl",
+      "rows": 326,
+      "sha256": "1464004d3970b5b4eb5aecfe5a74a9f40f74de35e9a246af3521e33cb1ad17a8",
+      "size_bytes": 911793
+    },
+    {
+      "path": "source_preparation/private_build_inputs/train.jsonl",
+      "rows": 2951,
+      "sha256": "a56b8fb9d8a26c872b4e26f28823cecef76e00cdb9dec08c87c72678c012ad1a",
+      "size_bytes": 8404645
+    },
+    {
+      "path": "source_preparation/source_preparation_manifest.json",
+      "sha256": "a17d5f2eb560b708dc7b6d2bf550a96cce43549707f41a0f36f1b1e48c2cc3f5",
+      "size_bytes": 2828
+    },
+    {
+      "path": "supervised/SHA256SUMS.txt",
+      "sha256": "0f35a1ee67131f3b150aff17d85748bf0fa2b9b2aab914736d28aaebeb883f6b",
+      "size_bytes": 326
+    },
+    {
+      "path": "supervised/dev.join_seal.json",
+      "sha256": "5a757707c924e120a2750ae2bad5efb8883c56660969b942a98cce17d6f9b018",
+      "size_bytes": 63937
+    },
+    {
+      "path": "supervised/dev.jsonl",
+      "rows": 326,
+      "sha256": "3daea1653debd6b748913a7b0f37e23e0b9670c6af3d038374f981f9b4bb82ba",
+      "size_bytes": 1299802
+    },
+    {
+      "path": "supervised/train.join_seal.json",
+      "sha256": "678ee933cb384375d2e7a5ad566023e9e47f136159ff55e463817371d3ca2e33",
+      "size_bytes": 559808
+    },
+    {
+      "path": "supervised/train.jsonl",
+      "rows": 2951,
+      "sha256": "8341723ae0a74e3ea70ffc2650b4d9d2bc8a39fb9753f6d91c2381cdcd35fba9",
+      "size_bytes": 12543862
+    }
+  ],
+  "gates": {
+    "all_3277_graph_pool_and_id_roundtrips": true,
+    "all_nested_checksums_verified": true,
+    "all_rows_within_9000_tokens": true,
+    "all_targets_uniform_candidate": true,
+    "aot_payload_not_shipped": true,
+    "binary_aots_previously_fully_hash_verified": true,
+    "call_edges_explicit": true,
+    "canonical_3306_reconciliation_inherited_and_hash_bound": true,
+    "dfg_regenerated_and_matched_edge_for_edge": true,
+    "exact_2951_train_and_326_dev_model_rows": true,
+    "exact_2951_train_and_326_dev_supervised_rows": true,
+    "generalization_audits_passed": true,
+    "passed": true,
+    "private_joins_bijective_and_hash_bound": true,
+    "source_binary_compact_task_order_identical": true,
+    "strict_four_field_model_inputs": true,
+    "strict_supervised_schema": true,
+    "train_only_codebook": true,
+    "zero_truncation": true,
+    "zero_unknown_tokens": true
+  },
+  "nested_seals": {
+    "audits": "ba52af5e671bc0e694f952a1c7cdfbffc6a69d1a93e3bc152a2641b67b79482b",
+    "binary_build": "7b38dfa3948123f3e565537767c1f2d73ad2f7dbe04f8ef8e40a15fdd1a34f63",
+    "canonical_membership": "1055dfa6612ae86af1008546f30e650010d320919704a796dd0dc9b2ea1a56c3",
+    "compact": "b2ac422b647c3b21ca0bf48a8f626c379f8140dcbc1ae70184c84adf84c3deeb",
+    "source_preparation": "b3303946db4de901ebb17c57ec02a7eff27f96293f6975ce289c56b04b25bb84",
+    "supervised": "0f35a1ee67131f3b150aff17d85748bf0fa2b9b2aab914736d28aaebeb883f6b"
+  },
+  "path_independent": true,
+  "release": "direct_compact_phase0_s44_v3",
+  "schema": "compact-qwen-phase0-s44-v3-release-seal-v1",
+  "self_binding": "release_manifest.json is bound by root SHA256SUMS.txt"
+}

@@ -1,0 +1,5 @@
+seeds: benchmark=154 synthetic=1726 extra_decontam=1543 banned_names=6803 dedup_pool=3423
+measured targets: strata={'low': [3, 14], 'mid': [14, 25], 'high': [25, 458]} loc_bands={'low': [4, 11], 'mid': [9, 16], 'high': [16, 23]}
+  rtype_weights={'bool': 28, 'List<String>': 11, 'double': 5, 'List<int>': 29, 'String': 25, 'String?': 2, 'int': 42, 'List<double>': 2, 'List<num>': 3, 'num': 2, 'List<List<int>>': 1, 'Map<String, int>': 1, 'int?': 1}
+  param_count_weights={2: 36, 1: 113, 3: 5}
+ERROR: missing environment: AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT

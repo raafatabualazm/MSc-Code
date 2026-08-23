@@ -1,0 +1,202 @@
+[
+  {
+    "id": "0",
+    "source_line": 1,
+    "filename": "0.dart",
+    "predictions": [
+      "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; ++i) {\n    for (int j = i + 1; j < numbers.length; ++j) {\n      final diff = numbers[i] - numbers[j];\n      if (diff.abs() <= threshold) return true;\n    }\n  }\n  return false;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nbool hasCloseElements(List<double> numbers, double threshold) {\n  for (int idx = 0; idx < numbers.length; idx++) {\n    double elem = numbers[idx];\n    for (int idx2 = 0; idx2 < numbers.length; idx2++) {\n      double elem2 = numbers[idx2];\n      if (idx != idx2) {\n        double distance = (elem - elem2).abs();\n        if (distance < threshold) {\n          return true;\n        }\n      }\n    }\n  }\n  return false;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case 1\n  assert(hasCloseElements([1.0, 2.0, 3.0], 0.5) == false);\n  \n  // Test case 2\n  assert(hasCloseElements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3) == true);\n  \n  print('All tests passed!');\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = hasCloseElements;\n\n  expect(candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3), true);\n  expect(candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05), false);\n  expect(candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.95), true);\n  expect(candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.8), false);\n  expect(candidate([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], 0.1), true);\n  expect(candidate([1.1, 2.2, 3.1, 4.1, 5.1], 1.0), true);\n  expect(candidate([1.1, 2.2, 3.1, 4.1, 5.1], 0.5), false);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "bool hasCloseElements(List<double> numbers, double threshold) {\n  for (int i = 0; i < numbers.length - 1; ++i) {\n    for (int j = i + 1; j < numbers.length; ++j) {\n      final diff = numbers[i] - numbers[j];\n      if (diff.abs() <= threshold) return true;\n    }\n  }\n  return false;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        2,
+        6,
+        9,
+        0,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1012.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "id": "1",
+    "source_line": 2,
+    "filename": "1.dart",
+    "predictions": [
+      "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n\n  int depth = 0;\n  String currentGroup = \"\";\n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      currentGroup += parenString[i];\n    } else if (parenString[i] == ')') {\n      currentGroup += parenString[i];\n      depth--;\n      \n      if (depth == 0) {\n        result.add(currentGroup);\n        currentGroup = '';\n      }\n    }\n  }\n\n  return result;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nList<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n  List<String> currentString = [];\n  int currentDepth = 0;\n\n  for (int i = 0; i < parenString.length; i++) {\n    String c = parenString[i];\n    if (c == '(') {\n      currentDepth += 1;\n      currentString.add(c);\n    } else if (c == ')') {\n      currentDepth -= 1;\n      currentString.add(c);\n\n      if (currentDepth == 0) {\n        result.add(currentString.join(''));\n        currentString.clear();\n      }\n    }\n  }\n\n  return result;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case 1\n  List<String> result1 = separateParenGroups(\"( ) (( )) (( )( ))\");\n  print(result1);\n  assert(result1.length == 3);\n  assert(result1[0] == \"()\");\n  assert(result1[1] == \"(())\");\n  assert(result1[2] == \"(()())\");\n\n  // Test case 2\n  List<String> result2 = separateParenGroups(\"()\");\n  print(result2);\n  assert(result2.length == 1);\n  assert(result2[0] == \"()\");\n\n  // Test case 3\n  List<String> result3 = separateParenGroups(\"()(())\");\n  print(result3);\n  assert(result3.length == 2);\n  assert(result3[0] == \"()\");\n  assert(result3[1] == \"(())\");\n\n  print(\"All tests passed!\");\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = separateParenGroups;\n\n  expect(candidate(\"(()()) ((())) () ((())()())\"), [\"(()())\", \"((()))\", \"()\", \"((())()())\"]);\n  expect(candidate(\"() (()) ((())) (((())))\"), [\"()\", \"(())\", \"((()))\", \"(((())))\"]);\n  expect(candidate(\"(()(())((())))\"), [\"(()(())((())))\"]);\n  expect(candidate(\"( ) (( )) (( )( ))\"), [\"()\", \"(())\", \"(()())\"]);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "List<String> separateParenGroups(String parenString) {\n  List<String> result = [];\n\n  int depth = 0;\n  String currentGroup = \"\";\n\n  for (int i = 0; i < parenString.length; i++) {\n    if (parenString[i] == '(') {\n      depth++;\n      currentGroup += parenString[i];\n    } else if (parenString[i] == ')') {\n      currentGroup += parenString[i];\n      depth--;\n      \n      if (depth == 0) {\n        result.add(currentGroup);\n        currentGroup = '';\n      }\n    }\n  }\n\n  return result;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        0,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        5
+      ],
+      "scores": [
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "source_line": 3,
+    "filename": "2.dart",
+    "predictions": [
+      "double truncateNumber(double number) {\n  return (number % 1.0).abs();\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\ndouble truncateNumber(double number) {\n  return number % 1.0;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test cases\n  print(truncateNumber(3.5)); // 0.5\n  print(truncateNumber(1.25)); // 0.25\n  print(truncateNumber(5.0)); // 0.0\n  print(truncateNumber(10.75)); // 0.75\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = truncateNumber;\n\n  expect(candidate(3.5), 0.5);\n  expect(candidate(1.25), 0.25);\n  expect(candidate(123.0), 0.0);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "double truncateNumber(double number) {\n  return (number % 1.0).abs();\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 7,
+      "order": [
+        7,
+        9,
+        0,
+        2,
+        4,
+        5,
+        8,
+        1,
+        3,
+        6
+      ],
+      "scores": [
+        1018.0,
+        1018.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0,
+        18.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "source_line": 4,
+    "filename": "3.dart",
+    "predictions": [
+      "bool belowZero(List<int> operations) {\n  if (operations.isEmpty) return false;\n\n  int balance = 0;\n  for (int op in operations) {\n    if (op > 0) balance += op;\n    else balance -= (-op); \n      \n    if (balance < 0) return true; \n  }\n\n  return false;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\nbool belowZero(List<int> operations) {\n  int balance = 0;\n\n  for (int op in operations) {\n    balance += op;\n    if (balance < 0) {\n      return true;\n    }\n  }\n\n  return false;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test cases\n  print(belowZero([1, 2, 3])); // false\n  print(belowZero([1, 2, -4, 5])); // true\n  print(belowZero([])); // false\n  print(belowZero([1, -1, 0, -1])); // true\n  print(belowZero([10, -5, -3, -2])); // false\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = belowZero;\n\n  expect(candidate([]), false);\n  expect(candidate([1, 2, -3, 1, 2, -3]), false);\n  expect(candidate([1, 2, -4, 5, 6]), true);\n  expect(candidate([1, -1, 2, -2, 5, -5, 4, -4]), false);\n  expect(candidate([1, -1, 2, -2, 5, -5, 4, -5]), true);\n  expect(candidate([1, -2, 2, -2, 5, -5, 4, -4]), true);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "bool belowZero(List<int> operations) {\n  if (operations.isEmpty) return false;\n\n  int balance = 0;\n  for (int op in operations) {\n    if (op > 0) balance += op;\n    else balance -= (-op); \n      \n    if (balance < 0) return true; \n  }\n\n  return false;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 3,
+      "order": [
+        3,
+        7,
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        5,
+        9
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "source_line": 5,
+    "filename": "4.dart",
+    "predictions": [
+      "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return 0.0;\n\n  double sum = 0.0;\n  for (var n in numbers) sum += n;\n  double avg = sum / numbers.length;\n\n  double madSum = 0.0;\n  for (var n in numbers) madSum += (n - avg).abs();\n\n  return madSum / numbers.length;\n}"
+    ],
+    "reference": "@pragma('vm:entry-point')\ndouble meanAbsoluteDeviation(List<double> numbers) {\n  double mean = numbers.reduce((a, b) => a + b) / numbers.length;\n  return numbers.map((x) => (x - mean).abs()).reduce((a, b) => a + b) / numbers.length;\n}\n\n@pragma('vm:entry-point')\nvoid main() {\n  // Test case from the docstring\n  print(meanAbsoluteDeviation([1.0, 2.0, 3.0, 4.0])); // Expected: 1.0\n  \n  // Additional test cases\n  print(meanAbsoluteDeviation([1.0, 2.0, 3.0, 4.0, 5.0])); // Expected: 1.2\n  print(meanAbsoluteDeviation([0.0, 0.0, 0.0])); // Expected: 0.0\n  print(meanAbsoluteDeviation([10.0])); // Expected: 0.0\n}",
+    "language": "Dart",
+    "tests": "void main() {\n  final candidate = meanAbsoluteDeviation;\n\n  expect(candidate([1.0, 2.0]), 0.5);\n  expect(candidate([1.0, 2.0, 3.0, 4.0]), 1.0);\n  expect(candidate([1.0, 2.0, 3.0, 4.0, 5.0]), 1.2);\n}\n\nvoid expect(dynamic a, dynamic b) {\n  if (a == b) return;\n\n  if (a is List && b is List) {\n    expectList(a, b);\n  } else if (a is Map && b is Map) {\n    expectMap(a, b);\n  } else {\n    throw '$a != $b';\n  }\n}\n\nvoid expectList(List a, List b) {\n  if (a.length != b.length) throw 'list lengths are not equal';\n\n  for (var i = 0; i < a.length; i++) {\n    expect(a[i], b[i]);\n  }\n}\n\nvoid expectMap(Map a, Map b) {\n  if (a.length != b.length) throw 'map lengths are not equal';\n\n  for (var key in a.keys) {\n    expect(a[key], b[key]);\n  }\n}",
+    "prediction": "double meanAbsoluteDeviation(List<double> numbers) {\n  if (numbers.isEmpty) return 0.0;\n\n  double sum = 0.0;\n  for (var n in numbers) sum += n;\n  double avg = sum / numbers.length;\n\n  double madSum = 0.0;\n  for (var n in numbers) madSum += (n - avg).abs();\n\n  return madSum / numbers.length;\n}",
+    "_rerank": {
+      "mode": "test",
+      "best_original_index": 1,
+      "order": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        0,
+        2,
+        4,
+        9
+      ],
+      "scores": [
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        1020.0,
+        20.0,
+        20.0,
+        20.0,
+        18.0
+      ]
+    }
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "architecture": "native_encoder_decoder",
+  "dataset": {
+    "dataset": {
+      "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904"
+    },
+    "f2": {
+      "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe"
+    },
+    "model_hidden_fields": [
+      "acceptance_tests",
+      "dart_source",
+      "feedback_tests",
+      "gold",
+      "holdback_tests",
+      "reference",
+      "supervised_target",
+      "tests"
+    ],
+    "model_visible_fields": [
+      "F2.text"
+    ],
+    "reference_target_field": "dart_source",
+    "rows": 2776,
+    "schema": "t5gemma2-enriched-sft-run-v1",
+    "source_sha256s_sha256": "6df0bfbc2f33812e20658de7caeafb8ead109bda53fecddc6b738ed838d1749b",
+    "target_sha256s_sha256": "0aedeb3549a0d4b055759f2b7e4258c565247fb2ae8a1337f4b63af92c548003",
+    "task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0"
+  },
+  "model": "google/t5gemma-2-4b-4b",
+  "model_revision": "487d4acf21a4d70c70bf534265b5263c9424979e",
+  "no_frontier_api": true,
+  "runtime": {
+    "cuda": "12.8",
+    "peft": "0.18.0",
+    "torch": "2.8.0+cu128",
+    "trainer_sha256": "dd4026b2e86a8c3280af5e4379f1cd8a07615e69f9d1959fd1e5ee7dc4f245e2",
+    "transformers": "5.9.0"
+  },
+  "schema": "t5gemma2-enriched-sft-run-v1",
+  "source_truncation": false,
+  "status": "preflight_complete",
+  "target_truncation": false,
+  "tests_exposed_to_model": false,
+  "tokenization": {
+    "eos_supervised": true,
+    "rows": 2776,
+    "source_tokens": {
+      "max": 13253,
+      "mean": 1895.0100864553315
+    },
+    "target_special_tokens": "none_plus_exactly_one_terminal_eos",
+    "target_tokens": {
+      "max": 3343,
+      "mean": 294.54178674351584
+    },
+    "truncated_rows": 0
+  },
+  "tokenizer": {
+    "bos_token_id": 2,
+    "class": "GemmaTokenizer",
+    "eos_token_id": 1,
+    "pad_token_id": 0,
+    "resolved_commit": "",
+    "special_tokens_map_sha256": "a237afa0a3964f4db32b59e1031adcc948cf01b552badfdf5a96092422a19884",
+    "vocab_sha256": "aacdb7cfcf76c202d7f7a157fda1392c83138d20e0d2b433a062e8dfd99b4c91",
+    "vocab_size": 262144
+  }
+}

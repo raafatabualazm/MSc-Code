@@ -1,0 +1,125 @@
+{
+  "append_only_contract": {
+    "frozen_representation_contract_sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+    "parent_rows": 1580,
+    "parent_rows_are_exact_prefix": true,
+    "supplemental_order": "phase0_train_order"
+  },
+  "artifacts": {
+    "fit_task_manifest": {
+      "bytes": 980210,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/fit_task_manifest_2776.jsonl",
+      "sha256": "a8b30d4e71896d3f75a82acfa2f2863042cd3c6876d17846d38bfb799f370e9d"
+    },
+    "frozen_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/build/multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb"
+    },
+    "heldout": {
+      "bytes": 1802107,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+      "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7"
+    },
+    "heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json",
+      "sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a"
+    },
+    "parent_fit": {
+      "bytes": 16562502,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.jsonl",
+      "sha256": "3cf3dd5b0fc950f7516434b2c90ce2bd6334178ace962e4442026bd33f476e18"
+    },
+    "parent_fit_seal": {
+      "bytes": 2963,
+      "path": "/workspace/multifunction_v1/build/train_multifunction_binary.seal.json",
+      "sha256": "14f2cc5ddcb63c8ad25f6a5c9bb6209af111dafbb0827523a24d8089585a94a5"
+    },
+    "phase0_aot_manifest": {
+      "bytes": 3306958,
+      "path": "/workspace/releases/direct_compact_phase0_s44_pool_v3_dart3122_cfgtypes_v2_release/binary_build/aot_manifest.jsonl",
+      "sha256": "e5bdb05eaf08281113298b9f37f26960a6f630b258de51eee92e672af722e633"
+    },
+    "phase0_private_build_train": {
+      "bytes": 8404645,
+      "path": "/workspace/releases/direct_compact_phase0_s44_pool_v3_dart3122_cfgtypes_v2_release/source_preparation/private_build_inputs/train.jsonl",
+      "sha256": "a56b8fb9d8a26c872b4e26f28823cecef76e00cdb9dec08c87c72678c012ad1a"
+    },
+    "phase0_source_corpus": {
+      "bytes": 155024807,
+      "path": "/workspace/data/training/combined_fresh_s44_train_input.clean.jsonl",
+      "sha256": "312d5a7cfc9a5866c38479a3384bd49f47b55b26b1dd46200bb70539945e9b65"
+    },
+    "phase0_train_labels": {
+      "bytes": 2740273,
+      "path": "/workspace/releases/direct_compact_phase0_s44_pool_v3_dart3122_cfgtypes_v2_release/source_preparation/prepared/train_private_labels.jsonl",
+      "sha256": "cbeec4154b21604ea9e6989552035b006a112ffb0a4079b2a44adef75997b123"
+    },
+    "supplemental_aot_manifest": {
+      "bytes": 1209304,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_aot_manifest_1196.jsonl",
+      "sha256": "a542b0e875d0c01074e67277305beaac507034e61887d577e7820ea97a38f27a"
+    },
+    "supplemental_targets": {
+      "bytes": 4584599,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_targets_unsanitized_1196.jsonl",
+      "sha256": "9503f9d0fd56ae891b096372224ccc06b3ab07b4611f1e51a0883f626ce4e745"
+    },
+    "supplemental_targets_seal": {
+      "bytes": 770,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_targets_unsanitized_1196.seal.json",
+      "sha256": "25e677c17a525622692a9e3d34cf0c7fcdedc9b7ae5fb398b0e06d1526823c89"
+    },
+    "supplemental_task_manifest": {
+      "bytes": 539036,
+      "path": "/workspace/multifunction_v1/expanded2776/selection/supplemental_task_manifest_1196.jsonl",
+      "sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b"
+    }
+  },
+  "counts": {
+    "expanded_fit_rows": 2776,
+    "heldout_rows": 175,
+    "parent_fit_rows": 1580,
+    "phase0_dev_rows": 326,
+    "phase0_train_rows": 2951,
+    "supplemental_family_counts": {
+      "master": 198,
+      "topup_s45": 894,
+      "topup_s46": 104
+    },
+    "supplemental_rows": 1196
+  },
+  "digests": {
+    "expanded_fit_ordered_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+    "expanded_fit_task_set_sha256": "30aaa2c4d469efce648bd53bb40cecd754c5e9a3d0258ae4a00a02eae205f019",
+    "heldout_ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "heldout_task_set_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70",
+    "parent_fit_ordered_task_ids_sha256": "04cba1dc6421f0a1d598ab68308f613daaae717f304d94fecb715689db7ff9f4",
+    "parent_fit_task_set_sha256": "06b414a47595f00e429b806768368812ba1fc1594dcbcaf78fb80438bf15ad5a",
+    "phase0_train_ordered_task_ids_sha256": "c4eeded844b22e8bf7558a592b97f03226bdc037dcb163261b26adc7a6c0e9ee",
+    "phase0_train_task_set_sha256": "980fe568725a223d19bd6a10d2d3b2cfe4964beadb791ad517ca20592314304e",
+    "supplemental_ordered_task_ids_sha256": "83d0d3a497f9466dc46aa72af3ee935a264b6028e4a59f9755f59a3beab97d16",
+    "supplemental_task_set_sha256": "f88f4de6b80738ee15e9a71256d3d77900e4d0c1f1bb4721e41fa9b0fc07c543"
+  },
+  "heldout_commitment": {
+    "dataset_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "measure_only": true,
+    "ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "rows": 175,
+    "seal_sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+    "task_set_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70"
+  },
+  "invariants": {
+    "canonical_source_rows_byte_hash_verified": true,
+    "expanded_fit_and_heldout_disjoint": true,
+    "heldout_membership_unchanged": true,
+    "parent_fit_and_supplemental_disjoint": true,
+    "parent_fit_order_unchanged": true,
+    "phase0_train_equals_expanded_fit_union_heldout": true,
+    "raw_semantic_function_names_not_serialized": true,
+    "supplemental_aot_is_exact_full_manifest_projection": true
+  },
+  "passed": true,
+  "schema": "multifunction-phase0-fit-expansion-selection-v1"
+}

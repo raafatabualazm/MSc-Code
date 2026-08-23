@@ -1,0 +1,256 @@
+{
+  "schema": "compact-qwen-v1-preflight",
+  "rows_retained": 1975,
+  "rows_by_role": {
+    "fit": 1975
+  },
+  "quarantined": 0,
+  "quarantine_reasons": {},
+  "failures_count": 154,
+  "failure_examples": [
+    {
+      "task_id": "sigless_b33efb3f75b1",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_e049208bd4a0",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_f0d9c4ec89e0",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_4e0111d6a287",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_3d5493ac2e4b",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_e2cba081d2a1",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_66f73967bc71",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_33eb645088d7",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_bce1cc8822e9",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_5de0a55d82e1",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_7c398eb9dd1a",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_c9faec8c1a95",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_8ef8abd831a2",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_3545fa960df2",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_8a55f20e881c",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_f4a7f67fb1e9",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_34538e85ae81",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_557ce236ba01",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_fddb4b300d5d",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_9613af1e4080",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_822894078d5f",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_c44493c910fb",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_17875d1327be",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_9f5a8e7fd5ab",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_e290debe5b23",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_0ebf99ae1e68",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_2ea2018754c0",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_50cc0daf1cbe",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_c145292ad7a2",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_97afa5c51624",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_1af0d64670f2",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_73c99d98ff8e",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_2de8b6a0dc52",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_3cdcd091363c",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_b2005e1721c2",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_2b1327616d1d",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_8e01c27a2779",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_b80284c7837a",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_7a89c298dad3",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_83e107c29c6f",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_72a62da46c7d",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_cdf065860d34",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_3ef92947bb1f",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_3d4671186f57",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_e35ac1ef33ef",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_0b5ee037b4ed",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_90f4e4b1df0f",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_c5de49579689",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_5c69837a48ed",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    },
+    {
+      "task_id": "sigless_d605765c5204",
+      "reason": "canonical_or_graph_roundtrip_mismatch"
+    }
+  ],
+  "tokens": {
+    "kind": "compact_source_only",
+    "min": 29,
+    "p50": 382,
+    "p95": 1411,
+    "p99": 2213,
+    "max": 7254,
+    "limit": 9000
+  },
+  "lossless_invariants": {
+    "lossless_domain": "scrubbed_canonical_graph",
+    "privacy_scrub_is_only_intentional_irreversibility": true,
+    "exact_instruction_entry_cfg_roundtrip_rows": 1975,
+    "dfg_regenerated_and_matched_rows": 1975,
+    "dfg_edges_matched_edge_for_edge": 181063,
+    "dfg_extractor_sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+    "unknown_tokens": 0,
+    "truncated_rows": 0,
+    "raw_fallback_is_reversible": true
+  },
+  "codebook_expansion_leakage_scan": {
+    "candidate": 0,
+    "file_uri": 0,
+    "absolute_symbol_address": 0,
+    "private_field_terms": 0
+  },
+  "passed": false,
+  "exploratory_full_release_fit": false,
+  "contract": {
+    "compact_codec_sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4",
+    "compact_codebook_sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+    "compact_tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "base_vocab_size": 151936,
+    "tokenizer_vocab_size": 151669,
+    "model_vocab_size": 151936,
+    "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "decoder_model": "Qwen/Qwen3-8B",
+    "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "target_function": "candidate",
+    "target_language": "Dart",
+    "tokenizer_fingerprint_sha256": "c1e79a88eb4b3e2a96972edf99f6b28e6f39ed832ae95e4727ecdb425a25de4a",
+    "source_token_expansion_count": 20475,
+    "runtime_symbol_policy_sha256": "f5057dbb432e84ace3181bd4838795ae2f6c2315e4bebea6ad56be24ab461ed6"
+  }
+}

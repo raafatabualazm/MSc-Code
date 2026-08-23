@@ -1,9 +1,12 @@
 import requests
 import json
+import os
 import time
 
 # --- CONFIGURATION ---
-API_KEY = "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"  # Replace with your OpenRouter API key
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Set OPENROUTER_API_KEY before running this script.")
 MODEL_ID = "moonshotai/kimi-k2-thinking"  # Replace with the model you want to test
 # ---------------------
 

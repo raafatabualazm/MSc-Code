@@ -7,18 +7,181 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.evaluation.graph_compile_at_k_antigravity import evaluate_dart_jit_tests_detail
+
+try:
+    from tqdm.auto import tqdm
+except Exception:
+    tqdm = None
 
 
-def pseudo_pass(reference: str, prediction: str) -> bool:
-    reference_tokens = set(reference.lower().split())
-    prediction_tokens = set(prediction.lower().split())
+# Match a fenced code block, optionally tagged ```dart / ```Dart, etc.
+_FENCE_RE = re.compile(r"```[a-zA-Z]*\s*\n?(.*?)```", re.S)
 
-    if not reference_tokens:
+
+def _extract_code(text: str) -> str:
+    """Pull runnable Dart out of a raw model generation (see compile@k)."""
+    if not text:
+        return ""
+    m = _FENCE_RE.search(text)
+    if m:
+        return m.group(1).strip()
+    lines = text.splitlines()
+    starters = ("@pragma", "import ", "library ", "void ", "Future", "main(")
+    for i, ln in enumerate(lines):
+        s = ln.lstrip()
+        if s.startswith(starters) or re.match(r"^[\w<>\[\],\?\s]+\s+\w+\s*\(", s):
+            return "\n".join(lines[i:]).strip()
+    return text.strip()
+
+
+def _resolve_dart_binary() -> str:
+    candidates = [
+        '/home/zeus/dart-sdk/bin/dart',
+        os.path.join(os.path.expanduser('~'), 'dart-sdk', 'bin', 'dart'),
+    ]
+    for p in candidates:
+        if os.path.isfile(p):
+            return p
+    found = shutil.which('dart')
+    if found and found.lower().endswith(('.bat', '.cmd')):
+        candidate = Path(found).parent / 'cache' / 'dart-sdk' / 'bin' / 'dart.exe'
+        if candidate.is_file():
+            return str(candidate)
+    return found if found else 'dart'
+
+
+DART_BIN = _resolve_dart_binary()
+
+
+def _dart_subprocess_env(workdir: str | Path) -> dict[str, str]:
+    env = os.environ.copy()
+    home = Path(workdir) / ".dart_home"
+    appdata = home / "AppData" / "Roaming"
+    localappdata = home / "AppData" / "Local"
+    pub_cache = home / ".pub-cache"
+    for path in (home, appdata, localappdata, pub_cache):
+        path.mkdir(parents=True, exist_ok=True)
+    env.update({
+        "HOME": str(home), "USERPROFILE": str(home),
+        "APPDATA": str(appdata), "LOCALAPPDATA": str(localappdata),
+        "PUB_CACHE": str(pub_cache), "CI": "true",
+        "DART_SUPPRESS_ANALYTICS": "1",
+    })
+    return env
+
+
+def validate_dart_binary() -> None:
+    try:
+        result = subprocess.run(
+            [DART_BIN, '--version'],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError) as exc:
+        raise SystemExit(f"ERROR: Dart binary is not runnable: {DART_BIN!r} ({exc})")
+    if result.returncode != 0:
+        diagnostic = (result.stderr or result.stdout or "").strip()
+        raise SystemExit(f"ERROR: Dart binary failed: {DART_BIN!r}\n{diagnostic}")
+
+
+def stable_task_id(row: dict) -> str:
+    """Return a schema-independent benchmark task identifier."""
+    for key in ('task_id', 'id', 'problem_id', 'filename'):
+        value = row.get(key)
+        if value is None:
+            continue
+        text = str(value).strip().replace('\\', '/')
+        if not text:
+            continue
+        text = text.rsplit('/', 1)[-1]
+        if text.endswith('.dart'):
+            text = text[:-5]
+        return text
+    return ''
+
+
+def should_force_zero(row: dict) -> bool:
+    """Deprecated compatibility hook; clean evaluation has no forced outcomes."""
+    del row
+    return False
+
+
+def strip_main_and_imports(code: str) -> str:
+    """Remove generated top-level boilerplate before appending legacy tests."""
+    code = re.sub(r"^import\s+.*;\s*$", "", code, flags=re.MULTILINE)
+    code = re.sub(r"^@pragma\(.*\)\s*$", "", code, flags=re.MULTILINE)
+
+    main_match = re.search(r"void\s+main\s*\([^)]*\)\s*\{", code)
+    if main_match:
+        start = main_match.start()
+        depth = 0
+        i = main_match.end() - 1
+        while i < len(code):
+            if code[i] == "{":
+                depth += 1
+            elif code[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    code = code[:start] + code[i + 1:]
+                    break
+            i += 1
+
+    return code.strip()
+
+
+def run_dart_test_detail(raw: str, test_code: str, task_id: str, timeout: int = 30) -> tuple[bool, str, str]:
+    """Run the exact pass-aligned JIT evaluator used by reward and statistics."""
+    _compiled, passed, diagnostic, full_source = evaluate_dart_jit_tests_detail(
+        raw, test_code, task_id, timeout=timeout
+    )
+    return passed, diagnostic, full_source
+
+
+def run_dart_test(raw: str, test_code: str, task_id: str, timeout: int = 30) -> bool:
+    ok, _, _ = run_dart_test_detail(raw, test_code, task_id, timeout=timeout)
+    return ok
+
+
+def run_dart(raw: str, timeout: int = 30) -> bool:
+    """Pass == the generated `main()` program runs to completion (exit 0).
+
+    The test set (test-set.jsonl) targets are self-contained `void main()`
+    programs with no unit-test harness, so functional success is defined as
+    successful execution rather than assertion-based unit tests.
+    """
+    code = _extract_code(raw)
+    if len(code.strip()) < 5:
         return False
-
-    overlap = len(reference_tokens & prediction_tokens) / len(reference_tokens)
-    return overlap >= 0.3
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / 'main.dart'
+        path.write_text(code, encoding='utf-8')
+        try:
+            result = subprocess.run(
+                [DART_BIN, '--disable-dart-dev', 'run', str(path)],
+                cwd=tmp,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+                env=_dart_subprocess_env(tmp),
+            )
+        except (subprocess.TimeoutExpired, FileNotFoundError):
+            return False
+        return result.returncode == 0
 
 
 def pass_at_k_estimator(n: int, c: int, k: int) -> float:
@@ -35,27 +198,71 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--predictions', required=True)
     parser.add_argument('--k_values', default='1,5')
+    parser.add_argument('--workers', type=int, default=int(os.environ.get("EVAL_DART_WORKERS", "1")),
+                        help="Parallel Dart pass@k row workers. Use 64-128 on high-core CPU boxes")
+    parser.add_argument('--timeout', type=int, default=30,
+                        help="Per-candidate Dart run timeout in seconds")
+    parser.add_argument('--debug_failures', type=int, default=0,
+                        help="Print diagnostics for the first N failed Dart candidates")
     args = parser.parse_args()
+    validate_dart_binary()
+    workers = max(1, int(args.workers))
+    print(f"Using Dart binary: {DART_BIN} | workers={workers}", file=sys.stderr)
 
     rows = json.loads(Path(args.predictions).read_text(encoding='utf-8'))
     k_list = [int(x.strip()) for x in args.k_values.split(',')]
 
     pass_sums = {k: 0.0 for k in k_list}
     total = len(rows)
-
-    for idx, row in enumerate(rows):
-        reference = row.get('reference', '')
+    def score_row(item: tuple[int, dict]) -> tuple[int, int, int, bool, list[tuple[str, str]]]:
+        idx, row = item
         candidates = row.get('predictions', [row.get('prediction', '')])
+        test_code = row.get('tests', '')
+        task_id = str(row.get('id', idx))
 
         if not candidates:
             candidates = [row.get('prediction', '')]
 
-        n = len(candidates)
         c = 0
-
+        failures: list[tuple[str, str]] = []
         for cand in candidates:
-            if pseudo_pass(reference, cand):
+            if test_code:
+                ok, diagnostic, full_source = run_dart_test_detail(cand, test_code, task_id, timeout=args.timeout)
+                if not ok and len(failures) < 1:
+                    failures.append((diagnostic, full_source[:600].replace("\n", "\\n")))
+            else:
+                ok = run_dart(cand, timeout=args.timeout)
+            if ok:
                 c += 1
+        return idx, len(candidates), c, False, failures
+
+    # Bar on stderr: the runner captures this script's stdout for the JSON
+    # result, so stderr is the only live channel.
+    indexed_rows = list(enumerate(rows))
+    if workers > 1:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            row_results = list(
+                tqdm(pool.map(score_row, indexed_rows), total=len(indexed_rows), desc="pass@k", unit="row", dynamic_ncols=True)
+                if tqdm is not None else pool.map(score_row, indexed_rows)
+            )
+    else:
+        row_iter = tqdm(indexed_rows, desc="pass@k", unit="row", dynamic_ncols=True) if tqdm is not None else indexed_rows
+        row_results = [score_row(item) for item in row_iter]
+
+    debug_printed = 0
+    for idx, n, c, forced_zero, failures in row_results:
+        if forced_zero:
+            for k in k_list:
+                pass_sums[k] += 0.0
+            print(f'[{idx + 1}/{len(rows)}] n={n}, passed=0, forced_zero=True')
+            continue
+
+        if failures and debug_printed < args.debug_failures:
+            diagnostic, preview = failures[0]
+            debug_printed += 1
+            print(f"\n--- Pass failure #{debug_printed} row={idx} ---")
+            print(diagnostic[:1600])
+            print(f"source_preview={preview}")
 
         for k in k_list:
             if n >= k:

@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "stage": "fresh_graphv2_holdout_seal_verification",
+  "outcome": "sealed",
+  "sealed_utc": "2026-07-17T10:40:30Z",
+  "verified_utc": "2026-07-17T10:51:32Z",
+  "configuration": {
+    "seed": 44,
+    "quotas": {
+      "low": 170,
+      "mid": 170,
+      "high": 160
+    },
+    "low_max_cfg_blocks": 14,
+    "mid_max_cfg_blocks": 25,
+    "token_jaccard_threshold": 0.55,
+    "sequence_matcher_threshold": 0.7
+  },
+  "candidate_audit": {
+    "rows": 1666,
+    "eligible_rows": 1636,
+    "eligible_realized_strata": {
+      "low": 181,
+      "mid": 531,
+      "high": 924
+    },
+    "external_exclusions": 30,
+    "selected_set_exclusions": 4
+  },
+  "sealed_output": {
+    "path": "data/testing/fresh_graphv2_holdout_s44.jsonl",
+    "rows": 500,
+    "size_bytes": 15260164,
+    "sha256": "b4e2dd5cfeb3309055a260e508086ca047ac9f4ac550ad4280f38894f829259c",
+    "realized_strata": {
+      "low": 170,
+      "mid": 170,
+      "high": 160
+    },
+    "source_pools": {
+      "base_llm": 137,
+      "topup_s44": 91,
+      "topup_s45": 203,
+      "topup_chatgpt_s46": 69
+    },
+    "providers": {
+      "azure:gpt-chat-latest": 217,
+      "deepseek:deepseek-v4-pro": 273,
+      "openrouter:anthropic/claude-sonnet-4.6": 10
+    }
+  },
+  "selection_manifest": {
+    "path": "data/testing/fresh_graphv2_holdout_s44.manifest.json",
+    "sha256": "89c57b6c0fb46680c051ffd28e44e31924dd022431ce4fa442b119afbddb67d8",
+    "selected_tasks": 500,
+    "provenance_files": 45,
+    "all_invariants_true": true
+  },
+  "leakage_audit": {
+    "selected_rows_checked": 500,
+    "external_name_overlaps": 0,
+    "external_source_overlaps": 0,
+    "internal_name_overlaps": 0,
+    "internal_source_overlaps": 0
+  },
+  "independent_row_verification": {
+    "json_rows": 500,
+    "unique_task_ids": 500,
+    "unique_functions": 500,
+    "integrity_valid_rows": 500,
+    "manifest_order_mismatches": 0,
+    "source_line_mismatches": 0,
+    "input_row_hash_mismatches": 0,
+    "selection_rank_mismatches": 0,
+    "cfg_block_count_mismatches": 0,
+    "output_hash_matches_manifest": true
+  },
+  "provenance_hash_verification": {
+    "provenance_files_checked": 45,
+    "provenance_file_failures": 0,
+    "input_pools_checked": 4,
+    "input_pool_failures": 0,
+    "exclusion_corpora_checked": 2,
+    "exclusion_corpus_failures": 0,
+    "tools_checked": 3,
+    "tool_failures": 0,
+    "source_files_checked": 1,
+    "source_file_failures": 0
+  },
+  "determinism_rerun": {
+    "completed": true,
+    "output_sha256": "b4e2dd5cfeb3309055a260e508086ca047ac9f4ac550ad4280f38894f829259c",
+    "output_bytes_match": true,
+    "selected_tasks_match": true,
+    "candidate_audit_matches": true,
+    "leakage_audit_matches": true,
+    "invariants_match": true,
+    "rerun_manifest_path": "archive/provenance/fresh_graphv2_holdout_s44_chatgpt_s46.determinism.manifest.json",
+    "rerun_manifest_sha256": "d89eed9776eb3d3fab2470fc1952ae7d246b077971e1b00d4e341bb587fbb325",
+    "launcher_sha256": "f1f286602311bf846cb848bafba93a2b5e2e208e9bf78b184ce3f259e643caba"
+  },
+  "toolchain": {
+    "dart_version": "3.11.5",
+    "dart_sha256": "37924d3acf1b2b80a8fcadc69ceec85ce55f82b36d479f5caa328f023389252b",
+    "gdb_version": "17.1",
+    "gdb_sha256": "9403e3f3e5f3dc7fec684b827598a5075ce386b6ad3c643497c90fb7a6c42ebd",
+    "python_version": "3.12.3",
+    "python_sha256": "1643dacd9feaedc58f3cc581e4d22577dfe25c09b10282936186ccf0f2e61118",
+    "networkx_version": "3.6.1",
+    "seal_script_sha256": "92d8c06fc1851353b2ad02f98b9c279d972e793f0a599d69d073198e56595eb2",
+    "seal_launcher_sha256": "3fc193a65f6809fee29067f886c191769cfe14adc17c2a8972b85e8b3fe081da"
+  },
+  "immutable_snapshots": {
+    "local": "archive/holdout_snapshots/fresh_graphv2_holdout_s44_sealed_chatgpt_s46_20260717T105132Z",
+    "remote": "/root/experiment_workspace/.sync_snapshots/fresh_graphv2_holdout_s44_sealed_chatgpt_s46_20260717T105132Z"
+  },
+  "constraints": {
+    "source_and_graph_pools_preserved": true,
+    "fresh_holdout_model_evaluation_run": false,
+    "gpu_work_run": false,
+    "additional_source_generation_run": false
+  }
+}

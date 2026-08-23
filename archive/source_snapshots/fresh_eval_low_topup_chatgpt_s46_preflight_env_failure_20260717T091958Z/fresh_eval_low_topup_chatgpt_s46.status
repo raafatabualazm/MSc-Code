@@ -1,0 +1,7 @@
+FAILED
+exit_code=1
+ended_at=2026-07-17T09:19:58Z
+provider=azure
+model=gpt-chat-latest
+target=200
+seed=46
