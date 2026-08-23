@@ -1,0 +1,17 @@
+{
+  "train": "data/datasets/dart_all_graphv2_train.jsonl",
+  "train_sha256": "ae1503b8a17a1da84fc76b9fd3dbe54d8f42badec94d970c2e21db522dd9d75b",
+  "benchmark": "data/testing/grpo_data_graphv2.jsonl",
+  "benchmark_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "train_rows": 770,
+  "benchmark_rows": 154,
+  "duplicate_train_source_rows": 0,
+  "normalization": "comments/whitespace removed; identifiers/literals normalized; token 7-gram Jaccard",
+  "exact_overlap_pairs": 0,
+  "exact_overlaps": [],
+  "near_threshold": 0.8,
+  "near_overlap_pairs": 0,
+  "near_overlaps": [],
+  "dropped_train_indices": [],
+  "dropped_train_rows": 0
+}

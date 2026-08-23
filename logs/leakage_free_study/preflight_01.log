@@ -1,0 +1,4 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m py_compile scripts/training/graph_grpo_decompiler_antigravity.py scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py scripts/evaluation/graph_pass_at_k_antigravity.py scripts/data/prepare_synthetic_reward_pool.py scripts/training/audit_grpo_reward_antigravity.py configs/run_sweeps_antigravity.py generate_synthetic_tasks_parallel.py scripts/run_leakage_free_study.py
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m py_compile scripts/training/graph_grpo_decompiler_antigravity.py scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py scripts/evaluation/graph_pass_at_k_antigravity.py scripts/data/prepare_synthetic_reward_pool.py scripts/training/audit_grpo_reward_antigravity.py configs/run_sweeps_antigravity.py generate_synthetic_tasks_parallel.py scripts/run_leakage_free_study.py

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "stage": "fresh_eval_offline_graphv2_build",
+  "outcome": "complete",
+  "completed_utc": "2026-07-17T10:25:36Z",
+  "source": {
+    "path": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl",
+    "rows": 200,
+    "sha256": "503c1d709565f8f76ed0ab7dfb0de841a12a66a864fa1e2baa077165fc482447"
+  },
+  "assembly": {
+    "path": "data/testing/fresh_eval_low_topup_chatgpt_s46_assembly.jsonl",
+    "rows": 200,
+    "complete_rows": 196,
+    "missing_rows": 4,
+    "sha256": "99a6dc0ab6fcd89ee61f60cb9e339329322fcf2d626e4b3c88b33b52fe735284",
+    "non_assembly_fields_match_source": true,
+    "log_sha256": "4923b6dcb2a6d052c6aa833b2c8a0787c34e936bf9f6ee5cd94ef4d940f548ec",
+    "status_sha256": "b67d1bb45ebd88036c63a5c40ef89a6bf822947788468452bde7f87bd9b73261"
+  },
+  "graph_v2": {
+    "path": "data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.jsonl",
+    "rows": 196,
+    "sha256": "1f16c3e5060cc15be7e24f879978a40171a79b29e91054eecbeb751df3299101",
+    "rejected_path": "data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.rejected.jsonl",
+    "rejected_rows": 4,
+    "rejected_sha256": "ccfb888a8dc249ef84a7966c9e7ef1a80259d96252a48968997653ea4dbfab81",
+    "summary_path": "data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.summary.json",
+    "summary_sha256": "c33e98eeb0c7f8d42f82e9b01e6bc0558f2e66089d440e3659f29e0bd11ecfa6",
+    "schema": "antigravity-graph-v2.1",
+    "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "integrity_valid_rows": 196,
+    "input_partition_verified": true,
+    "realized_strata": {
+      "low": 24,
+      "mid": 103,
+      "high": 69
+    }
+  },
+  "toolchain": {
+    "dart_version": "3.11.5",
+    "gdb_version": "17.1",
+    "python_version": "3.12.3",
+    "networkx_version": "3.6.1",
+    "build_graph_v2_script_sha256": "eefb68b6abdd7d5b3c4f5907ad03c000f62d0c5f0e11002a2fda72ca292bd673",
+    "assembly_launcher_sha256": "21d647dc348bd81a6a8ab25b723fc43ce277a69b0fadd8346721f923ab625a78",
+    "graph_launcher_sha256": "2c7c09651c0d5b2ab766f602e0b4f43173a357d1d5163d045fdb49c6ec43e950"
+  },
+  "immutable_snapshots": {
+    "local": "archive/offline_snapshots/fresh_eval_low_topup_chatgpt_s46_offline_graphv2_20260717T102536Z",
+    "remote": "/root/experiment_workspace/.sync_snapshots/fresh_eval_low_topup_chatgpt_s46_offline_graphv2_20260717T102536Z",
+    "files": 14,
+    "hash_failures": 0
+  }
+}

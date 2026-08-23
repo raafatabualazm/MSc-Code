@@ -1,0 +1,61 @@
+\documentclass[border=4pt]{standalone}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, calc}
+
+\begin{document}
+\resizebox{11.5in}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  >=Latex,
+  node distance=0.75cm and 0.95cm,
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=0.75cm, minimum width=2.2cm, fill=gray!8},
+  data/.style={draw, rounded corners=2pt, align=center, minimum height=0.75cm, minimum width=2.35cm, fill=blue!8},
+  model/.style={draw, rounded corners=2pt, align=center, minimum height=0.82cm, minimum width=2.55cm, fill=green!8},
+  train/.style={draw, rounded corners=2pt, align=center, minimum height=0.75cm, minimum width=2.35cm, fill=orange!10},
+  eval/.style={draw, rounded corners=2pt, align=center, minimum height=0.75cm, minimum width=2.35cm, fill=purple!8},
+  arrow/.style={->, thick},
+  dasharrow/.style={->, thick, dashed}
+]
+\node[data] (asm) {Dart AOT\\x86-64 assembly};
+\node[data, right=of asm] (extract) {Safe CFG/DFG\\extraction};
+\node[data, right=of extract] (graph) {Graph record\\blocks, CFG, DFG\\fields preserved};
+
+\node[model, above right=0.7cm and 0.8cm of graph] (encoder) {GraphCodeBERT\\block encoder\\LoRA};
+\node[model, right=of encoder] (pool) {Graph pooling\\+ learned prefix\\RMS matched};
+
+\node[data, below right=0.7cm and 0.8cm of graph] (prompt) {Decoder prompt\\signature + task cue\\no raw asm in G3};
+\node[model, right=1.2cm of prompt] (decoder) {Qwen3-8B decoder\\LoRA};
+\node[box, right=of decoder] (cands) {$k$ Dart candidates};
+
+\node[eval, right=of cands] (harness) {Dart compile\\+ unit tests};
+\node[eval, above=of harness] (metrics) {CodeBLEU\\compile@k\\pass@k};
+\node[eval, below=of harness] (rerank) {Compile-cluster\\reranker\\harvester};
+
+\node[train, below=1.0cm of decoder] (adapt) {SFT, GRPO,\\RS-SFT arms};
+\node[train, below=of cands] (ensemble) {Multi-arm pool\\union coverage};
+
+\draw[arrow] (asm) -- (extract);
+\draw[arrow] (extract) -- (graph);
+\draw[arrow] (graph) |- (encoder);
+\draw[arrow] (encoder) -- (pool);
+\draw[arrow] (pool) -| (decoder);
+\draw[arrow] (graph) |- (prompt);
+\draw[arrow] (prompt) -- (decoder);
+\draw[arrow] (decoder) -- (cands);
+\draw[arrow] (cands) -- (harness);
+\draw[arrow] (harness) -- (metrics);
+\draw[arrow] (harness) -- (rerank);
+\draw[arrow] (cands) -- (ensemble);
+\draw[dasharrow] (ensemble.west) -- (adapt.east);
+\draw[dasharrow] (adapt) -- (decoder);
+\coordinate (rerankDrop) at ($(rerank.south)+(0,-0.35)$);
+\coordinate (ensembleDrop) at ($(ensemble.south)+(0,-0.35)$);
+\draw[dasharrow] (rerank.south) -- (rerankDrop) -- (ensembleDrop) -- (ensemble.south);
+
+\node[draw, rounded corners=2pt, fit=(encoder) (pool), inner sep=0.18cm, label={[font=\small]above:Graph channel}] {};
+\node[draw, rounded corners=2pt, fit=(prompt) (decoder), inner sep=0.18cm, label={[font=\small]below:Generation channel}] {};
+\end{tikzpicture}%
+}
+\end{document}

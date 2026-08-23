@@ -1,0 +1,162 @@
+{
+  "schema": "deepseek64-oom-recovery-contract-v1",
+  "created_at": "2026-07-26T12:45:00Z",
+  "purpose": "Locally settle only the nine Codex DeepSeek64 dispatches stranded when the owning systemd unit was OOM-killed. Treat every response as unknown and charge the full reservation.",
+  "arm": "codex",
+  "continuation_contract": {
+    "path": "frontier_ceiling_patch_v1/deepseek64_continuation_contract_v1.json",
+    "sha256": "c06f8d541b6afb0df2abebcba8f5919435628918bd870903f7d761d75180fbea"
+  },
+  "continuation_out_root": "artifacts/frontier_ceiling_two_enrichments/runs/codex_multifunction_deepseek_v4pro_k10_64k_continuation_v1",
+  "dead_owner": {
+    "pid": 797548,
+    "host": "ubuntu-s-4vcpu-8gb-nyc1",
+    "unit": "frontier-deepseek64-codex-v1.service"
+  },
+  "oom_evidence": {
+    "since": "2026-07-26 12:35:30 UTC",
+    "until": "2026-07-26 12:37:00 UTC",
+    "required_journal_substrings": [
+      "python[797548]: DEEPSEEK64_PROGRESS arm=codex",
+      "task_memcg=/system.slice/frontier-deepseek64-codex-v1.service",
+      "Out of memory: Killed process 807853 (dart:test.dart)",
+      "frontier-deepseek64-codex-v1.service: A process of this unit has been killed by the OOM killer.",
+      "frontier-deepseek64-codex-v1.service: Failed with result 'oom-kill'."
+    ],
+    "archived_lock_dir": "artifacts/frontier_ceiling_two_enrichments/stale_locks_20260726T1237Z_codex_oom",
+    "archived_locks": {
+      "overlay.run.lock": "276b1caae6e34e2edfbe1ca3390acae82da56b417603b724e0ecb016267f3b38",
+      "source.run.lock": "281720bcd081332c58bb3c049b6312ff437d29a4e271f553b3de2c11c03f483d"
+    },
+    "live_locks_must_be_absent": [
+      "artifacts/frontier_ceiling_two_enrichments/runs/codex_multifunction_deepseek_v4pro_k10_exact128k/.run.lock",
+      "artifacts/frontier_ceiling_two_enrichments/runs/codex_multifunction_deepseek_v4pro_k10_64k_continuation_v1/.run.lock"
+    ]
+  },
+  "fixed_policy": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-v4-pro",
+    "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+    "slot_policy_sha256": "5bba51cf1fb2bf6ae1ca686bfef267221c4480693ed72f2f25a5ae04d2ccf4db",
+    "prompt_sha256": "6c94f56e3ab97cefe192b9cb14cb01d1dc32a2101694bb06963903f5e3aa3e26",
+    "max_prompt_tokens": 12000,
+    "requested_max_tokens": 65536,
+    "full_reservation_tokens": 77536,
+    "retryable_transport": true,
+    "recovery_reason": "process_oom_unknown_response"
+  },
+  "baseline_journals": {
+    "attempts64.jsonl": {
+      "lines": 31,
+      "bytes": 4285802,
+      "sha256": "ea684dcedb28fc465915306c79ab2b8b02c327621ae1a4746d8f9ae4ca8c2325"
+    },
+    "outcomes64.jsonl": {
+      "lines": 31,
+      "bytes": 190253,
+      "sha256": "8afcb1639d34d7c685a963370b99fe33a815940ba677906b8879838e17b6324f"
+    },
+    "dispatches64.jsonl": {
+      "lines": 71,
+      "bytes": 29647,
+      "sha256": "6c8df9ec6b5a45e3aabea1dcf04c01ac07d9c7d909ce57a6fe589111b60fed29"
+    }
+  },
+  "expected_dangling_intents": [
+    {
+      "dispatch_id": "3b6f27c93a934cd48a677a52a1665459",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 1,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s1.c64.a0.4e34c13ea9",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:31:27.894209Z"
+    },
+    {
+      "dispatch_id": "3479c89e023c473ebd6b22c39a135897",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 2,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s2.c64.a0.c6668e3433",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:31:58.973682Z"
+    },
+    {
+      "dispatch_id": "9572db05182a44bf94af30a064821027",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 3,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s3.c64.a0.95e9577b6d",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:32:05.073014Z"
+    },
+    {
+      "dispatch_id": "ede6bd0a0e944de9ace95a7dea1914c4",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 4,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s4.c64.a0.b8dd4e5af6",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:32:09.236499Z"
+    },
+    {
+      "dispatch_id": "3937292ca96f4cb7a74ebb77882ecf02",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 5,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s5.c64.a0.e728fb1856",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:32:24.988504Z"
+    },
+    {
+      "dispatch_id": "43c9eb4894984f839fe206d2fbcb0a6c",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 6,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s6.c64.a0.2337db1008",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:32:28.536826Z"
+    },
+    {
+      "dispatch_id": "86ea4a8456df46778f54195e184309c6",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 7,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s7.c64.a0.9447d572c4",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:33:42.532243Z"
+    },
+    {
+      "dispatch_id": "b11cb0a88923440ab44411f03de0e018",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 8,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s8.c64.a0.4e73681b8c",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:34:58.043112Z"
+    },
+    {
+      "dispatch_id": "f025682df3dd4e88ac90a4f659b756f0",
+      "task_id": "sigless_192fbb20f4b6",
+      "sample_index": 9,
+      "attempt_index": 0,
+      "attempt_id": "sigless_192fbb20f4b6.s9.c64.a0.dcddb4bda3",
+      "config_sha256": "85ad5a1cdadee8020f37550fb7cd597db83d96b625e5e02d65b7f516620facb2",
+      "requested_max_tokens": 65536,
+      "created_at": "2026-07-26T12:35:42.001304Z"
+    }
+  ],
+  "resume_runtime_requirements": {
+    "workers": 1,
+    "systemd_limit_as_bytes": 3221225472,
+    "reason": "Bound pathological generated Dart allocation so it cannot OOM-kill the 8 GiB host."
+  }
+}

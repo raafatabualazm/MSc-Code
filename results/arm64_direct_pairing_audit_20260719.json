@@ -1,0 +1,221 @@
+{
+  "blockers": [
+    "The current compact codec is x86-only (hard-coded x86 mnemonic allowlist, AX64 marker and x86_64 decode result).",
+    "The codec's default frozen release DFG extractor reproduces only 4/1714 ARM rows; ARM graph-v2.1 requires the recorded 7a89 combined extractor family.",
+    "The ARM JSONL is an unsplit private record, not a public model-input artifact.",
+    "The original Flutter/APK build-and-slice script, source manifest, APKs and libapp.so files are absent from this workspace and the CPU build VM.",
+    "No manifest records the original Flutter/Dart SDK revisions, NDK/binutils revisions, or complete build command."
+  ],
+  "dfg_reproduction": {
+    "arm_rows": 1714,
+    "current_combined_cfg_dfg_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "current_dfg_exact_rows": 1714,
+    "recorded_combined_cfg_dfg_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+    "release_pinned_absolute_edge_count_delta": 141822,
+    "release_pinned_dfg_exact_rows": 4,
+    "release_pinned_dfg_sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
+  },
+  "elapsed_seconds": 28.003,
+  "inputs": {
+    "C:\\Users\\Raafat Abualazm\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-8B\\snapshots\\b968826d9c46dd6066d109eabc6255188de91218\\tokenizer.json": {
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "data\\datasets\\arm64_graphv2\\flutter_eval_graphv2.jsonl": {
+      "sha256": "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac"
+    },
+    "data\\datasets\\arm64_graphv2\\flutter_function_assembly_pool_graphv2.jsonl": {
+      "sha256": "bd64a1e8d24dc93a89f05d7f58cbaa9b4a09c7232e0a85555561f9dbeaa1519b"
+    },
+    "data\\datasets\\arm64_graphv2\\flutter_train_graphv2.jsonl": {
+      "sha256": "f21782dd60edc11988867659dd2d16a5f6b6d2f550594cae09ad7cf92b68dcb7"
+    },
+    "data\\datasets\\synthetic_pool_reward_clean_graphv2.jsonl": {
+      "sha256": "75e6deff3b0bf47298591c488e5547758690191943399ef517cbcef492351b8e"
+    },
+    "master_dart_cfg_dfg\\master_dart_cfg_dfg_train.jsonl": {
+      "sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf"
+    },
+    "scripts\\data\\cfg_extractor.py": {
+      "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c"
+    },
+    "scripts\\data\\dfg_extractor.py": {
+      "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12"
+    },
+    "scrubbed_master_v2_release\\extractors\\dfg_extractor.py": {
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
+    },
+    "scrubbed_master_v2_release\\master_dart_graphv2_compile_ledger.jsonl": {
+      "sha256": "a0c3225144c001b013adc99c38d63e9cb4f2ec1fdd1604388df65ada9e150c0a"
+    },
+    "scrubbed_master_v2_release\\master_dart_graphv2_quarantine.jsonl": {
+      "sha256": "f24f76d6e92a8491c2ce6cc05711235e4bf7b241b72af51d0f35971bfd0d8840"
+    }
+  },
+  "leakage": {
+    "required_policy": "strict compact-field allowlist; all IDs, source, tests, paths and pair bindings remain private",
+    "rows_with_exact_recorded_symbol_name_in_assembly": 0,
+    "rows_with_exact_recorded_symbol_name_in_cfg_instructions": 0,
+    "rows_with_linkable_libapp_sha256_in_assembly_header": 1714,
+    "rows_with_private_fields": {
+      "dart_function_signature": 1714,
+      "dart_source": 1714,
+      "filename": 1714,
+      "flutter_artifact": 1714,
+      "flutter_function_symbol_ranges": 1714,
+      "flutter_libapp_so": 1714,
+      "flutter_project_dir": 1714,
+      "flutter_split_debug_info": 1714,
+      "function": 1714,
+      "tests": 1714
+    },
+    "safe_as_model_input": false
+  },
+  "pairing": {
+    "arm_original_x86_assembly_hash_links_exact": 1712,
+    "arm_rows": 1714,
+    "byte_exact_raw_source_pairs": 1712,
+    "release_quarantined_arm_sources": 22,
+    "release_retained_pairs_in_old_arm_eval": 341,
+    "release_retained_pairs_in_old_arm_train": 1349,
+    "release_retained_same_original_source_pairs": 1690,
+    "same_raw_source_pairs": 1712,
+    "strong_pair_reason": "Existing ARM binaries were built from original named sources; scrubbed x86 release binaries were rebuilt from candidate-neutral sources. No shared neutral-source build manifest binds both architecture artifacts.",
+    "strong_same_neutral_source_rebuild_pairs": 0,
+    "x86_synthetic_rows": 1725
+  },
+  "prospective_direct_qwen_arm64_compression": {
+    "canonical_train_unique_instructions": 14489,
+    "codebook_fit": "data\\datasets\\arm64_graphv2\\flutter_train_graphv2.jsonl",
+    "logical_token_accounting": "one source-only atom per codebook instruction/block/control marker; native Qwen tokens plus two delimiters for fallback instructions; explicit CFG triples; DFG regenerated",
+    "measurement_only": "data\\datasets\\arm64_graphv2\\flutter_eval_graphv2.jsonl",
+    "measurements": {
+      "0": {
+        "codebook_entries": 0,
+        "fallback_instructions_max_row": 992,
+        "fallback_instructions_total": 86238,
+        "max": 13785,
+        "min": 192,
+        "over_9000": 15,
+        "p50": 2545,
+        "p95": 8334,
+        "p99": 12568
+      },
+      "1024": {
+        "codebook_entries": 1024,
+        "fallback_instructions_max_row": 293,
+        "fallback_instructions_total": 16921,
+        "max": 5210,
+        "min": 53,
+        "over_9000": 0,
+        "p50": 784,
+        "p95": 2806,
+        "p99": 4335
+      },
+      "16384": {
+        "codebook_entries": 14489,
+        "fallback_instructions_max_row": 83,
+        "fallback_instructions_total": 1564,
+        "max": 2382,
+        "min": 47,
+        "over_9000": 0,
+        "p50": 458,
+        "p95": 1567,
+        "p99": 2191
+      },
+      "4096": {
+        "codebook_entries": 4096,
+        "fallback_instructions_max_row": 123,
+        "fallback_instructions_total": 4858,
+        "max": 3279,
+        "min": 47,
+        "over_9000": 0,
+        "p50": 528,
+        "p95": 1895,
+        "p99": 2830
+      },
+      "8192": {
+        "codebook_entries": 8192,
+        "fallback_instructions_max_row": 101,
+        "fallback_instructions_total": 2593,
+        "max": 2542,
+        "min": 47,
+        "over_9000": 0,
+        "p50": 487,
+        "p95": 1679,
+        "p99": 2442
+      }
+    },
+    "observed_opcode_count": 67,
+    "observed_opcodes": {
+      "add": 31333,
+      "and": 2117,
+      "asr": 261,
+      "b": 16926,
+      "b.eq": 6297,
+      "b.ge": 3758,
+      "b.gt": 1236,
+      "b.hi": 84,
+      "b.hs": 3287,
+      "b.le": 1626,
+      "b.ls": 5947,
+      "b.lt": 1570,
+      "b.ne": 4729,
+      "b.vc": 57,
+      "b.vs": 79,
+      "bl": 30655,
+      "blr": 5546,
+      "brk": 1609,
+      "cbnz": 1306,
+      "cbz": 1408,
+      "cmn": 238,
+      "cmp": 26604,
+      "csel": 417,
+      "cset": 70,
+      "eor": 559,
+      "fadd": 220,
+      "fcmp": 511,
+      "fcvtms": 3,
+      "fcvtps": 2,
+      "fcvtzs": 25,
+      "fdiv": 176,
+      "fmov": 559,
+      "fmul": 114,
+      "fneg": 28,
+      "fsub": 90,
+      "ldar": 38,
+      "ldp": 4688,
+      "ldr": 27411,
+      "ldrb": 799,
+      "ldur": 76298,
+      "ldurb": 3302,
+      "ldurh": 173,
+      "lsl": 2888,
+      "lsr": 64,
+      "mov": 63544,
+      "movk": 181,
+      "msub": 512,
+      "mul": 544,
+      "mvn": 13,
+      "neg": 341,
+      "orr": 278,
+      "ret": 4578,
+      "sbfiz": 2751,
+      "sbfx": 13857,
+      "scvtf": 290,
+      "sdiv": 958,
+      "stp": 9281,
+      "str": 3949,
+      "strb": 3,
+      "stur": 32109,
+      "sub": 8353,
+      "tbnz": 2399,
+      "tbz": 8024,
+      "tst": 1750,
+      "ubfiz": 13,
+      "ubfx": 5274,
+      "umulh": 18
+    },
+    "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "schema": "arm64-direct-pairing-audit-v1"
+}

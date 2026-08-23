@@ -1,0 +1,53 @@
+{
+  "experiment": "codet5p-2b_lora_enc_dec_r16_1e5_gcb",
+  "config": {
+    "name": "codet5p-2b_lora_enc_dec_r16_1e5_gcb",
+    "decoder": "Salesforce/codet5p-2b",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "1e-5",
+    "epochs": "1",
+    "oom_risk": "high",
+    "lora_r": "16",
+    "lora_alpha": "32"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/compile-test2.jsonl",
+    "pass_at_k": "data/testing/grpo_data.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 2,
+    "pass_at_k": 2,
+    "generation_batch_size": 5
+  },
+  "predictions": {
+    "compile_codebleu": "/teamspace/studios/this_studio/results/codet5p-2b_lora_enc_dec_r16_1e5_gcb_compile_predictions.json",
+    "pass_at_k": "/teamspace/studios/this_studio/results/codet5p-2b_lora_enc_dec_r16_1e5_gcb_pass_predictions.json"
+  },
+  "codebleu": {
+    "count": 2,
+    "samples_with_success": 2,
+    "mean_codebleu": 0.37104897445498636,
+    "min_codebleu": 0.3493972033863873,
+    "max_codebleu": 0.3927007455235854
+  },
+  "codebleu_compiled_only": {
+    "count": 2,
+    "samples_with_success": 0,
+    "mean_codebleu": 0.0,
+    "min_codebleu": 0.0,
+    "max_codebleu": 0.0
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.0,
+    "compile_at_3": 0.0,
+    "total_problems": 2
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "pass_at_2": 0.0,
+    "total_problems": 2
+  }
+}

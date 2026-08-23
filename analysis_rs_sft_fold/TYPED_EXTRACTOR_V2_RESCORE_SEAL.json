@@ -1,0 +1,58 @@
+{
+  "schema": "t5gemma2-typed-extractor-v2-rescore-seal-v1",
+  "status": "pass",
+  "evaluation_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+  "evaluator_sha256": "5a76523647c8bef54cf0beba611c5c29611c02cdf9053273ca5e531afe14d23d",
+  "scorer_sha256": "a425b5669f62e7b259a648b97097213f7738c0e7cd2905547011e2c968d0466b",
+  "settings": {
+    "tasks": 175,
+    "k": 10,
+    "timeout_seconds": 30,
+    "stability_runs": 2,
+    "stored_candidates_reused": true,
+    "model_generation_repeated": false
+  },
+  "arms": {
+    "typed_sft_opt348": {
+      "predictions_sha256": "08418b0b442820ff5f8ae6676decfa1958ba07666f787d3b61d64497dbb03c8c",
+      "provenance_sha256": "155c6387ef5cc9d79e5c4670c62c3a70d81fe25aefc715c8e437831bbf0c3db7",
+      "full175_score_sha256": "50412f5a67df5c85380b408c74acbdcbc4585cd1aca905218abe3e5ae1dddc75",
+      "clean174_score_sha256": "9303383243f34162a4d9915691c17e84926589a69a769ee4d257bd31ba40d55f",
+      "pass_at_1": 5,
+      "pass_at_10": 14,
+      "compile_at_10": 171
+    },
+    "pass1_update58": {
+      "predictions_sha256": "74d8c944185e736565088c593ceb20f6d52740bde0ef293118ed98d94785278a",
+      "provenance_sha256": "cdeed55d8246b61f068c8bc7eaf9cb27daf13ffb871f2b2e6c804e9371b7d316",
+      "full175_score_sha256": "1cf19c3c107f6289732465b67087f56be96736e7c45d9eabf0ac9346b7d74217",
+      "clean174_score_sha256": "13e6e933cfcaf18beacdfbde27cac92e7cfaf66a769437d5fcbeefeca239f819",
+      "pass_at_1": 5,
+      "pass_at_10": 18,
+      "compile_at_10": 169
+    },
+    "pass2_update54": {
+      "predictions_sha256": "910de295b54029b11420a86fc9b98aad243efbe287b47594593e9059590b3900",
+      "provenance_sha256": "7f75b533b6e22ff924d4936a719c3afecb45192a619702850b7c041362ab35bc",
+      "full175_score_sha256": "4a7635d1d3ff69ed8e14b129badddbf3c5d38362fea618914afbbdfeedc48843",
+      "clean174_score_sha256": "999bd7bbb1aee22d9b7aad4dacdbb089261ee6dbda0293fbb410b2eecd985e4a",
+      "pass_at_1": 6,
+      "pass_at_10": 12,
+      "compile_at_10": 172
+    },
+    "arm_b_opt58": {
+      "predictions_sha256": "88c4d9e121d8734728c9fa0a340fecb8667c300bc72b935fd22eca0b56dad939",
+      "provenance_sha256": "ff367d79d03ea08f17171c3ba99f6bc0fc205ce53c29efd40637e1c742cf4db8",
+      "full175_score_sha256": "8544e778a4e077eb0e62016b6b849f67dcda6c55fef3dc161a0fba573174a248",
+      "clean174_score_sha256": "958c64a125053aad6c5cc535a3c9c415508db7f5e27d5f70242eb982cb6e9de7",
+      "pass_at_1": 6,
+      "pass_at_10": 13,
+      "compile_at_10": 173
+    }
+  },
+  "arm_b_corrected_gate_sha256": "eff6296caa560641e7e67f916197354e1b4f89aeb14e387049d1570949093b2c",
+  "historical_metrics_changed": false,
+  "historical_old_scores_remain_immutable": true,
+  "promotion_status": "HOLD_REQUIRES_3PLUS_MATCHED_SEEDS",
+  "verpo_status": "HOLD"
+}

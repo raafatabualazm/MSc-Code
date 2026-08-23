@@ -1,0 +1,11 @@
+{
+  "input": "data\\testing\\rs_sft_all_plus_refs.jsonl",
+  "output": "data\\testing\\rs_sft_all_plus_refs_cfg.jsonl",
+  "overwrite": false,
+  "rows": 322,
+  "extracted_cfg": 322,
+  "total_blocks": 5999,
+  "total_edges": 8186,
+  "mean_blocks_per_extracted_row": 18.630434782608695,
+  "mean_edges_per_extracted_row": 25.422360248447205
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "fixed-scrub-v3-standalone-pool-projection-v1",
+  "diagnostic_role": "secondary_standalone_compile",
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_count": 1540,
+  "candidate_stream_sha256": "25d6475d784a3fb2d6f0ab8962353fab92bc97a719b6aabe2975ef4cbb69f1f1",
+  "candidate_stream_preserved": true,
+  "pool_is_candidate_only": true,
+  "pool_row_keys": [
+    "id",
+    "predictions"
+  ],
+  "opaque_id_scheme": "standalone_row_{one_based_index:04d}",
+  "semantic_identifiers_preserved": false,
+  "hidden_evaluation_metadata_preserved": false,
+  "inputs": {
+    "predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_raw_predictions.json",
+      "sha256": "d75880ea95696eca7776b752d78c5fec238738065a8037d2b33d7d94163d7ec1",
+      "size_bytes": 727854
+    }
+  },
+  "output": {
+    "candidate_pool": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_standalone_candidate_pool.json",
+      "sha256": "2408db098337441bd112860babcb4525389717811420f163f58a5951076d0a77",
+      "size_bytes": 684963
+    }
+  },
+  "projector": {
+    "path": "/workspace/scripts/evaluation/project_fixed_scrub_v3_standalone_pool.py",
+    "sha256": "2068cfbd6a3a31a53332fab6d64feaf1d0ac8066b52a052b5ec98c1fff88c2a4",
+    "size_bytes": 7427
+  }
+}

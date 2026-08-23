@@ -1,0 +1,139 @@
+{
+  "schema": "qwen37-frontier-capacity-fallback-v6",
+  "purpose": "Outcome-blind alias-capacity replacement for primary Qwen slots left unresolved by exact qwen3.7-max-2026-05-17 shard quota boundaries or the hash-sealed model-scoped qwen3.7-max-preview quota-guard boundary",
+  "parent_primary_contract": {
+    "path": "qwen37_primary_alias_fallback_contract_v5.json",
+    "sha256": "6218118c8e9e7b67079df2b848626ea8a71deaf128353bbc8757d9553a6cdbae"
+  },
+  "selection_policy": {
+    "eligible_source_models": [
+      "qwen3.7-max-2026-05-17",
+      "qwen3.7-max-preview"
+    ],
+    "required_boundary_http_status": 403,
+    "required_boundary_codes": [
+      "AllocationQuota.FreeTierOnly",
+      "insufficient_quota"
+    ],
+    "select_all_and_only_missing_slots_after_an_exact_per_shard_or_model_scoped_boundary": true,
+    "outcomes_must_not_be_read_during_selection_or_routing": true,
+    "completed_source_terminals_are_immutable_and_preserved": true,
+    "base_journals_are_never_modified": true
+  },
+  "source_shards": [
+    {
+      "key": "base_0517_k3",
+      "source_model": "qwen3.7-max-2026-05-17",
+      "local_k": 3,
+      "global_sample_indices": [0, 1, 2],
+      "directory_template": "qwen37_clean_v4_0517_{arm}_k3_mc12k_tol10_tb8k",
+      "preferred_capacity_partition": "0520"
+    },
+    {
+      "key": "base_preview_k2",
+      "source_model": "qwen3.7-max-preview",
+      "local_k": 2,
+      "global_sample_indices": [3, 4],
+      "directory_template": "qwen37_clean_v4_preview_{arm}_k2_mc12k_tol10_tb8k",
+      "preferred_capacity_partition": "0520",
+      "trigger": "model_scoped_preview_guard_receipt"
+    },
+    {
+      "key": "supplement_0517_k2",
+      "source_model": "qwen3.7-max-2026-05-17",
+      "local_k": 2,
+      "global_sample_indices": [5, 6],
+      "directory_template": "qwen37_clean_v5_supplement_0517_{arm}_k2_mc12k_tol10_tb8k",
+      "preferred_capacity_partition": "0608"
+    },
+    {
+      "key": "supplement_preview_k3",
+      "source_model": "qwen3.7-max-preview",
+      "local_k": 3,
+      "global_sample_indices": [7, 8, 9],
+      "directory_template": "qwen37_clean_v5_supplement_preview_{arm}_k3_mc12k_tol10_tb8k",
+      "preferred_capacity_partition": "0608",
+      "trigger": "model_scoped_preview_guard_receipt"
+    }
+  ],
+  "preview_model_guard_receipt": {
+    "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/qwen37_quota_guard_v1/event_60c698b8b65c65964b24edcbac389fcc4f520a4bde83aedf00b489a757f53ce6.json",
+    "sha256": "3585b5382a8b57cf7f00fbcc137812872b0f9f9552b66c9ce7df16dc8e7974e3",
+    "mapping_sha256": "b8b6ef9afc0de3ab44881d63aa54d9a1561468098248647e74014012b7c4d722",
+    "model": "qwen3.7-max-preview",
+    "stopped_units": 4
+  },
+  "capacity_partitions": {
+    "0520": {
+      "global_sample_indices": [0, 1, 2, 3, 4],
+      "alias_order": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max"
+      ],
+      "clean_diagnostic_reuse": {
+        "model": "qwen3.7-max-2026-05-20",
+        "directory_template": "qwen37_clean_v4_0520_{arm}_k3_mc12k_tol10_tb8k",
+        "local_index_equals_global_index": true
+      }
+    },
+    "0608": {
+      "global_sample_indices": [5, 6, 7, 8, 9],
+      "alias_order": [
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-preview",
+        "qwen3.7-max"
+      ],
+      "clean_diagnostic_reuse": {
+        "model": "qwen3.7-max-2026-06-08",
+        "directory_template": "qwen37_clean_v4_0608_{arm}_k2_mc12k_tol10_tb8k",
+        "diagnostic_local_index_equals_global_index_minus": 5
+      }
+    }
+  },
+  "request_policy": {
+    "request_cap_parameter": "max_completion_tokens",
+    "max_tokens_absent": true,
+    "total_completion_cap": 12288,
+    "provider_completion_tolerance": 10,
+    "completion_usage_validation_cap": 12298,
+    "enable_thinking": true,
+    "thinking_budget": 8192,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "prompt_token_cap": 12000,
+    "resolved_model_must_equal_requested": true,
+    "every_returned_response_is_terminal": true
+  },
+  "routing_policy": {
+    "paired_targets_have_the_same_initial_alias_order": true,
+    "single_arm_missing_targets_are_filled_without_resampling_the_completed_arm": true,
+    "clean_diagnostic_responses_are_adopted_before_issuing_a_duplicate_request": true,
+    "data_inspection_failed_is_permanently_skipped_for_that_slot_and_alias": true,
+    "data_inspection_prompts_are_never_retried_or_transformed": true,
+    "exact_quota_403_marks_the_alias_unavailable_for_the_current_capacity_epoch": true,
+    "routing_never_reads_pass_or_compile_outcomes": true,
+    "alias_composition_may_vary_and_must_be_reported_exactly": true
+  },
+  "capacity_epoch_policy": {
+    "every_epoch_binds_a_unique_name_to_an_https_endpoint_sha256": true,
+    "credential_env_file_path_and_wrapper_kind_are_recorded": true,
+    "api_keys_are_never_persisted": true,
+    "completed_effective_terminals_survive_epoch_changes": true,
+    "a_new_endpoint_processes_only_unresolved_selections": true,
+    "current_secondary_endpoint_may_use_qwen3.7-max_as_its_last_alias": true,
+    "qwen3.7-max_requires_an_exact_requested_resolved_identity_probe": true,
+    "fallback_workspace_does_not_assume_qwen3.7-max_availability": true,
+    "fallback_workspace_may_enable_0517_as_a_replacement_alias": true,
+    "fallback_workspace_additional_last_alias": "qwen3.7-max-2026-05-17"
+  },
+  "replacement_policy": {
+    "each_selected_global_slot_has_exactly_one_effective_terminal_and_outcome": true,
+    "replacement_does_not_increase_global_k": true,
+    "effective_terminal_exposes_full_source_and_alias_provenance": true,
+    "length_responses_remain_effective_and_are_delegated_to_the_separate_length_overlay": true,
+    "fixed_primary_and_capacity_fallback_costs_are_reported_separately": true
+  }
+}

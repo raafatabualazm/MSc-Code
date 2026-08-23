@@ -1,0 +1,48 @@
+{
+  "adapter_contract_sha256": "255af3f968fc04e5f6f80c78ebc1912355d7785aad230ed81a84c59680218cae",
+  "adapter_script_sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66",
+  "completion_attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+  "contract_sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+  "dart_version": "Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on \"linux_x64\"",
+  "evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6",
+  "f2_manifest": {
+    "bytes": 7447,
+    "path": "/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json",
+    "sha256": "777078c9ba759f45db8908b44990306e4fa403c0bd3b825546029ea7bd49ef44",
+    "size_bytes": 7447
+  },
+  "f2_output": {
+    "bytes": 1055387,
+    "path": "/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl",
+    "sha256": "6ba98eb496af2ef36ca1a0d460bf6e64b715c42f0b9216c64b4a8fc300ccffab",
+    "size_bytes": 1055387
+  },
+  "frontier_f2_schema": "lossless-semantic-f2",
+  "heldout_measure_only": true,
+  "output": {
+    "bytes": 1802107,
+    "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+    "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "size_bytes": 1802107
+  },
+  "output_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+  "quarantine_sha256": "8d29f8a4c2abae58a8930ef0dc8c617b080ba1294b1791e391b5d3914ef93e58",
+  "raw_source_names_serialized": false,
+  "representation_schema": "binary-multifunction-v1-semantic-adapter-v1",
+  "rows": 175,
+  "sanitation_schema": "compact-target-harness-sanitation-v1",
+  "sanitized_base_seal_sha256": "8531dc6e1ed871b0a879ea50f296d703cbb309bcac1093c73b8f234c3493abf1",
+  "sanitized_base_sha256": "eb39335541dc4efc385a69a138d774bd1777c6743d7e423bf265db8ce7c7bc88",
+  "sanitizer_sha256": "30534ff49c49627c22baa560e5fcc115e24abcefed527a4875cc2ea09698723b",
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "measure",
+  "source_function_bundles_sha256": "d2a019fe14e500bf1d242367e3b52b644f3e166bb8e3b5ad47e980e6ccb688d2",
+  "source_symbol_attestation_binding_sha256_sequence": "d526029a16e102c5c9bfb2e71d16ea9d6541f009da9c378621ccb34ce9c763be",
+  "source_symbol_attestation_file_sha256": "4aabcd4576ceaefbc1460e7aee7a5876c4acbeab9b0d834048b45f691fdb2c02",
+  "source_symbol_attestation_is_keyed": true,
+  "source_symbol_attestation_key_id_sha256": "02347c2e61fe0c0402027edb0ac5718b00c42da81ddd308ec133fab67dd974ab",
+  "source_symbol_attestation_used": true,
+  "stability_runs": 2,
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+  "training_allowed": false
+}

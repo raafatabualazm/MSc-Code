@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "stage": "fresh_eval_source_generation",
+  "outcome": "complete",
+  "started_utc": "2026-07-17T09:30:49Z",
+  "completed_utc": "2026-07-17T10:06:20Z",
+  "execution_host": "local_windows",
+  "provider": "azure",
+  "model": "gpt-chat-latest",
+  "accepted_rows": 200,
+  "rejected_rows": 189,
+  "target_strata": {
+    "low": 200,
+    "mid": 0,
+    "high": 0
+  },
+  "validation": {
+    "accepted_jsonl_valid": true,
+    "rejected_jsonl_valid": true,
+    "unique_task_ids": 200,
+    "all_provider_model_match": true,
+    "all_target_stratum_low": true,
+    "all_stability_runs_2": true,
+    "mutation_kill_rate_min": 0.5,
+    "mutation_kill_rate_max": 1.0,
+    "mutants_viable_min": 1,
+    "mutants_viable_max": 8,
+    "provider_circuit_breaker_events": 0,
+    "disabled_providers": [],
+    "manifest_output_hash_matches": true
+  },
+  "configuration": {
+    "rng_seed": 46,
+    "oversample": 8,
+    "workers": 4,
+    "jaccard_threshold": 0.55,
+    "sequence_threshold": 0.7,
+    "stability_runs": 2,
+    "mutation_max": 8,
+    "mutation_min_kill": 0.5,
+    "shape_gate": true,
+    "loc_tolerance": 1.0,
+    "branch_tolerance": 1.0,
+    "prompt_template_sha256": "4ebaa9df3efaabea2a6791348f39f9d7220841f6df4af930d231c7a2c1f4ff5d"
+  },
+  "toolchain": {
+    "python_version": "3.12.7",
+    "dart_version": "3.11.5",
+    "dart_platform": "windows_x64",
+    "dart_binary_sha256": "44328b98b6bf981d8307f72ef38acbb37b8067394916953caa48b8b444525152",
+    "generator_sha256": "1566cfc20a579875be63bee6bd5347ec883311e3a0644f10e6e797f373c1e12a",
+    "launcher_sha256": "3f077e44c27913dc7332b7b2154d149286faed9b9c4953dc57569e25e5aaf9f9"
+  },
+  "artifacts": [
+    {
+      "path": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl",
+      "rows": 200,
+      "sha256": "503c1d709565f8f76ed0ab7dfb0de841a12a66a864fa1e2baa077165fc482447"
+    },
+    {
+      "path": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.rejects.jsonl",
+      "rows": 189,
+      "sha256": "b8483a66cbdff2c166d8e3cd1e6def93e43f14d80a0da6e55b3e030341813880"
+    },
+    {
+      "path": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.manifest.json",
+      "sha256": "26c7dbd07cb33378ac2bdffbebb624d762f77dab242c9992efbb48f18596500b"
+    },
+    {
+      "path": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.distribution.json",
+      "sha256": "0156ede8120b92b56802f9c77f6b92238188747544d2cda8b0f68f516677679f"
+    },
+    {
+      "path": "logs/fresh_eval_low_topup_chatgpt_s46.log",
+      "sha256": "0e0370041ac8ba0e1d43e13cfc317d5868872d320e55001801dc7607b3a62e7c"
+    },
+    {
+      "path": "logs/fresh_eval_low_topup_chatgpt_s46.status",
+      "sha256": "75d95e5d84e80ca7772e8895e05ef8418862a86fecaa5155de304ada09929317"
+    }
+  ],
+  "decontamination_sha256": {
+    "benchmark": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+    "synthetic": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621",
+    "fresh_eval_llm": "28b7d46583e7be9661b2a8ff41852b9918fdd31798dfc521bdb2b40720ab43b2",
+    "fresh_eval_lowmid_topup_s44": "6f0abd66a863767d16686c3b1186380b634c3f93cf43fc157476ff114f979050",
+    "fresh_eval_low_topup_deepseek_s45": "ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13"
+  },
+  "preserved_zero_call_preflights": [
+    "archive/source_snapshots/fresh_eval_low_topup_chatgpt_s46_preflight_env_failure_20260717T091958Z",
+    "archive/source_snapshots/fresh_eval_low_topup_chatgpt_s46_preflight_env_failure_20260717T092228Z"
+  ],
+  "next_stage": "pinned Linux Dart 3.11.5 assembly and Graph V2 build"
+}

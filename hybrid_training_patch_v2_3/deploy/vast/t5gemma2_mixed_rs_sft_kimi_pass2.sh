@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Second RS-SFT pass: continue only the sealed stage-1 adapter weights with
+# the 13 new, privately verified Kimi targets and deterministic 3:1 TRAIN
+# replay.  The parent optimizer/scheduler/RNG state is intentionally reset.
+export T5GEMMA_MIXED_WARMSTART=/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426
+export T5GEMMA_MIXED_WARMSTART_UPDATE=426
+export T5GEMMA_MIXED_WARMSTART_RUN_CONTRACT_SHA256=90d95239e17a524c2541dbe98cd728c16b1fbdd891baad27c8a488f5dc111369
+export T5GEMMA_MIXED_WARMSTART_ADAPTER_WEIGHTS_SHA256=be95b3bec613478790facb2bb6ec29243a3625e468560b0b678def8f016a46da
+export T5GEMMA_MIXED_WARMSTART_ADAPTER_CONFIG_SHA256=75aad08619087aa2d7ef5db9d50b1890ca74feccf85a2c104a93dbddb0d7b9e6
+
+export T5GEMMA_MIXED_LOCAL_REPORT_SPECS=
+export T5GEMMA_MIXED_API_REPORT_SPECS='fe9bcd00c6774432b7911129246c8b2837523d85b1c94efb29c03f85ae860205=/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v12/api_rescue_report.json;fe2941885767f7c4abb3012d1a49c22a934a6b67d8f1f9626bf09e44a3d633d0=/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_retry17_8k_v1/api_rescue_report.json'
+export T5GEMMA_MIXED_ALLOW_EXPLORATORY_INPUTS=0
+export T5GEMMA_MIXED_REQUIRE_LOCAL_PRODUCTION_FLOOR=0
+export T5GEMMA_MIXED_MIN_DIRECT_TARGETS=13
+export T5GEMMA_MIXED_MIN_REPAIR_TARGETS=13
+export T5GEMMA_MIXED_GOLD_REPLAY_RATIO=3
+export T5GEMMA_MIXED_EPOCHS=1
+export T5GEMMA_MIXED_LEARNING_RATE=1e-5
+export T5GEMMA_MIXED_OUTPUT_DIR=/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_kimi_pass2_v1
+export T5GEMMA_MIXED_RESUME_COMPAT=0
+
+exec /opt/supervisor-scripts/t5gemma2_mixed_rs_sft.sh

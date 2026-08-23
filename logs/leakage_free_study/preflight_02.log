@@ -1,0 +1,18 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 00:14:49.480000 1432 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.008s
+
+OK
+
+$ 'C:\ProgramData\anaconda3\python.exe' -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 00:46:16.625000 32040 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.061s
+
+OK

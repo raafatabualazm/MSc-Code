@@ -1,0 +1,41 @@
+{
+  "input": "data\\datasets\\synthetic_pool_graphv2.jsonl",
+  "output": "data\\datasets\\synthetic_pool_reward_clean_graphv2.jsonl",
+  "rows": 1725,
+  "rewritten_rows": 172,
+  "rewritten_calls": 1375,
+  "rejected_rows": 1,
+  "rejects": [
+    {
+      "index": 1342,
+      "task_id": "syn_1342",
+      "function": "computeImbalancedArtRows",
+      "error": "only 2 candidate assertions; require at least 4"
+    }
+  ],
+  "helper_definition_rows": {
+    "expect": 1725,
+    "expectList": 1725,
+    "expectMap": 1725,
+    "expectSet": 1625
+  },
+  "input_sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621",
+  "output_sha256": "75e6deff3b0bf47298591c488e5547758690191943399ef517cbcef492351b8e",
+  "splits": {
+    "train": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_train.jsonl",
+      "rows": 1380,
+      "sha256": "92223efb449255b083968c74b5a84625cbe1199a93624fef7e75494c05ba363d"
+    },
+    "validation": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_validation.jsonl",
+      "rows": 172,
+      "sha256": "47076367a9a47ffdb838403b3253400127d51f841b61187cc7d2fd778dfa05c9"
+    },
+    "test": {
+      "path": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_test.jsonl",
+      "rows": 173,
+      "sha256": "dcbf4d57135288a3747509c0571151cf6966adf2b09490ae1061da8aff4a8578"
+    }
+  }
+}

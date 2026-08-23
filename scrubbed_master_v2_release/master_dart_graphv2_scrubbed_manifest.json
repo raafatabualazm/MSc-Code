@@ -1,0 +1,115 @@
+{
+  "schema": "scrubbed-master-build-manifest-v2",
+  "build_version": "scrubbed-master-human-eval-v2",
+  "created_utc": "2026-07-17T15:20:10Z",
+  "input": {
+    "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl",
+    "sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf",
+    "rows": 2474
+  },
+  "dart_sdk": "Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on \"linux_x64\"",
+  "requirements": {
+    "real_dart_jit": true,
+    "real_dart_aot_compile": true,
+    "real_dartaotruntime": true,
+    "main_logic_moved_to_candidate": true,
+    "public_signature_scrubbed": true,
+    "tests_hidden_from_public": true
+  },
+  "counts": {
+    "processed": 2474,
+    "prepared": 2303,
+    "runtime_retained_before_dedup": 2242,
+    "final_retained": 2211,
+    "quarantined": 263,
+    "main_rows_retained": 495,
+    "provided_harness_rows": 1703,
+    "generated_function_test_rows": 13,
+    "generated_main_test_rows": 495
+  },
+  "audit": {
+    "public_forbidden_field_violations": [],
+    "private_sources_with_top_level_main": 0,
+    "unique_canonical_sources": 2211,
+    "unique_canonical_assemblies": 2211,
+    "heldout_source_hashes": 154,
+    "heldout_assembly_hashes": 152,
+    "passed": true
+  },
+  "outputs": {
+    "master_dart_graphv2_signature_scrubbed_public.jsonl": {
+      "sha256": "7e15df3f9567d882d174d743a220bdea7576ae2cd5b5bc1cc68af4dd22c12adf",
+      "size_bytes": 98634634
+    },
+    "master_dart_graphv2_signature_scrubbed_private.jsonl": {
+      "sha256": "03acc6dd45c861fb6517048a4b8be66a428dcb5cde7cbf3ccdea302fdc08f52b",
+      "size_bytes": 103814880
+    },
+    "master_dart_graphv2_signature_scrubbed_public.jsonl.gz": {
+      "sha256": "01425b40945bb3a5793cc63bf0bc5ebbe365977b99e2b78a8345f1c05d1a3a13",
+      "size_bytes": 13748398
+    },
+    "master_dart_graphv2_signature_scrubbed_private.jsonl.gz": {
+      "sha256": "75c6c76aaa414480bee6259e086f76986944fd6822b3429587dba863a4981cd4",
+      "size_bytes": 15314380
+    },
+    "master_dart_graphv2_compile_ledger.jsonl": {
+      "sha256": "a0c3225144c001b013adc99c38d63e9cb4f2ec1fdd1604388df65ada9e150c0a",
+      "size_bytes": 2265078
+    },
+    "master_dart_graphv2_quarantine.jsonl": {
+      "sha256": "f24f76d6e92a8491c2ce6cc05711235e4bf7b241b72af51d0f35971bfd0d8840",
+      "size_bytes": 339884
+    },
+    "prepared_results.jsonl": {
+      "sha256": "8d385cc3272f4e31b52e5fe0f078ee3fcbcb0e33c8c70071bcd22c29fa262428",
+      "size_bytes": 12719607
+    },
+    "batch_results.jsonl": {
+      "sha256": "30ea01cb14629b0eda25585c347d34dcc276b1b36b42f15e9bb64263225f2d49",
+      "size_bytes": 215704116
+    }
+  },
+  "release_patch": {
+    "version": 1,
+    "changes": [
+      "private harness alias serialized as implementation -> candidate",
+      "cross-library c_<hash> symbols scrubbed from assembly and CFG"
+    ],
+    "applied_utc": "2026-07-17T15:23:20Z"
+  },
+  "independent_audit": {
+    "path": "master_dart_graphv2_independent_audit.json",
+    "passed": true,
+    "sha256": "3b138b2540ce903b026672b4e4a32b94381a3bd50026604ce14294e09f5d4a2a",
+    "fresh_compile_samples": [
+      {
+        "index": 0,
+        "task_id": "sigless_6c7cc82cf730",
+        "jit": 0,
+        "aot_compile": 0,
+        "aot_run": 0,
+        "passed": true,
+        "stderr": ""
+      },
+      {
+        "index": 508,
+        "task_id": "sigless_921a14a5f720",
+        "jit": 0,
+        "aot_compile": 0,
+        "aot_run": 0,
+        "passed": true,
+        "stderr": ""
+      },
+      {
+        "index": 2210,
+        "task_id": "sigless_b332ffb8adba",
+        "jit": 0,
+        "aot_compile": 0,
+        "aot_run": 0,
+        "passed": true,
+        "stderr": ""
+      }
+    ]
+  }
+}

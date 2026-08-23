@@ -1,0 +1,213 @@
+\begin{thebibliography}{10}
+
+\bibitem{abualazm2026idiomatic}
+Raafat Abualazm and Ayman AboElHassan.
+\newblock Llms as idiomatic decompilers: Recovering high-level code from x86-64
+  assembly for dart, 2026.
+\newblock Accepted at SANER 2026 ERA Track.
+
+\bibitem{abualazm2026tosem}
+Raafat Abualazm, Ayman AboElHassan, and Amr~G. Wassal.
+\newblock Evaluating fine-tuning and metrics for neural decompilation of dart
+  aot binaries, 2026.
+\newblock arXiv:2607.06125; under review at ACM Transactions on Software
+  Engineering and Methodology (TOSEM).
+
+\bibitem{achamyeleh2026helios}
+Yonatan~Gizachew Achamyeleh, Harsh Thomare, and Mohammad~Abdullah Al~Faruque.
+\newblock {HELIOS}: Hierarchical graph abstraction for structure-aware {LLM}
+  decompilation, 2026.
+
+\bibitem{armengol2023slade}
+Jordi Armengol-Estape, Jackson Woodruff, Chris Cummins, and Michael F.~P.
+  O'Boyle.
+\newblock {SLaDe}: A portable small language model decompiler for optimized
+  assembly.
+\newblock In {\em Proceedings of the 2024 IEEE/ACM International Symposium on
+  Code Generation and Optimization (CGO)}, pages 67--80. IEEE, 2024.
+
+\bibitem{cassano2023multiple}
+Federico Cassano, John Gouwar, Daniel Nguyen, Sydney Nguyen, Luna
+  Phipps-Costin, Donald Pinckney, Ming-Ho Yee, Yangtian Zi, Carolyn~Jane
+  Anderson, Molly~Q. Feldman, Arjun Guha, Michael Greenberg, and Abhinav
+  Jangda.
+\newblock Multipl-e: A scalable and extensible approach to benchmarking neural
+  code generation.
+\newblock {\em IEEE Transactions on Software Engineering}, 49(7):3675--3691,
+  2023.
+
+\bibitem{chen2021codex}
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de~Oliveira
+  Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg
+  Brockman, Alex Ray, Raul Puri, Gretchen Krueger, Michael Petrov, Heidy
+  Khlaaf, Girish Sastry, Pamela Mishkin, Brooke Chan, Scott Gray, Nick Ryder,
+  Mikhail Pavlov, Alethea Power, Lukasz Kaiser, Mohammad Bavarian, Clemens
+  Winter, Philippe Tillet, Felipe~Petroski Such, Dave Cummings, Matthias
+  Plappert, Fotios Chantzis, Elizabeth Barnes, Ariel Herbert-Voss,
+  William~Hebgen Guss, Alex Nichol, Alex Paino, Nikolas Tezak, Jie Tang, Igor
+  Babuschkin, Suchir Balaji, Shantanu Jain, William Saunders, Christopher
+  Hesse, Andrew~N. Carr, Jan Leike, Josh Achiam, Vedant Misra, Evan Morikawa,
+  Alec Radford, Matthew Knight, Miles Brundage, Mira Murati, Katie Mayer, Peter
+  Welinder, Bob McGrew, Dario Amodei, Sam McCandlish, Ilya Sutskever, and
+  Wojciech Zaremba.
+\newblock Evaluating large language models trained on code, 2021.
+
+\bibitem{chen2022dirty}
+Qibin Chen, Jeremy Lacomis, Edward~J. Schwartz, Claire Le~Goues, Graham Neubig,
+  and Bogdan Vasilescu.
+\newblock Augmenting decompiler output with learned variable names and types.
+\newblock In {\em 31st USENIX Security Symposium}. USENIX Association, 2022.
+
+\bibitem{dramko2025idioms}
+Luke Dramko, Claire Le~Goues, and Edward~J. Schwartz.
+\newblock {Idioms}: Neural decompilation with joint code and type prediction,
+  2025.
+
+\bibitem{jebdartaot}
+Nicolas Falliere.
+\newblock Dart {AOT} snapshot helper plugin to better analyze {Flutter}-based
+  apps.
+\newblock PNF Software,
+  \href{https://www.pnfsoftware.com/blog/dart-aot-snapshot-helper-plugin-to-better-analyze-flutter-based-apps/}{JEB
+  in Action blog post}, 2022.
+\newblock JEB Decompiler Dart AOT snapshot helper plugin.
+
+\bibitem{guo2020graphcodebert}
+Daya Guo, Shuo Ren, Shuai Lu, Zhangyin Feng, Duyu Tang, Shujie Liu, Long Zhou,
+  Nan Duan, Alexey Svyatkovskiy, Shengyu Fu, Michele Tufano, Shao~Kun Deng,
+  Colin Clement, Dawn Drain, Neel Sundaresan, Jian Yin, Daxin Jiang, and Ming
+  Zhou.
+\newblock {GraphCodeBERT}: Pre-training code representations with data flow.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2021.
+
+\bibitem{hosseini2022beyondc}
+Iman Hosseini and Brendan Dolan-Gavitt.
+\newblock Beyond the c: Retargetable decompilation using neural machine
+  translation, 2022.
+\newblock Workshop on Binary Analysis Research (BAR).
+
+\bibitem{hu2021lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2022.
+
+\bibitem{reflutter}
+{Impact-I (PT SWARM)}.
+\newblock {reFlutter}: Flutter reverse engineering framework.
+\newblock \url{https://github.com/Impact-I/reFlutter}, 2021.
+
+\bibitem{jiang2025nova}
+Nan Jiang, Chengxiao Wang, Kevin Liu, Xiangzhe Xu, Lin Tan, Xiangyu Zhang, and
+  Petr Babkin.
+\newblock {Nova}: Generative language models for assembly code with
+  hierarchical attention and contrastive learning.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2025.
+
+\bibitem{katz2018rnn}
+Deborah~S. Katz, Jason Ruchti, and Eric Schulte.
+\newblock Using recurrent neural networks for decompilation.
+\newblock In {\em 2018 IEEE 25th International Conference on Software Analysis,
+  Evolution and Reengineering (SANER)}. IEEE, 2018.
+
+\bibitem{lacomis2019dire}
+Jeremy Lacomis, Pengcheng Yin, Edward~J. Schwartz, Miltiadis Allamanis, Claire
+  Le~Goues, Graham Neubig, and Bogdan Vasilescu.
+\newblock {DIRE}: A neural approach to decompiled identifier naming.
+\newblock In {\em Proceedings of the 34th IEEE/ACM International Conference on
+  Automated Software Engineering (ASE)}. IEEE, 2019.
+
+\bibitem{li2022alphacode}
+Yujia Li, David Choi, Junyoung Chung, Nate Kushman, Julian Schrittwieser, Remi
+  Leblond, Tom Eccles, James Keeling, Felix Gimeno, Agustin Dal~Lago, Thomas
+  Hubert, Peter Choy, Cyprien de~Masson~d'Autume, Igor Babuschkin, Xinyun Chen,
+  Po-Sen Huang, Johannes Welbl, Sven Gowal, Alexey Cherepanov, James Molloy,
+  Daniel Mankowitz, Esme Robson, Pushmeet Kohli, Nando de~Freitas, Koray
+  Kavukcuoglu, and Oriol Vinyals.
+\newblock Competition-level code generation with {AlphaCode}.
+\newblock {\em Science}, 378(6624):1092--1097, 2022.
+
+\bibitem{liu2025cfadecllm}
+Peipei Liu, Jian Sun, Li~Chen, Zhaoteng Yan, Peizheng Zhang, Dapeng Sun, Dawei
+  Wang, and Dan Li.
+\newblock Control flow-augmented decompiler based on large language model,
+  2025.
+
+\bibitem{liu2026autodecompiler}
+Peipei Liu, Jian Sun, Mingzhe Xing, Yicheng Zeng, Zhaoteng Yan, Lixiao Zhang,
+  Li~Chen, and Dan Li.
+\newblock Binary decompilation {LLM} with feedback-driven multi-turn
+  refinement, 2026.
+
+\bibitem{meng2024simpo}
+Yu~Meng, Mengzhou Xia, and Danqi Chen.
+\newblock {SimPO}: Simple preference optimization with a reference-free reward.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  2024.
+
+\bibitem{peng2025simko}
+Ruotian Peng, Yi~Ren, Zhouliang Yu, Weiyang Liu, and Yandong Wen.
+\newblock {SimKO}: Simple pass@k policy optimization, 2025.
+
+\bibitem{ren2020codebleu}
+Shuo Ren, Daya Guo, Shuai Lu, Long Zhou, Shujie Liu, Duyu Tang, Neel
+  Sundaresan, Ming Zhou, Ambrosio Blanco, and Shuai Ma.
+\newblock {CodeBLEU}: a method for automatic evaluation of code synthesis,
+  2020.
+
+\bibitem{shao2024deepseekmath}
+Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei
+  Zhang, Mingchuan Zhang, Y.~K. Li, Y.~Wu, and Daya Guo.
+\newblock {DeepSeekMath}: Pushing the limits of mathematical reasoning in open
+  language models, 2024.
+
+\bibitem{tan2025sk2decompile}
+Hanzhuo Tan, Weihao Li, Xiaolong Tian, Siyi Wang, Jiaming Liu, Jing Li, and
+  Yuqun Zhang.
+\newblock {SK2Decompile}: {LLM}-based two-phase binary decompilation from
+  skeleton to skin, 2025.
+
+\bibitem{tan2024llm4decompile}
+Hanzhuo Tan, Qi~Luo, Jing Li, and Yuqun Zhang.
+\newblock {LLM4Decompile}: Decompiling binary code with large language models.
+\newblock In {\em Proceedings of the 2024 Conference on Empirical Methods in
+  Natural Language Processing}, pages 3473--3487. Association for Computational
+  Linguistics, 2024.
+
+\bibitem{tan2025decompilebench}
+Hanzhuo Tan, Xiaolong Tian, Hanrui Qi, Jiaming Liu, Zuchen Gao, Siyi Wang,
+  Qi~Luo, Jing Li, and Yuqun Zhang.
+\newblock Decompile-bench: Million-scale binary-source function pairs for
+  real-world binary decompilation, 2025.
+
+\bibitem{wang2025salt4decompile}
+Yongpan Wang, Xin Xu, Xiaojie Zhu, Xiaodong Gu, and Beijun Shen.
+\newblock {SALT4Decompile}: Inferring source-level abstract logic tree for
+  {LLM}-based binary decompilation, 2025.
+
+\bibitem{blutter}
+Worawit Wangwarunyoo.
+\newblock B(l)utter: Flutter mobile application reverse engineering tool.
+\newblock \url{https://github.com/worawit/blutter}, 2023.
+
+\bibitem{xie2024resym}
+Danning Xie, Zhuo Zhang, Nan Jiang, Xiangzhe Xu, Lin Tan, and Xiangyu Zhang.
+\newblock {ReSym}: Harnessing {LLMs} to recover variable and data structure
+  symbols from stripped binaries.
+\newblock In {\em Proceedings of the 2024 ACM SIGSAC Conference on Computer and
+  Communications Security}. Association for Computing Machinery, 2024.
+
+\bibitem{yang2025qwen3}
+An~Yang et~al.
+\newblock {Qwen3} technical report, 2025.
+
+\bibitem{yue2025rlvr}
+Yang Yue, Zhiqi Chen, Rui Lu, Andrew Zhao, Zhaokai Wang, Yang Yue, Shiji Song,
+  and Gao Huang.
+\newblock Does reinforcement learning really incentivize reasoning capacity in
+  {LLMs} beyond the base model?, 2025.
+
+\end{thebibliography}

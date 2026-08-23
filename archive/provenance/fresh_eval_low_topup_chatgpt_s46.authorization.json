@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "stage": "fresh_eval_source_topup_authorization",
+  "authorized_utc": "2026-07-17T09:18:02Z",
+  "user_authorization": "Go with ChatGPT",
+  "reason": {
+    "required_holdout_low": 170,
+    "current_leakage_clean_supply": {
+      "low": 157,
+      "mid": 429,
+      "high": 856
+    },
+    "low_shortfall": 13,
+    "historical_chatgpt_low_target_to_realized_low_rate": 0.11,
+    "accepted_target_with_margin": 200
+  },
+  "source_job": {
+    "output": "data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl",
+    "provider": "azure",
+    "model": "gpt-chat-latest",
+    "accepted_target": 200,
+    "target_strata": {
+      "low": 200,
+      "mid": 0,
+      "high": 0
+    },
+    "rng_seed": 46,
+    "oversample": 8,
+    "workers": 4,
+    "dart": "3.11.5",
+    "stability_runs": 2,
+    "mutation_max": 8,
+    "mutation_min_kill": 0.5,
+    "shape_gate": true,
+    "loc_tolerance": 1.0,
+    "branch_tolerance": 1.0,
+    "jaccard_threshold": 0.55,
+    "sequence_threshold": 0.7
+  },
+  "decontamination": [
+    "data/testing/grpo_data_graphv2.jsonl",
+    "data/datasets/synthetic_pool_graphv2.jsonl",
+    "data/testing/fresh_eval_llm.jsonl",
+    "data/testing/fresh_eval_lowmid_topup_s44.jsonl",
+    "data/testing/fresh_eval_low_topup_deepseek_s45.jsonl"
+  ],
+  "constraints": {
+    "cpu_only": true,
+    "additional_providers": false,
+    "gpu_work": false,
+    "fresh_holdout_model_evaluation": false,
+    "preserve_existing_source_and_graph_pools": true
+  },
+  "generator": {
+    "path": "generate_fresh_eval_tasks.py",
+    "sha256": "1566cfc20a579875be63bee6bd5347ec883311e3a0644f10e6e797f373c1e12a"
+  }
+}

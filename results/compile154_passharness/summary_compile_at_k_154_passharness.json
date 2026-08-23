@@ -1,0 +1,177 @@
+[
+  {
+    "label": "frontier_gpt_chat_latest",
+    "compile_at_1": 0.46883116883116865,
+    "compile_at_5": 0.79978354978355,
+    "compile_at_10": 0.8701298701298701,
+    "total_problems": 154,
+    "source": "results\\compile154_passharness\\frontier_gpt_chat_latest_compile_at_k.json",
+    "skipped_existing": true
+  },
+  {
+    "label": "frontier_sonnet5",
+    "compile_at_1": 0.22922077922077924,
+    "compile_at_5": 0.45395279323850746,
+    "compile_at_10": 0.538961038961039,
+    "total_problems": 154,
+    "source": "results\\compile154_passharness\\frontier_sonnet5_compile_at_k.json",
+    "skipped_existing": true
+  },
+  {
+    "label": "frontier_deepseek_v4_pro",
+    "compile_at_1": 0.07727272727272717,
+    "compile_at_5": 0.28133374561945995,
+    "compile_at_10": 0.42857142857142855,
+    "total_problems": 154,
+    "source": "results\\compile154_passharness\\frontier_deepseek_v4_pro_compile_at_k.json",
+    "skipped_existing": true
+  },
+  {
+    "label": "frontier_glm_5_2",
+    "compile_at_1": 0.06688311688311685,
+    "compile_at_5": 0.1727994227994228,
+    "compile_at_10": 0.23376623376623376,
+    "total_problems": 154,
+    "source": "results\\compile154_passharness\\frontier_glm_5_2_compile_at_k.json",
+    "skipped_existing": true
+  },
+  {
+    "label": "binary_grpo",
+    "compile_at_1": 0.04220779220779218,
+    "compile_at_5": 0.17207792207792214,
+    "compile_at_10": 0.2792207792207792,
+    "total_problems": 154,
+    "source": "results\\compile154_passharness\\binary_grpo_compile_at_k.json",
+    "skipped_existing": true
+  },
+  {
+    "label": "rs_sft_allarms",
+    "compile_at_1": 0.03376623376623375,
+    "compile_at_5": 0.14303751803751807,
+    "compile_at_10": 0.23376623376623376,
+    "total_problems": 154,
+    "cache_entries": 1530,
+    "source": "results\\compile154_passharness\\rs_sft_allarms_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "binary_rs_sft_ref",
+    "compile_at_1": 0.03376623376623375,
+    "compile_at_5": 0.14649041434755722,
+    "compile_at_10": 0.2597402597402597,
+    "total_problems": 154,
+    "cache_entries": 3051,
+    "source": "results\\compile154_passharness\\binary_rs_sft_ref_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "clean_g3",
+    "compile_at_1": 0.04090909090909089,
+    "compile_at_5": 0.1711760461760462,
+    "compile_at_10": 0.2792207792207792,
+    "total_problems": 154,
+    "cache_entries": 4583,
+    "source": "results\\compile154_passharness\\clean_g3_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "style_repair_ultralite",
+    "compile_at_1": 0.02792207792207792,
+    "compile_at_5": 0.1190733869305298,
+    "compile_at_10": 0.2012987012987013,
+    "total_problems": 154,
+    "cache_entries": 6115,
+    "source": "results\\compile154_passharness\\style_repair_ultralite_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "g3_p128r",
+    "compile_at_1": 0.034415584415584406,
+    "compile_at_5": 0.1469800041228613,
+    "compile_at_10": 0.2532467532467532,
+    "total_problems": 154,
+    "cache_entries": 7636,
+    "source": "results\\compile154_passharness\\g3_p128r_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "style1036_sft",
+    "compile_at_1": 0.03506493506493504,
+    "compile_at_5": 0.15061327561327562,
+    "compile_at_10": 0.2597402597402597,
+    "total_problems": 154,
+    "cache_entries": 9157,
+    "source": "results\\compile154_passharness\\style1036_sft_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "cfg_only",
+    "compile_at_1": 0.026623376623376625,
+    "compile_at_5": 0.11690888476602762,
+    "compile_at_10": 0.2077922077922078,
+    "total_problems": 154,
+    "cache_entries": 10692,
+    "source": "results\\compile154_passharness\\cfg_only_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "simko_style_grpo",
+    "compile_at_1": 0.03636363636363634,
+    "compile_at_5": 0.15749330035044323,
+    "compile_at_10": 0.2727272727272727,
+    "total_problems": 154,
+    "cache_entries": 12214,
+    "source": "results\\compile154_passharness\\simko_style_grpo_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "graph_text",
+    "compile_at_1": 0.022727272727272728,
+    "compile_at_5": 0.10353535353535355,
+    "compile_at_10": 0.18181818181818182,
+    "total_problems": 154,
+    "cache_entries": 13747,
+    "source": "results\\compile154_passharness\\graph_text_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "base_reference",
+    "compile_at_1": 0.01493506493506494,
+    "compile_at_5": 0.06800144300144301,
+    "compile_at_10": 0.12337662337662338,
+    "total_problems": 154,
+    "cache_entries": 15275,
+    "source": "results\\compile154_passharness\\base_reference_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "null_graph",
+    "compile_at_1": 0.01168831168831169,
+    "compile_at_5": 0.05699855699855701,
+    "compile_at_10": 0.11038961038961038,
+    "total_problems": 154,
+    "cache_entries": 16796,
+    "source": "results\\compile154_passharness\\null_graph_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "text_only",
+    "compile_at_1": 0.008441558441558441,
+    "compile_at_5": 0.03841991341991342,
+    "compile_at_10": 0.07142857142857142,
+    "total_problems": 154,
+    "cache_entries": 18332,
+    "source": "results\\compile154_passharness\\text_only_compile_at_k.json",
+    "skipped_existing": false
+  },
+  {
+    "label": "p128_without_rms",
+    "compile_at_1": 0.0,
+    "compile_at_5": 0.0,
+    "compile_at_10": 0.0,
+    "total_problems": 154,
+    "cache_entries": 19872,
+    "source": "results\\compile154_passharness\\p128_without_rms_compile_at_k.json",
+    "skipped_existing": false
+  }
+]

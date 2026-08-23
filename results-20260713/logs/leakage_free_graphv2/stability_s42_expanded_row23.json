@@ -1,0 +1,287 @@
+{
+  "row": 23,
+  "task_id": "22",
+  "problem_id": "22",
+  "runs": [
+    {
+      "repeat": 1,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "empty_candidate_or_tests"
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 9,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "empty_candidate_or_tests"
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 9,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "empty_candidate_or_tests"
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 9,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 4,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "empty_candidate_or_tests"
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 9,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 5,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "empty_candidate_or_tests"
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:5:18: Error: Type argument 'int' doesn't conform to the bound 'LinkedListEntry<E>' of the type variable 'E' on 'LinkedList'.\n - 'LinkedListEntry' is from 'dart:collection'.\nTry changing type arguments so that they conform to the bounds.\n  final result = LinkedList<int>();\n                 ^\norg-dartlang-sdk:///sdk/lib/collection/linked_list.dart: Context: This is the type variable whose bound isn't conformed to."
+        },
+        {
+          "candidate": 9,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    }
+  ]
+}

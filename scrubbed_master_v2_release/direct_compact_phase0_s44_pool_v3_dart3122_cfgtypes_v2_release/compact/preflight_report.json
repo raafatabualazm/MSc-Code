@@ -1,0 +1,289 @@
+{
+  "cfg_edge_types": {
+    "call": 135,
+    "conditional_false": 73366,
+    "conditional_true": 73332,
+    "linear_fallthrough": 47582,
+    "loop_backedge": 5690,
+    "unconditional_jump": 24995
+  },
+  "codebook_expansion_leakage_scan": {
+    "absolute_symbol_address": 0,
+    "candidate": 0,
+    "file_uri": 0,
+    "private_field_terms": 0
+  },
+  "codebook_fit": {
+    "input_sha256": "90a39e089a104ae30526f0b043da28a7931e6aaf59302c11ef4fda82df41d216",
+    "measure_rows_in_fit": 0,
+    "retained_rows": 2951,
+    "role": "fit_only"
+  },
+  "contract": {
+    "aot_manifest_sha256": "f44f4d574aec0dc6faa465fd3514d594cc1b7b72536b6300278c151c62879c15",
+    "codebook_sha256": "5197f9007c001686572d1efbcc672a455d29c4917538f30ba2255ea8ef7b591f",
+    "codec_sha256": "b30f531761fbc0497e20eea8873f787bbfe3fa8e9fbdbc5ad97c8ad78e55325e",
+    "dart_toolchain_manifest_sha256": "7a4e2d16214d4934c7d97c81239b35b66d6b0df64a5fb8bbdf2fbd380888c677",
+    "graph_codec_dependency_sha256": "0a8cde3bfb7ec08c45115d4226a45f4b2c1b192a5277270af866237641c419b3",
+    "pool_extractor_sha256": "4e6f558a44bfb95357cf00ac18e170172919b4b809f348846928d3e3083b25a7",
+    "pool_reconciliation_manifest_sha256": "1d6aa5d5075ff0bcd6ac944bc2f9e31faa2c8a796888f137f6951a3b819c2a79",
+    "stream_marker_ids": {
+      "<CFG>": 168433,
+      "<END>": 168436,
+      "<G2C3>": 168429,
+      "<PEND>": 168435,
+      "<PX0>": 168434
+    },
+    "target_function": "candidate",
+    "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "failure_examples": [],
+  "failures_count": 0,
+  "fallback_by_dataset": {
+    "/workspace/compact_qwen_pool_v3_full_dart3122_v1/prepared/dev_codec_private.jsonl": {
+      "fallback": 410,
+      "fallback_rate": 0.005845868681827904,
+      "instructions": 70135,
+      "rows": 326
+    },
+    "/workspace/compact_qwen_pool_v3_full_dart3122_v1/prepared/train_codec_private.jsonl": {
+      "fallback": 0,
+      "fallback_rate": 0.0,
+      "instructions": 700870,
+      "rows": 2951
+    }
+  },
+  "fallback_by_family": {
+    "master": {
+      "fallback": 291,
+      "fallback_rate": 0.0005100180872393825,
+      "instructions": 570568,
+      "rows": 2172
+    },
+    "topup_s45": {
+      "fallback": 115,
+      "fallback_rate": 0.0006124155265974726,
+      "instructions": 187781,
+      "rows": 994
+    },
+    "topup_s46": {
+      "fallback": 4,
+      "fallback_rate": 0.0003160556257901391,
+      "instructions": 12656,
+      "rows": 111
+    }
+  },
+  "fallback_by_role": {
+    "fit": {
+      "fallback": 0,
+      "fallback_rate": 0.0,
+      "instructions": 700870,
+      "rows": 2951
+    },
+    "measure": {
+      "fallback": 410,
+      "fallback_rate": 0.005845868681827904,
+      "instructions": 70135,
+      "rows": 326
+    }
+  },
+  "fallback_by_role_and_family": {
+    "fit": {
+      "master": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 520993,
+        "rows": 1953
+      },
+      "topup_s45": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 168043,
+        "rows": 894
+      },
+      "topup_s46": {
+        "fallback": 0,
+        "fallback_rate": 0.0,
+        "instructions": 11834,
+        "rows": 104
+      }
+    },
+    "measure": {
+      "master": {
+        "fallback": 291,
+        "fallback_rate": 0.005869894099848714,
+        "instructions": 49575,
+        "rows": 219
+      },
+      "topup_s45": {
+        "fallback": 115,
+        "fallback_rate": 0.005826324855608471,
+        "instructions": 19738,
+        "rows": 100
+      },
+      "topup_s46": {
+        "fallback": 4,
+        "fallback_rate": 0.004866180048661801,
+        "instructions": 822,
+        "rows": 7
+      }
+    }
+  },
+  "lossless_invariants": {
+    "alignment_rows_without_payload_or_source": 3277,
+    "call_edges_encoded_explicitly": true,
+    "compact_id_stream_roundtrip_rows": 3277,
+    "dfg_edges_by_route": {
+      "current_combined_v2": 515077
+    },
+    "dfg_edges_matched_edge_for_edge": 515077,
+    "dfg_regenerated_and_matched_rows": 3277,
+    "exact_graph_and_pool_roundtrip_rows": 3277,
+    "lossless_domain": "scrubbed-canonical-graph-v2-plus-complete-source-blind-pool-values-at-canonical-graph-retained-fixed-r15-uses-v1",
+    "nested_nonliteral_descriptors_preserved": 55,
+    "pool_projection_hashes_matched": 3277,
+    "pool_receipts_hash_bound": 3277,
+    "pool_reconciliation_manifest_sha256": "1d6aa5d5075ff0bcd6ac944bc2f9e31faa2c8a796888f137f6951a3b819c2a79",
+    "pool_reconciliation_rows_cover_all_inputs": 3277,
+    "pool_records_roundtripped": 11952,
+    "pool_use_sites_validated": 16943,
+    "privacy_scrub_is_only_intentional_irreversibility": true,
+    "public_private_rows_bijective_and_hash_bound": 3277,
+    "raw_instruction_fallback_is_reversible": true,
+    "raw_target_xrefs_reconciled": 30310,
+    "source_blind_pool_rows": 3277,
+    "truncated_rows": 0,
+    "unknown_tokens": 0
+  },
+  "passed": true,
+  "pool": {
+    "all_node_kind_counts": {
+      "composite": 1517,
+      "double": 551,
+      "int": 4022,
+      "nonliteral": 55,
+      "null": 1719,
+      "string": 9349
+    },
+    "nested_nonliteral_descriptors": {
+      "count": 55,
+      "pair_counts": {
+        "Instance->runtime_object": 50,
+        "Record->runtime_object": 5
+      },
+      "profile_type_to_nonliteral_kind_allowlist": {
+        "ArgumentsDescriptor": "calling_convention_metadata",
+        "Class": "declaration_metadata",
+        "Closure": "callable",
+        "ClosureData": "callable",
+        "Code": "code",
+        "Field": "declaration_metadata",
+        "Function": "callable",
+        "FunctionType": "type_metadata",
+        "Instance": "runtime_object",
+        "PatchClass": "declaration_metadata",
+        "Record": "runtime_object",
+        "SubtypeTestCache": "calling_convention_metadata",
+        "Type": "type_metadata",
+        "TypeArguments": "type_metadata",
+        "TypeParameter": "type_metadata",
+        "TypeParameters": "type_metadata",
+        "UnlinkedCall": "calling_convention_metadata"
+      }
+    },
+    "records": 11952,
+    "rows_validated": 3277,
+    "rows_with_uses": 2307,
+    "schema": "dart-aot-target-literal-pool-v1",
+    "top_level_kind_counts": {
+      "composite": 1473,
+      "double": 551,
+      "int": 1,
+      "null": 780,
+      "string": 9147
+    },
+    "use_sites": 16943
+  },
+  "provenance_manifests": {
+    "aot_manifest_contract_binding": {
+      "mode": "finalized_binary_build_seal",
+      "sha256": "f44f4d574aec0dc6faa465fd3514d594cc1b7b72536b6300278c151c62879c15"
+    },
+    "aot_manifests": [
+      {
+        "name": "binary_build_manifest.json",
+        "schema": "phase0-s44-binary-pool-build-seal-v1",
+        "sha256": "f44f4d574aec0dc6faa465fd3514d594cc1b7b72536b6300278c151c62879c15",
+        "size_bytes": 4307
+      }
+    ],
+    "combined_pool_extractor_manifest": {
+      "name": "pool_extractor_manifest.json",
+      "schema": "dart-aot-pool-extractor-manifest-v1",
+      "sha256": "4e6f558a44bfb95357cf00ac18e170172919b4b809f348846928d3e3083b25a7",
+      "size_bytes": 750
+    },
+    "dart_toolchain_manifest": {
+      "name": "dart_toolchain_manifest.json",
+      "schema": "dart-aot-toolchain-manifest-v1",
+      "sha256": "7a4e2d16214d4934c7d97c81239b35b66d6b0df64a5fb8bbdf2fbd380888c677",
+      "size_bytes": 2229
+    },
+    "input_dataset_bindings": [
+      {
+        "name": "train_codec_private.jsonl",
+        "role": "fit",
+        "rows": 2951,
+        "sha256": "90a39e089a104ae30526f0b043da28a7931e6aaf59302c11ef4fda82df41d216",
+        "split": "train"
+      },
+      {
+        "name": "dev_codec_private.jsonl",
+        "role": "measure_0",
+        "rows": 326,
+        "sha256": "e1ee9b352b06ba2b9b99a68ad767ced263b0ddb311b6372b2ca9b7c42332d338",
+        "split": "dev"
+      }
+    ],
+    "sealed_dataset_bindings": [
+      {
+        "manifest": "binary_build_manifest.json",
+        "rows": 326,
+        "sha256": "e1ee9b352b06ba2b9b99a68ad767ced263b0ddb311b6372b2ca9b7c42332d338",
+        "split": "dev"
+      },
+      {
+        "manifest": "binary_build_manifest.json",
+        "rows": 2951,
+        "sha256": "90a39e089a104ae30526f0b043da28a7931e6aaf59302c11ef4fda82df41d216",
+        "split": "train"
+      }
+    ]
+  },
+  "quarantine_reasons": {},
+  "quarantined": 0,
+  "rows_by_family": {
+    "master": 2172,
+    "topup_s45": 994,
+    "topup_s46": 111
+  },
+  "rows_by_role": {
+    "fit": 2951,
+    "measure": 326
+  },
+  "rows_by_route": {
+    "current_combined_v2": 3277
+  },
+  "rows_retained": 3277,
+  "schema": "compact-qwen-v3-preflight",
+  "tokens": {
+    "kind": "compact_v3_graph_plus_binary_pool_source_only",
+    "limit": 9000,
+    "max": 8684,
+    "min": 29,
+    "p50": 335,
+    "p95": 1195,
+    "p99": 2267,
+    "rows_over_limit": 0
+  }
+}

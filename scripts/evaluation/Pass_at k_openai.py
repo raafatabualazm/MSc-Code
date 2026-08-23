@@ -19,7 +19,7 @@ DATA_FILE = "grpo_data"  # JSONL file
 MODEL_NAME = "raafatabualazm/decompiler-v5"  # adjust to your deployed model name
 DART_TIMEOUT = 30     # seconds per test execution
 BASE_URL = "http://127.0.0.1:18000/v1"
-API_KEY = "sk-45co41dpxtvdka"
+API_KEY = os.environ.get("LOCAL_OPENAI_API_KEY", "not-required")
 
 # Checkpoint file for resume support
 CHECKPOINT_FILE = f"results/cache/checkpoint_{MODEL_NAME.replace('/', '_')}.json"

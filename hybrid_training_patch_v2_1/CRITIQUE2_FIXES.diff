@@ -1,0 +1,1729 @@
+--- a/README_HYBRID_TRAINING.md
++++ b/README_HYBRID_TRAINING.md
+@@ -1,6 +1,7 @@
+-# Fail-Closed Hybrid Decompiler Training Patch v2
+-
+-This overlay replaces the first hybrid-training draft. Its go/no-go decisions
++# Fail-Closed Hybrid Decompiler Training Patch v2.1
++
++This overlay supersedes v2 with the Critique-2 statistical-gate and Qwen
++read-path corrections. Its go/no-go decisions
+ are based on **free-running executable behavior**, data-integrity checks, and
+ independent verifier replay—not teacher-forced NLL alone.
+ 
+@@ -11,7 +12,7 @@
+ RS-SFT stage then uses compact mechanical binary evidence plus assembly text,
+ while the latent graph channel remains subject to ablation.
+ 
+-## What changed from v1
++## What changed from v1 and v2
+ 
+ The review findings are implemented as code-level controls:
+ 
+@@ -42,8 +43,22 @@
+ - Zero-variance RL groups are resampled for a bounded number of attempts. A
+   persistently dead group is skipped by default rather than converted to plain
+   reference CE.
++- The functional and RS-SFT gates now require paired statistical evidence:
++  an exact one-sided paired sign test (exact McNemar when pass@k is binary),
++  a task-paired bootstrap lower confidence bound above zero, at least eight
++  discordant task pairs, and at least 96 held-out tasks by default.
++- The old arbitrary 1-point graph-permutation default is removed. A positive
++  practical-effect floor is accepted only as an explicit, pre-registered value
++  calibrated from an external repeatability/noise study.
++- Qwen decoder LoRA now targets both attention and MLP projections by default:
++  `q_proj`, `k_proj`, `v_proj`, `o_proj`, `gate_proj`, `up_proj`, and
++  `down_proj`.
++- Historical attention-only Qwen checkpoints may expand only during a newly
++  trained Stage 1. The newly introduced MLP LoRA-B tensors must be exactly zero,
++  so loading preserves the old policy before training; every unrelated missing
++  trainable tensor still aborts.
+ - Checkpoint architecture provenance is pinned and validated across SFT,
+-  inference, probe, and GRPO entry points.
++  inference, probe, and GRPO entry points, including the Qwen LoRA target set.
+ - Functions above the configured short-function cap are emitted as bridge and
+   long-function holdouts instead of being silently mixed into one-shot training.
+ 
+@@ -53,7 +68,7 @@
+ 
+ Warm checkpoints in this project contain trainable tensors rather than a full
+ pretrained model. Loading them with `strict=False` can silently succeed under a
+-wrong prefix, GNN, PEFT, or prompt architecture. v2 therefore:
++wrong prefix, GNN, PEFT, LoRA-target, or prompt architecture. v2.1 therefore:
+ 
+ 1. loads the structural `graph_environment` from an adjacent
+    `run_provenance.json`, or from `--architecture_env_json`;
+@@ -63,7 +78,16 @@
+    `--allow_unpinned_architecture` is explicitly supplied for a research-only
+    run;
+ 4. checks that every currently trainable tensor exists in the checkpoint and
+-   that every checkpoint tensor is recognized by the instantiated model.
++   that every checkpoint tensor is recognized by the instantiated model;
++5. records `GRAPH_QWEN_LORA_TARGETS=attention_mlp` for new Qwen runs.
++
++For a historical attention-only Qwen LoRA checkpoint, supply it as
++`--initial_checkpoint`, not `--stage1_checkpoint`. The runner infers the legacy
++`attention` target set from old provenance, constructs the expanded
++attention+MLP adapter, and permits only the new `gate_proj`/`up_proj`/`down_proj`
++LoRA A/B tensors to be absent. Every new LoRA-B tensor is checked to be all-zero
++before the warm start is accepted. This is an explicit behavior-preserving
++migration, not a general partial-load escape hatch.
+ 
+ `GRAPH_ALLOW_PARTIAL_CHECKPOINT=1` is an additional research-only escape hatch
+ inside individual model entry points. It should not be used for confirmatory
+@@ -129,6 +153,8 @@
+ - a graph-only decoder prompt;
+ - an opaque typed `fn0` contract;
+ - a target containing `// FACTS_JSON: ...` followed by Dart code;
++- Qwen attention+MLP LoRA by default, so the modality-read path is not capped
++  at attention projections;
+ - optional own-graph versus wrong-graph NLL margin training.
+ 
+ The NLL margin is a training auxiliary and diagnostic only. A mismatch detector
+@@ -148,10 +174,25 @@
+ - all arms use the same row set, rendered prompt stream, checkpoint contract,
+   generation settings, and expected number of candidates;
+ - the permutation has no self-mapped rows;
+-- aggregate pass@k drops by the configured minimum under graph permutation;
+-- at least the configured number of individual tasks lose pass@k under
+-  permutation;
+-- optional FACTS@k and null-graph thresholds are met.
++- at least 96 held-out tasks are present by default;
++- correct-versus-permuted and correct-versus-null each contain at least eight
++  discordant task pairs;
++- the pre-registered one-sided exact paired test has `p <= 0.05`;
++- the 95% task-paired bootstrap one-sided lower bound on the pass@k difference
++  is strictly above zero;
++- any explicitly configured practical-effect floor is also met;
++- optional FACTS@k statistical and practical thresholds are met.
++
++At the default `k=10`, `num_samples=10`, per-task pass@10 is binary, so the
++exact paired test is exact McNemar on discordant task outcomes. With fractional
++per-task pass@k it is the exact paired sign test. The bootstrap resamples tasks,
++not generated candidates. It addresses finite held-out-task uncertainty; final
++paper estimates should still repeat generation under multiple seeds.
++
++The graph-permutation practical floor defaults to zero rather than inventing a
++1-point threshold. Use `--stage1_min_permutation_drop_pp` only with a value
++pre-registered from an external repeatability/noise study. Statistical evidence
++remains mandatory either way.
+ 
+ This is the authoritative answer to “does the decoder actually read the graph?”
+ 
+@@ -211,11 +252,14 @@
+ GRAPH_PREFIX_DEPENDENCE_WEIGHT=0
+ ```
+ 
+-The subsequent neutral-evaluation kill switch defaults to requiring the RS-SFT
+-checkpoint to improve pass@k by **at least 6 percentage points** over that
+-matched control. An external `--rs_sft_baseline_checkpoint` or an immutable
+-absolute `--baseline_pass_at_k` may replace the automatic control only when it
+-is genuinely like-for-like.
++The subsequent neutral-evaluation kill switch requires the RS-SFT checkpoint
++to improve pass@k by **at least 6 percentage points** over that matched control.
++It also requires the same paired exact test, paired-bootstrap lower bound above
++zero, minimum discordant-pair count, and held-out-row floor. Thus two flipped
++tasks on a tiny set cannot satisfy the `+6 pp` rule. An external
++`--rs_sft_baseline_checkpoint` may replace the automatic control only when it is
++genuinely like-for-like. A scalar `--baseline_pass_at_k` is supported but is
++reported as weaker because baseline uncertainty and task pairing are absent.
+ 
+ ### 7. Optional VeRPO/GRPO
+ 
+@@ -260,17 +304,17 @@
+ | `scripts/evaluation/probe_graph_representations_antigravity.py` | Frozen multi-stage representation probe. |
+ | `scripts/evaluation/functional_graph_gate_antigravity.py` | Correct/permuted/null executable gate. |
+ | `scripts/evaluation/graph_inference_antigravity.py` | Matched graph derangement, null ablation, and prompt provenance. |
+-| `scripts/evaluation/run_sweeps_antigravity.py` | Exposes v2 controls to ordinary sweep runs. |
++| `scripts/evaluation/run_sweeps_antigravity.py` | Exposes v2.1 controls to ordinary sweep runs. |
+ 
+ ## Installation
+ 
+ Extract the archive and install the overlay:
+ 
+ ```bash
+-cd hybrid_training_patch_v2
++cd hybrid_training_patch_v2_1
+ python apply_hybrid_patch.py --project-root /path/to/msc-code
+ cd /path/to/msc-code
+-python -m pip install -r /path/to/hybrid_training_patch_v2/requirements-hybrid.txt
++python -m pip install -r /path/to/hybrid_training_patch_v2_1/requirements-hybrid.txt
+ ```
+ 
+ Changed targets are backed up under:
+@@ -292,7 +336,7 @@
+ python -m compileall -q -f .
+ ```
+ 
+-The packaged suite currently contains 26 tests. It uses fake evaluators and
++The packaged suite currently contains 31 tests. It uses fake evaluators and
+ small synthetic records for CPU-only controls; it does not pretend to replace a
+ real Dart/GPU/API integration run.
+ 
+@@ -307,7 +351,7 @@
+ 
+ python -m scripts.training.run_hybrid_curriculum_antigravity \
+   --project_root . \
+-  --output_root artifacts/hybrid_v2_confirmatory \
++  --output_root artifacts/hybrid_v2_1_confirmatory \
+   --train_file data/training/master_train.jsonl \
+   --eval_file data/evaluation/frozen_154.jsonl \
+   --functional_eval_file data/evaluation/neutral_exact.jsonl \
+@@ -319,10 +363,14 @@
+   --encoder_model microsoft/graphcodebert-base \
+   --teacher_model '<frontier-model-id>' \
+   --teacher_mode sync \
++  --qwen_lora_targets attention_mlp \
+   --max_train_instructions 150 \
+   --max_bridge_instructions 199 \
+-  --stage1_min_permutation_drop_pp 1.0 \
+-  --gate_min_causal_task_losses 1 \
++  --min_gate_rows 96 \
++  --gate_bootstrap_iterations 10000 \
++  --gate_max_sign_test_p_value 0.05 \
++  --gate_min_causal_effective_pairs 8 \
++  --gate_min_permutation_ci_lower_pp 0.0 \
+   --rs_sft_min_improvement_pp 6.0 \
+   --min_verified_rows 64 \
+   --min_verified_unique_tasks 64 \
+@@ -338,7 +386,7 @@
+ ```bash
+ python -m scripts.training.run_hybrid_curriculum_antigravity \
+   --project_root . \
+-  --output_root artifacts/hybrid_v2_dry_run \
++  --output_root artifacts/hybrid_v2_1_dry_run \
+   --train_file data/training/master_train.jsonl \
+   --eval_file data/evaluation/frozen_154.jsonl \
+   --teacher_model '<frontier-model-id>' \
+@@ -375,4 +423,5 @@
+ - real frontier Responses or Batch requests;
+ - measured correct/permuted/null pass@10 deltas;
+ - measured RS-SFT improvement over the matched gold-only control;
++- multi-seed confirmatory estimates beyond the single-seed task bootstrap;
+ - a separate hierarchical experiment for the `>=200`-instruction regime.
+--- a/apply_hybrid_patch.py
++++ b/apply_hybrid_patch.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Install the fail-closed hybrid-training v2 overlay into an Antigravity checkout."""
++"""Install the fail-closed hybrid-training v2.1 overlay into an Antigravity checkout."""
+ 
+ from __future__ import annotations
+ 
+--- a/scripts/evaluation/functional_graph_gate_antigravity.py
++++ b/scripts/evaluation/functional_graph_gate_antigravity.py
+@@ -19,6 +19,7 @@
+ import json
+ import math
+ import os
++import random
+ import subprocess
+ import sys
+ from concurrent.futures import ThreadPoolExecutor, as_completed
+@@ -57,6 +58,197 @@
+     if n - c < k:
+         return 1.0
+     return 1.0 - math.comb(n - c, k) / math.comb(n, k)
++
++
++def _percentile(sorted_values: list[float], probability: float) -> float:
++    """Linearly interpolate a percentile from an already sorted sample."""
++    if not sorted_values:
++        raise ValueError("cannot take a percentile of an empty sample")
++    if not 0.0 <= probability <= 1.0:
++        raise ValueError("percentile probability must be in [0,1]")
++    if len(sorted_values) == 1:
++        return float(sorted_values[0])
++    position = probability * (len(sorted_values) - 1)
++    lower = int(math.floor(position))
++    upper = int(math.ceil(position))
++    if lower == upper:
++        return float(sorted_values[lower])
++    weight = position - lower
++    return float(sorted_values[lower] * (1.0 - weight) + sorted_values[upper] * weight)
++
++
++def exact_one_sided_sign_p_value(wins: int, losses: int) -> float:
++    """Exact P[X >= wins] for X~Binomial(wins+losses, 0.5).
++
++    Ties are conditioned away. For binary task-level pass@k this is the exact
++    McNemar test; for fractional per-task pass@k it is the exact paired sign
++    test. The pre-registered one-sided alternative is left > right.
++    """
++    if wins < 0 or losses < 0:
++        raise ValueError("wins/losses must be non-negative")
++    n = wins + losses
++    if n == 0:
++        return 1.0
++    numerator = sum(math.comb(n, value) for value in range(wins, n + 1))
++    return float(numerator / (2 ** n))
++
++
++def paired_bootstrap_mean_difference(
++    left: list[float],
++    right: list[float],
++    *,
++    iterations: int,
++    confidence: float,
++    seed: int,
++) -> dict[str, Any]:
++    """Paired task bootstrap for mean(left-right), in percentage points.
++
++    Tasks, not generated candidates, are the resampling unit. Candidate
++    stochasticity is reflected in each task's observed pass@k, although final
++    paper estimates should still repeat generation under multiple seeds.
++    """
++    if len(left) != len(right) or not left:
++        raise ValueError("paired bootstrap requires aligned non-empty samples")
++    if iterations < 100:
++        raise ValueError("paired bootstrap requires at least 100 iterations")
++    if not 0.5 < confidence < 1.0:
++        raise ValueError("bootstrap confidence must be in (0.5,1)")
++    differences = [float(a) - float(b) for a, b in zip(left, right)]
++    n = len(differences)
++    point = sum(differences) / n
++    rng = random.Random(seed)
++    samples: list[float] = []
++    choose = rng.randrange
++    for _ in range(iterations):
++        samples.append(sum(differences[choose(n)] for _ in range(n)) / n)
++    samples.sort()
++    alpha = 1.0 - confidence
++    return {
++        "unit": "task",
++        "rows": n,
++        "iterations": iterations,
++        "confidence": confidence,
++        "seed": seed,
++        "point_estimate_pp": 100.0 * point,
++        "one_sided_lower_pp": 100.0 * _percentile(samples, alpha),
++        "two_sided_ci_pp": [
++            100.0 * _percentile(samples, alpha / 2.0),
++            100.0 * _percentile(samples, 1.0 - alpha / 2.0),
++        ],
++        "bootstrap_probability_positive": sum(value > 0.0 for value in samples) / len(samples),
++    }
++
++
++def paired_task_comparison(
++    left_rows: list[dict[str, Any]],
++    right_rows: list[dict[str, Any]],
++    *,
++    metric: str,
++    iterations: int,
++    confidence: float,
++    seed: int,
++) -> dict[str, Any]:
++    """Return direction counts, exact sign test, and paired task bootstrap."""
++    left_by_key = {str(row["task_key"]): row for row in left_rows}
++    right_by_key = {str(row["task_key"]): row for row in right_rows}
++    if set(left_by_key) != set(right_by_key):
++        raise RuntimeError(f"paired task keys do not align for {metric}")
++    keys = sorted(left_by_key)
++    left = [float(left_by_key[key][metric]) for key in keys]
++    right = [float(right_by_key[key][metric]) for key in keys]
++    wins = losses = ties = 0
++    for a, b in zip(left, right):
++        if a > b:
++            wins += 1
++        elif a < b:
++            losses += 1
++        else:
++            ties += 1
++    task_metric_binary = all(value in {0.0, 1.0} for value in left + right)
++    return {
++        "metric": metric,
++        "rows": len(keys),
++        "left_above_right_tasks": wins,
++        "equal_tasks": ties,
++        "right_above_left_tasks": losses,
++        "effective_non_ties": wins + losses,
++        "exact_one_sided_sign_p_value": exact_one_sided_sign_p_value(wins, losses),
++        "task_metric_binary": task_metric_binary,
++        "exact_test": (
++            "one_sided_exact_mcnemar"
++            if task_metric_binary
++            else "one_sided_exact_paired_sign"
++        ),
++        "bootstrap": paired_bootstrap_mean_difference(
++            left,
++            right,
++            iterations=iterations,
++            confidence=confidence,
++            seed=seed,
++        ),
++    }
++
++
++def fixed_aggregate_baseline_comparison(
++    current_rows: list[dict[str, Any]],
++    *,
++    metric: str,
++    baseline: float,
++    iterations: int,
++    confidence: float,
++    seed: int,
++) -> dict[str, Any]:
++    """Task bootstrap versus a fixed aggregate baseline.
++
++    This is weaker than a checkpoint-paired comparison because uncertainty in
++    the externally supplied baseline is unavailable. The curriculum defaults
++    to a matched checkpoint control.
++    """
++    current = [float(row[metric]) for row in current_rows]
++    comparison = paired_bootstrap_mean_difference(
++        current,
++        [float(baseline)] * len(current),
++        iterations=iterations,
++        confidence=confidence,
++        seed=seed,
++    )
++    return {
++        "metric": metric,
++        "comparison_type": "fixed_aggregate_baseline",
++        "baseline": float(baseline),
++        "baseline_uncertainty_ignored": True,
++        "bootstrap": comparison,
++    }
++
++
++def _paired_statistical_failures(
++    label: str,
++    comparison: dict[str, Any],
++    *,
++    minimum_effective_pairs: int,
++    maximum_p_value: float,
++    minimum_lower_bound_pp: float,
++) -> list[str]:
++    failures: list[str] = []
++    effective = int(comparison["effective_non_ties"])
++    p_value = float(comparison["exact_one_sided_sign_p_value"])
++    lower = float(comparison["bootstrap"]["one_sided_lower_pp"])
++    if effective < minimum_effective_pairs:
++        failures.append(
++            f"{label} has only {effective} discordant/effective task pairs; "
++            f"minimum is {minimum_effective_pairs}"
++        )
++    if p_value > maximum_p_value:
++        failures.append(
++            f"{label} exact one-sided sign-test p={p_value:.6g} > {maximum_p_value:.6g}"
++        )
++    # Strictly positive when the configured floor is zero.
++    if lower <= minimum_lower_bound_pp:
++        failures.append(
++            f"{label} paired-bootstrap one-sided lower bound {lower:.3f} pp "
++            f"<= {minimum_lower_bound_pp:.3f} pp"
++        )
++    return failures
+ 
+ 
+ def evaluate_predictions(
+@@ -271,24 +463,50 @@
+     parser.add_argument("--timeout", type=int, default=15)
+     parser.add_argument("--limit", type=int, default=0)
+     parser.add_argument(
++        "--min_rows", type=int, default=96,
++        help="Minimum held-out tasks required before any statistical gate is evaluated.",
++    )
++    parser.add_argument(
++        "--bootstrap_iterations", type=int, default=10000,
++        help="Paired task-bootstrap replicates (deterministic under --bootstrap_seed).",
++    )
++    parser.add_argument(
++        "--bootstrap_seed", type=int, default=-1,
++        help="Bootstrap RNG seed; negative reuses --seed.",
++    )
++    parser.add_argument("--statistical_confidence", type=float, default=0.95)
++    parser.add_argument("--max_sign_test_p_value", type=float, default=0.05)
++    parser.add_argument("--min_causal_effective_pairs", type=int, default=8)
++    parser.add_argument("--min_deployment_effective_pairs", type=int, default=8)
++    parser.add_argument("--min_causal_permutation_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--min_causal_null_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--min_facts_permutation_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--min_deployment_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument(
++        "--require_facts_statistics",
++        action=argparse.BooleanOptionalAction,
++        default=False,
++        help="Also require sign-test/bootstrap evidence for FACTS@k degradation.",
++    )
++    parser.add_argument(
+         "--min_causal_permutation_drop_pp", "--min_permutation_drop_pp",
+-        dest="min_causal_permutation_drop_pp", type=float, default=1.0,
++        dest="min_causal_permutation_drop_pp", type=float, default=0.0,
++        help=("Optional pre-registered practical-effect floor. Default 0 avoids inventing "
++              "a noise threshold; set this from an external repeatability study."),
+     )
+     parser.add_argument("--min_causal_null_drop_pp", type=float, default=0.0)
+     parser.add_argument("--min_facts_permutation_drop_pp", type=float, default=0.0)
+     parser.add_argument(
+-        "--min_causal_task_losses",
+-        type=int,
+-        default=1,
++        "--min_causal_task_losses", type=int, default=0,
+         help=(
+-            "Minimum held-out tasks where correct-graph pass@k is strictly above "
+-            "matched-permuted pass@k. This prevents a tiny aggregate proxy delta "
+-            "from passing without any task-level causal loss."
++            "Deprecated extra floor on correct>permuted tasks. The load-bearing "
++            "controls are effective pairs, exact sign p-value, and bootstrap CI."
+         ),
+     )
+     parser.add_argument(
+         "--min_deployment_improvement_pp", "--min_improvement_pp",
+         dest="min_deployment_improvement_pp", type=float, default=0.0,
++        help="Minimum observed deployment effect; CI/sign evidence is required separately.",
+     )
+     parser.add_argument(
+         "--baseline_pass_at_k",
+@@ -308,6 +526,16 @@
+         parser.error("--generation_batch_size must be positive")
+     if args.workers <= 0 or args.timeout <= 0:
+         parser.error("--workers and --timeout must be positive")
++    if args.min_rows <= 1:
++        parser.error("--min_rows must be greater than 1")
++    if args.bootstrap_iterations < 100:
++        parser.error("--bootstrap_iterations must be at least 100")
++    if not 0.5 < args.statistical_confidence < 1.0:
++        parser.error("--statistical_confidence must be in (0.5,1)")
++    if not 0.0 < args.max_sign_test_p_value < 1.0:
++        parser.error("--max_sign_test_p_value must be in (0,1)")
++    if args.min_causal_effective_pairs <= 0 or args.min_deployment_effective_pairs <= 0:
++        parser.error("minimum effective-pair counts must be positive")
+     if args.min_causal_task_losses < 0:
+         parser.error("--min_causal_task_losses must be non-negative")
+     if any(
+@@ -317,6 +545,10 @@
+             args.min_causal_null_drop_pp,
+             args.min_facts_permutation_drop_pp,
+             args.min_deployment_improvement_pp,
++            args.min_causal_permutation_ci_lower_pp,
++            args.min_causal_null_ci_lower_pp,
++            args.min_facts_permutation_ci_lower_pp,
++            args.min_deployment_ci_lower_pp,
+         )
+     ):
+         parser.error("all minimum gate thresholds must be non-negative")
+@@ -338,6 +570,11 @@
+         rows = rows[: args.limit]
+     if not rows:
+         raise SystemExit("functional gate dataset is empty")
++    if len(rows) < args.min_rows:
++        raise SystemExit(
++            f"functional gate has only {len(rows)} held-out tasks; minimum is {args.min_rows}"
++        )
++    bootstrap_seed = args.seed if args.bootstrap_seed < 0 else args.bootstrap_seed
+     for index, row in enumerate(rows):
+         metadata = row.get("hybrid_metadata") or {}
+         if metadata.get("evaluation_only") is not True:
+@@ -533,56 +770,82 @@
+         null_drop = causal_correct - causal_null
+         facts_drop = facts_correct - facts_permuted
+ 
++    statistical_tests: dict[str, Any] = {}
+     paired_causality = None
+     if args.run_causality_arm:
+         correct_rows = metrics["causal_correct"]["per_task"]
+         permuted_rows = metrics["causal_permuted"]["per_task"]
+         null_rows = metrics["causal_null"]["per_task"]
++        permutation_comparison = paired_task_comparison(
++            correct_rows, permuted_rows, metric=f"pass@{args.k}",
++            iterations=args.bootstrap_iterations, confidence=args.statistical_confidence,
++            seed=bootstrap_seed,
++        )
++        null_comparison = paired_task_comparison(
++            correct_rows, null_rows, metric=f"pass@{args.k}",
++            iterations=args.bootstrap_iterations, confidence=args.statistical_confidence,
++            seed=bootstrap_seed + 1,
++        )
++        facts_comparison = paired_task_comparison(
++            correct_rows, permuted_rows, metric=f"facts@{args.k}",
++            iterations=args.bootstrap_iterations, confidence=args.statistical_confidence,
++            seed=bootstrap_seed + 2,
++        )
++        statistical_tests.update({
++            "causal_correct_vs_matched_permutation": permutation_comparison,
++            "causal_correct_vs_null": null_comparison,
++            "facts_correct_vs_matched_permutation": facts_comparison,
++        })
+         correct_by_key = {row["task_key"]: row for row in correct_rows}
+         permuted_by_key = {row["task_key"]: row for row in permuted_rows}
+-        null_by_key = {row["task_key"]: row for row in null_rows}
+-        if set(correct_by_key) != set(permuted_by_key) or set(correct_by_key) != set(null_by_key):
+-            raise RuntimeError("causal per-task row keys do not align")
+-        wins = ties = losses = 0
+-        correct_only = 0
+-        for key, correct_row in correct_by_key.items():
+-            correct_value = float(correct_row[f"pass@{args.k}"])
+-            permuted_value = float(permuted_by_key[key][f"pass@{args.k}"])
+-            if correct_value > permuted_value:
+-                wins += 1
+-            elif correct_value < permuted_value:
+-                losses += 1
+-            else:
+-                ties += 1
+-            if correct_value > 0.0 and permuted_value == 0.0:
+-                correct_only += 1
++        correct_only = sum(
++            float(correct_by_key[key][f"pass@{args.k}"]) > 0.0
++            and float(permuted_by_key[key][f"pass@{args.k}"]) == 0.0
++            for key in correct_by_key
++        )
+         paired_causality = {
+-            "correct_above_permuted_tasks": wins,
+-            "equal_tasks": ties,
+-            "permuted_above_correct_tasks": losses,
+-            "correct_nonzero_permuted_zero_tasks": correct_only,
+-            "rows": len(correct_by_key),
++            "correct_above_permuted_tasks": permutation_comparison["left_above_right_tasks"],
++            "equal_tasks": permutation_comparison["equal_tasks"],
++            "permuted_above_correct_tasks": permutation_comparison["right_above_left_tasks"],
++            "effective_non_ties": permutation_comparison["effective_non_ties"],
++            "exact_one_sided_sign_p_value": permutation_comparison["exact_one_sided_sign_p_value"],
++            "correct_nonzero_permuted_zero_tasks": int(correct_only),
++            "rows": permutation_comparison["rows"],
+         }
+ 
+     improvement = None
+     baseline_source = None
++    deployment_comparison = None
+     if "deployment_baseline" in metrics:
+         assert deployment is not None
+-        improvement = deployment - 100.0 * metrics["deployment_baseline"]["pass_at_k"][k]
++        deployment_comparison = paired_task_comparison(
++            metrics["deployment"]["per_task"], metrics["deployment_baseline"]["per_task"],
++            metric=f"pass@{args.k}", iterations=args.bootstrap_iterations,
++            confidence=args.statistical_confidence, seed=bootstrap_seed + 3,
++        )
++        improvement = float(deployment_comparison["bootstrap"]["point_estimate_pp"])
+         baseline_source = "checkpoint"
++        statistical_tests["deployment_current_vs_baseline"] = deployment_comparison
+     elif args.baseline_pass_at_k >= 0.0:
+         if not 0.0 <= args.baseline_pass_at_k <= 1.0:
+             raise SystemExit("--baseline_pass_at_k must be in [0,1] or negative to disable")
+         assert deployment is not None
+-        improvement = deployment - 100.0 * args.baseline_pass_at_k
++        deployment_comparison = fixed_aggregate_baseline_comparison(
++            metrics["deployment"]["per_task"], metric=f"pass@{args.k}",
++            baseline=args.baseline_pass_at_k, iterations=args.bootstrap_iterations,
++            confidence=args.statistical_confidence, seed=bootstrap_seed + 3,
++        )
++        improvement = float(deployment_comparison["bootstrap"]["point_estimate_pp"])
+         baseline_source = "absolute"
++        statistical_tests["deployment_current_vs_fixed_aggregate"] = deployment_comparison
+ 
+     failures: list[str] = []
+     if args.run_causality_arm:
+         assert permutation_drop is not None and null_drop is not None and facts_drop is not None
+         if permutation_drop < args.min_causal_permutation_drop_pp:
+             failures.append(
+-                f"causal permutation drop {permutation_drop:.3f} pp < {args.min_causal_permutation_drop_pp:.3f} pp"
++                f"causal permutation drop {permutation_drop:.3f} pp < "
++                f"{args.min_causal_permutation_drop_pp:.3f} pp practical-effect floor"
+             )
+         if null_drop < args.min_causal_null_drop_pp:
+             failures.append(
+@@ -592,21 +855,64 @@
+             failures.append(
+                 f"FACTS permutation drop {facts_drop:.3f} pp < {args.min_facts_permutation_drop_pp:.3f} pp"
+             )
++        failures.extend(_paired_statistical_failures(
++            "causal correct-vs-permuted pass@k",
++            statistical_tests["causal_correct_vs_matched_permutation"],
++            minimum_effective_pairs=args.min_causal_effective_pairs,
++            maximum_p_value=args.max_sign_test_p_value,
++            minimum_lower_bound_pp=args.min_causal_permutation_ci_lower_pp,
++        ))
++        failures.extend(_paired_statistical_failures(
++            "causal correct-vs-null pass@k",
++            statistical_tests["causal_correct_vs_null"],
++            minimum_effective_pairs=args.min_causal_effective_pairs,
++            maximum_p_value=args.max_sign_test_p_value,
++            minimum_lower_bound_pp=args.min_causal_null_ci_lower_pp,
++        ))
++        if args.require_facts_statistics:
++            failures.extend(_paired_statistical_failures(
++                "FACTS correct-vs-permuted",
++                statistical_tests["facts_correct_vs_matched_permutation"],
++                minimum_effective_pairs=args.min_causal_effective_pairs,
++                maximum_p_value=args.max_sign_test_p_value,
++                minimum_lower_bound_pp=args.min_facts_permutation_ci_lower_pp,
++            ))
+         assert paired_causality is not None
+-        if paired_causality["correct_above_permuted_tasks"] < args.min_causal_task_losses:
++        if (args.min_causal_task_losses > 0 and
++                paired_causality["correct_above_permuted_tasks"] < args.min_causal_task_losses):
+             failures.append(
+                 f"only {paired_causality['correct_above_permuted_tasks']} tasks lost pass@k "
+-                f"under matched graph permutation; minimum is {args.min_causal_task_losses}"
+-            )
+-    if improvement is not None and improvement < args.min_deployment_improvement_pp:
+-        failures.append(
+-            f"deployment improvement {improvement:.3f} pp < {args.min_deployment_improvement_pp:.3f} pp"
+-        )
++                f"under matched graph permutation; deprecated extra minimum is "
++                f"{args.min_causal_task_losses}"
++            )
++
++    if improvement is not None:
++        if improvement < args.min_deployment_improvement_pp:
++            failures.append(
++                f"deployment improvement {improvement:.3f} pp < "
++                f"{args.min_deployment_improvement_pp:.3f} pp practical-effect floor"
++            )
++        assert deployment_comparison is not None
++        if baseline_source == "checkpoint":
++            failures.extend(_paired_statistical_failures(
++                "deployment current-vs-matched-baseline pass@k", deployment_comparison,
++                minimum_effective_pairs=args.min_deployment_effective_pairs,
++                maximum_p_value=args.max_sign_test_p_value,
++                minimum_lower_bound_pp=args.min_deployment_ci_lower_pp,
++            ))
++        else:
++            lower = float(deployment_comparison["bootstrap"]["one_sided_lower_pp"])
++            if lower <= args.min_deployment_ci_lower_pp:
++                failures.append(
++                    f"deployment-vs-fixed-baseline bootstrap lower bound {lower:.3f} pp "
++                    f"<= {args.min_deployment_ci_lower_pp:.3f} pp; baseline uncertainty is unavailable"
++                )
+ 
+     report = {
+-        "schema_version": 2,
++        "schema_version": 3,
+         "status": "passed" if not failures else "failed",
+         "dataset": str(args.dataset),
++        "held_out_rows": len(rows),
+         "checkpoint": str(args.checkpoint),
+         "baseline_checkpoint": str(args.baseline_checkpoint) if args.baseline_checkpoint else None,
+         "baseline_pass_at_k": args.baseline_pass_at_k if args.baseline_pass_at_k >= 0.0 else None,
+@@ -624,6 +930,21 @@
+             if args.run_causality_arm else None
+         ),
+         "metrics": metrics,
++        "statistical_tests": statistical_tests,
++        "statistical_configuration": {
++            "task_is_resampling_unit": True,
++            "bootstrap_iterations": args.bootstrap_iterations,
++            "bootstrap_seed": bootstrap_seed,
++            "confidence": args.statistical_confidence,
++            "one_sided_sign_test_alpha": args.max_sign_test_p_value,
++            "minimum_causal_effective_pairs": args.min_causal_effective_pairs,
++            "minimum_deployment_effective_pairs": args.min_deployment_effective_pairs,
++            "facts_statistics_required": bool(args.require_facts_statistics),
++            "note": (
++                "The task bootstrap addresses finite held-out-task uncertainty. "
++                "Multiple generation seeds are still recommended for final estimates."
++            ),
++        },
+         "gates_percentage_points": {
+             "causal_permutation_drop": permutation_drop,
+             "causal_null_drop": null_drop,
+@@ -631,11 +952,19 @@
+             "deployment_improvement": improvement,
+         },
+         "thresholds_percentage_points": {
+-            "causal_permutation_drop": args.min_causal_permutation_drop_pp,
+-            "causal_null_drop": args.min_causal_null_drop_pp,
+-            "facts_permutation_drop": args.min_facts_permutation_drop_pp,
+-            "causal_task_losses": args.min_causal_task_losses,
+-            "deployment_improvement": args.min_deployment_improvement_pp if improvement is not None else None,
++            "causal_permutation_observed_drop": args.min_causal_permutation_drop_pp,
++            "causal_permutation_bootstrap_lower": args.min_causal_permutation_ci_lower_pp,
++            "causal_null_observed_drop": args.min_causal_null_drop_pp,
++            "causal_null_bootstrap_lower": args.min_causal_null_ci_lower_pp,
++            "facts_permutation_observed_drop": args.min_facts_permutation_drop_pp,
++            "facts_permutation_bootstrap_lower": args.min_facts_permutation_ci_lower_pp,
++            "deprecated_causal_task_losses": args.min_causal_task_losses,
++            "deployment_observed_improvement": (
++                args.min_deployment_improvement_pp if improvement is not None else None
++            ),
++            "deployment_bootstrap_lower": (
++                args.min_deployment_ci_lower_pp if improvement is not None else None
++            ),
+         },
+         "failures": failures,
+     }
+--- a/scripts/evaluation/run_sweeps_antigravity.py
++++ b/scripts/evaluation/run_sweeps_antigravity.py
+@@ -293,6 +293,7 @@
+     prefix_gate_floor=None,
+     prefix_gate_floor_weight=None,
+     prompt_binary_evidence=None,
++    qwen_lora_targets=None,
+     qwen_prefix_tokens=None,
+     qwen_prefix_gate_init=None,
+     qwen_prefix_gate_mode=None,
+@@ -472,6 +473,8 @@
+         env['GRAPH_PROMPT_BINARY_EVIDENCE'] = '1' if prompt_binary_evidence else '0'
+     if sft_lr is not None:
+         env['GRAPH_LR'] = str(sft_lr)
++    if qwen_lora_targets is not None:
++        env['GRAPH_QWEN_LORA_TARGETS'] = str(qwen_lora_targets)
+     if qwen_prefix_tokens is not None:
+         env['GRAPH_QWEN_PREFIX_TOKENS'] = str(qwen_prefix_tokens)
+     if qwen_prefix_gate_init is not None:
+@@ -629,6 +632,7 @@
+     print(
+         f"Dynamic Batch Size: {batch_size} | Grad Accum: {grad_accum} | "
+         f"LoRA R: {env['GRAPH_LORA_R']} | Alpha: {env['GRAPH_LORA_ALPHA']} | "
++        f"Qwen LoRA targets: {env.get('GRAPH_QWEN_LORA_TARGETS', 'attention_mlp')} | "
+         f"Qwen prefix tokens: {env.get('GRAPH_QWEN_PREFIX_TOKENS', '16')} | "
+         f"Qwen gate init: {env.get('GRAPH_QWEN_PREFIX_GATE_INIT', '0.2')} | "
+         f"Qwen gate mode: {env.get('GRAPH_QWEN_PREFIX_GATE_MODE', 'scalar')} | "
+@@ -1106,6 +1110,7 @@
+             prefix_gate_floor=args.prefix_gate_floor,
+             prefix_gate_floor_weight=args.prefix_gate_floor_weight,
+             prompt_binary_evidence=args.prompt_binary_evidence,
++            qwen_lora_targets=args.qwen_lora_targets,
+             qwen_prefix_tokens=args.qwen_prefix_tokens,
+             qwen_prefix_gate_init=args.qwen_prefix_gate_init,
+             qwen_prefix_gate_mode=args.qwen_prefix_gate_mode,
+@@ -1280,7 +1285,7 @@
+     parser.add_argument('--grpo_sft_anchor_coef', type=float, default=None,
+                         help="CE coefficient from a separate --grpo_verified_anchor_file; ordinary RL references are never used")
+     parser.add_argument('--grpo_sft_anchor_on_no_signal', type=int, choices=[0, 1], default=None,
+-                        help="Use the verified-only anchor after dynamic resampling still has no variance; confirmatory v2 default is 0")
++                        help="Use the verified-only anchor after dynamic resampling still has no variance; confirmatory v2.1 default is 0")
+     parser.add_argument('--grpo_verified_anchor_file', default=None,
+                         help="Verified alternate-target JSONL used by GRPO_SFT_ANCHOR_COEF; plain references are rejected")
+     parser.add_argument('--grpo_dynamic_resample_attempts', type=int, default=None,
+@@ -1301,6 +1306,8 @@
+                         help="Penalty coefficient for a collapsed prefix gate; does not replace the dependence loss")
+     parser.add_argument('--prompt_binary_evidence', type=int, choices=[0, 1], default=None,
+                         help="Append deterministic instruction/call/branch/constant evidence extracted from assembly")
++    parser.add_argument('--qwen_lora_targets', choices=['attention', 'attention_mlp'], default=None,
++                        help="Qwen decoder LoRA targets. New runs default to attention_mlp; use attention only for historical checkpoint reproduction")
+     parser.add_argument('--qwen_prefix_tokens', type=int, default=None,
+                         help="Override GRAPH_QWEN_PREFIX_TOKENS. Default is 16; use 0 to disable the upgraded Qwen glue")
+     parser.add_argument('--qwen_prefix_gate_init', type=float, default=None,
+--- a/scripts/training/checkpoint_contract.py
++++ b/scripts/training/checkpoint_contract.py
+@@ -22,13 +22,16 @@
+     unexpected_keys: Sequence[str] = (),
+     context: str = "checkpoint",
+     allow_partial: bool | None = None,
++    allowed_absent_trainable_keys: Sequence[str] = (),
+ ) -> dict[str, Any]:
+     """Validate a trainable-only checkpoint after ``load_state_dict(strict=False)``.
+ 
+     Frozen base-model keys may be missing. Every parameter currently marked
+     trainable must, however, be present in the checkpoint, and every checkpoint
+-    tensor must be recognised by the instantiated architecture. The only escape
+-    hatch is the explicit research flag ``GRAPH_ALLOW_PARTIAL_CHECKPOINT=1``.
++    tensor must be recognised by the instantiated architecture. A caller may
++    explicitly allow a narrow set of newly introduced trainable tensors (for
++    example zero-output LoRA modules during a documented adapter expansion). The
++    only broad escape hatch is ``GRAPH_ALLOW_PARTIAL_CHECKPOINT=1``.
+     """
+     if allow_partial is None:
+         allow_partial = os.environ.get("GRAPH_ALLOW_PARTIAL_CHECKPOINT", "0") == "1"
+@@ -39,6 +42,9 @@
+         name for name, parameter in module.named_parameters() if parameter.requires_grad
+     }
+     absent_trainables = sorted(trainable_keys - checkpoint_keys)
++    allowed_absent_set = set(str(value) for value in allowed_absent_trainable_keys)
++    allowed_absent = sorted(set(absent_trainables) & allowed_absent_set)
++    unapproved_absent = sorted(set(absent_trainables) - allowed_absent_set)
+     missing = sorted(set(str(value) for value in missing_keys))
+     unexpected = sorted(set(str(value) for value in unexpected_keys))
+     recognised = checkpoint_keys & model_state_keys
+@@ -49,9 +55,10 @@
+         failures.append("checkpoint contains no tensors")
+     if not recognised:
+         failures.append("checkpoint has no keys recognised by the instantiated model")
+-    if absent_trainables:
++    if unapproved_absent:
+         failures.append(
+-            f"{len(absent_trainables)} current trainable tensors are absent from the checkpoint"
++            f"{len(unapproved_absent)} current trainable tensors are absent from the checkpoint "
++            "outside the explicitly allowed initialization set"
+         )
+     if unexpected:
+         failures.append(
+@@ -67,9 +74,13 @@
+         "load_missing_tensor_count": len(missing),
+         "missing_frozen_tensor_count": len(missing_frozen),
+         "absent_trainable_tensor_count": len(absent_trainables),
++        "allowed_absent_trainable_tensor_count": len(allowed_absent),
++        "unapproved_absent_trainable_tensor_count": len(unapproved_absent),
+         "unexpected_tensor_count": len(unexpected),
+         "missing_frozen_examples": missing_frozen[:16],
+         "absent_trainable_examples": absent_trainables[:16],
++        "allowed_absent_trainable_examples": allowed_absent[:16],
++        "unapproved_absent_trainable_examples": unapproved_absent[:16],
+         "unexpected_examples": unexpected[:16],
+         "allow_partial": bool(allow_partial),
+         "status": "passed" if not failures else ("overridden" if allow_partial else "failed"),
+@@ -77,8 +88,8 @@
+     }
+     if failures and not allow_partial:
+         details = []
+-        if absent_trainables:
+-            details.append("missing trainables: " + ", ".join(absent_trainables[:8]))
++        if unapproved_absent:
++            details.append("missing trainables: " + ", ".join(unapproved_absent[:8]))
+         if unexpected:
+             details.append("unexpected: " + ", ".join(unexpected[:8]))
+         suffix = ("; " + "; ".join(details)) if details else ""
+--- a/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py
++++ b/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py
+@@ -897,6 +897,100 @@
+     return requested
+ 
+ 
++QWEN_LORA_TARGET_MODES = {
++    "attention": ("q_proj", "k_proj", "v_proj", "o_proj"),
++    "attention_mlp": (
++        "q_proj", "k_proj", "v_proj", "o_proj",
++        "gate_proj", "up_proj", "down_proj",
++    ),
++}
++
++
++def decoder_lora_target_modules(
++    decoder_model_name: str,
++    *,
++    is_causal: bool,
++) -> list[str]:
++    """Resolve PEFT targets under an explicit, checkpointed architecture contract.
++
++    Qwen defaults to attention+MLP.  ``attention`` remains available only for
++    reproducing historical checkpoints.  Keeping this choice in GRAPH_* state
++    prevents a failed modality-alignment run from being confounded by an
++    accidentally attention-only read path.
++    """
++    if "codet5p-2b" in decoder_model_name.lower():
++        return ["qkv_proj", "q_attn", "out_proj", "fc_in", "fc_out"]
++    if is_causal:
++        mode = os.environ.get("GRAPH_QWEN_LORA_TARGETS", "attention_mlp").strip().lower()
++        aliases = {
++            "attn": "attention",
++            "attention-only": "attention",
++            "attention+mlp": "attention_mlp",
++            "attn_mlp": "attention_mlp",
++            "full": "attention_mlp",
++        }
++        mode = aliases.get(mode, mode)
++        if mode not in QWEN_LORA_TARGET_MODES:
++            raise ValueError(
++                f"Unknown GRAPH_QWEN_LORA_TARGETS={mode!r}; expected one of "
++                f"{sorted(QWEN_LORA_TARGET_MODES)}"
++            )
++        return list(QWEN_LORA_TARGET_MODES[mode])
++    # T5/seq2seq: attention + FFN projections.
++    return ["q", "k", "v", "o", "wi", "wo"]
++
++
++def qwen_lora_expansion_allowed_keys(
++    model: torch.nn.Module,
++    state_dict: dict[str, torch.Tensor],
++) -> list[str]:
++    """Allow only zero-output Qwen MLP LoRA tensors during an explicit migration.
++
++    Historical checkpoints used attention-only Qwen LoRA.  Stage 1 may expand
++    them to attention+MLP without changing the loaded policy because PEFT
++    initializes every new LoRA-B matrix to zero.  No other missing trainable is
++    tolerated, and DoRA expansion is intentionally excluded.
++    """
++    if os.environ.get("GRAPH_ALLOW_QWEN_LORA_EXPANSION", "0") != "1":
++        return []
++    if os.environ.get("GRAPH_DECODER_PEFT", "none").strip().lower() != "lora":
++        raise RuntimeError(
++            "GRAPH_ALLOW_QWEN_LORA_EXPANSION=1 supports decoder LoRA only, not DoRA/full FT"
++        )
++    mode = os.environ.get("GRAPH_QWEN_LORA_TARGETS", "attention_mlp").strip().lower()
++    if mode not in {"attention_mlp", "attention+mlp", "attn_mlp", "full"}:
++        raise RuntimeError(
++            "Qwen LoRA expansion requires GRAPH_QWEN_LORA_TARGETS=attention_mlp"
++        )
++    if not any("q_proj" in key and "lora_" in key for key in state_dict):
++        raise RuntimeError(
++            "Qwen LoRA expansion was requested, but the warm checkpoint does not contain "
++            "an attention LoRA adapter"
++        )
++    expansion_modules = ("gate_proj", "up_proj", "down_proj")
++    allowed: list[str] = []
++    for name, parameter in model.named_parameters():
++        if name in state_dict or not parameter.requires_grad:
++            continue
++        if any(module_name in name for module_name in expansion_modules) and (
++            "lora_A" in name or "lora_B" in name
++        ):
++            if "lora_B" in name and int(parameter.detach().count_nonzero().cpu()) != 0:
++                raise RuntimeError(
++                    f"new Qwen MLP LoRA-B tensor is not zero-initialized: {name}"
++                )
++            allowed.append(name)
++    if not allowed:
++        raise RuntimeError(
++            "Qwen LoRA expansion was requested, but no missing MLP LoRA tensors were found"
++        )
++    print(
++        "Expanding historical attention-only Qwen LoRA to attention+MLP: "
++        f"allowing {len(allowed)} zero-output adapter tensors to initialize"
++    )
++    return sorted(allowed)
++
++
+ class GraphCodeBERTT5Seq2Seq(torch.nn.Module):
+     def __init__(self):
+         super().__init__()
+@@ -1076,14 +1170,9 @@
+         # Apply PEFT/Freezing to Decoder
+         if decoder_peft in ["lora", "dora"]:
+             use_dora = (decoder_peft == "dora")
+-            if "codet5p-2b" in decoder_model_name.lower():
+-                target_modules = ["qkv_proj", "q_attn", "out_proj", "fc_in", "fc_out"]
+-            elif self.is_causal:
+-                target_modules = ["q_proj", "k_proj", "v_proj", "o_proj"]
+-            else:
+-                # T5/seq2seq: attend to all attention + FFN projections for a
+-                # stronger adapter (q/v only is the conservative minimum).
+-                target_modules = ["q", "k", "v", "o", "wi", "wo"]
++            target_modules = decoder_lora_target_modules(
++                decoder_model_name, is_causal=self.is_causal
++            )
+             lora_config = LoraConfig(
+                 r=lora_r,
+                 lora_alpha=lora_alpha,
+@@ -1098,7 +1187,10 @@
+                     use_gradient_checkpointing=self.gradient_checkpointing,
+                 )
+             self.t5_model = get_peft_model(self.t5_model, lora_config)
+-            print(f"Applied PEFT {decoder_peft.upper()} (r={lora_r}, alpha={lora_alpha}) to Decoder")
++            print(
++                f"Applied PEFT {decoder_peft.upper()} (r={lora_r}, alpha={lora_alpha}) "
++                f"to Decoder targets={target_modules}"
++            )
+         elif freeze_decoder:
+             for param in self.t5_model.parameters():
+                 param.requires_grad = False
+@@ -1965,12 +2057,14 @@
+         print(f"Loading checkpoint from: {checkpoint}")
+         state_dict = torch.load(checkpoint, map_location="cpu")
+         missing, unexpected = model.load_state_dict(state_dict, strict=False)
++        allowed_expansion_keys = qwen_lora_expansion_allowed_keys(model, state_dict)
+         checkpoint_load_report = validate_trainable_checkpoint_load(
+             model,
+             state_dict,
+             missing_keys=missing,
+             unexpected_keys=unexpected,
+             context="SFT warm-start checkpoint",
++            allowed_absent_trainable_keys=allowed_expansion_keys,
+         )
+         print(
+             "Loaded checkpoint under a validated architecture contract: "
+--- a/scripts/training/run_hybrid_curriculum_antigravity.py
++++ b/scripts/training/run_hybrid_curriculum_antigravity.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Run the fail-closed hybrid decompiler curriculum (v2).
++"""Run the fail-closed hybrid decompiler curriculum (v2.1).
+ 
+ The ordering is deliberate:
+ 
+@@ -33,7 +33,7 @@
+ from pathlib import Path
+ from typing import Any
+ 
+-SCHEMA_VERSION = 2
++SCHEMA_VERSION = 3
+ 
+ 
+ # Only architecture/representation settings are imported from checkpoint
+@@ -44,7 +44,7 @@
+     "GRAPH_ENCODER_REVISION", "GRAPH_DECODER_REVISION",
+     "GRAPH_ENCODER_PEFT", "GRAPH_DECODER_PEFT",
+     "GRAPH_FREEZE_ENCODER", "GRAPH_FREEZE_DECODER",
+-    "GRAPH_LORA_R", "GRAPH_LORA_ALPHA",
++    "GRAPH_LORA_R", "GRAPH_LORA_ALPHA", "GRAPH_QWEN_LORA_TARGETS",
+     "GRAPH_ATTN_IMPLEMENTATION",
+     "GRAPH_DFG_MODE", "GRAPH_EDGE_ABLATION", "GRAPH_ADD_REVERSE_EDGES",
+     "GRAPH_MAX_DATAFLOW_EDGES", "GRAPH_GNN_ABLATION", "GRAPH_GNN_LAYERS",
+@@ -132,6 +132,19 @@
+         }
+         if not filtered:
+             raise ValueError(f"{candidate} contains no recognised architecture settings")
++        # Before v2.1 Qwen adapters were unconditionally attention-only and the
++        # target set was not recorded. This legacy value is deterministic, not
++        # guessed; Stage 1 may then perform an explicit zero-output MLP expansion.
++        if (
++            "GRAPH_QWEN_LORA_TARGETS" not in filtered
++            and "qwen" in filtered.get("GRAPH_DECODER_MODEL", "").lower()
++            and filtered.get("GRAPH_DECODER_PEFT", "none").lower() in {"lora", "dora"}
++        ):
++            filtered["GRAPH_QWEN_LORA_TARGETS"] = "attention"
++            print(
++                f"Architecture provenance {candidate} predates Qwen LoRA target tracking; "
++                "binding it to the historical attention-only target set."
++            )
+         return filtered, candidate
+     return {}, None
+ 
+@@ -234,6 +247,10 @@
+         self.architecture_env = architecture_env
+         self.architecture_env_source = architecture_source
+         self.base_env.update(architecture_env)
++        self.warm_qwen_lora_targets = architecture_env.get(
++            "GRAPH_QWEN_LORA_TARGETS", args.qwen_lora_targets
++        )
++        self.target_qwen_lora_targets = args.qwen_lora_targets
+ 
+         # CLI values are explicit overrides; otherwise resolve from checkpoint
+         # provenance, then the current environment, then stable model defaults.
+@@ -279,10 +296,51 @@
+                     "research-only escape hatch."
+                 )
+             missing_contract = sorted(ESSENTIAL_WARM_START_KEYS - set(architecture_env))
++            decoder_is_qwen = "qwen" in str(args.decoder_model).lower()
++            decoder_peft = str(
++                architecture_env.get(
++                    "GRAPH_DECODER_PEFT",
++                    self.base_env.get("GRAPH_DECODER_PEFT", "none"),
++                )
++            ).strip().lower()
++            if (
++                decoder_is_qwen
++                and decoder_peft in {"lora", "dora"}
++                and "GRAPH_QWEN_LORA_TARGETS" not in architecture_env
++            ):
++                missing_contract.append("GRAPH_QWEN_LORA_TARGETS")
+             if missing_contract:
+                 raise SystemExit(
+                     f"architecture provenance {architecture_source} is incomplete; missing: "
+-                    + ", ".join(missing_contract)
++                    + ", ".join(sorted(set(missing_contract)))
++                )
++
++        qwen_lora_contract_active = (
++            "qwen" in str(args.decoder_model).lower()
++            and str(
++                architecture_env.get(
++                    "GRAPH_DECODER_PEFT",
++                    self.base_env.get("GRAPH_DECODER_PEFT", "none"),
++                )
++            ).strip().lower() in {"lora", "dora"}
++        )
++        if (
++            qwen_lora_contract_active
++            and self.warm_qwen_lora_targets != self.target_qwen_lora_targets
++        ):
++            supported_expansion = (
++                self.warm_qwen_lora_targets == "attention"
++                and self.target_qwen_lora_targets == "attention_mlp"
++                and bool(args.initial_checkpoint)
++                and not bool(args.stage1_checkpoint)
++            )
++            if not supported_expansion and not args.dry_run:
++                raise SystemExit(
++                    "Qwen LoRA target architecture mismatch: warm checkpoint uses "
++                    f"{self.warm_qwen_lora_targets!r}, requested pipeline uses "
++                    f"{self.target_qwen_lora_targets!r}. Only an attention -> "
++                    "attention_mlp expansion during a newly trained Stage 1 is supported. "
++                    "Supply the old checkpoint as --initial_checkpoint, not --stage1_checkpoint."
+                 )
+ 
+         self.base_env["PYTHONPATH"] = str(self.root) + os.pathsep + self.base_env.get("PYTHONPATH", "")
+@@ -291,6 +349,7 @@
+         self.base_env["GRAPH_DECODER_REVISION"] = args.decoder_revision
+         self.base_env["GRAPH_ENCODER_REVISION"] = args.encoder_revision
+         self.base_env["GRAPH_DECODER_PROMPT_MAX_LENGTH"] = str(args.decoder_prompt_max_length)
++        self.base_env["GRAPH_QWEN_LORA_TARGETS"] = self.target_qwen_lora_targets
+         self.base_env["GRAPH_SEED"] = str(args.seed)
+         self.base_env.setdefault("GRAPH_QUIET", "1")
+         self.base_env.setdefault("TOKENIZERS_PARALLELISM", "false")
+@@ -314,7 +373,7 @@
+         missing = [str(path) for path in required if not path.is_file()]
+         if missing:
+             raise FileNotFoundError(
+-                "Overlay the v2 patch into the project root first. Missing:\n  "
++                "Overlay the v2.1 patch into the project root first. Missing:\n  "
+                 + "\n  ".join(missing)
+             )
+         code_digest = hashlib.sha256()
+@@ -408,6 +467,7 @@
+         dependence_every: int,
+         learning_rate: float,
+         epochs: float,
++        allow_qwen_lora_expansion: bool = False,
+     ) -> Path:
+         env = {
+             "GRAPH_TRAIN_FILE": str(train_file),
+@@ -434,7 +494,10 @@
+             "GRAPH_GRAD_ACCUM": str(self.args.sft_grad_accum),
+             "GRAPH_LOAD_4BIT": str(int(self.args.load_4bit)),
+             "GRAPH_MAX_STEPS": str(self.args.max_steps),
++            "GRAPH_QWEN_LORA_TARGETS": self.target_qwen_lora_targets,
+         }
++        if allow_qwen_lora_expansion:
++            env["GRAPH_ALLOW_QWEN_LORA_EXPANSION"] = "1"
+         if checkpoint is not None:
+             env["GRAPH_CHECKPOINT"] = str(checkpoint)
+         target = checkpoint_path(output_dir)
+@@ -481,6 +544,18 @@
+             "--causality_prompt_mode", "graph_only",
+             "--performance_prompt_mode", performance_prompt_mode,
+             "--run_deployment_arm" if run_deployment_arm else "--no-run_deployment_arm",
++            "--min_rows", str(self.args.min_gate_rows),
++            "--bootstrap_iterations", str(self.args.gate_bootstrap_iterations),
++            "--bootstrap_seed", str(self.args.seed),
++            "--statistical_confidence", str(self.args.gate_statistical_confidence),
++            "--max_sign_test_p_value", str(self.args.gate_max_sign_test_p_value),
++            "--min_causal_effective_pairs", str(self.args.gate_min_causal_effective_pairs),
++            "--min_deployment_effective_pairs", str(self.args.gate_min_deployment_effective_pairs),
++            "--min_causal_permutation_ci_lower_pp", str(self.args.gate_min_permutation_ci_lower_pp),
++            "--min_causal_null_ci_lower_pp", str(self.args.gate_min_null_ci_lower_pp),
++            "--min_facts_permutation_ci_lower_pp", str(self.args.gate_min_facts_ci_lower_pp),
++            "--min_deployment_ci_lower_pp", str(self.args.gate_min_deployment_ci_lower_pp),
++            "--require_facts_statistics" if self.args.gate_require_facts_statistics else "--no-require_facts_statistics",
+             "--min_causal_permutation_drop_pp", str(min_permutation_drop_pp),
+             "--min_facts_permutation_drop_pp", str(min_facts_drop_pp),
+             "--min_causal_task_losses", str(self.args.gate_min_causal_task_losses),
+@@ -513,6 +588,8 @@
+                 "source": file_record(self.architecture_env_source, required=False)
+                 if self.architecture_env_source else None,
+                 "environment": self.architecture_env,
++                "warm_qwen_lora_targets": self.warm_qwen_lora_targets,
++                "pipeline_qwen_lora_targets": self.target_qwen_lora_targets,
+                 "allow_unpinned": bool(self.args.allow_unpinned_architecture),
+             },
+             "history": self.history,
+@@ -687,6 +764,7 @@
+                     "--min_prefix_mean_lift", str(args.probe_min_prefix_mean_lift),
+                     "--min_retrieval_above_chance", str(args.probe_min_retrieval_above_chance),
+                 ],
++                {"GRAPH_QWEN_LORA_TARGETS": self.warm_qwen_lora_targets},
+                 expected=probe_report,
+             )
+         else:
+@@ -709,6 +787,11 @@
+                 dependence_every=args.stage1_dependence_every,
+                 learning_rate=args.stage1_lr,
+                 epochs=args.stage1_epochs,
++                allow_qwen_lora_expansion=(
++                    initial_checkpoint is not None
++                    and self.warm_qwen_lora_targets == "attention"
++                    and self.target_qwen_lora_targets == "attention_mlp"
++                ),
+             )
+ 
+         stage1_gate_dir = self.output / "02a_graph_only_functional_gate"
+@@ -1113,6 +1196,11 @@
+     parser.add_argument("--python", default="")
+     parser.add_argument("--seed", type=int, default=42)
+     parser.add_argument("--load_4bit", type=int, choices=[0, 1], default=0)
++    parser.add_argument(
++        "--qwen_lora_targets", choices=["attention", "attention_mlp"],
++        default="attention_mlp",
++        help="Qwen decoder LoRA target set. New modality-alignment runs default to attention+MLP.",
++    )
+     parser.add_argument("--max_steps", type=int, default=-1)
+ 
+     parser.add_argument("--data_role", choices=["train", "development", "dev"], default="train")
+@@ -1122,7 +1210,7 @@
+     parser.add_argument("--max_train_instructions", type=int, default=150)
+     parser.add_argument("--max_bridge_instructions", type=int, default=199)
+     parser.add_argument("--min_short_rows", type=int, default=64)
+-    parser.add_argument("--min_gate_rows", type=int, default=32)
++    parser.add_argument("--min_gate_rows", type=int, default=96)
+     parser.add_argument("--test_timeout", type=int, default=20)
+     parser.add_argument("--verifier_workers", type=int, default=max(1, min(16, (os.cpu_count() or 4) - 1)))
+ 
+@@ -1150,15 +1238,42 @@
+         "--decoder_prompt_max_length", type=int, default=0,
+         help="0 inherits GRAPH_DECODER_PROMPT_MAX_LENGTH from architecture provenance (else 768).",
+     )
+-    parser.add_argument("--stage1_min_permutation_drop_pp", type=float, default=1.0)
++    parser.add_argument(
++        "--stage1_min_permutation_drop_pp", type=float, default=0.0,
++        help=(
++            "Optional pre-registered practical-effect floor for graph permutation. "
++            "Default 0 relies on the exact paired test and bootstrap lower bound; "
++            "set a positive value only from an external repeatability/noise study."
++        ),
++    )
+     parser.add_argument("--stage1_min_facts_drop_pp", type=float, default=0.0)
+-    parser.add_argument("--stage2_min_permutation_drop_pp", type=float, default=1.0)
++    parser.add_argument(
++        "--stage2_min_permutation_drop_pp", type=float, default=0.0,
++        help=(
++            "Optional pre-registered Stage-2 graph-causality effect floor. "
++            "The exact paired test and bootstrap lower bound remain mandatory."
++        ),
++    )
+     parser.add_argument("--stage2_min_facts_drop_pp", type=float, default=0.0)
++    parser.add_argument("--gate_bootstrap_iterations", type=int, default=10000)
++    parser.add_argument("--gate_statistical_confidence", type=float, default=0.95)
++    parser.add_argument("--gate_max_sign_test_p_value", type=float, default=0.05)
++    parser.add_argument("--gate_min_causal_effective_pairs", type=int, default=8)
++    parser.add_argument("--gate_min_deployment_effective_pairs", type=int, default=8)
++    parser.add_argument("--gate_min_permutation_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--gate_min_null_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--gate_min_facts_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument("--gate_min_deployment_ci_lower_pp", type=float, default=0.0)
++    parser.add_argument(
++        "--gate_require_facts_statistics",
++        action=argparse.BooleanOptionalAction,
++        default=False,
++    )
+     parser.add_argument(
+         "--gate_min_causal_task_losses",
+         type=int,
+-        default=1,
+-        help="Minimum held-out tasks whose pass@k decreases under matched graph permutation.",
++        default=0,
++        help="Deprecated extra count floor; exact sign test and paired bootstrap are authoritative.",
+     )
+     parser.add_argument("--rs_sft_min_improvement_pp", type=float, default=6.0)
+     parser.add_argument("--final_min_improvement_pp", type=float, default=0.0)
+@@ -1232,6 +1347,8 @@
+         "max_train_instructions", "max_bridge_instructions", "min_short_rows", "min_dev_rows", "min_gate_rows", "test_timeout",
+         "verifier_workers", "probe_max_rows", "probe_min_rows", "stage1_dependence_every",
+         "prefix_negative_bank_size", "sft_batch_size", "sft_grad_accum", "gate_num_samples",
++        "gate_bootstrap_iterations", "gate_min_causal_effective_pairs",
++        "gate_min_deployment_effective_pairs",
+         "gate_k", "gate_generation_batch_size", "gate_max_new_tokens", "rollout_samples",
+         "rollout_generation_batch_size", "rollout_max_new_tokens", "teacher_concurrency",
+         "min_verified_rows", "min_verified_unique_tasks", "min_verified_length_bins",
+@@ -1247,6 +1364,12 @@
+         parser.error("--dev_fraction must be strictly between 0 and 1")
+     if args.gate_k > args.gate_num_samples:
+         parser.error("--gate_k cannot exceed --gate_num_samples")
++    if args.gate_bootstrap_iterations < 100:
++        parser.error("--gate_bootstrap_iterations must be at least 100")
++    if not 0.5 < args.gate_statistical_confidence < 1.0:
++        parser.error("--gate_statistical_confidence must be in (0.5,1)")
++    if not 0.0 < args.gate_max_sign_test_p_value < 1.0:
++        parser.error("--gate_max_sign_test_p_value must be in (0,1)")
+     if not 0.0 < args.feedback_fraction < 1.0:
+         parser.error("--feedback_fraction must be in (0,1)")
+     if args.stage1_dependence_weight < 0.0 or args.grpo_sft_anchor_coef < 0.0:
+--- a/tests/test_hybrid_patch.py
++++ b/tests/test_hybrid_patch.py
+@@ -1028,6 +1028,10 @@
+             self.assertIn("--causality_prompt_mode", gate["command"])
+             self.assertIn("--min_causal_permutation_drop_pp", gate["command"])
+             self.assertIn("--min_causal_task_losses", gate["command"])
++            self.assertIn("--bootstrap_iterations", gate["command"])
++            self.assertIn("--max_sign_test_p_value", gate["command"])
++            self.assertIn("--min_causal_effective_pairs", gate["command"])
++            self.assertIn("--min_rows", gate["command"])
+ 
+             kill_switch = next(
+                 item for item in manifest["history"]
+@@ -1249,6 +1253,7 @@
+             self.assertEqual(source, provenance.resolve())
+             self.assertEqual(environment["GRAPH_LORA_R"], "64")
+             self.assertEqual(environment["GRAPH_QWEN_PREFIX_TOKENS"], "64")
++            self.assertEqual(environment["GRAPH_QWEN_LORA_TARGETS"], "attention")
+             self.assertEqual(environment["GRAPH_DECODER_PROMPT_MAX_LENGTH"], "2048")
+             self.assertNotIn("GRAPH_OUTPUT_DIR", environment)
+             self.assertNotIn("GRAPH_TRAIN_FILE", environment)
+@@ -1262,6 +1267,209 @@
+         self.assertIn("scripts/training/checkpoint_contract.py", installer)
+ 
+ 
++    def test_statistical_gate_rejects_one_task_noise_and_accepts_consistent_effect(self):
++        module = load_module(FUNCTIONAL_GATE, "functional_gate_statistics_test")
++        self.assertAlmostEqual(module.exact_one_sided_sign_p_value(1, 0), 0.5)
++        self.assertAlmostEqual(module.exact_one_sided_sign_p_value(5, 0), 0.03125)
++
++        noisy_left = [
++            {"task_key": f"t{index}", "pass@10": 1.0 if index == 0 else 0.0}
++            for index in range(96)
++        ]
++        noisy_right = [
++            {"task_key": f"t{index}", "pass@10": 0.0}
++            for index in range(96)
++        ]
++        noisy = module.paired_task_comparison(
++            noisy_left,
++            noisy_right,
++            metric="pass@10",
++            iterations=2000,
++            confidence=0.95,
++            seed=42,
++        )
++        failures = module._paired_statistical_failures(
++            "one-task effect",
++            noisy,
++            minimum_effective_pairs=8,
++            maximum_p_value=0.05,
++            minimum_lower_bound_pp=0.0,
++        )
++        self.assertTrue(any("only 1" in failure for failure in failures))
++        self.assertTrue(any("p=0.5" in failure for failure in failures))
++
++        strong_left = [
++            {"task_key": f"t{index}", "pass@10": 1.0 if index < 8 else 0.0}
++            for index in range(96)
++        ]
++        strong = module.paired_task_comparison(
++            strong_left,
++            noisy_right,
++            metric="pass@10",
++            iterations=2000,
++            confidence=0.95,
++            seed=42,
++        )
++        self.assertLess(strong["exact_one_sided_sign_p_value"], 0.05)
++        self.assertGreater(strong["bootstrap"]["one_sided_lower_pp"], 0.0)
++        self.assertEqual(
++            module._paired_statistical_failures(
++                "consistent effect",
++                strong,
++                minimum_effective_pairs=8,
++                maximum_p_value=0.05,
++                minimum_lower_bound_pp=0.0,
++            ),
++            [],
++        )
++
++    def test_qwen_lora_defaults_to_attention_plus_mlp(self):
++        source = SFT.read_text(encoding="utf-8")
++        tree = ast.parse(source)
++        wanted = {"decoder_lora_target_modules"}
++        nodes = [
++            node for node in tree.body
++            if isinstance(node, ast.FunctionDef) and node.name in wanted
++        ]
++        assignments = [
++            node for node in tree.body
++            if isinstance(node, ast.Assign)
++            and any(isinstance(target, ast.Name) and target.id == "QWEN_LORA_TARGET_MODES" for target in node.targets)
++        ]
++        module_ast = ast.Module(body=assignments + nodes, type_ignores=[])
++        ast.fix_missing_locations(module_ast)
++        namespace = {"os": os}
++        exec(compile(module_ast, str(SFT), "exec"), namespace)
++        previous = os.environ.pop("GRAPH_QWEN_LORA_TARGETS", None)
++        try:
++            defaults = namespace["decoder_lora_target_modules"](
++                "Qwen/Qwen3-8B", is_causal=True
++            )
++            self.assertEqual(
++                defaults,
++                ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
++            )
++            os.environ["GRAPH_QWEN_LORA_TARGETS"] = "attention"
++            historical = namespace["decoder_lora_target_modules"](
++                "Qwen/Qwen3-8B", is_causal=True
++            )
++            self.assertEqual(historical, ["q_proj", "k_proj", "v_proj", "o_proj"])
++        finally:
++            if previous is None:
++                os.environ.pop("GRAPH_QWEN_LORA_TARGETS", None)
++            else:
++                os.environ["GRAPH_QWEN_LORA_TARGETS"] = previous
++
++    def test_checkpoint_contract_allows_only_explicit_new_trainables(self):
++        import torch
++
++        module = torch.nn.Module()
++        module.register_parameter("existing", torch.nn.Parameter(torch.ones(1)))
++        module.register_parameter("new_adapter", torch.nn.Parameter(torch.zeros(1)))
++        contract = load_module(CHECKPOINT_CONTRACT, "checkpoint_contract_expansion_test")
++        state = {"existing": torch.ones(1)}
++        missing, unexpected = module.load_state_dict(state, strict=False)
++        report = contract.validate_trainable_checkpoint_load(
++            module,
++            state,
++            missing_keys=missing,
++            unexpected_keys=unexpected,
++            allowed_absent_trainable_keys=["new_adapter"],
++            context="documented adapter expansion",
++        )
++        self.assertEqual(report["status"], "passed")
++        self.assertEqual(report["allowed_absent_trainable_tensor_count"], 1)
++        self.assertEqual(report["unapproved_absent_trainable_tensor_count"], 0)
++        with self.assertRaises(RuntimeError):
++            contract.validate_trainable_checkpoint_load(
++                module,
++                state,
++                missing_keys=missing,
++                unexpected_keys=unexpected,
++                context="undeclared adapter expansion",
++            )
++
++
++
++    def test_qwen_attention_checkpoint_expansion_is_zero_output_and_explicit(self):
++        import torch
++
++        source = SFT.read_text(encoding="utf-8")
++        tree = ast.parse(source)
++        nodes = [
++            node for node in tree.body
++            if isinstance(node, ast.FunctionDef)
++            and node.name == "qwen_lora_expansion_allowed_keys"
++        ]
++        module_ast = ast.Module(body=nodes, type_ignores=[])
++        ast.fix_missing_locations(module_ast)
++        namespace = {"os": os, "torch": torch}
++        exec(compile(module_ast, str(SFT), "exec"), namespace)
++
++        class LoraProjection(torch.nn.Module):
++            def __init__(self):
++                super().__init__()
++                self.lora_A = torch.nn.ModuleDict({
++                    "default": torch.nn.Linear(2, 1, bias=False)
++                })
++                self.lora_B = torch.nn.ModuleDict({
++                    "default": torch.nn.Linear(1, 2, bias=False)
++                })
++                torch.nn.init.zeros_(self.lora_B["default"].weight)
++
++        class DummyModel(torch.nn.Module):
++            def __init__(self):
++                super().__init__()
++                self.gate_proj = LoraProjection()
++                self.up_proj = LoraProjection()
++                self.down_proj = LoraProjection()
++
++        model = DummyModel()
++        warm_state = {
++            "decoder.layers.0.q_proj.lora_A.default.weight": torch.ones(1, 2),
++            "decoder.layers.0.q_proj.lora_B.default.weight": torch.zeros(2, 1),
++        }
++        previous = {
++            key: os.environ.get(key)
++            for key in (
++                "GRAPH_ALLOW_QWEN_LORA_EXPANSION",
++                "GRAPH_DECODER_PEFT",
++                "GRAPH_QWEN_LORA_TARGETS",
++            )
++        }
++        try:
++            os.environ["GRAPH_ALLOW_QWEN_LORA_EXPANSION"] = "1"
++            os.environ["GRAPH_DECODER_PEFT"] = "lora"
++            os.environ["GRAPH_QWEN_LORA_TARGETS"] = "attention_mlp"
++            allowed = namespace["qwen_lora_expansion_allowed_keys"](
++                model, warm_state
++            )
++            self.assertEqual(len(allowed), 6)
++            self.assertTrue(all("lora_" in key for key in allowed))
++            self.assertTrue(all(
++                any(module in key for module in ("gate_proj", "up_proj", "down_proj"))
++                for key in allowed
++            ))
++
++            with torch.no_grad():
++                model.gate_proj.lora_B["default"].weight.fill_(1.0)
++            with self.assertRaisesRegex(RuntimeError, "not zero-initialized"):
++                namespace["qwen_lora_expansion_allowed_keys"](model, warm_state)
++        finally:
++            for key, value in previous.items():
++                if value is None:
++                    os.environ.pop(key, None)
++                else:
++                    os.environ[key] = value
++
++    def test_qwen_lora_target_contract_is_not_required_for_non_qwen_models(self):
++        runner = load_module(RUNNER, "hybrid_runner_non_qwen_contract_test")
++        self.assertNotIn(
++            "GRAPH_QWEN_LORA_TARGETS", runner.ESSENTIAL_WARM_START_KEYS
++        )
++
++
++
+ 
+ if __name__ == "__main__":
+     unittest.main(verbosity=2)
+--- /dev/null
++++ b/CHANGELOG_V2_1.md
+@@ -0,0 +1,67 @@
++# Hybrid Training Patch v2.1 Changelog
++
++v2.1 addresses the two remaining load-bearing findings in the second external audit of v2.
++
++## 1. Statistical functional gates
++
++The v2 correct/permuted/null generation design is retained, but raw point-estimate gates are no longer sufficient.
++
++The causal graph gate and matched-control RS-SFT gate now report and enforce:
++
++- a minimum of 96 held-out tasks by default;
++- at least eight discordant/effective task pairs;
++- an exact one-sided paired sign test with `p <= 0.05`;
++- exact McNemar terminology when the per-task metric is binary, as it is for the default pass@10 with ten samples;
++- a 10,000-replicate task-paired bootstrap;
++- a one-sided 95% lower confidence bound strictly above zero;
++- a separately configurable pre-registered practical-effect floor.
++
++The former default `1.0 pp` graph-permutation floor is now `0.0 pp`. This avoids inventing a noise threshold. A positive floor can still be supplied, but should be fixed from an external repeatability/noise study before inspecting the new checkpoint.
++
++The RS-SFT gate keeps its pre-registered `+6 pp` matched-control effect requirement and now also requires the paired exact test, bootstrap confidence bound, task-count floor, and discordant-pair floor. A scalar historical baseline remains supported but is explicitly reported as weaker because it cannot carry task pairing or baseline uncertainty.
++
++The bootstrap resamples held-out tasks. It does not claim to replace multi-seed generation replication for final paper estimates.
++
++## 2. Qwen attention+MLP LoRA
++
++New Qwen runs now target:
++
++```text
++q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj
++```
++
++The target set is recorded as the architecture field:
++
++```text
++GRAPH_QWEN_LORA_TARGETS=attention_mlp
++```
++
++`attention` remains available only for reproducing historical checkpoints.
++
++### Historical Regions16/checkpoint migration
++
++Old Qwen provenance did not record the target set because the implementation was unconditionally attention-only. v2.1 deterministically binds such provenance to `attention`.
++
++A historical attention-only checkpoint can be supplied as `--initial_checkpoint` for a newly trained Stage 1. The loader may then permit only the newly introduced `gate_proj`, `up_proj`, and `down_proj` LoRA A/B tensors to be absent. Every new LoRA-B tensor must be exactly zero before loading is accepted, preserving the original policy at initialization. Any unrelated missing trainable tensor still aborts.
++
++Supplying an old attention-only checkpoint directly as `--stage1_checkpoint` is rejected because no Stage-1 training would occur to learn the new MLP adapters.
++
++DoRA expansion is intentionally not supported by this migration path.
++
++## 3. Tests and contracts
++
++New regression tests verify that:
++
++- a one-task pass@10 flip on 96 tasks cannot pass the statistical gate;
++- a consistent paired effect can pass the exact-test and bootstrap controls;
++- Qwen defaults to attention+MLP targets;
++- historical `attention` mode remains reproducible;
++- the attention-to-attention+MLP migration accepts only zero-output MLP LoRA additions;
++- undeclared trainable-checkpoint expansion still fails;
++- non-Qwen architectures are not forced to provide a Qwen-specific target contract.
++
++The packaged CPU-only suite contains 31 tests.
++
++## Scope unchanged
++
++v2.1 does not claim that SFT/RL redesign solves the `>=200`-instruction or approximately `>=1000`-character one-shot collapse. Long functions remain routed to a separate bridge/long-function research track.
+--- a/VALIDATION_REPORT.md
++++ b/VALIDATION_REPORT.md
+@@ -1,69 +1,65 @@
+-# Validation report — hybrid decompiler training patch v2
++# Validation Report — Hybrid Training Patch v2.1
+ 
+-Validated in the artifact environment on **2026-07-16** with Python 3.13.5 and
+-CPU PyTorch 2.10.0.
++## Static validation
+ 
+-## Passed checks
++- All packaged Python sources parse and compile.
++- The installer parses every overlay Python file before copying it.
++- The patch introduces no SciPy dependency; exact binomial tails and paired bootstrap calculations use the Python standard library.
+ 
+-- `python -m compileall -q -f .`
+-- `PYTHONPATH=. python -m unittest discover -s tests -v`
+-- **26/26 tests passed**.
+-- The five preflight/orchestration CLIs parse and expose `--help` without loading
+-  the full model stack.
+-- The installer was executed against a synthetic Antigravity checkout containing
+-  all declared project prerequisites.
+-- The installer copied **15/15 overlay files**, verified SHA-256 after every
+-  copy, preserved a pre-existing target under `.hybrid_patch_backups`, and an
+-  idempotent dry run reported all 15 targets unchanged.
+-- Final packaging removes Python bytecode/cache directories, writes a SHA-256
+-  manifest, validates every archived file against the manifest, and runs
+-  `unzip -t` plus `zip -T`.
++## Regression tests
+ 
+-## Behavior covered by tests
++Command:
+ 
+-1. Parsing of every packaged Python source.
+-2. Typed `fn0` neutralization of source, tests, assembly symbols, and CFG
+-   instructions while preserving literals.
+-3. Exact-neutral and identifier-alpha-normalized frozen-evaluation overlap
+-   fingerprints, including alpha-renamed benchmark copies.
+-4. Deterministic feedback/hidden-acceptance partitioning.
+-5. Full Phase-0 reference replay and short/bridge/long routing.
+-6. Oracle-value redaction from teacher diagnostics and omission of test source
+-   from teacher prompts and Batch requests.
+-7. Semantic assembly FACTS extraction that excludes runtime-layout offsets.
+-8. Typed return/arity and complete teacher FACTS-claim validation.
+-9. Independent feedback, hidden-acceptance, full-harness, and FACTS replay for
+-   accepted model/teacher candidates.
+-10. Strict verified-only provenance for RS-SFT and GRPO anchors.
+-11. Exact 50/50 gold/verified construction, full gold coverage, bounded
+-    verified oversampling, and matched-size gold-only control construction.
+-12. Guarding the full-text Stage-2 path against a nonzero wrong-graph
+-    dependence objective.
+-13. Correct/matched-permuted/null free-running gate wiring, one-to-one graph
+-    derangement, donor assembly swapping, prompt-hash equality, and exact
+-    candidate coverage.
+-14. Paired task-level graph-causality loss checks.
+-15. Rollout provenance binding of dataset, checkpoint, output, and candidate
+-    cardinality before teacher collection.
+-16. Architecture-provenance allowlisting and trainable-checkpoint contract
+-    validation in SFT, inference, representation probe, and GRPO entry points.
+-17. Separate verified-only GRPO anchoring, facts-first target consistency, and
+-    bounded dynamic resampling for no-signal groups.
+-18. Fail-closed curriculum ordering, pre-GPU audits, Stage-2 dependence disabled,
+-    and automatic matched-step/matched-modality RS-SFT control.
++```bash
++PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
++```
++
++Result:
++
++```text
++Ran 31 tests
++OK
++```
++
++The new Critique-2 tests cover:
++
++- exact one-sided paired-test calculations;
++- rejection of a one-task/noise-level gate result;
++- acceptance of a consistent task-paired effect;
++- Qwen attention+MLP target resolution;
++- historical attention-only reproduction;
++- zero-output attention-to-MLP LoRA migration;
++- explicit allowed-missing checkpoint keys;
++- rejection of undeclared missing trainables;
++- non-Qwen architecture compatibility.
++
++The original v2 tests for Phase-0 overlap blocking, neutral contracts, hidden test replay, diagnostic redaction, 50/50 RS-SFT mixing, functional graph ablations, checkpoint provenance, verified-only RL anchoring, and orchestration ordering continue to pass.
++
++## Statistical implementation boundary
++
++The functional gate now uses:
++
++- task-paired exact direction testing;
++- exact McNemar interpretation for binary task metrics;
++- task-paired percentile bootstrap confidence intervals;
++- minimum held-out-row and discordant-pair floors;
++- separately declared practical-effect thresholds.
++
++The bootstrap quantifies finite held-out-task uncertainty for one generated candidate pool. It does not estimate between-seed generation variance. Multi-seed replication remains required for final confirmatory claims.
++
++## Qwen migration boundary
++
++The compatibility path was validated with synthetic PyTorch modules and checkpoint contracts. It has not been executed here against the real Qwen3-8B PEFT module tree or the real Regions16 checkpoint. The implementation checks the actual model parameter names at runtime and aborts if it cannot identify the expected missing MLP LoRA tensors or if any new LoRA-B tensor is nonzero.
+ 
+ ## Not executed in this environment
+ 
+-This container does not provide the target model/runtime stack: `transformers`,
+-`torch_geometric`, the Dart SDK, an NVIDIA GPU, and the real project datasets
+-were unavailable. Therefore the following are **not** claimed as completed:
++- Qwen3-8B or GraphCodeBERT model loading;
++- GPU forward/backward training;
++- real Regions16 checkpoint migration;
++- real Dart corpus replay;
++- correct/permuted/null generation over the frozen benchmark;
++- frontier Responses or Batch API calls;
++- empirical RS-SFT improvement over the matched gold-only control;
++- multi-seed confirmatory statistics.
+ 
+-- real Qwen/GraphCodeBERT checkpoint loading or GPU backward passes;
+-- Dart replay over the actual training and frozen evaluation pools;
+-- synchronous frontier Responses calls or a live Batch submission;
+-- empirical correct/permuted/null pass@10 deltas;
+-- empirical RS-SFT improvement over the matched gold-only control;
+-- resolution of the `>=200`-instruction one-shot length cliff.
+-
+-The implementation now fails closed around those empirical gates, but their
+-outcomes must be measured in the target repository.
++The archive therefore validates implementation structure and CPU-only controls, not the empirical hypothesis.

@@ -1,0 +1,80 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/grpo_selfcheck.py
+group_advantages: OK
+cumsum_position_ids: OK
+ratio trick gradient == REINFORCE gradient: OK
+TruePerTestReward shaped/binary values and exact-harness path: OK
+reward parser fail-closed / expect* helper extraction: OK
+calculate_rewards unique-test bonus / duplicate penalty: OK
+parallel binary reward ordering / alignment guard: OK
+passk_advantage_weights: OK
+calculate_rewards perfect_flags alignment: OK
+chunked scoring backward == single-pass backward: OK
+DAPO/GSPO/legacy top-K smoothing options: OK
+partial gradient-accumulation flush scaling: OK
+
+ALL GRPO SELF-CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/grpo_selfcheck.py
+group_advantages: OK
+cumsum_position_ids: OK
+ratio trick gradient == REINFORCE gradient: OK
+TruePerTestReward shaped/binary values and exact-harness path: OK
+reward parser fail-closed / expect* helper extraction: OK
+calculate_rewards unique-test bonus / duplicate penalty: OK
+parallel binary reward ordering / alignment guard: OK
+passk_advantage_weights: OK
+calculate_rewards perfect_flags alignment: OK
+chunked scoring backward == single-pass backward: OK
+DAPO/GSPO/legacy top-K smoothing options: OK
+partial gradient-accumulation flush scaling: OK
+
+ALL GRPO SELF-CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/grpo_selfcheck.py
+group_advantages: OK
+cumsum_position_ids: OK
+ratio trick gradient == REINFORCE gradient: OK
+TruePerTestReward shaped/binary values and exact-harness path: OK
+reward parser fail-closed / expect* helper extraction: OK
+calculate_rewards unique-test bonus / duplicate penalty: OK
+parallel binary reward ordering / alignment guard: OK
+passk_advantage_weights: OK
+calculate_rewards perfect_flags alignment: OK
+chunked scoring backward == single-pass backward: OK
+DAPO/GSPO/legacy top-K smoothing options: OK
+partial gradient-accumulation flush scaling: OK
+
+ALL GRPO SELF-CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/grpo_selfcheck.py
+group_advantages: OK
+cumsum_position_ids: OK
+ratio trick gradient == REINFORCE gradient: OK
+TruePerTestReward shaped/binary values and exact-harness path: OK
+reward parser fail-closed / expect* helper extraction: OK
+calculate_rewards unique-test bonus / duplicate penalty: OK
+parallel binary reward ordering / alignment guard: OK
+passk_advantage_weights: OK
+calculate_rewards perfect_flags alignment: OK
+chunked scoring backward == single-pass backward: OK
+DAPO/GSPO/legacy top-K smoothing options: OK
+partial gradient-accumulation flush scaling: OK
+
+ALL GRPO SELF-CHECKS PASSED
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/grpo_selfcheck.py
+group_advantages: OK
+cumsum_position_ids: OK
+ratio trick gradient == REINFORCE gradient: OK
+TruePerTestReward shaped/binary values and exact-harness path: OK
+reward parser fail-closed / expect* helper extraction: OK
+calculate_rewards unique-test bonus / duplicate penalty: OK
+parallel binary reward ordering / alignment guard: OK
+passk_advantage_weights: OK
+calculate_rewards perfect_flags alignment: OK
+chunked scoring backward == single-pass backward: OK
+DAPO/GSPO/legacy top-K smoothing options: OK
+partial gradient-accumulation flush scaling: OK
+
+ALL GRPO SELF-CHECKS PASSED

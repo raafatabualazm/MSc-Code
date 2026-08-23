@@ -1,0 +1,77 @@
+[
+  {
+    "line_number": 93,
+    "name": "main",
+    "error": "dart compile failed: program.dart:11:3: Error: 'BeerSong' isn't a type.\n  BeerSong beerSong = BeerSong();\n  ^^^^^^^^\nprogram.dart:11:23: Error: Method not found: 'BeerSong'.\n  BeerSong beerSong = BeerSong();\n                      ^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 95,
+    "name": "enjoy",
+    "error": "dart compile failed: program.dart:10:11: Error: Expected '{' before this.\nenjoy()   .then( (e) => print(e) );\n          ^\nprogram.dart:10:11: Error: Expected a declaration, but got '.'.\nenjoy()   .then( (e) => print(e) );\n          ^\nprogram.dart:10:18: Error: Expected an identifier, but got '('.\nTry inserting an identifier before '('.\nenjoy()   .then( (e) => print(e) );\n                 ^\nprogram.dart:10:22: Error: Expected ')' before this.\nenjoy()   .then( (e) => print(e) );\n                     ^^\nprogram.dart:10:35: Error: Expected a function body or '=>'.\nTry adding {}.\nenjoy()   .then( (e) => print(e) );\n                                  ^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 96,
+    "name": "main",
+    "error": "dart compile failed: program.dart:11:9: Error: Method not found: 'fib'.\n  print(fib(11));\n        ^^^\nprogram.dart:12:9: Error: Method not found: 'fibRec'.\n  print(fibRec(11));\n        ^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 97,
+    "name": "main",
+    "error": "dart compile failed: program.dart:10:22: Error: Method not found: 'fibonacci'.\nvoid main() => print(fibonacci(20));\n                     ^^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 99,
+    "name": "main",
+    "error": "dart compile failed: program.dart:12:20: Error: Method not found: 'Q'.\n    print(\"Q($i)=${Q(i)}\");\n                   ^\nprogram.dart:14:20: Error: Method not found: 'Q'.\n  print(\"Q(1000)=${Q(1000)}\");\n                   ^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 101,
+    "name": "showNearest",
+    "error": "dart compile failed: program.dart:10:34: Error: Type 'KdTree' not found.\nvoid showNearest(String heading, KdTree kd, Point p) {\n                                 ^^^^^^\nprogram.dart:10:34: Error: 'KdTree' isn't a type.\nvoid showNearest(String heading, KdTree kd, Point p) {\n                                 ^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 103,
+    "name": "main",
+    "error": "dart compile failed: program.dart:11:5: Error: Undefined name 'cache'.\n    cache[0] = 0;\n    ^^^^^\nprogram.dart:15:13: Error: Method not found: 'is_perfect_totient'.\n        if (is_perfect_totient(i)) {\n            ^^^^^^^^^^^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 104,
+    "name": "main",
+    "error": "dart compile failed: program.dart:10:30: Error: String starting with ' must end with '.\nmain()=>(s){print('$s(r\\x22$s\\x22);\n                             ^^^^^^\nprogram.dart:10:18: Error: Can't find ')' to match '('.\nmain()=>(s){print('$s(r\\x22$s\\x22);\n                 ^\nprogram.dart:10:12: Error: Can't find '}' to match '{'.\nmain()=>(s){print('$s(r\\x22$s\\x22);\n           ^\nprogram.dart:10:30: Error: Expected ';' after this.\nmain()=>(s){print('$s(r\\x22$s\\x22);\n                             ^^^^^^\nprogram.dart:11:1: Error: Unexpected token ''.\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 105,
+    "name": "main",
+    "error": "dart compile failed: program.dart:15:3: Error: Method not found: 'gnomeSort'.\n  gnomeSort(array); // Sort the array\n  ^^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 106,
+    "name": "heapSort",
+    "error": "dart compile failed: program.dart:14:3: Error: Method not found: 'heapify'.\n  heapify(a, count);\n  ^^^^^^^\nprogram.dart:25:5: Error: Method not found: 'siftDown'.\n    siftDown(a, 0, end - 1);\n    ^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 108,
+    "name": "main",
+    "error": "dart compile failed: program.dart:14:9: Error: Method not found: 'quickSort'.\n  arr = quickSort(arr);\n        ^^^^^^^^^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 109,
+    "name": "prime",
+    "error": "dart compile failed: program.dart:14:9: Error: Method not found: 'isPrime'.\n    if (isPrime(p)) pn++;\n        ^^^^^^^\nprogram.dart:10:5: Error: A non-null value must be returned since the return type 'int' doesn't allow null.\nint prime(int n) {\n    ^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 110,
+    "name": "main",
+    "error": "dart compile failed: program.dart:11:9: Error: Method not found: 'E'.\n  print(E(5, 13).join());\n        ^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  },
+  {
+    "line_number": 111,
+    "name": "primeFactors",
+    "error": "dart compile failed: program.dart:14:31: Error: Can't find '}' to match '{'.\nList<int> primeFactors(int n) {\n                              ^\nprogram.dart:12:12: Error: Can't find '}' to match '{'.\n    } else {\n           ^\nprogram.dart:10:5: Error: 'if' can't be used as an identifier because it's a keyword.\nTry renaming this to be an identifier that isn't a keyword.\n    if (factors.length < 3) {\n    ^^\nprogram.dart:10:24: Error: Expected an identifier, but got '<'.\nTry inserting an identifier before '<'.\n    if (factors.length < 3) {\n                       ^\nprogram.dart:10:26: Error: Expected ')' before this.\n    if (factors.length < 3) {\n                         ^\nprogram.dart:12:7: Error: 'else' can't be used as an identifier because it's a keyword.\nTry renaming this to be an identifier that isn't a keyword.\n    } else {\n      ^^^^\nprogram.dart:12:7: Error: A function declaration needs an explicit list of parameters.\nTry adding a parameter list to the function declaration.\n    } else {\n      ^^^^\nprogra"
+  },
+  {
+    "line_number": 114,
+    "name": "main",
+    "error": "dart compile failed: program.dart:11:31: Error: Can't find '}' to match '{'.\n  for (int i = 0; i < 8; ++i) {\n                              ^\nprogram.dart:10:13: Error: Can't find '}' to match '{'.\nvoid main() {\n            ^\nError: AOT compilation failed\nBad state: Generating AOT kernel dill failed!"
+  }
+]

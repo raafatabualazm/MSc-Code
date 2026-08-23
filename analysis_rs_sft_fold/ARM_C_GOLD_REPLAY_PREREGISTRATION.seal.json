@@ -1,0 +1,9 @@
+{
+  "artifact": "analysis_rs_sft_fold/ARM_C_GOLD_REPLAY_PREREGISTRATION.md",
+  "artifact_sha256": "aa8fb9b3ba258a0ee117e8c7f98acb55d92fba2d79ef4b0df7b093d57135dcf6",
+  "arm": "C_fold_plus_typed_gold_replay",
+  "arm_b_score_visible_at_fixation": false,
+  "fixed_at": "2026-08-02T19:37:52.5449082+03:00",
+  "schema": "t5gemma2-typed-fold-gold-replay-preregistration-seal-v1",
+  "status": "sealed"
+}

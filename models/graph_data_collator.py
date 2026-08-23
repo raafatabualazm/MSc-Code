@@ -14,18 +14,13 @@ class GraphDataCollator:
         batch = {}
 
         if 'labels' in features[0]:
-            label_features = [
-                {'input_ids': feature['labels']}
-                for feature in features
-            ]
-
-            collated = self.target_tokenizer.pad(
-                label_features,
-                return_tensors='pt',
-                pad_to_multiple_of=self.pad_to_multiple_of,
-            )
-
-            batch['labels'] = collated['input_ids']
+            # Labels may already contain -100 (ignore_index) for padded positions,
+            # which tokenizer.pad cannot handle. Pad manually with -100 so the loss
+            # ignores padded positions.
+            label_lists = [list(feature['labels']) for feature in features]
+            max_len = max(len(ids) for ids in label_lists)
+            padded = [ids + [-100] * (max_len - len(ids)) for ids in label_lists]
+            batch['labels'] = torch.tensor(padded, dtype=torch.long)
 
         if 'pyg_data' in features[0]:
             pyg_graphs = [f['pyg_data'] for f in features]
@@ -46,6 +41,8 @@ class GraphDataCollator:
             'attention_mask',
             'position_ids',
             'token_type_ids',
+            'decoder_prompt_input_ids',
+            'decoder_prompt_attention_mask',
         ]
 
         for key in tensor_keys:

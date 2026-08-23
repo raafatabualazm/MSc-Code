@@ -1,0 +1,78 @@
+{
+  "additional_input_bindings": {
+    "harmonization_manifest": {
+      "path": "data\\testing\\humaneval_v2_nameonly_dfg_harmonized\\harmonization_manifest.json",
+      "sha256": "bbd8b0d1a6953eb2b61fef5fe8eec408f841595abb9878469f363c0490b0fafa"
+    },
+    "humaneval_private": {
+      "path": "data\\testing\\humaneval_v2_nameonly_dfg_harmonized\\humaneval_v2_nameonly_dfg_harmonized_private.jsonl",
+      "sha256": "5e249e39b3b9eb0672aefd5d6512f4c7a0a4d8a1731147ffdc80b3e92bd798ff"
+    }
+  },
+  "all_passed": true,
+  "input_bindings": {
+    "codebook": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\codebook.json",
+      "sha256": "16764b3dc7bc3a58b195934f8ed76bc81586909af56a1669b42e5de37cf80be9"
+    },
+    "codec": {
+      "path": "scripts\\data\\build_compact_qwen_v2.py",
+      "sha256": "0a8cde3bfb7ec08c45115d4226a45f4b2c1b192a5277270af866237641c419b3"
+    },
+    "contract": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\compact_contract.json",
+      "sha256": "c60f9b6c8f85a1b1db74d572434f79644d77fcb92feef2da724039f4eecf9a03"
+    },
+    "current_cfg_extractor": {
+      "path": "scripts\\data\\cfg_extractor.py",
+      "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c"
+    },
+    "current_dfg_extractor": {
+      "path": "scripts\\data\\dfg_extractor.py",
+      "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12"
+    },
+    "dev": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\dev_codec_private.jsonl",
+      "sha256": "57ba18ffa9e0a77058c66861cc4df2c7ca4be91d0664ba1f0c09c4fe6ef7965a"
+    },
+    "legacy_cfg_extractor": {
+      "path": "scrubbed_master_v2_release\\extractors\\cfg_extractor.py",
+      "sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce"
+    },
+    "legacy_dfg_extractor": {
+      "path": "scrubbed_master_v2_release\\extractors\\dfg_extractor.py",
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
+    },
+    "preflight": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\preflight_report.json",
+      "sha256": "f1dbbbd326eea1b15547fe009f50c4b8ac6d382c814f7ede44cc7f00f9484d03"
+    },
+    "tokenizer": {
+      "path": "C:\\Users\\Raafat Abualazm\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-8B\\snapshots\\b968826d9c46dd6066d109eabc6255188de91218\\tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "train": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\train_codec_private.jsonl",
+      "sha256": "fc9e1c9caadf3d3f8523de3ace4f360c5ea42694af33e97c1efb135d7a9264de"
+    }
+  },
+  "reports": {
+    "dev_fallback_token_audit.json": {
+      "passed": true,
+      "sha256": "5e66307188e453f6c527d943189cffafea2abfcf5cd2fae58fe6b1f0af9c8b36"
+    },
+    "scrubbed_humaneval_fallback_token_audit.json": {
+      "passed": true,
+      "sha256": "2f273fe62f1f1cbf73cbd141dd27c0d2fe8caaae6602de22a6a74dc7eea8283a"
+    },
+    "topup_family_fallback_audit.json": {
+      "passed": true,
+      "sha256": "9f269a1428bd65248f2a66773a4f1d6a50e61bd704966a69ed26f07b4a116f46"
+    }
+  },
+  "schema": "compact-qwen-v2-generalization-audit-seal-v1",
+  "script": {
+    "path": "scrubbed_master_v2_release\\audit_phase0_compact_qwen_v2_generalization.py",
+    "sha256": "ad1f1e4e2e177d042b8a28cdf4a9a17917cbc6586997813722ef700e05dbf407"
+  }
+}

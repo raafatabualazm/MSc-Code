@@ -1,0 +1,54 @@
+{
+  "bindings": {
+    "alignment_sha256": "527600df2b1694fdebf559ba563cf86c81c021fcbcea9156202f1fb87c1b90f6",
+    "codebook_sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+    "model_inputs_sha256": "5d39e360ac91fdc8ce7bd018babde3859af1244624bed0e93572bba33f4eb0d5",
+    "preflight_sha256": "c148da7dd938d11e20766cdb2ec537f8001dc48753f4c896db1e0aeb69dcabbf",
+    "public_sha256": "c190aad3f31260da30739bfea94a027984de10aee4fea7404d3d6ca01e4e92a7"
+  },
+  "embedding_exposure": {
+    "contract_rows_unseen_in_fit": 3394,
+    "contract_source_rows": 20475,
+    "custom_rows_unseen_in_fit": 2,
+    "unique_block_rows_in_role": 396,
+    "unique_control_rows_in_role": 13,
+    "unique_custom_rows_in_role": 5380,
+    "unique_instruction_rows_in_role": 4971
+  },
+  "fallback": {
+    "instruction_positions": 59170,
+    "instruction_rate": 0.013587966875105629,
+    "instructions": 804,
+    "per_row_max": 146,
+    "per_row_p50": 1,
+    "per_row_p95": 13,
+    "row_rate": 0.6118721461187214,
+    "rows": 134,
+    "unique_instructions": 658
+  },
+  "fallback_interpretation": "Exact canonical instruction text is encoded with native Qwen tokens; fallback is neither UNK nor truncation.",
+  "instruction_vocabulary": {
+    "at_most_two_unique": 3389,
+    "positions": 59170,
+    "singleton_unique": 2538,
+    "unique": 5629
+  },
+  "lossless_fallback": true,
+  "passed": true,
+  "positions": {
+    "custom": 119318,
+    "custom_fraction": 0.9188556466828386,
+    "native_fallback": 10537,
+    "total": 129855
+  },
+  "role": "measure",
+  "rows": 219,
+  "schema": "compact-codebook-generalization-audit-v1",
+  "source_tokens": {
+    "max": 6175,
+    "min": 31,
+    "p50": 463,
+    "p95": 1612,
+    "p99": 2405
+  }
+}

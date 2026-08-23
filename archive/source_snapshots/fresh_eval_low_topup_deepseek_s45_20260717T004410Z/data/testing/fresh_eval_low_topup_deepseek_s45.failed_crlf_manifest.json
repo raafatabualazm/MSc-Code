@@ -1,0 +1,97 @@
+{
+  "created_unix": 1784174838,
+  "num_tasks": 1000,
+  "oversample": 8,
+  "rng_seed": 45,
+  "providers": [
+    "deepseek:deepseek-v4-pro"
+  ],
+  "temperature_openrouter_deepseek": 1.0,
+  "temperature_azure": "deployment_default",
+  "jac_thr": 0.55,
+  "seq_thr": 0.7,
+  "strata_mix": "low:1,mid:0,high:0",
+  "stability_runs": 2,
+  "mutation_max": 8,
+  "mutation_min_kill": 0.5,
+  "shape_gate": {
+    "enabled": true,
+    "loc_tol": 1.0,
+    "branch_tol": 1.0
+  },
+  "measured_distribution": {
+    "strata_block_ranges": {
+      "low": [
+        3,
+        14
+      ],
+      "mid": [
+        14,
+        25
+      ],
+      "high": [
+        25,
+        458
+      ]
+    },
+    "loc_bands": {
+      "low": [
+        4,
+        11
+      ],
+      "mid": [
+        9,
+        16
+      ],
+      "high": [
+        16,
+        23
+      ]
+    },
+    "branch_bands": {
+      "low": 5,
+      "mid": 7,
+      "high": 13
+    },
+    "rtype_weights": {
+      "bool": 28,
+      "List<String>": 11,
+      "double": 5,
+      "List<int>": 29,
+      "String": 25,
+      "String?": 2,
+      "int": 42,
+      "List<double>": 2,
+      "List<num>": 3,
+      "num": 2,
+      "List<List<int>>": 1,
+      "Map<String, int>": 1,
+      "int?": 1
+    },
+    "param_count_weights": {
+      "2": 36,
+      "1": 113,
+      "3": 5
+    }
+  },
+  "prompt_template_sha256": "4ebaa9df3efaabea2a6791348f39f9d7220841f6df4af930d231c7a2c1f4ff5d",
+  "benchmark": {
+    "path": "data/testing/grpo_data_graphv2.jsonl",
+    "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+  },
+  "synthetic": {
+    "path": "data/datasets/synthetic_pool_graphv2.jsonl",
+    "sha256": "d7f1fe3679b1e268b748472d7611af0123da58b79a597439b9e2fb790ec90621"
+  },
+  "additional_decontamination": [
+    {
+      "path": "data/testing/fresh_eval_llm.jsonl",
+      "sha256": "28b7d46583e7be9661b2a8ff41852b9918fdd31798dfc521bdb2b40720ab43b2"
+    },
+    {
+      "path": "data/testing/fresh_eval_lowmid_topup_s44.jsonl",
+      "sha256": "6f0abd66a863767d16686c3b1186380b634c3f93cf43fc157476ff114f979050"
+    }
+  ],
+  "banned_names": 5597
+}

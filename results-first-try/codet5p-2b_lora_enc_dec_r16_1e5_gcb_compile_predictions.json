@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "source_line": 1,
+    "filename": "day-of-the-week.dart",
+    "predictions": [
+      "'''\nCreated on Oct 17, 2016\n\n    @author: bergr2 - alexander.burgoschell_aergt vernonmichal (at) gmail(dot)com; michaelkreitz-jeffreybuchanan at veronicahackerspace dot com or pythonprogramminglangauge mailinglist for help with the code and instructions  <url> http://www3eplsuggesterr1d7v4gshwf5xqh8pc9p6l0zuknhwcctomhrryi55u09myoiclpoyyoxesupenazuzro90syuymxolocitokohltizpyulirucmpudkytdtvptvsdyufghxycpklmnotclozamhevcpgtwuxgycyntlvuhczakihphzxcsilwxovrdwrfxogpnprfwteorrhxdtxezldnlruccpsnyttacbrtcjpcdawyzephywyewflgdgtlfxtigkgpeusagapfcoumbtyowygopfywwaqrcpptrjlckwlkrlcllgz",
+      "#!/usr/bin python3\n\"\"\" Define a function that adds 2 integers or floats \"\"\"\n\n    def add_integer(a, b=98): # Default value for an integer is 98. If no default number entered it defaults to 0 and when left out the last element in brackets will be used as input (i = int) if only 1 argument then return this instead of having them all required so check what happens with single parameter too!!  defaults can also accept strings but not lists! This means you must pass both parameters even though they have different types because Python doesn't know which type fits best among multiple inputs -- except NoneType ! It just calls everything else \"in order\". For example: '1' + 10 would fail without passing arguments since there isn\u2019t enough values between those operators (+). However using float() method may work fine - see next assignment below : ) . The first positional variable should always come before any other variables on subsequent lines until we finish writing our program :) \n        if str == True:#If its string do something like print('{}'.format()) otherwise use {} formatting syntax , however i want my output looking nicer now I'm changing some things back into one letter abbreviations here:-D   for"
+    ],
+    "reference": "void main() {\n  print('Yuletide holidays must be allowed in the following years:');\n  for (var year = 2008; year < 2121; year++) {\n    var date = DateTime(year, 12, 25);\n    if (date.weekday == DateTime.sunday) {\n      print(year);\n    }\n  }\n}",
+    "language": "Dart",
+    "tests": ""
+  },
+  {
+    "id": 1,
+    "source_line": 2,
+    "filename": "walk-a-directory-recursively.dart",
+    "predictions": [
+      "from flask import Flask, render_template\nimport random\n\n \t# Create a new instance of the class in order to create and run an application. This is also called \"app\" or something like that so let's call it app for consistency with other parts else we'll use this as our own variable name when calling functions etc:\t\t   \t\t\t\t\t\t\t\t\t\t\t\t  \t\t\t\t\t\t       \t\t\t\t                               \t\t\t\t\t\t\t\t     \t\t\t\t\t      \t\t\t\t\t\t\t             self._data = data; self._keyword= keyword) : #This line makes sure you don't have two instances created! We can add _var1 if want but not recommended (as seen below). It will cause error because Python considers them separate variables - i'm saying here otherwise I'd say they would be combined since its just easier than having another object? So please note how python calls things by doing var+'name', ie myobject + '__init()'. In fact any function has access both directly using dot notation(ie xxx()) & accessing from inside itself __xxx(), which should help make your code more readable too ;) ) -> There are many ways there could actually happen such usings dots outside , within themselves ... eg.. .title(); print('Hello World'); //So lets try some examples before moving on...\r",
+      "# -*- coding: utf8\n\"\"\"\u0418\u043c\u044f \u043f\u0440\u043e\u0435\u043a\u0442\u0430 : practicum_1 \r\n\u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434 \u0432\u0432\u043e\u0434\u0443,\u0434\u043b. 3 (3) / stepic/stepikbonus2tasks01m04h07l004r02p00 import requests as req; from pprint  import * \"\"\"    \t   \t\t     \t\t\t      \t\t\t\t                               \t\t\t\t\t\t\t\t\t\t\t\t\t\t\tcok = '''{\"algid\": \"RS256\",\\n\"expiresIn\":\"864000\",\"userIdentity\":{\"methods\":[\"password\"],\"principalId\":\"\",\"sid\"},\"providerARNs\":[],\"extendedCostOptionsResultCodeValueList\":[{\"valueStringPatternValuesMapSet\\\\u003d{\\\\\\\\\\\"costToGrantPerHourPercentageMax\\\": 100}]},{\"roleArnsParametrized[]={\\'arn:\\&quot;\" + IAMROLE+ \\',\\'urn%20--awslambda@amazon\\.com\"},]},'accessToken':token}} , headers={Authorization:\"Bearer \"+ str(login)+\"}')['result'] ; print('OK'); exit()        \t\t\t\t\t         "
+    ],
+    "reference": "import 'dart:io' show Directory, Platform, File;\n void main(List<String> args) {\n  var dir = Directory(args[0]);\n  dir.list(recursive: true, followLinks: false).forEach((final cur) {\n    if (cur is Directory) {\n      print(\"Directory: ${cur.path}\");\n    }\n\n    if (cur is File) {\n      print(\"File: ${cur.path}\");\n    }\n  });\n}",
+    "language": "Dart",
+    "tests": ""
+  }
+]

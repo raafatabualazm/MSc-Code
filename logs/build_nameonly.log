@@ -1,0 +1,30 @@
+[20/154] accepted=20 rejected=0
+[40/154] accepted=40 rejected=0
+[60/154] accepted=60 rejected=0
+[80/154] accepted=80 rejected=0
+[100/154] accepted=100 rejected=0
+[120/154] accepted=120 rejected=0
+[140/154] accepted=140 rejected=0
+[154/154] accepted=154 rejected=0
+{
+  "schema": "dart-signature-scrubbed-v2",
+  "benchmark_kind": "existing_ablation",
+  "public_signature_mode": "name_only",
+  "effective_id_salt": "dart-signature-scrubbed-v1|name_only",
+  "shuffle_public_seed": 4242,
+  "input": "data/testing/grpo_data_graphv2.jsonl",
+  "input_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "freeze_manifest_sha256": null,
+  "input_rows": 154,
+  "accepted_rows": 154,
+  "rejected_rows": 0,
+  "prepare_only": false,
+  "private_output": "data/testing/grpo_data_graphv2_sigscrub_v2_nameonly_private.jsonl",
+  "public_output": "data/testing/grpo_data_graphv2_sigscrub_v2_nameonly_public.jsonl",
+  "assembly_mode": "rename_frozen",
+  "toolchain": {
+    "assembly_derivation": "text_rename_of_frozen_benchmark_assembly"
+  },
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "builder_sha256": "70179b181567f8dd602ef34802b260a25aff2b5e6b92881baec36acdddf08e1a"
+}

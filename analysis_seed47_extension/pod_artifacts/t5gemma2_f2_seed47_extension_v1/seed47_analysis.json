@@ -1,0 +1,58 @@
+{
+ "seed47_clean174": {
+  "baseline": {
+   "pass": 6,
+   "compile": 125
+  },
+  "typed_opaque_contract": {
+   "pass": 12,
+   "compile": 166
+  },
+  "semantic_body_swap": {
+   "pass": 4,
+   "compile": 116
+  }
+ },
+ "PRIMARY_typed_pass10": {
+  "diffs_n6": [
+   3,
+   5,
+   4,
+   5,
+   9,
+   6
+  ],
+  "mean": 5.333,
+  "p_paired_n6": 0.03125,
+  "sign_consistent": true
+ },
+ "secondary_typed_compile10": {
+  "diffs_n6": [
+   46,
+   45,
+   34,
+   40,
+   47,
+   41
+  ],
+  "mean": 42.167,
+  "p_paired_n6": 0.03125,
+  "sign_consistent": true
+ },
+ "secondary_bodyswap_compile10": {
+  "diffs_n6": [
+   -6,
+   -11,
+   -12,
+   -7,
+   -7,
+   -9
+  ],
+  "mean": -8.667,
+  "p_paired_n6": 0.03125,
+  "sign_consistent": true
+ },
+ "preregistered_verdict": "PRIMARY SIGNIFICANT at alpha=0.05 (p=0.03125, n=6 paired blocks)",
+ "amendment_sha256": "526eef2cd6eaa5681cff3caea5c93c8af9ae5be1ca0b2ddca1afe4ec3dddce8a",
+ "hard_stop": "no seed beyond 47 will be added"
+}

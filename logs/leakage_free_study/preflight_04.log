@@ -1,0 +1,74 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' generate_synthetic_tasks_parallel.py --self-test
+========== SELF TEST ==========
+[dart] -> C:\flutter\bin\dart.BAT
+  version: Dart SDK version: 3.11.4 (stable) (Tue Mar 24 01:02:20 2026 -0700) on "windows_x64"
+[gdb] -> C:\msys64\mingw64\bin\gdb.EXE
+  version: GNU gdb (GDB) 17.1
+
+--- Gate B: reference validation (workdir C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\gate_tmp\dartgen_iylciz77) ---
+  $ dart run --enable-asserts ...  -> rc=0
+  $ dart C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\gate_tmp\dartgen_iylciz77\validate.dart ...  -> rc=0
+  GATE B OK
+
+--- Gate E: compile + gdb (trying both output kinds) ---
+  $ dart compile aot-snapshot ...  -> rc=0
+  $ gdb ... (aot-snapshot)  -> rc=0, symbols: YES
+    --- dump head (diff this against an eval entry!) ---
+    All functions matching regular expression "tallyCargoWeights":
+    
+    File file:///c:/users/raafat%20abualazm/desktop/train%20data/experiment_workspace/gate_tmp/dartgen_iylciz77/selftest.dart:
+    1:	static void tallyCargoWeights(void);
+    Dump of assembler code for function tallyCargoWeights:
+       0x000000000008fa5c <+0>:	push   rbp
+       0x000000000008fa5d <+1>:	mov    rbp,rsp
+       0x000000000008fa60 <+4>:	sub    rsp,0x18
+       0x000000000008fa64 <+8>:	cmp    rsp,QWORD PTR [r14+0x48]
+       0x000000000008fa68 <+12>:	jbe    0x8fb2b <tallyCargoWeights+207>
+       0x000000000008fa6e <+18>:	mov    rdi,QWORD PTR [rbp+0x18]
+       0x000000000008fa72 <+22>:	mov    ecx,DWORD PTR [rdi-0x1]
+    ... (67 lines total)
+  $ dart compile exe ...  -> rc=0
+  $ gdb ... (exe)  -> rc=1, symbols: NO
+    All functions matching regular expression "tallyCargoWeights":
+    No symbol table is loaded.  Use the "file" command.
+  GATE E OK via `dart compile aot-snapshot`
+
+========== SELF TEST PASSED ==========
+
+$ 'C:\ProgramData\anaconda3\python.exe' generate_synthetic_tasks_parallel.py --self-test
+========== SELF TEST ==========
+[dart] -> C:\flutter\bin\dart.BAT
+  version: Dart SDK version: 3.11.4 (stable) (Tue Mar 24 01:02:20 2026 -0700) on "windows_x64"
+[gdb] -> C:\msys64\mingw64\bin\gdb.EXE
+  version: GNU gdb (GDB) 17.1
+
+--- Gate B: reference validation (workdir C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\gate_tmp\dartgen_h4jpmj4y) ---
+  $ dart run --enable-asserts ...  -> rc=0
+  $ dart C:\Users\Raafat Abualazm\Desktop\Train Data\experiment_workspace\gate_tmp\dartgen_h4jpmj4y\validate.dart ...  -> rc=0
+  GATE B OK
+
+--- Gate E: compile + gdb (trying both output kinds) ---
+  $ dart compile aot-snapshot ...  -> rc=0
+  $ gdb ... (aot-snapshot)  -> rc=0, symbols: YES
+    --- dump head (diff this against an eval entry!) ---
+    All functions matching regular expression "tallyCargoWeights":
+    
+    File file:///c:/users/raafat%20abualazm/desktop/train%20data/experiment_workspace/gate_tmp/dartgen_h4jpmj4y/selftest.dart:
+    1:	static void tallyCargoWeights(void);
+    Dump of assembler code for function tallyCargoWeights:
+       0x000000000008fa5c <+0>:	push   rbp
+       0x000000000008fa5d <+1>:	mov    rbp,rsp
+       0x000000000008fa60 <+4>:	sub    rsp,0x18
+       0x000000000008fa64 <+8>:	cmp    rsp,QWORD PTR [r14+0x48]
+       0x000000000008fa68 <+12>:	jbe    0x8fb2b <tallyCargoWeights+207>
+       0x000000000008fa6e <+18>:	mov    rdi,QWORD PTR [rbp+0x18]
+       0x000000000008fa72 <+22>:	mov    ecx,DWORD PTR [rdi-0x1]
+    ... (67 lines total)
+  $ dart compile exe ...  -> rc=0
+  $ gdb ... (exe)  -> rc=1, symbols: NO
+    All functions matching regular expression "tallyCargoWeights":
+    No symbol table is loaded.  Use the "file" command.
+  GATE E OK via `dart compile aot-snapshot`
+
+========== SELF TEST PASSED ==========

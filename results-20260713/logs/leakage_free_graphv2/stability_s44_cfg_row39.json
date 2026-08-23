@@ -1,0 +1,287 @@
+{
+  "row": 39,
+  "task_id": "42",
+  "problem_id": "42",
+  "runs": [
+    {
+      "repeat": 1,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nlist lengths are not equal\n#0      expectList (file:///tmp/dart_jit_compilek_42_1n4oovr7/test.dart:35:29)\n#1      expect (file:///tmp/dart_jit_compilek_42_1n4oovr7/test.dart:26:5)\n#2      main (file:///tmp/dart_jit_compilek_42_1n4oovr7/test.dart:19:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n4 != 3\n#0      expect (file:///tmp/dart_jit_compilek_42_6bndh_4m/test.dart:38:5)\n#1      expectList (file:///tmp/dart_jit_compilek_42_6bndh_4m/test.dart:46:5)\n#2      expect (file:///tmp/dart_jit_compilek_42_6bndh_4m/test.dart:34:5)\n#3      main (file:///tmp/dart_jit_compilek_42_6bndh_4m/test.dart:26:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nConcurrent modification during iteration: Instance of 'SplayTreeSet<int>'.\n#0      _SplayTreeIterator.moveNext (dart:collection/splay_tree.dart:795:7)\n#1      incrList (file:///tmp/dart_jit_compilek_42_i1b9e97z/test.dart:6:17)\n#2      main (file:///tmp/dart_jit_compilek_42_i1b9e97z/test.dart:18:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch"
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nlist lengths are not equal\n#0      expectList (file:///tmp/dart_jit_compilek_42_tigdet12/test.dart:35:29)\n#1      expect (file:///tmp/dart_jit_compilek_42_tigdet12/test.dart:26:5)\n#2      main (file:///tmp/dart_jit_compilek_42_tigdet12/test.dart:19:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n4 != 3\n#0      expect (file:///tmp/dart_jit_compilek_42_bxj1p0ld/test.dart:38:5)\n#1      expectList (file:///tmp/dart_jit_compilek_42_bxj1p0ld/test.dart:46:5)\n#2      expect (file:///tmp/dart_jit_compilek_42_bxj1p0ld/test.dart:34:5)\n#3      main (file:///tmp/dart_jit_compilek_42_bxj1p0ld/test.dart:26:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nConcurrent modification during iteration: Instance of 'SplayTreeSet<int>'.\n#0      _SplayTreeIterator.moveNext (dart:collection/splay_tree.dart:795:7)\n#1      incrList (file:///tmp/dart_jit_compilek_42_a8z8yxn0/test.dart:6:17)\n#2      main (file:///tmp/dart_jit_compilek_42_a8z8yxn0/test.dart:18:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch"
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nlist lengths are not equal\n#0      expectList (file:///tmp/dart_jit_compilek_42_g751e34o/test.dart:35:29)\n#1      expect (file:///tmp/dart_jit_compilek_42_g751e34o/test.dart:26:5)\n#2      main (file:///tmp/dart_jit_compilek_42_g751e34o/test.dart:19:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n4 != 3\n#0      expect (file:///tmp/dart_jit_compilek_42_gdjfs3vo/test.dart:38:5)\n#1      expectList (file:///tmp/dart_jit_compilek_42_gdjfs3vo/test.dart:46:5)\n#2      expect (file:///tmp/dart_jit_compilek_42_gdjfs3vo/test.dart:34:5)\n#3      main (file:///tmp/dart_jit_compilek_42_gdjfs3vo/test.dart:26:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nConcurrent modification during iteration: Instance of 'SplayTreeSet<int>'.\n#0      _SplayTreeIterator.moveNext (dart:collection/splay_tree.dart:795:7)\n#1      incrList (file:///tmp/dart_jit_compilek_42_9ukwzize/test.dart:6:17)\n#2      main (file:///tmp/dart_jit_compilek_42_9ukwzize/test.dart:18:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch"
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 4,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nlist lengths are not equal\n#0      expectList (file:///tmp/dart_jit_compilek_42_melpp5u6/test.dart:35:29)\n#1      expect (file:///tmp/dart_jit_compilek_42_melpp5u6/test.dart:26:5)\n#2      main (file:///tmp/dart_jit_compilek_42_melpp5u6/test.dart:19:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n4 != 3\n#0      expect (file:///tmp/dart_jit_compilek_42_85kc8y2i/test.dart:38:5)\n#1      expectList (file:///tmp/dart_jit_compilek_42_85kc8y2i/test.dart:46:5)\n#2      expect (file:///tmp/dart_jit_compilek_42_85kc8y2i/test.dart:34:5)\n#3      main (file:///tmp/dart_jit_compilek_42_85kc8y2i/test.dart:26:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nConcurrent modification during iteration: Instance of 'SplayTreeSet<int>'.\n#0      _SplayTreeIterator.moveNext (dart:collection/splay_tree.dart:795:7)\n#1      incrList (file:///tmp/dart_jit_compilek_42_7lqt2wgv/test.dart:6:17)\n#2      main (file:///tmp/dart_jit_compilek_42_7lqt2wgv/test.dart:18:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch"
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    },
+    {
+      "repeat": 5,
+      "passed": 7,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 2,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 3,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 4,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nlist lengths are not equal\n#0      expectList (file:///tmp/dart_jit_compilek_42_1r4h1lc4/test.dart:35:29)\n#1      expect (file:///tmp/dart_jit_compilek_42_1r4h1lc4/test.dart:26:5)\n#2      main (file:///tmp/dart_jit_compilek_42_1r4h1lc4/test.dart:19:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 7,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 8,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n4 != 3\n#0      expect (file:///tmp/dart_jit_compilek_42_0mnmrs0r/test.dart:38:5)\n#1      expectList (file:///tmp/dart_jit_compilek_42_0mnmrs0r/test.dart:46:5)\n#2      expect (file:///tmp/dart_jit_compilek_42_0mnmrs0r/test.dart:34:5)\n#3      main (file:///tmp/dart_jit_compilek_42_0mnmrs0r/test.dart:26:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-"
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\nConcurrent modification during iteration: Instance of 'SplayTreeSet<int>'.\n#0      _SplayTreeIterator.moveNext (dart:collection/splay_tree.dart:795:7)\n#1      incrList (file:///tmp/dart_jit_compilek_42_w1i5v28k/test.dart:6:17)\n#2      main (file:///tmp/dart_jit_compilek_42_w1i5v28k/test.dart:18:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch"
+        },
+        {
+          "candidate": 10,
+          "passed": true,
+          "diagnostic": ""
+        }
+      ]
+    }
+  ]
+}

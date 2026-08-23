@@ -1,0 +1,182 @@
+{
+  "schema": "anthropic-sonnet5-opus5-paired-f2-frontier-protocol-v1",
+  "status": "protocol_only_no_api_calls_authorized_by_this_file",
+  "official_pricing_checked_at": "2026-07-27",
+  "pricing_valid_through": "2026-08-31",
+  "scope": {
+    "tasks": 175,
+    "arms": 2,
+    "task_arm_cells": 350,
+    "pairing": "The same 175 task IDs, judge, prompt contract, and candidate indices are used in both sealed F2 arms."
+  },
+  "provider_contract": {
+    "endpoint": "first-party global Claude API",
+    "transport": "Message Batches API",
+    "prompt_caching_assumed": false,
+    "regional_or_third_party_pricing_assumed": false,
+    "models": {
+      "sonnet": {
+        "id": "claude-sonnet-5",
+        "batch_input_usd_per_mtok": 1.0,
+        "batch_output_usd_per_mtok": 5.0,
+        "price_note": "Introductory Batch price through 2026-08-31."
+      },
+      "opus": {
+        "id": "claude-opus-5",
+        "batch_input_usd_per_mtok": 2.5,
+        "batch_output_usd_per_mtok": 12.5
+      }
+    }
+  },
+  "request_contract": {
+    "precount_exact_serialized_request_for_each_model": true,
+    "token_count_transport_retries": {
+      "maximum_attempts": 5,
+      "delays_seconds": [
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "scope": "The free, idempotent token-count endpoint only; transient connection, timeout, rate-limit, and provider-5xx errors. Paid batch creation still uses an ambiguity-safe single attempt."
+    },
+    "connection_warmup": "A free models.list request on the same client precedes token counting and must attest that the exact target model ID is present.",
+    "http_timeout_seconds": 60,
+    "maximum_input_tokens_including_system_and_message_overhead": 16384,
+    "over_input_cap_action": "fail_closed_before_any_paid_evaluation_call; never truncate a sealed F2 input",
+    "primary_max_tokens": 8192,
+    "thinking": {
+      "type": "adaptive",
+      "effort": "high",
+      "note": "max_tokens is a hard combined limit for thinking plus final response, so this is a budgeted high-effort operating point, not an unrestricted model ceiling."
+    },
+    "omit_nondefault_temperature_top_p_top_k": true,
+    "assistant_prefill": false,
+    "tools": [],
+    "server_side_fallbacks": "disabled",
+    "require_exact_response_model_id": true,
+    "output_instruction": "Return only the final Dart source. Do not serialize reasoning.",
+    "logical_id": "model/arm/task_id/candidate_index/cap",
+    "join_results_by": "custom_id, never response order"
+  },
+  "sequential_k_schedule": [
+    {
+      "stage": "S1",
+      "model": "claude-sonnet-5",
+      "candidate_index": 0,
+      "requests": 350,
+      "cumulative_k_for_sonnet": 1,
+      "run_condition": "always",
+      "maximum_stage_cost_usd": 20.0704
+    },
+    {
+      "stage": "S2",
+      "model": "claude-sonnet-5",
+      "candidate_index": 1,
+      "requests": 350,
+      "cumulative_k_for_sonnet": 2,
+      "run_condition": "always, regardless of S1 outcomes",
+      "maximum_stage_cost_usd": 20.0704
+    },
+    {
+      "stage": "O1",
+      "model": "claude-opus-5",
+      "candidate_index": 0,
+      "requests": 350,
+      "cumulative_k_for_opus": 1,
+      "run_condition": "only when the predeclared BAD gate is true",
+      "maximum_stage_cost_usd": 50.176
+    }
+  ],
+  "bad_gate": {
+    "evaluate_only_after": "all 700 logical S1+S2 Sonnet responses are terminal",
+    "sonnet_arm_solve_count": "For each arm, count held-out tasks with at least one completion-attested pass among its two primary 8192-token Sonnet candidates. Tests remain hidden from the model.",
+    "rule": "BAD := min(sonnet_arm_0_solve_count, sonnet_arm_1_solve_count) <= 9",
+    "calibration": "At x=9 of n=175, the one-sided 97.5% Clopper-Pearson upper bound is approximately 9.538%; using 97.5% per arm gives a simultaneous 95% statement that at least one arm is below a 10% pass@2 utility floor.",
+    "if_bad": "Run O1 for every task in both arms. Never select only Sonnet failures.",
+    "if_not_bad": "Stop after S2 and make no claim about Opus 5.",
+    "scoring": "Refusal, malformed output, compile failure, judge failure, or primary stop_reason=max_tokens is unsolved. Retry only unbilled transport/batch errors at the same logical slot."
+  },
+  "length_retry_ladder": {
+    "trigger": "successful API response with stop_reason=max_tokens",
+    "execution_order": "Run capacity repairs only after the BAD decision and, when BAD is true, only after O1 completes. Never spend retry headroom before reserving every triggered base stage.",
+    "rungs_max_tokens": [
+      8192,
+      16384,
+      32768,
+      65536
+    ],
+    "same_slot_requirements": [
+      "same model",
+      "same arm",
+      "same task",
+      "same candidate index",
+      "same prompt bytes and hashes",
+      "same adaptive-thinking and effort settings"
+    ],
+    "non_length_resampling": false,
+    "maximum_additional_call_cost_usd": {
+      "sonnet_16384": 0.098304,
+      "sonnet_32768": 0.180224,
+      "sonnet_65536": 0.344064,
+      "opus_16384": 0.24576,
+      "opus_32768": 0.45056,
+      "opus_65536": 0.86016
+    },
+    "financial_gate": "Before submitting a repair rung, reserve every still-mandatory base stage and calculate the worst-case cost for every pending length slot at that rung. Submit the complete rung only if total worst-case experiment spend remains <= 99.00 USD; otherwise submit none of that rung.",
+    "primary_metric": "Primary fixed-cap metrics always retain the original 8192-token outcome, with length counted as failure.",
+    "adaptive_metric": "A separate capacity-adaptive metric may replace same-slot length outcomes only when every observed length slot for that reported model has a terminal non-length result. Partial repair coverage is diagnostic only and must not enter an aggregate pass@k.",
+    "exhausted_ladder_action": "If 65536 also ends at max_tokens, retain failure and mark capacity_exhausted; do not add another rung."
+  },
+  "budget": {
+    "per_primary_sonnet_request_max_usd": 0.057344,
+    "per_primary_opus_request_max_usd": 0.14336,
+    "sonnet_k2_max_usd": 40.1408,
+    "sonnet_k2_plus_gated_opus_k1_max_usd": 90.3168,
+    "hard_experiment_cap_usd": 99.0,
+    "uncommitted_headroom_after_all_base_stages_usd": 8.6832,
+    "user_credit_usd": 100.0,
+    "invalid_after_pricing_deadline": "Re-price and reseal before running after 2026-08-31. At announced post-intro Sonnet Batch pricing, the full base schedule exceeds 100 USD."
+  },
+  "analysis_contract": {
+    "report_separately": [
+      "Sonnet pass@1 and pass@2 by arm",
+      "Opus pass@1 by arm when O1 is triggered",
+      "compile rates, refusals, malformed outputs, and max_tokens stops by model and arm",
+      "paired arm discordances and paired confidence intervals"
+    ],
+    "forbidden_pooling": [
+      "Never pool Sonnet and Opus candidates into pass@3 or any pass@k.",
+      "Never pool the two enrichment arms.",
+      "Never call selectively repaired length slots a complete adaptive metric.",
+      "Never present gated Opus results as an unconditional, preplanned Opus-versus-Sonnet confirmatory test."
+    ],
+    "optional_cascade_metric": "The union of Sonnet and gated Opus successes may be reported only as a separately named deployment-policy cascade success rate, never as pass@k."
+  },
+  "official_sources": [
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "supports": "Model IDs, 1M context, 128k synchronous output limit, adaptive thinking, and standard Opus/Sonnet pricing."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+      "supports": "50% Batch discount, July 2026 Batch prices, asynchronous limits, custom_id ordering requirement, and unbilled errored/canceled/expired requests."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5",
+      "supports": "Sonnet 5 introductory pricing deadline, new tokenizer, adaptive-thinking default, max_tokens semantics, and rejected sampling parameters/prefill."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/models/migration-guide",
+      "supports": "Shared Sonnet 5/Opus 5 API surface, Opus 5 pricing, adaptive-thinking default, refusal handling, and no non-default sampling parameters."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "supports": "High effort default and the fact that effort controls token use but is not a strict token budget."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "supports": "July 2026 pricing, approximately 30% higher tokenization for Sonnet 5 and Opus 4.7-or-later models, global/regional pricing distinction, and the Batch discount."
+    }
+  ]
+}

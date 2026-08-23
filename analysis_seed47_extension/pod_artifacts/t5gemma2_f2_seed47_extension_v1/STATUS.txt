@@ -1,0 +1,64 @@
+10:11:53Z waiting for HF auth to gated base
+10:11:53Z HF auth OK
+10:11:53Z regenerating tokenizer from pinned base
+10:11:56Z HOLD: tokenizer regen failed
+10:13:58Z waiting for HF auth to gated base
+12:57:06Z HF auth OK
+12:57:06Z regenerating tokenizer from pinned base
+12:57:14Z HOLD: tokenizer regen failed
+12:58:59Z waiting for HF auth to gated base
+12:58:59Z HF auth OK
+12:58:59Z tokenizer in place: f5b325224482ec44
+12:58:59Z gold round-trip gate
+12:58:59Z ABORT: gold scoring failed
+13:03:16Z waiting for HF auth to gated base
+13:03:16Z HF auth OK
+13:03:16Z tokenizer in place: f5b325224482ec44
+13:03:16Z gold round-trip gate
+13:03:16Z ABORT: gold scoring failed
+13:05:11Z waiting for HF auth to gated base
+13:05:11Z HF auth OK
+13:05:11Z tokenizer in place: f5b325224482ec44
+13:05:11Z gold round-trip gate
+13:05:12Z ABORT: gold round-trip 0/175
+13:10:21Z waiting for HF auth to gated base
+13:10:21Z HF auth OK
+13:10:21Z tokenizer in place: f5b325224482ec44
+13:10:21Z gold round-trip gate
+13:10:40Z gold gate 175/175
+13:10:40Z generate baseline
+13:10:45Z ABORT: generation failed baseline
+13:13:55Z waiting for HF auth to gated base
+13:13:55Z HF auth OK
+13:13:55Z tokenizer in place: f5b325224482ec44
+13:13:55Z gold gate 175/175
+13:13:55Z generate baseline
+13:14:00Z ABORT: generation failed baseline
+13:22:08Z waiting for HF auth to gated base
+13:22:08Z HF auth OK
+13:22:08Z tokenizer in place: f5b325224482ec44
+13:22:08Z gold gate 175/175
+13:22:08Z generate baseline
+14:22:21Z ABORT: generation failed baseline
+14:25:59Z waiting for HF auth to gated base
+14:25:59Z HF auth OK
+14:25:59Z tokenizer in place: f5b325224482ec44
+14:25:59Z gold gate 175/175
+14:25:59Z generate baseline
+14:26:34Z ABORT: generation failed baseline
+14:29:08Z waiting for HF auth to gated base
+14:29:08Z HF auth OK
+14:29:08Z tokenizer in place: f5b325224482ec44
+14:29:08Z gold gate 175/175
+14:29:08Z generate baseline
+16:48:35Z score baseline
+16:51:00Z done baseline: pass 7 compile 126
+16:51:00Z generate typed_opaque_contract
+19:06:02Z score typed_opaque_contract
+20:30:53Z done typed_opaque_contract: pass 13 compile 167
+20:30:53Z generate semantic_body_swap
+22:52:10Z score semantic_body_swap
+22:55:12Z done semantic_body_swap: pass 5 compile 117
+22:55:12Z ANALYSIS COMPLETE
+PRIMARY SIGNIFICANT at alpha=0.05 (p=0.03125, n=6 paired blocks)
+22:55:12Z ALL DONE

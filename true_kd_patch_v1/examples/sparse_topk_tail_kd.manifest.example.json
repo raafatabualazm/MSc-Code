@@ -1,0 +1,19 @@
+{
+  "schema": "sparse-topk-tail-kd-manifest-v1",
+  "data_sha256": "replace-with-sha256-of-jsonl",
+  "rows": 1,
+  "source_dataset_sha256": "replace-with-sha256-of-source-dataset",
+  "contract_sha256": "replace-with-sha256-of-compact-contract",
+  "collector_sha256": "replace-with-sha256-of-collector-script",
+  "teacher_model": "exact-provider-model-name",
+  "teacher_revision": "immutable-provider-or-model-revision",
+  "teacher_tokenizer_sha256": "replace-with-byte-identical-tokenizer-json-sha256",
+  "student_tokenizer_sha256": "replace-with-byte-identical-tokenizer-json-sha256",
+  "student_vocab_size": 4,
+  "logprob_base": "natural",
+  "probability_temperature": 1.0,
+  "logprob_rounding": "none",
+  "includes_eos": true,
+  "eos_token_id": 2,
+  "topk_tail_partition": true
+}

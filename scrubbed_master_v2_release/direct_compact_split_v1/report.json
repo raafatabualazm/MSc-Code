@@ -1,0 +1,81 @@
+{
+  "counts": {
+    "codec_quarantine_rows": 14,
+    "dev": 219,
+    "forbidden_alpha_fingerprints": 654,
+    "forbidden_neutral_fingerprints": 654,
+    "forbidden_rows_raw": 962,
+    "internal_near_edges": 52,
+    "pre_near_candidates": 2196,
+    "rejected": 17,
+    "release_rows": 2211,
+    "retained": 2194,
+    "semantic_groups": 2150,
+    "train": 1975
+  },
+  "elapsed_seconds": 15.125,
+  "invariants": {
+    "alignment_sidecars_use_original_line_only": true,
+    "codebook_fitted": false,
+    "codec_quarantine_applied_by_original_line": true,
+    "model_facing_rows_emitted": false,
+    "no_alpha_structural_forbidden_overlap": true,
+    "no_exact_neutral_forbidden_overlap": true,
+    "no_retained_exact_or_alpha_duplicates": true,
+    "no_threshold_near_forbidden_overlap": true,
+    "public_private_ledger_aligned": true,
+    "semantic_groups_do_not_cross_split": true
+  },
+  "near_clone": {
+    "forbidden_matches": 2,
+    "forbidden_token_set_comparisons": 1195150,
+    "internal_edges": 52,
+    "internal_token_set_comparisons": 1625290,
+    "jaccard_representation": "set of alpha-normalized token 5-grams",
+    "jaccard_threshold": 0.55,
+    "sequence_threshold": 0.7
+  },
+  "rejection_reasons": {
+    "codec_quarantine": 14,
+    "duplicate_alpha_structural": 1,
+    "duplicate_exact_neutral": 0,
+    "forbidden_alpha_structural": 0,
+    "forbidden_exact_neutral": 0,
+    "forbidden_near_clone": 2
+  },
+  "schema": "direct-compact-split-preparation-v1",
+  "split": {
+    "actual_dev_fraction": 0.09981768459434823,
+    "actual_train_fraction": 0.9001823154056517,
+    "dev_excluded_from_codebook_fit": true,
+    "downstream_codebook_fit_source": "train_private_alignment.jsonl only",
+    "forbidden_families_excluded_from_codebook_fit": true,
+    "largest_semantic_groups": [
+      5,
+      5,
+      5,
+      4,
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "requested_dev_fraction": 0.1,
+    "requested_train_fraction": 0.9,
+    "seed": "direct-compact-split-v1-20260719",
+    "target_dev_rows": 219
+  },
+  "status": "passed"
+}

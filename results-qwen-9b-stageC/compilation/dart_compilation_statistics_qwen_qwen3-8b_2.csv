@@ -1,0 +1,2 @@
+Model,Total_Attempts,Successful_Compilations,Failed_Compilations,Raw_Success_Rate,K_Value,Batch_Size,Avg_Compile@1,Avg_Compile@5
+qwen/qwen3-8b,630,242,388,0.38412698412698415,5,1,0.38412698412698415,0.5952380952380952

@@ -1,0 +1,40 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/training/audit_grpo_reward_antigravity.py --dataset data/datasets/synthetic_pool_reward_clean_cfg.jsonl --run_references -1 --workers 19 --report data/datasets/synthetic_reward_splits/reward_full_parity.json
+Skipping import of cpp extensions due to incompatible torch version 2.11.0+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+W0711 00:47:13.829000 37820 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+[100/1725] reward parity failures=0
+[200/1725] reward parity failures=0
+[300/1725] reward parity failures=0
+[400/1725] reward parity failures=0
+[500/1725] reward parity failures=0
+[600/1725] reward parity failures=0
+[700/1725] reward parity failures=0
+[800/1725] reward parity failures=0
+[900/1725] reward parity failures=0
+[1000/1725] reward parity failures=0
+[1100/1725] reward parity failures=0
+[1200/1725] reward parity failures=0
+[1300/1725] reward parity failures=0
+[1400/1725] reward parity failures=0
+[1500/1725] reward parity failures=0
+[1600/1725] reward parity failures=0
+[1700/1725] reward parity failures=0
+[1725/1725] reward parity failures=0
+{
+  "rows": 1725,
+  "static_failures": 0,
+  "assertions_min": 4,
+  "assertions_max": 14,
+  "helper_names": [
+    "expect",
+    "expectList",
+    "expectMap",
+    "expectSet"
+  ],
+  "static_failure_rows": [],
+  "reference_reward_parity": {
+    "checked": 1725,
+    "passed": 1725,
+    "failures": []
+  }
+}

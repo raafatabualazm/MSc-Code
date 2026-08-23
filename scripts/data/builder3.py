@@ -1,4 +1,5 @@
 import json
+import os
 import time
 import random
 from openai import OpenAI
@@ -16,7 +17,9 @@ Please convert the following assembly code to idiomatic and clear {} code.
 {}
 """
 
-API_KEY = "REDACTED_OPENROUTER_KEY"
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Set OPENROUTER_API_KEY before running this script.")
 client = OpenAI(api_key=API_KEY, base_url="https://openrouter.ai/api/v1")
 
 input_file = "results/analysis/final_analysis.jsonl"

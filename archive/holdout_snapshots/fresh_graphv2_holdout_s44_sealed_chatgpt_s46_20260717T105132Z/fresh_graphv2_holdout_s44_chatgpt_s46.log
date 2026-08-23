@@ -1,0 +1,24 @@
+{
+  "output": {
+    "path": "/root/experiment_workspace/data/testing/fresh_graphv2_holdout_s44.jsonl",
+    "size_bytes": 15260164,
+    "sha256": "b4e2dd5cfeb3309055a260e508086ca047ac9f4ac550ad4280f38894f829259c",
+    "rows": 500
+  },
+  "manifest": {
+    "path": "/root/experiment_workspace/data/testing/fresh_graphv2_holdout_s44.manifest.json",
+    "size_bytes": 290808,
+    "sha256": "89c57b6c0fb46680c051ffd28e44e31924dd022431ce4fa442b119afbddb67d8"
+  },
+  "selected_realized_strata": {
+    "low": 170,
+    "mid": 170,
+    "high": 160
+  },
+  "selected_source_pools": {
+    "topup_chatgpt_s46": 69,
+    "topup_s45": 203,
+    "base_llm": 137,
+    "topup_s44": 91
+  }
+}

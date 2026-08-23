@@ -1,0 +1,10 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7796.03it/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.19s/it]                                             {'loss': '1.123', 'grad_norm': '2.295', 'learning_rate': '0.0001', 'epoch': '0.0003389'}
+ 50%|█████     | 1/2 [00:01<00:01,  1.19s/it]100%|██████████| 2/2 [00:01<00:00,  1.36it/s]                                             {'loss': '0.8213', 'grad_norm': '1.389', 'learning_rate': '5e-05', 'epoch': '0.0006777'}
+100%|██████████| 2/2 [00:01<00:00,  1.36it/s]/venv/main/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in Qwen/Qwen3-8B - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                             {'train_runtime': '3.406', 'train_samples_per_second': '0.587', 'train_steps_per_second': '0.587', 'train_loss': '0.9724', 'epoch': '0.0006777'}
+100%|██████████| 2/2 [00:03<00:00,  1.36it/s]100%|██████████| 2/2 [00:03<00:00,  1.70s/it]
+/venv/main/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in Qwen/Qwen3-8B - will assume that the vocabulary was not modified.
+  warnings.warn(

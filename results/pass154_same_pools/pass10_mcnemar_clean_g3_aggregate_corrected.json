@@ -1,0 +1,73 @@
+{
+  "note": "Corrected pass@10 paired counts aligned with official sweep aggregate pass@10 values: clean G3 = 24/154, binary GRPO = 28/154, RS-SFT all-arms = 26/154, CFG-only = 17/154, text-only = 8/154, p128 without RMS = 0/154, all-arm union = 43/154. Raw candidate-level pass_stats CSVs contain one stale extra clean-G3 covered task, so these pass paired tests supersede the raw CSV-derived pass rows in x86_8b_paper_statistics.csv.",
+  "selected_p_values_raw": {
+    "binary GRPO compile@5": 4.27052e-11,
+    "RS-SFT all-arms compile@5": 3.58879e-05,
+    "CFG-only compile@5": 0.11892,
+    "text-only compile@5": 1.8028e-08,
+    "p128 without RMS compile@5": 3.01885e-20,
+    "binary GRPO pass@10": 0.34375,
+    "RS-SFT all-arms pass@10": 0.7744140625,
+    "CFG-only pass@10": 0.143463134765625,
+    "text-only pass@10": 0.0004024505615234375,
+    "p128 without RMS pass@10": 1.1920928955078125e-07,
+    "all-arm union pass coverage": 3.814697265625e-06
+  },
+  "selected_p_values_holm": {
+    "binary GRPO compile@5": 4.27052e-10,
+    "RS-SFT all-arms compile@5": 0.0002153274,
+    "CFG-only compile@5": 0.47568,
+    "text-only compile@5": 1.6225200000000002e-07,
+    "p128 without RMS compile@5": 3.3207350000000003e-19,
+    "binary GRPO pass@10": 0.6875,
+    "RS-SFT all-arms pass@10": 0.7744140625,
+    "CFG-only pass@10": 0.47568,
+    "text-only pass@10": 0.0020122528076171875,
+    "p128 without RMS pass@10": 9.5367431640625e-07,
+    "all-arm union pass coverage": 2.6702880859375e-05
+  },
+  "pass_rows": [
+    {
+      "comparison": "binary GRPO pass@10",
+      "gains": 7,
+      "losses": 3,
+      "p_two_sided": 0.34375,
+      "p_holm_family_11": 0.6875
+    },
+    {
+      "comparison": "RS-SFT all-arms pass@10",
+      "gains": 7,
+      "losses": 5,
+      "p_two_sided": 0.7744140625,
+      "p_holm_family_11": 0.7744140625
+    },
+    {
+      "comparison": "CFG-only pass@10",
+      "gains": 5,
+      "losses": 12,
+      "p_two_sided": 0.143463134765625,
+      "p_holm_family_11": 0.47568
+    },
+    {
+      "comparison": "text-only pass@10",
+      "gains": 2,
+      "losses": 18,
+      "p_two_sided": 0.0004024505615234375,
+      "p_holm_family_11": 0.0020122528076171875
+    },
+    {
+      "comparison": "p128 without RMS pass@10",
+      "gains": 0,
+      "losses": 24,
+      "p_two_sided": 1.1920928955078125e-07,
+      "p_holm_family_11": 9.5367431640625e-07
+    },
+    {
+      "comparison": "all-arm union pass coverage",
+      "gains": 19,
+      "losses": 0,
+      "p_two_sided": 3.814697265625e-06,
+      "p_holm_family_11": 2.6702880859375e-05
+    }
+  ]
+}

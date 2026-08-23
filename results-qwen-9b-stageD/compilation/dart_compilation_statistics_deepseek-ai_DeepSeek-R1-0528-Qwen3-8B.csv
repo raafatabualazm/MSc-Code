@@ -1,0 +1,2 @@
+Model,Total_Attempts,Successful_Compilations,Failed_Compilations,Raw_Success_Rate,K_Value,Batch_Size,Avg_Compile@1,Avg_Compile@5
+deepseek-ai/DeepSeek-R1-0528-Qwen3-8B,630,158,472,0.2507936507936508,5,8,0.2507936507936508,0.626984126984127

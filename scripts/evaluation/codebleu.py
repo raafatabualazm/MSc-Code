@@ -12,8 +12,15 @@ from collections import defaultdict, Counter
 from typing import List, Dict, Tuple, Optional, Set, Union
 import numpy as np
 from tree_sitter import Language, Parser, Node
-import tree_sitter_dart
-import tree_sitter_swift
+try:
+    import tree_sitter_dart
+    import tree_sitter_swift
+except ModuleNotFoundError as exc:
+    missing = exc.name.replace("_", "-")
+    raise ModuleNotFoundError(
+        f"Missing CodeBLEU tree-sitter dependency: {exc.name}. "
+        f"Install project requirements or run `pip install {missing}`."
+    ) from exc
 
 # Import BLEU score components
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction

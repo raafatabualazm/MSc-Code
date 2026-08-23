@@ -1,0 +1,141 @@
+{
+  "bundle": "arm64_regions16_s42_gpt56_analysis_20260716",
+  "csv_row_counts": {
+    "derived/length_stratified_metrics.csv": 4,
+    "derived/long_reference_semantic_failures.csv": 166,
+    "derived/per_task_analysis.csv": 343,
+    "derived/semantic_successes.csv": 19,
+    "derived/stratified_metrics.csv": 29,
+    "results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_stats.csv": 343,
+    "results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_stats.csv": 343
+  },
+  "file_count_before_sha256_manifest": 50,
+  "json_files_validated": 17,
+  "jsonl_counts": {
+    "datasets/flutter_eval_graphv2.jsonl": 343,
+    "datasets/flutter_train_graphv2.jsonl": 1371
+  },
+  "original_result_manifest_checks": {
+    "arm64_regions16_s42.launcher.log": {
+      "actual": "34d08c335ca05d98d9cdc247588fc1c5288c624db44e0b058dc8e2f607e01b22",
+      "expected": "34d08c335ca05d98d9cdc247588fc1c5288c624db44e0b058dc8e2f607e01b22",
+      "match": true
+    },
+    "arm64_regions16_s42.status": {
+      "actual": "da00c994017db13828edd19d08b7aea32c477406ffc2385fcbf1d17ea0a0efca",
+      "expected": "da00c994017db13828edd19d08b7aea32c477406ffc2385fcbf1d17ea0a0efca",
+      "match": true
+    },
+    "arm64_regions16_s42_verification.json": {
+      "actual": "4eb99b2f64e9b253a3a26c374896192520bad8091e83eface21a23f0fd17e9df",
+      "expected": "4eb99b2f64e9b253a3a26c374896192520bad8091e83eface21a23f0fd17e9df",
+      "match": true
+    },
+    "arm64_s42_prefix_no_gine_regions16.log": {
+      "actual": "88004bbc04595c91c6c24d8dfc173313223dec67c1d7405bb5ea39e4c4087e9a",
+      "expected": "88004bbc04595c91c6c24d8dfc173313223dec67c1d7405bb5ea39e4c4087e9a",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16.json": {
+      "actual": "e41e39cc1c9695ed30443d463964b2d7c8ff807d25e1a98f19fa15d480f88b77",
+      "expected": "e41e39cc1c9695ed30443d463964b2d7c8ff807d25e1a98f19fa15d480f88b77",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json": {
+      "actual": "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+      "expected": "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_predictions.json.provenance.json": {
+      "actual": "1fff9bff802b7851079c27d9a448a6b6e1dc0fa8f2b67fbdcc82b6d26952668b",
+      "expected": "1fff9bff802b7851079c27d9a448a6b6e1dc0fa8f2b67fbdcc82b6d26952668b",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_compile_stats.csv": {
+      "actual": "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+      "expected": "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json": {
+      "actual": "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+      "expected": "8b002528028db9ad97c0d146c9ec54ce2ff4ce68b0ccf507ad6ba28f58fcf1e8",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_predictions.json.provenance.json": {
+      "actual": "221b99574f829ca71d14019e072746d267624f59e6fb74615a00b9ad02599b41",
+      "expected": "221b99574f829ca71d14019e072746d267624f59e6fb74615a00b9ad02599b41",
+      "match": true
+    },
+    "qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_arm64v21_s42_prefix_no_gine_regions16_pass_stats.csv": {
+      "actual": "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+      "expected": "ddc45ccd28c11b590cbec60ab2d5b784388869b7265da171f56675d0b5e372df",
+      "match": true
+    },
+    "run_provenance.json": {
+      "actual": "b68f66127a7de7b532e7bea3eb847f1d36df17efa6de9e75a9a85a207d47d9cb",
+      "expected": "b68f66127a7de7b532e7bea3eb847f1d36df17efa6de9e75a9a85a207d47d9cb",
+      "match": true
+    }
+  },
+  "prediction_checks": {
+    "compile": {
+      "all_have_10_candidates": true,
+      "rows": 343,
+      "unique_ids": 343
+    },
+    "pass": {
+      "all_have_10_candidates": true,
+      "rows": 343,
+      "unique_ids": 343
+    }
+  },
+  "recorded_hash_checks": {
+    "datasets/flutter_eval_graphv2.jsonl": {
+      "actual": "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac",
+      "expected": "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac",
+      "match": true
+    },
+    "datasets/flutter_train_graphv2.jsonl": {
+      "actual": "f21782dd60edc11988867659dd2d16a5f6b6d2f550594cae09ad7cf92b68dcb7",
+      "expected": "f21782dd60edc11988867659dd2d16a5f6b6d2f550594cae09ad7cf92b68dcb7",
+      "match": true
+    },
+    "source/models/graphcodebert_tensor_builder.py": {
+      "actual": "a324bba2c3a642176404fba513c386e6952b4c6f04d26e9be01732ed36900ed5",
+      "expected": "a324bba2c3a642176404fba513c386e6952b4c6f04d26e9be01732ed36900ed5",
+      "match": true
+    },
+    "source/models/hierarchical_graph_encoder_antigravity.py": {
+      "actual": "0d9ed811fd3e2793d8d21a003ced9cff67cecfe65cf03a33bb611ec44af6f7db",
+      "expected": "0d9ed811fd3e2793d8d21a003ced9cff67cecfe65cf03a33bb611ec44af6f7db",
+      "match": true
+    },
+    "source/models/pyg_cfg_dataset.py": {
+      "actual": "5cf35b3c2d446e3e4444a833d6d0a39c6ddd366f2375a8b866706b4cd322edb3",
+      "expected": "5cf35b3c2d446e3e4444a833d6d0a39c6ddd366f2375a8b866706b4cd322edb3",
+      "match": true
+    },
+    "source/scripts/data/cfg_extractor.py": {
+      "actual": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+      "expected": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+      "match": true
+    },
+    "source/scripts/data/dfg_extractor.py": {
+      "actual": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+      "expected": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+      "match": true
+    },
+    "source/scripts/run_arm64_graphv21_study.py": {
+      "actual": "31e378614ce07c01dfef24db3f4f3f077ce0d4a1c0165fb7777d17ce3a9a3ff6",
+      "expected": "31e378614ce07c01dfef24db3f4f3f077ce0d4a1c0165fb7777d17ce3a9a3ff6",
+      "match": true
+    },
+    "source/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py": {
+      "actual": "6234f82bd4c64c29a561160374888d1bc6916af8d7d7368e30ba97cb5f237e13",
+      "expected": "6234f82bd4c64c29a561160374888d1bc6916af8d7d7368e30ba97cb5f237e13",
+      "match": true
+    }
+  },
+  "schema_version": 1,
+  "status": "passed"
+}

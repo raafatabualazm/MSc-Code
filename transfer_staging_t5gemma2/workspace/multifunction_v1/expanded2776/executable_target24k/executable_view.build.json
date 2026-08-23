@@ -1,0 +1,197 @@
+{
+  "capacity_contract_migration": {
+    "all_non_capacity_fields_byte_semantically_identical": true,
+    "allowed_changed_fields": [
+      "max_target_tokens",
+      "max_total_tokens"
+    ],
+    "capacity_values": {
+      "max_target_tokens": {
+        "source": 3072,
+        "target": 24576
+      },
+      "max_total_tokens": {
+        "source": 12288,
+        "target": 36864
+      }
+    },
+    "created_at": "2026-07-24T00:57:15.526990Z",
+    "invariants": {
+      "heldout_dataset_untouched": true,
+      "heldout_seal_changed_only_contract_sha256": true,
+      "no_training_or_generation_performed": true,
+      "parent_train_seal_changed_only_contract_sha256": true,
+      "train_dataset_bytes_identical": true,
+      "train_f2_bytes_identical": true
+    },
+    "observed_changed_fields": [
+      "max_target_tokens",
+      "max_total_tokens"
+    ],
+    "schema": "binary-multifunction-executable-capacity-migration-v1",
+    "source_contract": {
+      "bytes": 2875794,
+      "path": "/workspace/multifunction_v1/expanded2776/executable/compact_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+      "size_bytes": 2875794
+    },
+    "source_executable_report": {
+      "bytes": 5117,
+      "path": "/workspace/multifunction_v1/expanded2776/executable/executable_view.build.json",
+      "sha256": "b05fe6c596a679407f8f39b6436943407d7b289935167f511ef52fa6db01291d",
+      "size_bytes": 5117
+    },
+    "source_heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json",
+      "sha256": "5c3497a9de1d6a478c3d3f104c3942ba4cec03272f82dc12ff8b1e99ed7c1e4a",
+      "size_bytes": 2756
+    },
+    "source_parent_train_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.seal.json",
+      "sha256": "e61d9a5070bc0eb824e4cfcaec727f3569507149a1f09502f3220f023944e4e5",
+      "size_bytes": 3643
+    },
+    "target_contract": {
+      "bytes": 2875795,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/compact_contract.json",
+      "sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+      "size_bytes": 2875795
+    },
+    "target_heldout_seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/dev_multifunction_binary_target24k.seal.json",
+      "sha256": "4bbbb4639d8845f1716a61edb77a139c4f97c31b3cc57d54bb6221eac75bc29f",
+      "size_bytes": 2756
+    },
+    "target_parent_train_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/fit2776_expansion.target24k.seal.json",
+      "sha256": "ef776299f5b9eff5955896f7f22f78c49be9b198fce246ddc226b48facf87478",
+      "size_bytes": 3643
+    }
+  },
+  "contract": {
+    "bytes": 2875795,
+    "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/compact_contract.json",
+    "sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+    "size_bytes": 2875795
+  },
+  "counts": {
+    "executable_train_rows": 2774,
+    "execution_ineligible_rows": 2,
+    "heldout_rows": 175,
+    "parent_train_rows": 2776,
+    "supplemental_train_rows": 1196
+  },
+  "created_at": "2026-07-24T00:57:15.579579Z",
+  "digests": {
+    "executable_train_task_ids_sha256": "6251f9faa39f212fcf8b9b176579ba5d970e7b98d377ab85b2b74c4c34877b2d",
+    "heldout_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "parent_train_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0"
+  },
+  "excluded_task_ids": [
+    "sigless_67bb88ce699e",
+    "sigless_bfde11b99b84"
+  ],
+  "heldout_measure_only": {
+    "dataset": {
+      "bytes": 1802107,
+      "path": "/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl",
+      "sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+      "size_bytes": 1802107
+    },
+    "rows": 175,
+    "seal": {
+      "bytes": 2756,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/dev_multifunction_binary_target24k.seal.json",
+      "sha256": "4bbbb4639d8845f1716a61edb77a139c4f97c31b3cc57d54bb6221eac75bc29f",
+      "size_bytes": 2756
+    },
+    "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "untouched": true
+  },
+  "invariants": {
+    "all_remaining_compact_rows_byte_identical_to_parent": true,
+    "all_remaining_f2_rows_byte_identical_to_parent": true,
+    "compact_and_f2_task_order_identical": true,
+    "executable_train_has_1578_unique_tasks": false,
+    "executable_train_has_unique_tasks": true,
+    "heldout_has_175_unique_tasks": true,
+    "heldout_not_rewritten": true,
+    "legacy_exact_audited_fs_ffi_rows_excluded": false,
+    "only_parent_seal_audited_execution_rows_excluded": true,
+    "parent_full_imitation_view_retained": true,
+    "train_heldout_disjoint": true
+  },
+  "outputs": {
+    "contract": {
+      "bytes": 2875795,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/compact_contract.json",
+      "sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+      "size_bytes": 2875795
+    },
+    "dataset": {
+      "bytes": 27082103,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable.jsonl",
+      "sha256": "04a81d4a36b06d157d3bf365527b4159a18cb41a2ef620cca7975b9befcc1d2b",
+      "size_bytes": 27082103
+    },
+    "f2": {
+      "bytes": 15673877,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable_f2.jsonl",
+      "sha256": "12dfaf3e3bffc94bf68d9ea6a858548522c44e157f0f4da80a7cbed2acb6e221",
+      "size_bytes": 15673877
+    },
+    "f2_manifest": {
+      "bytes": 14755,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable_f2.jsonl.manifest.json",
+      "sha256": "e25d0927676ca0f5486ed9ee4dfb4a6f3c57bf22375f2d03e64e65a9bd930b05",
+      "size_bytes": 14755
+    },
+    "seal": {
+      "bytes": 8708,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable.seal.json",
+      "sha256": "15bbd980629aa0b1e0472d27cb2998379c621a9eb9dd6661d2821404cf267ae9",
+      "size_bytes": 8708
+    }
+  },
+  "parent": {
+    "build_report": {
+      "bytes": 8012,
+      "path": "/workspace/multifunction_v1/expanded2776/build/build_report.json",
+      "sha256": "25ec8cc0e18c72b4a03b5b9bd448e853eaab7adbd4dd25c0e91a7bd8cbec70c9",
+      "size_bytes": 8012
+    },
+    "schema": "binary-multifunction-compact-expansion-v1",
+    "train": {
+      "bytes": 27125119,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl",
+      "sha256": "fbfa6bc2a26e9d062352e9fcd508262b07af7fbe019cd1876cf6dd0875f4e904",
+      "size_bytes": 27125119
+    },
+    "train_f2": {
+      "bytes": 15699004,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl",
+      "sha256": "94bea0ce81db113b346375568ead3cebe34f7a4d33e6c33fce4e994b7e0919fe",
+      "size_bytes": 15699004
+    },
+    "train_f2_manifest": {
+      "bytes": 9244,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl.manifest.json",
+      "sha256": "ccc73f06772d8df6cc80b48b3bc0af2e6a6c8069bfe3c7cd483de8c7b0c7a582",
+      "size_bytes": 9244
+    },
+    "train_seal": {
+      "bytes": 3643,
+      "path": "/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.seal.json",
+      "sha256": "e61d9a5070bc0eb824e4cfcaec727f3569507149a1f09502f3220f023944e4e5",
+      "size_bytes": 3643
+    }
+  },
+  "passed": true,
+  "representation_schema": "binary-multifunction-v1-semantic-adapter-v1",
+  "schema": "binary-multifunction-executable-view-v1",
+  "training_objective_scope": "executable_reward_only"
+}

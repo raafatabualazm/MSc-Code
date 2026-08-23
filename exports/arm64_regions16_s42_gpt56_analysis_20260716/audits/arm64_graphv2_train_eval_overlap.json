@@ -1,0 +1,17 @@
+{
+  "train": "data/datasets/arm64_graphv2/flutter_train_graphv2.jsonl",
+  "train_sha256": "f21782dd60edc11988867659dd2d16a5f6b6d2f550594cae09ad7cf92b68dcb7",
+  "benchmark": "data/datasets/arm64_graphv2/flutter_eval_graphv2.jsonl",
+  "benchmark_sha256": "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac",
+  "train_rows": 1371,
+  "benchmark_rows": 343,
+  "duplicate_train_source_rows": 0,
+  "normalization": "comments/whitespace removed; identifiers/literals normalized; token 7-gram Jaccard",
+  "exact_overlap_pairs": 0,
+  "exact_overlaps": [],
+  "near_threshold": 0.8,
+  "near_overlap_pairs": 0,
+  "near_overlaps": [],
+  "dropped_train_indices": [],
+  "dropped_train_rows": 0
+}

@@ -1,0 +1,184 @@
+......................{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "name_only",
+  "expected_target_name": "fn0",
+  "row_count": 1,
+  "samples_per_row": 1,
+  "candidate_stream_sha256": "85e3d3c7a74331736db57ece9df05852f39d09fa9fbdd209f695281cd676bbf6",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/tmp/tmp_h6kqanl/predictions.json",
+      "sha256": "c89bdc0e9da7ee05a1b6d2b807b04be11f6177cc2df8e341deae2afc209db134",
+      "size_bytes": 126
+    },
+    "raw_inference_provenance": {
+      "path": "/tmp/tmp_h6kqanl/predictions.json.provenance.json",
+      "sha256": "c7a757d837847cdebb0e907a8c32b197221fa53e4cf7e14f567b9df89c143969",
+      "size_bytes": 183
+    },
+    "public_dataset": {
+      "path": "/tmp/tmp_h6kqanl/public.jsonl",
+      "sha256": "536925a7ef1cbc2b7602fd949f460bea8acd894fa4c77ff62df11cd6b64d4817",
+      "size_bytes": 209
+    },
+    "private_dataset": {
+      "path": "/tmp/tmp_h6kqanl/private.jsonl",
+      "sha256": "ad5dfe67e950584e7501e7f40a57e6014527a797ac0ecd8560e2a661d9d11498",
+      "size_bytes": 362
+    }
+  },
+  "output": {
+    "path": "/tmp/tmp_h6kqanl/scored.json",
+    "sha256": "94b684a591dd03fa5cb8f4af1cf5653d762c2f9c43cd8f0fca9e3762e674da23",
+    "size_bytes": 226
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}
+..{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "neutral_exact",
+  "expected_target_name": "fn0",
+  "row_count": 1,
+  "samples_per_row": 1,
+  "candidate_stream_sha256": "85e3d3c7a74331736db57ece9df05852f39d09fa9fbdd209f695281cd676bbf6",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/tmp/tmp_wazhp3d/predictions.json",
+      "sha256": "c89bdc0e9da7ee05a1b6d2b807b04be11f6177cc2df8e341deae2afc209db134",
+      "size_bytes": 126
+    },
+    "raw_inference_provenance": {
+      "path": "/tmp/tmp_wazhp3d/predictions.json.provenance.json",
+      "sha256": "7206b4b2a63c5bfc6704ffb076820dac69bf6b3555e0e233cedd15414a402db2",
+      "size_bytes": 183
+    },
+    "public_dataset": {
+      "path": "/tmp/tmp_wazhp3d/public.jsonl",
+      "sha256": "b89859e3713c0a090e138e472521e3eccf565628ab5256649c8a368786cfafb9",
+      "size_bytes": 233
+    },
+    "private_dataset": {
+      "path": "/tmp/tmp_wazhp3d/private.jsonl",
+      "sha256": "6b354e3586ffcebf64be172286bd9c759768505ec1a1f5859861365e1c554611",
+      "size_bytes": 386
+    }
+  },
+  "output": {
+    "path": "/tmp/tmp_wazhp3d/scored.json",
+    "sha256": "94b684a591dd03fa5cb8f4af1cf5653d762c2f9c43cd8f0fca9e3762e674da23",
+    "size_bytes": 226
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}
+...{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "name_only",
+  "expected_target_name": "candidate",
+  "row_count": 1,
+  "samples_per_row": 1,
+  "candidate_stream_sha256": "fa68d82ff29e30ee6aa01b9ede9503bf6fb3030580826bfe274013b2ec462fed",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/tmp/tmpd7x1jcy_/predictions.json",
+      "sha256": "b5d91f19dd85f2e74bba9034af5bbef0f574c82284f90dfbcf6af84563df849f",
+      "size_bytes": 132
+    },
+    "raw_inference_provenance": {
+      "path": "/tmp/tmpd7x1jcy_/predictions.json.provenance.json",
+      "sha256": "c1d4884e8670f2cf81df881f4f776e5f8d3668fb630ba2b8b5fb5ed25eff1c3d",
+      "size_bytes": 183
+    },
+    "public_dataset": {
+      "path": "/tmp/tmpd7x1jcy_/public.jsonl",
+      "sha256": "c3150b002607a7f681d302852e47bd79071ee1b07f7d032eddcdf6dd85a31c22",
+      "size_bytes": 221
+    },
+    "private_dataset": {
+      "path": "/tmp/tmpd7x1jcy_/private.jsonl",
+      "sha256": "e9d1a082f202db0b608d7222fea0044235ac46c91b745ac31d7ca8d5256d6765",
+      "size_bytes": 392
+    }
+  },
+  "output": {
+    "path": "/tmp/tmpd7x1jcy_/scored.json",
+    "sha256": "4a1e41f9b3f70b63318b35de1a30d93fecfc6103b4cba65040df089ddefbb552",
+    "size_bytes": 244
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}
+...{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "neutral_exact",
+  "expected_target_name": "candidate",
+  "row_count": 1,
+  "samples_per_row": 1,
+  "candidate_stream_sha256": "fa68d82ff29e30ee6aa01b9ede9503bf6fb3030580826bfe274013b2ec462fed",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/tmp/tmpi7a5bfp6/predictions.json",
+      "sha256": "b5d91f19dd85f2e74bba9034af5bbef0f574c82284f90dfbcf6af84563df849f",
+      "size_bytes": 132
+    },
+    "raw_inference_provenance": {
+      "path": "/tmp/tmpi7a5bfp6/predictions.json.provenance.json",
+      "sha256": "a57c46fa9b3b64fc35b6a681a78584b7f31a8c4e4582cce4e76dda83dc9319b9",
+      "size_bytes": 183
+    },
+    "public_dataset": {
+      "path": "/tmp/tmpi7a5bfp6/public.jsonl",
+      "sha256": "7969217041efaa3ba2fbf5fe0545ada38213a05a5c0b006828e63bba295b44a6",
+      "size_bytes": 257
+    },
+    "private_dataset": {
+      "path": "/tmp/tmpi7a5bfp6/private.jsonl",
+      "sha256": "771c0bd8a25ae6703071d33e601b97ebea1b4b4b554bebeee0f48990018bc60c",
+      "size_bytes": 428
+    }
+  },
+  "output": {
+    "path": "/tmp/tmpi7a5bfp6/scored.json",
+    "sha256": "4a1e41f9b3f70b63318b35de1a30d93fecfc6103b4cba65040df089ddefbb552",
+    "size_bytes": 244
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}
+........../workspace/scripts/evaluation/codebleu.py:69: DeprecationWarning: int argument support is deprecated
+  self.language = Language(tree_sitter_dart.language())
+...........................PASS paired row order maps to one 2-source permutation
+PASS 2x2 public rows are private-field/fingerprint clean; target=fn0; known stale bindings=['121', '153']
+PASS 2 paired CFGs preserve instructions modulo symbols and exact edges
+PASS prompt schema antigravity-v3-matched-function-contract; 2 matched assembly_mode=none prompt pairs
+PASS frozen toolchain stamps are complete and uniform: Dart=Dart SDK version: 3.11.5 (stable); GDB=GNU gdb (GDB) 17.1
+PASS aligned-JIT classifier includes front-end crash diagnostics
+PASS executable Dart gates explicitly skipped
+PASS fixed-scrub-v3 acceptance gate
+.......................................
+----------------------------------------------------------------------
+Ran 106 tests in 1.040s
+
+OK
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

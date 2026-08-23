@@ -1,0 +1,22 @@
+{
+  "schema": "direct-compact-self-seal-recovery-v1",
+  "source_checkpoint": "/workspace/artifacts/direct_compact_fn0_real_sft_v1",
+  "recovered_checkpoint": "/workspace/artifacts/direct_compact_fn0_real_sft_v1_self_sealed_recovered",
+  "reason": "The source checkpoint's compact_contract.json did not match contract_sha256 in its immutable run_provenance.json.",
+  "artifacts": {
+    "decoder_adapter_sha256": "5516443eb9efe7a32b9ef180f8ae729a96b897dab22d46207c74c00810979e93",
+    "source_embedding_overlay_sha256": "cffc58811014f4123c91c305347421f4fc9fd1498024a381ddeb0c0a2240eeb0",
+    "run_provenance_sha256": "fb097e9a494ff8fa15d6b161ad6b2cd8b08de62890c54b8e2ffeb88b2e96589c",
+    "mismatching_source_contract_sha256": "791f615ab4158ae994c64e5c45197157cd20da704b162aa2d2aecda4e2bacc91",
+    "provenance_bound_contract_source": "/workspace/artifacts/compact_fn0_rebuild/fn0_contract.json",
+    "provenance_bound_contract_sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02"
+  },
+  "invariants": {
+    "adapter_bytes_copied_without_change": true,
+    "overlay_bytes_copied_without_change": true,
+    "run_provenance_copied_without_change": true,
+    "contract_hash_equals_run_provenance_contract_sha256": true,
+    "validate_self_sealed_checkpoint_passed": true,
+    "source_checkpoint_modified": false
+  }
+}

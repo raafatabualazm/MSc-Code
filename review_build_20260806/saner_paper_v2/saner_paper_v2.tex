@@ -1,0 +1,1271 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\codebleu}{\textsc{CodeBLEU}\xspace}
+\usepackage{xspace}
+\newcommand{\passatk}{\texttt{pass@k}\xspace}
+\newcommand{\passat}[1]{\texttt{pass@#1}\xspace}
+\newcommand{\compileatk}{\texttt{compile@k}\xspace}
+\newcommand{\compileat}[1]{\texttt{compile@#1}\xspace}
+\newcommand{\pp}{\,pp\xspace}
+\newcommand{\fnz}{\texttt{fn0}\xspace}
+
+\begin{document}
+
+\title{The Identifiers Are the Specification:\\
+Auditing What Neural Decompilation Benchmarks Measure}
+
+\author{\IEEEauthorblockN{Raafat Abualazm, Ayman Abo Elhassan, and Amr G. Wassal}
+\IEEEauthorblockA{\textit{Computer Engineering Department, Faculty of Engineering} \\
+\textit{Cairo University}, Giza, Egypt \\
+raafat.202210476@eng-st.cu.edu.eg}}
+
+\maketitle
+
+\begin{abstract}
+Neural decompilers are evaluated on benchmarks ported from HumanEval. An audit
+of six published evaluation configurations finds that where the original
+identifiers reach the model is decided by the benchmark split rather than the
+system, and that none of the six reports an identifier-scrubbed control arm. We
+ask what such scores measure by decomposing the
+model's input on a frozen checkpoint, varying one channel at a time and
+replicating the channel arms across five sampling seeds, extended to six under a
+pre-registered amendment. Arms outside that family carry fewer seeds and are
+labelled as such.
+
+The channels separate. On the leakage-clean 174-task set across six sampling
+seeds, a typed contract supplied at inference with \emph{no training} moves
+\passat{10} from $4.8$ to $10.2$ (mean paired difference $+5.3$) and
+\compileat{10} from $126.0$ to $168.2$ ($+42.2$); both effects are positive in
+every one of the six seed blocks, so an exact paired sign-flip test gives
+$p{=}2/2^6=0.031$. The arms share seeds, so this blocked test is the valid one,
+and six blocks is the fewest it can resolve. The other two channels are
+directional at this precision: deleting recovered constants moves \passat{10} by
+$-2.2$ ($p{=}0.25$) with no compilation effect detected, and permuting which
+binary belongs to which task moves \compileat{10} by $-8.7$ (sign-consistent,
+$p{=}0.031$) with no correctness effect detected ($+0.4$, $p{=}0.875$). A
+sixth seed was added under a pre-registered amendment with a single confirmatory
+test and a hard stop; it is the only inference we claim at $\alpha{=}0.05$. A pre-registered oracle control that supplies
+the same typed contract but replaces the binary payload with the empty string ---
+an out-of-distribution input --- reaches the highest compilation we measured,
+$173.5$ of $174$, while solving no more tasks than baseline.
+
+The dominant channel is the bundle of semantic identifiers. On a frozen
+checkpoint, replacing the function name, every parameter name and the symbol in
+the disassembly with opaque equivalents --- leaving types, arity and the
+instruction stream byte-identical --- \emph{improves} compilation by $7.5$\pp
+while collapsing \passat{10} from $27.27\%$ to $4.55\%$, losing $35$ tasks and
+gaining none (exact $p{\approx}6{\times}10^{-11}$). Those identifiers function as
+a compact specification; our design does not separate recall of a memorised
+solution from inference over a descriptive name, and we claim only the former
+where the evidence supports it. Independently, an untrained base model prompted
+with the signature alone, never shown a binary, is not measurably worse than the
+same model fine-tuned on binaries ($-0.0195$, $p{=}0.549$).
+
+We also establish what this protocol can resolve at all. Re-running one frozen
+checkpoint under five seeds moves \passat{10} across $2$--$6$ of $174$ tasks
+($\mathrm{SD}=1.79$), so differences under about three tasks --- including
+several in this literature and several of our own --- are indistinguishable from
+reseeding the same model. A stronger form of the same defect is that \passatk can
+be reproducible in aggregate while being irreproducible in composition: our
+strongest arm reports $10.0\pm1.0$ solved tasks across five seeds, yet those five
+runs solve $24$ distinct tasks and agree on only $4$ (mean pairwise Jaccard
+$0.375$). The same runs scored on compilation, which operates an order of
+magnitude higher, reproduce at $0.973$. Against that floor, an exploratory sweep
+of sixteen architectural interventions and a rejection-sampling programme across
+six checkpoints yield nothing that survives correction, and a frontier reasoning
+model with ten attempts solves four tasks.
+
+We argue that a name-scrubbed arm, a seed-replicated noise floor and an
+input-channel decomposition are together necessary for a decompilation result to
+be interpretable, and we document an evaluation-leakage defect that invalidated
+part of our own earlier evidence.
+\end{abstract}
+
+\begin{IEEEkeywords}
+neural decompilation, benchmark validity, negative results, evaluation
+methodology, reverse engineering, large language models
+\end{IEEEkeywords}
+
+\section{Introduction}
+Decompilation recovers readable source from compiled binaries. Traditional
+decompilers emit correct but unidiomatic output with synthesised identifiers, and
+a growing literature applies large language models to close that
+gap~\cite{llm4decompile}, reporting functional-correctness rates that look
+encouraging.
+
+Nearly all of that literature evaluates on benchmarks ported from
+HumanEval~\cite{chen2021evaluating}. This paper asks what those scores measure.
+Our answer, from a controlled decomposition of the model's input, is that they
+substantially measure whether the model can identify the task from the human
+identifiers it is given --- which together form a compact natural-language
+specification --- and that the remaining channels divide cleanly between those
+that produce compilable code and those that produce correct code.
+
+We are deliberate about the mechanism we do \emph{not} claim. A descriptive
+identifier such as \texttt{sortViolationsBySeverity} may be recalled from
+pretraining or read as a specification and solved afresh; our manipulation
+removes the identifier and cannot distinguish these. We therefore describe the
+defect as \emph{specification leakage} and reserve claims of memorisation for
+where separate evidence supports them.
+
+\subsection{Which evaluations this critique applies to}
+\label{sec:scope}
+We surveyed prompt-construction code, released datasets and prompt templates
+rather than assert where the practice occurs. The survey covers published neural
+decompilers and decompilation benchmarks from 2024--2026 for which a prompt
+template, prompt-construction code or a released evaluation dataset is publicly
+available; a configuration whose prompt could not be established from an artifact
+was recorded as unverifiable and excluded rather than inferred.
+Table~\ref{tab:survey} reports the six configurations over four systems that met
+that bar, each row checked against the artifact independently of the search that
+located it.
+
+The finding is that \textbf{identifier exposure is a property of the benchmark
+split and the input channel, not of the system}. No verified C-target system
+supplies a name, parameter names or a signature as a dedicated prompt
+\emph{field}; LLM4Decompile, SALT4Decompile and SK2Decompile share one
+single-slot template. But the symbol reaches the model inside the assembly
+regardless. On HumanEval-Decompile that symbol is the semantically empty
+\texttt{func0} in $656/656$ rows, so nothing leaks, and the benchmark should be
+credited for it. On the \emph{same system's} GitHub2025 and ExeBench splits the
+first line of the assembly is the true symbol ---
+\texttt{mi\_cmp\_dynamic\_unique:}, \texttt{StateIdle:} --- and C++ rows carry the
+demangled signature with parameter types and arity ahead of any instruction.
+Identical prompt code, opposite exposure. This is also why
+Section~\ref{sec:validity} scrubs the disassembly symbol and not merely the
+declaration: that is the channel the field actually leaks through.
+
+Two limits on our own scope follow. First, we could not establish that the
+practice is prevalent in \emph{modern-language} evaluations. We located no Dart,
+Java, Kotlin, Swift, Go or Rust neural-decompilation evaluation other than our own
+prior studies, so a prevalence claim we made in earlier work is withdrawn for want
+of evidence rather than defended. The one non-C system verified, SCDBench, does
+supply the original name with parameter types and arity as an explicit prompt
+field, but its EVM target places selectors in the bytecode by design and it is a
+single point. Second, what the survey does establish uniformly is the absence of
+controls: \textbf{none of the six configurations reports an identifier-scrubbed or
+signature-only arm}. The precondition this paper argues for is unmet everywhere we
+looked, which is the general form of our contribution --- not that a particular
+benchmark is broken, but that none of them can currently tell.
+
+The evidence is uncomfortable in a specific way. When we remove the semantic
+identifiers and leave everything else --- types, arity, the instruction stream,
+the checkpoint, the compiler, the tests --- functional correctness collapses by a
+factor of six \emph{while compilation improves}. The model does not become worse
+at writing Dart. It becomes worse at writing the \emph{right} Dart. And in a
+separate leakage-free study, an untrained baseline that sees only the signature
+and never sees the binary at all is not measurably worse than any model we
+trained on the binary.
+
+\begin{table}[t]
+\caption{Prompt channels in published neural decompilation evaluations. Each row
+is grounded in released prompt-construction code, a released dataset, or a
+verbatim prompt template. ``sig.'' distinguishes the \emph{original} source
+signature (never supplied) from a decompiler-inferred one.}
+\label{tab:survey}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llllcc@{}}
+\toprule
+\textbf{system / split} & \textbf{name} & \textbf{params} & \textbf{sig.} & \textbf{ctrl} & \textbf{seeds}\\
+\midrule
+L4D-End / HumanEval-Dec.  & \texttt{func0}       & ---              & ---     & no & 1\\
+L4D-Ref / HumanEval-Dec.  & \texttt{func0}       & \texttt{param\_N} & Ghidra  & no & 1\\
+L4D / GitHub2025, ExeBench & \textbf{original}   & ---              & C++ types & no & 1\\
+SALT4Dec. / Dec.-Eval, MBPP & \texttt{func}      & \texttt{var1..}  & ---     & no & 1\\
+SK2Dec. / stripped         & \texttt{sub\_XXXX}  & \texttt{a1,a2}   & IDA     & no & 1\\
+SCDBench / EVM-Solidity    & \textbf{original}   & ---              & \textbf{+types, arity} & no & 1\\
+\midrule
+\multicolumn{4}{@{}l}{\emph{totals}} & \textbf{0/6} & \textbf{0/4}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Contributions}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{A benchmark-validity result for neural decompilation}
+(Section~\ref{sec:validity}): an inference-time ablation on a frozen checkpoint
+shows that the semantic identifiers, not the binary, carry most of the measured
+correctness, and an untrained signature-only baseline that never sees a binary is
+not measurably worse than models fine-tuned on binaries.
+\item \textbf{A measured resolution floor for \passatk}
+(Section~\ref{sec:floor}). Re-running one frozen checkpoint under five sampling
+seeds moves \passat{10} across $2$--$6$ of $174$ tasks ($\mathrm{SD}=1.79$). Most
+differences reported in this literature --- including several of our own --- fall
+below that floor, which we argue makes a seed-replicated floor a precondition for
+interpreting any \passatk comparison.
+\item \textbf{Aggregate reproducibility without compositional reproducibility}
+(Section~\ref{sec:turnover}). Across every arm, \passatk counts are far more
+stable than the task sets they summarise: our best arm's count varies by
+$\mathrm{SD}=1.00$ while its five runs agree on only $5$ of the $25$ tasks they
+collectively solve. Scoring the \emph{same} runs on compilation, which operates
+at a much higher rate, reproduces at Jaccard $0.83$--$0.97$, which localises the
+defect to the low-rate regime rather than to the harness or the benchmark. We
+give a two-integer reporting fix.
+\item \textbf{An inference-time channel decomposition}
+(Section~\ref{sec:channel}). On a frozen checkpoint, supplying a typed contract moves
+\compileat{10} from $126.0$ to $168.4$ of $174$ with \emph{no training}; removing
+recovered constants collapses \passat{10} while leaving compilation statistically
+unchanged; permuting which binary belongs to which task moves compilation and
+not correctness; and withholding the binary entirely, while supplying the same
+typed contract, maximises compilation while solving no more than baseline.
+Supplying the contract at inference and fine-tuning on it both help; on the
+primary endpoint the training step is the larger of the two, which contradicts a
+claim we made in earlier work.
+\item \textbf{Exploratory architecture and objective sweeps}
+(Section~\ref{sec:arch}): sixteen controlled interventions with one significant
+effect and a control-flow-edge effect whose sign reverses across seeds, together
+with a rejection-sampling programme closed across six checkpoints and three
+arrangements.
+\item \textbf{A frontier ceiling on name-scrubbed data}
+(Section~\ref{sec:frontier}), measured under a sealed, hash-pinned harness and
+reported as a single-provider, single-date reference point.
+\item \textbf{A documented evaluation-leakage post-mortem}
+(Section~\ref{sec:leak}) and the protocol that replaced it
+(Section~\ref{sec:protocol}).
+\end{enumerate}
+
+\subsection{Relationship to our prior work}
+This paper builds on two earlier studies by the authors. A SANER ERA paper
+introduced the Dart decompilation task and a first fine-tuned
+pipeline~\cite{abualazm2026idiomatic}, and a journal study analysed fine-tuning
+effectiveness and metric validity on that
+pipeline~\cite{abualazm2026tosem}. Both report decompilation performance
+\emph{using} a benchmark that supplies the function signature. The present paper
+is the first to ask whether that benchmark is measuring decompilation at all,
+and it answers in the negative. Section~\ref{sec:prior} summarises
+results from~\cite{abualazm2026tosem} as context and claims no novelty for them;
+Sections~\ref{sec:floor}, \ref{sec:validity}, \ref{sec:channel}, \ref{sec:arch},
+\ref{sec:frontier} and~\ref{sec:leak} are new.
+
+\section{Background and Related Work}
+Classical decompilation descends from Cifuentes~\cite{cifuentes1994reverse}
+through structural analysis~\cite{schwartz2013native}, control-flow
+structuring~\cite{yakdan2015no} and platforms such as
+BAP~\cite{brumley2011bap}. Neural approaches began with sequence
+transduction~\cite{katz2018using,fu2019coda} and now centre on LLMs fine-tuned
+on assembly--source pairs~\cite{llm4decompile}.
+
+The current frontier adds structure or iteration atop a language model:
+control-flow augmentation~\cite{liu2025cfadecllm}, hierarchical graph
+abstraction~\cite{achamyeleh2026helios}, abstract logic
+trees~\cite{wang2025salt4decompile}, skeleton-to-skin
+generation~\cite{tan2025sk2decompile}, hierarchical attention over
+assembly~\cite{jiang2025nova}, feedback-driven
+refinement~\cite{liu2026autodecompiler}, and joint code and type
+prediction~\cite{dramko2025idioms}. Our results engage this line directly and
+mostly negatively: Section~\ref{sec:arch} reports a leakage-free null for
+explicit control-flow and dataflow conditioning, and Section~\ref{sec:validity}
+shows that the semantic identifiers --- which reach the model through the
+channels catalogued in Table~\ref{tab:survey} --- account for most of the
+measured success.
+
+Evaluation has converged on \codebleu~\cite{ren2020codebleu}, \compileatk, and
+\passatk~\cite{chen2021evaluating}, with benchmarks ported in the style of
+MultiPL-E~\cite{cassano2023multiple}. Recent work questions whether such
+benchmarks reflect real-world decompilation~\cite{decompilebench2025}; we supply
+a mechanism for why they do not.
+
+Dart is a demanding and under-studied target. Its AOT compiler performs
+whole-program optimisation, erases names, and stores literals in a per-isolate
+object pool addressed through a dedicated register, so constants do not appear
+inline in the disassembly. Existing Dart tooling recovers structure but not
+source~\cite{blutter,reflutter,jebdartaot}.
+
+\section{Experimental Infrastructure}
+\label{sec:infra}
+This paper uses five corpora, and results are not comparable across them.
+Table~\ref{tab:corpora} states which supports which claim.
+
+\begin{table}[t]
+\caption{Corpora. Counts are never compared across rows.}
+\label{tab:corpora}
+\centering\scriptsize
+\begin{tabular}{@{}llrl@{}}
+\toprule
+\textbf{ID} & \textbf{origin} & \textbf{tasks} & \textbf{supports}\\
+\midrule
+HE-154 & HumanEval ported to Dart      & 154 & \S\ref{sec:validity}, \S\ref{sec:arch}\\
+MF-175 & internal: LLM-gen $+$ legacy   & 175 & \S\ref{sec:floor}, \S\ref{sec:turnover},\\
+       &                               &     & \S\ref{sec:channel}, \S\ref{sec:frontier}\\
+CB-73  & Dart, held out                &  73 & \codebleu (prior work)\\
+CP-126 & Dart, held out                & 126 & \compileatk (prior work)\\
+FL-343 & Flutter ARM64 release APKs    & 343 & \S\ref{sec:arm64}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{HE-154} is 154 of HumanEval's 164 problems with executable harnesses
+(median 7 assertions). Two distinct defect populations affect it, and we separate
+them because they have been conflated. First, 12 of the 154 supplied reference solutions fail their own harness. A
+failing reference does not make its task unsolvable --- another implementation
+may pass --- but it means those 12 tasks cannot be certified by their own gold
+code, and we treat 142 as the reference-certified set. Three tasks fall in both
+defect populations, so the strict union leaves 141. Second, and independently, 4 tasks carry hidden-test
+defects that make them unscoreable under \emph{any} opaque contract: tests
+binding an undefined wrapper (\#121, \#153), tests passing record arguments to a
+\texttt{List<int>} contract (\#127), and an unintended string interpolation in
+the test source (\#161). Those 4 are enumerated in a manifest frozen
+independently of any treatment outcome; excluding them gives the
+\textbf{valid-150} confirmatory set reported alongside the full 154 in
+Section~\ref{sec:validity}. HE-154 supports the identifier ablation only.
+
+\textbf{MF-175} is an \textbf{internally constructed, held-out x86-64 evaluation
+suite}, not an external benchmark. It comprises 136 LLM-generated Dart tasks with
+supplied test harnesses and 39 legacy standalone Dart SFT programs with generated
+differential tests. Following signature neutralisation and a deterministic
+semantic-component split, eligible tasks were individually compiled to
+source-only AOT ELFs with Dart 3.12.2 and represented using their extracted
+target-function F2. The surviving manifests identify $1{,}580$ training tasks and
+$175$ evaluation tasks; a separate expanded file of $2{,}776$ \emph{training
+rows} was derived from the training split and is not a task pool. MF-175 supports
+the reseeding, stability, channel-decomposition and frontier analyses.
+
+Two limitations follow, and both bear on how far its results generalise. The
+retained records for the 39 legacy tasks do not identify their original
+repositories or licences; we therefore describe them only as legacy internal
+\texttt{dart\_all} tasks and make no project-level or real-world provenance
+claim. More consequentially, \emph{a majority of the suite is model-generated}.
+Synthetic Dart may lie closer to a decompiler's pretraining distribution than
+human-written code, and its identifiers may be more uniformly descriptive than
+those in production software --- either of which could inflate the
+identifier-channel effects we measure. MF-175 therefore bounds what these
+channels carry on this construction; it is not a sample of real-world
+decompilation targets. Each task pairs a
+reference implementation with an executable acceptance suite, and the references
+pass their own harness $175/175$ --- the Rank-0 control of
+Section~\ref{sec:floor}. One held-out task shares
+byte-identical acceptance tests with a training row. That task is not inert: it compiles in every arm and every seed, and is solved
+in every baseline, typed-contract and structure-permuted seed, while no
+constants-stripped seed solves it. It is excluded from all confirmatory
+analysis, and counts on MF-175 are reported on the leakage-clean
+\textbf{174-task} subset. Its behaviour is itself a contamination datapoint: a
+training row is recovered whenever the identifier and constant channels are
+intact, and lost when the constants are removed. CB-73 and CP-126 are the
+disjoint corpora used by the prior work summarised in Section~\ref{sec:prior}.
+
+Functional comparisons are paired at the task level: McNemar's exact two-sided
+test on discordant tasks, with 10{,}000-iteration bootstrap CIs. Across-seed arm
+comparisons are \textbf{blocked, not independent}: every arm runs on the same
+five seeds over the same tasks, so the valid randomisation is a paired sign-flip
+over five seed blocks ($2^5=32$ arrangements), not a relabelling of ten free
+observations. Its smallest attainable two-sided $p$ is $2/32=0.0625$, so
+\textbf{no contrast in this study can reach $\alpha{=}0.05$ whatever its
+magnitude}; six seeds would be the minimum for significance to be \emph{attainable}, not
+guaranteed. We report the paired $p$ throughout
+and treat $0.0625$ as the design's floor rather than as evidence. Rates carry Wilson intervals. \passatk for $k>1$ is
+any-of-$k$ at the task level. \passat{1} on MF-175 is the success of the
+first sampled candidate, not the $c/n$ estimator; it is reported for
+completeness and carries no claim.
+
+\textbf{What \compileatk measures, precisely.} We state this because several of
+our results are otherwise easy to over-read. A candidate is concatenated with the
+task's real test file and executed with \texttt{dart run}; a non-zero exit counts
+as a compile failure \emph{only} when Dart emits a static front-end diagnostic,
+while runtime exceptions and failed assertions count as compiled-but-not-passing.
+Because the tests invoke the function by name with typed arguments and consume
+its return value, and because Dart is statically typed, passing the front end
+requires the emitted function's name, arity and parameter and return types to
+conform to the call sites, and requires the body to type-check. \compileatk is
+therefore an \emph{interface-conformance and type-consistency} metric. It is not
+a test of whether the output is well-formed Dart, and it is not a proxy for
+correctness. Any intervention that supplies the declared signature is supplying
+the model with the answer to much of what this metric asks, and we read the
+compilation column accordingly throughout.
+
+\begin{table}[t]
+\caption{Study matrix. Two distinct systems are used; no result crosses them.}
+\label{tab:studies}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+ & \textbf{identifier (\S\ref{sec:validity})} & \textbf{channel/floor/stab.} & \textbf{frontier}\\
+\midrule
+corpus   & HE-154 / valid-150 & MF-174 & MF (full 175)\\
+model    & Qwen3-8B$+$graph enc. & T5Gemma-2-4b-4b & DeepSeek-V4-Pro\\
+weights  & \texttt{e8e872\ldots} & opt-348 \texttt{83d815\ldots} & provider API\\
+seeds    & 42 (single) & 42--46 & one complete run\\
+$k$ / samples & 10 & 10 & 10\\
+Dart     & 3.11.5 & 3.12.2 & 3.12.2 (scoring)\\
+prompt   & \texttt{antigravity-v2/v3} & sealed F2 contract & sealed F2 prompt\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The identifier study and the channel study run on \emph{different systems}
+(Table~\ref{tab:studies}); no comparison in this paper crosses that boundary, and
+agreement between them is convergence of two instruments, not replication on
+one.
+
+\section{Reseeding Variability Under This Protocol}
+\label{sec:floor}
+Every comparison in this paper, and every comparison in the literature it
+critiques, is a difference between two \passatk counts on a benchmark of a few
+hundred tasks. Before reporting any such difference we measured what this
+protocol can resolve.
+
+We re-ran a \emph{single frozen checkpoint} on the same 175 held-out tasks under
+five sampling seeds, changing nothing else --- same weights, same task order,
+same decoding parameters, same scorer, same evaluation file by SHA-256.
+
+\begin{table}[t]
+\caption{One checkpoint, the leakage-clean 174 tasks, five sampling seeds. Only the seed varies.}
+\label{tab:floor}
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{seed} & & \\
+\cmidrule(lr){2-6}
+\textbf{metric} & 42 & 43 & 44 & 45 & 46 & \textbf{mean} & \textbf{SD} \\
+\midrule
+\passat{10}   & 6 & 6 & 6 & 4 & 2 & 4.8 & \textbf{1.79} \\
+\compileat{10} & 123 & 124 & 134 & 125 & 124 & 126.0 & 4.53 \\
+\passat{1}    & 2 & 1 & 2 & 1 & 2 & 1.6 & 0.55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\passat{10} ranges from $2$ to $6$ on an identical model
+(Table~\ref{tab:floor}). A pre-registered interpretation gate --- fixed before
+the seeds were drawn, and triggered by the observed spread --- declares
+differences of this magnitude uninterpretable under this protocol. The practical
+consequence is that \textbf{a difference of fewer than about three tasks cannot
+be resolved here}, and we report every such difference as lying within the floor.
+
+Two controls establish that this is sampling variance rather than a broken
+instrument. First, scoring the reference implementations through the same
+evaluator returns $175/175$ on compilation, \passat{1} and \passatk: the harness
+registers a perfect result when one exists, so null outcomes are not an artifact
+of measurement. Second, re-deriving the same arms under a later revision of the
+extraction and scoring code reproduces every count exactly.
+
+We report this as a contribution rather than a caveat, and we are careful about
+whose results it constrains. The C-target literature surveyed in
+Section~\ref{sec:scope} does not report \passatk at all: its metric is
+re-executability, or RC/RE/TCP, on a \emph{single greedy decode}, so a decode-seed
+floor does not transfer to those numbers directly. What does transfer is the
+absence of any error bar --- none of the four papers reports seeds, repetitions,
+variance or confidence intervals --- and the consequence surfaces in their
+ablations, where component contributions of $0.1$--$0.3$\pp are reported and two
+are sign-inverted, the ablated model beating the full one. Our floor bounds what
+\passatk comparisons can resolve on corpora of this size, our own included; for
+single-sample metrics the corresponding quantity is simply unreported.
+Section~\ref{sec:protocol} makes a seed-replicated floor a reporting requirement.
+
+\section{A Reproducible Number Over an Irreproducible Set}
+\label{sec:turnover}
+The floor of Section~\ref{sec:floor} is a statement about the \emph{count}. A
+count can be stable while the set it summarises is not, and on this corpus it is.
+For every arm of the channel study we recovered the identity of the solved tasks
+in each of its five seeds and compared the sets pairwise
+(Table~\ref{tab:turnover}).
+
+\begin{table}[t]
+\caption{Solved-set stability across five sampling seeds. Only the seed varies.
+``all 5'' is the number of tasks solved in every seed, ``any'' the number solved
+in at least one; Jaccard is the mean over all ten seed pairs. Counts reproduce
+far better than the sets they summarise, and compilation reproduces far better
+than correctness.}
+\label{tab:turnover}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{\passat{10}} & \multicolumn{2}{c}{\compileat{10}} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+\textbf{arm} & \textbf{mean} & \textbf{all} & \textbf{any} & $J$ & $J$/chance & $J$ & $J$/chance\\
+\midrule
+$-$ constants      & 2.6  & 1 & 7  & 0.342 & 45.7 & 0.845 & 1.52\\
+baseline           & 4.8  & 1 & 15 & 0.203 & 14.7 & 0.854 & 1.50\\
+structure permuted & 5.2  & 1 & 12 & 0.302 & 20.4 & 0.830 & 1.62\\
+$+$ typed contract & 10.0 & 4 & 24 & 0.375 & 13.1 & 0.973 & 1.04\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The count is the stable part.} The typed-contract arm reports
+$10.0\pm1.00$ solved tasks --- the tightest count in the study. Yet its five runs
+solve $24$ distinct tasks between them and agree on $4$. A single run of that arm
+therefore understates what the configuration can reach by more than half, and
+overstates what it reaches \emph{reliably} by more than double, while reporting a
+number that replicates to one task. The baseline is worse: two tasks are solved
+in all five seeds, fifteen in at least one, and most of that union is solved by
+exactly one run.
+
+\textbf{The harness is not the cause.} The identical runs scored on compilation
+put only $3\%$ of the compiling union in a single seed, against $56$--$71\%$ of
+the solved union. Same generations, same seeds, same scorer, same tasks: whatever
+scatters the solved set leaves the compiling set almost fixed, which excludes
+nondeterminism in generation, in the compiler, or in evaluation order.
+
+\textbf{But the raw Jaccard gap is not the measure of it.} Jaccard rises
+mechanically with set size --- two sets covering $97\%$ of the tasks must overlap
+heavily --- so the $0.30$ versus $0.97$ contrast is largely an artifact of the
+rate, not evidence about it. Against the overlap expected for independent random
+subsets of the same sizes, the ordering \emph{reverses}: solved sets run
+$13$--$46{\times}$ chance while compiling sets run only $1.0$--$1.6{\times}$.
+There is real task-level structure in what gets solved; the stable core is simply
+small in absolute terms. The defensible statement is the absolute one --- of the
+$24$ tasks the strongest arm ever solves, $4$ are solved every time --- and it is
+the absolute figure that governs whether a task-level claim is safe.
+
+This is the empirical form of the unmeasurable left tail: tasks whose per-sample
+success probability is small relative to $1/k$ are individually indistinguishable
+from unsolvable, and which of them surface is decided by the draw.
+
+\textbf{What this costs the literature.} It does not threaten aggregate
+comparisons: the between-arm gaps in Table~\ref{tab:channel} are several times
+the count SD and survive. It does threaten every \emph{task-level} claim, and
+those are common --- that a method fixes the harder cases, repairs a particular
+failure mode, or unlocks a specific class of function. On this corpus, two runs
+of one configuration disagree about roughly $70\%$ of what either solves. No such
+claim is supportable at these rates without showing that the solved set itself
+replicates.
+
+The fix is cheap. Alongside the mean, report the number of tasks solved in
+\emph{every} seed and in \emph{any} seed. Two integers make the gap visible, and
+their ratio is a direct estimate of how much of a reported score is a stable
+capability rather than a draw.
+
+\section{The Benchmark Measures Its Own Identifiers}
+\label{sec:validity}
+
+\subsection{Design A: removing the semantic identifiers}
+We freeze a checkpoint and hold the HE-154 tasks, the scoring stack and the
+pinned compiler fixed, varying only the human-readable identifiers:
+the original semantic HumanEval signature; \texttt{neutral\_exact}, which
+preserves types and arity but replaces the function name with an opaque \fnz\ and
+every parameter name with a positional letter; and \texttt{name\_only}, which
+gives \fnz with no types.
+
+We state the manipulation precisely, because it is broader than a function
+rename and the breadth bounds what may be concluded. In all 154 tasks
+\texttt{neutral\_exact} replaces the function name, all $200$ parameter-name
+slots, the symbol in the disassembly headers and branch-target annotations, $15$
+helper symbols, and the source path. What it leaves untouched is equally exact:
+parameter types and arity are identical in $154/154$, and after masking symbol
+annotations the instruction stream --- opcodes, operands, addresses --- is
+byte-identical in $154/154$. The arm therefore removes \emph{every human-meaningful
+identifier reachable by the model} while holding the binary evidence constant.
+Effects below are attributable to that bundle, not to the function name alone.
+
+\begin{table}[t]
+\caption{Identifier ablation on a frozen checkpoint, seed 42. The function name,
+all parameter names and the disassembly symbol change together; types, arity and
+the instruction stream are held byte-identical.}
+\label{tab:sig}
+\centering\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Signature shown} & \textbf{p@1} & \textbf{p@10} & \textbf{c@1} & \textbf{compiled}\\
+\midrule
+Semantic name      & 17.66 & \textbf{27.27} & 77.08 & 1{,}187/1{,}540\\
+Typed, opaque \fnz & 0.71  & 4.55  & \textbf{84.61} & \textbf{1{,}303/1{,}540}\\
+Name only          & 0.00  & 0.00  & 3.18  & 49/1{,}540\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:sig} separates two contributions that the literature conflates,
+including work predicting code and types jointly~\cite{dramko2025idioms}.
+
+\textbf{Types and arity carry compilation.} Given an opaque typed contract the
+model emits a function named \fnz\ with the requested arity in 1{,}537 of 1{,}540
+samples, and 1{,}303 of those compile against the tests --- \emph{better} than the
+named comparator by $7.5$\pp. Syntactic competence does not degrade.
+
+\textbf{The identifiers carry functional correctness.} Removing them
+collapses \passat{10} from $27.27\%$ to $4.55\%$. Of the comparator's 42 solved
+tasks, \texttt{neutral\_exact} retains 7 --- zero gained, 35 lost. Roughly $83\%$
+of ``solved'' tasks were solvable only with the semantic identifiers present.
+That the floor is
+reachable rules out a broken harness: 151 of 154 neutral references compile and
+142 pass. The scrubbed generations are not broken Dart; they are
+\emph{semantically wrong} Dart.
+
+\textbf{The result is invariant to the benchmark's defects.} Repeating the
+comparison on the valid-150 set of Section~\ref{sec:infra}, which drops the four
+contract-defective tasks, gives $28.0\%$ versus $4.67\%$ --- and \emph{the same}
+$35$ losses, $0$ gains and $7$ retained. The excluded tasks all sit among the
+$112$ that neither arm solves, so removing them moves the denominator and nothing
+else. The reference-certified 142 cannot be recomputed without per-task
+rescoring, but it is bounded: even if all 12 reference-failing tasks lay among
+the 35 losses, the containment would remain at least 23 losses to 0 gains. We
+report all denominators for this reason: the effect does not depend on which
+validity criterion a reader prefers.
+
+We locate this figure against the standard of Section~\ref{sec:turnover} rather
+than leave it to be questioned. The $83\%$ is a ratio of two counts, $42$ and
+$7$, and the count is the quantity Section~\ref{sec:turnover} finds stable; the
+collapse is a factor of six, far outside any floor. The containment it rests on
+--- $35$ losses and \emph{zero} gains --- is a task-level statement, but it is
+the opposite of the fragile case: the discordance is unanimous across all $35$
+pairs (exact two-sided $p{\approx}6\times10^{-11}$), at a $27.27\%$ success rate
+where Table~\ref{tab:turnover} shows solved sets to be far more stable than in
+the low-rate arms. The constraint of Section~\ref{sec:turnover} applies to
+task-level claims resting on few discordant pairs at low success rates, which
+this is not. What does remain conditional on this seed is the \emph{identity} of
+the seven retained tasks, and we make no claim about which they are.
+
+\subsection{Design B: an untrained signature-only baseline}
+Design A varies a prompt on a fixed model. The complementary question is whether
+\emph{training} on binaries buys anything over a policy that never sees one. In
+the leakage-free study of Section~\ref{sec:arch} we compared three
+binary-consuming arms against a signature-only baseline that is the
+\textbf{untrained base model}: no fine-tuning, no adapter, prompted with the
+signature alone. It reaches \passat{10} of $0.234$ ($36/154$).
+
+\begin{table}[t]
+\caption{Every arm against a baseline that sees only the signature and never the
+binary. Paired task bootstrap; McNemar exact.}
+\label{tab:sigonly}
+\centering\footnotesize
+\begin{tabular}{@{}lrlr@{}}
+\toprule
+\textbf{Arm vs.\ signature-only} & \textbf{$\Delta$p@10} & \textbf{95\% CI} & \textbf{$p$}\\
+\midrule
+Trained on raw assembly & $-0.0195$ & $[-0.065,\,+0.026]$ & 0.549\\
+Graph prefix, no edges  & $+0.0195$ & $[-0.020,\,+0.058]$ & 0.549\\
+Graph prefix + CFG      & $+0.0260$ & $[-0.013,\,+0.071]$ & 0.388\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{No arm is distinguishable from the signature-only baseline.} A model
+fine-tuned on raw assembly is nominally \emph{worse} than an untrained model that
+never sees the binary; on \passat{1} that deficit's interval excludes zero. The
+graph-conditioned arms are nominally better by two to three points, with
+intervals crossing zero.
+
+We are explicit about what this comparison is and is not. The baseline differs
+from the other arms in \emph{two} respects --- it is untrained and it is shown a
+different input --- so it does not isolate the binary channel and cannot support
+a decomposition. What it does support is a bound, and the bound is the
+uncomfortable part: several hundred GPU-hours of fine-tuning on binaries did not
+produce a policy measurably better than the base model reading a signature.
+Designs A and B are methodologically independent, and both are consistent with
+the benchmark being insensitive to binary evidence; neither establishes that the
+binary is uninformative, and we do not claim it.
+
+\section{Exploratory: Architecture and Objective Interventions}
+\label{sec:arch}
+A natural response is that the architecture was inadequate. We ran a
+pre-registered sweep with freeze rules fixed in advance and a
+reviewer-objection matrix mapping each plausible criticism to a control, rather
+than searching until a configuration won.
+
+A three-seed core ablation (prefix with no edges, $+$CFG, $+$CFG$+$DFG; seeds
+42--44) puts the no-edge arm at the best mean \passat{10} ($.260$) with every
+edge effect's hierarchical-bootstrap interval crossing zero. The instructive part
+is the instability: at seed 44, CFG versus no-edge is 1 gain / 8 losses (exact
+$p{=}0.0391$) while adding DFG to CFG is 7 gains / 0 losses ($p{=}0.0156$) --- two
+nominally significant effects in opposite directions within one seed. A direction
+that reverses across seeds is not evidence of a null; it is no evidence of a
+reproducible effect either way.
+
+Table~\ref{tab:sweep} reports the component isolations. Encoder identity,
+message-passing depth, prefix width, hierarchical regions, global attention and
+positional encodings all leave \passat{10} statistically unchanged.
+
+\begin{table}[t]
+\caption{Architectural interventions (seed 42, paired task bootstrap). Exactly
+one is significant, and it removes the channel rather than restructuring it.}
+\label{tab:sweep}
+\centering\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Intervention} & \textbf{$\Delta$p@10} & \textbf{$p$}\\
+\midrule
+No-GINE vs.\ no-edge GINE            & $+.0065$ & 1.000\\
+No-GINE vs.\ CFG+DFG GINE            & $+.0260$ & 0.219\\
+CLAP-ASM vs.\ GraphCodeBERT encoder  & $-.0065$ & 1.000\\
+Four block vectors vs.\ one CLS      & $+.0000$ & 1.000\\
+Eight block vectors vs.\ one CLS     & $-.0130$ & 0.688\\
+Hierarchical regions vs.\ block prefix & $-.0195$ & 0.375\\
+Region maximum 16 vs.\ no regions    & $+.0130$ & 0.688\\
+No global attention                  & $-.0130$ & 0.625\\
+No block positions                   & $-.0195$ & 0.375\\
+Two- vs.\ four-layer GINE            & $+.0065$ & 1.000\\
+Cross-task permuted graph            & $-.0130$ & 0.500\\
+Shuffled block order                 & $-.0065$ & 1.000\\
+\midrule
+\textbf{Zero the prefix gate}        & $\mathbf{-.0455}$ & $\mathbf{0.016}$\\
+\bottomrule
+\multicolumn{3}{@{}p{0.92\linewidth}@{}}{\footnotesize Three further contrasts
+from the same sealed sweep are omitted for space; all are null
+($-.0065$, $p{=}1.000$; $+.0000$, $p{=}1.000$; $-.0195$, $p{=}0.508$). Including
+them, 16 contrasts were run over 15 intervention arms, and the single nominally
+significant result below is the only one among all 16.}
+\end{tabular}
+\end{table}
+
+\textbf{Multiplicity.} We report the correction rather than wait to be asked.
+With 16 contrasts, a Holm threshold at the smallest rank is ${\approx}0.003$, and
+the prefix-gate effect at $p{=}0.016$ does not survive it; under the global null,
+seeing at least one $p<0.05$ among 16 tests has probability ${\approx}0.56$. We
+retain the arm not as an independently significant finding but because it was
+predicted in advance, its discordance is unanimous ($0$ gains, $7$ losses), and
+it converges with Designs A and B. Read alone, it is consistent with chance.
+
+\textbf{The one nominally significant cell does not survive correction.} Zeroing the prefix
+gate --- deleting the binary channel outright --- costs $0.0455$ with 0 gains and
+7 losses ($p{=}0.0156$), and freezing the encoder drops \compileat{1} from
+$0.78$ to $0.48$. Meanwhile substituting \emph{another task's} graph costs only
+$0.0130$ ($p{=}0.50$) and shuffling block order costs $0.0065$ ($p{=}1.00$). The
+decoder uses the channel, but is largely indifferent to what it contains: the
+learned assembly-to-prefix compression is load-bearing, the explicit topology is
+not.
+
+\subsection{Disclosure}
+This sweep is exploratory, and we treat it as such: the core ablation has three
+of five planned seeds, the component isolations are single-seed diagnostics, and
+the study's own provenance audit header reads \textsc{fail} across its 38 runs
+(10 showing an aggregate/candidate-replay disagreement, resolved by treating
+candidate-level replay as canonical). None of its conclusions is confirmatory;
+the certified result of this paper is the pre-registered channel test of
+Section~\ref{sec:seed47}, not anything in this section.
+
+\section{Prior Findings on This Corpus}
+\label{sec:prior}
+We cite~\cite{abualazm2026tosem} as context only, claim no novelty for it, and
+--- because it remains under journal review --- do not reproduce its results
+here. In summary, it reports fine-tuning configurations without
+functional-correctness gains and a divergence between surface metrics and
+correctness on this corpus. Those findings establish that training on this
+corpus does not improve functional correctness and that surface metrics do not
+track it. They do not address a prior question: what the benchmark measures when
+it does report a score. That question is this paper's subject.
+
+\section{A Frontier Reference Point on Identifier-Scrubbed Data}
+\label{sec:frontier}
+Our first frontier measurement reported $5/60$. An internal audit ruled it
+indefensible --- assembly truncated at 12{,}000 characters so 33 of 60 prompts
+lost the function tail, anonymous closures omitted by the symbol regex, a cache
+that was not content-addressed, and unknown effective $k$ with silent failures.
+We never report it as a result.
+
+\begin{sloppypar}
+The replacement harness pins a paired manifest over 175 ordered tasks and
+enforces eight invariants, all verified:
+{\footnotesize\texttt{provider\_prompts\_exclude\_gold\_and\_tests}},
+{\footnotesize\texttt{no\_prompt\_truncation}},
+{\footnotesize\texttt{measure\_only\_seals\_verified}},
+{\footnotesize\texttt{prompt\_artifact\_hashes\_verified}},
+{\footnotesize\texttt{same\_acceptance\_tests}},
+{\footnotesize\texttt{same\_f2\_grammar}},
+{\footnotesize\texttt{same\_ordered\_175\_tasks}},
+{\footnotesize\texttt{same\_prompt\_budget\_contract}}. Evaluator, Dart binary, tokenizer and
+prompt artifacts are SHA-256 pinned, each run carries a 256-bit completion
+attestation, and the harness refuses to emit a score for an incomplete run.
+\end{sloppypar}
+
+On the complete run --- 175/175 tasks, 1{,}750/1{,}750 slots --- DeepSeek-V4-Pro
+at $k{=}10$ solves \textbf{4 tasks}, \passat{10} $2.29\%$. We separate the two
+denominators explicitly, because conflating them is easy and we have done it:
+at the \emph{task} level \compileat{10} is $86/175 = 49.1\%$, while at the
+\emph{candidate} level $300/1{,}750 = 17.1\%$ of generations compile and
+$11/1{,}750 = 0.63\%$ pass. Every slot carries \texttt{finish\_reason: stop}, so
+the score is not a truncation artifact. Our 8B student reaches \compileat{10} of
+$69.1\%$ on the same tasks: whatever the frontier model contributes here, it is
+not syntactic competence. This is one provider's model on one date under one
+decoding configuration; it is a reference point, not a ceiling. No score exists
+for the other frontier models we queried --- they reached preflight or quota only,
+and absence of a score is not a score of zero.
+
+\section{The Information Channel}
+\label{sec:channel}
+Sections~\ref{sec:validity} and~\ref{sec:arch} establish that the name carries
+the score and that restructuring the model does not. This section asks the
+constructive question: \emph{which} channel carries recoverable signal. We
+decompose the input on a frozen checkpoint, varying one channel at a time.
+
+One chronological fact is disclosed rather than left in the artifact: seed 42
+predates the other four --- its baseline is the sealed epoch-ablation run and it
+served as diagnostic context while the interventions were designed --- whereas
+seeds 43--46 are fresh replications. Excluding seed 42 changes no direction in
+any contrast. Each intervention was replicated across five sampling seeds (42--46); the typed
+contract, baseline and structure-permutation arms carry a sixth (47) added under
+the pre-registered amendment of Section~\ref{sec:seed47}. Table~\ref{tab:channel}
+gives the decomposition; every effect is tested by an exact paired sign-flip over
+the seed blocks, the valid randomisation given that all arms share the same
+seeds.
+
+\textbf{What the six-seed test establishes.} With five blocks the paired floor
+was $2/2^5=0.0625$, so no contrast could reach $\alpha{=}0.05$ whatever its
+magnitude. We therefore pre-registered one sixth seed with a \emph{single}
+confirmatory test --- the typed contract against baseline on \passat{10} --- and a
+hard stop (Section~\ref{sec:seed47}). Seed 47's difference is $+6$ tasks, the
+sixth positive block of six, giving $p{=}2/2^6=0.031$: the typed-contract effect
+on functional correctness is significant. Its compilation effect is
+sign-consistent over the same six blocks at the same $p$, reported as a secondary
+descriptive rather than a second confirmatory test. Structure permutation is
+sign-consistent on compilation across six blocks ($-8.7$ tasks) and null on
+correctness; removing constants stays at $-2.2$ tasks ($p{=}0.25$), directional
+and below resolution. The paper's own standard --- replicate before interpreting
+--- is now met for the one effect it certifies.
+
+\begin{table}[t]
+\caption{Input-channel decomposition on a frozen checkpoint, leakage-clean 174
+tasks, six sampling seeds for the confirmatory arms and five elsewhere, as
+marked. Each channel has a distinct signature, and two of the six tested cells
+show no detected effect.}
+\label{tab:channel}
+\centering
+\footnotesize
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{input} & \textbf{\passat{10}} & \textbf{\compileat{10}} \\
+\midrule
+baseline                 & $5.0 \pm 1.67$  & $125.8 \pm 4.07$ \\
+$+$ typed contract       & $\mathbf{10.3 \pm 1.21}$ & $168.0 \pm 2.19$ \\
+$-$ constants$^\ddagger$ & $\mathbf{2.6 \pm 1.14}$  & $124.2 \pm 4.66$ \\
+structure permuted       & $5.0 \pm 1.79$  & $\mathbf{117.2 \pm 2.93}$ \\
+typed contract, no binary$^\dagger$ & $4.0$ \tiny{(5,\,3)} & $\mathbf{173.5}$ \tiny{(174,\,173)} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\emph{effect vs.\ baseline (exact paired sign-flip, two-sided;}}\\
+\multicolumn{3}{@{}l@{}}{\emph{six-seed floor $2/2^6=0.031$)}}\\
+$+$ typed contract  & $+5.3$, $p{=}\mathbf{0.031}$ & $+42.2$, $p{=}0.031$ \\
+$-$ constants$^\ddagger$ & $-2.2$, $p{=}0.25$   & $-1.8$, $p{=}0.50$ \\
+structure permuted  & $0.0$, $p{=}1.00$    & $-8.7$, $p{=}0.031$ \\
+\bottomrule
+\multicolumn{3}{@{}p{0.94\linewidth}@{}}{\footnotesize Baseline, typed contract
+and structure permutation are six seeds (42--47); $^\ddagger$constants is five
+(42--46), its status unchanged by a sixth block. $^\dagger$Two seeds only,
+per-seed counts in parentheses: a gold-derived oracle control with an
+out-of-distribution empty input, reported without a permutation effect and
+without any equivalence claim (Section~\ref{sec:nobinary}).}
+\end{tabular}
+\end{table}
+
+\subsection{Types, supplied at inference, without training}
+Replacing the input's signature with a typed but opaque contract --- \fnz\ with
+declared return and parameter types, parameter names reduced to
+\texttt{p0},\,\texttt{p1},\,\ldots\ --- and changing nothing else raises
+\compileat{10} from $126.0\pm4.53$ to $168.4\pm2.19$ tasks of 174
+($+42.4$) and \passat{10} from $4.8\pm1.79$ to $10.0\pm1.00$
+($+5.2$); both reach complete separation across the five seeds, so both return
+the paired floor of $0.0625$. On the paired seed-42 comparison the compilation gain
+is $49$ tasks against $3$ losses; at candidate level compilation rises from
+$578/1{,}740$ to $1{,}323/1{,}740$, and diagnostics attributable to wrong arity
+or wrong types fall from $1{,}081$ to $312$.
+
+We note that the functional gain is visible only once seeds are replicated. At a
+single seed the difference is $6\rightarrow9$ tasks, inside the floor of
+Section~\ref{sec:floor} and not interpretable; across five seeds it is a
+$5.2$-task effect at the paired floor of $p{=}0.0625$. This is the concrete case for the
+reporting requirement of Section~\ref{sec:protocol}.
+
+The comparison that matters is what training adds on top, and here we correct a
+claim we have made in earlier work. A model \emph{fine-tuned} on the same typed
+contract reaches \compileat{10} of $171$ against $170$ --- one task --- which we
+previously reported as showing that essentially the whole attainable gain is
+information rather than optimisation. That reading selected the secondary metric.
+On the primary endpoint at the same seed, \passat{10} goes from $10$ to $14$. The
+full triple in functional terms is $6\rightarrow9\rightarrow14$: supplying the
+contract adds three tasks, training on it adds five. Neither step is individually
+resolvable (exact McNemar $p{=}0.27$ for the training step), and the honest
+summary is that information and optimisation contribute comparably here, with the
+data unable to separate them.
+
+\subsection{A three-way dissociation}
+The remaining two interventions do not simply produce smaller versions of the
+same effect. Each moves a different metric, and each leaves the other unchanged.
+
+\textbf{Constants: correctness moves; no compilation effect detected.} Deleting recovered string and numeric
+literals, with the structural payload byte-identical, reduces \passat{10} from
+$4.8\pm1.79$ to $2.6\pm1.14$ ($-2.2$, $p=0.25$) while \compileat{10} shows no
+detected difference at $124.2\pm4.66$ ($-1.8$, $p=0.50$). On the 96 tasks
+that actually carry literals the seed-42 count falls from 4 solved to 0. As a
+control, the 79 tasks containing no literals return predictions
+\emph{byte-identical} to baseline, confirming that the intervention is surgical
+and the harness deterministic. Stripped of constants the model still writes
+Dart that compiles; it stops writing Dart that is correct.
+
+\textbf{Structure: compilation moves; no correctness effect detected.} An exact derangement, in which each
+task receives another task's assembly and control-flow graph while keeping its
+own constants, leaves \passat{10} statistically indistinguishable from baseline
+($5.2\pm1.92$ versus $4.8\pm1.79$; $+0.4$, $p=0.875$) while reducing
+\compileat{10} to $117.4\pm3.21$ ($-8.6$, $p=0.0625$). Running the model on an
+entirely different function's binary changes functional correctness by
+$+0.4$ tasks --- a nominal \emph{gain}, well inside the floor.
+
+We note what this arm does \emph{not} show. The derangement preserves each
+task's own recovered constants and replaces only the structural payload, so it
+isolates the identity of the control-flow evidence rather than removing the
+binary channel. Taken with the constants ablation above, the two arms together
+explain each other: permuting structure is nearly free \emph{because} the
+correctness-carrying channel is left intact.
+
+We label this an \emph{exploratory channel pattern}, not a dissociation. Across
+five paired seeds the three contrasts point in different directions on the two
+metrics, but the design establishes no contrast at $\alpha{=}0.05$ and
+non-significance in the remaining cells is not equivalence. The defensible
+summary is that the typed contract moves both metrics by large margins, removing
+constants moves correctness by $-2.2$ tasks with no compilation effect detected,
+and permuting structure moves compilation by $-8.6$ tasks with no correctness
+effect detected --- all of it directional evidence awaiting a six-seed test.
+
+Across all four arms and every seed, the mean number of distinct programs emitted
+per task lies between $9.98$ and $10.00$ of 10, so none of these effects is
+attributable to degenerate decoding.
+
+\subsection{The pre-registered sixth seed}
+\label{sec:seed47}
+The five-seed design cannot certify any effect: with all arms on the same seeds,
+the valid randomisation is a paired sign-flip over the blocks, and at five blocks
+its smallest two-sided $p$ is $2/2^5=0.0625$. Rather than report the programme's
+central channel result as ``directional'' indefinitely, or add seeds until
+something crossed a threshold, we sealed an amendment before generating a single
+new token. It fixes \emph{one} confirmatory test --- the typed contract against
+baseline on \passat{10}, the paper's declared primary endpoint --- one fresh seed
+(47), and a hard stop: no seed beyond 47, whatever the result. Constants was
+excluded by that amendment on identifiability grounds, its five-seed difference
+vector containing zero blocks that no sixth block can make significant. The
+amendment also records the two operational deviations forced by a smaller GPU ---
+a generation batch reduced from ten to five, applied uniformly, and a
+corresponding fix to a chunked-sampling defect in the harness --- both fixed
+before any seed-47 output was scored, so seed 47 is one well-defined block rather
+than a moving target. The regenerated tokenizer was accepted only after hashing
+to the sealed identity byte-for-byte.
+
+Seed 47 returned a typed$-$baseline \passat{10} difference of $+6$ tasks, the
+sixth positive block of six ($3,5,4,5,9,6$); the exact paired test gives
+$p{=}2/2^6=0.031$. The result is reported exactly as registered, and the two
+compilation contrasts that are also sign-consistent over six blocks are reported
+beside it as secondary descriptives, not as further confirmatory tests.
+
+\subsection{Withholding the binary entirely}
+\label{sec:nobinary}
+The three arms above perturb the binary. The limiting case removes it. We
+pre-registered a control --- hypotheses, thresholds, contrasts and input hashes
+sealed before any generation --- that preserves the typed contract byte-for-byte
+and replaces the entire binary payload with the empty string, task-invariant, at
+the same frozen checkpoint.
+
+We predicted $\compileat{10}\in[160,172]$ and $\passat{10}\in[1,3]$. Both
+predictions were wrong, in the same direction: compilation came in at $174$ and
+$173$ of the leakage-clean $174$ (the prediction was registered on the full
+175), and correctness at $5$ and $3$. The registered branch that fired
+is \emph{substantial type- or benchmark-prior performance}, which obliges us to
+re-interpret the typed-contract result rather than report the control as a floor.
+
+\begin{table}[t]
+\caption{Candidate-level rates, leakage-clean 1{,}740 candidates per arm, seed
+42. Conformance saturates while correctness stays at baseline level.}
+\label{tab:candlevel}
+\centering\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{input} & \textbf{compiled} & \textbf{passed}\\
+\midrule
+baseline                     & 33.2\% & 0.52\%\\
+$+$ typed contract           & 76.0\% & \textbf{1.15\%}\\
+typed contract, no binary    & \textbf{89.0\%} & 0.57\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Conformance saturates; correctness does not move.}
+Table~\ref{tab:candlevel} shows it on a denominator ten times larger than the
+task-level one: deleting the binary and keeping the contract gives the highest
+compilation rate we measured while candidate-level correctness stays at baseline
+level ($0.57\%$ versus $0.52\%$) --- an earlier draft called this arm the least
+correct, which the leakage-clean denominator does not support, and we withdraw
+that reading. Given what \compileatk actually asks
+(Section~\ref{sec:infra}), the compilation half is close to definitional --- the
+model was handed the declared signature, which is most of what the front end
+checks --- and we claim nothing more from it than that. The informative half is
+that near-perfect interface conformance buys \emph{nothing} in correctness:
+candidate-level correctness is statistically indistinguishable from baseline, and
+at task level this arm solves no more than the baseline that reads the binary
+without types, and fewer than half as many as the arm given both.
+
+\textbf{The outputs are wrong, not malformed.} Mean distinct candidates per task
+are $9.95$ and $9.97$ of $10$, so this is not decoding collapse. Every frequent
+failure diagnostic is a runtime assertion --- mismatched list, map or set
+lengths, \texttt{false != true}, \texttt{RangeError} --- rather than a static
+error. The programs compile against the real tests, execute, return values of the
+declared type, and compute the wrong thing.
+
+\textbf{What the control does not license.} Against the same-seed typed$+$F2 arm,
+the correctness deficit is directionally consistent in both seeds and significant
+in one ($3$ versus $8$ discordant, $p{=}0.227$; $1$ versus $10$, $p{=}0.012$);
+our pre-registration required significance in both, so we do not claim a
+quantified F2 correctness contribution from this control. With types held
+constant, removing the binary gains $5$ compiling tasks and loses $0$ and $1$
+respectively ($p{=}0.0625$, which is the \emph{minimum attainable} $p$ at five
+discordant pairs, and $p{=}0.219$), so the compilation direction replicates but
+neither seed resolves it. The arm is a gold-derived oracle: it assumes perfect
+type and arity recovery while evaluating no recovery front end, and the empty
+input is out of distribution for this policy. We make no equivalence claim
+against baseline in either metric, and the $4.0$ correctness figure is
+baseline-\emph{scale}, not baseline-equivalent --- the two arms' solved sets
+overlap in one task.
+
+\subsection{One benchmark, four systems}
+Table~\ref{tab:unified} places every system we measured on the same 175
+name-scrubbed tasks. Every row was re-derived from the raw generation artifacts
+under two toolchain revisions, returning identical counts.
+
+\begin{table}[t]
+\caption{Descriptive cross-system reference points, full 175-task runs predating
+the single-task exclusion, $k{=}10$. The ordering is consistent with the channel
+experiments; the table itself, which mixes model, training, input and scale,
+supports no causal claim.}
+\label{tab:unified}
+\centering
+\footnotesize
+\begin{tabular}{@{}llrr@{}}
+\toprule
+\textbf{system} & \textbf{input} & \textbf{\passat{10}} & \textbf{\compileat{10}} \\
+\midrule
+Decoder-only 8B    & assembly only        & 1  & 103 \\
+Decoder-only 8B    & +\,recovered consts. & 4  & 107 \\
+Frontier reasoning & +\,recovered consts. & 4  & 86  \\
+Decoder-only 8B    & +\,oracle consts.    & 10 & 121 \\
+Encoder--decoder   & assembly + CFG       & 7  & 124 \\
+Encoder--decoder   & +\,typed contract    & 14 & 171 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A frontier reasoning model and a fine-tuned 8B decoder given the same recovered
+constants both solve four tasks. We present that as a coincidence of magnitude
+rather than an established equivalence: the solved sets were not compared, both
+intervals are wide, and Section~\ref{sec:turnover} shows that at these rates two
+runs of a \emph{single} system already disagree about most of what either solves,
+so equal counts are especially weak evidence of equal behaviour. The defensible reading of the table is the column
+ordering --- \passat{10} moves with what the input contains, and barely with what
+consumes it.
+
+\subsection{Objective-side interventions do not substitute}
+If the deficit were a training-signal problem, objective-side work should close
+it. Reinforcement learning never reached a step (seven launches, hard OOM at
+${\sim}94$\,GiB). Dense knowledge distillation is not constructible from a
+top-$k$ API. Expanded synthetic SFT changed \passat{10} by $+0.0065$
+$[-0.020,+0.039]$.
+
+Two further programmes are often described as null results and should not be:
+reinforcement learning never completed a training step (seven launches, hard OOM
+at ${\sim}94$\,GiB) and dense distillation was not constructible from a top-$k$
+API. Those are feasibility failures, not measurements, and we withdraw them from
+the paper's negative findings.
+
+Rejection-sampled fine-tuning we pursued to exhaustion. Across six checkpoints,
+three arrangements (a single pass, sequentially stacked passes, and one folded
+pass over the union of all harvested targets) and two replay conditions,
+\passat{10} ranged from $12$ to $18$ against a baseline of $14$ --- every value
+inside the floor. One arrangement did produce a measurable effect, in the wrong
+direction: stacking a second pass on the first left \compileat{10} and
+\passat{1} unchanged or higher while \passat{10} fell from $18$ to $12$, with
+mean distinct candidates per task falling from $10.00$ to $9.45$. The policy
+became more reliable on what it already produced and lost the tail draws that
+\passatk depends on. Folding the same data into a single pass from the
+supervised checkpoint removed the collapse ($9.98$) and produced no gain.
+
+Against all of this, the information-side lever works. Prepending constants
+recovered from the binary raises \passat{10} from $0.57\%$ to $5.71\%$ with
+\compileat{10} at $69.1\%$. We state it carefully: that arm reconstructs
+constants by regex over \emph{gold source} and is an oracle upper bound
+establishing the bottleneck is \emph{relievable}, not a deployable system. Our
+binary-grounded extractor reaches $2.29\%$, succeeding on $1{,}746$ of $1{,}755$
+tasks at string recall $0.465$ micro against its own $\geq0.8$ acceptance bar.
+
+\subsection{Cross-ISA observation, and two reasons not to lean on it}
+\label{sec:arm64}
+On 343 held-out functions from real obfuscated Flutter release APKs targeting
+ARM64 --- production binaries rather than a HumanEval port --- \passat{10} is
+$5.54\%$ (19 tasks) and \compileat{5} is $93.07\%$. Pre-registered length bins
+fall monotonically to zero, and of 168 tasks with ${\geq}200$ instructions none
+was solved, while \compileat{1} decays only gently ($0.65\rightarrow0.39$). The
+model keeps producing compilable code and stops producing correct code, which is
+the same qualitative pattern the x86 decomposition resolves into channels.
+
+We give two reasons, both drawn from this paper's own standards, for reporting
+that number as an observation rather than a result. First, the corpus retains
+original function names and the run supplied the full semantic signature, so
+$5.54\%$ is measured under exactly the condition Section~\ref{sec:validity}
+criticises. Second, it is a \emph{single seed}. By Section~\ref{sec:turnover} a
+lone draw at a $5.5\%$ success rate fixes neither the count nor the identity of
+the 19 solved tasks, and we have not replicated it. Either defect alone would
+disqualify the figure as evidence about the ISA; together they make it a
+length-scaling observation and nothing more.
+
+We state what the replication now requires, because it is unusually cheap and the
+instrument is unusually clean. The frozen checkpoint is recoverable and the four
+signature views are built and validated ($343/343$ rows, zero residual names,
+assembly byte-identical to the unmodified arm), and the signature mode and a
+binary-channel ablation are both existing configuration flags, so the study is
+inference-only with no code change. More important than cost, that architecture
+separates the two channels \emph{physically}: the signature is tokenised text
+while the binary enters as a learned soft prefix of embeddings, so unlike the
+single serialised prompt used in Sections~\ref{sec:validity}
+and~\ref{sec:channel}, leakage between the channels is structurally impossible
+and zeroing the binary is exact.
+
+One limit is worth stating in advance. Baseline compilation on that corpus is
+$339/343$, so \compileatk has four tasks of upward headroom and interventions
+that \emph{raise} compilation --- including the effect of
+Section~\ref{sec:nobinary} --- cannot be reproduced there. The correctness half
+of the decomposition is testable; the compilation half is testable only
+downward.
+
+\section{A Post-Mortem on Evaluation Leakage}
+\label{sec:leak}
+An internal audit found that our historical prompt builder extracted up to ten
+assertion lines from each benchmark row's \texttt{tests} field into the policy
+prompt; the evaluator then appended the same field to the generated code and
+executed it. All 154 rows leaked, 38 saturated the ten-line cap, and 133 of 154
+tasks (86\%) had their entire suite inside the window. Truncation preserved the
+fixed prefix and trimmed \emph{assembly}, so the leak survived precisely where
+the binary evidence did not.
+
+Every archived functional pool affected has been withdrawn. Because no historical
+run summary pinned a prompt hash, source commit or dataset hash, and file
+timestamps are not proof of provenance, the exclusion was applied as a blanket
+rule --- covering pools that may well be clean --- with the affected tables
+retained as audit records rather than as results. The corpora underlying the
+prior studies of Section~\ref{sec:prior} carry no scoring-test field and are not
+affected by \emph{this specific} leak; that phrasing is deliberate, as it is not
+a clean bill of health. All results in
+Sections~\ref{sec:validity} and~\ref{sec:arch} postdate the fix and run under
+the schema \texttt{antigravity-v2-no-test-hints} with
+\texttt{rows\_leaking\_scoring\_tests: 0}.
+
+\section{Recommendations}
+\label{sec:protocol}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{Report an identifier-scrubbed arm.} Scrub the function name, the
+parameter names \emph{and the symbol in the disassembly}; a benchmark that
+supplies any of them cannot separate decompilation from reading a specification.
+On our data the two differ by a factor of six, and the disassembly symbol is the
+channel through which published C evaluations actually leak it
+(Table~\ref{tab:survey}). None of the six configurations we surveyed reports such
+an arm. This applies with particular force to HumanEval ports, whose reference
+solutions are near-certainly in pretraining data.
+\item \textbf{Include a signature-only baseline that never sees the binary.} It
+costs \emph{no} training run --- the untrained base model suffices, and in our
+study it was not beaten --- and it is the cheapest way to show the binary
+contributes.
+\item \textbf{Report the sign stability of effects across seeds}, not only
+confidence intervals. A reversing sign and a wide interval are different
+findings.
+\item \textbf{Report tasks solved in \emph{every} seed and in \emph{any} seed
+beside the mean.} Two integers, and they expose the gap between a reproducible
+score and a reproducible capability (Section~\ref{sec:turnover}). Withhold any
+claim about \emph{which} tasks a method fixes until that gap is shown to be
+small.
+\item \textbf{Decompose best-of-$k$ surface metrics.} A rise in a max-over-$k$
+score computed only on compiling candidates may be a coverage effect; report the
+compiled-only mean beside it.
+\item \textbf{Fail closed on test content in prompts}, and record a
+prompt-schema string in provenance.
+\item \textbf{Pin artifacts and refuse partial scores.} A budget-truncated
+denominator is not a random sample.
+\end{enumerate}
+
+\section{Threats to Validity}
+\textbf{Construct.} That the benchmark measures its own identifiers rather than
+decompilation is the paper's subject rather than a caveat to it. Two limits on
+that claim are ours to state. First, the ablation removes a \emph{bundle} ---
+function name, parameter names, disassembly symbol --- so it licenses no
+attribution to any one of them; the parameter names alone are strong task cues on
+HumanEval. Second, a descriptive identifier is simultaneously a retrieval key and
+a specification, and no arm here separates memorisation from specification-driven
+inference. The discriminating designs are paraphrased and misleading identifiers,
+and tasks authored after the model's data cutoff; we have run none of them. Our
+\codebleu implementation uses a node-type multiset overlap and an
+identifier-level dataflow heuristic.
+
+\textbf{Internal.} Design A is an inference-contract ablation on a frozen
+checkpoint whose training corpus had no signature field, so the comparator prompt
+was itself off-distribution; the effect size is far larger than that perturbation
+plausibly explains, but the exact figures are conditional on that checkpoint. The
+component isolations in Table~\ref{tab:sweep} are single-seed diagnostics. The
+studies summarised in Section~\ref{sec:prior} are unreplicated.
+
+\textbf{External.} One source language, two ISAs, one decoder family. The
+frontier measurement rests on one provider's model on one date. Our survey
+(Section~\ref{sec:scope}) revises what we previously believed about transfer:
+HumanEval-Decompile is clean, but the same system's real-world splits ship the
+true symbol in the assembly, so the critique \emph{does} reach C evaluation
+practice --- through a channel we had not considered until the survey found it.
+What remains open is whether the \emph{channel decomposition} reproduces on
+another language and instruction set.
+Section~\ref{sec:arm64} sets out exactly what that costs on our ARM64 corpus ---
+inference alone on a frozen checkpoint, with the views already built and the
+channels physically separated --- along with the one cell it cannot test. We
+regard it as the most valuable next study rather than a limitation we can argue
+away. We note that it would also vary the model architecture and the input
+representation alongside the instruction set, which forecloses any comparison of
+absolute magnitudes between the two corpora but makes a surviving dissociation a
+conceptual replication rather than a retest.
+
+\textbf{Conclusion.} Several nulls are underpowered by construction, and where
+discordant counts are small we report the minimum attainable $p$ so a null is not
+mistaken for evidence of absence. We apply Section~\ref{sec:turnover} by
+discordance: aggregate comparisons and the $35$-to-$0$ identifier containment
+stand on their exact $p$-values, while task-level claims resting on a handful of
+discordant pairs --- the solved-set overlaps of Section~\ref{sec:nobinary} --- we
+decline to make.
+
+\section{Conclusion}
+Two experiments, one an inference-time ablation and one an untrained baseline,
+show that HumanEval-derived decompilation benchmarks
+substantially measure their own semantic identifiers: removing the function name,
+the parameter names and the disassembly symbol --- while holding types, arity and
+the instruction stream fixed --- collapses functional correctness by a factor of
+six while \emph{improving} compilation, and an untrained baseline given the
+signature alone is not measurably worse than models fine-tuned on binaries.
+Exploratory architecture, fine-tuning and objective-side sweeps move nothing
+beyond the design's resolution. Against that, one channel effect --- the typed
+contract on functional correctness --- is certified at $p{=}0.031$ under a
+pre-registered six-seed test with a hard stop.
+
+Those identifiers are a specification. Whether the model recalls a memorised
+solution or reads the specification and solves the task afresh, our design cannot
+say, and we have stopped claiming it can. Either way the benchmark cannot
+attribute the score to the binary.
+
+Underneath those results is the measurement problem of Section~\ref{sec:turnover}:
+at these success rates a \passatk score replicates to one task while the tasks
+behind it turn over almost completely, so the number certifies an aggregate, not
+a capability on any particular function.
+
+Any input channel teaches a small model the syntax and interface of a modern
+language; none of the channels we tried teaches its semantics until the input
+carries the information the compiler erased. The practical consequences are
+narrow and firm: \emph{scrub the identifiers --- including the one in the
+disassembly --- and report that arm}, or the number is not a measurement of
+decompilation; and \emph{report the tasks solved in every seed beside the mean},
+or the number is not a measurement of a capability. Across six published
+evaluation configurations, no one currently does either.
+
+\section*{Data Availability}
+The replication package --- corpora and manifests, the object-pool extractor, the
+sealed frontier harness with its hashes, per-seed generations and scores, the
+pre-registration files, the contamination notice and the machine-readable
+integrity reports --- is archived at
+\mbox{\url{https://doi.org/10.5281/zenodo.21822791}} with code under Apache-2.0 and documentation under CC-BY-4.0; raw
+benchmark-derived material remains under its upstream terms as recorded in the
+package's licence map.
+
+\bibliographystyle{IEEEtran}
+\bibliography{thesis}
+
+\end{document}

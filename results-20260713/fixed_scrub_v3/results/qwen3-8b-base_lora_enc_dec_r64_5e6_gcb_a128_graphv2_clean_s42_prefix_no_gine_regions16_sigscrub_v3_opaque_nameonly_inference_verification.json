@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "rows": 154,
+  "samples_per_row": 10,
+  "dataset_sha256": "75c9a6c663c87c9f95ad3a98197abffba811debbb366eaa7966058ec3866a2b4",
+  "output_sha256": "b12e07c4d4e8a07f3bf921d8df54395bcb0b3b4f8f7f5f4f857e5b49bed9f8ac",
+  "checkpoint_sha256": "e8e872608f22ae8e1c5607d6179feeb5f133401fb2a7d1fc40fe8894d8c347fc",
+  "prompt_schema_version": "antigravity-v3-matched-function-contract",
+  "prompt_stream_sha256": "e0c13c8169598851eb3363728bf792adb2389e420e3b9af6dd98834288ead622",
+  "checkpoint_load": {
+    "missing_keys_count": 602,
+    "strict": false,
+    "unexpected_keys_count": 0
+  },
+  "graph_prefix_gate": 0.20000140368938446
+}

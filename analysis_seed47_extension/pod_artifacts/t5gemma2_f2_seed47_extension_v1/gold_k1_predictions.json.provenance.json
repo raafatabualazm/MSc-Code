@@ -1,0 +1,1 @@
+{"schema": "direct-compact-inference-v1", "output_sha256": "145f7ff63f51515fc2e2722efeb5b58ac2f0c34b3197fd54f1a3c1baaf7c3827", "num_samples": 1, "num_rows": 175, "note": "gold Rank-0 round-trip; sidecar authored by the seed-47 runner, outside the sealed generation chain"}

@@ -1,0 +1,45 @@
+{
+  "schema": "anonymous-artifact-zenodo-publication-receipt-v2",
+  "status": "complete",
+  "validated_at_utc": "2026-08-05T14:05:34.2144447Z",
+  "record": {
+    "id": 21806006,
+    "doi": "10.5281/zenodo.21806006",
+    "concept_doi": "10.5281/zenodo.21796169",
+    "url": "https://zenodo.org/records/21806006",
+    "version": "2.0.0",
+    "publication_date": "2026-08-05",
+    "creator": "Anonymous Authors",
+    "access": "open"
+  },
+  "archive": {
+    "filename": "paper_artifact_capsule_v2_clean174.zip",
+    "bytes": 49119227,
+    "md5": "d7541e0fa7c4511af11e770730d3fbe9",
+    "sha256": "8a7fb1edddf47fc7911be3743d1d4e26d37c7d61d2dec8d460bb56b9e099eff5",
+    "checksum_filename": "paper_artifact_capsule_v2_clean174.zip.sha256",
+    "checksum_file_md5": "cdef36642e2be2f600da809965b9cd76"
+  },
+  "validation": {
+    "public_api_without_credentials": true,
+    "public_download_without_credentials": true,
+    "download_sha256_matches_local_release": true,
+    "fresh_extraction_reproducer_passed": true,
+    "fresh_extraction_privacy_audit_passed": true,
+    "fresh_extraction_integrity_verifier_passed": true,
+    "raw_score_files_recomputed": 57,
+    "release_manifest_files_verified": 434,
+    "full175_to_clean174_materialized_pairs_verified": 11,
+    "omitted_task_view_payload_absent": true,
+    "omitted_smoke_input_payload_absent": true,
+    "checkpoint_weights_absent": true
+  },
+  "version_history": {
+    "supersedes_record_id": 21796170,
+    "supersedes_doi": "10.5281/zenodo.21796170",
+    "superseded_version": "1.0.0",
+    "superseded_record_metadata_public": true,
+    "superseded_record_files_restricted": true,
+    "latest_version_link": "https://zenodo.org/records/21806006/latest"
+  }
+}

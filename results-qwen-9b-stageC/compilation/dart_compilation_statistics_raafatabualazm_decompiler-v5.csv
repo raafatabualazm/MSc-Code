@@ -1,0 +1,2 @@
+Model,Total_Attempts,Successful_Compilations,Failed_Compilations,Raw_Success_Rate,K_Value,Batch_Size,Avg_Compile@1,Avg_Compile@5,Skipped_Samples
+raafatabualazm/decompiler-v5,630,226,404,0.35873015873015873,5,2,0.35873015873015873,0.6111111111111112,3

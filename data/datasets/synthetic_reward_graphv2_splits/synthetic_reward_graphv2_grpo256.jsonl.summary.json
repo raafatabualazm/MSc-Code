@@ -1,0 +1,59 @@
+{
+  "synthetic": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_train.jsonl",
+  "real": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output": "data\\datasets\\synthetic_reward_graphv2_splits\\synthetic_reward_graphv2_grpo256.jsonl",
+  "target_rows": 256,
+  "selected_rows": 256,
+  "real_return_counts": {
+    "bool": 28,
+    "List<String>": 11,
+    "double": 5,
+    "List<int>": 29,
+    "String": 25,
+    "String?": 2,
+    "int": 42,
+    "List<double>": 2,
+    "List<num>": 3,
+    "num": 2,
+    "List<List<int>>": 1,
+    "Map<String,int>": 1,
+    "List<Object>": 1,
+    "int?": 1,
+    "List<dynamic>": 1
+  },
+  "selected_return_counts": {
+    "Map<String,int>": 5,
+    "bool": 47,
+    "List<int>": 48,
+    "List<String>": 18,
+    "int": 70,
+    "String": 42,
+    "double": 10,
+    "Set<int>": 16
+  },
+  "real_profile": {
+    "src_median": 79.0,
+    "asm_median": 102.0,
+    "expect_median": 7.0
+  },
+  "selected_profile": {
+    "src_median": 76.0,
+    "asm_median": 116.0,
+    "expect_median": 8.0
+  },
+  "rejects": {
+    "source_words": 140,
+    "asm_lines": 8
+  },
+  "bucket_sizes_after_filters": {
+    "int": 189,
+    "double": 153,
+    "bool": 177,
+    "String": 133,
+    "List<int>": 162,
+    "List<String>": 140,
+    "Map<String,int>": 137,
+    "Set<int>": 141
+  },
+  "seed": 42
+}

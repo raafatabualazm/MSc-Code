@@ -13,7 +13,9 @@ import requests
 from codebleu import CodeBLEUCalculator
 
 # ── Configuration ──────────────────────────────────────────────────────────
-OPENROUTER_API_KEY = "REDACTED_OPENROUTER_KEY"
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+if not OPENROUTER_API_KEY:
+    raise RuntimeError("Set OPENROUTER_API_KEY before running this script.")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Change this to whatever model you're targeting on OpenRouter

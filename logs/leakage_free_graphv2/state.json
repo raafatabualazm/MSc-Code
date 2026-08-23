@@ -1,0 +1,102 @@
+{
+  "completed": {
+    "preflight_01": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_01.log",
+      "time": 1783772590.7472541
+    },
+    "preflight_02": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_02.log",
+      "time": 1783772604.439979
+    },
+    "preflight_03": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_03.log",
+      "time": 1783772617.0673597
+    },
+    "preflight_04": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_04.log",
+      "time": 1783772620.8631942
+    },
+    "preflight_05": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_05.log",
+      "time": 1783772624.3887076
+    },
+    "preflight_06": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_06.log",
+      "time": 1783772625.7776022
+    },
+    "preflight_07": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_07.log",
+      "time": 1783772627.1242392
+    },
+    "preflight_08": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_08.log",
+      "time": 1783772638.7022586
+    },
+    "preflight_09": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_09.log",
+      "time": 1783772640.91077
+    },
+    "preflight_10": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_10.log",
+      "time": 1783772659.279448
+    },
+    "preflight_11": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_11.log",
+      "time": 1783772672.7235334
+    },
+    "preflight_12": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_12.log",
+      "time": 1783772691.3482392
+    },
+    "preflight_13": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_13.log",
+      "time": 1783772693.3736017
+    },
+    "preflight_14": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_14.log",
+      "time": 1783772705.6711524
+    },
+    "preflight_15": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_15.log",
+      "time": 1783772707.3882427
+    },
+    "preflight_16": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_16.log",
+      "time": 1783772709.126933
+    },
+    "preflight_17": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_17.log",
+      "time": 1783772713.6908348
+    },
+    "preflight_18": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_18.log",
+      "time": 1783772716.8288245
+    },
+    "preflight_19": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_19.log",
+      "time": 1783772718.2943861
+    },
+    "preflight_full_reward_parity": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_full_reward_parity.log",
+      "time": 1783772478.8653312
+    },
+    "preflight_20": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_20.log",
+      "time": 1783772720.0344822
+    },
+    "preflight_21": {
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_21.log",
+      "time": 1783772721.9602666
+    }
+  },
+  "failed": {
+    "preflight_10": {
+      "exit_code": 1,
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_10.log"
+    },
+    "preflight_11": {
+      "exit_code": 1,
+      "log": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\logs\\leakage_free_graphv2\\preflight_11.log"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "input": "data\\testing\\compile-test2.jsonl",
+  "output": "data\\testing\\compile-test2_cfg.jsonl",
+  "overwrite": true,
+  "rows": 126,
+  "extracted_cfg": 126,
+  "total_blocks": 4691,
+  "total_edges": 6718,
+  "mean_blocks_per_extracted_row": 37.23015873015873,
+  "mean_edges_per_extracted_row": 53.317460317460316
+}

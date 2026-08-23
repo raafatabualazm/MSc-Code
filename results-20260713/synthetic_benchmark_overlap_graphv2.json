@@ -1,0 +1,17 @@
+{
+  "train": "data/datasets/synthetic_pool_reward_clean_graphv2.jsonl",
+  "train_sha256": "6d3c87b4979d168f6b4d4daa4b5f1b41d18b4e1ed70c38739c3f2fd83d99fd81",
+  "benchmark": "data/testing/grpo_data_graphv2.jsonl",
+  "benchmark_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "train_rows": 1725,
+  "benchmark_rows": 154,
+  "duplicate_train_source_rows": 0,
+  "normalization": "comments/whitespace removed; identifiers/literals normalized; token 7-gram Jaccard",
+  "exact_overlap_pairs": 0,
+  "exact_overlaps": [],
+  "near_threshold": 0.8,
+  "near_overlap_pairs": 0,
+  "near_overlaps": [],
+  "dropped_train_indices": [],
+  "dropped_train_rows": 0
+}

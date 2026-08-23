@@ -1,0 +1,175 @@
+{
+  "schema": "audited-frontier-real175-preflight-v2",
+  "status": "local_preflight_passed_remote_install_required",
+  "created_at": "2026-07-23T12:34:02.134902Z",
+  "completed_at": "2026-07-23T12:34:02.185183Z",
+  "paid_api_requests": 0,
+  "mode": "preflight_only",
+  "arm": "compact",
+  "provider": "qwen",
+  "requested_model": "qwen3.8-max-preview",
+  "tasks": 175,
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+  "config_sha256": "38bbd0be08a22826569d07953479fd98e5fcdd3a16284769781d4d3c9cc6402a",
+  "prompt_token_accounting": {
+    "tokenizer": "pinned Qwen3-8B tokenizer.json",
+    "percentile_method": "nearest observed value",
+    "chat_overhead_reserve_per_prompt": 256,
+    "limit": 12000,
+    "min": 676,
+    "p50": 2566,
+    "p90": 5107,
+    "p95": 6987,
+    "p99": 11095,
+    "max": 11988,
+    "over_limit": 0,
+    "truncated": 0
+  },
+  "serialization": {
+    "format": "compact-dict-v1",
+    "repeated_normalized_instructions_defined_once": true,
+    "single_use_normalized_instructions_expanded_inline": true,
+    "ordered_block_streams_roundtrip_verified": true,
+    "cfg_explicit": true,
+    "binary_constant_prefix_matches_student_ids": true,
+    "opaque_undefined_instruction_ids": 0
+  },
+  "completion_attested_evaluator": {
+    "entrypoint": "evaluate_dart_jit_tests_detail",
+    "attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+    "legacy_returncode_only_evaluator_used": false,
+    "all_175_acceptance_test_mains_attestable": true,
+    "evaluator": {
+      "sha256": "96ae0f4511dbb62c56a1105f68ac32f9e0e7e3784c7ba870fcfda52a9a9fe9a7",
+      "bytes": 25275
+    },
+    "local_dart": {
+      "sha256": "44328b98b6bf981d8307f72ef38acbb37b8067394916953caa48b8b444525152",
+      "bytes": 5277696,
+      "version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"windows_x64\""
+    },
+    "integration_smoke_test": {
+      "normal_return": {
+        "stability_runs": 2,
+        "compiled": true,
+        "passed": true,
+        "attestation_satisfied_all_runs": true
+      },
+      "early_isolate_exit": {
+        "stability_runs": 1,
+        "compiled": true,
+        "passed": false,
+        "attestation_satisfied_all_runs": false
+      }
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 1,
+    "task_ids": [
+      "sigless_d544567b9189"
+    ],
+    "diagnostic": "cannot convert float infinity to integer",
+    "handling": "The exact student prefix was still reproduced and verified; the error is recorded rather than hidden."
+  },
+  "input_artifacts": {
+    "dataset": {
+      "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+      "bytes": 1422675
+    },
+    "constants": {
+      "sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13",
+      "bytes": 231101
+    },
+    "contract": {
+      "sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02",
+      "bytes": 1495748
+    },
+    "tokenizer": {
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "bytes": 11422654
+    },
+    "codebook": {
+      "sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c",
+      "bytes": 3820649
+    },
+    "codec": {
+      "sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4",
+      "bytes": 20705
+    }
+  },
+  "implementation": {
+    "frontier_core.py": {
+      "sha256": "34a5e4e9fe9230b83f7880783ed9285f94f340968187444362fbff89ed68690d",
+      "bytes": 46343
+    },
+    "frontier_passk.py": {
+      "sha256": "1fa663e5de3cf1d6414cba367d56aaa140ffe09b30b63f17d201328d10369d4e",
+      "bytes": 64658
+    },
+    "serialize_compact_inputs.py": {
+      "sha256": "61f6b28b00ee91d018fab389d68c4b4ee2fc9f283bef6181e1fbf61b12b01dec",
+      "bytes": 4416
+    },
+    "tests/test_frontier_core.py": {
+      "sha256": "09ff1cbd9d754f5bb8d3e4e05b3ee11f23f1d7b0aab29d7f734c05fabf20124f",
+      "bytes": 13600
+    }
+  },
+  "generated_evidence": {
+    "provenance.json": {
+      "path": ".frontier_integration_20260723/out_release_attested_v2/provenance.json",
+      "sha256": "74423b04aafb3e930a5fab969c04f27d012b3f4a3593bfb7dcfbca804742fb6b",
+      "bytes": 6834
+    },
+    "tasks.jsonl": {
+      "path": ".frontier_integration_20260723/out_release_attested_v2/tasks.jsonl",
+      "sha256": "2ff9853ac2bf949fbf11dd4de6ef04d1ae4346d5b933f6745c0e80dda2ec298e",
+      "bytes": 159453
+    },
+    "prompts.jsonl": {
+      "path": ".frontier_integration_20260723/out_release_attested_v2/prompts.jsonl",
+      "sha256": "0f07dd8e9ba0b5d80c1eb261562676f152f382bd7c562d769416516c368c4c61",
+      "bytes": 945372
+    }
+  },
+  "tests": {
+    "command": "python -m pytest frontier_ceiling_patch_v1/tests/test_frontier_core.py -q --basetemp=.pytest-frontier-runner-attested-2",
+    "passed": 20,
+    "failed": 0,
+    "py_compile_passed": true
+  },
+  "invariants": {
+    "dataset_sha256_pinned": true,
+    "expected_dataset_rows_verified": true,
+    "unique_task_ids": true,
+    "tests_equal_acceptance_tests": true,
+    "evaluator_sha256_pinned": true,
+    "dart_binary_sha256_pinned": true,
+    "completion_attested_evaluator_contract_verified": true,
+    "acceptance_test_main_attestable_for_every_task": true,
+    "legacy_returncode_only_evaluator_used": false,
+    "compact_artifact_hashes_verified": true,
+    "per_row_contract_hashes_verified": true,
+    "codec_text_roundtrip_verified_for_every_task": true,
+    "codec_token_id_roundtrip_verified_for_every_task": true,
+    "student_constant_prefix_reconstructed_for_every_task": true,
+    "tests_not_exposed_to_teacher": true,
+    "prompt_token_cap_checked_for_every_task": true,
+    "prompts_never_truncated": true
+  },
+  "remote_readiness": {
+    "checked_at": "2026-07-23T12:36:03.960213Z",
+    "host": "98.218.15.126:24424",
+    "remote_mutation_performed": false,
+    "status": "blocked_pending_hardened_evaluator_install",
+    "hardened_evaluator_present": false,
+    "required_evaluator_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/graph_compile_at_k_antigravity.py",
+    "required_evaluator_sha256": "96ae0f4511dbb62c56a1105f68ac32f9e0e7e3784c7ba870fcfda52a9a9fe9a7",
+    "remote_dart": {
+      "path": "/workspace/dart-3.12.2/usr/bin/dart",
+      "sha256": "c03ad868b5c53e31461b0fef22dc6eb6aeb56b7567efff6ca488ce9c4a6f8a6a",
+      "version": "Dart SDK version: 3.12.2 (stable) (Tue Jun 9 01:11:39 2026 -0700) on \"linux_x64\""
+    },
+    "launch_policy": "Do not launch a paid frontier run until the hardened evaluator exists at the required path and both evaluator and Dart hashes are passed explicitly."
+  }
+}

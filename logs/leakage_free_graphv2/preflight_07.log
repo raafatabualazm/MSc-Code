@@ -1,0 +1,128 @@
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/datasets/dart_all_cfg_clean_train.jsonl --output data/datasets/dart_all_graphv2_train.jsonl --rejected data/datasets/dart_all_graphv2_train.rejected.jsonl --summary data/datasets/dart_all_graphv2_train.summary.json --drop_invalid --expected_input_rows 1081 --expected_output_rows 513 --max_block_instrs 24 --max_dataflow_edges 4096
+{
+  "blocks": 6109,
+  "cfg_edges": 8094,
+  "dataflow_edges": 15984,
+  "drop_invalid": true,
+  "extractor_sha256": "0b8f129e9e3060a6bc3974bf37ea5762ae0300584137c74890cee61e13ba65f1",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\datasets\\dart_all_cfg_clean_train.jsonl",
+  "input_rows": 1081,
+  "input_sha256": "e3137a9c70570aff43aed0d7dc59b342e199ae6f7b4555d9704c39af3fcbdc0e",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 4096,
+  "mean_blocks_per_row": 11.908382066276802,
+  "mean_cfg_edges_per_row": 15.777777777777779,
+  "mean_dataflow_edges_per_row": 31.157894736842106,
+  "output": "data\\datasets\\dart_all_graphv2_train.jsonl",
+  "output_rows": 513,
+  "output_sha256": "a700ac06c55f2de2166ed9c3bb3d4e71e10fb99a3d0158b9fb8756de5b18805f",
+  "pruned_blocks": 87,
+  "rejected": "data\\datasets\\dart_all_graphv2_train.rejected.jsonl",
+  "rejected_rows": 568,
+  "rejected_sha256": "930f935f3f27995abb0aa421341d19f06467b7f4787f03c5cd0f1f38868cfaad"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/datasets/dart_all_cfg_clean_train.jsonl --output data/datasets/dart_all_graphv2_train.jsonl --rejected data/datasets/dart_all_graphv2_train.rejected.jsonl --summary data/datasets/dart_all_graphv2_train.summary.json --drop_invalid --expected_input_rows 1081 --expected_output_rows 513 --max_block_instrs 24 --max_dataflow_edges 4096
+{
+  "blocks": 6109,
+  "cfg_edges": 8094,
+  "dataflow_edges": 15984,
+  "drop_invalid": true,
+  "extractor_sha256": "0b8f129e9e3060a6bc3974bf37ea5762ae0300584137c74890cee61e13ba65f1",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\datasets\\dart_all_cfg_clean_train.jsonl",
+  "input_rows": 1081,
+  "input_sha256": "e3137a9c70570aff43aed0d7dc59b342e199ae6f7b4555d9704c39af3fcbdc0e",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 4096,
+  "mean_blocks_per_row": 11.908382066276802,
+  "mean_cfg_edges_per_row": 15.777777777777779,
+  "mean_dataflow_edges_per_row": 31.157894736842106,
+  "output": "data\\datasets\\dart_all_graphv2_train.jsonl",
+  "output_rows": 513,
+  "output_sha256": "a700ac06c55f2de2166ed9c3bb3d4e71e10fb99a3d0158b9fb8756de5b18805f",
+  "pruned_blocks": 87,
+  "rejected": "data\\datasets\\dart_all_graphv2_train.rejected.jsonl",
+  "rejected_rows": 568,
+  "rejected_sha256": "930f935f3f27995abb0aa421341d19f06467b7f4787f03c5cd0f1f38868cfaad"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/datasets/dart_all_rebuilt_train_unique.jsonl --output data/datasets/dart_all_graphv2_train.jsonl --rejected data/datasets/dart_all_graphv2_train.rejected.jsonl --summary data/datasets/dart_all_graphv2_train.summary.json --expected_input_rows 773 --expected_output_rows 773 --max_block_instrs 24 --max_dataflow_edges 0
+{
+  "blocks": 41191,
+  "cfg_edges": 58711,
+  "dataflow_edges": 135124,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 63,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\datasets\\dart_all_rebuilt_train_unique.jsonl",
+  "input_rows": 773,
+  "input_sha256": "b2db9828af7ebe287ac6b40dc53547c2e37386696a2664796910f4a4573b551f",
+  "max_block_instrs": 24,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 53.28719275549806,
+  "mean_cfg_edges_per_row": 75.95213454075032,
+  "mean_dataflow_edges_per_row": 174.8046571798189,
+  "output": "data\\datasets\\dart_all_graphv2_train.jsonl",
+  "output_rows": 773,
+  "output_sha256": "4d28421f67e123e7825880e5471b2f7a35b6c0408428e962ed5d28797e23855f",
+  "pruned_blocks": 1179,
+  "rejected": "data\\datasets\\dart_all_graphv2_train.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/datasets/dart_all_rebuilt_train_unique.jsonl --output data/datasets/dart_all_graphv2_train.jsonl --rejected data/datasets/dart_all_graphv2_train.rejected.jsonl --summary data/datasets/dart_all_graphv2_train.summary.json --expected_input_rows 773 --expected_output_rows 773 --max_block_instrs 20 --max_dataflow_edges 0
+{
+  "blocks": 42132,
+  "cfg_edges": 59652,
+  "dataflow_edges": 137413,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 63,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\datasets\\dart_all_rebuilt_train_unique.jsonl",
+  "input_rows": 773,
+  "input_sha256": "b2db9828af7ebe287ac6b40dc53547c2e37386696a2664796910f4a4573b551f",
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 54.504527813712805,
+  "mean_cfg_edges_per_row": 77.16946959896507,
+  "mean_dataflow_edges_per_row": 177.76584734799482,
+  "output": "data\\datasets\\dart_all_graphv2_train.jsonl",
+  "output_rows": 773,
+  "output_sha256": "28d460af1dffe3074d5fc8bfaa5afd53037002aa2e01551a07bf68b924a2426b",
+  "pruned_blocks": 1192,
+  "rejected": "data\\datasets\\dart_all_graphv2_train.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+
+$ 'C:\ProgramData\anaconda3\python.exe' scripts/data/build_graph_v2_jsonl.py --input data/testing/grpo_data_cfg.jsonl --output data/testing/grpo_data_graphv2.jsonl --rejected data/testing/grpo_data_graphv2.rejected.jsonl --summary data/testing/grpo_data_graphv2.summary.json --expected_input_rows 154 --expected_output_rows 154 --max_block_instrs 20 --max_dataflow_edges 0
+{
+  "blocks": 3917,
+  "cfg_edges": 5435,
+  "dataflow_edges": 13373,
+  "dedupe_source": false,
+  "drop_invalid": false,
+  "external_direct_branches": 0,
+  "extractor_sha256": "3b522afc7ea9d24440c4ed0e1bafd2c4a047bb76f0f592560451b61e10c2613d",
+  "graph_schema_version": "antigravity-graph-v2",
+  "input": "data\\testing\\grpo_data_cfg.jsonl",
+  "input_rows": 154,
+  "input_sha256": "209adb27e762f005652f9f78b1ac2f49c1eb0b366f2fec45aa41ba77e48b1c0f",
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 25.435064935064936,
+  "mean_cfg_edges_per_row": 35.29220779220779,
+  "mean_dataflow_edges_per_row": 86.83766233766234,
+  "output": "data\\testing\\grpo_data_graphv2.jsonl",
+  "output_rows": 154,
+  "output_sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928",
+  "pruned_blocks": 1,
+  "rejected": "data\\testing\\grpo_data_graphv2.rejected.jsonl",
+  "rejected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

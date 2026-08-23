@@ -1,0 +1,62 @@
+{
+  "gates": {
+    "all_rows_preserved": true,
+    "all_topup_demo_mains_removed": true,
+    "phase0_dev_rows": true,
+    "phase0_train_rows": true
+  },
+  "producer": {
+    "path": "scrubbed_master_v2_release/prepare_phase0_binary_pool_v3.py",
+    "sha256": "519928f675ae03e3b3795e0c9d55a334960b026b05af7f9e019c92e7904b7f8e"
+  },
+  "schema": "phase0-s44-binary-pool-v3-source-preparation-v1",
+  "source_release_manifest_sha256": "8dd229ea1fe651dfce658a86e0ad389f6ba304dfb57c4aa035f9f48ffc01ed5a",
+  "splits": [
+    {
+      "input_codec": {
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\train_codec_private.jsonl",
+        "sha256": "fc9e1c9caadf3d3f8523de3ace4f360c5ea42694af33e97c1efb135d7a9264de"
+      },
+      "input_labels": {
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\train_private_labels.jsonl",
+        "sha256": "87b89575b0045ecc3e0d0910bc5ac5ac55f11fe58b0dcca3dd64dd1b204c2b07"
+      },
+      "private_build_inputs": {
+        "path": "private_build_inputs\\train.jsonl",
+        "sha256": "a56b8fb9d8a26c872b4e26f28823cecef76e00cdb9dec08c87c72678c012ad1a"
+      },
+      "private_labels": {
+        "path": "prepared\\train_private_labels.jsonl",
+        "sha256": "cbeec4154b21604ea9e6989552035b006a112ffb0a4079b2a44adef75997b123"
+      },
+      "removed_top_level_main": 998,
+      "rows": 2951,
+      "split": "train"
+    },
+    {
+      "input_codec": {
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\dev_codec_private.jsonl",
+        "sha256": "57ba18ffa9e0a77058c66861cc4df2c7ca4be91d0664ba1f0c09c4fe6ef7965a"
+      },
+      "input_labels": {
+        "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\dev_private_labels.jsonl",
+        "sha256": "e4dbf6bc10a1c7604ba48080ddaee574b739f291c416085faab6706cf6d4906b"
+      },
+      "private_build_inputs": {
+        "path": "private_build_inputs\\dev.jsonl",
+        "sha256": "1464004d3970b5b4eb5aecfe5a74a9f40f74de35e9a246af3521e33cb1ad17a8"
+      },
+      "private_labels": {
+        "path": "prepared\\dev_private_labels.jsonl",
+        "sha256": "f44a7a2ea3f71ae4368a73eefa14924975d68ec10a5845c0cf05412c6c6704fe"
+      },
+      "removed_top_level_main": 107,
+      "rows": 326,
+      "split": "dev"
+    }
+  ],
+  "transformer": {
+    "path": "scripts/data/dart_source_only_aot.py",
+    "sha256": "98ffb7fddd19856e32f3996cf9186e0fd287489d1c9401c7cef487e7b8cd9351"
+  }
+}

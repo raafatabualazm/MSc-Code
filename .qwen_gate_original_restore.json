@@ -1,0 +1,50 @@
+{
+  "schema": "qwen-teacher-quality-gate-v1",
+  "passed": true,
+  "pilot_tasks": 16,
+  "candidates": 128,
+  "parseable_candidates": 73,
+  "parseable_fraction": 0.5703125,
+  "verified_tasks": 1,
+  "minimum_verified_tasks": 1,
+  "minimum_parseable_fraction": 0.50,
+  "sampling_diversity": {
+    "unique_final_sequences_per_task": {
+      "sigless_235c9a1f35e3": 8,
+      "sigless_2516066a8a33": 8,
+      "sigless_56b6c511751e": 8,
+      "sigless_6cfc70d378dd": 8,
+      "sigless_750cbb2afc88": 8,
+      "sigless_8c4a598f53c2": 4,
+      "sigless_8e8a431af870": 8,
+      "sigless_ba698ed738e9": 8,
+      "sigless_c236670fd617": 8,
+      "sigless_db90f7cc3196": 8,
+      "sigless_dd3f0def030d": 8,
+      "sigless_f244d71cd7a9": 8,
+      "sigless_f47c97a89b2f": 8,
+      "sigless_f7c21b876e64": 8,
+      "sigless_f82cbe0b39af": 8,
+      "sigless_fa5d6466520d": 8
+    },
+    "tasks_with_all_k8_draws_identical": 0,
+    "minimum_unique_final_sequences_per_task": 4,
+    "maximum_unique_final_sequences_per_task": 8,
+    "pathological_all_tasks_have_identical_k8_draws": false,
+    "duplicate_draws_filtered": false
+  },
+  "target_length_gate": {
+    "passed": true,
+    "target_length_evidence_sha256": "c571daa64b21ed9a1174987ccfa04d6c820bec005a8afe04622fed203737fc55",
+    "target_contract_sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+    "max_target_tokens": 24576,
+    "overflow_count": 0,
+    "non_code_target_count": 76,
+    "final_dart_code_only_required": false,
+    "truncate": false,
+    "filter_draw": false,
+    "resample_draw": false
+  },
+  "pilot_audit_sha256": "7d1850006ebe8dee706b28119bcdac5e2de272d77069c4616ae68155160266d4",
+  "pilot_verified_only_sha256": "3173b5f29c89a4d88fb832e449c3eab026e4abcdbf89ced3c0bef64281c99273"
+}

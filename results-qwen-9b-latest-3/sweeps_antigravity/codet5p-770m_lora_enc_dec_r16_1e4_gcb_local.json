@@ -1,0 +1,32 @@
+{
+  "experiment": "codet5p-770m_lora_enc_dec_r16_1e4_gcb_local",
+  "config": {
+    "name": "codet5p-770m_lora_enc_dec_r16_1e4_gcb_local",
+    "decoder": "Salesforce/codet5p-770m",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "1e-4",
+    "epochs": "3",
+    "oom_risk": "high",
+    "lora_r": "16",
+    "lora_alpha": "32"
+  },
+  "codebleu": {
+    "count": 165,
+    "mean_codebleu": 0.5723356656600321,
+    "min_codebleu": 0.19864889141512462,
+    "max_codebleu": 0.7142857172403075
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.0,
+    "compile_at_5": 0.0,
+    "total_problems": 165
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.06303030303030302,
+    "pass_at_5": 0.14545454545454545,
+    "total_problems": 165
+  }
+}

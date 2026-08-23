@@ -1,0 +1,9 @@
+{
+  "latest_checkpoint": "checkpoint-optstep-000348",
+  "no_frontier_api": true,
+  "planned_updates": 348,
+  "rows": 2775,
+  "schema": "t5gemma2-typed-opaque-contract-sft-run-v1",
+  "status": "complete",
+  "updates": 348
+}

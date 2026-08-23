@@ -1,0 +1,2 @@
+Model,Min,Max,Average,Standard_Deviation,Samples_With_Success,Total_Samples
+Qwen/Qwen3-4B-Thinking-2507,0.0,0.9073810160587577,0.5800045628022032,0.2110337437039465,90,126

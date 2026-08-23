@@ -1,0 +1,15 @@
+{
+    "schema_version":  1,
+    "status":  "passed",
+    "scanned_root":  "arm64_regions16_s42_gpt56_analysis_20260716",
+    "credential_pattern_hit_count":  0,
+    "forbidden_filename_count":  0,
+    "patterns":  [
+                     "OpenAI-style sk token",
+                     "Hugging Face hf token",
+                     "Google API key",
+                     "PEM/private-key header",
+                     "assigned API/access/secret key with quoted value"
+                 ],
+    "note":  "The scan reports file names only on a hit and found none."
+}

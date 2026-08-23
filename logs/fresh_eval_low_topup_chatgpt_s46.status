@@ -1,0 +1,8 @@
+DONE
+exit_code=0
+ended_at=2026-07-17T10:06:20Z
+execution_host=local_windows
+provider=azure
+model=gpt-chat-latest
+target=200
+seed=46

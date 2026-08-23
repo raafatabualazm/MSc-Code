@@ -1,0 +1,13 @@
+{
+ "schema": "t5gemma2-f2-seed47-extension-addendum-v1",
+ "amends_sha256": "526eef2cd6eaa5681cff3caea5c93c8af9ae5be1ca0b2ddca1afe4ec3dddce8a",
+ "registered_utc": "2026-08-05T14:25:58Z",
+ "change": "generation_batch_size 10 -> 5 for ALL seed-47 arms; PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+ "reason": "CUDA OOM at task 123/175 on the 31.4 GiB RTX 5090 (original runs used a 96 GiB card). Batch size alters the per-candidate sampling stream, so seed-47 draws differ from a hypothetical batch-10 run; seed 47 remains a single well-defined fresh block because the setting is fixed now, uniformly across arms, before any seed-47 arm has been scored.",
+ "no_seed47_scores_existed_at_registration": true,
+ "harness_patch": {
+  "what": "generate_candidate_batch wraps encoder_outputs in a fresh BaseModelOutput per chunk",
+  "why": "HF generate() reassigns the expanded hidden state onto the shared ModelOutput; the second chunk of a chunked run re-expands it (5->25 shape error). No effect on single-chunk (batch==num_samples) semantics.",
+  "patched_inference_script_sha256": "9701c970878e78d2f2889bcfe9fc672a3a5e6f5a76022f53a3d9cb399e9626bd"
+ }
+}

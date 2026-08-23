@@ -1,0 +1,3 @@
+problem_id,language,reference_length,cand_1_codebleu,cand_1_compile,cand_1_pass,cand_2_codebleu,cand_2_compile,cand_2_pass,cand_3_codebleu,cand_3_compile,cand_3_pass,cand_4_codebleu,cand_4_compile,cand_4_pass
+0,dart,628,0.34602,0,0,0.34526,0,0,0.35417,0,0,0.41501,0,0
+1,dart,764,0.53636,0,0,0.5,0,0,0.50031,0,0,0.47109,0,0

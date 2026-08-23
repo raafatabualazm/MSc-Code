@@ -1,0 +1,74 @@
+[
+  {
+    "label": "frontier_gpt_chat_latest",
+    "path": "Frontier_results/preds_azure_gpt_chat_latest_asm.json"
+  },
+  {
+    "label": "frontier_sonnet5",
+    "path": "Frontier_results/preds_frontier_asm_sonnet5.json"
+  },
+  {
+    "label": "frontier_deepseek_v4_pro",
+    "path": "Frontier_results/preds_frontier_asm_deepseekvpro.json"
+  },
+  {
+    "label": "frontier_glm_5_2",
+    "path": "Frontier_results/preds_frontier_asm_glm52.json"
+  },
+  {
+    "label": "binary_grpo",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_binary_pk10_g32_grpo_grpo_pass_predictions.json"
+  },
+  {
+    "label": "rs_sft_allarms",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_rs_sft_allarms_pass_predictions.json"
+  },
+  {
+    "label": "binary_rs_sft_ref",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_binary_rs_sft_ref_pass_predictions.json"
+  },
+  {
+    "label": "clean_g3",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_graphonly_pass_predictions.json"
+  },
+  {
+    "label": "style_repair_ultralite",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style_repair_ultralite_pass_predictions.json"
+  },
+  {
+    "label": "g3_p128r",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_p128r_pass_predictions.json"
+  },
+  {
+    "label": "style1036_sft",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_style1036_sft_pass_predictions.json"
+  },
+  {
+    "label": "cfg_only",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g2c_cfgonly_pass_predictions.json"
+  },
+  {
+    "label": "simko_style_grpo",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_simko_eval_grpo_pass_predictions.json"
+  },
+  {
+    "label": "graph_text",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g2_graphtext_pass_predictions.json"
+  },
+  {
+    "label": "base_reference",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_ref_base_pass_predictions.json"
+  },
+  {
+    "label": "null_graph",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g0_null_pass_predictions.json"
+  },
+  {
+    "label": "text_only",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g1_textonly_pass_predictions.json"
+  },
+  {
+    "label": "p128_without_rms",
+    "path": "results-20260707/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_x86_g3_p128_pass_predictions.json"
+  }
+]

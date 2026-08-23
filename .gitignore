@@ -7,6 +7,31 @@ data/intermediate/all_data_new_reason3.jsonl
 data/intermediate/all_data_new_reason5.jsonl
 
 # Model checkpoints and run outputs (too large for GitHub)
-artifacts/
 MSc-Code/
 neural_decompiler_bundle.tar.gz
+
+# Model weights and optimizer/checkpoint state
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+*.pb
+*.tflite
+**/checkpoint*/
+**/checkpoints/
+**/weights/
+**/pytorch_model.bin
+**/adapter_model.bin
+**/model.bin
+**/optimizer.bin
+**/scheduler.bin
+**/training_args.bin
+
+# Local caches and credentials
+*.env
+.pytest_cache/
+**/.pytest*/
+**/__pycache__/

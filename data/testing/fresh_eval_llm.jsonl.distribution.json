@@ -1,0 +1,69 @@
+{
+  "return_types": {
+    "benchmark": {
+      "bool": 28,
+      "List<String>": 11,
+      "double": 5,
+      "List<int>": 29,
+      "String": 25,
+      "String?": 2,
+      "int": 42,
+      "List<double>": 2,
+      "List<num>": 3,
+      "num": 2,
+      "List<List<int>>": 1,
+      "Map<String, int>": 1,
+      "int?": 1
+    },
+    "fresh": {
+      "String": 92,
+      "bool": 110,
+      "int": 201,
+      "List<String>": 38,
+      "num": 5,
+      "List<int>": 97,
+      "int?": 2,
+      "String?": 17,
+      "double": 18,
+      "List<double>": 5,
+      "List<num>": 5,
+      "List<List<int>>": 6,
+      "Map<String, int>": 4
+    }
+  },
+  "param_counts": {
+    "benchmark": {
+      "2": 36,
+      "1": 113,
+      "3": 5
+    },
+    "fresh": {
+      "2": 142,
+      "1": 440,
+      "3": 18
+    }
+  },
+  "reference_loc_quartiles": {
+    "benchmark": [
+      8,
+      13,
+      18
+    ],
+    "fresh": [
+      14,
+      24,
+      33
+    ]
+  },
+  "target_strata": {
+    "low": 204,
+    "high": 198,
+    "mid": 198
+  },
+  "generator_models": {
+    "gpt-chat-latest": 370,
+    "anthropic/claude-sonnet-4.6": 61,
+    "deepseek-v4-pro": 169
+  },
+  "note": "realized CFG strata require the assembly stage; run build_graph_v2_jsonl.py and compare block counts per stratum."
+}

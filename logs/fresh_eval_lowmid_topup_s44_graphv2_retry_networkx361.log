@@ -1,0 +1,64 @@
+START_UTC=2026-07-16T03:45:50Z
+{
+  "blocks": 9248,
+  "cfg_edges": 12673,
+  "dataflow_edges": 24980,
+  "dedupe_source": false,
+  "drop_invalid": true,
+  "external_direct_branches": 0,
+  "external_direct_calls": 489,
+  "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+  "graph_schema_version": "antigravity-graph-v2.1",
+  "indirect_calls": 28,
+  "input": "data/testing/fresh_eval_lowmid_topup_s44_assembly.jsonl",
+  "input_rows": 340,
+  "input_sha256": "1b6f4bc6c630f03e06607dbc81a54048ae328c1d286a1c749646bfce1d7e10a1",
+  "internal_direct_calls": 19,
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 28.54320987654321,
+  "mean_cfg_edges_per_row": 39.114197530864196,
+  "mean_dataflow_edges_per_row": 77.09876543209876,
+  "output": "data/testing/fresh_eval_lowmid_topup_s44_graphv2.jsonl",
+  "output_rows": 324,
+  "output_sha256": "6bdef7b566fc5c083fb09f4329d359139a5e028f2b643d33c9e7ec2b1c1d1cb4",
+  "pruned_blocks": 0,
+  "rejected": "data/testing/fresh_eval_lowmid_topup_s44_graphv2.rejected.jsonl",
+  "rejected_rows": 16,
+  "rejected_sha256": "1be74ab7d09a2624963f3336705f3ac091546e15855e0bf97201ac43b0754c4d",
+  "symbol_entries": 324
+}
+{
+  "blocks": 9248,
+  "cfg_edges": 12673,
+  "dataflow_edges": 24980,
+  "dedupe_source": false,
+  "drop_invalid": true,
+  "external_direct_branches": 0,
+  "external_direct_calls": 489,
+  "extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+  "graph_schema_version": "antigravity-graph-v2.1",
+  "indirect_calls": 28,
+  "input": "data/testing/fresh_eval_lowmid_topup_s44_assembly.jsonl",
+  "input_rows": 340,
+  "input_sha256": "1b6f4bc6c630f03e06607dbc81a54048ae328c1d286a1c749646bfce1d7e10a1",
+  "internal_direct_calls": 19,
+  "max_block_instrs": 20,
+  "max_dataflow_edges": 0,
+  "mean_blocks_per_row": 28.54320987654321,
+  "mean_cfg_edges_per_row": 39.114197530864196,
+  "mean_dataflow_edges_per_row": 77.09876543209876,
+  "output": "data/testing/fresh_eval_lowmid_topup_s44_graphv2.jsonl",
+  "output_rows": 324,
+  "output_sha256": "6bdef7b566fc5c083fb09f4329d359139a5e028f2b643d33c9e7ec2b1c1d1cb4",
+  "pruned_blocks": 0,
+  "rejected": "data/testing/fresh_eval_lowmid_topup_s44_graphv2.rejected.jsonl",
+  "rejected_rows": 16,
+  "rejected_sha256": "1be74ab7d09a2624963f3336705f3ac091546e15855e0bf97201ac43b0754c4d",
+  "symbol_entries": 324
+}
+1b6f4bc6c630f03e06607dbc81a54048ae328c1d286a1c749646bfce1d7e10a1  data/testing/fresh_eval_lowmid_topup_s44_assembly.jsonl
+6bdef7b566fc5c083fb09f4329d359139a5e028f2b643d33c9e7ec2b1c1d1cb4  data/testing/fresh_eval_lowmid_topup_s44_graphv2.jsonl
+1be74ab7d09a2624963f3336705f3ac091546e15855e0bf97201ac43b0754c4d  data/testing/fresh_eval_lowmid_topup_s44_graphv2.rejected.jsonl
+03d799add5d4f5a3116c77abe3ac71e47bb3730ec779e3e0d1ec9f97c2bba79e  data/testing/fresh_eval_lowmid_topup_s44_graphv2.summary.json
+DONE_UTC=2026-07-16T03:45:55Z

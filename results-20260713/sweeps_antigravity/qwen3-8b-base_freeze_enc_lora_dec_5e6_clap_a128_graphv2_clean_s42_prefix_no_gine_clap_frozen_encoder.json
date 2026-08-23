@@ -1,0 +1,63 @@
+{
+  "experiment": "qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder",
+  "config": {
+    "name": "qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder",
+    "decoder": "Qwen/Qwen3-8B",
+    "encoder_peft": "none",
+    "decoder_peft": "lora",
+    "freeze_encoder": "1",
+    "freeze_decoder": "0",
+    "lr": "5e-6",
+    "epochs": "4",
+    "oom_risk": "high",
+    "lora_r": "64",
+    "lora_alpha": "128"
+  },
+  "datasets": {
+    "compile_codebleu": "data/testing/grpo_data_graphv2.jsonl",
+    "pass_at_k": "data/testing/grpo_data_graphv2.jsonl"
+  },
+  "num_samples": {
+    "compile_codebleu": 10,
+    "pass_at_k": 10,
+    "generation_batch_size": 10,
+    "eval_max_new_tokens": 768,
+    "compile_mode": "jit_tests"
+  },
+  "predictions": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder_compile_predictions.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder_pass_predictions.json"
+  },
+  "provenance": {
+    "compile_codebleu": "/workspace/results/qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder_compile_predictions.json.provenance.json",
+    "pass_at_k": "/workspace/results/qwen3-8b-base_freeze_enc_lora_dec_5e6_clap_a128_graphv2_clean_s42_prefix_no_gine_clap_frozen_encoder_pass_predictions.json.provenance.json",
+    "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "encoder_revision": "620f4beba2edce172e8f35e263399716494950c9",
+    "seed": 42
+  },
+  "codebleu": {
+    "count": 154,
+    "samples_with_success": 154,
+    "mean_codebleu": 0.6570646920227589,
+    "min_codebleu": 0.4967806394553584,
+    "max_codebleu": 0.7912834762329011
+  },
+  "codebleu_compiled_only": {
+    "count": 154,
+    "samples_with_success": 33,
+    "mean_codebleu": 0.6388095364451465,
+    "min_codebleu": 0.40821816837823344,
+    "max_codebleu": 0.7644058182910263
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.738961038961039,
+    "compile_at_5": 0.9334415584415586,
+    "total_problems": 154
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.15324675324675324,
+    "pass_at_5": 0.21737786023500308,
+    "pass_at_10": 0.23376623376623376,
+    "total_problems": 154
+  }
+}

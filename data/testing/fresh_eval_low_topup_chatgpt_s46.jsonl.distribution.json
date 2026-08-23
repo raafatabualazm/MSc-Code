@@ -1,0 +1,63 @@
+{
+  "return_types": {
+    "benchmark": {
+      "bool": 28,
+      "List<String>": 11,
+      "double": 5,
+      "List<int>": 29,
+      "String": 25,
+      "String?": 2,
+      "int": 42,
+      "List<double>": 2,
+      "List<num>": 3,
+      "num": 2,
+      "List<List<int>>": 1,
+      "Map<String, int>": 1,
+      "int?": 1
+    },
+    "fresh": {
+      "List<int>": 44,
+      "String": 26,
+      "int": 59,
+      "List<String>": 17,
+      "bool": 34,
+      "List<num>": 5,
+      "String?": 3,
+      "List<double>": 2,
+      "double": 5,
+      "List<List<int>>": 2,
+      "num": 3
+    }
+  },
+  "param_counts": {
+    "benchmark": {
+      "2": 36,
+      "1": 113,
+      "3": 5
+    },
+    "fresh": {
+      "2": 55,
+      "1": 139,
+      "3": 6
+    }
+  },
+  "reference_loc_quartiles": {
+    "benchmark": [
+      8,
+      13,
+      18
+    ],
+    "fresh": [
+      8,
+      9,
+      10
+    ]
+  },
+  "target_strata": {
+    "low": 200
+  },
+  "generator_models": {
+    "gpt-chat-latest": 200
+  },
+  "note": "realized CFG strata require the assembly stage; run build_graph_v2_jsonl.py and compare block counts per stratum."
+}

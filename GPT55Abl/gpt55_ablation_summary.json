@@ -1,0 +1,106 @@
+{
+  "total_tasks": 154,
+  "candidates_per_task": 10,
+  "within_v1_reference": "preds_gpt55_asm",
+  "notes": {
+    "main_frontier_table_independent": true,
+    "ablation_sampling": "azure_deployment_default",
+    "ablation_max_output_tokens": 8192,
+    "approximate_cap_scope": "assembly_text_only",
+    "rows_with_lower_prompt_token_accounting_under_cap": 46,
+    "v2_within_pipeline_comparisons_controlled": true,
+    "cross_version_comparisons_controlled": false,
+    "v2_reference": "preds_gpt55_asm2"
+  },
+  "conditions": [
+    {
+      "name": "full_assembly_v1",
+      "predictions": "preds_gpt55_asm",
+      "pass_at_1": 0.5850649350649352,
+      "pass_at_5": 0.6893681715110286,
+      "pass_at_10": 0.7142857142857143,
+      "covered_tasks": 110
+    },
+    {
+      "name": "approx_2048_assembly_tokens_v1",
+      "predictions": "preds_gpt55_asm_max-2048",
+      "pass_at_1": 0.572077922077922,
+      "pass_at_5": 0.6718460111317256,
+      "pass_at_10": 0.7012987012987013,
+      "covered_tasks": 108,
+      "gained_vs_full_v1": 3,
+      "lost_vs_full_v1": 5,
+      "exact_two_sided_mcnemar_p": 0.7265625
+    },
+    {
+      "name": "assembly_plus_compact_cfg_v1",
+      "predictions": "preds_gpt55_asm_max-cfg",
+      "pass_at_1": 0.5863636363636362,
+      "pass_at_5": 0.6909657802514945,
+      "pass_at_10": 0.7272727272727273,
+      "covered_tasks": 112,
+      "gained_vs_full_v1": 3,
+      "lost_vs_full_v1": 1,
+      "exact_two_sided_mcnemar_p": 0.625
+    },
+    {
+      "name": "compact_cfg_topology_only_v1",
+      "predictions": "preds_gpt55_asm_max-graphonly",
+      "pass_at_1": 0.3935064935064934,
+      "pass_at_5": 0.479978354978355,
+      "pass_at_10": 0.5064935064935064,
+      "covered_tasks": 78,
+      "gained_vs_full_v1": 5,
+      "lost_vs_full_v1": 37,
+      "exact_two_sided_mcnemar_p": 4.4337048166198656e-07
+    },
+    {
+      "name": "cleaned_assembly_only_v2",
+      "predictions": "preds_gpt55_asm2",
+      "pass_at_1": 0.5792207792207792,
+      "pass_at_5": 0.6789064110492683,
+      "pass_at_10": 0.7077922077922078,
+      "covered_tasks": 109,
+      "compile_at_1": 0.9616883116883118,
+      "compile_at_5": 0.9837920016491445,
+      "compile_at_10": 0.987012987012987,
+      "compile_covered_tasks": 152
+    },
+    {
+      "name": "clean_assembly_plus_address_aligned_cfg_v2",
+      "predictions": "preds_gpt55_asm_max-cfg2",
+      "pass_at_1": 0.5694805194805196,
+      "pass_at_5": 0.6729024943310657,
+      "pass_at_10": 0.7012987012987013,
+      "covered_tasks": 108,
+      "gained_vs_cleaned_assembly_v2": 2,
+      "lost_vs_cleaned_assembly_v2": 3,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "compile_at_1": 0.9603896103896105,
+      "compile_at_5": 0.9675324675324676,
+      "compile_at_10": 0.9675324675324676,
+      "compile_covered_tasks": 149,
+      "compile_gained_vs_cleaned_assembly_v2": 0,
+      "compile_lost_vs_cleaned_assembly_v2": 3,
+      "compile_exact_two_sided_mcnemar_p": 0.25
+    },
+    {
+      "name": "cfg_organized_block_instructions_v2",
+      "predictions": "preds_gpt55_asm_max-graphonly2",
+      "pass_at_1": 0.5655844155844155,
+      "pass_at_5": 0.6774376417233563,
+      "pass_at_10": 0.7012987012987013,
+      "covered_tasks": 108,
+      "gained_vs_cleaned_assembly_v2": 1,
+      "lost_vs_cleaned_assembly_v2": 2,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "compile_at_1": 0.9629870129870133,
+      "compile_at_5": 0.9772469593898165,
+      "compile_at_10": 0.9805194805194806,
+      "compile_covered_tasks": 151,
+      "compile_gained_vs_cleaned_assembly_v2": 1,
+      "compile_lost_vs_cleaned_assembly_v2": 2,
+      "compile_exact_two_sided_mcnemar_p": 1.0
+    }
+  ]
+}

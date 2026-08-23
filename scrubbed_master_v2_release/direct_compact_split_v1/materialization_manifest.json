@@ -1,0 +1,97 @@
+{
+  "deterministic": true,
+  "inputs": {
+    "dev_alignment": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/dev_private_alignment.jsonl",
+      "rows": 219,
+      "sha256": "c9c293317860c1b75c09c0ddf81ab3764a7daba9cf1ad133f04e98a8e701bef3",
+      "size_bytes": 13280
+    },
+    "ledger": {
+      "path": "scrubbed_master_v2_release/master_dart_graphv2_compile_ledger.jsonl",
+      "rows": 2211,
+      "sha256": "a0c3225144c001b013adc99c38d63e9cb4f2ec1fdd1604388df65ada9e150c0a",
+      "size_bytes": 2265078
+    },
+    "private": {
+      "path": "scrubbed_master_v2_release/master_dart_graphv2_signature_scrubbed_private.jsonl",
+      "rows": 2211,
+      "sha256": "03acc6dd45c861fb6517048a4b8be66a428dcb5cde7cbf3ccdea302fdc08f52b",
+      "size_bytes": 103814880
+    },
+    "public": {
+      "path": "scrubbed_master_v2_release/master_dart_graphv2_signature_scrubbed_public.jsonl",
+      "rows": 2211,
+      "sha256": "7e15df3f9567d882d174d743a220bdea7576ae2cd5b5bc1cc68af4dd22c12adf",
+      "size_bytes": 98634634
+    },
+    "split_manifest": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/split_manifest.json",
+      "sha256": "041e6be8e23838711ef998a7f6af18712341fbe0c6cf8e7a121ef0d3734b1c40"
+    },
+    "train_alignment": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/train_private_alignment.jsonl",
+      "rows": 1975,
+      "sha256": "f6908c084d3fe3dce7fd7fcb0896cb900d46f5139942cbab96c7aef02af490ff",
+      "size_bytes": 121276
+    }
+  },
+  "outputs": {
+    "dev_private_labels.jsonl": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/dev_private_labels.jsonl",
+      "rows": 219,
+      "sha256": "6e4c0cf04fac6abc3f0ed6ea44977331067a7fa8468a8522529e7fe7d2153aad",
+      "size_bytes": 247608
+    },
+    "dev_public_codec.jsonl": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/dev_public_codec.jsonl",
+      "rows": 219,
+      "sha256": "c190aad3f31260da30739bfea94a027984de10aee4fea7404d3d6ca01e4e92a7",
+      "size_bytes": 6085033
+    },
+    "train_private_labels.jsonl": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/train_private_labels.jsonl",
+      "rows": 1975,
+      "sha256": "744ddf0c80802fa9295bec809ae71d736def7821f6259ef15359b850ddc269c3",
+      "size_bytes": 2055439
+    },
+    "train_public_codec.jsonl": {
+      "path": "scrubbed_master_v2_release/direct_compact_split_v1/train_public_codec.jsonl",
+      "rows": 1975,
+      "sha256": "aeaeb368a969500ec07a4c61534cd6b72c1b3a552a34f3df66642b5b19aa972f",
+      "size_bytes": 53841878
+    }
+  },
+  "projection": {
+    "compression_or_codebook_fit_performed": false,
+    "private_contains_tests_signatures_or_assembly": false,
+    "private_label_keys": [
+      "task_id",
+      "lang",
+      "function",
+      "dart_source"
+    ],
+    "public_codec_keys": [
+      "task_id",
+      "lang",
+      "function",
+      "cfg",
+      "edges",
+      "integrity"
+    ],
+    "public_contains_target_source": false
+  },
+  "schema": "direct-compact-split-materialization-v1",
+  "script": {
+    "path": "scrubbed_master_v2_release/materialize_direct_compact_split.py",
+    "sha256": "1655e4c566eb54b2fdb9d4410f3b5da845281982da12b3c874ef8734308325c1"
+  },
+  "verification": {
+    "candidate_neutrality_verified": true,
+    "master_rows": 2211,
+    "public_private_binary_fields_equal": true,
+    "public_private_ledger_ids_equal": true,
+    "train_dev_original_lines_disjoint": true,
+    "train_dev_semantic_groups_disjoint": true
+  }
+}

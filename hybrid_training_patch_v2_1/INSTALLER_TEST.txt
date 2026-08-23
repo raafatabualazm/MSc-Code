@@ -1,0 +1,40 @@
+$ python apply_hybrid_patch.py --project-root <temp> --no-prerequisite-check
+install   scripts/training/graph_positions.py
+install   scripts/training/checkpoint_contract.py
+install   scripts/training/hybrid_data_controls.py
+install   scripts/training/prepare_hybrid_training_data_antigravity.py
+install   scripts/training/build_balanced_sft_mix_antigravity.py
+install   scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py
+install   scripts/training/graph_grpo_decompiler_antigravity.py
+install   scripts/training/teacher_repair_dataset_antigravity.py
+install   scripts/training/run_hybrid_curriculum_antigravity.py
+install   scripts/evaluation/audit_grpo_reward_antigravity.py
+install   scripts/evaluation/prepare_neutral_evaluation_antigravity.py
+install   scripts/evaluation/probe_graph_representations_antigravity.py
+install   scripts/evaluation/functional_graph_gate_antigravity.py
+install   scripts/evaluation/graph_inference_antigravity.py
+install   scripts/evaluation/run_sweeps_antigravity.py
+installed 15 changed file(s); verified SHA-256 after every copy
+backups: /mnt/data/hybrid_patch_v2_1_installer_test_project_final/.hybrid_patch_backups/20260717-014317
+
+$ verify installed SHA-256 values and backup sentinel
+overlay digests: 15/15 matched
+backup sentinel: preserved
+
+$ second installer dry run
+unchanged scripts/training/graph_positions.py
+unchanged scripts/training/checkpoint_contract.py
+unchanged scripts/training/hybrid_data_controls.py
+unchanged scripts/training/prepare_hybrid_training_data_antigravity.py
+unchanged scripts/training/build_balanced_sft_mix_antigravity.py
+unchanged scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py
+unchanged scripts/training/graph_grpo_decompiler_antigravity.py
+unchanged scripts/training/teacher_repair_dataset_antigravity.py
+unchanged scripts/training/run_hybrid_curriculum_antigravity.py
+unchanged scripts/evaluation/audit_grpo_reward_antigravity.py
+unchanged scripts/evaluation/prepare_neutral_evaluation_antigravity.py
+unchanged scripts/evaluation/probe_graph_representations_antigravity.py
+unchanged scripts/evaluation/functional_graph_gate_antigravity.py
+unchanged scripts/evaluation/graph_inference_antigravity.py
+unchanged scripts/evaluation/run_sweeps_antigravity.py
+dry run only; 15 patch files validated, no files changed

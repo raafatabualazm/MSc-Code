@@ -1,0 +1,71 @@
+{
+  "candidate_count_per_task": 10,
+  "candidate_count_total": 3430,
+  "length_break_observation": {
+    "reference_length_is_a_proxy_not_a_causal_variable": true,
+    "rows_reference_length_ge_1000": 166,
+    "rows_reference_length_lt_1000": 177,
+    "tasks_with_any_pass_reference_length_ge_1000": 0,
+    "tasks_with_any_pass_reference_length_lt_1000": 19
+  },
+  "metric_reproduction_absolute_error": {
+    "compile_at_1": 1.3994161385255666e-10,
+    "compile_at_5": 2.3916035818416503e-10,
+    "pass_at_1": 1.6618076012497873e-10,
+    "pass_at_10": 5.83090520311913e-12,
+    "pass_at_5": 4.015919263800072e-10
+  },
+  "official_metrics": {
+    "codebleu": {
+      "count": 343,
+      "max_codebleu": 0.8415330798344485,
+      "mean_codebleu": 0.67232372727892,
+      "min_codebleu": 0.3907873899615062,
+      "samples_with_success": 343
+    },
+    "codebleu_compiled_only": {
+      "count": 343,
+      "max_codebleu": 0.8204657296718888,
+      "mean_codebleu": 0.6634723334737541,
+      "min_codebleu": 0.3936749737522528,
+      "samples_with_success": 227
+    },
+    "compile_at_k": {
+      "compile_at_1": 0.5294460641399417,
+      "compile_at_5": 0.9307464482391603,
+      "total_problems": 343
+    },
+    "pass_at_k": {
+      "pass_at_1": 0.02128279883381924,
+      "pass_at_10": 0.05539358600583091,
+      "pass_at_5": 0.045282058401591926,
+      "total_problems": 343
+    }
+  },
+  "overall_derived_metrics": {
+    "any_compile_rate": 0.988338192,
+    "any_pass_rate": 0.055393586,
+    "bin": "all",
+    "compile_at_1": 0.529446064,
+    "compile_at_5": 0.930746448,
+    "dimension": "overall",
+    "mean_codebleu_all_candidates": 0.591943251,
+    "pass_at_1": 0.021282799,
+    "pass_at_10": 0.055393586,
+    "pass_at_5": 0.045282058,
+    "reference_length_max": 2745,
+    "reference_length_mean": 1035.49,
+    "reference_length_min": 368,
+    "rows": 343,
+    "tasks_with_any_compile": 339,
+    "tasks_with_any_pass": 19
+  },
+  "provenance_checks": {
+    "eval_dataset_sha256": "864dc0bb7e9ee305ba0fc4be6e5d5ecbbeb7c17fd15bb3e41cfcc6d9aaf65fac",
+    "prompt_schema_version": "antigravity-v2-no-test-hints",
+    "scoring_tests_visible_to_policy": false,
+    "seed": 42
+  },
+  "schema_version": 1,
+  "task_count": 343
+}

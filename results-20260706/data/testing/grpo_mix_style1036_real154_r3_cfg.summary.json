@@ -1,0 +1,17 @@
+{
+  "output": "data/testing/grpo_mix_style1036_real154_r3_cfg.jsonl",
+  "rows": 1498,
+  "synthetic": "data/datasets/synthetic_pool_stylematched1036_cfg.jsonl",
+  "synthetic_rows_used": 1036,
+  "synthetic_repeat": 1,
+  "real": "data/testing/grpo_data_cfg.jsonl",
+  "real_rows": 154,
+  "real_repeat": 3,
+  "gap_analysis": null,
+  "zero_pass_indices": 0,
+  "zero_pass_repeat": 2,
+  "missed_passable_indices": 0,
+  "missed_passable_repeat": 0,
+  "shuffle": true,
+  "seed": 13
+}

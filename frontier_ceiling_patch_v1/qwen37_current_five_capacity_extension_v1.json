@@ -1,0 +1,158 @@
+{
+  "schema": "qwen37-current-five-capacity-extension-v1",
+  "purpose": "Extend the immutable v6 Qwen capacity overlay so every separately metered alias in the current secondary Alibaba workspace is exhausted before the fallback workspace is eligible.",
+  "parent_capacity_overlay": {
+    "entry": "qwen37_capacity_fallback_v6.py",
+    "entry_sha256": "6b2d642be25bb7b2e97daddf70e9a2245a8ff09e5f0c6e5e32c09afc92159521",
+    "contract": "qwen37_capacity_fallback_contract_v6.json",
+    "contract_sha256": "cea8acaa785ddc2685a5da8b4426dce41837a25af2e7dd9639dd70f632d59631",
+    "output_directories_are_reused": true,
+    "completed_effective_terminals_are_immutable": true,
+    "target_selection_is_unchanged_and_outcome_blind": true
+  },
+  "merged_status_override": {
+    "addendum": "qwen37_effective_status_reconciliation_extension_v1.json",
+    "addendum_sha256": "df2364fb93d80be5b53fba1d9f01f0dc437ddbe18c7694d574c2b02a9ad3b881",
+    "entry": "qwen37_primary_effective_status_v7.py",
+    "entry_sha256": "f8efd980737e4efc9a41c521c12ec62a69fa098f8de698021a840861c03cb1b2",
+    "reconciliation_entry": "qwen37_original_outcome_reconciliation_v1.py",
+    "reconciliation_entry_sha256": "b8244a8092c76da6cfa1d849b64c64ad9e7a56f8d0016c04672e20e1b3721441",
+    "reconciliation_contract": "qwen37_original_outcome_reconciliation_contract_v1.json",
+    "reconciliation_contract_sha256": "ebbb10cfa939c1fa4fbdd26e46f058960a7b1841a56d53cb6c476184f1644825",
+    "reason": "Supersedes the older status hash embedded in the base v7 length contract by adding the immutable original-outcome reconciliation overlay."
+  },
+  "capacity_stage_order": [
+    {
+      "name": "current_dated",
+      "credential_env_file": "/workspace/Qwen.env",
+      "capacity_epoch": "secondary-workspace-20260726-epoch1",
+      "enabled_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08"
+      ],
+      "required_exact_quota_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08"
+      ]
+    },
+    {
+      "name": "current_preview",
+      "credential_env_file": "/workspace/Qwen.env",
+      "capacity_epoch": "secondary-workspace-20260726-preview-epoch1",
+      "enabled_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview"
+      ],
+      "required_exact_quota_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview"
+      ]
+    },
+    {
+      "name": "current_0517",
+      "credential_env_file": "/workspace/Qwen.env",
+      "capacity_epoch": "secondary-workspace-20260726-0517-epoch1",
+      "enabled_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max-2026-05-17"
+      ],
+      "required_exact_quota_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max-2026-05-17"
+      ]
+    },
+    {
+      "name": "current_generic",
+      "credential_env_file": "/workspace/Qwen.env",
+      "capacity_epoch": "secondary-workspace-20260726-generic-epoch1",
+      "enabled_aliases": [
+        "qwen3.7-max"
+      ],
+      "required_exact_quota_aliases": [
+        "qwen3.7-max"
+      ],
+      "exact_requested_resolved_identity_probe_required": true
+    },
+    {
+      "name": "fallback_all_five",
+      "credential_env_file": "/workspace/Qwen_fallback.env",
+      "capacity_epoch": "fallback-workspace-20260726-epoch1",
+      "enabled_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max",
+        "qwen3.7-max-2026-05-17"
+      ],
+      "required_exact_quota_aliases": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max",
+        "qwen3.7-max-2026-05-17"
+      ]
+    }
+  ],
+  "transition_policy": {
+    "stage_order_is_strict": true,
+    "fallback_is_ineligible_until_every_current_workspace_stage_terminates_at_its_exact_quota_boundary": true,
+    "accepted_boundary_http_status": 403,
+    "accepted_boundary_codes": [
+      "AllocationQuota.FreeTierOnly",
+      "insufficient_quota"
+    ],
+    "boundary_requires_no_provider_response": true,
+    "rate_limit_429_cannot_advance": true,
+    "transport_error_cannot_advance": true,
+    "data_inspection_error_cannot_advance": true,
+    "provider_response_is_always_a_terminal_sample": true
+  },
+  "length_repair_stage_mapping": [
+    {
+      "capacity_stage": "current_dated",
+      "repair_stage": "dated",
+      "repair_allowed_models": [
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08"
+      ]
+    },
+    {
+      "capacity_stage": "current_preview",
+      "repair_stage": "preview",
+      "repair_allowed_models": [
+        "qwen3.7-max-preview"
+      ]
+    },
+    {
+      "capacity_stage": "current_0517",
+      "repair_stage": "source",
+      "repair_allowed_models": [
+        "qwen3.7-max-2026-05-17"
+      ]
+    },
+    {
+      "capacity_stage": "current_generic",
+      "repair_stage": "generic",
+      "repair_allowed_models": [
+        "qwen3.7-max"
+      ]
+    },
+    {
+      "capacity_stage": "fallback_all_five",
+      "repair_stage": "fallback",
+      "repair_allowed_models": [
+        "qwen3.7-max-2026-05-17",
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview",
+        "qwen3.7-max"
+      ]
+    }
+  ]
+}

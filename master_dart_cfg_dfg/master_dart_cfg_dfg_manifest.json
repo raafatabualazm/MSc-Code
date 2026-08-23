@@ -1,0 +1,289 @@
+{
+  "schema": "antigravity-master-dataset-manifest-v1",
+  "dataset_schema": "antigravity-master-dart-cfg-dfg-v1",
+  "graph_schema": "antigravity-unified-cfg-dfg-v1",
+  "test_schema": "antigravity-behavior-tests-v1",
+  "build_version": "2026-07-16.1",
+  "built_at_utc": "2026-07-16T21:16:20.561340+00:00",
+  "inputs": {
+    "dart_all_graphv2_train": {
+      "path": "/mnt/data/dart_all_graphv2_train.jsonl",
+      "rows": 770,
+      "size_bytes": 56097839,
+      "sha256": "ae1503b8a17a1da84fc76b9fd3dbe54d8f42badec94d970c2e21db522dd9d75b"
+    },
+    "synthetic_pool_reward_clean_graphv2": {
+      "path": "/mnt/data/synthetic_pool_reward_clean_graphv2.jsonl",
+      "rows": 1725,
+      "size_bytes": 100642815,
+      "sha256": "75e6deff3b0bf47298591c488e5547758690191943399ef517cbcef492351b8e"
+    },
+    "test_set": {
+      "path": "/mnt/data/test-set.jsonl",
+      "rows": 165,
+      "size_bytes": 2105264,
+      "sha256": "ace89a377b32b4fe11f89011f11cc883eb7669307cfc1f2bba6344e370aba1a1"
+    },
+    "test_set_cfg": {
+      "path": "/mnt/data/test-set_cfg.jsonl",
+      "rows": 165,
+      "size_bytes": 4662289,
+      "sha256": "663aedfd5737e673c8930c62b19ae0a22c1c3c2697cfb42bc25d792fa5b22e54"
+    },
+    "test_set_cfg_clean": {
+      "path": "/mnt/data/test-set_cfg_clean.jsonl",
+      "rows": 165,
+      "size_bytes": 4498741,
+      "sha256": "74e64473d37e0102e64e82fd70e10ba838203a2bf00ae09c28b2ac4ec62fe024"
+    }
+  },
+  "split_policy": {
+    "training_inputs": [
+      "dart_all_graphv2_train",
+      "synthetic_pool_reward_clean_graphv2"
+    ],
+    "heldout_inputs": [
+      "test_set",
+      "test_set_cfg",
+      "test_set_cfg_clean"
+    ],
+    "test_variants_collapsed": true,
+    "test_variant_selected": "test_set_cfg_clean",
+    "test_rows_are_not_in_training": true
+  },
+  "deduplication": {
+    "primary_key": "normalized_assembly_sha256",
+    "secondary_key": "comment_and_whitespace_insensitive_source_sha256",
+    "train": {
+      "input_rows": 2495,
+      "output_rows": 2474,
+      "rejected_rows": 21,
+      "assembly_duplicate_groups": 9,
+      "assembly_conflicting_target_groups": 9,
+      "source_duplicate_groups": 0
+    },
+    "heldout": {
+      "input_rows": 165,
+      "output_rows": 158,
+      "rejected_rows": 7,
+      "assembly_duplicate_groups": 7,
+      "assembly_conflicting_target_groups": 7,
+      "source_duplicate_groups": 0
+    }
+  },
+  "leakage": {
+    "source_overlap_count": 0,
+    "assembly_overlap_count": 0,
+    "source_overlap_sha256": [],
+    "assembly_overlap_sha256": []
+  },
+  "quality_filter": {
+    "train_input_rows": 2474,
+    "train_output_rows": 2474,
+    "train_rejected_rows": 0,
+    "heldout_input_rows": 158,
+    "heldout_output_rows": 149,
+    "heldout_rejected_rows": 9
+  },
+  "train": {
+    "rows": 2474,
+    "source_datasets": {
+      "dart_all_graphv2_train": 749,
+      "synthetic_pool_reward_clean_graphv2": 1725
+    },
+    "frameworks": {
+      "dart_cli": 2444,
+      "flutter": 2,
+      "dart_library": 28
+    },
+    "graph": {
+      "nodes": {
+        "min": 3,
+        "median": 38.0,
+        "max": 638,
+        "mean": 51.75949878738884
+      },
+      "control_edges": {
+        "min": 3,
+        "median": 53.0,
+        "max": 973,
+        "mean": 72.77081649151172
+      },
+      "dataflow_edges": {
+        "min": 1,
+        "median": 108.0,
+        "max": 2126,
+        "mean": 168.84397736459175
+      },
+      "total_nodes": 128053,
+      "total_control_edges": 180035,
+      "total_dataflow_edges": 417720
+    },
+    "tests": {
+      "kinds": {
+        "differential_program": 720,
+        "differential_function": 29,
+        "dart_harness": 1725
+      },
+      "origins": {
+        "generated": 749,
+        "provided": 1725
+      },
+      "static_status": {
+        "passed": 2474
+      },
+      "runtime_status": {
+        "not_run": 2474
+      },
+      "total_cases": 18386
+    }
+  },
+  "heldout": {
+    "rows": 149,
+    "source_datasets": {
+      "test_set_cfg_clean": 149
+    },
+    "frameworks": {
+      "dart_cli": 102,
+      "dart_library": 47
+    },
+    "graph": {
+      "nodes": {
+        "min": 1,
+        "median": 13,
+        "max": 394,
+        "mean": 33.42953020134228
+      },
+      "control_edges": {
+        "min": 0,
+        "median": 16,
+        "max": 577,
+        "mean": 46.47651006711409
+      },
+      "dataflow_edges": {
+        "min": 0,
+        "median": 16,
+        "max": 4835,
+        "mean": 120.51006711409396
+      },
+      "total_nodes": 4981,
+      "total_control_edges": 6925,
+      "total_dataflow_edges": 17956
+    },
+    "tests": {
+      "kinds": {
+        "differential_program": 102,
+        "differential_function": 47
+      },
+      "origins": {
+        "generated": 149
+      },
+      "static_status": {
+        "passed": 149
+      },
+      "runtime_status": {
+        "not_run": 149
+      },
+      "total_cases": 349
+    }
+  },
+  "validation": {
+    "canonical_record_errors_quarantined": 9,
+    "dart_executable": null,
+    "flutter_executable": null,
+    "runtime_tests_executed": false,
+    "runtime_tests_reason": "No dart/flutter executable was present in this build environment.",
+    "static_tests_required_for_inclusion": true,
+    "source_compile_evidence": "Each retained input includes assembly and a parsed graph derived from its source program.",
+    "runtime_validation_command": "python validate_master_dart_tests.py --input master_dart_cfg_dfg_train.jsonl --output master_dart_cfg_dfg_train.runtime_validated.jsonl --dart /path/to/dart"
+  },
+  "outputs": {
+    "master_dart_cfg_dfg_train.jsonl": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl",
+      "size_bytes": 170808909,
+      "sha256": "264bde64d7824aee3d74a51431730a139540afe0feaf5e351215373e7d0268bf"
+    },
+    "master_dart_cfg_dfg_train.jsonl.gz": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl.gz",
+      "size_bytes": 20619784,
+      "sha256": "803fdf4df5ea677d5d695fd850d3fe82922bd94f7380a96860b10ed4f8633208"
+    },
+    "master_dart_cfg_dfg_heldout.jsonl": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_heldout.jsonl",
+      "size_bytes": 6722530,
+      "sha256": "ffe25e4d21b86c5325668244b3980d3a5688c06963c7dcef97319f0ba432b4e2"
+    },
+    "master_dart_cfg_dfg_heldout.jsonl.gz": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_heldout.jsonl.gz",
+      "size_bytes": 711425,
+      "sha256": "8e6265e0379ce4a27352e945cb8c9bed9710d338536d4373823b5de84a08ae58"
+    },
+    "master_dart_cfg_dfg_rejected.jsonl": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_rejected.jsonl",
+      "size_bytes": 34676,
+      "sha256": "b0f1351d07fe242400c8ebbb05b1e2e1b208552347dde35bc3f9ded38f8ce351"
+    },
+    "master_dart_cfg_dfg_sample.jsonl": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_sample.jsonl",
+      "size_bytes": 177590,
+      "sha256": "75b75b50a7478270e7544dac8c424fecb3bb7805a54fa321d54d78a8e758a2e1"
+    },
+    "README_master_dart_cfg_dfg.md": {
+      "path": "/mnt/data/master_dart_cfg_dfg/README_master_dart_cfg_dfg.md",
+      "size_bytes": 2288,
+      "sha256": "e0acce8aa4f44228ea9427b3afef2ba98fe55407a6e1c44e375ad6c6e17be5fe"
+    },
+    "build_master_dart_cfg_dfg.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/build_master_dart_cfg_dfg.py",
+      "size_bytes": 60673,
+      "sha256": "6386bd8a4014a42b6c82474f2d498a94fd73c7a9de3c36b02011b33eb4c226a7"
+    },
+    "validate_master_dart_tests.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/validate_master_dart_tests.py",
+      "size_bytes": 20722,
+      "sha256": "66d0ca6b290f48af7678c8d994d4034d4aedd29e2fd620d6039d92dffe3ac00f"
+    },
+    "audit_master_dart_cfg_dfg.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/audit_master_dart_cfg_dfg.py",
+      "size_bytes": 12265,
+      "sha256": "c8548e230b97a83d4e13b8ea0d5fe39e224b6985824626dc94a4dcadf6f50273"
+    },
+    "master_dart_cfg_dfg_audit.json": {
+      "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_audit.json",
+      "size_bytes": 3153,
+      "sha256": "194b77658ccfcddef6cf3cf574bdb07000fbe4530d661e6e08e7886aed839382"
+    },
+    "prior_extractors/dfg_extractor.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/prior_extractors/dfg_extractor.py",
+      "size_bytes": 17964,
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
+    },
+    "prior_extractors/cfg_extractor.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/prior_extractors/cfg_extractor.py",
+      "size_bytes": 22143,
+      "sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce"
+    },
+    "prior_extractors/build_cfg_jsonl.py": {
+      "path": "/mnt/data/master_dart_cfg_dfg/prior_extractors/build_cfg_jsonl.py",
+      "size_bytes": 5528,
+      "sha256": "94b2da9aa4da8c0f55fb92d9c9bf45fac7f2e198b5901e9904b3e5901ee84147"
+    }
+  },
+  "notes": [
+    "The files named test-set are held out; they are never merged into master_dart_cfg_dfg_train.jsonl.",
+    "Provided Dart harnesses are preserved inside tests.harness.",
+    "Missing tests are represented as generated differential function/program oracle specifications.",
+    "Runtime status remains not_run until validate_master_dart_tests.py is executed where the Dart SDK is installed."
+  ],
+  "independent_audit": {
+    "passed": true,
+    "path": "/mnt/data/master_dart_cfg_dfg/master_dart_cfg_dfg_audit.json",
+    "train_error_count": 0,
+    "heldout_error_count": 0,
+    "train_unique_assembly_fingerprints": 2474,
+    "train_unique_source_fingerprints": 2474,
+    "source_leakage_count": 0,
+    "assembly_leakage_count": 0,
+    "gzip_payloads_match_raw": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "signature-scrubbed-post-inference-join-v3",
+  "post_inference_join": true,
+  "expected_signature_mode": "neutral_exact",
+  "expected_target_name": "fn0",
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_stream_sha256": "96e16c1911d86e60b589ac0c2980ebfbce690900a07fdcc9c5608fb9bfaf42f4",
+  "policy_input_verified_public_only": true,
+  "inputs": {
+    "raw_predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_raw_predictions.json",
+      "sha256": "d75880ea95696eca7776b752d78c5fec238738065a8037d2b33d7d94163d7ec1",
+      "size_bytes": 727854
+    },
+    "raw_inference_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_raw_predictions.json.provenance.json",
+      "sha256": "603dda6e493bc808c1ffae216b64a711b4eed2306a6ca50cfd49c3d3bba1767b",
+      "size_bytes": 5840
+    },
+    "public_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_neutralexact_public.jsonl",
+      "sha256": "4aff74b026c2ac015f69f7e79923dbf8557decb0e7b0dd5cd9b8e80eb1a8171c",
+      "size_bytes": 4650153
+    },
+    "private_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_neutralexact_private.jsonl",
+      "sha256": "b242c4897af7df335110e67ff6a7ed4e26ee7a301075cb5a449f7fad9dbff2e0",
+      "size_bytes": 4909183
+    }
+  },
+  "output": {
+    "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_predictions.json",
+    "sha256": "372baaa13ac4b81fe2d8d59feedb8909acc10c65d043902a411bfb59d7ef03ae",
+    "size_bytes": 926076
+  },
+  "source": {
+    "path": "/workspace/scripts/evaluation/rehydrate_signature_scrubbed_predictions.py",
+    "sha256": "d840eb7a170c45c9f615a800fa5f2a630c8cf9f08e6cb87b91d964cf37986ab2",
+    "size_bytes": 12338
+  }
+}

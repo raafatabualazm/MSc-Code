@@ -1,0 +1,69 @@
+{
+  "schema_version": "fixed-scrub-v3-standalone-compile-provenance-v1",
+  "diagnostic_role": "secondary_standalone_compile",
+  "diagnostic_only": true,
+  "standalone_compile_mode": "legacy",
+  "k_values": [
+    1,
+    5,
+    10
+  ],
+  "row_count": 154,
+  "samples_per_row": 10,
+  "candidate_count": 1540,
+  "candidate_stream_sha256": "25d6475d784a3fb2d6f0ab8962353fab92bc97a719b6aabe2975ef4cbb69f1f1",
+  "scorer_sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+  "dart_sdk_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+  "result": {
+    "compile_at_1": 0.5298701298701297,
+    "compile_at_5": 0.9088847660276234,
+    "compile_at_10": 0.9805194805194806,
+    "total_problems": 154
+  },
+  "validated_invariants": {
+    "candidate_only_pool": true,
+    "candidate_stream_preserved": true,
+    "opaque_row_identifiers": true,
+    "tests_absent": true,
+    "all_row_counts_present": true,
+    "compile_at_k_recomputed_from_row_counts": true,
+    "primary_aligned_jit_analysis_modified": false
+  },
+  "inputs": {
+    "source_predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_raw_predictions.json",
+      "sha256": "d75880ea95696eca7776b752d78c5fec238738065a8037d2b33d7d94163d7ec1",
+      "size_bytes": 727854
+    },
+    "candidate_pool": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_standalone_candidate_pool.json",
+      "sha256": "2408db098337441bd112860babcb4525389717811420f163f58a5951076d0a77",
+      "size_bytes": 684963
+    },
+    "projection_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_standalone_candidate_pool.json.provenance.json",
+      "sha256": "c9e8768261357304431949ed966e895a1ec4cbe2f9176d29c609026a661a6cd9",
+      "size_bytes": 1466
+    },
+    "compile_stdout": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_legacy_standalone_aot_compile_at_k.txt",
+      "sha256": "9363e79804ab7b8c65e584a21073f483ac58e901b60df6bf13c1b964b20e1175",
+      "size_bytes": 7129
+    },
+    "scorer": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+      "size_bytes": 18813
+    },
+    "projector": {
+      "path": "/workspace/scripts/evaluation/project_fixed_scrub_v3_standalone_pool.py",
+      "sha256": "2068cfbd6a3a31a53332fab6d64feaf1d0ac8066b52a052b5ec98c1fff88c2a4",
+      "size_bytes": 7427
+    },
+    "dart_version": {
+      "path": "/workspace/logs/fixed_scrub_v3/dart_version.txt",
+      "sha256": "aec0deb0431af41549d28510392a11f7cbfc1d38fb9e29954bcd865d4b54802d",
+      "size_bytes": 82
+    }
+  }
+}

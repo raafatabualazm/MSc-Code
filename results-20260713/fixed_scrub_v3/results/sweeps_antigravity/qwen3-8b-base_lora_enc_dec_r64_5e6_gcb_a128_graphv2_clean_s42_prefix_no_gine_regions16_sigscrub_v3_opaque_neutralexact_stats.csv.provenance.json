@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed-scrub-v3-scoring-provenance-v1",
+  "arm": "neutral_exact",
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16/pytorch_model.bin",
+    "sha256": "e8e872608f22ae8e1c5607d6179feeb5f133401fb2a7d1fc40fe8894d8c347fc",
+    "size_bytes": 924910291
+  },
+  "generation_seed": 42,
+  "compile_mode": "jit_tests",
+  "scorer_sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+  "dart_sdk_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"linux_x64\"",
+  "prompt_schema_version": "antigravity-v3-matched-function-contract",
+  "scoring_tests_visible_to_policy": false,
+  "policy_input_verified_public_only": true,
+  "row_count": 154,
+  "samples_per_row": 10,
+  "inputs": {
+    "predictions": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_predictions.json",
+      "sha256": "372baaa13ac4b81fe2d8d59feedb8909acc10c65d043902a411bfb59d7ef03ae",
+      "size_bytes": 926076
+    },
+    "stats": {
+      "path": "/workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_stats.csv",
+      "sha256": "a1352b7b38408f408764cd02c53cd0ac922394aa017489a2956ed168bd83434e",
+      "size_bytes": 23695
+    },
+    "inference_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_raw_predictions.json.provenance.json",
+      "sha256": "603dda6e493bc808c1ffae216b64a711b4eed2306a6ca50cfd49c3d3bba1767b",
+      "size_bytes": 5840
+    },
+    "join_provenance": {
+      "path": "/workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_no_gine_regions16_sigscrub_v3_opaque_neutralexact_predictions.json.provenance.json",
+      "sha256": "fb0bf8e92165cb44dba5f6af34ac29acd2811b1d9b5ee8ff5f1a9464c44c88d3",
+      "size_bytes": 2049
+    },
+    "public_dataset": {
+      "path": "/workspace/data/testing/grpo_data_graphv2_sigscrub_v3_opaque_neutralexact_public.jsonl",
+      "sha256": "4aff74b026c2ac015f69f7e79923dbf8557decb0e7b0dd5cd9b8e80eb1a8171c",
+      "size_bytes": 4650153
+    },
+    "scorer": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "sha256": "d70ff375b57117893953e7e76da84d5a3156f27c61842f4956fd59ffe3a3bea1",
+      "size_bytes": 18813
+    },
+    "dart_version": {
+      "path": "/workspace/logs/fixed_scrub_v3/dart_version.txt",
+      "sha256": "aec0deb0431af41549d28510392a11f7cbfc1d38fb9e29954bcd865d4b54802d",
+      "size_bytes": 82
+    }
+  }
+}

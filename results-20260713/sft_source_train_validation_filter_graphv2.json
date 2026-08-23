@@ -1,0 +1,49 @@
+{
+  "train": "data/datasets/dart_all_rebuilt_train_unique.jsonl",
+  "train_sha256": "b2db9828af7ebe287ac6b40dc53547c2e37386696a2664796910f4a4573b551f",
+  "benchmark": "data/datasets/dart_all_rebuilt_validation_unique.jsonl",
+  "benchmark_sha256": "f1deab8ddaefe591801cbe59c8b9577b5d41307f537e73149b2864557a9179a8",
+  "train_rows": 773,
+  "benchmark_rows": 83,
+  "duplicate_train_source_rows": 0,
+  "normalization": "comments/whitespace removed; identifiers/literals normalized; token 7-gram Jaccard",
+  "exact_overlap_pairs": 0,
+  "exact_overlaps": [],
+  "near_threshold": 0.8,
+  "near_overlap_pairs": 4,
+  "near_overlaps": [
+    {
+      "benchmark_index": 8,
+      "benchmark_task_id": 8,
+      "train_index": 661,
+      "jaccard_7gram": 1.0
+    },
+    {
+      "benchmark_index": 11,
+      "benchmark_task_id": 11,
+      "train_index": 108,
+      "jaccard_7gram": 1.0
+    },
+    {
+      "benchmark_index": 28,
+      "benchmark_task_id": 28,
+      "train_index": 108,
+      "jaccard_7gram": 1.0
+    },
+    {
+      "benchmark_index": 24,
+      "benchmark_task_id": 24,
+      "train_index": 59,
+      "jaccard_7gram": 0.8793103448275862
+    }
+  ],
+  "dropped_train_indices": [
+    59,
+    108,
+    661
+  ],
+  "dropped_train_rows": 3,
+  "filtered_train": "data/datasets/dart_all_rebuilt_train_no_validation_overlap.jsonl",
+  "filtered_train_rows": 770,
+  "filtered_train_sha256": "4a7a39f63f955899674ad2e29c238ec90f472bc94e5370304ef400140fbd15a1"
+}

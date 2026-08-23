@@ -1,0 +1,7 @@
+{
+  "count": 154,
+  "samples_with_success": 154,
+  "mean_codebleu": 0.48396602445025255,
+  "min_codebleu": 0.3106204109986286,
+  "max_codebleu": 0.6405103254688083
+}

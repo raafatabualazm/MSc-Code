@@ -1,0 +1,569 @@
+{
+  "audit": "phase0_family_and_source_pool_fallback",
+  "gates": {
+    "family_and_source_pool_policy_validated_for_every_row": true,
+    "sealed_codebook_rebuilt_exactly_from_train": true,
+    "sealed_train_side_has_zero_fallback": true
+  },
+  "input_bindings": {
+    "codebook": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\codebook.json",
+      "sha256": "16764b3dc7bc3a58b195934f8ed76bc81586909af56a1669b42e5de37cf80be9"
+    },
+    "codec": {
+      "path": "scripts\\data\\build_compact_qwen_v2.py",
+      "sha256": "0a8cde3bfb7ec08c45115d4226a45f4b2c1b192a5277270af866237641c419b3"
+    },
+    "contract": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\compact_contract.json",
+      "sha256": "c60f9b6c8f85a1b1db74d572434f79644d77fcb92feef2da724039f4eecf9a03"
+    },
+    "current_cfg_extractor": {
+      "path": "scripts\\data\\cfg_extractor.py",
+      "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c"
+    },
+    "current_dfg_extractor": {
+      "path": "scripts\\data\\dfg_extractor.py",
+      "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12"
+    },
+    "dev": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\dev_codec_private.jsonl",
+      "sha256": "57ba18ffa9e0a77058c66861cc4df2c7ca4be91d0664ba1f0c09c4fe6ef7965a"
+    },
+    "legacy_cfg_extractor": {
+      "path": "scrubbed_master_v2_release\\extractors\\cfg_extractor.py",
+      "sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce"
+    },
+    "legacy_dfg_extractor": {
+      "path": "scrubbed_master_v2_release\\extractors\\dfg_extractor.py",
+      "sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
+    },
+    "preflight": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\compact_qwen_phase0_s44_v2\\preflight_report.json",
+      "sha256": "f1dbbbd326eea1b15547fe009f50c4b8ac6d382c814f7ede44cc7f00f9484d03"
+    },
+    "tokenizer": {
+      "path": "C:\\Users\\Raafat Abualazm\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-8B\\snapshots\\b968826d9c46dd6066d109eabc6255188de91218\\tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "train": {
+      "path": "scrubbed_master_v2_release\\direct_compact_phase0_s44_v2\\prepared\\train_codec_private.jsonl",
+      "sha256": "fc9e1c9caadf3d3f8523de3ace4f360c5ea42694af33e97c1efb135d7a9264de"
+    }
+  },
+  "master_train_only_vocabulary_counterfactual": {
+    "capacity": 17273,
+    "coverage": {
+      "by_exact_source_pool": {
+        "base_llm": {
+          "fallback_instructions": 2295,
+          "fallback_rate": 0.019885625162464258,
+          "instructions": 115410,
+          "rows": 449,
+          "rows_with_fallback": 427,
+          "rows_with_fallback_rate": 0.9510022271714922
+        },
+        "null": {
+          "fallback_instructions": 636,
+          "fallback_rate": 0.0011061177354500299,
+          "instructions": 574984,
+          "rows": 2172,
+          "rows_with_fallback": 137,
+          "rows_with_fallback_rate": 0.0630755064456722
+        },
+        "topup_s44": {
+          "fallback_instructions": 713,
+          "fallback_rate": 0.023038645469820342,
+          "instructions": 30948,
+          "rows": 224,
+          "rows_with_fallback": 210,
+          "rows_with_fallback_rate": 0.9375
+        },
+        "topup_s45": {
+          "fallback_instructions": 857,
+          "fallback_rate": 0.020700983115534193,
+          "instructions": 41399,
+          "rows": 321,
+          "rows_with_fallback": 297,
+          "rows_with_fallback_rate": 0.9252336448598131
+        },
+        "topup_s46": {
+          "fallback_instructions": 276,
+          "fallback_rate": 0.021662349894042855,
+          "instructions": 12741,
+          "rows": 111,
+          "rows_with_fallback": 104,
+          "rows_with_fallback_rate": 0.9369369369369369
+        }
+      },
+      "by_phase0_split": {
+        "dev": {
+          "fallback_instructions": 1074,
+          "fallback_rate": 0.015257849126296349,
+          "instructions": 70390,
+          "rows": 326,
+          "rows_with_fallback": 238,
+          "rows_with_fallback_rate": 0.7300613496932515
+        },
+        "train": {
+          "fallback_instructions": 3703,
+          "fallback_rate": 0.005251796928627753,
+          "instructions": 705092,
+          "rows": 2951,
+          "rows_with_fallback": 937,
+          "rows_with_fallback_rate": 0.31751948492036597
+        }
+      },
+      "by_phase0_split_and_family": {
+        "dev:master": {
+          "fallback_instructions": 636,
+          "fallback_rate": 0.012763395544852498,
+          "instructions": 49830,
+          "rows": 219,
+          "rows_with_fallback": 137,
+          "rows_with_fallback_rate": 0.6255707762557078
+        },
+        "dev:topup_s45": {
+          "fallback_instructions": 421,
+          "fallback_rate": 0.021329415340966662,
+          "instructions": 19738,
+          "rows": 100,
+          "rows_with_fallback": 97,
+          "rows_with_fallback_rate": 0.97
+        },
+        "dev:topup_s46": {
+          "fallback_instructions": 17,
+          "fallback_rate": 0.02068126520681265,
+          "instructions": 822,
+          "rows": 7,
+          "rows_with_fallback": 4,
+          "rows_with_fallback_rate": 0.5714285714285714
+        },
+        "train:master": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 525154,
+          "rows": 1953,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s45": {
+          "fallback_instructions": 3444,
+          "fallback_rate": 0.02049768180979532,
+          "instructions": 168019,
+          "rows": 894,
+          "rows_with_fallback": 837,
+          "rows_with_fallback_rate": 0.9362416107382551
+        },
+        "train:topup_s46": {
+          "fallback_instructions": 259,
+          "fallback_rate": 0.021730010906955283,
+          "instructions": 11919,
+          "rows": 104,
+          "rows_with_fallback": 100,
+          "rows_with_fallback_rate": 0.9615384615384616
+        }
+      },
+      "by_phase0_split_and_source_pool": {
+        "dev:base_llm": {
+          "fallback_instructions": 278,
+          "fallback_rate": 0.020337991074694563,
+          "instructions": 13669,
+          "rows": 50,
+          "rows_with_fallback": 50,
+          "rows_with_fallback_rate": 1.0
+        },
+        "dev:null": {
+          "fallback_instructions": 636,
+          "fallback_rate": 0.012763395544852498,
+          "instructions": 49830,
+          "rows": 219,
+          "rows_with_fallback": 137,
+          "rows_with_fallback_rate": 0.6255707762557078
+        },
+        "dev:topup_s44": {
+          "fallback_instructions": 79,
+          "fallback_rate": 0.03389103389103389,
+          "instructions": 2331,
+          "rows": 19,
+          "rows_with_fallback": 19,
+          "rows_with_fallback_rate": 1.0
+        },
+        "dev:topup_s45": {
+          "fallback_instructions": 64,
+          "fallback_rate": 0.017121455323702513,
+          "instructions": 3738,
+          "rows": 31,
+          "rows_with_fallback": 28,
+          "rows_with_fallback_rate": 0.9032258064516129
+        },
+        "dev:topup_s46": {
+          "fallback_instructions": 17,
+          "fallback_rate": 0.02068126520681265,
+          "instructions": 822,
+          "rows": 7,
+          "rows_with_fallback": 4,
+          "rows_with_fallback_rate": 0.5714285714285714
+        },
+        "train:base_llm": {
+          "fallback_instructions": 2017,
+          "fallback_rate": 0.01982484937242606,
+          "instructions": 101741,
+          "rows": 399,
+          "rows_with_fallback": 377,
+          "rows_with_fallback_rate": 0.9448621553884712
+        },
+        "train:null": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 525154,
+          "rows": 1953,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s44": {
+          "fallback_instructions": 634,
+          "fallback_rate": 0.022154663312017334,
+          "instructions": 28617,
+          "rows": 205,
+          "rows_with_fallback": 191,
+          "rows_with_fallback_rate": 0.9317073170731708
+        },
+        "train:topup_s45": {
+          "fallback_instructions": 793,
+          "fallback_rate": 0.02105626510182948,
+          "instructions": 37661,
+          "rows": 290,
+          "rows_with_fallback": 269,
+          "rows_with_fallback_rate": 0.9275862068965517
+        },
+        "train:topup_s46": {
+          "fallback_instructions": 259,
+          "fallback_rate": 0.021730010906955283,
+          "instructions": 11919,
+          "rows": 104,
+          "rows_with_fallback": 100,
+          "rows_with_fallback_rate": 0.9615384615384616
+        }
+      },
+      "by_requested_family": {
+        "master": {
+          "fallback_instructions": 636,
+          "fallback_rate": 0.0011061177354500299,
+          "instructions": 574984,
+          "rows": 2172,
+          "rows_with_fallback": 137,
+          "rows_with_fallback_rate": 0.0630755064456722
+        },
+        "topup_s45": {
+          "fallback_instructions": 3865,
+          "fallback_rate": 0.020585117998263715,
+          "instructions": 187757,
+          "rows": 994,
+          "rows_with_fallback": 934,
+          "rows_with_fallback_rate": 0.9396378269617707
+        },
+        "topup_s46": {
+          "fallback_instructions": 276,
+          "fallback_rate": 0.021662349894042855,
+          "instructions": 12741,
+          "rows": 111,
+          "rows_with_fallback": 104,
+          "rows_with_fallback_rate": 0.9369369369369369
+        }
+      },
+      "overall": {
+        "fallback_instructions": 4777,
+        "fallback_rate": 0.0061600398203955735,
+        "instructions": 775482,
+        "rows": 3277,
+        "rows_with_fallback": 1175,
+        "rows_with_fallback_rate": 0.35855965822398533
+      }
+    },
+    "fit_instructions": 525154,
+    "fit_population": "included family=master Phase-0 train rows only",
+    "fit_rows": 1953,
+    "token_stats": null,
+    "token_stats_note": "Not computed: a master-only codebook changes instruction atom IDs and therefore requires a distinct tokenizer/embedding-init contract.",
+    "vocabulary_size": 16409
+  },
+  "passed": true,
+  "population": {
+    "dev_rows": 326,
+    "requested_family_policy": {
+      "master": [
+        null
+      ],
+      "topup_s45": [
+        "base_llm",
+        "topup_s44",
+        "topup_s45"
+      ],
+      "topup_s46": [
+        "topup_s46"
+      ]
+    },
+    "rows": 3277,
+    "train_rows": 2951
+  },
+  "route_binding": {
+    "extractor_routes": {
+      "current_combined_v2": {
+        "allow_call_edges": true,
+        "cfg_extractor_sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+        "combined_hash_algorithm": "sha256(filename || bytes for cfg, dfg)",
+        "dfg_extractor_sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+        "dfg_metadata": "locations_and_dependency_count",
+        "graph_extractor_sha256": "7a89b10f74754a8ff43580dba0cfb3348cd8e7b370e325ba8d31667c60ac04c1",
+        "route_atom": "<DX1>"
+      },
+      "legacy_release_v1": {
+        "allow_call_edges": false,
+        "cfg_extractor_sha256": "fc0ed42b63fc743ac6f6a1726213fd1659c398a77dc6f9c71b99437963ad53ce",
+        "combined_hash_algorithm": "sha256(cfg_bytes || dfg_bytes)",
+        "dfg_extractor_sha256": "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000",
+        "dfg_metadata": "endpoints_only",
+        "graph_extractor_sha256": "7c0c2270091c98cb65726ebb0404f196abf3eec9825569653beb1e7883aac2d8",
+        "route_atom": "<DX0>"
+      }
+    },
+    "runtime_symbol_policy_sha256": "f5057dbb432e84ace3181bd4838795ae2f6c2315e4bebea6ad56be24ab461ed6",
+    "target_function": "candidate"
+  },
+  "schema": "compact-qwen-v2-generalization-audit-v1",
+  "sealed_train_only_codebook": {
+    "capacity": 17273,
+    "coverage": {
+      "by_exact_source_pool": {
+        "base_llm": {
+          "fallback_instructions": 97,
+          "fallback_rate": 0.0008404817606793172,
+          "instructions": 115410,
+          "rows": 449,
+          "rows_with_fallback": 20,
+          "rows_with_fallback_rate": 0.044543429844097995
+        },
+        "null": {
+          "fallback_instructions": 594,
+          "fallback_rate": 0.0010330722246184242,
+          "instructions": 574984,
+          "rows": 2172,
+          "rows_with_fallback": 132,
+          "rows_with_fallback_rate": 0.06077348066298342
+        },
+        "topup_s44": {
+          "fallback_instructions": 24,
+          "fallback_rate": 0.0007754943776657619,
+          "instructions": 30948,
+          "rows": 224,
+          "rows_with_fallback": 6,
+          "rows_with_fallback_rate": 0.026785714285714284
+        },
+        "topup_s45": {
+          "fallback_instructions": 8,
+          "fallback_rate": 0.00019324138264209282,
+          "instructions": 41399,
+          "rows": 321,
+          "rows_with_fallback": 5,
+          "rows_with_fallback_rate": 0.01557632398753894
+        },
+        "topup_s46": {
+          "fallback_instructions": 5,
+          "fallback_rate": 0.0003924338748920807,
+          "instructions": 12741,
+          "rows": 111,
+          "rows_with_fallback": 2,
+          "rows_with_fallback_rate": 0.018018018018018018
+        }
+      },
+      "by_phase0_split": {
+        "dev": {
+          "fallback_instructions": 728,
+          "fallback_rate": 0.010342378178718569,
+          "instructions": 70390,
+          "rows": 326,
+          "rows_with_fallback": 165,
+          "rows_with_fallback_rate": 0.5061349693251533
+        },
+        "train": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 705092,
+          "rows": 2951,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        }
+      },
+      "by_phase0_split_and_family": {
+        "dev:master": {
+          "fallback_instructions": 594,
+          "fallback_rate": 0.011920529801324504,
+          "instructions": 49830,
+          "rows": 219,
+          "rows_with_fallback": 132,
+          "rows_with_fallback_rate": 0.6027397260273972
+        },
+        "dev:topup_s45": {
+          "fallback_instructions": 129,
+          "fallback_rate": 0.006535616577160806,
+          "instructions": 19738,
+          "rows": 100,
+          "rows_with_fallback": 31,
+          "rows_with_fallback_rate": 0.31
+        },
+        "dev:topup_s46": {
+          "fallback_instructions": 5,
+          "fallback_rate": 0.006082725060827251,
+          "instructions": 822,
+          "rows": 7,
+          "rows_with_fallback": 2,
+          "rows_with_fallback_rate": 0.2857142857142857
+        },
+        "train:master": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 525154,
+          "rows": 1953,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s45": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 168019,
+          "rows": 894,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s46": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 11919,
+          "rows": 104,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        }
+      },
+      "by_phase0_split_and_source_pool": {
+        "dev:base_llm": {
+          "fallback_instructions": 97,
+          "fallback_rate": 0.007096349403760333,
+          "instructions": 13669,
+          "rows": 50,
+          "rows_with_fallback": 20,
+          "rows_with_fallback_rate": 0.4
+        },
+        "dev:null": {
+          "fallback_instructions": 594,
+          "fallback_rate": 0.011920529801324504,
+          "instructions": 49830,
+          "rows": 219,
+          "rows_with_fallback": 132,
+          "rows_with_fallback_rate": 0.6027397260273972
+        },
+        "dev:topup_s44": {
+          "fallback_instructions": 24,
+          "fallback_rate": 0.010296010296010296,
+          "instructions": 2331,
+          "rows": 19,
+          "rows_with_fallback": 6,
+          "rows_with_fallback_rate": 0.3157894736842105
+        },
+        "dev:topup_s45": {
+          "fallback_instructions": 8,
+          "fallback_rate": 0.002140181915462814,
+          "instructions": 3738,
+          "rows": 31,
+          "rows_with_fallback": 5,
+          "rows_with_fallback_rate": 0.16129032258064516
+        },
+        "dev:topup_s46": {
+          "fallback_instructions": 5,
+          "fallback_rate": 0.006082725060827251,
+          "instructions": 822,
+          "rows": 7,
+          "rows_with_fallback": 2,
+          "rows_with_fallback_rate": 0.2857142857142857
+        },
+        "train:base_llm": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 101741,
+          "rows": 399,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:null": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 525154,
+          "rows": 1953,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s44": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 28617,
+          "rows": 205,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s45": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 37661,
+          "rows": 290,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        },
+        "train:topup_s46": {
+          "fallback_instructions": 0,
+          "fallback_rate": 0.0,
+          "instructions": 11919,
+          "rows": 104,
+          "rows_with_fallback": 0,
+          "rows_with_fallback_rate": 0.0
+        }
+      },
+      "by_requested_family": {
+        "master": {
+          "fallback_instructions": 594,
+          "fallback_rate": 0.0010330722246184242,
+          "instructions": 574984,
+          "rows": 2172,
+          "rows_with_fallback": 132,
+          "rows_with_fallback_rate": 0.06077348066298342
+        },
+        "topup_s45": {
+          "fallback_instructions": 129,
+          "fallback_rate": 0.0006870582721283361,
+          "instructions": 187757,
+          "rows": 994,
+          "rows_with_fallback": 31,
+          "rows_with_fallback_rate": 0.03118712273641851
+        },
+        "topup_s46": {
+          "fallback_instructions": 5,
+          "fallback_rate": 0.0003924338748920807,
+          "instructions": 12741,
+          "rows": 111,
+          "rows_with_fallback": 2,
+          "rows_with_fallback_rate": 0.018018018018018018
+        }
+      },
+      "overall": {
+        "fallback_instructions": 728,
+        "fallback_rate": 0.0009387709837236712,
+        "instructions": 775482,
+        "rows": 3277,
+        "rows_with_fallback": 165,
+        "rows_with_fallback_rate": 0.0503509307293256
+      }
+    },
+    "deterministically_refit_and_matched_seal": true,
+    "fit_population": "all included Phase-0 train rows only",
+    "vocabulary_size": 17273
+  }
+}

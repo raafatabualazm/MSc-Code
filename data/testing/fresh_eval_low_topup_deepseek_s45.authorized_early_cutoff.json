@@ -1,0 +1,8 @@
+{
+  "provenance_record": "../../archive/provenance/fresh_eval_low_topup_deepseek_s45.authorized_early_cutoff.json",
+  "disposition": "authorized_early_cutoff",
+  "successful_target_completion": false,
+  "retained_accepted": 603,
+  "retained_rejected": 1948,
+  "source_sha256": "ce90a701c2b7ccedc9a3ed80c3960b337e742f11435740c1db55c9f685408c13"
+}

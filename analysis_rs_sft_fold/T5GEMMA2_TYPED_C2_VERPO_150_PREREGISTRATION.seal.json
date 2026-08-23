@@ -1,0 +1,11 @@
+{
+  "artifact": "analysis_rs_sft_fold/T5GEMMA2_TYPED_C2_VERPO_150_PREREGISTRATION.md",
+  "artifact_sha256": "bc515b7dd7efb4d2458da3af407028eca572cf2a7a1af6616e0a8f8797c134a9",
+  "arm": "typed_c2_pure_execution_verpo_150",
+  "fixed_at": "2026-08-03T01:31:07.8928773+03:00",
+  "holdback_gate_decision_visible_at_fixation": true,
+  "holdback_gate_public_summary_sha256": "2bd9aa7a0c4ce5740e670a7ab7a702a6522790f4dc60ec39355a4a7647f13117",
+  "optimizer_updates_visible_at_fixation": 0,
+  "schema": "t5gemma2-typed-c2-verpo-150-preregistration-seal-v1",
+  "status": "sealed_before_rollout_or_training"
+}

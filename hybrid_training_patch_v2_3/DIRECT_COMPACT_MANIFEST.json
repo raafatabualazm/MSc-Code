@@ -1,0 +1,161 @@
+{
+  "artifact": "direct_compact_qwen_path",
+  "date": "2026-07-19",
+  "contract_schema": "direct-compact-causal-v1",
+  "properties": {
+    "decoder_path": "ordinary Qwen causal token sequence",
+    "graph_encoder": false,
+    "graph_imports": false,
+    "soft_prefix": false,
+    "on_policy_verpo": true,
+    "verpo_default_group_size": 8,
+    "verpo_top_p": 1.0,
+    "verpo_top_k": 0,
+    "verpo_exact_resume": true,
+    "source_token_limit": 9000,
+    "source_truncation": false,
+    "source_embedding": "trainable input-only overlay initialized from codebook expansion means",
+    "target_loss": "prompt and compact source labels masked with -100",
+    "sealed_join": "strict four-field public rows plus private alignment sidecar",
+    "target_contract": "Dart function candidate in train and inference",
+    "immutable_decoder_revision": true,
+    "lossless_domain": "scrubbed_canonical_graph",
+    "conditioning_probe": [
+      "correct",
+      "length-matched permutation",
+      "absent"
+    ],
+    "cpu_tests_passed": 128,
+    "full_patch_tests_passed": 128,
+    "remote_tiny_peft_overlay_cache_smoke": "passed",
+    "verpo_rescue_async_off_policy": true,
+    "verpo_rescue_four_fixed_slot_arms": true,
+    "verpo_rescue_one_judge_call_per_dead_group": true,
+    "verpo_rescue_gpu_release_boundary": true,
+    "verpo_rescue_private_holdback_gated_transfer": true,
+    "verpo_rescue_exact_paid_call_resume": true,
+    "verpo_rescue_exactly_one_billed_attempt": true,
+    "verpo_rescue_fit_only_preflight": true,
+    "verpo_rescue_cross_arm_rng_binding": true,
+    "verpo_rescue_gold_copy_exclusion": true,
+    "verpo_rescue_primary_paired_mcnemar": true,
+    "verpo_rescue_focused_tests_passed": 102
+  },
+  "files": [
+    {
+      "path": "configs/verpo_rescue_launch.example.json",
+      "sha256": "c3fc3340139e819b50d0f6910f2d0116fd12c1e8aa5a9462c19458b982e20f4e",
+      "size_bytes": 3561
+    },
+    {
+      "path": "models/direct_compact_causal.py",
+      "sha256": "04801e4e93672d0bfa6a4ac8be375cbd4cf12ae2ddcdf65af4ca34d71e33e7f4",
+      "size_bytes": 113471
+    },
+    {
+      "path": "scripts/evaluation/direct_compact_qwen_inference.py",
+      "sha256": "c375288e8884db89a9f3576099fddffb83e24e436120ef73507857afb019990d",
+      "size_bytes": 58196
+    },
+    {
+      "path": "scripts/evaluation/durable_evaluation_journal.py",
+      "sha256": "551403e8bd018c91acce2d3df5bfc690ea268437ec71c71a34d66a2547e35432",
+      "size_bytes": 6380
+    },
+    {
+      "path": "scripts/evaluation/probe_direct_compact_conditioning.py",
+      "sha256": "11852673dbcd396c136cd60d402ff2fe90b14f809947936e536d07d0d96baae4",
+      "size_bytes": 8359
+    },
+    {
+      "path": "scripts/run_direct_compact_gpu_smoke.sh",
+      "sha256": "5d7705b2301e21d10b438a45a106a02d99340154972d6ff9149642c2fc4f4ea8",
+      "size_bytes": 9873
+    },
+    {
+      "path": "scripts/training/build_verpo_rescue_transfer.py",
+      "sha256": "720c08efca6e76997ba81fd00ff28aacc8c15404dcdf9dda7102befaeb315050",
+      "size_bytes": 48665
+    },
+    {
+      "path": "scripts/training/direct_compact_qwen_decompiler.py",
+      "sha256": "81bc1fea5330407f73edb486df73aeac52cc569911690ba5c2ecda318e133c8e",
+      "size_bytes": 79977
+    },
+    {
+      "path": "scripts/training/direct_compact_verpo.py",
+      "sha256": "ff8eb990e7af1a3da51730e7a4d49bf1577f48198b12d457162323a293ae9e54",
+      "size_bytes": 131981
+    },
+    {
+      "path": "scripts/training/direct_compact_verpo_rescue.py",
+      "sha256": "285de2791e834167f92ba6ae750089c50cf8671127562d4d03cc20666db5e3e8",
+      "size_bytes": 129289
+    },
+    {
+      "path": "scripts/training/fingerprint_direct_tokenizer.py",
+      "sha256": "553ee0708b741c28b1f7f5fc6bce68fdf5108979655bd4443eae25995c6059b8",
+      "size_bytes": 1139
+    },
+    {
+      "path": "scripts/training/join_compact_public_private.py",
+      "sha256": "1e939bf21e8c958e455f6779ac9c19528dc1d9df6eaff3e6b72d3b3512f33931",
+      "size_bytes": 17638
+    },
+    {
+      "path": "scripts/training/launch_direct_compact_verpo_rescue.py",
+      "sha256": "87c6090348f10106b5915513bb6856488696377ca2a095c4a11b8feb651fc1e5",
+      "size_bytes": 44371
+    },
+    {
+      "path": "scripts/training/run_direct_compact_curriculum.py",
+      "sha256": "6f5bd3d585120bc9602c25e3561ab30eb825676e1df8a562c9664d24ef28e9d8",
+      "size_bytes": 6986
+    },
+    {
+      "path": "scripts/training/verpo_judge_antigravity.py",
+      "sha256": "b7855833c56c7f8c369f28a4453ec54042b2b77fd30ef414fe9748505c020be1",
+      "size_bytes": 92866
+    },
+    {
+      "path": "scripts/training/verpo_rescue_grounding.py",
+      "sha256": "2bd37fb7336f3c19701de124dea4ab4ec19358a3ae6e15d99dfaeed890bcfc01",
+      "size_bytes": 39561
+    },
+    {
+      "path": "tests/test_build_verpo_rescue_transfer.py",
+      "sha256": "90c761e99b08495c744bba025b5313f84c4a397179ed61c646c77822a65194b3",
+      "size_bytes": 27238
+    },
+    {
+      "path": "tests/test_direct_compact_path.py",
+      "sha256": "32c54ba1e2649f232dc7fd71c1360fa74af213f5e84280e958b10101f6150037",
+      "size_bytes": 98422
+    },
+    {
+      "path": "tests/test_direct_compact_verpo.py",
+      "sha256": "6d584753cef6992c8c265612b32061934bea8e909bfb9c05e6caabc856936e78",
+      "size_bytes": 21041
+    },
+    {
+      "path": "tests/test_direct_compact_verpo_rescue.py",
+      "sha256": "f937050d479728278f982257f79dabbf441438ce4a45b6323ccdbc253913b500",
+      "size_bytes": 26189
+    },
+    {
+      "path": "tests/test_launch_direct_compact_verpo_rescue.py",
+      "sha256": "8b3a307c77f748f40d648f085695d4edd100e242377bee141348f6a4dc88314b",
+      "size_bytes": 11826
+    },
+    {
+      "path": "tests/test_verpo_rescue_grounding.py",
+      "sha256": "2d7f8876a0a3615ff7de41304bf7d65472e47d5d640a28a6bfe48dd06e1ec94b",
+      "size_bytes": 12653
+    },
+    {
+      "path": "tests/test_verpo_rescue_inference.py",
+      "sha256": "405d0eab8dbeb96981a1c4b63b386177fa75529e62b112c0fed22e3beff3b636",
+      "size_bytes": 19668
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "experiment": "codet5-small_lora_enc_dec_r8_1e5",
+  "config": {
+    "name": "codet5-small_lora_enc_dec_r8_1e5",
+    "decoder": "Salesforce/codet5-small",
+    "encoder_peft": "lora",
+    "decoder_peft": "lora",
+    "freeze_encoder": "0",
+    "freeze_decoder": "0",
+    "lr": "1e-5",
+    "epochs": "1",
+    "oom_risk": "low",
+    "lora_r": "8",
+    "lora_alpha": "16"
+  },
+  "codebleu": {
+    "count": 2,
+    "mean_codebleu": 0.5271687554995363,
+    "min_codebleu": 0.4804738668634668,
+    "max_codebleu": 0.573863644135606
+  },
+  "compile_at_k": {
+    "compile_at_1": 0.0,
+    "compile_at_3": 0.0,
+    "total_problems": 2
+  },
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "pass_at_3": 0.0,
+    "total_problems": 2
+  }
+}

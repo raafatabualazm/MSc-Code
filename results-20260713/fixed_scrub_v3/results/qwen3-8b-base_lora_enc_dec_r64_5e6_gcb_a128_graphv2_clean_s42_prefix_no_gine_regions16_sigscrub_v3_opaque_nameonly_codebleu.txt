@@ -1,0 +1,8 @@
+{
+  "count": 154,
+  "compile_filter_mode": null,
+  "samples_with_success": 154,
+  "mean_codebleu": 0.5883285019306451,
+  "min_codebleu": 0.4663522732294957,
+  "max_codebleu": 0.7221763093621283
+}

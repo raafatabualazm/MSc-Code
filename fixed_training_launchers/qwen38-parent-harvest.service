@@ -1,0 +1,18 @@
+[Unit]
+Description=Resume Qwen3.8 parent teacher harvest (1580 tasks)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=3600
+StartLimitBurst=4
+
+[Service]
+Type=simple
+ExecStart=/workspace/fixed_training_launchers/qwen38_parent_resume_cpu.sh
+Restart=on-failure
+RestartSec=900
+TimeoutStopSec=30
+KillSignal=SIGTERM
+WorkingDirectory=/workspace/hybrid_training_patch_v2_3
+
+[Install]
+WantedBy=multi-user.target

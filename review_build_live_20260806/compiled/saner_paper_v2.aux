@@ -1,0 +1,119 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{llm4decompile}
+\citation{chen2021evaluating}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}Which evaluations this critique applies to}{1}{subsection.1.1}\protected@file@percent }
+\newlabel{sec:scope}{{\mbox  {I-A}}{1}{Which evaluations this critique applies to}{subsection.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Contributions}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Prompt channels in published neural decompilation evaluations. Each row is grounded in released prompt-construction code, a released dataset, or a verbatim prompt template. ``sig.'' distinguishes the \emph  {original} source signature (never supplied) from a decompiler-inferred one.}}{2}{table.1}\protected@file@percent }
+\newlabel{tab:survey}{{I}{2}{Prompt channels in published neural decompilation evaluations. Each row is grounded in released prompt-construction code, a released dataset, or a verbatim prompt template. ``sig.'' distinguishes the \emph {original} source signature (never supplied) from a decompiler-inferred one}{table.1}{}}
+\citation{abualazm2026idiomatic}
+\citation{abualazm2026tosem}
+\citation{abualazm2026tosem}
+\citation{cifuentes1994reverse}
+\citation{schwartz2013native}
+\citation{yakdan2015no}
+\citation{brumley2011bap}
+\citation{katz2018using,fu2019coda}
+\citation{llm4decompile}
+\citation{liu2025cfadecllm}
+\citation{achamyeleh2026helios}
+\citation{wang2025salt4decompile}
+\citation{tan2025sk2decompile}
+\citation{jiang2025nova}
+\citation{liu2026autodecompiler}
+\citation{dramko2025idioms}
+\citation{ren2020codebleu}
+\citation{chen2021evaluating}
+\citation{cassano2023multiple}
+\citation{decompilebench2025}
+\citation{blutter,reflutter,jebdartaot}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-C}}Relationship to our prior work}{3}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background and Related Work}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Experimental Infrastructure}{3}{section.3}\protected@file@percent }
+\newlabel{sec:infra}{{III}{3}{Experimental Infrastructure}{section.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Corpora. Counts are never compared across rows.}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:corpora}{{II}{3}{Corpora. Counts are never compared across rows}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Study matrix. Two distinct systems are used; no result crosses them.}}{4}{table.3}\protected@file@percent }
+\newlabel{tab:studies}{{III}{4}{Study matrix. Two distinct systems are used; no result crosses them}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Reseeding Variability Under This Protocol}{4}{section.4}\protected@file@percent }
+\newlabel{sec:floor}{{IV}{4}{Reseeding Variability Under This Protocol}{section.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces One checkpoint, the leakage-clean 174 tasks, five sampling seeds. Only the seed varies.}}{4}{table.4}\protected@file@percent }
+\newlabel{tab:floor}{{IV}{4}{One checkpoint, the leakage-clean 174 tasks, five sampling seeds. Only the seed varies}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}A Reproducible Number Over an Irreproducible Set}{4}{section.5}\protected@file@percent }
+\newlabel{sec:turnover}{{V}{4}{A Reproducible Number Over an Irreproducible Set}{section.5}{}}
+\citation{dramko2025idioms}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Solved-set stability across five sampling seeds. Only the seed varies. ``all 5'' is the number of tasks solved in every seed, ``any'' the number solved in at least one; Jaccard is the mean over all ten seed pairs. Counts reproduce far better than the sets they summarise, and compilation reproduces far better than correctness.}}{5}{table.5}\protected@file@percent }
+\newlabel{tab:turnover}{{V}{5}{Solved-set stability across five sampling seeds. Only the seed varies. ``all 5'' is the number of tasks solved in every seed, ``any'' the number solved in at least one; Jaccard is the mean over all ten seed pairs. Counts reproduce far better than the sets they summarise, and compilation reproduces far better than correctness}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Identifier ablation on a frozen checkpoint, seed 42. The function name, all parameter names and the disassembly symbol change together; types, arity and the instruction stream are held byte-identical.}}{5}{table.6}\protected@file@percent }
+\newlabel{tab:sig}{{VI}{5}{Identifier ablation on a frozen checkpoint, seed 42. The function name, all parameter names and the disassembly symbol change together; types, arity and the instruction stream are held byte-identical}{table.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}The Benchmark Measures Its Own Identifiers}{5}{section.6}\protected@file@percent }
+\newlabel{sec:validity}{{VI}{5}{The Benchmark Measures Its Own Identifiers}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Design A: removing the semantic identifiers}{5}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Every arm against a baseline that sees only the signature and never the binary. Paired task bootstrap; McNemar exact.}}{6}{table.7}\protected@file@percent }
+\newlabel{tab:sigonly}{{VII}{6}{Every arm against a baseline that sees only the signature and never the binary. Paired task bootstrap; McNemar exact}{table.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Design B: an untrained signature-only baseline}{6}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Architectural interventions (seed 42, paired task bootstrap). Exactly one is significant, and it removes the channel rather than restructuring it.}}{6}{table.8}\protected@file@percent }
+\newlabel{tab:sweep}{{VIII}{6}{Architectural interventions (seed 42, paired task bootstrap). Exactly one is significant, and it removes the channel rather than restructuring it}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Exploratory: Architecture and Objective Interventions}{6}{section.7}\protected@file@percent }
+\newlabel{sec:arch}{{VII}{6}{Exploratory: Architecture and Objective Interventions}{section.7}{}}
+\citation{abualazm2026tosem}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Disclosure}{7}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Prior Findings on This Corpus}{7}{section.8}\protected@file@percent }
+\newlabel{sec:prior}{{VIII}{7}{Prior Findings on This Corpus}{section.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}A Frontier Reference Point on Identifier-Scrubbed Data}{7}{section.9}\protected@file@percent }
+\newlabel{sec:frontier}{{IX}{7}{A Frontier Reference Point on Identifier-Scrubbed Data}{section.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {X}The Information Channel}{7}{section.10}\protected@file@percent }
+\newlabel{sec:channel}{{X}{7}{The Information Channel}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-A}}Types, supplied at inference, without training}{7}{subsection.10.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Input-channel decomposition on a frozen checkpoint, leakage-clean 174 tasks, six sampling seeds for the confirmatory arms and five elsewhere, as marked. Each channel has a distinct signature: the typed contract moves both metrics, structure permutation compilation only, and constants neither at this resolution.}}{8}{table.9}\protected@file@percent }
+\newlabel{tab:channel}{{IX}{8}{Input-channel decomposition on a frozen checkpoint, leakage-clean 174 tasks, six sampling seeds for the confirmatory arms and five elsewhere, as marked. Each channel has a distinct signature: the typed contract moves both metrics, structure permutation compilation only, and constants neither at this resolution}{table.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-B}}A three-way dissociation}{8}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-C}}The pre-registered sixth seed}{8}{subsection.10.3}\protected@file@percent }
+\newlabel{sec:seed47}{{\mbox  {X-C}}{8}{The pre-registered sixth seed}{subsection.10.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Candidate-level rates, leakage-clean 1{,}740 candidates per arm, seed 42. Conformance saturates while correctness stays at baseline level.}}{9}{table.10}\protected@file@percent }
+\newlabel{tab:candlevel}{{X}{9}{Candidate-level rates, leakage-clean 1{,}740 candidates per arm, seed 42. Conformance saturates while correctness stays at baseline level}{table.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-D}}Withholding the binary entirely}{9}{subsection.10.4}\protected@file@percent }
+\newlabel{sec:nobinary}{{\mbox  {X-D}}{9}{Withholding the binary entirely}{subsection.10.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Descriptive cross-system reference points, full 175-task runs predating the single-task exclusion, $k{=}10$. The ordering is consistent with the channel experiments; the table itself, which mixes model, training, input and scale, supports no causal claim.}}{9}{table.11}\protected@file@percent }
+\newlabel{tab:unified}{{XI}{9}{Descriptive cross-system reference points, full 175-task runs predating the single-task exclusion, $k{=}10$. The ordering is consistent with the channel experiments; the table itself, which mixes model, training, input and scale, supports no causal claim}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-E}}One benchmark, four systems}{9}{subsection.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-F}}Objective-side interventions do not substitute}{9}{subsection.10.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-G}}Cross-ISA observation, and two reasons not to lean on it}{10}{subsection.10.7}\protected@file@percent }
+\newlabel{sec:arm64}{{\mbox  {X-G}}{10}{Cross-ISA observation, and two reasons not to lean on it}{subsection.10.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XI}A Post-Mortem on Evaluation Leakage}{10}{section.11}\protected@file@percent }
+\newlabel{sec:leak}{{XI}{10}{A Post-Mortem on Evaluation Leakage}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XII}Recommendations}{10}{section.12}\protected@file@percent }
+\newlabel{sec:protocol}{{XII}{10}{Recommendations}{section.12}{}}
+\bibstyle{IEEEtran}
+\bibdata{thesis}
+\bibcite{llm4decompile}{1}
+\bibcite{chen2021evaluating}{2}
+\bibcite{abualazm2026idiomatic}{3}
+\bibcite{abualazm2026tosem}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {XIII}Threats to Validity}{11}{section.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XIV}Conclusion}{11}{section.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.2}\protected@file@percent }
+\bibcite{cifuentes1994reverse}{5}
+\bibcite{schwartz2013native}{6}
+\bibcite{yakdan2015no}{7}
+\bibcite{brumley2011bap}{8}
+\bibcite{katz2018using}{9}
+\bibcite{fu2019coda}{10}
+\bibcite{liu2025cfadecllm}{11}
+\bibcite{achamyeleh2026helios}{12}
+\bibcite{wang2025salt4decompile}{13}
+\bibcite{tan2025sk2decompile}{14}
+\bibcite{jiang2025nova}{15}
+\bibcite{liu2026autodecompiler}{16}
+\bibcite{dramko2025idioms}{17}
+\bibcite{ren2020codebleu}{18}
+\bibcite{cassano2023multiple}{19}
+\bibcite{decompilebench2025}{20}
+\bibcite{blutter}{21}
+\bibcite{reflutter}{22}
+\bibcite{jebdartaot}{23}
+\gdef \@abspage@last{12}
