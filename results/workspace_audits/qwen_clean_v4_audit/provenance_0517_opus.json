@@ -1,0 +1,343 @@
+{
+  "acceptance_test_sequence_sha256": "381a41b4c672db78eb858d8fd3e0d279456b934edaaaa0c41d598a166bc7569e",
+  "artifacts": {
+    "eval_jsonl": {
+      "bytes": 1422675,
+      "mtime_ns": 1784993653862048865,
+      "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/dev_fn0_real.jsonl",
+      "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001"
+    },
+    "eval_seal": {
+      "bytes": 274,
+      "mtime_ns": 1784993654527056853,
+      "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/dev_fn0_real.seal.json",
+      "sha256": "2909d279d7c87279b5b0e59cdcd7598742b25a2bd111382f6c8216103f906799"
+    },
+    "frontier_f2": {
+      "bytes": 48069,
+      "mtime_ns": 1784995328187744359,
+      "path": "/workspace/frontier_ceiling_patch_v1/frontier_f2.py",
+      "sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+    },
+    "pair_manifest": {
+      "bytes": 3273,
+      "mtime_ns": 1784994027603662981,
+      "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/pair_manifest.json",
+      "sha256": "35f4cfcaf0732928312bed3f2f27c3f3e347525c0076921caeab7ee6539c132e"
+    },
+    "prompt_jsonl": {
+      "bytes": 717961,
+      "mtime_ns": 1784993639691878852,
+      "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/opus_real175_f2.jsonl",
+      "sha256": "4aae71997aa98b4a273fdedca17d1df2266f18dd5a03fe164b9cf81e342648cd"
+    },
+    "prompt_manifest": {
+      "bytes": 4685,
+      "mtime_ns": 1784993640359886856,
+      "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/opus_real175_f2.jsonl.manifest.json",
+      "sha256": "35e25fa9d7a2bd813b6aec55a1149304d4dd160c82b27b691f27c4cb0bd6068b"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "mtime_ns": 1784878862648372474,
+      "path": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 1,
+    "interpretation": "The prompt rows are byte-for-byte sealed serializer outputs; an extraction error means that source artifact did not add binary constants for the named task.",
+    "task_ids": [
+      "sigless_d544567b9189"
+    ]
+  },
+  "completed_at": "2026-07-26T11:26:31.701236Z",
+  "config": {
+    "api_base_url_redacted": "https://llm-ap980013lkpzvf0e.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+    "api_base_url_sha256": "8b437b08fe88efcfb4dfac550247015626fd70bfe3b3fe7e379c421759df164d",
+    "arm": "compact",
+    "budget": 0,
+    "chat_overhead_reserve": 256,
+    "dart_binary": "/usr/lib/dart/bin/dart",
+    "dataset_label": "opus_real_fn0_cfg_175",
+    "eval_stability_runs": 2,
+    "eval_timeout_seconds": 30,
+    "evaluator_module": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/graph_compile_at_k_antigravity.py",
+    "expected_dart_sha256": "c03ad868b5c53e31461b0fef22dc6eb6aeb56b7567efff6ca488ce9c4a6f8a6a",
+    "expected_evaluator_sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6",
+    "expected_task_count": 175,
+    "extra_body": {
+      "enable_thinking": true,
+      "thinking_budget": 8192
+    },
+    "input_mode": "prematerialized_f2",
+    "k": 3,
+    "limit": 0,
+    "max_attempts_per_sample": 6,
+    "max_output_tokens": 12288,
+    "max_prompt_tokens": 12000,
+    "model_requested": "qwen3.7-max-2026-05-17",
+    "pair_arm_key": "opus_real_fn0_cfg",
+    "provider": "qwen",
+    "qwen_request_contract": {
+      "allowed_models": [
+        "qwen3.7-max-2026-05-17",
+        "qwen3.7-max-2026-05-20",
+        "qwen3.7-max-2026-06-08",
+        "qwen3.7-max-preview"
+      ],
+      "answer_tokens_derived_from_usage": true,
+      "completion_usage_validation_cap": 12298,
+      "exact_extra_body_keys": [
+        "enable_thinking",
+        "thinking_budget"
+      ],
+      "finite_runner_budget_forbidden": true,
+      "forbidden_request_cap_parameter": "max_tokens",
+      "provider": "qwen",
+      "provider_completion_tolerance": 10,
+      "reasoning_and_final_share_completion_cap": true,
+      "reasoning_content_required_nonempty": true,
+      "reasoning_tokens_usage_required_positive_and_bounded": true,
+      "request_cap_parameter": "max_completion_tokens",
+      "schema": "qwen-thinking-max-completion-tokens-v1",
+      "thinking_budget": 8192,
+      "total_completion_cap": 12288
+    },
+    "retry_base_seconds": 2.0,
+    "retry_max_seconds": 30.0,
+    "runtime_identity": {
+      "core_sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258",
+      "frontier_f2_sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce",
+      "openai_sdk_version": "2.48.0",
+      "qwen_completion_entry_sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15",
+      "runner_sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead"
+    },
+    "schema": "audited-frontier-passk-v2",
+    "sealed_inputs": {
+      "eval_jsonl": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/dev_fn0_real.jsonl",
+      "eval_jsonl_sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+      "eval_seal": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/dev_fn0_real.seal.json",
+      "eval_seal_sha256": "2909d279d7c87279b5b0e59cdcd7598742b25a2bd111382f6c8216103f906799",
+      "pair_arm_key": "opus_real_fn0_cfg",
+      "pair_manifest": "/workspace/artifacts/frontier_ceiling_two_enrichments/pair_manifest.json",
+      "pair_manifest_sha256": "35f4cfcaf0732928312bed3f2f27c3f3e347525c0076921caeab7ee6539c132e",
+      "prompt_jsonl": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/opus_real175_f2.jsonl",
+      "prompt_jsonl_sha256": "4aae71997aa98b4a273fdedca17d1df2266f18dd5a03fe164b9cf81e342648cd",
+      "prompt_manifest": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/opus_real175_f2.jsonl.manifest.json",
+      "prompt_manifest_sha256": "35e25fa9d7a2bd813b6aec55a1149304d4dd160c82b27b691f27c4cb0bd6068b",
+      "tokenizer_json": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "slot_policy": {
+      "completion_usage_validation_cap": 12298,
+      "duplicate_response_id_is_fatal": true,
+      "early_stopping": false,
+      "every_returned_response_consumes_one_slot": true,
+      "exact_extra_body_keys": [
+        "enable_thinking",
+        "thinking_budget"
+      ],
+      "extra_body": {
+        "enable_thinking": true,
+        "thinking_budget": 8192
+      },
+      "finish_reason_does_not_blanket_invalidate_extractable_code": true,
+      "finish_reason_length_consumes_slot": true,
+      "finite_runner_budget_forbidden": true,
+      "fixed_max_output_tokens": 12288,
+      "k": 3,
+      "max_prompt_tokens": 12000,
+      "max_tokens_absent": true,
+      "max_transport_attempts_per_slot": 6,
+      "no_candidate_resampling": true,
+      "normalized_usage_includes_reasoning_and_answer_tokens": true,
+      "provider_completion_tolerance": 10,
+      "reasoning_content_required_nonempty": true,
+      "reasoning_tokens_usage_required_positive_and_bounded": true,
+      "request_cap_parameter": "max_completion_tokens",
+      "request_timeout_seconds": 1800,
+      "requested_max_tokens_field_semantics": "The journal field records the top-level max_completion_tokens request cap; response usage validation separately includes the documented provider tolerance.",
+      "requested_model": "qwen3.7-max-2026-05-17",
+      "resolved_model_must_equal_requested": true,
+      "response_identity_and_usage_contract_is_fatal": true,
+      "retry_only_when_no_provider_response": true,
+      "safe_extractable_fn0_is_evaluated": true,
+      "schema": "fixed-cap-exact-response-slot-v1",
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "total_completion_cap": 12288,
+      "unusable_candidate_is_terminal_failure": true
+    },
+    "slot_policy_sha256": "9a9ce5c1296d47b26f3ad5f1dffafc3cc16923eddb93134ac69aeba74a9bf884",
+    "temperature": 0.8,
+    "timeout_seconds": 1800,
+    "top_p": 0.95,
+    "workers": 1
+  },
+  "config_sha256": "e556df9069e5279871cb87af7512796f443ec016614e7b42626b631be592d025",
+  "core": {
+    "bytes": 55171,
+    "mtime_ns": 1785024072458575642,
+    "path": "/workspace/frontier_ceiling_patch_v1/frontier_core.py",
+    "sha256": "f502e958a6fa3fb564d17327c2c4c77bc9cf4f5182546235970b1a4498a60258"
+  },
+  "created_at": "2026-07-26T11:26:31.555231Z",
+  "dataset": {
+    "bytes": 1422675,
+    "mtime_ns": 1784993653862048865,
+    "path": "/workspace/artifacts/frontier_ceiling_two_enrichments/opus/dev_fn0_real.jsonl",
+    "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001"
+  },
+  "dataset_rows_before_limit": 175,
+  "evaluator": {
+    "bytes": 25977,
+    "completion_attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+    "dart_binary": {
+      "bytes": 5009992,
+      "mtime_ns": 1780993605000000000,
+      "path": "/usr/lib/dart/bin/dart",
+      "sha256": "c03ad868b5c53e31461b0fef22dc6eb6aeb56b7567efff6ca488ce9c4a6f8a6a"
+    },
+    "entrypoint": "evaluate_dart_jit_tests_detail",
+    "legacy_returncode_only_evaluator_used": false,
+    "mtime_ns": 1784815207000000000,
+    "path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/graph_compile_at_k_antigravity.py",
+    "required_functions": [
+      "evaluate_dart_jit_tests_detail",
+      "prepare_dart_test_completion_attestation",
+      "dart_test_completion_observed"
+    ],
+    "sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6"
+  },
+  "host": "ubuntu-s-4vcpu-8gb-nyc1",
+  "pid": 776995,
+  "preflight_invariants": {
+    "acceptance_test_main_attestable_for_every_task": true,
+    "all_four_input_files_sha256_pinned": true,
+    "answer_tokens_derived_and_preserved": true,
+    "codex_keyed_source_symbol_attestation_verified": false,
+    "completion_attested_evaluator_contract_verified": true,
+    "completion_usage_validation_cap_is_12298": true,
+    "dart_binary_sha256_pinned": true,
+    "eval_seal_output_binding_verified": true,
+    "eval_split_not_marked_training_allowed": true,
+    "eval_split_selected_role_measure": true,
+    "evaluator_sha256_pinned": true,
+    "exact_private_source_and_tests_absent_from_f2_text": true,
+    "expected_dataset_rows_verified": true,
+    "extra_body_keyset_exact": true,
+    "finite_runner_budget_disabled": true,
+    "input_mode_is_prematerialized_f2": true,
+    "legacy_returncode_only_evaluator_used": false,
+    "local_prompt_counts_are_sealed_qwen_estimates": true,
+    "manifest_prompt_maximum_recomputed": true,
+    "opaque_custom_ids_not_sent_to_api": true,
+    "ordered_prompt_eval_task_ids_identical": true,
+    "ordered_task_set_sha256_verified": true,
+    "paired_acceptance_test_sequence_sha256_verified": true,
+    "paired_system_prompt_sha256_verified": true,
+    "per_row_f2_syntax_verified": true,
+    "per_row_f2_text_sha256_verified": true,
+    "per_row_f2_verification_map_verified": true,
+    "per_row_prompt_tokens_recomputed": true,
+    "prematerialized_f2_manifest_invariants_verified": true,
+    "prompt_manifest_eval_dataset_binding_verified": true,
+    "prompt_manifest_output_binding_verified": true,
+    "prompt_token_cap_checked_for_every_task": true,
+    "prompts_never_truncated": true,
+    "provider_completion_tolerance_is_10": true,
+    "provider_reported_prompt_tokens_are_authoritative": true,
+    "qwen_request_omits_max_tokens": true,
+    "qwen_uses_max_completion_tokens": true,
+    "raw_asm_cache_used": false,
+    "raw_disassembly_generated": false,
+    "reasoning_and_final_share_12288_completion_cap": true,
+    "reasoning_content_required_nonempty": true,
+    "reasoning_tokens_usage_required_and_bounded": true,
+    "selected_pair_arm_artifact_bindings_verified": true,
+    "shared_pair_manifest_sha256_pinned": true,
+    "source_not_exposed_to_teacher": true,
+    "tests_equal_acceptance_tests": true,
+    "tests_not_exposed_to_teacher": true,
+    "tokenizer_sha256_verified": true,
+    "unique_task_ids": true
+  },
+  "prompt_token_accounting": {
+    "preflight_count_basis": "sealed_qwen_tokenizer_estimate",
+    "preflight_count_is_provider_authoritative": false,
+    "provider_prompt_tokens_must_not_exceed": 12000,
+    "provider_usage_is_authoritative_for_deepseek_cap": true,
+    "provider_usage_prompt_tokens_checked_after_every_response": true
+  },
+  "python": {
+    "executable": "/workspace/.venv/bin/python",
+    "version": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]"
+  },
+  "qwen_completion_entry": {
+    "bytes": 11354,
+    "mtime_ns": 1785065169368264103,
+    "path": "/workspace/frontier_ceiling_patch_v1/frontier_passk_qwen_completion.py",
+    "sha256": "5055eabac3898d529beb6209b3792256378d509239265cb44eaa2cf7f46b5e15"
+  },
+  "qwen_request_contract": {
+    "allowed_models": [
+      "qwen3.7-max-2026-05-17",
+      "qwen3.7-max-2026-05-20",
+      "qwen3.7-max-2026-06-08",
+      "qwen3.7-max-preview"
+    ],
+    "answer_tokens_derived_from_usage": true,
+    "completion_usage_validation_cap": 12298,
+    "exact_extra_body_keys": [
+      "enable_thinking",
+      "thinking_budget"
+    ],
+    "finite_runner_budget_forbidden": true,
+    "forbidden_request_cap_parameter": "max_tokens",
+    "provider": "qwen",
+    "provider_completion_tolerance": 10,
+    "reasoning_and_final_share_completion_cap": true,
+    "reasoning_content_required_nonempty": true,
+    "reasoning_tokens_usage_required_positive_and_bounded": true,
+    "request_cap_parameter": "max_completion_tokens",
+    "schema": "qwen-thinking-max-completion-tokens-v1",
+    "thinking_budget": 8192,
+    "total_completion_cap": 12288
+  },
+  "run_id": "qwen37_clean_v4_0517_opus_k3_mc12k_tol10_tb8k",
+  "runner": {
+    "bytes": 134334,
+    "mtime_ns": 1785024072466575747,
+    "path": "/workspace/frontier_ceiling_patch_v1/frontier_passk.py",
+    "sha256": "8d3e3ad160d9ed389a9e212dacb76556ab7af59f1559418d45d9802402d9dead"
+  },
+  "schema": "audited-frontier-passk-v2",
+  "source_eval_seal_claims": {
+    "heldout_measure_only": null,
+    "output_sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+    "rows": 175,
+    "schema": "compact-public-private-join-seal-v1",
+    "selected_role": "measure",
+    "task_set_sha256": null,
+    "training_allowed": null
+  },
+  "source_f2_manifest_claims": {
+    "representation_schema": "lossless-semantic-f2",
+    "rows": 175,
+    "schema": "verified-api-readable-compact-v2",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345",
+    "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+  },
+  "source_pair_manifest_claims": {
+    "ordered_acceptance_test_hashes_sha256": "381a41b4c672db78eb858d8fd3e0d279456b934edaaaa0c41d598a166bc7569e",
+    "ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "pair_arm_key": "opus_real_fn0_cfg",
+    "rows": 175,
+    "schema": "frontier-enrichment-pair-v1",
+    "sha256": "35f4cfcaf0732928312bed3f2f27c3f3e347525c0076921caeab7ee6539c132e",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345"
+  },
+  "status": "preflight_only_complete",
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+  "tasks_selected": 175
+}

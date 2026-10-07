@@ -1,0 +1,131 @@
+from __future__ import annotations
+
+import hashlib
+import sys
+from pathlib import Path
+
+import pytest
+
+
+PATCH_ROOT = Path(__file__).resolve().parents[1]
+if str(PATCH_ROOT) not in sys.path:
+    sys.path.insert(0, str(PATCH_ROOT))
+
+from scripts.evaluation import (  # noqa: E402
+    t5gemma2_measurement_intervention_multiseed_report_v1 as report,
+)
+
+
+def test_design_is_exactly_three_views_by_four_fresh_seeds() -> None:
+    assert report.SEEDS == (42, 43, 44, 45, 46)
+    assert report.VIEWS == (
+        "typed_opaque_contract",
+        "constants_stripped",
+        "semantic_body_swap",
+    )
+    assert len(report.VIEWS) * (len(report.SEEDS) - 1) == 12
+
+
+def test_distribution_and_exact_mcnemar_are_stable() -> None:
+    distribution = report._distribution([7, 7, 7, 5, 3])
+    assert distribution["mean"] == pytest.approx(5.8)
+    assert distribution["sample_sd"] == pytest.approx(1.7888543819998317)
+    paired = report._mcnemar_exact(
+        {
+            "left_only": 5,
+            "right_only": 0,
+            "equal": 170,
+            "discordant": 5,
+            "left_count": 12,
+            "right_count": 7,
+        }
+    )
+    assert paired["exact_two_sided_p"] == pytest.approx(0.0625)
+
+
+def test_diversity_uses_code_hashes_at_exact_k10() -> None:
+    candidates = []
+    for task_id, unique in (("a", 10), ("b", 8)):
+        for sample_index in range(10):
+            candidates.append(
+                {
+                    "task_id": task_id,
+                    "sample_index": sample_index,
+                    "code_sha256": f"{task_id}-{sample_index % unique}",
+                }
+            )
+    result = report._distinct({"candidate_results": candidates})
+    assert result["mean_distinct_per_10"] == 9
+    assert result["tasks_below_10"] == 1
+    assert result["histogram"] == {"8": 1, "10": 1}
+
+
+def test_model_identity_ignores_only_loader_attestations() -> None:
+    old = {
+        "name": "model",
+        "revision": "commit",
+        "config_sha256": "a",
+        "arm": "sft",
+        "tokenizer_sha256": "b",
+        "warmstart_contract_sha256": "c",
+        "adapter": {"adapter_weights_sha256": "d"},
+    }
+    current = {
+        **old,
+        "training_stage_schema": "new-loader-attestation",
+        "production_floor_eligible": True,
+    }
+    assert report._model_identity(old) == report._model_identity(current)
+    current["adapter"] = {"adapter_weights_sha256": "changed"}
+    assert report._model_identity(old) != report._model_identity(current)
+
+
+def test_launcher_is_fail_closed_and_view_major() -> None:
+    reporter = (
+        PATCH_ROOT
+        / "scripts"
+        / "evaluation"
+        / "t5gemma2_measurement_intervention_multiseed_report_v1.py"
+    )
+    reporter_sha = hashlib.sha256(reporter.read_bytes()).hexdigest()
+    compatibility = (
+        PATCH_ROOT
+        / "scripts"
+        / "evaluation"
+        / "verify_t5gemma2_measurement_runtime_compat_v1.py"
+    )
+    compatibility_sha = hashlib.sha256(compatibility.read_bytes()).hexdigest()
+    launcher = (
+        PATCH_ROOT
+        / "deploy"
+        / "vast"
+        / "t5gemma2_measurement_intervention_multiseed_v1.sh"
+    ).read_text(encoding="utf-8")
+    assert f'{reporter_sha} "${{REPORTER}}"' in launcher
+    assert f'{compatibility_sha} "${{COMPAT_CHECKER}}"' in launcher
+    assert "for view in typed_opaque_contract constants_stripped semantic_body_swap" in launcher
+    assert "for seed in 43 44 45 46" in launcher
+    assert "--max_source_tokens 32768 --max_new_tokens 4096" in launcher
+    assert "checkpoint-optstep-000348" in launcher
+    assert "interpretation_gate.triggered == true" in launcher
+    assert "Rank-0 gold round-trip failed" in launcher
+    assert "nvidia-smi --query-compute-apps=pid" in launcher
+    assert "less than ${MIN_FREE_KIB} KiB is free" in launcher
+    assert "intervention_multiseed_report.json" in launcher
+    assert "--limit 5" in launcher
+    assert "candidate_compile_pass_decisions_identical == true" in launcher
+    assert '--runtime_compatibility "${RUNTIME_COMPAT}"' in launcher
+
+
+def test_supervisor_never_autostarts() -> None:
+    config = (
+        PATCH_ROOT
+        / "deploy"
+        / "vast"
+        / "t5gemma2-measurement-intervention-multiseed-v1.conf"
+    ).read_text(encoding="utf-8")
+    assert "autostart=false" in config
+    assert "autorestart=false" in config
+    assert "command=/bin/bash /opt/supervisor-scripts/" in config
+    assert "stopasgroup=true" in config
+    assert "killasgroup=true" in config

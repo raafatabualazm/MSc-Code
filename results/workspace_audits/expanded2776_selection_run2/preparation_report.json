@@ -1,0 +1,61 @@
+{
+  "counts": {
+    "expanded_fit_rows": 2776,
+    "heldout_rows": 175,
+    "parent_fit_rows": 1580,
+    "phase0_dev_rows": 326,
+    "phase0_train_rows": 2951,
+    "supplemental_family_counts": {
+      "master": 198,
+      "topup_s45": 894,
+      "topup_s46": 104
+    },
+    "supplemental_rows": 1196
+  },
+  "digests": {
+    "expanded_fit_ordered_task_ids_sha256": "8c3e78cb0fc5a2483a01029a13be9f0536c203de0d28c3302b87eba34b36f3d0",
+    "expanded_fit_task_set_sha256": "30aaa2c4d469efce648bd53bb40cecd754c5e9a3d0258ae4a00a02eae205f019",
+    "heldout_ordered_task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+    "heldout_task_set_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70",
+    "parent_fit_ordered_task_ids_sha256": "04cba1dc6421f0a1d598ab68308f613daaae717f304d94fecb715689db7ff9f4",
+    "parent_fit_task_set_sha256": "06b414a47595f00e429b806768368812ba1fc1594dcbcaf78fb80438bf15ad5a",
+    "phase0_train_ordered_task_ids_sha256": "c4eeded844b22e8bf7558a592b97f03226bdc037dcb163261b26adc7a6c0e9ee",
+    "phase0_train_task_set_sha256": "980fe568725a223d19bd6a10d2d3b2cfe4964beadb791ad517ca20592314304e",
+    "supplemental_ordered_task_ids_sha256": "83d0d3a497f9466dc46aa72af3ee935a264b6028e4a59f9755f59a3beab97d16",
+    "supplemental_task_set_sha256": "f88f4de6b80738ee15e9a71256d3d77900e4d0c1f1bb4721e41fa9b0fc07c543"
+  },
+  "outputs": {
+    "fit_task_manifest": {
+      "bytes": 980210,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\fit_task_manifest_2776.jsonl",
+      "sha256": "a8b30d4e71896d3f75a82acfa2f2863042cd3c6876d17846d38bfb799f370e9d"
+    },
+    "supplemental_aot_manifest": {
+      "bytes": 1209304,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_aot_manifest_1196.jsonl",
+      "sha256": "a542b0e875d0c01074e67277305beaac507034e61887d577e7820ea97a38f27a"
+    },
+    "supplemental_targets": {
+      "bytes": 4584599,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_targets_unsanitized_1196.jsonl",
+      "sha256": "9503f9d0fd56ae891b096372224ccc06b3ab07b4611f1e51a0883f626ce4e745"
+    },
+    "supplemental_targets_seal": {
+      "bytes": 770,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_targets_unsanitized_1196.seal.json",
+      "sha256": "25e677c17a525622692a9e3d34cf0c7fcdedc9b7ae5fb398b0e06d1526823c89"
+    },
+    "supplemental_task_manifest": {
+      "bytes": 539036,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_task_manifest_1196.jsonl",
+      "sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b"
+    }
+  },
+  "passed": true,
+  "schema": "multifunction-phase0-fit-expansion-preparation-v1",
+  "selection_seal": {
+    "bytes": 6982,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\expansion_selection.seal.json",
+    "sha256": "b1a3e6ce68b0852ac0340cbcd8cc151f0965b4a72dee555e50129202fc1cde59"
+  }
+}

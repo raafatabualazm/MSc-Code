@@ -1,0 +1,8 @@
+{
+  "error": "task sigless_f9772127b371 prompt is 12031 sealed-Qwen tokens including reserve, cap is 12000; refusing to truncate",
+  "error_type": "PreflightError",
+  "failed_at": "2026-07-23T12:15:56.280871Z",
+  "schema": "audited-frontier-passk-v1",
+  "status": "failed_closed",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_passk.py\", line 1206, in main\n    bundle, plans, prompt_map, config_sha, provenance = prepare_run(args, out)\n                                                        ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_passk.py\", line 506, in prepare_run\n    raise PreflightError(\nfrontier_core.PreflightError: task sigless_f9772127b371 prompt is 12031 sealed-Qwen tokens including reserve, cap is 12000; refusing to truncate\n"
+}

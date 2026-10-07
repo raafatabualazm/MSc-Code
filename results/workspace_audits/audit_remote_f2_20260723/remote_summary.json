@@ -1,0 +1,56 @@
+{
+  "counts": {
+    "expected_tasks": 1755,
+    "failed_tasks": 0,
+    "failure_stage_counts": {},
+    "passed_tasks": 1755,
+    "processed_tasks": 1755
+  },
+  "elapsed_seconds": 89.521,
+  "failed_task_ids": [],
+  "inputs": {
+    "builder": {
+      "path": "/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_multifunction_binary_compact.py",
+      "sha256": "bb954a0b5aafe5fa51c97cce40d25c80dd6f65f3fa2696d289f31dcbdf4fae66"
+    },
+    "bundles": {
+      "path": "/workspace/multifunction_v1/extraction_v2/user_function_bundles_1755.jsonl",
+      "sha256": "d2a019fe14e500bf1d242367e3b52b644f3e166bb8e3b5ad47e980e6ccb688d2"
+    },
+    "constants": {
+      "path": "/workspace/multifunction_v1/constants_v5/attested_pool_constants_1755.jsonl",
+      "sha256": "2b5dc0d353e5f7cb70bb79cb398406b16a92b524e4252fdbca01bd48a7c7b857"
+    },
+    "extractor": {
+      "path": "/workspace/scripts/data/extract_dart_aot_user_function_bundle.py",
+      "sha256": "ff3cd323eb3045da0a9bf8b3489f8e867cbf3ae3dfd12181fc6c2004423af2a5"
+    },
+    "f2": {
+      "path": "/workspace/frontier_ceiling_patch_v1/frontier_f2.py",
+      "sha256": "097a7fac3fcc8b07106c7ea326efd0ee9f880622c781f113e57cf8657e2241ce"
+    },
+    "tokenizer": {
+      "path": "/workspace/.hf_home/hub/models--Qwen--Qwen3-8B/blobs/aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "journal": {
+    "path": "/workspace/tmp/f2_roundtrip_audit_20260723_1648/task_results.jsonl",
+    "sha256": "7915048282d042249c7f73ae1f2dd3af2c9dab1a6a02d144ab8bf192a76f88a4"
+  },
+  "method": {
+    "all_failures_collected": true,
+    "f2_visible_symbol_pool_count": 8501,
+    "f2_visible_symbol_pool_precomputed_once": true,
+    "full_canonical_differences_redacted_to_hashes_and_codepoints": true
+  },
+  "read_only_build_artifact_audit": true,
+  "schema": "f2-roundtrip-audit-summary-v1",
+  "token_budget": {
+    "chat_overhead_reserve": 256,
+    "limit": 12000,
+    "maximum_api_task_id": "sigless_1bba4dc0b268",
+    "maximum_api_tokens": 11591,
+    "system_prompt_tokens": 444
+  }
+}

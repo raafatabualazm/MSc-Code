@@ -35,3 +35,6 @@ neural_decompiler_bundle.tar.gz
 .pytest_cache/
 **/.pytest*/
 **/__pycache__/
+
+# Private local-only files: model weights, capsules, pod snapshots, archives, venv, backups
+local/

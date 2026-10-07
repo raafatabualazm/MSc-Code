@@ -1,0 +1,114 @@
+{
+  "artifacts": {
+    "codebook": {
+      "bytes": 3820649,
+      "mtime_ns": 1784492900315928200,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_split_v1\\compact_qwen_confirmatory_v1\\codebook.json",
+      "sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c"
+    },
+    "codec": {
+      "bytes": 20705,
+      "mtime_ns": 1784492539186597800,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scripts\\data\\build_compact_qwen_v1.py",
+      "sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4"
+    },
+    "constants": {
+      "bytes": 231101,
+      "mtime_ns": 1784807985027245000,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\real_constants.jsonl",
+      "sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13"
+    },
+    "contract": {
+      "bytes": 1495748,
+      "mtime_ns": 1784807991056229600,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\fn0_contract.json",
+      "sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "mtime_ns": 1784808014432124500,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "binary_constant_extraction_errors": {
+    "count": 1,
+    "interpretation": "The exact student prefix is still reproduced; an extraction error means that task received no additional successfully recovered constants.",
+    "task_ids": [
+      "sigless_d544567b9189"
+    ]
+  },
+  "completed_at": "2026-07-23T12:17:31.238027Z",
+  "config": {
+    "arm": "compact",
+    "budget": 0,
+    "chat_overhead_reserve": 256,
+    "dataset_label": "common175",
+    "eval_stability_runs": 2,
+    "eval_timeout_seconds": 30,
+    "expected_constants_sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13",
+    "expected_dev_sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+    "expected_task_count": 175,
+    "extra_body": {},
+    "k": 10,
+    "limit": 0,
+    "max_attempts_per_sample": 6,
+    "max_output_tokens": 8192,
+    "max_prompt_tokens": 12000,
+    "model_requested": "qwen3.7-max",
+    "provider": "qwen",
+    "schema": "audited-frontier-passk-v1",
+    "temperature": 0.8,
+    "timeout_seconds": 600,
+    "top_p": 0.95,
+    "workers": 10
+  },
+  "config_sha256": "32058846e14f0c484a0d5d65159669b16d46b332bd2cdd7f6fa391e3f21883de",
+  "core": {
+    "bytes": 45777,
+    "mtime_ns": 1784809036761207400,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_core.py",
+    "sha256": "ef3e504c38a5e12e769fc93395ecae3dd3c43d5785e50ec4b0319f2148fd5d45"
+  },
+  "created_at": "2026-07-23T12:17:31.181863Z",
+  "dataset": {
+    "bytes": 1422675,
+    "mtime_ns": 1784807977502581200,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\dev_fn0_real.jsonl",
+    "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001"
+  },
+  "dataset_rows_before_limit": 175,
+  "host": "DESKTOP-QEE2NPR",
+  "pid": 15480,
+  "preflight_invariants": {
+    "binary_constant_extraction_succeeded_for_every_task": false,
+    "codec_roundtrip_verified_for_every_task": true,
+    "compact_artifact_hashes_verified": true,
+    "dataset_sha256_pinned": true,
+    "expected_dataset_rows_verified": true,
+    "opaque_custom_ids_not_sent_to_api": true,
+    "per_row_compact_hashes_verified": true,
+    "prompt_token_cap_checked_for_every_task": true,
+    "prompts_never_truncated": true,
+    "raw_arm_is_control_only": false,
+    "student_constant_prefix_reconstructed_for_every_task": true,
+    "tests_equal_acceptance_tests": true,
+    "tests_not_exposed_to_teacher": true,
+    "unique_task_ids": true
+  },
+  "python": {
+    "executable": "C:\\ProgramData\\anaconda3\\python.exe",
+    "version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "run_id": "out_hybrid12k_final",
+  "runner": {
+    "bytes": 49574,
+    "mtime_ns": 1784808114543919200,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_passk.py",
+    "sha256": "283af668a28d2c4188621fdd001aab28252fb00c9d717c53cc9fef8651f704b9"
+  },
+  "schema": "audited-frontier-passk-v1",
+  "status": "preflight_only_complete",
+  "task_set_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e",
+  "tasks_selected": 175
+}

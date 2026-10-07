@@ -1,0 +1,8 @@
+{
+  "error": "167 task(s) failed; first failure: {'task_id': 'sigless_af8ea815d9ac', 'error_type': 'RunFailure', 'error': 'returned provider response violates the fatal identity/usage contract: provider counted 12981 completion tokens, requested cap is 12288'}",
+  "error_type": "RunFailure",
+  "failed_at": "2026-07-26T11:13:45.112771Z",
+  "schema": "audited-frontier-passk-v2",
+  "status": "failed_closed",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/frontier_ceiling_patch_v1/frontier_passk.py\", line 3299, in main\n    summary = run_api_and_evaluation(\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/frontier_ceiling_patch_v1/frontier_passk.py\", line 3043, in run_api_and_evaluation\n    raise RunFailure(\nRunFailure: 167 task(s) failed; first failure: {'task_id': 'sigless_af8ea815d9ac', 'error_type': 'RunFailure', 'error': 'returned provider response violates the fatal identity/usage contract: provider counted 12981 completion tokens, requested cap is 12288'}\n"
+}

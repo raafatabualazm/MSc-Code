@@ -1,0 +1,14 @@
+{
+  "contract_sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb",
+  "ordered_task_ids_sha256": "83d0d3a497f9466dc46aa72af3ee935a264b6028e4a59f9755f59a3beab97d16",
+  "output_sha256": "9503f9d0fd56ae891b096372224ccc06b3ab07b4611f1e51a0883f626ce4e745",
+  "rows": 1196,
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "fit",
+  "selection_manifest_sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b",
+  "sorted_task_set_sha256": "f88f4de6b80738ee15e9a71256d3d77900e4d0c1f1bb4721e41fa9b0fc07c543",
+  "target_function": "fn0",
+  "task_set_sha256": "83d0d3a497f9466dc46aa72af3ee935a264b6028e4a59f9755f59a3beab97d16",
+  "training_allowed": true,
+  "training_objective_scope": "pre_sanitation_private_gold"
+}

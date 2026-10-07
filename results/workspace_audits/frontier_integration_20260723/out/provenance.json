@@ -1,0 +1,106 @@
+{
+  "artifacts": {
+    "codebook": {
+      "bytes": 3820649,
+      "mtime_ns": 1784492900315928200,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scrubbed_master_v2_release\\direct_compact_split_v1\\compact_qwen_confirmatory_v1\\codebook.json",
+      "sha256": "d44f9be95debe6e7d8766bf434cf9aeabd89a3d6ca5b09a06e3c50272543e76c"
+    },
+    "codec": {
+      "bytes": 20705,
+      "mtime_ns": 1784492539186597800,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\scripts\\data\\build_compact_qwen_v1.py",
+      "sha256": "b9f439b366f60fa646efc0363d483ca216879f95ee960fbf343da2e7e93f2cf4"
+    },
+    "constants": {
+      "bytes": 231101,
+      "mtime_ns": 1784807985027245000,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\real_constants.jsonl",
+      "sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13"
+    },
+    "contract": {
+      "bytes": 1495748,
+      "mtime_ns": 1784807991056229600,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\fn0_contract.json",
+      "sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02"
+    },
+    "tokenizer": {
+      "bytes": 11422654,
+      "mtime_ns": 1784808014432124500,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    }
+  },
+  "completed_at": "2026-07-23T12:00:20.426991Z",
+  "config": {
+    "arm": "compact",
+    "budget": 0,
+    "chat_overhead_reserve": 256,
+    "dataset_label": "common175",
+    "eval_stability_runs": 2,
+    "eval_timeout_seconds": 30,
+    "expected_constants_sha256": "ec9b7086f03f1099cee31903cb4933c326df4f39160cd6820ebc47cd94860b13",
+    "expected_dev_sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+    "expected_task_count": 175,
+    "extra_body": {},
+    "k": 10,
+    "limit": 2,
+    "max_attempts_per_sample": 6,
+    "max_output_tokens": 8192,
+    "max_prompt_tokens": 12000,
+    "model_requested": "qwen3.7-max",
+    "provider": "qwen",
+    "schema": "audited-frontier-passk-v1",
+    "temperature": 0.8,
+    "timeout_seconds": 600,
+    "top_p": 0.95,
+    "workers": 10
+  },
+  "config_sha256": "6b5cacbde871ce6ee8e57461d532078f22703acb46fd1d3f0d30234d7802c26a",
+  "core": {
+    "bytes": 42351,
+    "mtime_ns": 1784807771192815600,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_core.py",
+    "sha256": "c0019c667f866907c63731a6f0c77f9007de6934511a8a65b16f742e1c0e2fb3"
+  },
+  "created_at": "2026-07-23T12:00:20.368675Z",
+  "dataset": {
+    "bytes": 1422675,
+    "mtime_ns": 1784807977502581200,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.frontier_integration_20260723\\dev_fn0_real.jsonl",
+    "sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001"
+  },
+  "dataset_rows_before_limit": 175,
+  "host": "DESKTOP-QEE2NPR",
+  "pid": 8028,
+  "preflight_invariants": {
+    "codec_roundtrip_verified_for_every_task": true,
+    "compact_artifact_hashes_verified": true,
+    "dataset_sha256_pinned": true,
+    "expected_dataset_rows_verified": true,
+    "opaque_custom_ids_not_sent_to_api": true,
+    "per_row_compact_hashes_verified": true,
+    "prompt_token_cap_checked_for_every_task": true,
+    "prompts_never_truncated": true,
+    "raw_arm_is_control_only": false,
+    "student_constant_prefix_reconstructed_for_every_task": true,
+    "tests_equal_acceptance_tests": true,
+    "tests_not_exposed_to_teacher": true,
+    "unique_task_ids": true
+  },
+  "python": {
+    "executable": "C:\\ProgramData\\anaconda3\\python.exe",
+    "version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "run_id": "out",
+  "runner": {
+    "bytes": 48852,
+    "mtime_ns": 1784807926876093100,
+    "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\frontier_ceiling_patch_v1\\frontier_passk.py",
+    "sha256": "3a84fa9ed361eeb7b35b78d3f6cacdc3bc97621e16ab55e797687e33c4a4ef8b"
+  },
+  "schema": "audited-frontier-passk-v1",
+  "status": "preflight_only_complete",
+  "task_set_sha256": "90b6c381684d30015e9743a364de0e5bb72cc1da763e53835659480c633f18c4",
+  "tasks_selected": 2
+}

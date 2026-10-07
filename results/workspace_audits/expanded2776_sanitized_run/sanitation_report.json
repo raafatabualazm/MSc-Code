@@ -1,0 +1,114 @@
+{
+  "changes": [
+    {
+      "compiled_after_removal": true,
+      "diagnostic": "",
+      "passed_after_removal": true,
+      "removed_import_uris": [
+        "dart:io"
+      ],
+      "source_sha256_after": "bb36700b64fa0d7146d24ebb0601f02cff3f9bf31acff7e95f9c0e468836434b",
+      "source_sha256_before": "31b35a085f3c4b6ca689e7f7d5b92752342998db42793e5301c9919800578867",
+      "task_id": "sigless_715c7ec145b2",
+      "tests_sha256": "45ec515bfa36a5f8328b1e90d1caec84798d6105c56a4e48abeacd448cca2984"
+    },
+    {
+      "compiled_after_removal": true,
+      "diagnostic": "",
+      "passed_after_removal": true,
+      "removed_import_uris": [
+        "dart:io"
+      ],
+      "source_sha256_after": "51910a9e30820a54a4f50bb08ce078e001a05f86d0f0f824c03b7c9f448afd22",
+      "source_sha256_before": "735fa2e95050cee9a55824da0e38fd5057f93fe969efeea2df282df1e3f78ae4",
+      "task_id": "sigless_7295efea90ce",
+      "tests_sha256": "83fa7ace70dccd5d5ec5ff64d8c9a4077dd12b57d4fe6891198b8a92afbe74fb"
+    }
+  ],
+  "counts": {
+    "executable_rows": 1196,
+    "execution_ineligible_rows": 0,
+    "imitation_rows": 1196,
+    "input_rows": 1196,
+    "recertification_failures": 0,
+    "recertified_rows": 1196,
+    "sanitized_rows": 2
+  },
+  "execution_ineligible_task_ids": [],
+  "inputs": {
+    "contract": {
+      "bytes": 2875794,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_input_audit\\multifunction_inline_cfg_v2_contract.json",
+      "sha256": "14ece4b23b8b2193c4a5b05716f86b7ca0fa05449baece0cf00153c91ebaa7cb"
+    },
+    "evaluator": {
+      "bytes": 25977,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\hybrid_training_patch_v2_3\\scripts\\evaluation\\graph_compile_at_k_antigravity.py",
+      "sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6"
+    },
+    "input": {
+      "bytes": 4584599,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_targets_unsanitized_1196.jsonl",
+      "sha256": "9503f9d0fd56ae891b096372224ccc06b3ab07b4611f1e51a0883f626ce4e745"
+    },
+    "input_seal": {
+      "bytes": 770,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_targets_unsanitized_1196.seal.json",
+      "sha256": "25e677c17a525622692a9e3d34cf0c7fcdedc9b7ae5fb398b0e06d1526823c89"
+    },
+    "selection_seal": {
+      "bytes": 6982,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\expansion_selection.seal.json",
+      "sha256": "b1a3e6ce68b0852ac0340cbcd8cc151f0965b4a72dee555e50129202fc1cde59"
+    },
+    "supplemental_manifest": {
+      "bytes": 539036,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_selection_run2\\supplemental_task_manifest_1196.jsonl",
+      "sha256": "ee7e4f65ea06c55a86f4ec5730cd108324f57a279feba9e7138da326a700686b"
+    }
+  },
+  "invariants": {
+    "all_executable_rows_recertified": true,
+    "all_imitation_rows_retained": true,
+    "expected_outputs_not_rewritten": true,
+    "forbidden_imports_removed_only_after_pass": true,
+    "required_forbidden_imports_sequence_imitation_only": true,
+    "supplemental_membership_and_order_bound": true
+  },
+  "outputs": {
+    "executable": {
+      "bytes": 4584561,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_sanitized_run\\supplemental_train_executable.jsonl",
+      "sha256": "aba5f1ba004aa3cbdec0a19f52bb2d4f9dcbbb5b4caa9e086a20d25e4c55165d"
+    },
+    "executable_seal": {
+      "bytes": 1501,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_sanitized_run\\supplemental_train_executable.seal.json",
+      "sha256": "bada184bba4360617d338e75826fe8952fac37216a0178cd0f6cbdd735022f49"
+    },
+    "imitation": {
+      "bytes": 4584561,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_sanitized_run\\supplemental_train_imitation_1196.jsonl",
+      "sha256": "aba5f1ba004aa3cbdec0a19f52bb2d4f9dcbbb5b4caa9e086a20d25e4c55165d"
+    },
+    "imitation_seal": {
+      "bytes": 1550,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_sanitized_run\\supplemental_train_imitation_1196.seal.json",
+      "sha256": "267197877867a9cdf81f0b6a61c5b25ac123cd9ef3a69e519cd9563680be7013"
+    },
+    "quarantine": {
+      "bytes": 0,
+      "path": "C:\\Users\\Raafat Abualazm\\Desktop\\Train Data\\experiment_workspace\\.expanded2776_sanitized_run\\execution_ineligible.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "passed": true,
+  "quarantine": [],
+  "runtime": {
+    "completion_attestation_id": "per-run-256-bit-marker-exactly-once-v1",
+    "dart_binary": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\dart.exe",
+    "dart_version": "Dart SDK version: 3.11.5 (stable) (Wed Apr 15 00:36:32 2026 -0700) on \"windows_x64\"",
+    "stability_runs": 2
+  },
+  "schema": "phase0-supplemental-target-sanitation-v1"
+}
