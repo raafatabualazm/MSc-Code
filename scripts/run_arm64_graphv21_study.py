@@ -492,7 +492,7 @@ def make_causal_controls(args: argparse.Namespace) -> list[Stage]:
             source_label,
             architecture=args.selected_architecture,
         )
-        checkpoint = ROOT / "artifacts" / source / "pytorch_model.bin"
+        checkpoint = ROOT / "results/artifacts" / source / "pytorch_model.bin"
         for control, expected_ablation, extras in controls:
             arm = f"{source_label}_eval_{control}"
             name = model_name(
@@ -616,7 +616,7 @@ def run_stages(args: argparse.Namespace, stages: list[Stage]) -> None:
                 f"Budget stop before {stage.name}: elapsed={elapsed:.2f} h, "
                 f"next={stage.estimate_hours:.2f} h, budget={args.budget_hours:.2f} h"
             )
-        log = ROOT / "logs/arm64_graphv21" / f"{stage.name}.log"
+        log = ROOT / "results/logs/arm64_graphv21" / f"{stage.name}.log"
         log.parent.mkdir(parents=True, exist_ok=True)
         with log.open("a", encoding="utf-8") as handle:
             handle.write("\n$ " + shell_join(stage.command) + "\n")

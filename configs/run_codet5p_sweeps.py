@@ -28,7 +28,7 @@ for cfg in configs:
     env['GRAPH_FREEZE_ENCODER'] = cfg['freeze']
     env['GRAPH_LR'] = cfg['lr']
     env['GRAPH_EPOCHS'] = '1'
-    env['GRAPH_OUTPUT_DIR'] = f"artifacts/{cfg['name']}"
+    env['GRAPH_OUTPUT_DIR'] = f"results/artifacts/{cfg['name']}"
 
     subprocess.run([
         'python', '-m', 'scripts.training.graph_encoder_decoder_decompiler_v2'

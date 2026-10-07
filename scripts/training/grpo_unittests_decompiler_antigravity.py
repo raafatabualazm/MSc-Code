@@ -684,7 +684,7 @@ def main():
     parser.add_argument('--max_length', type=int, default=2048)
     parser.add_argument('--max_new_tokens', type=int, default=1024)
     parser.add_argument('--max_steps', type=int, default=-1)
-    parser.add_argument('--output_dir', default='artifacts/qwen-unittest-grpo')
+    parser.add_argument('--output_dir', default='results/artifacts/qwen-unittest-grpo')
     args = parser.parse_args()
     
     os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"

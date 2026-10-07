@@ -8,8 +8,8 @@ INPUT="data/testing/fresh_eval_low_topup_chatgpt_s46_assembly.jsonl"
 OUTPUT="data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.jsonl"
 REJECTED="data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.rejected.jsonl"
 SUMMARY="data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.summary.json"
-STATUS="logs/fresh_eval_low_topup_chatgpt_s46_graphv2.status"
-PID_FILE="logs/fresh_eval_low_topup_chatgpt_s46_graphv2.pid"
+STATUS="results/logs/fresh_eval_low_topup_chatgpt_s46_graphv2.status"
+PID_FILE="results/logs/fresh_eval_low_topup_chatgpt_s46_graphv2.pid"
 
 if [[ ! -f "$INPUT" || $(wc -l < "$INPUT") -ne 200 ]]; then
   printf 'REFUSED\nreason=input_missing_or_row_count_mismatch\nended_at=%s\n' \

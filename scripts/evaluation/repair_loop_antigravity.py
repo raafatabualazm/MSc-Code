@@ -23,7 +23,7 @@ Examples
 Describe an archived seed-42 pool without a GPU::
 
   python scripts/evaluation/repair_loop_antigravity.py analyze \
-    --stats results-20260713/sweeps_antigravity/<run>_pass_stats.csv
+    --stats results/runs/results-20260713/sweeps_antigravity/<run>_pass_stats.csv
 
 Run deployable compile-feedback chains on the pod::
 

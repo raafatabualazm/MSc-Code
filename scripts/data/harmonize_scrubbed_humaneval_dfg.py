@@ -25,7 +25,7 @@ from typing import Any, Callable, Iterable
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_DFG = ROOT / "scrubbed_master_v2_release" / "extractors" / "dfg_extractor.py"
+DEFAULT_DFG = ROOT / "data/scrubbed_master_v2_release" / "extractors" / "dfg_extractor.py"
 DEFAULT_CODEC = ROOT / "scripts" / "data" / "build_compact_qwen_v1.py"
 EXPECTED_DFG_SHA256 = "beb237cf2ad8e3d65a536e8d30b698e14486ade36a019c247d580c372b858000"
 PRIVATE_ONLY_KEYS = {

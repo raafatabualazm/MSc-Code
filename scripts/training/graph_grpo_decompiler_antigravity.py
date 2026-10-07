@@ -1974,7 +1974,7 @@ def main():
     parser.add_argument('--reward_preflight_batches', type=int,
                         default=int(os.environ.get("GRPO_REWARD_PREFLIGHT_BATCHES", "0")),
                         help="Generate and score this many batches without updating or saving a checkpoint")
-    parser.add_argument('--output_dir', default=os.environ.get("GRAPH_OUTPUT_DIR", "artifacts/qwen-grpo"))
+    parser.add_argument('--output_dir', default=os.environ.get("GRAPH_OUTPUT_DIR", "results/artifacts/qwen-grpo"))
     parser.add_argument('--checkpoint', default=os.environ.get("GRAPH_CHECKPOINT", ""))
     args = parser.parse_args()
     _dart_per_test_reward.perfect_bonus = args.perfect_bonus

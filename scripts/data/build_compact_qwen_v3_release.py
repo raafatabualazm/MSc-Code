@@ -742,12 +742,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--legacy-cfg-extractor",
         type=Path,
-        default=ROOT / "scrubbed_master_v2_release/extractors/cfg_extractor.py",
+        default=ROOT / "data/scrubbed_master_v2_release/extractors/cfg_extractor.py",
     )
     parser.add_argument(
         "--legacy-dfg-extractor",
         type=Path,
-        default=ROOT / "scrubbed_master_v2_release/extractors/dfg_extractor.py",
+        default=ROOT / "data/scrubbed_master_v2_release/extractors/dfg_extractor.py",
     )
     parser.add_argument(
         "--current-cfg-extractor",
@@ -1243,7 +1243,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     }
     # Make the trainer's own strict contract class the executable schema gate
     # when the hybrid patch is available in this checkout.
-    from hybrid_training_patch_v2_3.models.direct_compact_causal import DirectCompactContract
+    from patches.hybrid_training_patch_v2_3.models.direct_compact_causal import DirectCompactContract
 
     DirectCompactContract.from_mapping(contract)
     write_json_atomic(args.output_dir / "compact_contract.json", contract)

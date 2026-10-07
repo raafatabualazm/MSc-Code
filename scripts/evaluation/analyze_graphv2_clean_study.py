@@ -869,10 +869,10 @@ def render_markdown(payload: dict[str, Any]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results_dir", default="results-20260713")
+    parser.add_argument("--results_dir", default="results/runs/results-20260713")
     parser.add_argument("--benchmark", default="data/testing/grpo_data_graphv2.jsonl")
-    parser.add_argument("--output_json", default="results-20260713/graphv2_clean_study_analysis.json")
-    parser.add_argument("--output_md", default="results-20260713/GRAPHV2_CLEAN_STUDY_ANALYSIS.md")
+    parser.add_argument("--output_json", default="results/runs/results-20260713/graphv2_clean_study_analysis.json")
+    parser.add_argument("--output_md", default="results/runs/results-20260713/GRAPHV2_CLEAN_STUDY_ANALYSIS.md")
     parser.add_argument("--bootstrap_reps", type=int, default=10000)
     parser.add_argument("--bootstrap_seed", type=int, default=20260713)
     args = parser.parse_args()

@@ -918,12 +918,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--legacy-cfg-extractor",
         type=Path,
-        default=ROOT / "scrubbed_master_v2_release/extractors/cfg_extractor.py",
+        default=ROOT / "data/scrubbed_master_v2_release/extractors/cfg_extractor.py",
     )
     parser.add_argument(
         "--legacy-dfg-extractor",
         type=Path,
-        default=ROOT / "scrubbed_master_v2_release/extractors/dfg_extractor.py",
+        default=ROOT / "data/scrubbed_master_v2_release/extractors/dfg_extractor.py",
     )
     parser.add_argument(
         "--current-cfg-extractor",

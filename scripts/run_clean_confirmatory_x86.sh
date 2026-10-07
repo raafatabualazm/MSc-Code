@@ -116,7 +116,7 @@ for seed in $SEEDS; do
       --hardware_profile h200 \
       --force_rerun \
       --use_grpo \
-      --grpo_checkpoint "artifacts/${g3}/pytorch_model.bin" \
+      --grpo_checkpoint "results/artifacts/${g3}/pytorch_model.bin" \
       --grpo_train_file "$RL_TRAIN" \
       --compile_dataset "$RL_HELDOUT" \
       --pass_dataset "$RL_HELDOUT" \

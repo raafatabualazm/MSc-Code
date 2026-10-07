@@ -28,7 +28,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE = ROOT / "scrubbed_master_v2_release"
+RELEASE = ROOT / "data/scrubbed_master_v2_release"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 if str(RELEASE) not in sys.path:

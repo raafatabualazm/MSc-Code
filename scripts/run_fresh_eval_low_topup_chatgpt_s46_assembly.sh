@@ -7,8 +7,8 @@ export PATH="/usr/local/bin:$PATH"
 
 SOURCE="data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl"
 OUT="data/testing/fresh_eval_low_topup_chatgpt_s46_assembly.jsonl"
-STATUS="logs/fresh_eval_low_topup_chatgpt_s46_assembly.status"
-PID_FILE="logs/fresh_eval_low_topup_chatgpt_s46_assembly.pid"
+STATUS="results/logs/fresh_eval_low_topup_chatgpt_s46_assembly.status"
+PID_FILE="results/logs/fresh_eval_low_topup_chatgpt_s46_assembly.pid"
 
 if [[ ! -f "$SOURCE" ]]; then
   printf 'REFUSED\nreason=source_missing\nended_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$STATUS"

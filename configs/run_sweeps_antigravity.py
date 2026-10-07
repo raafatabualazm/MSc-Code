@@ -624,10 +624,10 @@ def run_experiment(
     )
         
     if use_grpo:
-        output_dir = f"artifacts/{cfg['name']}_grpo"
+        output_dir = f"results/artifacts/{cfg['name']}_grpo"
         compile_predictions_file = str(msc_code_root / 'results' / f"{cfg['name']}_grpo_compile_predictions.json")
         pass_predictions_file = str(msc_code_root / 'results' / f"{cfg['name']}_grpo_pass_predictions.json")
-        checkpoint_file = str(msc_code_root / 'artifacts' / f"{cfg['name']}_grpo" / 'pytorch_model.bin')
+        checkpoint_file = str(msc_code_root / 'results/artifacts' / f"{cfg['name']}_grpo" / 'pytorch_model.bin')
 
         # GRPO wall-clock is dominated by (a) autoregressive generation of G
         # completions/prompt and (b) one cold `dart run` per assertion to score
@@ -670,17 +670,17 @@ def run_experiment(
             if skip_training:
                 checkpoint_file = resume_checkpoint
         else:
-            sft_checkpoint = str(msc_code_root / 'artifacts' / cfg['name'] / 'pytorch_model.bin')
+            sft_checkpoint = str(msc_code_root / 'results/artifacts' / cfg['name'] / 'pytorch_model.bin')
             if os.path.exists(sft_checkpoint):
                 env['GRAPH_CHECKPOINT'] = sft_checkpoint
                 print(f"GRPO stage: Found SFT checkpoint at {sft_checkpoint}. Loading it for GRPO.")
             else:
                 print(f"GRPO stage: SFT checkpoint not found at {sft_checkpoint}. Running GRPO from base pre-trained model.")
     else:
-        output_dir = f"artifacts/{cfg['name']}"
+        output_dir = f"results/artifacts/{cfg['name']}"
         compile_predictions_file = str(msc_code_root / 'results' / f"{cfg['name']}_compile_predictions.json")
         pass_predictions_file = str(msc_code_root / 'results' / f"{cfg['name']}_pass_predictions.json")
-        checkpoint_file = str(msc_code_root / 'artifacts' / cfg['name'] / 'pytorch_model.bin')
+        checkpoint_file = str(msc_code_root / 'results/artifacts' / cfg['name'] / 'pytorch_model.bin')
         if sft_checkpoint:
             resume_checkpoint = str(Path(sft_checkpoint).expanduser())
             if not os.path.exists(resume_checkpoint):
@@ -732,7 +732,7 @@ def run_experiment(
             upload_to_huggingface(
                 hf_repo,
                 artifact_path,
-                f"artifacts/{cfg['name']}{'_grpo' if use_grpo else ''}",
+                f"results/artifacts/{cfg['name']}{'_grpo' if use_grpo else ''}",
                 token=hf_token,
                 private=hf_private,
                 commit_message=f"Upload {'GRPO' if use_grpo else 'SFT'} artifact {cfg['name']}",

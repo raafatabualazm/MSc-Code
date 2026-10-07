@@ -7,7 +7,7 @@ from tokenizers.trainers import BpeTrainer
 
 from scripts.data import build_compact_qwen_v3 as codec
 from scripts.data import build_compact_qwen_v3_release as release
-from hybrid_training_patch_v2_3.models.direct_compact_causal import (
+from patches.hybrid_training_patch_v2_3.models.direct_compact_causal import (
     DirectCompactContract,
     tokenizer_fingerprint,
 )

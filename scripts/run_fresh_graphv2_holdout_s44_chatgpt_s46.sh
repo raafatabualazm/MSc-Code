@@ -6,8 +6,8 @@ cd "$ROOT"
 
 OUTPUT="data/testing/fresh_graphv2_holdout_s44.jsonl"
 MANIFEST="data/testing/fresh_graphv2_holdout_s44.manifest.json"
-STATUS="logs/fresh_graphv2_holdout_s44_chatgpt_s46.status"
-PID_FILE="logs/fresh_graphv2_holdout_s44_chatgpt_s46.pid"
+STATUS="results/logs/fresh_graphv2_holdout_s44_chatgpt_s46.status"
+PID_FILE="results/logs/fresh_graphv2_holdout_s44_chatgpt_s46.pid"
 
 if [[ -e "$OUTPUT" || -e "$MANIFEST" ]]; then
   printf 'REFUSED\nreason=output_exists\nended_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$STATUS"
@@ -51,39 +51,39 @@ set +e
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45.jsonl \
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45.jsonl.manifest.json \
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45.jsonl.rejects.jsonl \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45.log \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45.status \
-  --provenance archive/provenance/fresh_eval_low_topup_deepseek_s45.authorized_early_cutoff.json \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45.log \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45.status \
+  --provenance results/archive/provenance/fresh_eval_low_topup_deepseek_s45.authorized_early_cutoff.json \
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45_assembly.jsonl \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45_assembly.log \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45_assembly.status \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45_assembly.log \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45_assembly.status \
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.summary.json \
   --provenance data/testing/fresh_eval_low_topup_deepseek_s45_graphv2.rejected.jsonl \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45_graphv2.log \
-  --provenance logs/fresh_eval_low_topup_deepseek_s45_graphv2.status \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45_graphv2.log \
+  --provenance results/logs/fresh_eval_low_topup_deepseek_s45_graphv2.status \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.manifest.json \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.distribution.json \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl.rejects.jsonl \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46.log \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46.status \
-  --provenance archive/provenance/fresh_eval_low_topup_chatgpt_s46.authorization.json \
-  --provenance archive/provenance/fresh_eval_low_topup_chatgpt_s46.source_completion.json \
-  --provenance archive/provenance/fresh_eval_low_topup_chatgpt_s46.offline_completion.json \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46.log \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46.status \
+  --provenance results/archive/provenance/fresh_eval_low_topup_chatgpt_s46.authorization.json \
+  --provenance results/archive/provenance/fresh_eval_low_topup_chatgpt_s46.source_completion.json \
+  --provenance results/archive/provenance/fresh_eval_low_topup_chatgpt_s46.offline_completion.json \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46_assembly.jsonl \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46_assembly.log \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46_assembly.status \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46_assembly.log \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46_assembly.status \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.summary.json \
   --provenance data/testing/fresh_eval_low_topup_chatgpt_s46_graphv2.rejected.jsonl \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46_graphv2.log \
-  --provenance logs/fresh_eval_low_topup_chatgpt_s46_graphv2.status \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46_graphv2.log \
+  --provenance results/logs/fresh_eval_low_topup_chatgpt_s46_graphv2.status \
   --provenance scripts/run_fresh_eval_low_topup_chatgpt_s46.ps1 \
   --provenance scripts/run_fresh_eval_low_topup_chatgpt_s46_assembly.sh \
   --provenance scripts/run_fresh_eval_low_topup_chatgpt_s46_graphv2.sh \
-  --provenance archive/provenance/fresh_graphv2_holdout_s44.stopped_insufficient_supply.json \
-  --provenance archive/provenance/fresh_graphv2_holdout_toolchain_20260717.json \
+  --provenance results/archive/provenance/fresh_graphv2_holdout_s44.stopped_insufficient_supply.json \
+  --provenance results/archive/provenance/fresh_graphv2_holdout_toolchain_20260717.json \
   --provenance scripts/data/build_graph_v2_jsonl.py \
-  --provenance generate_fresh_eval_tasks.py \
+  --provenance scripts/generate_fresh_eval_tasks.py \
   --provenance scripts/data/seal_fresh_graphv2_holdout.py \
   --tool dart=/usr/local/bin/dart \
   --tool gdb=/usr/local/bin/gdb \

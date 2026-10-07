@@ -33,7 +33,7 @@ for decoder, (mode_name, mode_cfg), lr in itertools.product(DECODERS, MODES.item
     env['GRAPH_FREEZE_ENCODER'] = mode_cfg['freeze_encoder']
     env['GRAPH_LR'] = lr
     env['GRAPH_EPOCHS'] = '1'
-    env['GRAPH_OUTPUT_DIR'] = f'artifacts/{exp_name}'
+    env['GRAPH_OUTPUT_DIR'] = f'results/artifacts/{exp_name}'
 
     print(f'=== RUNNING {exp_name} ===')
 

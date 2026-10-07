@@ -163,7 +163,7 @@ _TOP_LEVEL_FUNCTION_CONSTRAINTS = (
 class GraphDecompilerConfig:
     train_file: str = os.environ.get("GRAPH_TRAIN_FILE", "data/datasets/dart_all.jsonl")
     eval_file: str = os.environ.get("GRAPH_EVAL_FILE", "data/datasets/test-set.jsonl")
-    output_dir: str = os.environ.get("GRAPH_OUTPUT_DIR", "artifacts/graph-decompiler-v1")
+    output_dir: str = os.environ.get("GRAPH_OUTPUT_DIR", "results/artifacts/graph-decompiler-v1")
     max_input_length: int = 512  # GraphCodeBERT max block length
     max_target_length: int = 768
     max_decoder_prompt_length: int = int(os.environ.get("GRAPH_DECODER_PROMPT_MAX_LENGTH", "768"))

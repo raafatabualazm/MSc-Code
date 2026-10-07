@@ -11,7 +11,7 @@ from tokenizers.models import BPE
 from tokenizers.pre_tokenizers import ByteLevel
 from tokenizers.trainers import BpeTrainer
 
-from hybrid_training_patch_v2_3.models.direct_compact_causal import (
+from patches.hybrid_training_patch_v2_3.models.direct_compact_causal import (
     tokenizer_fingerprint,
 )
 from scripts.data import audit_compact_qwen_v3_generalization as audit
@@ -242,10 +242,10 @@ def _verify(bundle, tokenizer_path):
         graph_codec_path=Path(audit.graph_codec.__file__).resolve(),
         release_builder_path=Path(release.__file__).resolve(),
         legacy_cfg_extractor=(
-            audit.ROOT / "scrubbed_master_v2_release/extractors/cfg_extractor.py"
+            audit.ROOT / "data/scrubbed_master_v2_release/extractors/cfg_extractor.py"
         ),
         legacy_dfg_extractor=(
-            audit.ROOT / "scrubbed_master_v2_release/extractors/dfg_extractor.py"
+            audit.ROOT / "data/scrubbed_master_v2_release/extractors/dfg_extractor.py"
         ),
         current_cfg_extractor=audit.ROOT / "scripts/data/cfg_extractor.py",
         current_dfg_extractor=audit.ROOT / "scripts/data/dfg_extractor.py",

@@ -27,11 +27,11 @@ ARM_FULL = ROOT / "data/datasets/arm64_graphv2/flutter_function_assembly_pool_gr
 ARM_TRAIN = ROOT / "data/datasets/arm64_graphv2/flutter_train_graphv2.jsonl"
 ARM_EVAL = ROOT / "data/datasets/arm64_graphv2/flutter_eval_graphv2.jsonl"
 X86_SYNTHETIC = ROOT / "data/datasets/synthetic_pool_reward_clean_graphv2.jsonl"
-MASTER = ROOT / "master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl"
-LEDGER = ROOT / "scrubbed_master_v2_release/master_dart_graphv2_compile_ledger.jsonl"
-QUARANTINE = ROOT / "scrubbed_master_v2_release/master_dart_graphv2_quarantine.jsonl"
+MASTER = ROOT / "data/master_dart_cfg_dfg/master_dart_cfg_dfg_train.jsonl"
+LEDGER = ROOT / "data/scrubbed_master_v2_release/master_dart_graphv2_compile_ledger.jsonl"
+QUARANTINE = ROOT / "data/scrubbed_master_v2_release/master_dart_graphv2_quarantine.jsonl"
 CURRENT_DFG = ROOT / "scripts/data/dfg_extractor.py"
-RELEASE_DFG = ROOT / "scrubbed_master_v2_release/extractors/dfg_extractor.py"
+RELEASE_DFG = ROOT / "data/scrubbed_master_v2_release/extractors/dfg_extractor.py"
 CURRENT_CFG = ROOT / "scripts/data/cfg_extractor.py"
 
 TARGET_ANNOTATION = re.compile(r"0x([0-9a-fA-F]+)\s*<([^>]+)>")

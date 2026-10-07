@@ -6,8 +6,8 @@ cd "$ROOT"
 
 OUTPUT="/tmp/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.jsonl"
 MANIFEST="/tmp/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.manifest.json"
-STATUS="logs/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.status"
-PID_FILE="logs/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.pid"
+STATUS="results/logs/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.status"
+PID_FILE="results/logs/fresh_graphv2_holdout_s44_chatgpt_s46_determinism.pid"
 
 if [[ ! -f data/testing/fresh_graphv2_holdout_s44.jsonl ||
       ! -f data/testing/fresh_graphv2_holdout_s44.manifest.json ]]; then

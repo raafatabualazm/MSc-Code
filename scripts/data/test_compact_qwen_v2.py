@@ -9,7 +9,7 @@ CODEC = importlib.util.module_from_spec(CODEC_SPEC)
 sys.modules[CODEC_SPEC.name] = CODEC
 CODEC_SPEC.loader.exec_module(CODEC)
 
-PREPARER_PATH = CODEC_PATH.parents[2] / "scrubbed_master_v2_release" / "prepare_phase0_compact_qwen_v2.py"
+PREPARER_PATH = CODEC_PATH.parents[2] / "data/scrubbed_master_v2_release" / "prepare_phase0_compact_qwen_v2.py"
 PREPARER_SPEC = importlib.util.spec_from_file_location(
     "compact_qwen_v2_preparer_test", PREPARER_PATH
 )

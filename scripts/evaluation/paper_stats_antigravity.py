@@ -237,10 +237,10 @@ def union_from_report(report_path: Path) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results_dir", default="results-20260707/results")
+    parser.add_argument("--results_dir", default="results/runs/results-20260707/results")
     parser.add_argument("--union_report", default="data/testing/rs_sft_x86_8b_allarms_with_h100_report.json")
-    parser.add_argument("--output_json", default="results-20260707/results/sweeps_antigravity/x86_8b_paper_statistics.json")
-    parser.add_argument("--output_csv", default="results-20260707/results/sweeps_antigravity/x86_8b_paper_statistics.csv")
+    parser.add_argument("--output_json", default="results/runs/results-20260707/results/sweeps_antigravity/x86_8b_paper_statistics.json")
+    parser.add_argument("--output_csv", default="results/runs/results-20260707/results/sweeps_antigravity/x86_8b_paper_statistics.csv")
     parser.add_argument("--bootstrap_reps", type=int, default=5000)
     parser.add_argument("--seed", type=int, default=1337)
     args = parser.parse_args()

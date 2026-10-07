@@ -6,9 +6,9 @@ Set-Location -LiteralPath $Root
 $Output = Join-Path $Root 'data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl'
 $Manifest = "$Output.manifest.json"
 $Rejects = "$Output.rejects.jsonl"
-$Log = Join-Path $Root 'logs/fresh_eval_low_topup_chatgpt_s46.log'
-$Status = Join-Path $Root 'logs/fresh_eval_low_topup_chatgpt_s46.status'
-$PidFile = Join-Path $Root 'logs/fresh_eval_low_topup_chatgpt_s46.pid'
+$Log = Join-Path $Root 'results/logs/fresh_eval_low_topup_chatgpt_s46.log'
+$Status = Join-Path $Root 'results/logs/fresh_eval_low_topup_chatgpt_s46.status'
+$PidFile = Join-Path $Root 'results/logs/fresh_eval_low_topup_chatgpt_s46.pid'
 
 if ((Test-Path -LiteralPath $Output) -or
     (Test-Path -LiteralPath $Manifest) -or
@@ -35,7 +35,7 @@ $PID | Set-Content -LiteralPath $PidFile -Encoding ascii
 $env:PYTHONUNBUFFERED = '1'
 $Arguments = @(
     '-m', 'dotenv', '-f', (Join-Path $Root 'data.env'), 'run', '--',
-    'python', (Join-Path $Root 'generate_fresh_eval_tasks.py'),
+    'python', (Join-Path $Root 'scripts/generate_fresh_eval_tasks.py'),
     '--num_tasks', '200',
     '--oversample', '8',
     '--providers', 'azure',

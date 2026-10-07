@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import generate_synthetic_tasks_parallel as generator
+from scripts import generate_synthetic_tasks_parallel as generator
 from scripts.data.build_signature_scrubbed_eval import (
     build_one,
     effective_id_salt,

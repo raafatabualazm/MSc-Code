@@ -34,7 +34,7 @@ DECODER_MODEL = "Salesforce/codet5-small"
 class GraphDecompilerConfig:
     train_file: str = "data/matched/all_dart_matched.jsonl"
     eval_file: str = "data/datasets/test-set.jsonl"
-    output_dir: str = "artifacts/graph-decompiler-v1"
+    output_dir: str = "results/artifacts/graph-decompiler-v1"
     max_input_length: int = 2048
     max_target_length: int = 768
     learning_rate: float = 2e-5

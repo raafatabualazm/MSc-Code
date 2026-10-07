@@ -32,20 +32,20 @@ import re
 from pathlib import Path
 
 DEFAULT_POOLS = [
-    ("base", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_pass_stats.csv"),
-    ("ut", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_pass_stats.csv"),
-    ("ut_gentle", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_gentle_grpo_pass_stats.csv"),
-    ("ut_gentle2", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_gentle2_grpo_pass_stats.csv"),
-    ("ut_grpo", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_grpo_pass_stats.csv"),
-    ("ut_rewardfix", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardfix_grpo_pass_stats.csv"),
-    ("ut_rewardsoft", "results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_pass_stats.csv"),
-    ("fitut", "results-qwen-9b-stageC/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitut_pass_stats.csv"),
-    ("fitut_grpo", "results-qwen-9b-stageC/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitut_grpo_pass_stats.csv"),
-    ("pk5", "results-qwen-9b-stageD/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5_grpo_pass_stats.csv"),
-    ("pk5h", "results-qwen-9b-stageE/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5h_grpo_pass_stats.csv"),
-    ("pk5g16", "results-qwen-9b-stageF/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5g16_grpo_pass_stats.csv"),
-    ("pk5dapo", "results-qwen-9b-stageG/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5dapo_grpo_pass_stats.csv"),
-    ("pk5gspo", "results-qwen-9b-stageG/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5gspo_grpo_pass_stats.csv"),
+    ("base", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_pass_stats.csv"),
+    ("ut", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_pass_stats.csv"),
+    ("ut_gentle", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_gentle_grpo_pass_stats.csv"),
+    ("ut_gentle2", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_gentle2_grpo_pass_stats.csv"),
+    ("ut_grpo", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_grpo_pass_stats.csv"),
+    ("ut_rewardfix", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardfix_grpo_pass_stats.csv"),
+    ("ut_rewardsoft", "results/runs/results-qwen-9b-latest-3/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_ut_rewardsoft_grpo_pass_stats.csv"),
+    ("fitut", "results/runs/results-qwen-9b-stageC/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitut_pass_stats.csv"),
+    ("fitut_grpo", "results/runs/results-qwen-9b-stageC/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitut_grpo_pass_stats.csv"),
+    ("pk5", "results/runs/results-qwen-9b-stageD/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5_grpo_pass_stats.csv"),
+    ("pk5h", "results/runs/results-qwen-9b-stageE/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5h_grpo_pass_stats.csv"),
+    ("pk5g16", "results/runs/results-qwen-9b-stageF/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5g16_grpo_pass_stats.csv"),
+    ("pk5dapo", "results/runs/results-qwen-9b-stageG/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5dapo_grpo_pass_stats.csv"),
+    ("pk5gspo", "results/runs/results-qwen-9b-stageG/sweeps_antigravity/qwen-9b-base_lora_enc_dec_r64_5e6_gcb_a128_fitutpk5gspo_grpo_pass_stats.csv"),
 ]
 
 _STRING_RE = re.compile(r"""(?:'([^'\\]{2,})')|(?:"([^"\\]{2,})")""")

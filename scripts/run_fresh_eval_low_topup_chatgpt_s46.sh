@@ -5,9 +5,9 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 OUT="data/testing/fresh_eval_low_topup_chatgpt_s46.jsonl"
-LOG="logs/fresh_eval_low_topup_chatgpt_s46.log"
-STATUS="logs/fresh_eval_low_topup_chatgpt_s46.status"
-PID_FILE="logs/fresh_eval_low_topup_chatgpt_s46.pid"
+LOG="results/logs/fresh_eval_low_topup_chatgpt_s46.log"
+STATUS="results/logs/fresh_eval_low_topup_chatgpt_s46.status"
+PID_FILE="results/logs/fresh_eval_low_topup_chatgpt_s46.pid"
 
 if [[ -e "$OUT" || -e "$OUT.manifest.json" || -e "$OUT.rejects.jsonl" ]]; then
   printf 'REFUSED\nreason=output_exists\nended_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$STATUS"

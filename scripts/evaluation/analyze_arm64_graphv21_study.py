@@ -153,14 +153,14 @@ def render_markdown(payload: dict[str, Any]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results_dir", default="results-20260713")
+    parser.add_argument("--results_dir", default="results/runs/results-20260713")
     parser.add_argument(
         "--output_json",
-        default="results-20260713/arm64_graphv21_study_analysis.json",
+        default="results/runs/results-20260713/arm64_graphv21_study_analysis.json",
     )
     parser.add_argument(
         "--output_md",
-        default="results-20260713/ARM64_GRAPHV21_STUDY_ANALYSIS.md",
+        default="results/runs/results-20260713/ARM64_GRAPHV21_STUDY_ANALYSIS.md",
     )
     parser.add_argument("--bootstrap_reps", type=int, default=10000)
     parser.add_argument("--bootstrap_seed", type=int, default=20260713)

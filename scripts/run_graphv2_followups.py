@@ -358,7 +358,7 @@ def make_causal_controls(args: argparse.Namespace) -> list[Stage]:
         raise SystemExit("Unknown --causal_architectures: " + ", ".join(unknown))
     for architecture in architectures:
         source_name = selected_model(seed, architecture)
-        checkpoint = ROOT / "artifacts" / source_name / "pytorch_model.bin"
+        checkpoint = ROOT / "results/artifacts" / source_name / "pytorch_model.bin"
         for label, graph_ablation, extras in controls:
             suffix = f"_graphv2_clean_s{seed}_{architecture}_eval_{label}"
             model_name = MODEL_STEM + suffix
@@ -803,7 +803,7 @@ def make_confirmatory_causal(args: argparse.Namespace) -> list[Stage]:
             args.selected_prefix_density,
             args.selected_gate_init,
         )
-        checkpoint = ROOT / "artifacts" / source_name / "pytorch_model.bin"
+        checkpoint = ROOT / "results/artifacts" / source_name / "pytorch_model.bin"
         for control, graph_ablation, extras in controls:
             label = f"{source_label}_eval_{control}"
             suffix = f"_graphv2_clean_s{seed}_{label}"
@@ -894,7 +894,7 @@ def run_stages(args: argparse.Namespace, stages: list[Stage]) -> None:
                 f"Budget stop before {stage.name}: elapsed={elapsed:.2f} h, "
                 f"next={stage.estimate_hours:.2f} h, budget={args.budget_hours:.2f} h"
             )
-        log = ROOT / "logs" / "graphv2_followups" / f"{stage.name}.log"
+        log = ROOT / "results/logs" / "graphv2_followups" / f"{stage.name}.log"
         log.parent.mkdir(parents=True, exist_ok=True)
         with log.open("a", encoding="utf-8") as handle:
             handle.write("\n$ " + shell_join(stage.command) + "\n")

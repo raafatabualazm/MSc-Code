@@ -233,7 +233,7 @@ def predictions_paths(name: str, grpo: bool = False) -> tuple[Path, Path]:
 
 def checkpoint_path(name: str, grpo: bool = False) -> Path:
     suffix = "_grpo" if grpo else ""
-    return ROOT / "artifacts" / f"{name}{suffix}" / "pytorch_model.bin"
+    return ROOT / "results/artifacts" / f"{name}{suffix}" / "pytorch_model.bin"
 
 
 def valid_provenance(prediction: Path, seed: int) -> bool:
@@ -263,7 +263,7 @@ class Runbook:
     def __init__(self, args: argparse.Namespace):
         self.args = args
         self.started = time.monotonic()
-        self.log_dir = ROOT / "logs" / "leakage_free_graphv2"
+        self.log_dir = ROOT / "results/logs" / "leakage_free_graphv2"
         self.log_dir.mkdir(parents=True, exist_ok=True)
         self.state_path = self.log_dir / "state.json"
         self.state: dict[str, Any] = {"completed": {}, "failed": {}}
@@ -472,8 +472,8 @@ class Runbook:
             "scripts/data/test_graph_architecture_ablation.py",
             "scripts/training/audit_grpo_reward_antigravity.py",
             "configs/run_sweeps_antigravity.py",
-            "generate_synthetic_tasks.py",
-            "generate_synthetic_tasks_parallel.py",
+            "scripts/generate_synthetic_tasks.py",
+            "scripts/generate_synthetic_tasks_parallel.py",
             "scripts/run_leakage_free_study.py",
             "scripts/run_graphv2_followups.py",
             "scripts/run_arm64_graphv21_study.py",
@@ -488,7 +488,7 @@ class Runbook:
             [PYTHON, "-m", "unittest", "scripts.data.test_graph_v2_integrity"],
             [PYTHON, "-m", "unittest", "scripts.data.test_graph_architecture_ablation"],
             [PYTHON, "scripts/training/grpo_selfcheck.py"],
-            [PYTHON, "generate_synthetic_tasks_parallel.py", "--self-test"],
+            [PYTHON, "scripts/generate_synthetic_tasks_parallel.py", "--self-test"],
             [PYTHON, "scripts/data/audit_dataset_overlap_antigravity.py",
              "--train", SFT_TRAIN_REBUILT, "--benchmark", SFT_VALID_RAW,
              "--output", "results/sft_source_train_validation_filter_graphv2.json",
@@ -696,7 +696,7 @@ class Runbook:
 
     def reward_preflight(self, seed: int) -> None:
         name, command = self.grpo_command(seed, self.args.reward_preflight_batches)
-        report = ROOT / "artifacts" / f"{name}_grpo" / "reward_preflight.json"
+        report = ROOT / "results/artifacts" / f"{name}_grpo" / "reward_preflight.json"
         skip = False
         if report.is_file():
             try:
@@ -756,7 +756,7 @@ class Runbook:
 
     def grpo(self, seed: int) -> None:
         preflight_name, _ = self.grpo_command(seed, self.args.reward_preflight_batches)
-        report = ROOT / "artifacts" / f"{preflight_name}_grpo" / "reward_preflight.json"
+        report = ROOT / "results/artifacts" / f"{preflight_name}_grpo" / "reward_preflight.json"
         if not report.is_file():
             raise SystemExit(
                 "GRPO not approved: the matching no-update reward preflight report is missing. "

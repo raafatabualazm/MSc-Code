@@ -24,7 +24,7 @@ from models.hierarchical_graph_encoder_antigravity import (
 from scripts.data.cfg_extractor import AssemblyCFGExtractor, ensure_cfg_blocks
 from scripts.data.dfg_extractor import build_cross_block_dfg, instruction_def_use
 from scripts.training.graph_encoder_decoder_decompiler_v2_antigravity import QwenGraphPrefixAdapter
-from generate_synthetic_tasks_parallel import run as run_generator_command
+from scripts.generate_synthetic_tasks_parallel import run as run_generator_command
 
 
 def extract(lines: list[str]):

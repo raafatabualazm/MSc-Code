@@ -153,7 +153,7 @@ def main():
     ap.add_argument("--fit",required=True,type=Path); ap.add_argument("--measure",action="append",type=Path,default=[])
     ap.add_argument("--output-dir",required=True,type=Path); ap.add_argument("--tokenizer-json",required=True,type=Path)
     ap.add_argument("--model-config",type=Path,default=None)
-    ap.add_argument("--dfg-extractor",type=Path,default=ROOT/"scrubbed_master_v2_release/extractors/dfg_extractor.py")
+    ap.add_argument("--dfg-extractor",type=Path,default=ROOT/"data/scrubbed_master_v2_release/extractors/dfg_extractor.py")
     ap.add_argument("--codebook-size",type=int,default=16384); ap.add_argument("--max-blocks",type=int,default=4096)
     ap.add_argument("--max-source-tokens","--max-prompt-tokens",dest="max_source_tokens",type=int,default=9000)
     ap.add_argument("--max-target-tokens",type=int,default=3072)

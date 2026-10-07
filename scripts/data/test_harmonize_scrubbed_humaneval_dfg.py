@@ -23,7 +23,7 @@ def read_jsonl(path: Path):
 
 def test_frozen_extractor_and_actual_harmonized_pair_are_exact():
     h = load_module()
-    extractor = ROOT / "scrubbed_master_v2_release" / "extractors" / "dfg_extractor.py"
+    extractor = ROOT / "data/scrubbed_master_v2_release" / "extractors" / "dfg_extractor.py"
     codec = ROOT / "scripts" / "data" / "build_compact_qwen_v1.py"
     assert h.sha256_file(extractor) == h.EXPECTED_DFG_SHA256
     canonicalize = h.load_symbol(codec, "test_compact_codec", "canonicalize")

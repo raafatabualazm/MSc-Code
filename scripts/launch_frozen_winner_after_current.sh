@@ -39,8 +39,8 @@ MAX_WAIT_HOURS="${MAX_WAIT_HOURS:-12}"
 WAIT_STATUS_GLOB="${WAIT_STATUS_GLOB:-}"
 
 status="results/${RUN_NAME}.status"
-log="logs/frozen_winner/${RUN_NAME}.launcher.log"
-mkdir -p results logs/frozen_winner
+log="results/logs/frozen_winner/${RUN_NAME}.launcher.log"
+mkdir -p results results/logs/frozen_winner
 if [[ -f /workspace/.env ]]; then set -a; source /workspace/.env; set +a; fi
 
 printf 'WAITING started=%s waiting_for=%s\n' \

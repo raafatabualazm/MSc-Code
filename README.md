@@ -16,26 +16,39 @@ The codebase is organized for research use rather than as a packaged library. Mo
 
 ```text
 MSc-Code/
-+-- artifacts/                 # generated models and other local artifacts
-+-- configs/                   # configuration files
-+-- data/
-|   +-- datasets/              # base training/eval datasets
-|   +-- matched/               # matched Dart/Swift corpora
-|   +-- testing/               # testing and benchmark datasets
-|   `-- intermediate/          # generated intermediate data and failed cases
-+-- docs/                      # paper drafts and documentation
-+-- results/
-|   +-- cache/                 # checkpoints and resumable eval caches
-|   +-- pass_at_k/             # executable benchmark summaries
-|   `-- statistics/            # compile/CodeBLEU summaries
-+-- scripts/
++-- scripts/                   # main code (Python package; run from the repo root)
 |   +-- data/                  # data validation, matching, and generation
 |   +-- training/              # SFT, distillation, and GRPO scripts
-|   `-- evaluation/            # compile, CodeBLEU, pass@k, and analysis scripts
-+-- tree-sitter-dart/          # Dart grammar source
-+-- tree-sitter-swift/         # Swift grammar source
+|   +-- evaluation/            # compile, CodeBLEU, pass@k, and analysis scripts
+|   +-- generate_*.py, llm_baseline*.py, openrouter_baseline.py   # task generation and LLM baselines
+|   +-- debug/                 # one-off inspection scripts
+|   +-- launch/                # standalone launch scripts
+|   `-- legacy/                # early training/evaluation/experiment code
++-- models/                    # model code (Python package)
++-- configs/                   # sweep launchers and configuration
++-- data/
+|   +-- datasets/ matched/ testing/ training/ intermediate/
+|   +-- master_dart_cfg_dfg/   # CFG/DFG master corpus
+|   +-- scrubbed_master_v2_release/   # signature-scrubbed release builds
+|   +-- compact_graph_v1_bundle/
+|   +-- splits/                # split manifests
+|   `-- contracts/             # dataset contracts and seals
++-- results/
+|   +-- runs/                  # dated run folders (results-2026...)
+|   +-- analysis/              # analysis studies (analysis_*)
+|   +-- artifacts/  logs/  audits/  exports/  remote_results/
+|   +-- archive/               # provenance and source snapshots
+|   +-- cache/  pass_at_k/  statistics/  sweeps*/  ...
+|   `-- pod_sync_*/  remote_sync_*/  workspace_audits/   # outputs synced from GPU pods
++-- patches/                   # self-contained patch bundles deployed to GPU pods
++-- releases/graph_decompiler_2026_artifact/   # released artifact
++-- third_party/tree-sitter-dart/  third_party/tree-sitter-swift/
++-- docs/                      # notices, figures, provenance (capsule checksums, Zenodo receipts)
++-- local/                     # git-ignored: model weights, capsules, pod snapshots, venv, backups
 `-- requirements.txt
 ```
+
+Scripts that run on GPU pods inside `patches/` keep their original `/workspace/...` paths.
 
 ## Main datasets
 
@@ -111,7 +124,7 @@ Additional runtime assumptions:
 - API-backed scripts require an OpenAI-compatible endpoint or OpenRouter-style access
 - some scripts use `OPENAI_API_KEY` or `HUGGINGFACE_TOKEN`
 - compile and executable evaluation require the Dart toolchain on `PATH`
-- CodeBLEU-related scripts require Tree-sitter language support; the repo includes `tree-sitter-dart/` and `tree-sitter-swift/`, but you may still need to install/build the corresponding Python bindings in your environment
+- CodeBLEU-related scripts require Tree-sitter language support; the repo includes `third_party/tree-sitter-dart/` and `third_party/tree-sitter-swift/`, but you may still need to install/build the corresponding Python bindings in your environment
 
 ## Quick start
 
@@ -167,6 +180,7 @@ These files are useful as baselines and for reproducing previously run experimen
 - local `_local.py` evaluation variants are intended for self-hosted or workstation-specific runs
 - read `docs/CONTAMINATION_NOTICE.md` and `docs/GRAPH_CONSTRUCTION_AUDIT.md` before reusing archived results: they record which local pass@k pools are test-informed and which graph datasets and checkpoints are not valid evidence
 - `results/remote_sync_20260804/`, `results/pod_sync_20260722/` and `results/pod_sync_20260723/` hold run outputs and logs synced from GPU pods (model weights excluded)
+- the repository was regrouped on 2026-10-07; paths inside `results/archive/` snapshots and provenance JSON files still use the old top-level layout
 
 ## Citation
 
