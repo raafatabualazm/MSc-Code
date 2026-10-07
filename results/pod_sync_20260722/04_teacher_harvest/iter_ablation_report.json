@@ -1,0 +1,33 @@
+{
+ "unrepaired_attempted": 235,
+ "new_verified": 49,
+ "round_gain": [
+  {
+   "round": 1,
+   "attempted": 235,
+   "gained": 16,
+   "cumulative": 16
+  },
+  {
+   "round": 2,
+   "attempted": 219,
+   "gained": 25,
+   "cumulative": 41
+  },
+  {
+   "round": 3,
+   "attempted": 194,
+   "gained": 8,
+   "cumulative": 49
+  }
+ ],
+ "new_by_bin": {
+  "200_299": 8,
+  "60_149": 27,
+  "150_199": 10,
+  "ge300": 2,
+  "lt60": 2
+ },
+ "visibility": "diagnostics",
+ "rounds": 3
+}

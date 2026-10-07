@@ -1,0 +1,57 @@
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_api_rescue_continuation_c002.sh: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_t5gemma2_typed_api_visible_split.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_visible_failure_projection.py: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/prior_reports_after_cohort1.tsv: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_initial_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_retry_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/sonnet_residual_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_initial_c001/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_retry_c001/typed_api_rescue_report.json: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py", line 100, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py", line 95, in main
+    run(argv)
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py", line 64, in run
+    args = cascade.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py", line 2041, in parse_args
+    validate_phase_profile(args)
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py", line 1374, in validate_phase_profile
+    raise ValueError(f"{args.phase} fixes --{name}={wanted}")
+ValueError: kimi_initial fixes --max_output_tokens=2048
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_continuation_c002.py", line 597, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_continuation_c002.py", line 581, in main
+    report = run(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_continuation_c002.py", line 458, in run
+    initial = execute_phase(
+              ^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_continuation_c002.py", line 310, in execute_phase
+    invoke(launcher, plan_env)
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py", line 238, in _invoke_default
+    raise RuntimeError(f"phase launcher exited {result.returncode}")
+RuntimeError: phase launcher exited 1

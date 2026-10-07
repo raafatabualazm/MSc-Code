@@ -1,0 +1,3 @@
+  25/60 pass=2 tok=3976459
+  50/60 pass=4 tok=6834862
+FRONTIER_PASSK dataset=dev_fn0_real.jsonl provider=deepseek model=deepseek-v4-pro K=10 tasks=60 pass@10=5/60=0.0833 compile@10=16/60=0.2667 tokens=7482050

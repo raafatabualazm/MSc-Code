@@ -1,0 +1,68 @@
+{
+  "average_positions_per_row": 291.6041666666667,
+  "expected_training_rows": 1580,
+  "inferred_tail_mass": {
+    "max": 0.07903520734739367,
+    "mean": 1.5976808257871355e-05,
+    "median": -2.0624193086682396e-07,
+    "min": -4.993886079973642e-05,
+    "p05": -1.3338465646661746e-05,
+    "p95": -1.8381851596416254e-10
+  },
+  "kd_rejection_reasons": [
+    "only top-k logprobs are present; the complete teacher vocabulary distribution is unavailable",
+    "top-k probabilities were rounded and no explicit aggregate tail mass was stored",
+    "decoded token strings were stored without API token bytes or token IDs",
+    "teacher/student tokenizer identity and vocabulary equality are not sealed",
+    "EOS has no teacher distribution",
+    "artifact covers 48/1580 training rows"
+  ],
+  "missing_provenance_fields": [
+    "collector_sha256",
+    "finish_reason",
+    "includes_eos",
+    "schema",
+    "student_tokenizer_sha256",
+    "student_vocab_size",
+    "teacher_model",
+    "teacher_revision",
+    "teacher_tokenizer_sha256"
+  ],
+  "path": "/workspace/artifacts/compact_fn0_rebuild/verified_repairs_lp.jsonl",
+  "positions": 13997,
+  "preservation": {
+    "action": "retain original artifact",
+    "use": "verified code may be joined by task_id into an RS-SFT dataset",
+    "warning": "do not pass its teacher_logprobs to either KD mode"
+  },
+  "row_coverage": 0.030379746835443037,
+  "rows": 48,
+  "rows_where_tokens_join_to_repair": 48,
+  "schema": "legacy-qwen-logprob-audit-v1",
+  "selected_token_in_top_count": 13997,
+  "sha256": "e9892bfe1d1225de1fc2bddef4c6a9f83052faf1fe4dace05b21735805150718",
+  "student_string_retokenization": {
+    "rows_decoding_exactly_to_repair": 47,
+    "single_token_observed_fraction": 0.9999285561191684,
+    "single_token_observed_positions": 13996,
+    "single_token_top_candidate_fraction": 0.9973994427377295,
+    "single_token_top_candidates": 69803,
+    "warning": "retokenizing decoded strings does not prove the API teacher used the same token IDs"
+  },
+  "top_candidates": 69985,
+  "top_length_counts": {
+    "5": 13997
+  },
+  "top_probability_mass": {
+    "max": 1.0000499388607997,
+    "mean": 0.9999840231917422,
+    "median": 1.0000002062419309,
+    "min": 0.9209647926526063,
+    "p05": 1.0000000001838185,
+    "p95": 1.0000133384656467
+  },
+  "unique_tasks": 48,
+  "usable_for_dense_full_kl": false,
+  "usable_for_sparse_topk_tail_kl": false,
+  "usable_verified_code_for_rs_sft": true
+}

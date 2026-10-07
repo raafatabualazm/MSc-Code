@@ -1,0 +1,10 @@
+
+$ /venv/main/bin/python -m unittest scripts.evaluation.test_protocol_integrity_antigravity
+..../workspace/scripts/evaluation/codebleu.py:69: DeprecationWarning: int argument support is deprecated
+  self.language = Language(tree_sitter_dart.language())
+............
+----------------------------------------------------------------------
+Ran 16 tests in 0.727s
+
+OK
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

@@ -1,0 +1,20 @@
+{
+  "acceptance_tests_in_rollout": false,
+  "contract_sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+  "execution_ineligible_task_ids": [],
+  "feedback_split_schema": "task-bound-expect-half-split-v1",
+  "feedback_split_seed": 42,
+  "feedback_tests_train_visible": true,
+  "heldout_measure_only": false,
+  "output_sha256": "14139ed29281ffcf9a713d4ee09fb8d0f67dff613bb170c09c2a7f5c62a6252c",
+  "parent_executable_dataset_sha256": "04a81d4a36b06d157d3bf365527b4159a18cb41a2ef620cca7975b9befcc1d2b",
+  "parent_executable_rows": 2774,
+  "parent_or_private_artifact_paths_exposed": false,
+  "representation_schema": "binary-multifunction-v1-semantic-adapter-v1",
+  "reward_holdback_in_rollout": false,
+  "rows": 2386,
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "fit",
+  "training_allowed": true,
+  "training_objective_scope": "verpo_train_visible_feedback_only"
+}

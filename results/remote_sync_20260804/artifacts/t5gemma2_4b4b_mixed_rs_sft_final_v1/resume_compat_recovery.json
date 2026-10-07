@@ -1,0 +1,13 @@
+{
+  "after_rows": 225,
+  "after_sha256": "60b9e80815b8563170ab810cc00d9ee06961b50187679d0273c7f6e788397a4d",
+  "backup": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/train_metrics.jsonl.pre-resume-compat-update230",
+  "before_rows": 230,
+  "before_sha256": "69b1c761b2a4fda312c23f6efc9fdee17eab0248a1f3f5bd97dbf22edeb172f1",
+  "checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000225",
+  "checkpoint_update": 225,
+  "compat_wrapper_sha256": "111c60931694af82d44f53297499252a881848b710840a2c9874bb1638c0c93e",
+  "reason": "discard_uncheckpointed_metrics_before_legacy_resume",
+  "schema": "t5gemma2-mixed-rs-sft-metrics-rollback-v1",
+  "trainer_sha256": "55ceebc00d830386d65a8f351a7f10163a843d5e46cbe143ea8d9b18c6350944"
+}

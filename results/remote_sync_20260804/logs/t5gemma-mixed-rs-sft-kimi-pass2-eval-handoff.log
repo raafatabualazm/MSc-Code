@@ -1,0 +1,60 @@
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_kimi_pass2_v1/checkpoint-optstep-000013", "checkpoint_run_contract_sha256": "648f12a21ebd7b4e832b54167421605b62ee31aafbc358468a7ece454313ce9c", "core_inference_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "core_inference_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "generation_code_changed": false, "sampling_code_changed": false, "schema": "t5gemma2-mixed-passk-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py", "wrapper_sha256": "758b0cf37475cacf8789ce9db62d3e6e8f88fe344c6d616c53b0c1d221921972"}
+{"arm": "sft", "max_token_completions": 30, "output": "/workspace/artifacts/t5gemma2_mixed_rs_sft_kimi_pass2_passk_v1/post_kimi_pass2_k10_predictions.json", "output_sha256": "01eda3017cd31ee68ca4f4491c68ce3393dfb3d954f332a5d06ea6c03baac741", "rows": 175, "samples": 1750}
+PASSK_RESULT tasks=175 pass@1=1/175=0.0057 pass@10=7/175=0.0400 compile@10=120/175=0.6857
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 436, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 421, in main
+    report = compare(
+             ^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 302, in compare
+    historical = _validate_arm(
+                 ^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 169, in _validate_arm
+    raise ValueError(f"{label}: task identities/order differ")
+ValueError: two_epoch_sft: task identities/order differ
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_kimi_pass2_v1/checkpoint-optstep-000013", "checkpoint_run_contract_sha256": "648f12a21ebd7b4e832b54167421605b62ee31aafbc358468a7ece454313ce9c", "core_inference_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "core_inference_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "generation_code_changed": false, "sampling_code_changed": false, "schema": "t5gemma2-mixed-passk-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py", "wrapper_sha256": "758b0cf37475cacf8789ce9db62d3e6e8f88fe344c6d616c53b0c1d221921972"}
+{"arm": "sft", "max_token_completions": 30, "output": "/workspace/artifacts/t5gemma2_mixed_rs_sft_kimi_pass2_passk_v1/post_kimi_pass2_k10_predictions.json", "output_sha256": "01eda3017cd31ee68ca4f4491c68ce3393dfb3d954f332a5d06ea6c03baac741", "rows": 175, "samples": 1750}
+DIRECT_COMPACT_SCORE_REUSED output=/workspace/artifacts/t5gemma2_mixed_rs_sft_kimi_pass2_passk_v1/post_kimi_pass2_k10_score.json
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 436, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 421, in main
+    report = compare(
+             ^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 302, in compare
+    historical = _validate_arm(
+                 ^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 169, in _validate_arm
+    raise ValueError(f"{label}: task identities/order differ")
+ValueError: two_epoch_sft: task identities/order differ
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_kimi_pass2_v1/checkpoint-optstep-000013", "checkpoint_run_contract_sha256": "648f12a21ebd7b4e832b54167421605b62ee31aafbc358468a7ece454313ce9c", "core_inference_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "core_inference_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "generation_code_changed": false, "sampling_code_changed": false, "schema": "t5gemma2-mixed-passk-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py", "wrapper_sha256": "758b0cf37475cacf8789ce9db62d3e6e8f88fe344c6d616c53b0c1d221921972"}
+{"arm": "sft", "max_token_completions": 30, "output": "/workspace/artifacts/t5gemma2_mixed_rs_sft_kimi_pass2_passk_v1/post_kimi_pass2_k10_predictions.json", "output_sha256": "01eda3017cd31ee68ca4f4491c68ce3393dfb3d954f332a5d06ea6c03baac741", "rows": 175, "samples": 1750}
+DIRECT_COMPACT_SCORE_REUSED output=/workspace/artifacts/t5gemma2_mixed_rs_sft_kimi_pass2_passk_v1/post_kimi_pass2_k10_score.json
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 436, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 421, in main
+    report = compare(
+             ^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 302, in compare
+    historical = _validate_arm(
+                 ^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_kimi_pass2_compare.py", line 169, in _validate_arm
+    raise ValueError(f"{label}: task identities/order differ")
+ValueError: two_epoch_sft: task identities/order differ

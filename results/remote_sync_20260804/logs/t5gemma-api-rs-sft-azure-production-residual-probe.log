@@ -1,0 +1,539 @@
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1920, in __init__
+    from openai import AzureOpenAI, OpenAI
+ModuleNotFoundError: No module named 'openai'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2972, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2967, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2638, in run
+    transport = _build_transport(args, api_key=api_key, base_url=base_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2234, in _build_transport
+    return OpenAITransport(
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1922, in __init__
+    raise RuntimeError("install the openai Python package") from exc
+RuntimeError: install the openai Python package
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"api_slot": 1, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-3655d6211866"}
+{"api_slot": 2, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-58274e049569"}
+{"api_slot": 3, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-c1a59fd8f6ff"}
+{"api_slot": 4, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_b0c29e95da1b"}
+{"api_slot": 5, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-66b3a41f1db3"}
+{"api_slot": 6, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_ebc0b53b2cf0"}
+{"api_slot": 7, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_8d4e0fe00b08"}
+{"api_slot": 8, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_2714a082e217"}
+{"api_slot": 9, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-571d2a57ed7d"}
+{"api_slot": 10, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_d2214425fc35"}
+{"api_slot": 11, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-bfed0c8999b4"}
+{"api_slot": 12, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_8107272c2ce1"}
+{"api_slot": 13, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_bc6250a45aaa"}
+{"api_slot": 14, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_24572241d287"}
+{"api_slot": 15, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-58ad3ab1c53e"}
+{"api_slot": 16, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_6b7e2532e6de"}
+{"api_slot": 17, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-a5ed1213af84"}
+{"api_slot": 18, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_6db71c675d48"}
+{"api_slot": 19, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-c09d44abf36a"}
+{"api_slot": 20, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_fe5d5e599027"}
+{"accepted": false, "task_id": "fresh-eval-3655d6211866", "verification_task": 1, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-58274e049569", "verification_task": 2, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-c1a59fd8f6ff", "verification_task": 3, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_b0c29e95da1b", "verification_task": 4, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-66b3a41f1db3", "verification_task": 5, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_ebc0b53b2cf0", "verification_task": 6, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_8d4e0fe00b08", "verification_task": 7, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_2714a082e217", "verification_task": 8, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-571d2a57ed7d", "verification_task": 9, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d2214425fc35", "verification_task": 10, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-bfed0c8999b4", "verification_task": 11, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_8107272c2ce1", "verification_task": 12, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_bc6250a45aaa", "verification_task": 13, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_24572241d287", "verification_task": 14, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-58ad3ab1c53e", "verification_task": 15, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_6b7e2532e6de", "verification_task": 16, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-a5ed1213af84", "verification_task": 17, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_6db71c675d48", "verification_task": 18, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-c09d44abf36a", "verification_task": 19, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_fe5d5e599027", "verification_task": 20, "verification_tasks": 20, "visible_passes": 1}
+{"calls": 20, "estimated_usd": "0.668550000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_azure_production_residual_probe_2epoch_v1", "tasks": 20, "verified_targets": 1}

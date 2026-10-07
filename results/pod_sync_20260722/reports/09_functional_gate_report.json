@@ -1,0 +1,2243 @@
+{
+  "schema_version": 3,
+  "status": "failed",
+  "dataset": "/workspace/data/training/sealed_v2_dev_text_eval_fn0_clean.jsonl",
+  "held_out_rows": 281,
+  "checkpoint": "/workspace/artifacts/text_arm_v2_s44/08b_rejection_sampling_sft/pytorch_model.bin",
+  "baseline_checkpoint": null,
+  "baseline_pass_at_k": 0.003559,
+  "baseline_source": "absolute",
+  "k": 10,
+  "deployment_prompt_mode": "full",
+  "deployment_arm_ran": true,
+  "causality_arm_ran": false,
+  "causal_prompt_mode": null,
+  "matched_permutation_provenance": null,
+  "deployment_provenance": {
+    "deployment": {
+      "checkpoint": {
+        "path": "/workspace/artifacts/text_arm_v2_s44/08b_rejection_sampling_sft/pytorch_model.bin",
+        "sha256": "090b5287326ad322958c12f218476248226cf6d055d3994aa1992ec776139130",
+        "size_bytes": 1349588215
+      },
+      "checkpoint_load": {
+        "absent_trainable_examples": [],
+        "absent_trainable_tensor_count": 0,
+        "allow_partial": false,
+        "allowed_absent_trainable_examples": [],
+        "allowed_absent_trainable_tensor_count": 0,
+        "checkpoint_tensor_count": 565,
+        "context": "inference checkpoint",
+        "current_trainable_tensor_count": 565,
+        "failures": [],
+        "load_missing_tensor_count": 617,
+        "load_target": "GraphCodeBERTT5Seq2Seq",
+        "missing_frozen_examples": [
+          "graph_encoder.convs.0.eps",
+          "graph_encoder.convs.1.eps",
+          "graph_encoder.convs.2.eps",
+          "graph_encoder.convs.3.eps",
+          "local_encoder.encoder.embeddings.LayerNorm.bias",
+          "local_encoder.encoder.embeddings.LayerNorm.weight",
+          "local_encoder.encoder.embeddings.position_embeddings.weight",
+          "local_encoder.encoder.embeddings.token_type_embeddings.weight",
+          "local_encoder.encoder.embeddings.word_embeddings.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.output.LayerNorm.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.output.LayerNorm.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.output.dense.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.output.dense.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.self.key.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.self.key.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.self.query.bias"
+        ],
+        "missing_frozen_tensor_count": 617,
+        "model_state_tensor_count": 1182,
+        "recognised_checkpoint_tensor_count": 565,
+        "status": "passed",
+        "unapproved_absent_trainable_examples": [],
+        "unapproved_absent_trainable_tensor_count": 0,
+        "unexpected_examples": [],
+        "unexpected_tensor_count": 0
+      },
+      "dataset": {
+        "path": "/workspace/data/training/sealed_v2_dev_text_eval_fn0_clean.jsonl",
+        "sha256": "69dda209587a18bc59eb2b41e69335bc817c5aaf64790430516911cb79b3df5d",
+        "size_bytes": 11294838
+      },
+      "generation": {
+        "decoder_gradient_checkpointing": false,
+        "decoder_prompt_max_length": 12288,
+        "generation_batch_size": 8,
+        "max_new_tokens": 3328,
+        "num_samples": 10,
+        "use_cache": true
+      },
+      "git": {
+        "commit": null,
+        "dirty": null
+      },
+      "graph_environment": {
+        "GRAPH_ADD_REVERSE_EDGES": "1",
+        "GRAPH_BLOCK_POOLING": "multi_query",
+        "GRAPH_BLOCK_POSITION_MODE": "sinusoidal",
+        "GRAPH_BLOCK_VECTORS_PER_BLOCK": "4",
+        "GRAPH_DECODER_MODEL": "Qwen/Qwen3-8B",
+        "GRAPH_DECODER_PEFT": "lora",
+        "GRAPH_DECODER_PROMPT_MAX_LENGTH": "12288",
+        "GRAPH_DECODER_REVISION": "",
+        "GRAPH_DFG_MODE": "edges",
+        "GRAPH_ENCODER_MODEL": "microsoft/graphcodebert-base",
+        "GRAPH_ENCODER_PEFT": "none",
+        "GRAPH_ENCODER_REVISION": "",
+        "GRAPH_GRADIENT_CHECKPOINTING": "1",
+        "GRAPH_HYBRID_PATCH_SHA256": "1bf9ce2e9a047c002d3947b55deb09498c57bcec88cdff76071441b75bc8e229",
+        "GRAPH_LOAD_4BIT": "0",
+        "GRAPH_LORA_ALPHA": "128",
+        "GRAPH_LORA_R": "64",
+        "GRAPH_MAX_TARGET_LENGTH": "3328",
+        "GRAPH_NEUTRAL_FUNCTION_NAME": "fn0",
+        "GRAPH_POSITION_SCHEME": "roberta",
+        "GRAPH_PROMPT_ASSEMBLY_MODE": "full",
+        "GRAPH_PROMPT_BINARY_EVIDENCE": "1",
+        "GRAPH_PROMPT_CLEAN_ASM": "1",
+        "GRAPH_PROMPT_FIT_ASSEMBLY": "1",
+        "GRAPH_QUIET": "1",
+        "GRAPH_QWEN_LORA_TARGETS": "attention_mlp",
+        "GRAPH_QWEN_PREFIX_DYNAMIC": "1",
+        "GRAPH_QWEN_PREFIX_MIN_TOKENS": "16",
+        "GRAPH_QWEN_PREFIX_RMS_MATCH": "1",
+        "GRAPH_QWEN_PREFIX_TOKENS": "64",
+        "GRAPH_QWEN_PREFIX_TOKENS_PER_LOG2": "8",
+        "GRAPH_REGION_COMPRESSION": "linear_residual",
+        "GRAPH_REGION_MAX_BLOCKS": "8",
+        "GRAPH_REQUIRE_NEUTRAL_CONTRACT": "1",
+        "GRAPH_SEED": "44"
+      },
+      "graph_input_ablation": {
+        "final_context_zeroed": false,
+        "mapping_sha256": "0acf5f41a46f69db5d496cda57f03e3f90eed33ddcd0f33005ec508b7b3b3da7",
+        "mode": "none",
+        "seed": 44,
+        "self_mapped_rows": 281
+      },
+      "graph_prefix_gate": {
+        "mean_sigmoid": 0.20002831518650055,
+        "override_requested": null
+      },
+      "models": {
+        "decoder": {
+          "requested_id": "Qwen/Qwen3-8B",
+          "requested_revision": null,
+          "resolved_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+          "resolved_name_or_path": "Qwen/Qwen3-8B"
+        },
+        "encoder": {
+          "requested_id": "microsoft/graphcodebert-base",
+          "requested_revision": null,
+          "resolved_commit": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+          "resolved_name_or_path": "microsoft/graphcodebert-base"
+        }
+      },
+      "output": {
+        "path": "/workspace/artifacts/text_arm_v2_s44/09_rs_sft_functional_kill_switch/deployment_current.json",
+        "sha256": "5ec52c26ada6c20cb7904fa176a4364fa5051776b287b50918bfee16310c8389",
+        "size_bytes": 2807561
+      },
+      "prompt_schema_version": "antigravity-v6-all-length-hierarchical",
+      "prompt_stream_sha256": "c0759082176de8905de9caf229c753862dab8aca927befe721f42258efbfa0e0",
+      "row_count": 281,
+      "runtime": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "executable": "/venv/main/bin/python",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "torch": "2.8.0+cu128"
+      },
+      "schema_version": 1,
+      "scoring_tests_visible_to_policy": false,
+      "seed": 44,
+      "source_files": [
+        {
+          "path": "/workspace/scripts/evaluation/graph_inference_antigravity.py",
+          "sha256": "8661571da20bddd8c95e877ca8822bd91f25366b1738f5a101d9378d5c5c10e6",
+          "size_bytes": 38589
+        },
+        {
+          "path": "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+          "sha256": "cd6325012dcdb76e22cc027040a23c1f94afa6e5490c27aafcbbef062d56a3b4",
+          "size_bytes": 98959
+        },
+        {
+          "path": "/workspace/models/hierarchical_graph_encoder_antigravity.py",
+          "sha256": "0d9ed811fd3e2793d8d21a003ced9cff67cecfe65cf03a33bb611ec44af6f7db",
+          "size_bytes": 24304
+        },
+        {
+          "path": "/workspace/models/graphcodebert_tensor_builder.py",
+          "sha256": "a324bba2c3a642176404fba513c386e6952b4c6f04d26e9be01732ed36900ed5",
+          "size_bytes": 9576
+        },
+        {
+          "path": "/workspace/models/pyg_cfg_dataset.py",
+          "sha256": "5cf35b3c2d446e3e4444a833d6d0a39c6ddd366f2375a8b866706b4cd322edb3",
+          "size_bytes": 8528
+        },
+        {
+          "path": "/workspace/scripts/data/cfg_extractor.py",
+          "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+          "size_bytes": 40627
+        },
+        {
+          "path": "/workspace/scripts/data/dfg_extractor.py",
+          "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+          "size_bytes": 23048
+        }
+      ]
+    }
+  },
+  "paired_causality": null,
+  "causal_prompt_stream_sha256": null,
+  "metrics": {
+    "deployment": {
+      "rows": 281,
+      "candidates": 2810,
+      "expected_candidates_per_task": 10,
+      "coverage_validated": true,
+      "pass_at_k": {
+        "10": 0.0035587188612099642
+      },
+      "compile_at_k": {
+        "10": 0.9857651245551602
+      },
+      "facts_at_k": {
+        "10": 0.0
+      },
+      "per_task": [
+        {
+          "task_key": "sigless_fda7afb45ae6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e9eb6e557575",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_84637280f224",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_99f8118ac550",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5043cbca8e30",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c5879974d295",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7f399efa2389",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd5da24b466c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a71896d7f8e1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0ef3e137e365",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_ff8780d0432b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1451b43b5687",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e3b27b13f8ae",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6628371048eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7ad00c6e25b8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_540b304561eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0cbebecf7ac8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bb8311dd9e91",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_447c406429af",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0b453c085c65",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_aef84f0db8b2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b44f5ee43b05",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c49bde778b8f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_924bf0459d7f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_20825bbef465",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_cb59ce61f351",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_77f1427cde4d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_2f2e13406ec9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6b38756cbee9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8013cbe9fe7c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4ffc0d48b2fc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_21c50a05c1a4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3d92870d72ab",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_2b31a5afb2e9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5c825eae1054",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_295c3b28ab2c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8273030bc1e6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_2584bb820e6c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8183c505826b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4e0a56fb56e6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5e31e535fb10",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_365bd727170b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3052030bdd5e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_72c3a51899c7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d5c0ef06d7a0",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0a90c0418a4f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4a246c3285ac",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0c3d4094de77",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_199d307b7dbc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a5960753609a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f81c8acba2c3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_542403ea9aa3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_46fa6dbba93e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_073ef50050bd",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e0aaccb23f50",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f28c5c89cf86",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_26ecf2c4bd65",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3aa721f415c9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5b736efe012c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d755c95628b6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f5be1db1b2d3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_adbd069b25c0",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9d6c88657376",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_69f557be81a9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1481265a5721",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_82dd372e455e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_84ed7e48c1f7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_034d12711495",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bae0bbfd88eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_928b0ceba67d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e4ad87e2dc28",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3d39925f8eed",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d9b785124cea",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b0c0c83bfc3a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b9647184c783",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_05a50bce6c73",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_ca60dc9c2830",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_15de438ccf60",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e4238d659135",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3bd0072c4aef",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a99888b4928f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1b37298418df",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e1ff015639f8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4d95c478d570",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_18bdcaaabdda",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e67ff395edc1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_ee1129b4ae1a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_03598b765ca9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_02daf7a48b82",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5dcafa4a6026",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0b89cca13ea4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_27aae58a6ebd",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bf15319647bb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6f078e25625f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e44569e2bb33",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6fcf524a06e1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8a2c8a922a68",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_90f2f37d1d65",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_2582ec95189e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0abb67cfe7c6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_03bfa4b5c6bb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c62f1111423e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_091d86acd191",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f09040589b70",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_407aec9f695f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_10696653625e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3a418d57d78d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_546300f37df8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5ae15bd5c009",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bc2189b66c38",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_325295da91cf",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b35c138e42d8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6540e4a7aede",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7403cc0ffd52",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b78bd0013bcf",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9d2c3e832681",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_05ec5238cb97",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e734b1af48b3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_95a8117f8451",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bf330d99adb4",
+          "n": 10,
+          "pass@10": 1.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f049cbdfccb8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_09eaaf842766",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b21fb045b669",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9f4beb9e13c3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd2a13dba135",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6ea748306ca1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_244cd4a5c9ab",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_90a480bcf62a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e89690e10b9e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3a9f318e1513",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_2fecde6c9029",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_32d2c7ca9362",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b0c2906381c3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bb0dad11ee03",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3334acd40805",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a87e2136d0c6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4925f435ada2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f2b73e56a10d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1d1f38ae7b67",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1977e1d5d104",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_eca5b09b13b2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_02d51070f00e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d1d6a999b0a8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c59468d324c7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_af11f474c9ef",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d8ceeee8205e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e56f6af88490",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0d92ca469196",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1984f52c75fc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c0ee71b99722",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7613c1af10b7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6ba8dc9d0d72",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_461831e0d7db",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_03086868b370",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0a12e5411b43",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_838a165125d4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_cb1e1ab1b986",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b713ac8fa47c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd9eb464405c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a4d00017dbef",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c794ce262280",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d3b2c8c75c41",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9091d33eacf5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_015efde6bbcf",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e4dd77a47000",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d63d99e42b1e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_47874c2208f5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fa59a7d9c9c9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7a80499c7147",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_840e554be8f4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_65ef63aac0d3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9a6cfc51cfb1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0fa66da98a61",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1693a3e3a2e8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-793c5c66b141",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-c062a9ac77ec",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9f982eb6797c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-19c5f7771a5c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9a6b0e049f87",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-15d2e882070c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d64d09d4d093",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-79f887887610",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d72477753887",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-03379e33d73f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8b070144b6c1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-273e281154a6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d9721c1586bd",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-bfad35def236",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4195df2fd4ce",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f1e83d15ffe6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-95c4400168be",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-306c0f3f5951",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-5c2aeb57757b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-21a109cf0b7d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-66c9605979df",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a78f2435ff61",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-812a195c9eb5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-156826da2b45",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f3a0be67bc1d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4beca065fb3c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-92740fc8a794",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-e4b0488ed62d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-42b3507575f3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b9530aba7d83",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-5f20e3043a5c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-3479059364f6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9cae187763e9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8ce163a7d04b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b77541aa0761",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b57dba457d8a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ca2797cc7610",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-55be71429149",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f81d875e5ac5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4999e23d719a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-259e0d234fff",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-2bcd4b4949e3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-de8ca674e48e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-6aaa86211439",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4b96a56997c5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-bf235ac2dadb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ac4f35094289",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0bb2e340ef58",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f2cf42971dbc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-423c79aff3ce",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-20eca31dff55",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-543622f3bc87",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-5627eb8e2064",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-15f749c4762c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-1e45e95ac584",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9b86c2bb59ad",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-cd988749c2ed",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8b39afe117f6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-31c93ddf2251",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-1ea748a800d7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-c424b5f0e5c3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0f1a0e934a8b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-6fb8dd217684",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-abff6496294b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8d3826b6b462",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-e62f3194db5e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-90948503bce4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ed5253bad8a4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a4f5e450226c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ee72aa55a6e9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9e430e79f70c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-71322326c7c5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-551c718857ca",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-7387d6e51c4a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a63eec4a6874",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d34b5bcf6ed0",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-c6b998404891",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d1679680dc44",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0211cf8f249a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-313bb319f678",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0f0e5a5de99b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-aeb4509b96d0",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a7ebb2b5d7f4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0fa5082cb193",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-26f82fd4a911",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-71746fb579b8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-3bc9e02ef51c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-2cdc0ecf8483",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-57e6ed134157",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4bdbcea5f132",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b64c38a3bf58",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-91f07bf13794",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-de52958d917f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b9042c508b47",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a413bf4d0fe9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-291fdcd67dcb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-54ac5ac3c5f1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9332e5f6aabc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0f3fe16d14c8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-db1c9d37ebf8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0a1e12cbb772",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-d7d730cccdda",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f8b6437645af",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ec8dd4eb7f60",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-c303d84dc5fa",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-68107f6df34b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-1d3f27fcc27a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        }
+      ],
+      "prediction_file": "/workspace/artifacts/text_arm_v2_s44/09_rs_sft_functional_kill_switch/deployment_current.json"
+    }
+  },
+  "statistical_tests": {
+    "deployment_current_vs_fixed_aggregate": {
+      "metric": "pass@10",
+      "comparison_type": "fixed_aggregate_baseline",
+      "baseline": 0.003559,
+      "baseline_uncertainty_ignored": true,
+      "bootstrap": {
+        "unit": "task",
+        "rows": 281,
+        "iterations": 10000,
+        "confidence": 0.95,
+        "seed": 47,
+        "point_estimate_pp": -2.8113879003560904e-05,
+        "one_sided_lower_pp": -0.3559,
+        "two_sided_ci_pp": [
+          -0.3559,
+          0.7117156583629893
+        ],
+        "bootstrap_probability_positive": 0.2712
+      }
+    }
+  },
+  "statistical_configuration": {
+    "task_is_resampling_unit": true,
+    "bootstrap_iterations": 10000,
+    "bootstrap_seed": 44,
+    "confidence": 0.95,
+    "one_sided_sign_test_alpha": 0.05,
+    "minimum_causal_effective_pairs": 8,
+    "minimum_deployment_effective_pairs": 8,
+    "facts_statistics_required": false,
+    "note": "The task bootstrap addresses finite held-out-task uncertainty. Multiple generation seeds are still recommended for final estimates."
+  },
+  "gates_percentage_points": {
+    "causal_permutation_drop": null,
+    "causal_null_drop": null,
+    "facts_permutation_drop": null,
+    "deployment_improvement": -2.8113879003560904e-05
+  },
+  "thresholds_percentage_points": {
+    "causal_permutation_observed_drop": 0.0,
+    "causal_permutation_bootstrap_lower": 0.0,
+    "causal_null_observed_drop": 0.0,
+    "causal_null_bootstrap_lower": 0.0,
+    "facts_permutation_observed_drop": 0.0,
+    "facts_permutation_bootstrap_lower": 0.0,
+    "deprecated_causal_task_losses": 0,
+    "deployment_observed_improvement": 0.0,
+    "deployment_bootstrap_lower": 0.0
+  },
+  "failures": [
+    "deployment improvement -0.000 pp < 0.000 pp practical-effect floor",
+    "deployment-vs-fixed-baseline bootstrap lower bound -0.356 pp <= 0.000 pp; baseline uncertainty is unavailable"
+  ]
+}

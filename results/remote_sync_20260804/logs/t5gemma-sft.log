@@ -1,0 +1,271 @@
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [02:35<07:45, 155.01s/it]Fetching 4 files:  50%|█████     | 2/4 [02:36<02:08, 64.44s/it] Fetching 4 files:  75%|███████▌  | 3/4 [02:36<00:35, 35.19s/it]Fetching 4 files: 100%|██████████| 4/4 [02:36<00:00, 39.11s/it]
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  44%|████▍     | 590/1327 [00:00<00:00, 5885.94it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 8524.66it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"epoch": 0, "grad_norm": 7.569174289703369, "learning_rate": 3.3333333333333335e-05, "loss": 0.6733705159276724, "microbatches": 16, "next_row": 16, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3300, "target_tokens": 1443, "update": 1}
+{"epoch": 0, "grad_norm": 8.087057113647461, "learning_rate": 6.666666666666667e-05, "loss": 0.6849929131567478, "microbatches": 16, "next_row": 32, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4292, "target_tokens": 626, "update": 2}
+{"epoch": 0, "grad_norm": 6.037459373474121, "learning_rate": 0.0001, "loss": 0.46712116710841656, "microbatches": 16, "next_row": 48, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1419, "target_tokens": 215, "update": 3}
+{"epoch": 0, "grad_norm": 9.226216316223145, "learning_rate": 0.00013333333333333334, "loss": 0.6095516718924046, "microbatches": 16, "next_row": 64, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 968, "target_tokens": 111, "update": 4}
+{"epoch": 0, "grad_norm": 4.952672004699707, "learning_rate": 0.0001666666666666667, "loss": 0.4595420965924859, "microbatches": 16, "next_row": 80, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1385, "target_tokens": 189, "update": 5}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1450, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1444, in main
+    result = train(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1349, in train
+    prune_checkpoints(
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 851, in prune_checkpoints
+    first_pass = _validated_retention_candidates(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 826, in _validated_retention_candidates
+    saved_contract, state = _load_resume_artifacts(
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 744, in _load_resume_artifacts
+    raise ValueError(
+ValueError: resume adapter target modules differ from the exact text-only set
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+T5GEMMA_SFT_RESUME checkpoint=/workspace/artifacts/t5gemma2_4b4b_enriched_sft_v1/checkpoint-optstep-000005
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  94%|█████████▍| 1249/1327 [00:00<00:00, 12472.17it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 12420.45it/s]
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1450, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1444, in main
+    result = train(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1119, in train
+    model, resume, exact_lora_targets = _load_or_create_policy(args, token=token)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 916, in _load_or_create_policy
+    saved_contract, state = _load_resume_artifacts(
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 744, in _load_resume_artifacts
+    raise ValueError(
+ValueError: resume adapter target modules differ from the exact text-only set
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+T5GEMMA_SFT_RESUME checkpoint=/workspace/artifacts/t5gemma2_4b4b_enriched_sft_v1/checkpoint-optstep-000005
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 636/1327 [00:00<00:00, 6349.86it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 7630.62it/s]
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1450, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1444, in main
+    result = train(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1119, in train
+    model, resume, exact_lora_targets = _load_or_create_policy(args, token=token)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 916, in _load_or_create_policy
+    saved_contract, state = _load_resume_artifacts(
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 744, in _load_resume_artifacts
+    raise ValueError(
+ValueError: resume adapter target modules differ from the exact text-only set
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+T5GEMMA_SFT_RESUME checkpoint=/workspace/artifacts/t5gemma2_4b4b_enriched_sft_v1/checkpoint-optstep-000005
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  63%|██████▎   | 830/1327 [00:00<00:00, 8298.52it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 9552.32it/s]
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1450, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1444, in main
+    result = train(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 1119, in train
+    model, resume, exact_lora_targets = _load_or_create_policy(args, token=token)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 916, in _load_or_create_policy
+    saved_contract, state = _load_resume_artifacts(
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_enriched_sft.py", line 744, in _load_resume_artifacts
+    raise ValueError(
+ValueError: resume adapter target modules differ from the exact text-only set
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+T5GEMMA_SFT_RESUME checkpoint=/workspace/artifacts/t5gemma2_4b4b_enriched_sft_v1/checkpoint-optstep-000005
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  72%|███████▏  | 949/1327 [00:00<00:00, 9455.81it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 9539.19it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"epoch": 0, "grad_norm": 6.934206485748291, "learning_rate": 0.0002, "loss": 0.4677936062216759, "microbatches": 16, "next_row": 96, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1468, "target_tokens": 255, "update": 6}
+{"epoch": 0, "grad_norm": 4.113379001617432, "learning_rate": 0.00019998426448214718, "loss": 0.46951999701559544, "microbatches": 16, "next_row": 112, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1256, "target_tokens": 91, "update": 7}
+{"epoch": 0, "grad_norm": 3.394771099090576, "learning_rate": 0.00019993706343095588, "loss": 0.47375682927668095, "microbatches": 16, "next_row": 128, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 678, "target_tokens": 120, "update": 8}
+{"epoch": 0, "grad_norm": 3.2514326572418213, "learning_rate": 0.0001998584133516035, "loss": 0.46506696939468384, "microbatches": 16, "next_row": 144, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2802, "target_tokens": 348, "update": 9}
+{"epoch": 0, "grad_norm": 2.2729427814483643, "learning_rate": 0.00019974834174630622, "loss": 0.44460131227970123, "microbatches": 16, "next_row": 160, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1423, "target_tokens": 260, "update": 10}
+{"epoch": 0, "grad_norm": 3.056016445159912, "learning_rate": 0.00019960688710470205, "loss": 0.4467900013551116, "microbatches": 16, "next_row": 176, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 831, "target_tokens": 154, "update": 11}
+{"epoch": 0, "grad_norm": 1.9203364849090576, "learning_rate": 0.00019943409889039188, "loss": 0.4433682505041361, "microbatches": 16, "next_row": 192, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1824, "target_tokens": 183, "update": 12}
+{"epoch": 0, "grad_norm": 1.7229948043823242, "learning_rate": 0.00019923003752364297, "loss": 0.47810378670692444, "microbatches": 16, "next_row": 208, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 850, "target_tokens": 145, "update": 13}
+{"epoch": 0, "grad_norm": 1.6518994569778442, "learning_rate": 0.00019899477436026157, "loss": 0.4365137843415141, "microbatches": 16, "next_row": 224, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1596, "target_tokens": 321, "update": 14}
+{"epoch": 0, "grad_norm": 1.5106782913208008, "learning_rate": 0.00019872839166664124, "loss": 0.37981757801026106, "microbatches": 16, "next_row": 240, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1019, "target_tokens": 140, "update": 15}
+{"epoch": 0, "grad_norm": 1.4117701053619385, "learning_rate": 0.00019843098259099596, "loss": 0.48959047719836235, "microbatches": 16, "next_row": 256, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 587, "target_tokens": 112, "update": 16}
+{"epoch": 0, "grad_norm": 1.4900339841842651, "learning_rate": 0.00019810265113078836, "loss": 0.48227446898818016, "microbatches": 16, "next_row": 272, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1406, "target_tokens": 235, "update": 17}
+{"epoch": 0, "grad_norm": 1.7417820692062378, "learning_rate": 0.00019774351209636413, "loss": 0.4496859796345234, "microbatches": 16, "next_row": 288, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 970, "target_tokens": 185, "update": 18}
+{"epoch": 0, "grad_norm": 1.224155068397522, "learning_rate": 0.0001973536910708052, "loss": 0.34844549000263214, "microbatches": 16, "next_row": 304, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1266, "target_tokens": 125, "update": 19}
+{"epoch": 0, "grad_norm": 1.5150160789489746, "learning_rate": 0.00019693332436601614, "loss": 0.47221232298761606, "microbatches": 16, "next_row": 320, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3970, "target_tokens": 873, "update": 20}
+{"epoch": 0, "grad_norm": 1.5454882383346558, "learning_rate": 0.000196482558975059, "loss": 0.4479079907760024, "microbatches": 16, "next_row": 336, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2398, "target_tokens": 292, "update": 21}
+{"epoch": 0, "grad_norm": 1.7512929439544678, "learning_rate": 0.00019600155252075268, "loss": 0.4126739352941513, "microbatches": 16, "next_row": 352, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 801, "target_tokens": 130, "update": 22}
+{"epoch": 0, "grad_norm": 1.3501139879226685, "learning_rate": 0.00019549047320055615, "loss": 0.39267457090318203, "microbatches": 16, "next_row": 368, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2386, "target_tokens": 328, "update": 23}
+{"epoch": 0, "grad_norm": 1.2003858089447021, "learning_rate": 0.00019494949972775308, "loss": 0.35296970698982477, "microbatches": 16, "next_row": 384, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 7000, "target_tokens": 741, "update": 24}
+{"epoch": 0, "grad_norm": 1.3469411134719849, "learning_rate": 0.00019437882126895994, "loss": 0.4351707901805639, "microbatches": 16, "next_row": 400, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1800, "target_tokens": 178, "update": 25}
+{"epoch": 0, "grad_norm": 1.4754323959350586, "learning_rate": 0.00019377863737797839, "loss": 0.4467948889359832, "microbatches": 16, "next_row": 416, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1667, "target_tokens": 213, "update": 26}
+{"epoch": 0, "grad_norm": 1.1108592748641968, "learning_rate": 0.00019314915792601581, "loss": 0.38159216940402985, "microbatches": 16, "next_row": 432, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4907, "target_tokens": 629, "update": 27}
+{"epoch": 0, "grad_norm": 1.3415876626968384, "learning_rate": 0.00019249060302829786, "loss": 0.4700602823868394, "microbatches": 16, "next_row": 448, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1147, "target_tokens": 204, "update": 28}
+{"epoch": 0, "grad_norm": 1.3714964389801025, "learning_rate": 0.00019180320296709899, "loss": 0.3873850731179118, "microbatches": 16, "next_row": 464, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1713, "target_tokens": 280, "update": 29}
+{"epoch": 0, "grad_norm": 1.33438241481781, "learning_rate": 0.00019108719811121772, "loss": 0.43060722202062607, "microbatches": 16, "next_row": 480, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1360, "target_tokens": 162, "update": 30}
+{"epoch": 0, "grad_norm": 1.2028297185897827, "learning_rate": 0.00019034283883192506, "loss": 0.4039456667378545, "microbatches": 16, "next_row": 496, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1092, "target_tokens": 255, "update": 31}
+{"epoch": 0, "grad_norm": 1.2245279550552368, "learning_rate": 0.0001895703854154149, "loss": 0.3972311485558748, "microbatches": 16, "next_row": 512, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1040, "target_tokens": 228, "update": 32}
+{"epoch": 0, "grad_norm": 1.3303122520446777, "learning_rate": 0.00018877010797178784, "loss": 0.39057144708931446, "microbatches": 16, "next_row": 528, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1206, "target_tokens": 177, "update": 33}
+{"epoch": 0, "grad_norm": 1.049214243888855, "learning_rate": 0.0001879422863405995, "loss": 0.3808218687772751, "microbatches": 16, "next_row": 544, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1723, "target_tokens": 421, "update": 34}
+{"epoch": 0, "grad_norm": 1.162765622138977, "learning_rate": 0.00018708720999300663, "loss": 0.36605353467166424, "microbatches": 16, "next_row": 560, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 473, "target_tokens": 167, "update": 35}
+{"epoch": 0, "grad_norm": 1.3108453750610352, "learning_rate": 0.00018620517793054557, "loss": 0.37542559392750263, "microbatches": 16, "next_row": 576, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2597, "target_tokens": 277, "update": 36}
+{"epoch": 0, "grad_norm": 1.1699726581573486, "learning_rate": 0.00018529649858057778, "loss": 0.3968840967863798, "microbatches": 16, "next_row": 592, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1149, "target_tokens": 117, "update": 37}
+{"epoch": 0, "grad_norm": 1.1823108196258545, "learning_rate": 0.00018436148968843956, "loss": 0.42188338562846184, "microbatches": 16, "next_row": 608, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 844, "target_tokens": 164, "update": 38}
+{"epoch": 0, "grad_norm": 1.1041508913040161, "learning_rate": 0.0001834004782063334, "loss": 0.3526003956794739, "microbatches": 16, "next_row": 624, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4465, "target_tokens": 673, "update": 39}
+{"epoch": 0, "grad_norm": 1.0296709537506104, "learning_rate": 0.00018241380017900016, "loss": 0.3596287863329053, "microbatches": 16, "next_row": 640, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2690, "target_tokens": 372, "update": 40}
+{"epoch": 0, "grad_norm": 1.4701006412506104, "learning_rate": 0.00018140180062621117, "loss": 0.38617987651377916, "microbatches": 16, "next_row": 656, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1090, "target_tokens": 159, "update": 41}
+{"epoch": 0, "grad_norm": 1.2920153141021729, "learning_rate": 0.00018036483342212268, "loss": 0.4622603068128228, "microbatches": 16, "next_row": 672, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 586, "target_tokens": 221, "update": 42}
+{"epoch": 0, "grad_norm": 1.3751202821731567, "learning_rate": 0.00017930326117153366, "loss": 0.4238936733454466, "microbatches": 16, "next_row": 688, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 879, "target_tokens": 147, "update": 43}
+{"epoch": 0, "grad_norm": 1.6081204414367676, "learning_rate": 0.00017821745508309078, "loss": 0.4154428904876113, "microbatches": 16, "next_row": 704, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2259, "target_tokens": 320, "update": 44}
+{"epoch": 0, "grad_norm": 1.2617369890213013, "learning_rate": 0.0001771077948394849, "loss": 0.3859125366434455, "microbatches": 16, "next_row": 720, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2726, "target_tokens": 478, "update": 45}
+{"epoch": 0, "grad_norm": 5.7953290939331055, "learning_rate": 0.00017597466846468437, "loss": 0.4004206042736769, "microbatches": 16, "next_row": 736, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2708, "target_tokens": 320, "update": 46}
+{"epoch": 0, "grad_norm": 1.2924915552139282, "learning_rate": 0.0001748184721882514, "loss": 0.3720547631382942, "microbatches": 16, "next_row": 752, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1177, "target_tokens": 148, "update": 47}
+{"epoch": 0, "grad_norm": 1.173171877861023, "learning_rate": 0.00017363961030678927, "loss": 0.37000459618866444, "microbatches": 16, "next_row": 768, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1469, "target_tokens": 279, "update": 48}
+{"epoch": 0, "grad_norm": 1.373445749282837, "learning_rate": 0.00017243849504256875, "loss": 0.4490985404700041, "microbatches": 16, "next_row": 784, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3256, "target_tokens": 509, "update": 49}
+{"epoch": 0, "grad_norm": 1.0371177196502686, "learning_rate": 0.00017121554639938272, "loss": 0.341236530803144, "microbatches": 16, "next_row": 800, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1170, "target_tokens": 126, "update": 50}
+{"epoch": 0, "grad_norm": 1.013148307800293, "learning_rate": 0.00016997119201568036, "loss": 0.36574718821793795, "microbatches": 16, "next_row": 816, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1382, "target_tokens": 211, "update": 51}
+{"epoch": 0, "grad_norm": 1.127068281173706, "learning_rate": 0.0001687058670150309, "loss": 0.33126537036150694, "microbatches": 16, "next_row": 832, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1343, "target_tokens": 135, "update": 52}
+{"epoch": 0, "grad_norm": 1.0386285781860352, "learning_rate": 0.00016742001385397078, "loss": 0.3650477807968855, "microbatches": 16, "next_row": 848, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3457, "target_tokens": 576, "update": 53}
+{"epoch": 0, "grad_norm": 1.1344614028930664, "learning_rate": 0.00016611408216728603, "loss": 0.4078288581222296, "microbatches": 16, "next_row": 864, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1368, "target_tokens": 116, "update": 54}
+{"epoch": 0, "grad_norm": 1.0147215127944946, "learning_rate": 0.00016478852861078486, "loss": 0.3785688718780875, "microbatches": 16, "next_row": 880, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1846, "target_tokens": 196, "update": 55}
+{"epoch": 0, "grad_norm": 1.1122918128967285, "learning_rate": 0.00016344381670161515, "loss": 0.37138761300593615, "microbatches": 16, "next_row": 896, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2014, "target_tokens": 366, "update": 56}
+{"epoch": 0, "grad_norm": 1.0591617822647095, "learning_rate": 0.00016208041665618253, "loss": 0.3547810511663556, "microbatches": 16, "next_row": 912, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4534, "target_tokens": 604, "update": 57}
+{"epoch": 0, "grad_norm": 1.0441023111343384, "learning_rate": 0.00016069880522572597, "loss": 0.37720462027937174, "microbatches": 16, "next_row": 928, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1107, "target_tokens": 161, "update": 58}
+{"epoch": 0, "grad_norm": 1.1144046783447266, "learning_rate": 0.00015929946552960844, "loss": 0.3917485838755965, "microbatches": 16, "next_row": 944, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1394, "target_tokens": 103, "update": 59}
+{"epoch": 0, "grad_norm": 1.0396500825881958, "learning_rate": 0.00015788288688638028, "loss": 0.431286015547812, "microbatches": 16, "next_row": 960, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 889, "target_tokens": 114, "update": 60}
+{"epoch": 0, "grad_norm": 1.0153440237045288, "learning_rate": 0.0001564495646426756, "loss": 0.39136516116559505, "microbatches": 16, "next_row": 976, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1141, "target_tokens": 113, "update": 61}
+{"epoch": 0, "grad_norm": 1.0509655475616455, "learning_rate": 0.000155, "loss": 0.40636027976870537, "microbatches": 16, "next_row": 992, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3237, "target_tokens": 421, "update": 62}
+{"epoch": 0, "grad_norm": 0.8566231727600098, "learning_rate": 0.0001535346998394716, "loss": 0.358775501139462, "microbatches": 16, "next_row": 1008, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1588, "target_tokens": 283, "update": 63}
+{"epoch": 0, "grad_norm": 1.0046125650405884, "learning_rate": 0.00015205417654457558, "loss": 0.3614539233967662, "microbatches": 16, "next_row": 1024, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1276, "target_tokens": 179, "update": 64}
+{"epoch": 0, "grad_norm": 1.0994656085968018, "learning_rate": 0.0001505589478219951, "loss": 0.39706538431346416, "microbatches": 16, "next_row": 1040, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3508, "target_tokens": 489, "update": 65}
+{"epoch": 0, "grad_norm": 1.3469972610473633, "learning_rate": 0.00014904953652058022, "loss": 0.38033841736614704, "microbatches": 16, "next_row": 1056, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1652, "target_tokens": 241, "update": 66}
+{"epoch": 0, "grad_norm": 1.4057101011276245, "learning_rate": 0.00014752647044851956, "loss": 0.4093750463798642, "microbatches": 16, "next_row": 1072, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1193, "target_tokens": 153, "update": 67}
+{"epoch": 0, "grad_norm": 1.0324029922485352, "learning_rate": 0.0001459902821887767, "loss": 0.3160324636846781, "microbatches": 16, "next_row": 1088, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1069, "target_tokens": 113, "update": 68}
+{"epoch": 0, "grad_norm": 1.1176551580429077, "learning_rate": 0.00014444150891285807, "loss": 0.3730249609798193, "microbatches": 16, "next_row": 1104, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 907, "target_tokens": 139, "update": 69}
+{"epoch": 0, "grad_norm": 1.0781631469726562, "learning_rate": 0.0001428806921929756, "loss": 0.36198766995221376, "microbatches": 16, "next_row": 1120, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1296, "target_tokens": 196, "update": 70}
+{"epoch": 0, "grad_norm": 0.9797864556312561, "learning_rate": 0.00014130837781267043, "loss": 0.35752653423696756, "microbatches": 16, "next_row": 1136, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1719, "target_tokens": 255, "update": 71}
+{"epoch": 0, "grad_norm": 1.0337917804718018, "learning_rate": 0.00013972511557596505, "loss": 0.37386662466451526, "microbatches": 16, "next_row": 1152, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2092, "target_tokens": 314, "update": 72}
+{"epoch": 0, "grad_norm": 1.1034681797027588, "learning_rate": 0.00013813145911510801, "loss": 0.36502313427627087, "microbatches": 16, "next_row": 1168, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1009, "target_tokens": 226, "update": 73}
+{"epoch": 0, "grad_norm": 1.2232095003128052, "learning_rate": 0.0001365279656969814, "loss": 0.3315405258908868, "microbatches": 16, "next_row": 1184, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2242, "target_tokens": 311, "update": 74}
+{"epoch": 0, "grad_norm": 1.1884934902191162, "learning_rate": 0.00013491519602823644, "loss": 0.3722778791561723, "microbatches": 16, "next_row": 1200, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 716, "target_tokens": 120, "update": 75}
+{"epoch": 0, "grad_norm": 1.180275321006775, "learning_rate": 0.00013329371405922688, "loss": 0.33338066656142473, "microbatches": 16, "next_row": 1216, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2689, "target_tokens": 465, "update": 76}
+{"epoch": 0, "grad_norm": 1.6308879852294922, "learning_rate": 0.0001316640867868076, "loss": 0.3718301672488451, "microbatches": 16, "next_row": 1232, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1509, "target_tokens": 147, "update": 77}
+{"epoch": 0, "grad_norm": 1.2306934595108032, "learning_rate": 0.00013002688405606828, "loss": 0.3165526567026973, "microbatches": 16, "next_row": 1248, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1371, "target_tokens": 185, "update": 78}
+{"epoch": 0, "grad_norm": 1.6624025106430054, "learning_rate": 0.00012838267836107125, "loss": 0.40373450331389904, "microbatches": 16, "next_row": 1264, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 696, "target_tokens": 83, "update": 79}
+{"epoch": 0, "grad_norm": 1.1138285398483276, "learning_rate": 0.00012673204464466232, "loss": 0.37352418806403875, "microbatches": 16, "next_row": 1280, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 714, "target_tokens": 101, "update": 80}
+{"epoch": 0, "grad_norm": 1.0292421579360962, "learning_rate": 0.0001250755600974263, "loss": 0.3506351253017783, "microbatches": 16, "next_row": 1296, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 634, "target_tokens": 124, "update": 81}
+{"epoch": 0, "grad_norm": 0.9031090140342712, "learning_rate": 0.0001234138039558557, "loss": 0.3085577003657818, "microbatches": 16, "next_row": 1312, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1712, "target_tokens": 284, "update": 82}
+{"epoch": 0, "grad_norm": 1.2863795757293701, "learning_rate": 0.00012174735729980466, "loss": 0.36260196194052696, "microbatches": 16, "next_row": 1328, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 756, "target_tokens": 250, "update": 83}
+{"epoch": 0, "grad_norm": 1.0588231086730957, "learning_rate": 0.00012007680284929772, "loss": 0.3558674966916442, "microbatches": 16, "next_row": 1344, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1040, "target_tokens": 156, "update": 84}
+{"epoch": 0, "grad_norm": 0.9609091877937317, "learning_rate": 0.00011840272476076554, "loss": 0.37096032686531544, "microbatches": 16, "next_row": 1360, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 659, "target_tokens": 182, "update": 85}
+{"epoch": 0, "grad_norm": 0.832371175289154, "learning_rate": 0.0001167257084227782, "loss": 0.29531614296138287, "microbatches": 16, "next_row": 1376, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1696, "target_tokens": 204, "update": 86}
+{"epoch": 0, "grad_norm": 1.018832802772522, "learning_rate": 0.00011504634025134726, "loss": 0.3678567297756672, "microbatches": 16, "next_row": 1392, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1957, "target_tokens": 154, "update": 87}
+{"epoch": 0, "grad_norm": 0.8944783806800842, "learning_rate": 0.00011336520748486934, "loss": 0.35044688545167446, "microbatches": 16, "next_row": 1408, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 937, "target_tokens": 118, "update": 88}
+{"epoch": 0, "grad_norm": 0.9296485185623169, "learning_rate": 0.00011168289797878122, "loss": 0.3573531210422516, "microbatches": 16, "next_row": 1424, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1328, "target_tokens": 141, "update": 89}
+{"epoch": 0, "grad_norm": 0.9610255360603333, "learning_rate": 0.00011000000000000002, "loss": 0.3664552392438054, "microbatches": 16, "next_row": 1440, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1938, "target_tokens": 163, "update": 90}
+{"epoch": 0, "grad_norm": 0.8358110785484314, "learning_rate": 0.00010831710202121882, "loss": 0.28899784199893475, "microbatches": 16, "next_row": 1456, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1162, "target_tokens": 228, "update": 91}
+{"epoch": 0, "grad_norm": 1.0154149532318115, "learning_rate": 0.0001066347925151307, "loss": 0.3475662721320987, "microbatches": 16, "next_row": 1472, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 440, "target_tokens": 134, "update": 92}
+{"epoch": 0, "grad_norm": 0.9360647797584534, "learning_rate": 0.00010495365974865275, "loss": 0.3241056234110147, "microbatches": 16, "next_row": 1488, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1672, "target_tokens": 286, "update": 93}
+{"epoch": 0, "grad_norm": 1.134299874305725, "learning_rate": 0.00010327429157722181, "loss": 0.34047147864475846, "microbatches": 16, "next_row": 1504, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2336, "target_tokens": 408, "update": 94}
+{"epoch": 0, "grad_norm": 1.0291229486465454, "learning_rate": 0.00010159727523923446, "loss": 0.3552173497155309, "microbatches": 16, "next_row": 1520, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2790, "target_tokens": 377, "update": 95}
+{"epoch": 0, "grad_norm": 1.212085485458374, "learning_rate": 9.992319715070231e-05, "loss": 0.3611672157421708, "microbatches": 16, "next_row": 1536, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1420, "target_tokens": 131, "update": 96}
+{"epoch": 0, "grad_norm": 0.8721126317977905, "learning_rate": 9.825264270019538e-05, "loss": 0.3364381352439523, "microbatches": 16, "next_row": 1552, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2881, "target_tokens": 399, "update": 97}
+{"epoch": 0, "grad_norm": 0.9166436791419983, "learning_rate": 9.65861960441443e-05, "loss": 0.31894899904727936, "microbatches": 16, "next_row": 1568, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1065, "target_tokens": 175, "update": 98}
+{"epoch": 0, "grad_norm": 0.9363312721252441, "learning_rate": 9.492443990257373e-05, "loss": 0.37567258812487125, "microbatches": 16, "next_row": 1584, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3785, "target_tokens": 547, "update": 99}
+{"epoch": 0, "grad_norm": 0.9513801336288452, "learning_rate": 9.32679553553377e-05, "loss": 0.3116454929113388, "microbatches": 16, "next_row": 1600, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2618, "target_tokens": 483, "update": 100}
+{"epoch": 0, "grad_norm": 1.0061174631118774, "learning_rate": 9.16173216389288e-05, "loss": 0.37024807557463646, "microbatches": 16, "next_row": 1616, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1828, "target_tokens": 147, "update": 101}
+{"epoch": 0, "grad_norm": 0.7947525978088379, "learning_rate": 8.997311594393172e-05, "loss": 0.29368479270488024, "microbatches": 16, "next_row": 1632, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1020, "target_tokens": 168, "update": 102}
+{"epoch": 0, "grad_norm": 1.2829543352127075, "learning_rate": 8.833591321319246e-05, "loss": 0.4233375759795308, "microbatches": 16, "next_row": 1648, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4893, "target_tokens": 537, "update": 103}
+{"epoch": 0, "grad_norm": 0.8402011394500732, "learning_rate": 8.670628594077313e-05, "loss": 0.3345557115972042, "microbatches": 16, "next_row": 1664, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1516, "target_tokens": 187, "update": 104}
+{"epoch": 0, "grad_norm": 0.8263805508613586, "learning_rate": 8.508480397176357e-05, "loss": 0.3264883956871927, "microbatches": 16, "next_row": 1680, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2408, "target_tokens": 358, "update": 105}
+{"epoch": 0, "grad_norm": 1.0016697645187378, "learning_rate": 8.347203430301863e-05, "loss": 0.33241670671850443, "microbatches": 16, "next_row": 1696, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 766, "target_tokens": 101, "update": 106}
+{"epoch": 0, "grad_norm": 0.9224143624305725, "learning_rate": 8.186854088489202e-05, "loss": 0.3674007151275873, "microbatches": 16, "next_row": 1712, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 4465, "target_tokens": 1323, "update": 107}
+{"epoch": 0, "grad_norm": 0.9436101317405701, "learning_rate": 8.0274884424035e-05, "loss": 0.3349999962374568, "microbatches": 16, "next_row": 1728, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1916, "target_tokens": 281, "update": 108}
+{"epoch": 0, "grad_norm": 0.960193395614624, "learning_rate": 7.869162218732955e-05, "loss": 0.31414798786863685, "microbatches": 16, "next_row": 1744, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2455, "target_tokens": 469, "update": 109}
+{"epoch": 0, "grad_norm": 3.3275370597839355, "learning_rate": 7.711930780702445e-05, "loss": 0.33303723204880953, "microbatches": 16, "next_row": 1760, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1439, "target_tokens": 177, "update": 110}
+{"epoch": 0, "grad_norm": 1.0238853693008423, "learning_rate": 7.555849108714192e-05, "loss": 0.3077965183183551, "microbatches": 16, "next_row": 1776, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1316, "target_tokens": 172, "update": 111}
+{"epoch": 0, "grad_norm": 0.9985066056251526, "learning_rate": 7.400971781122335e-05, "loss": 0.33122071996331215, "microbatches": 16, "next_row": 1792, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 994, "target_tokens": 130, "update": 112}
+{"epoch": 0, "grad_norm": 1.0152318477630615, "learning_rate": 7.24735295514805e-05, "loss": 0.3582239840179682, "microbatches": 16, "next_row": 1808, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2003, "target_tokens": 147, "update": 113}
+{"epoch": 0, "grad_norm": 1.1758679151535034, "learning_rate": 7.095046347941978e-05, "loss": 0.38016882725059986, "microbatches": 16, "next_row": 1824, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 899, "target_tokens": 110, "update": 114}
+{"epoch": 0, "grad_norm": 0.9103214144706726, "learning_rate": 6.944105217800492e-05, "loss": 0.28358516027219594, "microbatches": 16, "next_row": 1840, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1032, "target_tokens": 144, "update": 115}
+{"epoch": 0, "grad_norm": 1.0387210845947266, "learning_rate": 6.794582345542441e-05, "loss": 0.2767041912302375, "microbatches": 16, "next_row": 1856, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 991, "target_tokens": 182, "update": 116}
+{"epoch": 0, "grad_norm": 1.0063706636428833, "learning_rate": 6.646530016052843e-05, "loss": 0.3249079626984894, "microbatches": 16, "next_row": 1872, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1280, "target_tokens": 132, "update": 117}
+{"epoch": 0, "grad_norm": 0.9744660258293152, "learning_rate": 6.500000000000002e-05, "loss": 0.33942343108356, "microbatches": 16, "next_row": 1888, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2526, "target_tokens": 417, "update": 118}
+{"epoch": 0, "grad_norm": 0.8221947550773621, "learning_rate": 6.35504353573244e-05, "loss": 0.30162977427244186, "microbatches": 16, "next_row": 1904, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1386, "target_tokens": 217, "update": 119}
+{"epoch": 0, "grad_norm": 0.8882650136947632, "learning_rate": 6.211711311361972e-05, "loss": 0.26632438274100423, "microbatches": 16, "next_row": 1920, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2599, "target_tokens": 369, "update": 120}
+{"epoch": 0, "grad_norm": 2.669393539428711, "learning_rate": 6.070053447039159e-05, "loss": 0.3160966597497463, "microbatches": 16, "next_row": 1936, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2612, "target_tokens": 461, "update": 121}
+{"epoch": 0, "grad_norm": 1.341185212135315, "learning_rate": 5.930119477427403e-05, "loss": 0.35520679876208305, "microbatches": 16, "next_row": 1952, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 878, "target_tokens": 143, "update": 122}
+{"epoch": 0, "grad_norm": 1.0275609493255615, "learning_rate": 5.7919583343817484e-05, "loss": 0.3692253613844514, "microbatches": 16, "next_row": 1968, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 997, "target_tokens": 176, "update": 123}
+{"epoch": 0, "grad_norm": 1.2208455801010132, "learning_rate": 5.655618329838488e-05, "loss": 0.33161073038354516, "microbatches": 16, "next_row": 1984, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 963, "target_tokens": 97, "update": 124}
+{"epoch": 0, "grad_norm": 2.0197603702545166, "learning_rate": 5.521147138921514e-05, "loss": 0.35432740580290556, "microbatches": 16, "next_row": 2000, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 759, "target_tokens": 200, "update": 125}
+{"epoch": 0, "grad_norm": 1.0300501585006714, "learning_rate": 5.3885917832713996e-05, "loss": 0.340506031177938, "microbatches": 16, "next_row": 2016, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1753, "target_tokens": 285, "update": 126}
+{"epoch": 0, "grad_norm": 1.0242650508880615, "learning_rate": 5.2579986146029235e-05, "loss": 0.32025853265076876, "microbatches": 16, "next_row": 2032, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1362, "target_tokens": 162, "update": 127}
+{"epoch": 0, "grad_norm": 0.9721527099609375, "learning_rate": 5.129413298496912e-05, "loss": 0.3436054205521941, "microbatches": 16, "next_row": 2048, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1750, "target_tokens": 364, "update": 128}
+{"epoch": 0, "grad_norm": 0.9592524766921997, "learning_rate": 5.002880798431966e-05, "loss": 0.33702091593295336, "microbatches": 16, "next_row": 2064, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1169, "target_tokens": 420, "update": 129}
+{"epoch": 0, "grad_norm": 0.8819656372070312, "learning_rate": 4.8784453600617244e-05, "loss": 0.31428719824180007, "microbatches": 16, "next_row": 2080, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 708, "target_tokens": 104, "update": 130}
+{"epoch": 0, "grad_norm": 1.241666316986084, "learning_rate": 4.756150495743126e-05, "loss": 0.3624438280239701, "microbatches": 16, "next_row": 2096, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2981, "target_tokens": 540, "update": 131}
+{"epoch": 0, "grad_norm": 1.1042439937591553, "learning_rate": 4.6360389693210735e-05, "loss": 0.3301409399136901, "microbatches": 16, "next_row": 2112, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1428, "target_tokens": 246, "update": 132}
+{"epoch": 0, "grad_norm": 0.9382984042167664, "learning_rate": 4.518152781174863e-05, "loss": 0.30035301577299833, "microbatches": 16, "next_row": 2128, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1510, "target_tokens": 121, "update": 133}
+{"epoch": 0, "grad_norm": 0.9730033278465271, "learning_rate": 4.402533153531565e-05, "loss": 0.32782001700252295, "microbatches": 16, "next_row": 2144, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1824, "target_tokens": 277, "update": 134}
+{"epoch": 0, "grad_norm": 1.0341103076934814, "learning_rate": 4.28922051605151e-05, "loss": 0.3338742246851325, "microbatches": 16, "next_row": 2160, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1358, "target_tokens": 117, "update": 135}
+{"epoch": 0, "grad_norm": 0.7959185242652893, "learning_rate": 4.1782544916909224e-05, "loss": 0.29834515135735273, "microbatches": 16, "next_row": 2176, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 893, "target_tokens": 246, "update": 136}
+{"epoch": 0, "grad_norm": 1.3524158000946045, "learning_rate": 4.0696738828466354e-05, "loss": 0.3131815465167165, "microbatches": 16, "next_row": 2192, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2700, "target_tokens": 277, "update": 137}
+{"epoch": 0, "grad_norm": 0.9409892559051514, "learning_rate": 3.963516657787732e-05, "loss": 0.3318361663259566, "microbatches": 16, "next_row": 2208, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3028, "target_tokens": 561, "update": 138}
+{"epoch": 0, "grad_norm": 0.8476210832595825, "learning_rate": 3.8598199373788846e-05, "loss": 0.2878944331314415, "microbatches": 16, "next_row": 2224, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2467, "target_tokens": 267, "update": 139}
+{"epoch": 0, "grad_norm": 0.9269474148750305, "learning_rate": 3.758619982099985e-05, "loss": 0.3520429488271475, "microbatches": 16, "next_row": 2240, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1697, "target_tokens": 464, "update": 140}
+{"epoch": 0, "grad_norm": 1.4320197105407715, "learning_rate": 3.659952179366659e-05, "loss": 0.2875883663073182, "microbatches": 16, "next_row": 2256, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 985, "target_tokens": 169, "update": 141}
+{"epoch": 0, "grad_norm": 1.0885194540023804, "learning_rate": 3.563851031156048e-05, "loss": 0.3208068860694766, "microbatches": 16, "next_row": 2272, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1069, "target_tokens": 102, "update": 142}
+{"epoch": 0, "grad_norm": 1.5602270364761353, "learning_rate": 3.470350141942222e-05, "loss": 0.3490828275680542, "microbatches": 16, "next_row": 2288, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1865, "target_tokens": 408, "update": 143}
+{"epoch": 0, "grad_norm": 1.023971676826477, "learning_rate": 3.3794822069454436e-05, "loss": 0.32952383160591125, "microbatches": 16, "next_row": 2304, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1643, "target_tokens": 174, "update": 144}
+{"epoch": 0, "grad_norm": 0.9227705597877502, "learning_rate": 3.291279000699338e-05, "loss": 0.3080489980056882, "microbatches": 16, "next_row": 2320, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1363, "target_tokens": 243, "update": 145}
+{"epoch": 0, "grad_norm": 1.0731682777404785, "learning_rate": 3.205771365940052e-05, "loss": 0.32364468462765217, "microbatches": 16, "next_row": 2336, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1925, "target_tokens": 485, "update": 146}
+{"epoch": 0, "grad_norm": 0.8915411829948425, "learning_rate": 3.122989202821217e-05, "loss": 0.31526653841137886, "microbatches": 16, "next_row": 2352, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2288, "target_tokens": 239, "update": 147}
+{"epoch": 0, "grad_norm": 0.7546760439872742, "learning_rate": 3.042961458458513e-05, "loss": 0.28433290775865316, "microbatches": 16, "next_row": 2368, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1202, "target_tokens": 167, "update": 148}
+{"epoch": 0, "grad_norm": 1.1195026636123657, "learning_rate": 2.9657161168074987e-05, "loss": 0.30466487165540457, "microbatches": 16, "next_row": 2384, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1237, "target_tokens": 375, "update": 149}
+{"epoch": 0, "grad_norm": 0.86854088306427, "learning_rate": 2.891280188878229e-05, "loss": 0.3449194831773639, "microbatches": 16, "next_row": 2400, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1923, "target_tokens": 154, "update": 150}
+{"epoch": 0, "grad_norm": 1.0568434000015259, "learning_rate": 2.819679703290102e-05, "loss": 0.39941186364740133, "microbatches": 16, "next_row": 2416, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 5405, "target_tokens": 598, "update": 151}
+{"epoch": 0, "grad_norm": 0.9486916065216064, "learning_rate": 2.7509396971702143e-05, "loss": 0.3307877592742443, "microbatches": 16, "next_row": 2432, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1503, "target_tokens": 145, "update": 152}
+{"epoch": 0, "grad_norm": 1.2607967853546143, "learning_rate": 2.6850842073984196e-05, "loss": 0.3815227234736085, "microbatches": 16, "next_row": 2448, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3393, "target_tokens": 426, "update": 153}
+{"epoch": 0, "grad_norm": 1.0692145824432373, "learning_rate": 2.622136262202163e-05, "loss": 0.30862788390368223, "microbatches": 16, "next_row": 2464, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1098, "target_tokens": 102, "update": 154}
+{"epoch": 0, "grad_norm": 1.0239098072052002, "learning_rate": 2.5621178731040084e-05, "loss": 0.32811068557202816, "microbatches": 16, "next_row": 2480, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1161, "target_tokens": 106, "update": 155}
+{"epoch": 0, "grad_norm": 0.8712685704231262, "learning_rate": 2.505050027224692e-05, "loss": 0.31559533393010497, "microbatches": 16, "next_row": 2496, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1040, "target_tokens": 132, "update": 156}
+{"epoch": 0, "grad_norm": 0.8656744360923767, "learning_rate": 2.4509526799443862e-05, "loss": 0.33624217193573713, "microbatches": 16, "next_row": 2512, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3310, "target_tokens": 973, "update": 157}
+{"epoch": 0, "grad_norm": 1.3977011442184448, "learning_rate": 2.3998447479247334e-05, "loss": 0.2950711161829531, "microbatches": 16, "next_row": 2528, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 881, "target_tokens": 155, "update": 158}
+{"epoch": 0, "grad_norm": 1.1551239490509033, "learning_rate": 2.3517441024941046e-05, "loss": 0.406030738260597, "microbatches": 16, "next_row": 2544, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1571, "target_tokens": 351, "update": 159}
+{"epoch": 0, "grad_norm": 0.8158389329910278, "learning_rate": 2.3066675633983865e-05, "loss": 0.30892131198197603, "microbatches": 16, "next_row": 2560, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 7032, "target_tokens": 893, "update": 160}
+{"epoch": 0, "grad_norm": 0.9250190854072571, "learning_rate": 2.2646308929194813e-05, "loss": 0.28155962796881795, "microbatches": 16, "next_row": 2576, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1279, "target_tokens": 102, "update": 161}
+{"epoch": 0, "grad_norm": 0.7784630656242371, "learning_rate": 2.2256487903635874e-05, "loss": 0.32591095846146345, "microbatches": 16, "next_row": 2592, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1217, "target_tokens": 122, "update": 162}
+{"epoch": 0, "grad_norm": 0.8477300405502319, "learning_rate": 2.1897348869211647e-05, "loss": 0.31114540435373783, "microbatches": 16, "next_row": 2608, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3372, "target_tokens": 391, "update": 163}
+{"epoch": 0, "grad_norm": 1.0583679676055908, "learning_rate": 2.1569017409004058e-05, "loss": 0.29255143040791154, "microbatches": 16, "next_row": 2624, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1032, "target_tokens": 161, "update": 164}
+{"epoch": 0, "grad_norm": 0.9731297492980957, "learning_rate": 2.127160833335877e-05, "loss": 0.3356170207262039, "microbatches": 16, "next_row": 2640, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2339, "target_tokens": 247, "update": 165}
+{"epoch": 0, "grad_norm": 0.8462026119232178, "learning_rate": 2.1005225639738434e-05, "loss": 0.29875215981155634, "microbatches": 16, "next_row": 2656, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1603, "target_tokens": 349, "update": 166}
+{"epoch": 0, "grad_norm": 0.8221673965454102, "learning_rate": 2.0769962476357068e-05, "loss": 0.25736016407608986, "microbatches": 16, "next_row": 2672, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2231, "target_tokens": 249, "update": 167}
+{"epoch": 0, "grad_norm": 0.836764395236969, "learning_rate": 2.056590110960817e-05, "loss": 0.27767649735324085, "microbatches": 16, "next_row": 2688, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1328, "target_tokens": 111, "update": 168}
+{"epoch": 0, "grad_norm": 0.9729613661766052, "learning_rate": 2.0393112895297958e-05, "loss": 0.31523380521684885, "microbatches": 16, "next_row": 2704, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 2079, "target_tokens": 207, "update": 169}
+{"epoch": 0, "grad_norm": 1.6492691040039062, "learning_rate": 2.025165825369379e-05, "loss": 0.32513574650511146, "microbatches": 16, "next_row": 2720, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 3525, "target_tokens": 662, "update": 170}
+{"epoch": 0, "grad_norm": 0.8406108617782593, "learning_rate": 2.0141586648396507e-05, "loss": 0.275474950671196, "microbatches": 16, "next_row": 2736, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 775, "target_tokens": 170, "update": 171}
+{"epoch": 0, "grad_norm": 0.9662780165672302, "learning_rate": 2.0062936569044126e-05, "loss": 0.3466221960261464, "microbatches": 16, "next_row": 2752, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1051, "target_tokens": 94, "update": 172}
+{"epoch": 0, "grad_norm": 1.0356500148773193, "learning_rate": 2.0015735517852825e-05, "loss": 0.3425464229658246, "microbatches": 16, "next_row": 2768, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1171, "target_tokens": 106, "update": 173}
+{"epoch": 0, "grad_norm": 1.185696005821228, "learning_rate": 2e-05, "loss": 0.2773661892861128, "microbatches": 8, "next_row": 2776, "schema": "t5gemma2-enriched-sft-run-v1", "source_tokens": 1376, "target_tokens": 131, "update": 174}
+{
+  "latest_checkpoint": "checkpoint-optstep-000174",
+  "no_frontier_api": true,
+  "planned_updates": 174,
+  "rows": 2776,
+  "schema": "t5gemma2-enriched-sft-run-v1",
+  "status": "complete",
+  "updates": 174
+}

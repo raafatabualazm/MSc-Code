@@ -1,0 +1,19 @@
+tasks=1755 workers=20
+  100/1755 ok=98 with_strings=54
+  200/1755 ok=198 with_strings=96
+  300/1755 ok=297 with_strings=147
+  400/1755 ok=396 with_strings=207
+  500/1755 ok=496 with_strings=255
+  600/1755 ok=596 with_strings=308
+  700/1755 ok=696 with_strings=357
+  800/1755 ok=796 with_strings=406
+  900/1755 ok=896 with_strings=446
+  1000/1755 ok=995 with_strings=500
+  1100/1755 ok=1095 with_strings=539
+  1200/1755 ok=1194 with_strings=593
+  1300/1755 ok=1292 with_strings=636
+  1400/1755 ok=1391 with_strings=676
+  1500/1755 ok=1491 with_strings=719
+  1600/1755 ok=1591 with_strings=759
+  1700/1755 ok=1690 with_strings=802
+DONE 1755 ok=1745 with_strings=829 -> /workspace/artifacts/compact_fn0_rebuild/real_constants_whole.jsonl

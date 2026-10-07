@@ -165,6 +165,8 @@ These files are useful as baselines and for reproducing previously run experimen
 - some training and evaluation scripts hard-code dataset names, model names, or output directories
 - large intermediate files may be present locally but excluded from git
 - local `_local.py` evaluation variants are intended for self-hosted or workstation-specific runs
+- read `docs/CONTAMINATION_NOTICE.md` and `docs/GRAPH_CONSTRUCTION_AUDIT.md` before reusing archived results: they record which local pass@k pools are test-informed and which graph datasets and checkpoints are not valid evidence
+- `results/remote_sync_20260804/`, `results/pod_sync_20260722/` and `results/pod_sync_20260723/` hold run outputs and logs synced from GPU pods (model weights excluded)
 
 ## Citation
 

@@ -1,0 +1,33 @@
+{
+  "automatic_promotion_performed": false,
+  "criteria": {
+    "base_local_noncollinear_groups": {
+      "minimum": 4,
+      "observed": 10,
+      "pass": true
+    },
+    "base_unified_active_groups": {
+      "minimum": 8,
+      "observed": 13,
+      "pass": true
+    },
+    "integrity": {
+      "pass": true
+    },
+    "zero_policy_updates": {
+      "maximum": 8,
+      "observed": 3,
+      "pass": true
+    }
+  },
+  "decision": "GO",
+  "evaluated_before_sampling_update": 49,
+  "gate_sha256": "c3897e847d009861cf51410c14410bba2151b15084e66b1c7c58036996530e88",
+  "gate_update": 48,
+  "private_holdback_read": false,
+  "run_contract_sha256": "b381d2567e52214df4510303071b5948c4c1dabb5cf13202410baab72001b10f",
+  "schema": "t5gemma2-typed-c2-verpo-window-gate-v1",
+  "status": "pass",
+  "window_end_update": 48,
+  "window_start_update": 33
+}

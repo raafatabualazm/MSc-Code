@@ -1,0 +1,41 @@
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v12/api_rescue_report.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"api_slot": 1, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-fa87d491d2b9"}
+{"api_slot": 2, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-ad995329fdfb"}
+{"api_slot": 3, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_a373cc2baf70"}
+{"api_slot": 4, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_5e09beb70d6b"}
+{"api_slot": 5, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_44b5b8de7031"}
+{"api_slot": 6, "api_slots": 17, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 6, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-4a6b302d1245"}
+{"api_slot": 7, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_cbfe7a20b129"}
+{"api_slot": 8, "api_slots": 17, "code_only": false, "status": "response", "task_id": "fresh-eval-141127c3521f"}
+{"api_slot": 9, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_6732ad0e03c2"}
+{"api_slot": 10, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_d801178ee7a1"}
+{"api_slot": 11, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_2b5922da1112"}
+{"api_slot": 12, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-4b95ab6f2740"}
+{"api_slot": 13, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_b97ec4460458"}
+{"api_slot": 14, "api_slots": 17, "code_only": true, "status": "response", "task_id": "sigless_a56cfc171fc7"}
+{"api_slot": 15, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-94ac6f9cb495"}
+{"api_slot": 16, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-8caa0cdff2b4"}
+{"api_slot": 17, "api_slots": 17, "code_only": true, "status": "response", "task_id": "fresh-eval-68e5b6c08f36"}
+{"accepted": false, "task_id": "fresh-eval-fa87d491d2b9", "verification_task": 1, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-ad995329fdfb", "verification_task": 2, "verification_tasks": 17, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a373cc2baf70", "verification_task": 3, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_5e09beb70d6b", "verification_task": 4, "verification_tasks": 17, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_44b5b8de7031", "verification_task": 5, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-4a6b302d1245", "verification_task": 6, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_cbfe7a20b129", "verification_task": 7, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-141127c3521f", "verification_task": 8, "verification_tasks": 17, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6732ad0e03c2", "verification_task": 9, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_d801178ee7a1", "verification_task": 10, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_2b5922da1112", "verification_task": 11, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-4b95ab6f2740", "verification_task": 12, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_b97ec4460458", "verification_task": 13, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_a56cfc171fc7", "verification_task": 14, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-94ac6f9cb495", "verification_task": 15, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-8caa0cdff2b4", "verification_task": 16, "verification_tasks": 17, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-68e5b6c08f36", "verification_task": 17, "verification_tasks": 17, "visible_passes": 1}
+{"calls": 17, "estimated_usd": "0.771309000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_retry17_8k_v1", "private_holdback_passes": 3, "tasks": 17, "verified_targets": 3}

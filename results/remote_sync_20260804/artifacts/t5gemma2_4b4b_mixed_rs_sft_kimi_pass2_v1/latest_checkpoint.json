@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_kimi_pass2_v1/checkpoint-optstep-000013",
+  "run_contract_sha256": "648f12a21ebd7b4e832b54167421605b62ee31aafbc358468a7ece454313ce9c",
+  "schema": "t5gemma2-mixed-rs-sft-checkpoint-v1",
+  "update": 13
+}

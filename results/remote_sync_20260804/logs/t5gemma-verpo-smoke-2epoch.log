@@ -1,0 +1,104 @@
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  53%|█████▎    | 698/1327 [00:00<00:00, 6952.77it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 8432.81it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/venv/main/lib/python3.12/site-packages/peft/utils/other.py:1394: UserWarning: Unable to fetch remote file due to the following error 401 Client Error. (Request ID: Root=1-6a6be224-59d9f64d3f7d2f975388c33d;ce4cd99b-ce3c-4986-9dc5-ba3b5d92bdbe)
+
+Cannot access gated repo for url https://huggingface.co/google/t5gemma-2-4b-4b/resolve/main/config.json.
+Access to model google/t5gemma-2-4b-4b is restricted. You must have access to it and be authenticated to access it. Please log in. - silently ignoring the lookup for the file config.json in google/t5gemma-2-4b-4b.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in google/t5gemma-2-4b-4b - will assume that the vocabulary was not modified.
+  warnings.warn(
+{"active_policy_trajectories": 8, "compiled": 3, "full_pass": 0, "grad_norm": 0.13578811287879944, "max_on_policy_logprob_drift": 0.0, "policy_loss": 0.0004405081708682701, "sft_replay_loss": 0.007618215400725603, "trajectory_count": 12, "update": 1, "visible_tests_passed": 0}
+{
+  "latest_checkpoint": "checkpoint-optstep-000001",
+  "no_frontier_api": true,
+  "production_floor_eligible": true,
+  "schema": "t5gemma2-compiler-feedback-verpo-run-v1",
+  "status": "complete",
+  "updates": 1
+}
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  55%|█████▍    | 729/1327 [00:00<00:00, 7244.37it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 10004.23it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/venv/main/lib/python3.12/site-packages/peft/utils/other.py:1394: UserWarning: Unable to fetch remote file due to the following error 401 Client Error. (Request ID: Root=1-6a6be386-6abb39656820def16f440724;13cd0f8c-1ac5-4d9a-9a4f-00038490d85f)
+
+Cannot access gated repo for url https://huggingface.co/google/t5gemma-2-4b-4b/resolve/main/config.json.
+Access to model google/t5gemma-2-4b-4b is restricted. You must have access to it and be authenticated to access it. Please log in. - silently ignoring the lookup for the file config.json in google/t5gemma-2-4b-4b.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in google/t5gemma-2-4b-4b - will assume that the vocabulary was not modified.
+  warnings.warn(
+{"active_policy_trajectories": 8, "compiled": 3, "full_pass": 0, "grad_norm": 0.13582657277584076, "max_on_policy_logprob_drift": 0.0, "policy_loss": 0.0004405081708682701, "sft_replay_loss": 0.007618215400725603, "trajectory_count": 12, "update": 1, "visible_tests_passed": 0}
+{
+  "latest_checkpoint": "checkpoint-optstep-000001",
+  "no_frontier_api": true,
+  "production_floor_eligible": true,
+  "run_contract_sha256": "9a18d0b85a76579d00d44ae8094f189e1df22e09a02d20791f89c2e1c616ffc7",
+  "schema": "t5gemma2-compiler-feedback-verpo-run-v1",
+  "status": "complete",
+  "updates": 1
+}
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  59%|█████▉    | 788/1327 [00:00<00:00, 7874.41it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 8991.48it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/venv/main/lib/python3.12/site-packages/peft/utils/other.py:1394: UserWarning: Unable to fetch remote file due to the following error 401 Client Error. (Request ID: Root=1-6a6be4a0-187b2c7f7ec2fc142935b8c1;bb78d93c-20e8-4384-b26f-166674ee6489)
+
+Cannot access gated repo for url https://huggingface.co/google/t5gemma-2-4b-4b/resolve/main/config.json.
+Access to model google/t5gemma-2-4b-4b is restricted. You must have access to it and be authenticated to access it. Please log in. - silently ignoring the lookup for the file config.json in google/t5gemma-2-4b-4b.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in google/t5gemma-2-4b-4b - will assume that the vocabulary was not modified.
+  warnings.warn(
+{"active_policy_trajectories": 8, "compiled": 3, "full_pass": 0, "grad_norm": 0.13581860065460205, "max_on_policy_logprob_drift": 0.0, "policy_loss": 0.0004405081708682701, "sampled_pad_before_eos": 0, "sft_replay_loss": 0.007618215400725603, "trajectory_count": 12, "update": 1, "visible_tests_passed": 0}
+{
+  "latest_checkpoint": "checkpoint-optstep-000001",
+  "no_frontier_api": true,
+  "production_floor_eligible": true,
+  "run_contract_sha256": "04e1fda375d542f1ddf95da7f231f88c1c758e00cba8a36935a0f44ab8f60dbb",
+  "schema": "t5gemma2-compiler-feedback-verpo-run-v1",
+  "status": "complete",
+  "updates": 1
+}

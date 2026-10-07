@@ -1,0 +1,19 @@
+GPT resume: 3 done; processing 350 (mode=a) model=gpt-chat-latest
+  20/350 verified=3
+  40/350 verified=4
+  60/350 verified=6
+  80/350 verified=8
+  100/350 verified=10
+  120/350 verified=16
+  140/350 verified=18
+  160/350 verified=23
+  180/350 verified=23
+  200/350 verified=27
+  220/350 verified=28
+  240/350 verified=31
+  260/350 verified=35
+  280/350 verified=37
+  300/350 verified=41
+  320/350 verified=45
+  340/350 verified=46
+DONE gpt_repairs=48/350 -> /workspace/artifacts/compact_fn0_rebuild/verified_repairs_gpt.jsonl

@@ -1,0 +1,10 @@
+{
+  "architecture": "native_encoder_decoder",
+  "latest_checkpoint": "checkpoint-optstep-000058",
+  "planned_updates": 58,
+  "production_floor_eligible": true,
+  "rows": 916,
+  "schema": "t5gemma2-typed-fold-gold-replay-run-v2",
+  "status": "complete",
+  "updates": 58
+}

@@ -1,0 +1,2947 @@
+[00_raw_token_length_measurement] previous state differs from current inputs/config; rebuilding
+
+[00_raw_token_length_measurement] /venv/main/bin/python /workspace/scripts/evaluation/report_token_lengths_antigravity.py --dataset /workspace/data/training/combined_sealed_v2_train_text.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/raw_token_length_distribution.json --decoder_model Qwen/Qwen3-8B --decoder_revision '' --max_target_tokens 3328 --max_prompt_tokens 8192 --max_generation_tokens 3328 --short_max 150 --bridge_max 199 --historical_limits 768,1024,2048,3072 --prompt_mode full --no-fail_on_overflow
+{
+  "schema_version": 1,
+  "datasets": [
+    "/workspace/data/training/combined_sealed_v2_train_text.jsonl"
+  ],
+  "decoder_model": "Qwen/Qwen3-8B",
+  "decoder_revision": null,
+  "rows": 2951,
+  "budgets": {
+    "target_tokens": 3328,
+    "prompt_tokens": 8192,
+    "generation_tokens": 3328
+  },
+  "historical_limits": [
+    768,
+    1024,
+    2048,
+    3072
+  ],
+  "overall": {
+    "target": {
+      "count": 2951,
+      "min": 25,
+      "max": 2954,
+      "mean": 231.76584208742798,
+      "p50": 165.0,
+      "p75": 295.0,
+      "p90": 421.0,
+      "p95": 546.0,
+      "p99": 1152.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 76,
+          "fraction": 0.025753981701118266
+        },
+        "1024": {
+          "count": 45,
+          "fraction": 0.015249068112504236
+        },
+        "2048": {
+          "count": 6,
+          "fraction": 0.0020332090816672314
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "prompt": {
+      "count": 2951,
+      "min": 260,
+      "max": 8143,
+      "mean": 2834.0223652998984,
+      "p50": 2166.0,
+      "p75": 3594.5,
+      "p90": 5848.0,
+      "p95": 7976.5,
+      "p99": 8143.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 2789,
+          "fraction": 0.9451033547949848
+        },
+        "1024": {
+          "count": 2626,
+          "fraction": 0.8898678414096917
+        },
+        "2048": {
+          "count": 1577,
+          "fraction": 0.534395120298204
+        },
+        "3072": {
+          "count": 948,
+          "fraction": 0.32124703490342255
+        }
+      }
+    }
+  },
+  "unique_code_targets": {
+    "rows": 2951,
+    "target": {
+      "count": 2951,
+      "min": 25,
+      "max": 2954,
+      "mean": 231.76584208742798,
+      "p50": 165.0,
+      "p75": 295.0,
+      "p90": 421.0,
+      "p95": 546.0,
+      "p99": 1152.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 76,
+          "fraction": 0.025753981701118266
+        },
+        "1024": {
+          "count": 45,
+          "fraction": 0.015249068112504236
+        },
+        "2048": {
+          "count": 6,
+          "fraction": 0.0020332090816672314
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "by_instruction_stratum": {
+      "short": {
+        "count": 1204,
+        "min": 25,
+        "max": 836,
+        "mean": 123.66943521594685,
+        "p50": 101.0,
+        "p75": 138.0,
+        "p90": 206.0,
+        "p95": 276.0,
+        "p99": 385.73000000000025,
+        "over_historical_limits": {
+          "768": {
+            "count": 1,
+            "fraction": 0.0008305647840531562
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "bridge": {
+        "count": 475,
+        "min": 56,
+        "max": 552,
+        "mean": 161.0442105263158,
+        "p50": 141.0,
+        "p75": 193.0,
+        "p90": 264.20000000000005,
+        "p95": 322.89999999999986,
+        "p99": 439.3399999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "long": {
+        "count": 1272,
+        "min": 71,
+        "max": 2954,
+        "mean": 360.4929245283019,
+        "p50": 298.5,
+        "p75": 404.0,
+        "p90": 572.8000000000002,
+        "p95": 834.8000000000002,
+        "p99": 1617.5699999999988,
+        "over_historical_limits": {
+          "768": {
+            "count": 75,
+            "fraction": 0.0589622641509434
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.03537735849056604
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0047169811320754715
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_dataset": {
+    "/workspace/data/training/combined_sealed_v2_train_text.jsonl": {
+      "rows": 2951,
+      "target": {
+        "count": 2951,
+        "min": 25,
+        "max": 2954,
+        "mean": 231.76584208742798,
+        "p50": 165.0,
+        "p75": 295.0,
+        "p90": 421.0,
+        "p95": 546.0,
+        "p99": 1152.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 76,
+            "fraction": 0.025753981701118266
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.015249068112504236
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0020332090816672314
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2951,
+        "min": 260,
+        "max": 8143,
+        "mean": 2834.0223652998984,
+        "p50": 2166.0,
+        "p75": 3594.5,
+        "p90": 5848.0,
+        "p95": 7976.5,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 2789,
+            "fraction": 0.9451033547949848
+          },
+          "1024": {
+            "count": 2626,
+            "fraction": 0.8898678414096917
+          },
+          "2048": {
+            "count": 1577,
+            "fraction": 0.534395120298204
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.32124703490342255
+          }
+        }
+      }
+    }
+  },
+  "by_instruction_stratum": {
+    "bridge": {
+      "target": {
+        "count": 475,
+        "min": 56,
+        "max": 552,
+        "mean": 161.0442105263158,
+        "p50": 141.0,
+        "p75": 193.0,
+        "p90": 264.20000000000005,
+        "p95": 322.89999999999986,
+        "p99": 439.3399999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 475,
+        "min": 1453,
+        "max": 2795,
+        "mean": 2142.7115789473683,
+        "p50": 2130.0,
+        "p75": 2293.0,
+        "p90": 2432.6,
+        "p95": 2518.2,
+        "p99": 2635.7799999999997,
+        "over_historical_limits": {
+          "768": {
+            "count": 475,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 475,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 301,
+            "fraction": 0.6336842105263157
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    },
+    "long": {
+      "target": {
+        "count": 1272,
+        "min": 71,
+        "max": 2954,
+        "mean": 360.4929245283019,
+        "p50": 298.5,
+        "p75": 404.0,
+        "p90": 572.8000000000002,
+        "p95": 834.8000000000002,
+        "p99": 1617.5699999999988,
+        "over_historical_limits": {
+          "768": {
+            "count": 75,
+            "fraction": 0.0589622641509434
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.03537735849056604
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0047169811320754715
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1272,
+        "min": 2119,
+        "max": 8143,
+        "mean": 4558.606918238994,
+        "p50": 3914.0,
+        "p75": 5734.25,
+        "p90": 8142.0,
+        "p95": 8143.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.7452830188679245
+          }
+        }
+      }
+    },
+    "short": {
+      "target": {
+        "count": 1204,
+        "min": 25,
+        "max": 836,
+        "mean": 123.66943521594685,
+        "p50": 101.0,
+        "p75": 138.0,
+        "p90": 206.0,
+        "p95": 276.0,
+        "p99": 385.73000000000025,
+        "over_historical_limits": {
+          "768": {
+            "count": 1,
+            "fraction": 0.0008305647840531562
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1204,
+        "min": 260,
+        "max": 2144,
+        "mean": 1284.7707641196014,
+        "p50": 1346.5,
+        "p75": 1607.25,
+        "p90": 1767.7,
+        "p95": 1840.0,
+        "p99": 1964.7000000000003,
+        "over_historical_limits": {
+          "768": {
+            "count": 1042,
+            "fraction": 0.8654485049833887
+          },
+          "1024": {
+            "count": 879,
+            "fraction": 0.7300664451827242
+          },
+          "2048": {
+            "count": 4,
+            "fraction": 0.0033222591362126247
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_training_task": {
+    "code": {
+      "target": {
+        "count": 2951,
+        "min": 25,
+        "max": 2954,
+        "mean": 231.76584208742798,
+        "p50": 165.0,
+        "p75": 295.0,
+        "p90": 421.0,
+        "p95": 546.0,
+        "p99": 1152.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 76,
+            "fraction": 0.025753981701118266
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.015249068112504236
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0020332090816672314
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2951,
+        "min": 260,
+        "max": 8143,
+        "mean": 2834.0223652998984,
+        "p50": 2166.0,
+        "p75": 3594.5,
+        "p90": 5848.0,
+        "p95": 7976.5,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 2789,
+            "fraction": 0.9451033547949848
+          },
+          "1024": {
+            "count": 2626,
+            "fraction": 0.8898678414096917
+          },
+          "2048": {
+            "count": 1577,
+            "fraction": 0.534395120298204
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.32124703490342255
+          }
+        }
+      }
+    }
+  },
+  "stratum_counts": {
+    "short": 1204,
+    "bridge": 475,
+    "long": 1272
+  },
+  "training_task_counts": {
+    "code": 2951
+  },
+  "overflow_count": 0,
+  "overflow": [],
+  "largest_targets": [
+    {
+      "index": 227,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "0e195dc26802be9b8bea0fb8ee722e911c233eb40cb315070583f2519889bd3c",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2954,
+      "prompt_tokens": 6491
+    },
+    {
+      "index": 225,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "ed78264878b9c694e6821f6bf492f46365d187cf990cfd61eaa3ec4acb413fd6",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2883,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 346,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "0e81f9d1fc999757e58eb3ec67825ce6eabcac0475dede1d76210959a1b94fc8",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2766,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 343,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "8bd886e9ea2695dd0e86b209475571e97ecbe2116ee4395f0f691c61b156ff4c",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2497,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 341,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f17b4d628f1b",
+      "target_sha256": "4fe1b93eded6cc2e9c32ddad4871d9cff9dc0d89c62ac474aff2b4526ba060e9",
+      "training_task": "code",
+      "instruction_count": 3574,
+      "stratum": "long",
+      "target_tokens": 2437,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 344,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e9699c095415",
+      "target_sha256": "62c5c7f274ef19f32aea23a1c1d324b221f4a340c67287aed14d1f4e0a97ffa9",
+      "training_task": "code",
+      "instruction_count": 1635,
+      "stratum": "long",
+      "target_tokens": 2257,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 226,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1cbe3362270a",
+      "target_sha256": "2c023c39849621052478db61adb5c6607fd489d874529a7f3c1d2902b092a89f",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 1811,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 345,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f9772127b371",
+      "target_sha256": "376c4e354f79f42c42647e80411e6ef1b65b717efe1f5ea8f9a1c82fcd98fa42",
+      "training_task": "code",
+      "instruction_count": 1240,
+      "stratum": "long",
+      "target_tokens": 1734,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 222,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1624bba57515",
+      "target_sha256": "d7bfa75dea81cf3118ac442d66076e4e61798a216b6d1aaca5508788b219bfc7",
+      "training_task": "code",
+      "instruction_count": 307,
+      "stratum": "long",
+      "target_tokens": 1711,
+      "prompt_tokens": 4532
+    },
+    {
+      "index": 223,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_452c11877e17",
+      "target_sha256": "3dd7d1f007e2d7a4a07fca58b759db17ab05e2306fd56319783c536b3b190ac7",
+      "training_task": "code",
+      "instruction_count": 2093,
+      "stratum": "long",
+      "target_tokens": 1684,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 326,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_36c354c2e279",
+      "target_sha256": "2e7ef8afb6209f98a6433834c1056707484a6371899648f0603e205f76607a65",
+      "training_task": "code",
+      "instruction_count": 2462,
+      "stratum": "long",
+      "target_tokens": 1656,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 342,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_4643689d0568",
+      "target_sha256": "2c6440addf62902e33847573bb04ce40959b83fdcdeaac22d8e5c16f70d6bfaa",
+      "training_task": "code",
+      "instruction_count": 468,
+      "stratum": "long",
+      "target_tokens": 1644,
+      "prompt_tokens": 6715
+    },
+    {
+      "index": 335,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f3a6984bc886",
+      "target_sha256": "65ddddc45532e8127256c4d7170585203f0ea8e96ba41047f7a7867f172a8709",
+      "training_task": "code",
+      "instruction_count": 1407,
+      "stratum": "long",
+      "target_tokens": 1641,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 317,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1bba4dc0b268",
+      "target_sha256": "f32341a6a5460c3aebb66f4a07106320e28922d5266267888e0002bc89850e96",
+      "training_task": "code",
+      "instruction_count": 2866,
+      "stratum": "long",
+      "target_tokens": 1608,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 337,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e087cd483fa1",
+      "target_sha256": "21da921ec0203fe20dd42742037c36801d0ef98584f4c08d8fb6fecdce1bc62f",
+      "training_task": "code",
+      "instruction_count": 1130,
+      "stratum": "long",
+      "target_tokens": 1570,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 348,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_8c5cd5096002",
+      "target_sha256": "deceb2cdef7cb4ef8705d51c64851120b44a765dd12af1a182a1d6cc79129367",
+      "training_task": "code",
+      "instruction_count": 1045,
+      "stratum": "long",
+      "target_tokens": 1535,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 347,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_34a9876149cb",
+      "target_sha256": "3c72e38bc96e12cb9c513d4829dd235ea1680326bceacc8b818b4b67d505df47",
+      "training_task": "code",
+      "instruction_count": 1070,
+      "stratum": "long",
+      "target_tokens": 1504,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 312,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f221251b6b7f",
+      "target_sha256": "b8357b35c06baab0a02076f25c05ace074764acb7baa86002632e6dc33d8ec86",
+      "training_task": "code",
+      "instruction_count": 2069,
+      "stratum": "long",
+      "target_tokens": 1450,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 322,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_57ebb9eb364c",
+      "target_sha256": "06ec0c880d43b122070633a2aacfbcd25e509a671ce667debc1183f69639e826",
+      "training_task": "code",
+      "instruction_count": 1848,
+      "stratum": "long",
+      "target_tokens": 1404,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 34,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_bfde11b99b84",
+      "target_sha256": "e8f47aae7cdcf99314f6c74ab28555e351fc2187755adb8c074ff8bba9d8316a",
+      "training_task": "code",
+      "instruction_count": 839,
+      "stratum": "long",
+      "target_tokens": 1399,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 336,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_81ec67fa4418",
+      "target_sha256": "2e5aeec576bb4f06275b8806fa96fa3463e3f64b3c583366f20227b297d475fe",
+      "training_task": "code",
+      "instruction_count": 876,
+      "stratum": "long",
+      "target_tokens": 1356,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 339,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_aea7dbe52ffd",
+      "target_sha256": "249b6d0752493689ef7101621be4e31487f72e0e015b8b4a9a1cec6816096b44",
+      "training_task": "code",
+      "instruction_count": 792,
+      "stratum": "long",
+      "target_tokens": 1352,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 224,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_09ce81b7f2f1",
+      "target_sha256": "051066c9506b9b06d3b6ab1b6749073d97756a44082591bc07f7112d300353c7",
+      "training_task": "code",
+      "instruction_count": 335,
+      "stratum": "long",
+      "target_tokens": 1346,
+      "prompt_tokens": 4495
+    },
+    {
+      "index": 308,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_3518a36dafdb",
+      "target_sha256": "3ad57d492dfe6adc9e2485978e3faa393e124c88be1a99d282b71d73095468db",
+      "training_task": "code",
+      "instruction_count": 541,
+      "stratum": "long",
+      "target_tokens": 1281,
+      "prompt_tokens": 7512
+    },
+    {
+      "index": 284,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_cc35f0aee394",
+      "target_sha256": "fede3653ef40da5abfca2ae6b43d4758b9cf91945790ed0c55a795c68afa0817",
+      "training_task": "code",
+      "instruction_count": 1086,
+      "stratum": "long",
+      "target_tokens": 1262,
+      "prompt_tokens": 8143
+    }
+  ],
+  "largest_prompts": [
+    {
+      "index": 25,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_71459bc947d1",
+      "target_sha256": "6da54143ce147840e2991fd43b0557896fd2af54a2b38ba734b99219d605ccdb",
+      "training_task": "code",
+      "instruction_count": 696,
+      "stratum": "long",
+      "target_tokens": 745,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 34,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_bfde11b99b84",
+      "target_sha256": "e8f47aae7cdcf99314f6c74ab28555e351fc2187755adb8c074ff8bba9d8316a",
+      "training_task": "code",
+      "instruction_count": 839,
+      "stratum": "long",
+      "target_tokens": 1399,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 44,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e18cfe2df675",
+      "target_sha256": "5b68cc759943385906eda36385b038d069f32d9eb163d3f6ef553bae6636184e",
+      "training_task": "code",
+      "instruction_count": 1224,
+      "stratum": "long",
+      "target_tokens": 717,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 45,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_96d9c81edafe",
+      "target_sha256": "2347550929228e038b639a69ff775e121132a64d1c4c7cacd0056e9afd96727e",
+      "training_task": "code",
+      "instruction_count": 1312,
+      "stratum": "long",
+      "target_tokens": 954,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 46,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_b13153c083c9",
+      "target_sha256": "e9824f3e62fc262204f7f0c05c75bfc1e43192a734ba348c6f10070289a069cc",
+      "training_task": "code",
+      "instruction_count": 661,
+      "stratum": "long",
+      "target_tokens": 434,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 47,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_452856447bcf",
+      "target_sha256": "bb754c14849128a19bea3ee4664ee903e5817165272d296bd78a074ec3cba75c",
+      "training_task": "code",
+      "instruction_count": 798,
+      "stratum": "long",
+      "target_tokens": 566,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 125,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_a0f853c85702",
+      "target_sha256": "b2a7113842a8db5239290e0703015b0aef4f888dc829d15494ee074cd94406d8",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 468,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 136,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_46c3cfe42052",
+      "target_sha256": "67880d4656263d26615755d206a6e588da3f7821ed1e2e4bc043b2f334674f83",
+      "training_task": "code",
+      "instruction_count": 759,
+      "stratum": "long",
+      "target_tokens": 401,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 141,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1f843af8f1f4",
+      "target_sha256": "9b01544a1b4f3022f195415ffb3a65b9379fa40e935e3ec12f3cac5a7e3783c1",
+      "training_task": "code",
+      "instruction_count": 626,
+      "stratum": "long",
+      "target_tokens": 502,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 144,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e8b5f7e7d1a6",
+      "target_sha256": "049f276d4743a21fffbae99c0ec0f856ab137114f69fe711fcd6e1188f3b81aa",
+      "training_task": "code",
+      "instruction_count": 1003,
+      "stratum": "long",
+      "target_tokens": 492,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 145,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_c8721da111a6",
+      "target_sha256": "c70d474493a711ad78d636fcd77ecad9e62851279163167217678b4384c71999",
+      "training_task": "code",
+      "instruction_count": 1025,
+      "stratum": "long",
+      "target_tokens": 1043,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 213,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_c27bc56f860a",
+      "target_sha256": "319bf009de7d90b8d47a69901cc9cddfd3d26a463be146ecf357ad0b638d6b7e",
+      "training_task": "code",
+      "instruction_count": 695,
+      "stratum": "long",
+      "target_tokens": 441,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 216,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_532459aca3ac",
+      "target_sha256": "040ea856ddee79ddd5dc5c005a84a9ad01030eccdd02a2d468935bc892097412",
+      "training_task": "code",
+      "instruction_count": 811,
+      "stratum": "long",
+      "target_tokens": 520,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 218,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_5d8aa0e83d87",
+      "target_sha256": "0201ae8513d6fd17c996bcaaf83360709a2c44fe02ce5e4b80f67955da1bed1c",
+      "training_task": "code",
+      "instruction_count": 672,
+      "stratum": "long",
+      "target_tokens": 821,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 219,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_8afd189c361d",
+      "target_sha256": "b1ef7bdd79ba1b5c48b7b3d7e571f0a64668de91151d28f936a3518ae4c79a9c",
+      "training_task": "code",
+      "instruction_count": 776,
+      "stratum": "long",
+      "target_tokens": 723,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 221,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_72481ce96772",
+      "target_sha256": "31d384546f89bc1ff80a3300c2d65962d2383b7744b72021904ec6dfd1007108",
+      "training_task": "code",
+      "instruction_count": 853,
+      "stratum": "long",
+      "target_tokens": 706,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 223,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_452c11877e17",
+      "target_sha256": "3dd7d1f007e2d7a4a07fca58b759db17ab05e2306fd56319783c536b3b190ac7",
+      "training_task": "code",
+      "instruction_count": 2093,
+      "stratum": "long",
+      "target_tokens": 1684,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 225,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "ed78264878b9c694e6821f6bf492f46365d187cf990cfd61eaa3ec4acb413fd6",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2883,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 226,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1cbe3362270a",
+      "target_sha256": "2c023c39849621052478db61adb5c6607fd489d874529a7f3c1d2902b092a89f",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 1811,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 242,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_6ad70e03dabe",
+      "target_sha256": "e8a769d6eed0386f675b385d1ca34b107a6f1e4b1e7d201fd41c1700adf85d02",
+      "training_task": "code",
+      "instruction_count": 720,
+      "stratum": "long",
+      "target_tokens": 562,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 251,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_26315cbfcfbf",
+      "target_sha256": "aaab34e6e94c7e200e857835be22afda08930e0eba33de44313be175909153cd",
+      "training_task": "code",
+      "instruction_count": 989,
+      "stratum": "long",
+      "target_tokens": 734,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 253,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_aee9cdf2dfce",
+      "target_sha256": "31bd1f9b2485ea669bb4b9191efc2ceabfb399d83aa71e321c4dbbc133d510a7",
+      "training_task": "code",
+      "instruction_count": 849,
+      "stratum": "long",
+      "target_tokens": 426,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 284,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_cc35f0aee394",
+      "target_sha256": "fede3653ef40da5abfca2ae6b43d4758b9cf91945790ed0c55a795c68afa0817",
+      "training_task": "code",
+      "instruction_count": 1086,
+      "stratum": "long",
+      "target_tokens": 1262,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 285,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_765377c5baac",
+      "target_sha256": "b34eb215c8b7c3be502389341fb0a227329103e8b8a46a82af376017a21ada97",
+      "training_task": "code",
+      "instruction_count": 1095,
+      "stratum": "long",
+      "target_tokens": 865,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 287,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_172bb23be947",
+      "target_sha256": "a10278a0c335ff7ce29d5d697dbd7863a6a0c8af5dc512268e445736e953ffaf",
+      "training_task": "code",
+      "instruction_count": 869,
+      "stratum": "long",
+      "target_tokens": 1158,
+      "prompt_tokens": 8143
+    }
+  ]
+}
+[00a_phase0_prepare] previous state differs from current inputs/config; rebuilding
+
+[00a_phase0_prepare] /venv/main/bin/python /workspace/scripts/training/prepare_hybrid_training_data_antigravity.py --input /workspace/data/training/combined_sealed_v2_train_text.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl --dev_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_dev.jsonl --short_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_short_le150.jsonl --dev_fraction 0.1 --min_dev_rows 32 --bridge_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_bridge_151_199.jsonl --long_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_long_ge200.jsonl --report /workspace/artifacts/text_arm_v2_s44/00_phase0/phase0_report.json --neutral_name fn0 --data_role train --feedback_fraction 0.6 --max_instructions 150 --max_bridge_instructions 199 --min_short_rows 64 --min_long_rows 64 --seed 44 --timeout 20 --workers 16 --drop_invalid_references --forbidden_eval /workspace/data/testing/grpo_data_graphv2.jsonl --forbidden_eval /workspace/data/testing/fresh_graphv2_holdout_s44_rebuilt312.jsonl
+reference replay 50/2951
+reference replay 100/2951
+reference replay 150/2951
+reference replay 200/2951
+reference replay 250/2951
+reference replay 300/2951
+reference replay 350/2951
+reference replay 400/2951
+reference replay 450/2951
+reference replay 500/2951
+reference replay 550/2951
+reference replay 600/2951
+reference replay 650/2951
+reference replay 700/2951
+reference replay 750/2951
+reference replay 800/2951
+reference replay 850/2951
+reference replay 900/2951
+reference replay 950/2951
+reference replay 1000/2951
+reference replay 1050/2951
+reference replay 1100/2951
+reference replay 1150/2951
+reference replay 1200/2951
+reference replay 1250/2951
+reference replay 1300/2951
+reference replay 1350/2951
+reference replay 1400/2951
+reference replay 1450/2951
+reference replay 1500/2951
+reference replay 1550/2951
+reference replay 1600/2951
+reference replay 1650/2951
+reference replay 1700/2951
+reference replay 1750/2951
+reference replay 1800/2951
+reference replay 1850/2951
+reference replay 1900/2951
+reference replay 1950/2951
+reference replay 2000/2951
+reference replay 2050/2951
+reference replay 2100/2951
+reference replay 2150/2951
+reference replay 2200/2951
+reference replay 2250/2951
+reference replay 2300/2951
+reference replay 2350/2951
+reference replay 2400/2951
+reference replay 2450/2951
+reference replay 2500/2951
+reference replay 2550/2951
+reference replay 2600/2951
+reference replay 2650/2951
+reference replay 2700/2951
+reference replay 2750/2951
+reference replay 2800/2951
+reference replay 2850/2951
+reference replay 2900/2951
+reference replay 2950/2951
+reference replay 2951/2951
+{
+  "input_rows": 2951,
+  "all_length_train_rows": 2656,
+  "short_rows": 1081,
+  "development_rows": 295,
+  "bridge_rows": 429,
+  "long_rows": 1146,
+  "long_rows_are_trained": true
+}
+[00b_phase0_reference_audit] previous state differs from current inputs/config; rebuilding
+
+[00b_phase0_reference_audit] /venv/main/bin/python /workspace/scripts/evaluation/audit_grpo_reward_antigravity.py --dataset /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl --test_fields feedback_tests,acceptance_tests,tests --run_references -1 --workers 16 --timeout 20 --require_phase0_approved --require_neutral_contract --report /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_reference_audit.json
+[100/2656] reference parity failures=0
+[200/2656] reference parity failures=0
+[300/2656] reference parity failures=0
+[400/2656] reference parity failures=0
+[500/2656] reference parity failures=0
+[600/2656] reference parity failures=0
+[700/2656] reference parity failures=0
+[800/2656] reference parity failures=0
+[900/2656] reference parity failures=0
+[1000/2656] reference parity failures=0
+[1100/2656] reference parity failures=0
+[1200/2656] reference parity failures=0
+[1300/2656] reference parity failures=0
+[1400/2656] reference parity failures=0
+[1500/2656] reference parity failures=0
+[1600/2656] reference parity failures=0
+[1700/2656] reference parity failures=0
+[1800/2656] reference parity failures=0
+[1900/2656] reference parity failures=0
+[2000/2656] reference parity failures=0
+[2100/2656] reference parity failures=0
+[2200/2656] reference parity failures=0
+[2300/2656] reference parity failures=0
+[2400/2656] reference parity failures=0
+[2500/2656] reference parity failures=0
+[2600/2656] reference parity failures=0
+[2656/2656] reference parity failures=0
+{
+  "rows": 2656,
+  "static_failures": 0,
+  "test_fields": {
+    "feedback_tests": {
+      "assertions_min": 0,
+      "assertions_max": 7
+    },
+    "acceptance_tests": {
+      "assertions_min": 0,
+      "assertions_max": 5
+    },
+    "tests": {
+      "assertions_min": 0,
+      "assertions_max": 12
+    }
+  },
+  "static_failure_rows": [],
+  "reference_reward_parity": {
+    "checked_rows": 2656,
+    "checked_harnesses": 6210,
+    "passed_rows": 2656,
+    "failures": []
+  }
+}
+[00b2_phase0_dev_reference_audit] previous state differs from current inputs/config; rebuilding
+
+[00b2_phase0_dev_reference_audit] /venv/main/bin/python /workspace/scripts/evaluation/audit_grpo_reward_antigravity.py --dataset /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_dev.jsonl --test_fields feedback_tests,acceptance_tests,tests --run_references -1 --workers 16 --timeout 20 --require_phase0_approved --require_neutral_contract --report /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_dev_reference_audit.json
+[100/295] reference parity failures=0
+[200/295] reference parity failures=0
+[295/295] reference parity failures=0
+{
+  "rows": 295,
+  "static_failures": 0,
+  "test_fields": {
+    "feedback_tests": {
+      "assertions_min": 0,
+      "assertions_max": 7
+    },
+    "acceptance_tests": {
+      "assertions_min": 0,
+      "assertions_max": 5
+    },
+    "tests": {
+      "assertions_min": 0,
+      "assertions_max": 12
+    }
+  },
+  "static_failure_rows": [],
+  "reference_reward_parity": {
+    "checked_rows": 295,
+    "checked_harnesses": 690,
+    "passed_rows": 295,
+    "failures": []
+  }
+}
+[00f_build_hierarchical_train] previous state differs from current inputs/config; rebuilding
+
+[00f_build_hierarchical_train] /venv/main/bin/python /workspace/scripts/training/build_hierarchical_long_training_antigravity.py --input /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl --direct_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl --hierarchical_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl --matched_control_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/matched_direct_control_train.jsonl --recovery_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl --report /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/train_report.json --short_max 150 --bridge_max 199 --max_region_blocks 8 --short_replay_fraction 0.33 --short_repeat 1 --bridge_repeat 2 --long_repeat 3 --min_long_rows 64 --seed 44
+{
+  "code_recovery_rows": 5377,
+  "configuration": {
+    "bridge_max": 199,
+    "bridge_repeat": 2,
+    "long_repeat": 3,
+    "max_region_blocks": 8,
+    "short_max": 150,
+    "short_repeat": 1,
+    "short_replay_fraction": 0.33
+  },
+  "direct_sft_rows": 2656,
+  "hierarchical_multitask_rows": 5806,
+  "hierarchical_task_counts": {
+    "code": 2656,
+    "code_from_region_plan": 1575,
+    "region_plan": 1575
+  },
+  "input_rows": 2656,
+  "matched_direct_control_rows": 5806,
+  "recovery_stratum_counts": {
+    "bridge": 858,
+    "long": 3438,
+    "short": 1081
+  },
+  "region_statistics": {
+    "max_regions": 692,
+    "mean_regions": 63.22349206349207,
+    "planned_functions": 1575,
+    "total_regions": 99577
+  },
+  "schema_version": 2,
+  "stage": "build_hierarchical_all_length_training",
+  "strata": {
+    "bridge": 429,
+    "long": 1146,
+    "short": 1081
+  }
+}
+[00g_build_hierarchical_dev] previous state differs from current inputs/config; rebuilding
+
+[00g_build_hierarchical_dev] /venv/main/bin/python /workspace/scripts/training/build_hierarchical_long_training_antigravity.py --input /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_dev.jsonl --direct_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_dev.jsonl --hierarchical_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_dev.jsonl --matched_control_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/matched_direct_control_dev.jsonl --recovery_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_dev.jsonl --short_subset_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/short_dev.jsonl --bridge_subset_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/bridge_dev.jsonl --long_subset_output /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/long_dev_ge200.jsonl --report /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/dev_report.json --short_max 150 --bridge_max 199 --max_region_blocks 8 --short_replay_fraction 0.33 --short_repeat 1 --bridge_repeat 1 --long_repeat 1 --min_long_rows 0 --seed 44
+{
+  "code_recovery_rows": 295,
+  "configuration": {
+    "bridge_max": 199,
+    "bridge_repeat": 1,
+    "long_repeat": 1,
+    "max_region_blocks": 8,
+    "short_max": 150,
+    "short_repeat": 1,
+    "short_replay_fraction": 0.33
+  },
+  "direct_sft_rows": 295,
+  "hierarchical_multitask_rows": 639,
+  "hierarchical_task_counts": {
+    "code": 295,
+    "code_from_region_plan": 172,
+    "region_plan": 172
+  },
+  "input_rows": 295,
+  "matched_direct_control_rows": 639,
+  "recovery_stratum_counts": {
+    "bridge": 46,
+    "long": 126,
+    "short": 123
+  },
+  "region_statistics": {
+    "max_regions": 241,
+    "mean_regions": 61.156976744186046,
+    "planned_functions": 172,
+    "total_regions": 10519
+  },
+  "schema_version": 2,
+  "stage": "build_hierarchical_all_length_training",
+  "strata": {
+    "bridge": 46,
+    "long": 126,
+    "short": 123
+  }
+}
+[00h_token_length_preflight] previous state differs from current inputs/config; rebuilding
+
+[00h_token_length_preflight] /venv/main/bin/python /workspace/scripts/evaluation/report_token_lengths_antigravity.py --dataset /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl --dataset /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl --dataset /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl --dataset /workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_dev.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/token_length_distribution.json --decoder_model Qwen/Qwen3-8B --decoder_revision '' --max_target_tokens 3328 --max_prompt_tokens 8192 --max_generation_tokens 3328 --short_max 150 --bridge_max 199 --historical_limits 768,1024,2048,3072 --prompt_mode full --fail_on_overflow
+{
+  "schema_version": 1,
+  "datasets": [
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_dev.jsonl"
+  ],
+  "decoder_model": "Qwen/Qwen3-8B",
+  "decoder_revision": null,
+  "rows": 14134,
+  "budgets": {
+    "target_tokens": 3328,
+    "prompt_tokens": 8192,
+    "generation_tokens": 3328
+  },
+  "historical_limits": [
+    768,
+    1024,
+    2048,
+    3072
+  ],
+  "overall": {
+    "target": {
+      "count": 14134,
+      "min": 36,
+      "max": 2965,
+      "mean": 437.4175746427055,
+      "p50": 237.0,
+      "p75": 402.0,
+      "p90": 1692.0,
+      "p95": 1790.0,
+      "p99": 1904.67,
+      "over_historical_limits": {
+        "768": {
+          "count": 2015,
+          "fraction": 0.14256402999858497
+        },
+        "1024": {
+          "count": 1837,
+          "fraction": 0.1299702844205462
+        },
+        "2048": {
+          "count": 45,
+          "fraction": 0.0031838120843356446
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "prompt": {
+      "count": 14134,
+      "min": 291,
+      "max": 8143,
+      "mean": 3560.5895712466395,
+      "p50": 3021.5,
+      "p75": 4754.75,
+      "p90": 7177.0,
+      "p95": 8142.0,
+      "p99": 8143.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 13739,
+          "fraction": 0.9720532050374983
+        },
+        "1024": {
+          "count": 13290,
+          "fraction": 0.9402858355737936
+        },
+        "2048": {
+          "count": 10185,
+          "fraction": 0.7206028017546342
+        },
+        "3072": {
+          "count": 6941,
+          "fraction": 0.4910853261638602
+        }
+      }
+    }
+  },
+  "unique_code_targets": {
+    "rows": 2951,
+    "target": {
+      "count": 2951,
+      "min": 36,
+      "max": 2965,
+      "mean": 238.06912910877668,
+      "p50": 174.0,
+      "p75": 302.0,
+      "p90": 431.0,
+      "p95": 557.0,
+      "p99": 1163.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 77,
+          "fraction": 0.026092849881396138
+        },
+        "1024": {
+          "count": 47,
+          "fraction": 0.01592680447305998
+        },
+        "2048": {
+          "count": 6,
+          "fraction": 0.0020332090816672314
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "by_instruction_stratum": {
+      "short": {
+        "count": 1204,
+        "min": 36,
+        "max": 847,
+        "mean": 128.6594684385382,
+        "p50": 105.0,
+        "p75": 146.0,
+        "p90": 213.70000000000005,
+        "p95": 287.0,
+        "p99": 396.73000000000025,
+        "over_historical_limits": {
+          "768": {
+            "count": 1,
+            "fraction": 0.0008305647840531562
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "bridge": {
+        "count": 475,
+        "min": 53,
+        "max": 563,
+        "mean": 166.45052631578946,
+        "p50": 145.0,
+        "p75": 197.0,
+        "p90": 273.6,
+        "p95": 333.89999999999986,
+        "p99": 450.3399999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "long": {
+        "count": 1272,
+        "min": 69,
+        "max": 2965,
+        "mean": 368.37421383647796,
+        "p50": 306.0,
+        "p75": 414.25,
+        "p90": 581.6000000000004,
+        "p95": 845.8000000000002,
+        "p99": 1628.5699999999988,
+        "over_historical_limits": {
+          "768": {
+            "count": 76,
+            "fraction": 0.059748427672955975
+          },
+          "1024": {
+            "count": 47,
+            "fraction": 0.036949685534591194
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0047169811320754715
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_dataset": {
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl": {
+      "rows": 5377,
+      "target": {
+        "count": 5377,
+        "min": 36,
+        "max": 2965,
+        "mean": 288.8566114933978,
+        "p50": 232.0,
+        "p75": 344.0,
+        "p90": 486.0,
+        "p95": 702.0,
+        "p99": 1426.03999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 220,
+            "fraction": 0.04091500836897898
+          },
+          "1024": {
+            "count": 132,
+            "fraction": 0.02454900502138739
+          },
+          "2048": {
+            "count": 18,
+            "fraction": 0.0033475915938255534
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 5377,
+        "min": 291,
+        "max": 8143,
+        "mean": 3571.8463827413057,
+        "p50": 3038.0,
+        "p75": 4604.0,
+        "p90": 7110.0,
+        "p95": 8142.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 5249,
+            "fraction": 0.976194904221685
+          },
+          "1024": {
+            "count": 5105,
+            "fraction": 0.9494141714710805
+          },
+          "2048": {
+            "count": 4078,
+            "fraction": 0.7584154733122559
+          },
+          "3072": {
+            "count": 2640,
+            "fraction": 0.4909801004277478
+          }
+        }
+      }
+    },
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_dev.jsonl": {
+      "rows": 295,
+      "target": {
+        "count": 295,
+        "min": 42,
+        "max": 1273,
+        "mean": 231.67118644067796,
+        "p50": 177.0,
+        "p75": 316.5,
+        "p90": 444.20000000000005,
+        "p95": 549.3000000000002,
+        "p99": 717.8000000000008,
+        "over_historical_limits": {
+          "768": {
+            "count": 3,
+            "fraction": 0.010169491525423728
+          },
+          "1024": {
+            "count": 3,
+            "fraction": 0.010169491525423728
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 295,
+        "min": 469,
+        "max": 8143,
+        "mean": 2836.7118644067796,
+        "p50": 2156.0,
+        "p75": 3706.5,
+        "p90": 5602.600000000002,
+        "p95": 6967.500000000001,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 284,
+            "fraction": 0.9627118644067797
+          },
+          "1024": {
+            "count": 267,
+            "fraction": 0.9050847457627119
+          },
+          "2048": {
+            "count": 153,
+            "fraction": 0.5186440677966102
+          },
+          "3072": {
+            "count": 97,
+            "fraction": 0.3288135593220339
+          }
+        }
+      }
+    },
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl": {
+      "rows": 2656,
+      "target": {
+        "count": 2656,
+        "min": 36,
+        "max": 2965,
+        "mean": 238.7797439759036,
+        "p50": 173.0,
+        "p75": 299.25,
+        "p90": 431.0,
+        "p95": 558.0,
+        "p99": 1170.3499999999995,
+        "over_historical_limits": {
+          "768": {
+            "count": 74,
+            "fraction": 0.02786144578313253
+          },
+          "1024": {
+            "count": 44,
+            "fraction": 0.016566265060240965
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.002259036144578313
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2656,
+        "min": 291,
+        "max": 8143,
+        "mean": 2890.2364457831327,
+        "p50": 2228.5,
+        "p75": 3638.5,
+        "p90": 5964.0,
+        "p95": 8097.25,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 2528,
+            "fraction": 0.9518072289156626
+          },
+          "1024": {
+            "count": 2384,
+            "fraction": 0.8975903614457831
+          },
+          "2048": {
+            "count": 1470,
+            "fraction": 0.5534638554216867
+          },
+          "3072": {
+            "count": 880,
+            "fraction": 0.3313253012048193
+          }
+        }
+      }
+    },
+    "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl": {
+      "rows": 5806,
+      "target": {
+        "count": 5806,
+        "min": 36,
+        "max": 2965,
+        "mean": 676.3238029624526,
+        "p50": 293.0,
+        "p75": 1671.75,
+        "p90": 1804.0,
+        "p95": 1852.0,
+        "p99": 1946.8999999999996,
+        "over_historical_limits": {
+          "768": {
+            "count": 1718,
+            "fraction": 0.2959007922838443
+          },
+          "1024": {
+            "count": 1658,
+            "fraction": 0.2855666551842921
+          },
+          "2048": {
+            "count": 21,
+            "fraction": 0.0036169479848432657
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 5806,
+        "min": 291,
+        "max": 8143,
+        "mean": 3893.602652428522,
+        "p50": 3596.5,
+        "p75": 5214.5,
+        "p90": 7687.0,
+        "p95": 8143.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 5678,
+            "fraction": 0.9779538408542887
+          },
+          "1024": {
+            "count": 5534,
+            "fraction": 0.9531519118153634
+          },
+          "2048": {
+            "count": 4484,
+            "fraction": 0.7723045125732001
+          },
+          "3072": {
+            "count": 3324,
+            "fraction": 0.5725111953151912
+          }
+        }
+      }
+    }
+  },
+  "by_instruction_stratum": {
+    "bridge": {
+      "target": {
+        "count": 2620,
+        "min": 53,
+        "max": 2081,
+        "mean": 422.2053435114504,
+        "p50": 161.0,
+        "p75": 272.0,
+        "p90": 1730.1,
+        "p95": 1781.0,
+        "p99": 1840.62,
+        "over_historical_limits": {
+          "768": {
+            "count": 426,
+            "fraction": 0.16259541984732825
+          },
+          "1024": {
+            "count": 425,
+            "fraction": 0.16221374045801526
+          },
+          "2048": {
+            "count": 1,
+            "fraction": 0.0003816793893129771
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2620,
+        "min": 1467,
+        "max": 4714,
+        "mean": 2483.176717557252,
+        "p50": 2239.0,
+        "p75": 2476.0,
+        "p90": 3893.0,
+        "p95": 4075.0999999999995,
+        "p99": 4335.24,
+        "over_historical_limits": {
+          "768": {
+            "count": 2620,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 2620,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 2013,
+            "fraction": 0.768320610687023
+          },
+          "3072": {
+            "count": 428,
+            "fraction": 0.1633587786259542
+          }
+        }
+      }
+    },
+    "long": {
+      "target": {
+        "count": 8148,
+        "min": 69,
+        "max": 2965,
+        "mean": 569.8129602356406,
+        "p50": 332.0,
+        "p75": 531.0,
+        "p90": 1753.0,
+        "p95": 1827.0,
+        "p99": 1946.0599999999995,
+        "over_historical_limits": {
+          "768": {
+            "count": 1586,
+            "fraction": 0.19464899361806579
+          },
+          "1024": {
+            "count": 1412,
+            "fraction": 0.17329405989199803
+          },
+          "2048": {
+            "count": 44,
+            "fraction": 0.005400098183603338
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 8148,
+        "min": 2175,
+        "max": 8143,
+        "mean": 4827.5542464408445,
+        "p50": 4370.0,
+        "p75": 6172.75,
+        "p90": 8142.0,
+        "p95": 8143.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 8148,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 8148,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 8148,
+            "fraction": 1.0
+          },
+          "3072": {
+            "count": 6513,
+            "fraction": 0.7993372606774669
+          }
+        }
+      }
+    },
+    "short": {
+      "target": {
+        "count": 3366,
+        "min": 36,
+        "max": 847,
+        "mean": 128.77183600713013,
+        "p50": 105.0,
+        "p75": 146.0,
+        "p90": 213.5,
+        "p95": 287.0,
+        "p99": 397.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 3,
+            "fraction": 0.00089126559714795
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 3366,
+        "min": 291,
+        "max": 2206,
+        "mean": 1332.3048128342245,
+        "p50": 1392.0,
+        "p75": 1663.0,
+        "p90": 1819.0,
+        "p95": 1895.75,
+        "p99": 2023.1499999999992,
+        "over_historical_limits": {
+          "768": {
+            "count": 2971,
+            "fraction": 0.8826500297088532
+          },
+          "1024": {
+            "count": 2522,
+            "fraction": 0.7492572786690433
+          },
+          "2048": {
+            "count": 24,
+            "fraction": 0.0071301247771836
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_training_task": {
+    "code": {
+      "target": {
+        "count": 10984,
+        "min": 36,
+        "max": 2965,
+        "mean": 263.1029679533867,
+        "p50": 203.0,
+        "p75": 326.0,
+        "p90": 456.0,
+        "p95": 612.0,
+        "p99": 1358.0200000000004,
+        "over_historical_limits": {
+          "768": {
+            "count": 371,
+            "fraction": 0.03377640203932993
+          },
+          "1024": {
+            "count": 223,
+            "fraction": 0.020302257829570285
+          },
+          "2048": {
+            "count": 30,
+            "fraction": 0.0027312454479242534
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 10984,
+        "min": 291,
+        "max": 8143,
+        "mean": 3222.4675892206847,
+        "p50": 2646.0,
+        "p75": 4157.0,
+        "p90": 6526.0,
+        "p95": 8142.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 10589,
+            "fraction": 0.9640386016023307
+          },
+          "1024": {
+            "count": 10140,
+            "fraction": 0.9231609613983977
+          },
+          "2048": {
+            "count": 7171,
+            "fraction": 0.6528587035688274
+          },
+          "3072": {
+            "count": 4497,
+            "fraction": 0.4094136926438456
+          }
+        }
+      }
+    },
+    "code_from_region_plan": {
+      "target": {
+        "count": 1575,
+        "min": 53,
+        "max": 2965,
+        "mean": 314.24063492063493,
+        "p50": 255.0,
+        "p75": 365.0,
+        "p90": 509.2000000000003,
+        "p95": 742.8999999999999,
+        "p99": 1523.0599999999997,
+        "over_historical_limits": {
+          "768": {
+            "count": 73,
+            "fraction": 0.04634920634920635
+          },
+          "1024": {
+            "count": 44,
+            "fraction": 0.027936507936507936
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0038095238095238095
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1575,
+        "min": 3019,
+        "max": 8143,
+        "mean": 5545.6063492063495,
+        "p50": 5087.0,
+        "p75": 6778.5,
+        "p90": 8143.0,
+        "p95": 8143.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 1575,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 1575,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 1575,
+            "fraction": 1.0
+          },
+          "3072": {
+            "count": 1574,
+            "fraction": 0.9993650793650793
+          }
+        }
+      }
+    },
+    "region_plan": {
+      "target": {
+        "count": 1575,
+        "min": 518,
+        "max": 2801,
+        "mean": 1776.2590476190476,
+        "p50": 1776.0,
+        "p75": 1831.5,
+        "p90": 1882.0,
+        "p95": 1916.3,
+        "p99": 2014.08,
+        "over_historical_limits": {
+          "768": {
+            "count": 1571,
+            "fraction": 0.9974603174603175
+          },
+          "1024": {
+            "count": 1570,
+            "fraction": 0.9968253968253968
+          },
+          "2048": {
+            "count": 9,
+            "fraction": 0.005714285714285714
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1575,
+        "min": 1467,
+        "max": 8143,
+        "mean": 3933.6247619047617,
+        "p50": 3288.0,
+        "p75": 4939.5,
+        "p90": 7512.000000000002,
+        "p95": 8143.0,
+        "p99": 8143.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 1575,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 1575,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 1439,
+            "fraction": 0.9136507936507936
+          },
+          "3072": {
+            "count": 870,
+            "fraction": 0.5523809523809524
+          }
+        }
+      }
+    }
+  },
+  "stratum_counts": {
+    "short": 3366,
+    "long": 8148,
+    "bridge": 2620
+  },
+  "training_task_counts": {
+    "code": 10984,
+    "region_plan": 1575,
+    "code_from_region_plan": 1575
+  },
+  "overflow_count": 0,
+  "overflow": [],
+  "largest_targets": [
+    {
+      "index": 1954,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 6562
+    },
+    {
+      "index": 5014,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code_from_region_plan",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 5015,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 6562
+    },
+    {
+      "index": 8611,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 6562
+    },
+    {
+      "index": 8612,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 6562
+    },
+    {
+      "index": 8613,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "10c7a14f8d780b347d325d4d4363beb55ce53207c62033c7b62b77f82e8104a7",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2965,
+      "prompt_tokens": 6562
+    },
+    {
+      "index": 579,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 2851,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code_from_region_plan",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 2852,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 10967,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 10968,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 10969,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 5869,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_f17b4d628f1b",
+      "target_sha256": "2e4d44e67e1a2a1b5356aadb4a7472d488e486378031f6c6fd2d6796d8caeab8",
+      "training_task": "region_plan",
+      "instruction_count": 3574,
+      "stratum": "long",
+      "target_tokens": 2801,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 1025,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 8177,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code_from_region_plan",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 8178,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 10547,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 10548,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 10549,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "a685494ac5629b68a6cd8f8323d469143fbfefaaa21a5e53112be9faa8f42a04",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2777,
+      "prompt_tokens": 8142
+    },
+    {
+      "index": 1963,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 3995,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code_from_region_plan",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 3996,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/region_plan_multitask_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 8822,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 8823,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 8824,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/code_recovery_train.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "0a10e55e1b4e0583784f68402d0472ddaaeb03d291573d014115d05770d15375",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2508,
+      "prompt_tokens": 8143
+    }
+  ],
+  "largest_prompts": [
+    {
+      "index": 1,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_a7bf17dd7855",
+      "target_sha256": "8e2fef549002c7580dbf438ae9c168b50dcac93bb88790cf6efd73510ff0155e",
+      "training_task": "code",
+      "instruction_count": 1883,
+      "stratum": "long",
+      "target_tokens": 1228,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 3,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_53b68025a4c4",
+      "target_sha256": "3dfb258dba5087f2327868ba521fa215df3f9b6bf565071e6ad14ae847e7c8f1",
+      "training_task": "code",
+      "instruction_count": 867,
+      "stratum": "long",
+      "target_tokens": 797,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 5,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_57ebb9eb364c",
+      "target_sha256": "5a881d7a028c56a7aa92b6179bb2b1bcdde317b38d0477f0dec67ad5e37c8df3",
+      "training_task": "code",
+      "instruction_count": 1848,
+      "stratum": "long",
+      "target_tokens": 1415,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 22,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_262495f5da02",
+      "target_sha256": "628d5a0b42e35878bb17223acb349561bb3cc8aaca472ee4e9ae8ff8a617f81e",
+      "training_task": "code",
+      "instruction_count": 1224,
+      "stratum": "long",
+      "target_tokens": 1244,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 27,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_aee9cdf2dfce",
+      "target_sha256": "5f6b858a6f3e1bfbee5a76e7dba9c5c8987a8906833f4fc3c0f386115b3d2cf2",
+      "training_task": "code",
+      "instruction_count": 849,
+      "stratum": "long",
+      "target_tokens": 437,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 126,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_dcb9ce819729",
+      "target_sha256": "1d23fc9a14727b571e10547073328aa82f9f3b4a3e7019057aef02b2f0dfe23b",
+      "training_task": "code",
+      "instruction_count": 971,
+      "stratum": "long",
+      "target_tokens": 528,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 132,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_71459bc947d1",
+      "target_sha256": "54449d56c1b8252e91ec0f6c954f3c39a4c51cdc6ccced2a81771dbc804bab65",
+      "training_task": "code",
+      "instruction_count": 696,
+      "stratum": "long",
+      "target_tokens": 756,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 146,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_8e46ffdc0539",
+      "target_sha256": "dcfab109c64b13f965ec927effa1437f086bf9cb59e5ea449f5247621cc72430",
+      "training_task": "code",
+      "instruction_count": 1061,
+      "stratum": "long",
+      "target_tokens": 1157,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 147,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_878a7fe6acf6",
+      "target_sha256": "ec0dc6f55dd650a26ac5a1d5ce10cb5b76fabdb3a3089e938172b24ef02a61ec",
+      "training_task": "code",
+      "instruction_count": 817,
+      "stratum": "long",
+      "target_tokens": 545,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 304,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "fresh-eval-68b40892f842",
+      "target_sha256": "ff32a9dc4c7bf4a692d1c67da79cdcc7458fd0fb64f0521d753c50a50e230efa",
+      "training_task": "code",
+      "instruction_count": 1139,
+      "stratum": "long",
+      "target_tokens": 274,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 311,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_34a9876149cb",
+      "target_sha256": "ad904431d16ec390f79002e1b58261fe8855105d4566a57988825b8d4664932b",
+      "training_task": "code",
+      "instruction_count": 1070,
+      "stratum": "long",
+      "target_tokens": 1515,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 333,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_36c354c2e279",
+      "target_sha256": "6d354421fb16e2a8ebd6d3e27923240f6ac39a169b81c4565ea3d83ce8fe82bf",
+      "training_task": "code",
+      "instruction_count": 2462,
+      "stratum": "long",
+      "target_tokens": 1671,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 467,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_452c11877e17",
+      "target_sha256": "da2ff261461ef1031d4ef9c13a0d12e6311734dd8aa83238af9167a54b8faa0e",
+      "training_task": "code",
+      "instruction_count": 2093,
+      "stratum": "long",
+      "target_tokens": 1695,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 515,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_a94ab907a9e6",
+      "target_sha256": "abc10b82aab8befd11fd538e983066968762ba2874c83b154fe4258b43c1f784",
+      "training_task": "code",
+      "instruction_count": 702,
+      "stratum": "long",
+      "target_tokens": 393,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 548,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_d544567b9189",
+      "target_sha256": "639d85dae26349e746957d428fbfcb9a2ef5741f08a7e52a71e44102eab44c36",
+      "training_task": "code",
+      "instruction_count": 659,
+      "stratum": "long",
+      "target_tokens": 449,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 555,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_f82cbe0b39af",
+      "target_sha256": "b230ffe7b2646a61514def141b1347d2c826db9034c7fc484ea98c90002af485",
+      "training_task": "code",
+      "instruction_count": 897,
+      "stratum": "long",
+      "target_tokens": 732,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 579,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "2278e07644145bf484abcef82cecc563aa44701822cfb94aad5576f5489953a7",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2894,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 709,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_a63618b7280a",
+      "target_sha256": "2410a31260f43f26143162541af28304d7ef5551fb1f47585650ef7175322e4c",
+      "training_task": "code",
+      "instruction_count": 662,
+      "stratum": "long",
+      "target_tokens": 356,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 725,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_aa5d923c77ee",
+      "target_sha256": "2bac9993cea2727aa858a2639d577ad6f69beb692a9127c143155965233e8211",
+      "training_task": "code",
+      "instruction_count": 812,
+      "stratum": "long",
+      "target_tokens": 311,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 729,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_00820a343174",
+      "target_sha256": "c7e772f6b8d3bc489ac184fe51b81bd3f3299987ca2676c026f2134e955b218a",
+      "training_task": "code",
+      "instruction_count": 640,
+      "stratum": "long",
+      "target_tokens": 457,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 747,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_75e668b01b85",
+      "target_sha256": "cb43569331bf4a2a92f19e1b9341aaae1cd271717a1f759c14c3d1241ff93c58",
+      "training_task": "code",
+      "instruction_count": 935,
+      "stratum": "long",
+      "target_tokens": 667,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 749,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_ea890014e562",
+      "target_sha256": "a343d47a37175af0faeeb4325a6216cde7800a111ea90989da34079d8be52861",
+      "training_task": "code",
+      "instruction_count": 862,
+      "stratum": "long",
+      "target_tokens": 485,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 835,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_b78f065b5f17",
+      "target_sha256": "035005d4bf2ce19219e00afdb6f142814e69c59f27965cfada3b7da55b3e8c3b",
+      "training_task": "code",
+      "instruction_count": 1366,
+      "stratum": "long",
+      "target_tokens": 1032,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 854,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "fresh-eval-4ffc2a72bf2f",
+      "target_sha256": "67a7431943590f4fcca21b663e003c4a614b02564f03d6dfb84ca7423bcaafa7",
+      "training_task": "code",
+      "instruction_count": 695,
+      "stratum": "long",
+      "target_tokens": 247,
+      "prompt_tokens": 8143
+    },
+    {
+      "index": 1036,
+      "dataset": "/workspace/artifacts/text_arm_v2_s44/00f_hierarchical_data/direct_all_length_train.jsonl",
+      "task_id": "sigless_4d0cb2ab25ea",
+      "target_sha256": "fb32481a2cb3e625b15cb0f776d90faaaa132e23eed3ab6ba19fea9f91b66d65",
+      "training_task": "code",
+      "instruction_count": 654,
+      "stratum": "long",
+      "target_tokens": 1047,
+      "prompt_tokens": 8143
+    }
+  ]
+}
+[00c_prepare_neutral_gate] previous state differs from current inputs/config; rebuilding
+
+[00c_prepare_neutral_gate] /venv/main/bin/python /workspace/scripts/evaluation/prepare_neutral_evaluation_antigravity.py --input /workspace/data/testing/fresh_graphv2_holdout_s44_rebuilt312.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/neutral_functional_eval.jsonl --report /workspace/artifacts/text_arm_v2_s44/00_phase0/neutral_functional_eval_report.json --neutral_name fn0 --min_rows 96 --timeout 20 --workers 16
+{
+  "output_rows": 490,
+  "reference_failures": 0
+}
+[00d_neutral_gate_audit] previous state differs from current inputs/config; rebuilding
+
+[00d_neutral_gate_audit] /venv/main/bin/python /workspace/scripts/evaluation/audit_grpo_reward_antigravity.py --dataset /workspace/artifacts/text_arm_v2_s44/00_phase0/neutral_functional_eval.jsonl --test_fields tests --run_references -1 --workers 16 --timeout 20 --require_neutral_contract --report /workspace/artifacts/text_arm_v2_s44/00_phase0/neutral_functional_eval_audit.json
+[100/490] reference parity failures=0
+[200/490] reference parity failures=0
+[300/490] reference parity failures=0
+[400/490] reference parity failures=0
+[490/490] reference parity failures=0
+{
+  "rows": 490,
+  "static_failures": 0,
+  "test_fields": {
+    "tests": {
+      "assertions_min": 8,
+      "assertions_max": 12
+    }
+  },
+  "static_failure_rows": [],
+  "reference_reward_parity": {
+    "checked_rows": 490,
+    "checked_harnesses": 490,
+    "passed_rows": 490,
+    "failures": []
+  }
+}
+
+[10_verpo] /venv/main/bin/python -m scripts.training.graph_grpo_decompiler_antigravity
+Loading GRPO training dataset: /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl
+Skipped 1758 Phase-0 rows with no visible 'feedback_tests' harness; they remain SFT-only.
+Tokenizing GRPO rows with reward field 'feedback_tests'...
+Tokenized 500/898 examples
+Loaded 214 independently verified anchor rows from /workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/verified_rs_sft_214.jsonl
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 50028.93it/s]
+Decoder attention implementation: flash_attention_2
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 6826.29it/s]
+Enabled decoder gradient checkpointing.
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=scalar, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Froze LocalBlockEncoder weights
+Applied PEFT LORA (r=64, alpha=128) to Decoder targets=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+Loading checkpoint from: /workspace/artifacts/text_arm_v2_s44/08b_rejection_sampling_sft/pytorch_model.bin
+Loaded GRPO checkpoint under a validated architecture contract: recognised=565 missing_frozen=617 unexpected=0
+Qwen graph prefix gate: 0.200028
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO verified-only SFT anchor: coef=0.1 on_no_signal=False source=separate verified loader
+GRPO graph glue training: OFF (frozen prefix)
+Starting GRPO Reinforcement Learning loop...
+GRPO optimizer: lr=1e-06 grad_accum=1 kl_coef=0.0 sft_anchor_coef=0.1 sft_anchor_on_no_signal=0 dynamic_resample_attempts=2 reward_test_field=feedback_tests clip_eps=0.2 entropy_coef=0.0 reward_mode=verpo reward_config={"advantage_normalization": "mean", "anchor_weight": 1.0, "density_normalization": "gaussian_kde", "difficulty_alpha": 2.0} unique_test_bonus=0.0 duplicate_penalty=0.0 gen_temperature=0.7 gen_top_p=0.95 adv_norm=mean min_reward_range=0.05 passk_k=10 score_chunk_size=1 loss_pooling=seq legacy_topk_smoothing=0 overlong_filter=0 clip_eps_high=None
+GRPO epoch 1/1:   0%|          | 0/898 [00:00<?, ?batch/s]                                                          Epoch 1 | Step 1 | Batch 1/898 | Loss: 0.0355 (RL=0.0000, SFT=0.3555) | Reward: 0.183 [0.000, 0.367] | RewardStd: 0.183 | SignalGroups: 1.00 | AdvAbs: 0.183 | OptStep: 1 | Skip: 0 | Resamples: 2 | Accum: 0/1 | PassRatio: 0.083/0.167 | CompiledObserved: 1.00 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 0.50 | PasskW: 1.00
+GRPO epoch 1/1:   0%|          | 0/898 [01:28<?, ?batch/s]GRPO epoch 1/1:   0%|          | 1/898 [01:28<22:01:01, 88.36s/batch]                                                                     Epoch 1 | Step 2 | Batch 2/898 | Loss: 0.0281 (RL=0.0000, SFT=0.2812) | Reward: 0.213 [0.117, 0.310] | RewardStd: 0.096 | SignalGroups: 1.00 | AdvAbs: 0.096 | OptStep: 1 | Skip: 0 | Resamples: 1 | Accum: 0/1 | PassRatio: 0.214/0.286 | CompiledObserved: 1.00 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 0.00 | PasskW: 1.00
+GRPO epoch 1/1:   0%|          | 1/898 [02:55<22:01:01, 88.36s/batch]GRPO epoch 1/1:   0%|          | 2/898 [02:55<21:45:37, 87.43s/batch]                                                                     Epoch 1 | Step 3 | Batch 3/898 | Loss: 0.0312 (RL=0.0000, SFT=0.3125) | Reward: 0.181 [0.000, 0.361] | RewardStd: 0.181 | SignalGroups: 1.00 | AdvAbs: 0.181 | OptStep: 1 | Skip: 0 | Resamples: 0 | Accum: 0/1 | PassRatio: 0.143/0.286 | CompiledObserved: 1.00 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 0.50 | PasskW: 1.00
+GRPO epoch 1/1:   0%|          | 2/898 [03:30<21:45:37, 87.43s/batch]GRPO epoch 1/1:   0%|          | 3/898 [03:30<15:51:37, 63.80s/batch]                                                                     Error at step 4: CUDA out of memory. Tried to allocate 132.00 MiB. GPU 0 has a total capacity of 94.97 GiB of which 50.88 MiB is free. Including non-PyTorch memory, this process has 94.90 GiB memory in use. Of the allocated memory 94.07 GiB is allocated by PyTorch, and 183.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+GRPO epoch 1/1:   0%|          | 3/898 [04:56<15:51:37, 63.80s/batch]Traceback (most recent call last):
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 2423, in main
+    stats = trainer.train_step(
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 1659, in train_step
+    return self._score_chunked_causal(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 1873, in _score_chunked_causal
+    policy_outputs = self.model.t5_model(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/peft_model.py", line 945, in forward
+    return self.get_base_model()(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 907, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 492, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 1036, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 424, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 318, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 265, in forward
+    value_states = self.v_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 967, in forward
+    x = self._cast_input_dtype(x, lora_A.weight.dtype)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 1702, in _cast_input_dtype
+    return x.to(dtype=dtype)
+           ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 132.00 MiB. GPU 0 has a total capacity of 94.97 GiB of which 50.88 MiB is free. Including non-PyTorch memory, this process has 94.90 GiB memory in use. Of the allocated memory 94.07 GiB is allocated by PyTorch, and 183.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+GRPO epoch 1/1:   0%|          | 3/898 [04:56<24:33:38, 98.79s/batch]
+Traceback (most recent call last):
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 2423, in main
+    stats = trainer.train_step(
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 1659, in train_step
+    return self._score_chunked_causal(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 1873, in _score_chunked_causal
+    policy_outputs = self.model.t5_model(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/peft_model.py", line 945, in forward
+    return self.get_base_model()(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 907, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 492, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 1036, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 424, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 318, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 265, in forward
+    value_states = self.v_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 967, in forward
+    x = self._cast_input_dtype(x, lora_A.weight.dtype)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 1702, in _cast_input_dtype
+    return x.to(dtype=dtype)
+           ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 132.00 MiB. GPU 0 has a total capacity of 94.97 GiB of which 50.88 MiB is free. Including non-PyTorch memory, this process has 94.90 GiB memory in use. Of the allocated memory 94.07 GiB is allocated by PyTorch, and 183.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 2553, in <module>
+    main()
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 2470, in main
+    raise RuntimeError("GRPO step failed; aborting to avoid a stale or partial update") from e
+RuntimeError: GRPO step failed; aborting to avoid a stale or partial update
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scripts/training/run_hybrid_curriculum_antigravity.py", line 2259, in <module>
+    main()
+  File "/workspace/scripts/training/run_hybrid_curriculum_antigravity.py", line 2255, in main
+    raise SystemExit(runner.execute())
+                     ^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/run_hybrid_curriculum_antigravity.py", line 1204, in execute
+    self.run(
+  File "/workspace/scripts/training/run_hybrid_curriculum_antigravity.py", line 504, in run
+    subprocess.run(command, cwd=self.root, env=env, check=True)
+  File "/venv/main/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/venv/main/bin/python', '-m', 'scripts.training.graph_grpo_decompiler_antigravity']' returned non-zero exit status 1.
+[verpo_v1] 2026-07-22T04:55:50Z PYEXIT=0

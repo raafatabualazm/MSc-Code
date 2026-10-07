@@ -1,0 +1,8 @@
+[v3passk] 2026-07-22T23:53:35Z build eval paired ...
+v3 eval paired: 175 rows -> v3eval_public/align/tests.jsonl
+[v3passk] generate (candidate) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7005.34it/s]
+[v3passk] gen rc=0  score (rename candidate->fn0) ...
+V3_PASSK tasks=175 pass@1=0/175=0.0000 pass@10=3/175=0.0171 compile@10=86/175=0.4914
+[v3passk] 2026-07-23T00:56:03Z done rc=0

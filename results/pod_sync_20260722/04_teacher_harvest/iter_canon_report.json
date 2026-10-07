@@ -1,0 +1,102 @@
+{
+  "schema_version": 2,
+  "stage": "build",
+  "data_role": "train",
+  "collected": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/collected.jsonl",
+    "size_bytes": 30963550,
+    "sha256": "d016e17af57537eb4a3061998d174d21639e01d91d988333f029102f6ed2a3e2"
+  },
+  "teacher_responses": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/teacher_responses_iter.jsonl",
+    "size_bytes": 60985,
+    "sha256": "390ed9e97b0d57bf421f8803fdaed013c08094b600bb1abc325c278de00c5479"
+  },
+  "proposals": 51,
+  "rs_sft_rows": 49,
+  "unique_tasks": 49,
+  "length_bins": [
+    "120_149",
+    "150_199",
+    "200_299",
+    "60_89",
+    "90_119",
+    "ge300",
+    "lt60"
+  ],
+  "preference_pairs": 49,
+  "origins": {
+    "teacher_repair": 49
+  },
+  "rejected": 2,
+  "rejections": {
+    "hidden_acceptance": 2,
+    "complete_harness": 2,
+    "facts_gate": 0
+  },
+  "rejection_examples": [
+    {
+      "task_key": "fresh-eval-b56f0274c0fc",
+      "failure_id": "4e31c38abc274ed507976b50",
+      "origin": "model_rollout",
+      "reasons": [
+        "hidden acceptance failed",
+        "complete harness failed"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:37:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:37:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-b56f0274c0fc",
+      "failure_id": "0c236c51e07e02282eb3c915",
+      "origin": "model_rollout",
+      "reasons": [
+        "hidden acceptance failed",
+        "complete harness failed"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:14:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:14:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    }
+  ],
+  "feedback_tests_exposed_to_teacher": false,
+  "hidden_acceptance_tests_exposed_to_teacher": false,
+  "facts_gate_mode": "off",
+  "outputs": {
+    "rs_sft": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/verified_rs_sft_iter_canon.jsonl",
+      "size_bytes": 1793781,
+      "sha256": "471011272a5b2e44f759b8cde117f44c514e4bac37a4aa14bd1dbd590d8f9f59"
+    },
+    "preferences": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/preferences_iter.jsonl",
+      "size_bytes": 246298,
+      "sha256": "798807c9661b9e10085ab3915a9ceb73a4d4cff8a9dd7cb8d309c04631d417b4"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "architecture": "native_encoder_decoder",
+  "latest_checkpoint": "checkpoint-optstep-000426",
+  "planned_updates": 426,
+  "production_floor_eligible": true,
+  "rows": 1132,
+  "schema": "t5gemma2-mixed-rs-sft-run-v1",
+  "status": "complete",
+  "updates": 426
+}

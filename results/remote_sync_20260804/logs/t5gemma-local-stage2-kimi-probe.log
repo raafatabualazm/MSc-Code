@@ -1,0 +1,245 @@
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/result.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/tokenizer/tokenizer.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426", "checkpoint_run_contract_sha256": "90d95239e17a524c2541dbe98cd728c16b1fbdd891baad27c8a488f5dc111369", "generation_code_changed": false, "heldout_175_opened": false, "inference_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "inference_core_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "pilot_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py", "pilot_core_sha256": "b3250412f4b0304c8857f2262f5d2a010a522e5a54b8e840485e6c6c094fffa7", "sampling_code_changed": false, "schedule_code_changed": false, "schema": "t5gemma2-mixed-local-rs-sft-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_mixed_compat.py", "wrapper_sha256": "8aa1165b2ec26f327780a7de934d060a6fee4d460f0bd58932acec5d63c695e1"}
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  51%|█████     | 673/1327 [00:00<00:00, 6722.86it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 7691.99it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 0, "task": 1, "task_id": "fresh-eval-d3b5764ae6ff", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/result.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/tokenizer/tokenizer.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_mixed_compat.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426", "checkpoint_run_contract_sha256": "90d95239e17a524c2541dbe98cd728c16b1fbdd891baad27c8a488f5dc111369", "generation_code_changed": false, "heldout_175_opened": false, "inference_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "inference_core_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "pilot_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py", "pilot_core_sha256": "0a6134c1753e69b75aa46eb4e762ab463b61c411db0c4c3ba7b18fe2f8e96f1d", "sampling_code_changed": false, "schedule_code_changed": false, "schema": "t5gemma2-mixed-local-rs-sft-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_mixed_compat.py", "wrapper_sha256": "604e72de551c478cfb5c5adf9658844c5343fa0ee57476638315ccb3afd2fed2"}
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  70%|███████   | 935/1327 [00:00<00:00, 9348.00it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 10072.59it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/result.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426/tokenizer/tokenizer.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_mixed_compat.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"checkpoint": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426", "checkpoint_run_contract_sha256": "90d95239e17a524c2541dbe98cd728c16b1fbdd891baad27c8a488f5dc111369", "generation_code_changed": false, "heldout_175_opened": false, "inference_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py", "inference_core_sha256": "564993a53a7f5891749f76f349bb6e41531d2a4cbdc2d721a41be21679d793d9", "mixed_loader_path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_mixed_compat.py", "mixed_loader_sha256": "758b0cf37475cacf8789ce9db62d3e6e8f88fe344c6d616c53b0c1d221921972", "pilot_core_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_pilot.py", "pilot_core_sha256": "0a6134c1753e69b75aa46eb4e762ab463b61c411db0c4c3ba7b18fe2f8e96f1d", "sampling_code_changed": false, "schedule_code_changed": false, "schema": "t5gemma2-mixed-local-rs-sft-loader-compat-v1", "scope": "checkpoint_contract_loader_only", "scoring_code_changed": false, "wrapper_path": "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_local_rs_sft_mixed_compat.py", "wrapper_sha256": "8ddf567c42124e6d549c69eb3748ecce256c8ec20522a8aae7f32732167a6477"}
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  60%|██████    | 801/1327 [00:00<00:00, 7998.49it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 8366.42it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 0, "task": 1, "task_id": "fresh-eval-d3b5764ae6ff", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 0, "task": 2, "task_id": "fresh-eval-4008c7e7f49c", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 0, "task": 3, "task_id": "fresh-eval-bf93c13108eb", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 1, "task": 4, "task_id": "sigless_be7c79632490", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 5, "task_id": "sigless_e45852ef8453", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 6, "task_id": "fresh-eval-01f0babe7165", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 7, "task_id": "fresh-eval-dae4c6a47ee5", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 8, "task_id": "sigless_b5cb3f9f2d41", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 9, "task_id": "sigless_a373cc2baf70", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 10, "task_id": "sigless_d83f819cda4a", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 1, "task": 11, "task_id": "fresh-eval-f5a17e16cf64", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 2, "task": 12, "task_id": "sigless_78f759d71cd8", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 2, "task": 13, "task_id": "fresh-eval-0ae604d15b6f", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 2, "task": 14, "task_id": "fresh-eval-fa87d491d2b9", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 2, "task": 15, "task_id": "fresh-eval-e7483c20a637", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 2, "task": 16, "task_id": "sigless_5576eacf8857", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 2, "task": 17, "task_id": "fresh-eval-fad11d3fb55a", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 3, "task": 18, "task_id": "fresh-eval-2f206ecd3c72", "tasks": 100, "visible_unique_passes": 3}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 3, "task": 19, "task_id": "sigless_aca3a29acba5", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 3, "task": 20, "task_id": "sigless_44b5b8de7031", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 3, "task": 21, "task_id": "fresh-eval-141127c3521f", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 3, "task": 22, "task_id": "sigless_07c3783f819e", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 4, "task": 23, "task_id": "sigless_028211648fc5", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 4, "task": 24, "task_id": "fresh-eval-4a6b302d1245", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 5, "task": 25, "task_id": "sigless_213fc2bb261b", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 5, "task": 26, "task_id": "sigless_74bb500fd9f7", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 5, "task": 27, "task_id": "sigless_91040f015e13", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 6, "task": 28, "task_id": "sigless_2702567b685b", "tasks": 100, "visible_unique_passes": 4}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 6, "task": 29, "task_id": "fresh-eval-1d5d26b9be71", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 6, "task": 30, "task_id": "sigless_2b5922da1112", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 6, "task": 31, "task_id": "sigless_978e6e0fc30a", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 6, "task": 32, "task_id": "sigless_67337c7dd9ce", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 6, "task": 33, "task_id": "sigless_cc6ed6d6afd0", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 7, "task": 34, "task_id": "sigless_ca2751f48b81", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 8, "task": 35, "task_id": "sigless_5a30d6da004b", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 36, "task_id": "fresh-eval-3a0533b9f875", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 37, "task_id": "sigless_857807765dcc", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 38, "task_id": "fresh-eval-d7c02dd879e2", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 39, "task_id": "fresh-eval-68e5b6c08f36", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 40, "task_id": "sigless_423c455e1e6f", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 41, "task_id": "sigless_be338ce17515", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 42, "task_id": "sigless_58f28b7ca92c", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 43, "task_id": "sigless_37940dd84528", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 8, "task": 44, "task_id": "sigless_0aa123040ab4", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 9, "task": 45, "task_id": "fresh-eval-33e2d39aa4d3", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 9, "task": 46, "task_id": "fresh-eval-4b95ab6f2740", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 9, "task": 47, "task_id": "sigless_4cd3735945ef", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 10, "task": 48, "task_id": "sigless_7eb5bd3195f8", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 11, "task": 49, "task_id": "fresh-eval-5669fd454723", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 11, "task": 50, "task_id": "sigless_d7bf2906f3b4", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 11, "task": 51, "task_id": "sigless_3a4011ccdb44", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 12, "task": 52, "task_id": "fresh-eval-43cbc91be065", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 13, "task": 53, "task_id": "fresh-eval-ef90cc9de571", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 13, "task": 54, "task_id": "sigless_f676fc25c581", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 13, "task": 55, "task_id": "fresh-eval-7a2a960d09eb", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 13, "task": 56, "task_id": "sigless_b87f4cae4ada", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 13, "task": 57, "task_id": "sigless_0026465806c5", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 13, "task": 58, "task_id": "fresh-eval-5d6b932b3399", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 14, "task": 59, "task_id": "sigless_823cb6ece12c", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 14, "task": 60, "task_id": "fresh-eval-94ac6f9cb495", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 14, "task": 61, "task_id": "fresh-eval-77def05d14f2", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 14, "task": 62, "task_id": "sigless_30bb765f383a", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 14, "task": 63, "task_id": "fresh-eval-50008806c2f9", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 14, "task": 64, "task_id": "fresh-eval-0971a155beb5", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 15, "task": 65, "task_id": "fresh-eval-8cc3012a2df8", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 16, "task": 66, "task_id": "sigless_6505cceddd08", "tasks": 100, "visible_unique_passes": 3}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 16, "task": 67, "task_id": "fresh-eval-bd5fc5b86c0b", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 16, "task": 68, "task_id": "fresh-eval-113fc6793a61", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 16, "task": 69, "task_id": "sigless_a069da56acfa", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 17, "task": 70, "task_id": "sigless_e958b53a2ef2", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 17, "task": 71, "task_id": "fresh-eval-616b875ce7cf", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 18, "task": 72, "task_id": "sigless_2499f3b025bd", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 18, "task": 73, "task_id": "sigless_4128d40d5043", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 19, "task": 74, "task_id": "sigless_b0c29e95da1b", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 75, "task_id": "fresh-eval-ad955f68b657", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 76, "task_id": "fresh-eval-541f93e561d9", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 77, "task_id": "fresh-eval-d238b35062c6", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 78, "task_id": "sigless_5e09beb70d6b", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 79, "task_id": "sigless_08d9788809ed", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 80, "task_id": "sigless_ff7d9e36c230", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 81, "task_id": "fresh-eval-8caa0cdff2b4", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 82, "task_id": "sigless_a56cfc171fc7", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 19, "task": 83, "task_id": "sigless_6732ad0e03c2", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 20, "task": 84, "task_id": "fresh-eval-bea56186ff9b", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 20, "task": 85, "task_id": "sigless_6db71c675d48", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 20, "task": 86, "task_id": "sigless_53963acbf653", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 21, "task": 87, "task_id": "fresh-eval-4c3e4e6d39ad", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 21, "task": 88, "task_id": "sigless_cbfe7a20b129", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 21, "task": 89, "task_id": "sigless_b1270b141694", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 21, "task": 90, "task_id": "sigless_d801178ee7a1", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 21, "task": 91, "task_id": "fresh-eval-ad995329fdfb", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 21, "task": 92, "task_id": "sigless_bff3b049ffef", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 22, "task": 93, "task_id": "sigless_7a4464860259", "tasks": 100, "visible_unique_passes": 2}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 22, "task": 94, "task_id": "sigless_f982cae071ae", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 22, "task": 95, "task_id": "sigless_4e5963a46a73", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": true, "accepted_total": 23, "task": 96, "task_id": "sigless_d6a577acccac", "tasks": 100, "visible_unique_passes": 1}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 23, "task": 97, "task_id": "fresh-eval-628e548b4a1b", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 23, "task": 98, "task_id": "fresh-eval-32a961a9b2c2", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 23, "task": 99, "task_id": "sigless_b97ec4460458", "tasks": 100, "visible_unique_passes": 0}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"accepted": false, "accepted_total": 23, "task": 100, "task_id": "fresh-eval-7a23087e87f0", "tasks": 100, "visible_unique_passes": 0}
+{"accepted": 23, "output_dir": "/workspace/artifacts/t5gemma2_local_rs_sft_mixed_kimi_probe_v1", "production_floor_met": true, "tasks": 100}

@@ -1,0 +1,65 @@
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"api_slot": 1, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_65ecc2868490"}
+{"api_slot": 2, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_4c0426f323f0"}
+{"api_slot": 3, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_4b089cb999db"}
+{"api_slot": 4, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_53699360ee35"}
+{"api_slot": 5, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_a2a13745e3d3"}
+{"api_slot": 6, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-8561a60e8045"}
+{"api_slot": 7, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-aa92d1c98233"}
+{"api_slot": 8, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_b8c495a54b8d"}
+{"api_slot": 9, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-628e548b4a1b"}
+{"api_slot": 10, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_0a4608d2a9d7"}
+{"api_slot": 11, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-3cc3a1459d3f"}
+{"api_slot": 12, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_03c031fc2414"}
+{"api_slot": 13, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_18d527564a8f"}
+{"api_slot": 14, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_542ea202d1d5"}
+{"api_slot": 15, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-33e2d39aa4d3"}
+{"api_slot": 16, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_e1a9514113c3"}
+{"api_slot": 17, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_bb7d757d445c"}
+{"api_slot": 18, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_0695f7991b9b"}
+{"api_slot": 19, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_c6b6462d4767"}
+{"api_slot": 20, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_d17d50df7f1f"}
+{"accepted": false, "task_id": "sigless_65ecc2868490", "verification_task": 1, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_4c0426f323f0", "verification_task": 2, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_4b089cb999db", "verification_task": 3, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_53699360ee35", "verification_task": 4, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a2a13745e3d3", "verification_task": 5, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-8561a60e8045", "verification_task": 6, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-aa92d1c98233", "verification_task": 7, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b8c495a54b8d", "verification_task": 8, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-628e548b4a1b", "verification_task": 9, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0a4608d2a9d7", "verification_task": 10, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-3cc3a1459d3f", "verification_task": 11, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_03c031fc2414", "verification_task": 12, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_18d527564a8f", "verification_task": 13, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_542ea202d1d5", "verification_task": 14, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-33e2d39aa4d3", "verification_task": 15, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_e1a9514113c3", "verification_task": 16, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_bb7d757d445c", "verification_task": 17, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_0695f7991b9b", "verification_task": 18, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_c6b6462d4767", "verification_task": 19, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_d17d50df7f1f", "verification_task": 20, "verification_tasks": 20, "visible_passes": 0}
+{"calls": 20, "estimated_usd": "1.776690000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1", "tasks": 20, "verified_targets": 3}

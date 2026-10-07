@@ -1,0 +1,192 @@
+Evaluating 2704 unique candidates on feedback tests with 16 workers
+  feedback verifier 25/2704
+  feedback verifier 50/2704
+  feedback verifier 75/2704
+  feedback verifier 100/2704
+  feedback verifier 125/2704
+  feedback verifier 150/2704
+  feedback verifier 175/2704
+  feedback verifier 200/2704
+  feedback verifier 225/2704
+  feedback verifier 250/2704
+  feedback verifier 275/2704
+  feedback verifier 300/2704
+  feedback verifier 325/2704
+  feedback verifier 350/2704
+  feedback verifier 375/2704
+  feedback verifier 400/2704
+  feedback verifier 425/2704
+  feedback verifier 450/2704
+  feedback verifier 475/2704
+  feedback verifier 500/2704
+  feedback verifier 525/2704
+  feedback verifier 550/2704
+  feedback verifier 575/2704
+  feedback verifier 600/2704
+  feedback verifier 625/2704
+  feedback verifier 650/2704
+  feedback verifier 675/2704
+  feedback verifier 700/2704
+  feedback verifier 725/2704
+  feedback verifier 750/2704
+  feedback verifier 775/2704
+  feedback verifier 800/2704
+  feedback verifier 825/2704
+  feedback verifier 850/2704
+  feedback verifier 875/2704
+  feedback verifier 900/2704
+  feedback verifier 925/2704
+  feedback verifier 950/2704
+  feedback verifier 975/2704
+  feedback verifier 1000/2704
+  feedback verifier 1025/2704
+  feedback verifier 1050/2704
+  feedback verifier 1075/2704
+  feedback verifier 1100/2704
+  feedback verifier 1125/2704
+  feedback verifier 1150/2704
+  feedback verifier 1175/2704
+  feedback verifier 1200/2704
+  feedback verifier 1225/2704
+  feedback verifier 1250/2704
+  feedback verifier 1275/2704
+  feedback verifier 1300/2704
+  feedback verifier 1325/2704
+  feedback verifier 1350/2704
+  feedback verifier 1375/2704
+  feedback verifier 1400/2704
+  feedback verifier 1425/2704
+  feedback verifier 1450/2704
+  feedback verifier 1475/2704
+  feedback verifier 1500/2704
+  feedback verifier 1525/2704
+  feedback verifier 1550/2704
+  feedback verifier 1575/2704
+  feedback verifier 1600/2704
+  feedback verifier 1625/2704
+  feedback verifier 1650/2704
+  feedback verifier 1675/2704
+  feedback verifier 1700/2704
+  feedback verifier 1725/2704
+  feedback verifier 1750/2704
+  feedback verifier 1775/2704
+  feedback verifier 1800/2704
+  feedback verifier 1825/2704
+  feedback verifier 1850/2704
+  feedback verifier 1875/2704
+  feedback verifier 1900/2704
+  feedback verifier 1925/2704
+  feedback verifier 1950/2704
+  feedback verifier 1975/2704
+  feedback verifier 2000/2704
+  feedback verifier 2025/2704
+  feedback verifier 2050/2704
+  feedback verifier 2075/2704
+  feedback verifier 2100/2704
+  feedback verifier 2125/2704
+  feedback verifier 2150/2704
+  feedback verifier 2175/2704
+  feedback verifier 2200/2704
+  feedback verifier 2225/2704
+  feedback verifier 2250/2704
+  feedback verifier 2275/2704
+  feedback verifier 2300/2704
+  feedback verifier 2325/2704
+  feedback verifier 2350/2704
+  feedback verifier 2375/2704
+  feedback verifier 2400/2704
+  feedback verifier 2425/2704
+  feedback verifier 2450/2704
+  feedback verifier 2475/2704
+  feedback verifier 2500/2704
+  feedback verifier 2525/2704
+  feedback verifier 2550/2704
+  feedback verifier 2575/2704
+  feedback verifier 2600/2704
+  feedback verifier 2625/2704
+  feedback verifier 2650/2704
+  feedback verifier 2675/2704
+  feedback verifier 2700/2704
+  feedback verifier 2704/2704
+{
+  "schema_version": 2,
+  "stage": "collect",
+  "data_role": "train",
+  "dataset": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl",
+    "size_bytes": 120044157,
+    "sha256": "f929d52f054dbcf5f7480b0cc689c053b5974aee297dae746da0ffc2bd0de765"
+  },
+  "phase0_report": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/phase0_report.json",
+    "size_bytes": 5470,
+    "sha256": "34f410ac5d463b7b3c560b9dd9d7e8ab5d6d9528201601b498413d9e62a28a39"
+  },
+  "phase0_approved_rows": 1081,
+  "predictions": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json",
+    "size_bytes": 10373104,
+    "sha256": "0d7e55b4920a62bba17e431840ab56e5ac84f7db367c3511b4ee7fa6abfac2ab"
+  },
+  "prediction_provenance": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json.provenance.json",
+    "size_bytes": 6900,
+    "sha256": "aa73986639ee0377f956ff3d9af286bb85b007c5ce7085690de970aad7449b2a"
+  },
+  "prediction_validation": {
+    "status": "passed",
+    "dataset": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl",
+      "size_bytes": 120044157,
+      "sha256": "f929d52f054dbcf5f7480b0cc689c053b5974aee297dae746da0ffc2bd0de765"
+    },
+    "predictions": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json",
+      "size_bytes": 10373104,
+      "sha256": "0d7e55b4920a62bba17e431840ab56e5ac84f7db367c3511b4ee7fa6abfac2ab"
+    },
+    "provenance": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json.provenance.json",
+      "size_bytes": 6900,
+      "sha256": "aa73986639ee0377f956ff3d9af286bb85b007c5ce7085690de970aad7449b2a"
+    },
+    "checkpoint": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/02t_text_sft/pytorch_model.bin",
+      "sha256": "3d53cfcac95282cec22260e393bf55ae2727e2fd9405c2a3781348b34928a04f",
+      "size_bytes": 1349588215
+    },
+    "checkpoint_load_status": "passed",
+    "prompt_schema_version": "antigravity-v6-all-length-hierarchical",
+    "generation": {
+      "decoder_gradient_checkpointing": false,
+      "decoder_prompt_max_length": 12288,
+      "generation_batch_size": 16,
+      "max_new_tokens": 3328,
+      "num_samples": 8,
+      "use_cache": true
+    },
+    "graph_input_ablation": {
+      "final_context_zeroed": false,
+      "mapping_sha256": "4c5489a37a29fb2f9875128902cd4afb5af588d2105e958b8885ee0e397f2337",
+      "mode": "none",
+      "seed": 44,
+      "self_mapped_rows": 1000
+    },
+    "source_line_count": 1000,
+    "unique_source_line_count": 1000,
+    "failures": []
+  },
+  "evaluated_candidates": 2704,
+  "selected_records": 678,
+  "feedback_positives": 2,
+  "teacher_failures": 676,
+  "tasks": 338,
+  "hidden_acceptance_tests_exposed": false,
+  "output": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/collected.jsonl.tmp",
+    "size_bytes": 30963550,
+    "sha256": "d016e17af57537eb4a3061998d174d21639e01d91d988333f029102f6ed2a3e2"
+  }
+}
+[collect04] 2026-07-21T13:58:33Z collect rc=0
+[collect04] 2026-07-21T13:58:33Z mv -> collected.jsonl rows=678

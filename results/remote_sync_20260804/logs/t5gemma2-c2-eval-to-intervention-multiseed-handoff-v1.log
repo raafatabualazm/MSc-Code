@@ -1,0 +1,27 @@
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_c2_verpo_multiseed.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/opt/supervisor-scripts/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/etc/supervisor/conf.d/t5gemma2-typed-c2-verpo-matched-eval8192-v1.conf: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_measurement_intervention_multiseed_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2-measurement-intervention-multiseed-v1.conf: OK
+T5GEMMA_TYPED_C2_VERPO_MULTISEED_EVAL_COMPLETE {"automatic_promotion_performed": false, "decision": "STOP_AFTER_MATCHED_EVALUATION"}
+t5gemma2-measurement-intervention-multiseed-v1: started
+T5GEMMA_C2_EVAL_TO_INTERVENTION_MULTISEED_BLOCKED next program did not remain started state=EXITED
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_c2_verpo_multiseed.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/opt/supervisor-scripts/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/etc/supervisor/conf.d/t5gemma2-typed-c2-verpo-matched-eval8192-v1.conf: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_measurement_intervention_multiseed_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2-measurement-intervention-multiseed-v1.conf: OK
+T5GEMMA_TYPED_C2_VERPO_MULTISEED_EVAL_COMPLETE {"automatic_promotion_performed": false, "decision": "STOP_AFTER_MATCHED_EVALUATION"}
+t5gemma2-measurement-intervention-multiseed-v1: started
+T5GEMMA_C2_EVAL_TO_INTERVENTION_MULTISEED_BLOCKED next program did not remain started state=EXITED
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_c2_verpo_multiseed.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/opt/supervisor-scripts/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/etc/supervisor/conf.d/t5gemma2-typed-c2-verpo-matched-eval8192-v1.conf: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_measurement_intervention_multiseed_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2-measurement-intervention-multiseed-v1.conf: OK
+T5GEMMA_TYPED_C2_VERPO_MULTISEED_EVAL_COMPLETE {"automatic_promotion_performed": false, "decision": "STOP_AFTER_MATCHED_EVALUATION"}
+t5gemma2-measurement-intervention-multiseed-v1: started
+T5GEMMA_C2_EVAL_TO_INTERVENTION_MULTISEED_STARTED program=t5gemma2-measurement-intervention-multiseed-v1 report_sha256=4c9812c68c3596fa26f6f269a9fac08ef80abd2ddceb7b17696a8f065d0c4d0f free_kib=13509208

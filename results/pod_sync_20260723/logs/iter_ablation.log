@@ -1,0 +1,33 @@
+unrepaired tasks to attempt: 235
+  round 1: 25/235
+  round 1: 50/235
+  round 1: 75/235
+  round 1: 100/235
+  round 1: 125/235
+  round 1: 150/235
+  round 1: 175/235
+  round 1: 200/235
+  round 1: 225/235
+  round 1: 235/235
+[round 1] attempted=235 gained=16 cumulative=16
+  round 2: 25/219
+  round 2: 50/219
+  round 2: 75/219
+  round 2: 100/219
+  round 2: 125/219
+  round 2: 150/219
+  round 2: 175/219
+  round 2: 200/219
+  round 2: 219/219
+[round 2] attempted=219 gained=25 cumulative=41
+  round 3: 25/194
+  round 3: 50/194
+  round 3: 75/194
+  round 3: 100/194
+  round 3: 125/194
+  round 3: 150/194
+  round 3: 175/194
+  round 3: 194/194
+[round 3] attempted=194 gained=8 cumulative=49
+REPORT {"unrepaired_attempted": 235, "new_verified": 49, "round_gain": [{"round": 1, "attempted": 235, "gained": 16, "cumulative": 16}, {"round": 2, "attempted": 219, "gained": 25, "cumulative": 41}, {"round": 3, "attempted": 194, "gained": 8, "cumulative": 49}], "new_by_bin": {"200_299": 8, "60_149": 27, "150_199": 10, "ge300": 2, "lt60": 2}, "visibility": "diagnostics", "rounds": 3}
+[iter-ablation] 2026-07-21T16:21:36Z done rc=0

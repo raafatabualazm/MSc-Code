@@ -1,0 +1,428 @@
+T5GEMMA_2E_EVAL_BLOCKED unrecognized trainer state: /opt/supervisor-scripts/t5gemma2_sft_2epoch_eval.sh: line 37: /usr/bin/supervisorctl: No such file or directory
+T5GEMMA_2E_EVAL_BLOCKED unrecognized trainer state: /opt/supervisor-scripts/t5gemma2_sft_2epoch_eval.sh: line 37: /usr/bin/supervisorctl: No such file or directory
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+T5GEMMA_2E_EVAL_WAITING trainer=t5gemma-sft-2epoch state=RUNNING
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+{"arm": "base", "max_token_completions": 100, "output": "/workspace/artifacts/t5gemma2_prepost_passk_v1/pre_base_k10_predictions.json", "output_sha256": "1690d18cabd949b909dd477bd2dc96f07c578b9b2b2a3b31d93f747c69352348", "rows": 175, "samples": 1750}
+DIRECT_COMPACT_SCORE_REUSED output=/workspace/artifacts/t5gemma2_prepost_passk_v1/pre_base_k10_score.json
+T5GEMMA_2E_EVAL_ARM_COMPLETE arm=base score=/workspace/artifacts/t5gemma2_prepost_passk_v1/pre_base_k10_score.json
+{"arm": "sft", "max_token_completions": 23, "output": "/workspace/artifacts/t5gemma2_prepost_passk_v1/post_sft_k10_predictions.json", "output_sha256": "90bda0f922568f33395d9767a1d6ad9f54bb760958e880ecd21df237e031cfab", "rows": 175, "samples": 1750}
+DIRECT_COMPACT_SCORE_REUSED output=/workspace/artifacts/t5gemma2_prepost_passk_v1/post_sft_k10_score.json
+T5GEMMA_2E_EVAL_ARM_COMPLETE arm=one_epoch score=/workspace/artifacts/t5gemma2_prepost_passk_v1/post_sft_k10_score.json
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  62%|██████▏   | 823/1327 [00:00<00:00, 8220.07it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 9319.26it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 523.5, "task": 1, "task_id": "sigless_6f74b303025c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 271.0, "task": 2, "task_id": "sigless_1eae8c49db66", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 290.5, "task": 3, "task_id": "sigless_8230c078962e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 375.5, "task": 4, "task_id": "sigless_ef71ae50a5fb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 119.6, "task": 5, "task_id": "sigless_0c28ea18fc09", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 149.0, "task": 6, "task_id": "sigless_9dcc77211b03", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 201.9, "task": 7, "task_id": "sigless_e3b7af399229", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 252.5, "task": 8, "task_id": "sigless_f2b582d1df68", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 185.7, "task": 9, "task_id": "sigless_af8ea815d9ac", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 321.6, "task": 10, "task_id": "sigless_ed4d7dcd5f20", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 216.4, "task": 11, "task_id": "sigless_ac1a3f90780a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 144.9, "task": 12, "task_id": "sigless_2607923a35c2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 951.5, "task": 13, "task_id": "sigless_9acafa491865", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 107.4, "task": 14, "task_id": "sigless_08a97c3f3f6b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 148.8, "task": 15, "task_id": "sigless_561333b633a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 132.0, "task": 16, "task_id": "sigless_43bc373e09d3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 322.2, "task": 17, "task_id": "sigless_7968d9b30560", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 164.2, "task": 18, "task_id": "sigless_682c5301dfb2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 435.5, "task": 19, "task_id": "sigless_37c22f197b0e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 471.1, "task": 20, "task_id": "sigless_34e9dc99606e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 656.5, "task": 21, "task_id": "sigless_6ad70e03dabe", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 162.3, "task": 22, "task_id": "sigless_217ef71865c3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 408.0, "task": 23, "task_id": "sigless_295a1f5c7259", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 140.3, "task": 24, "task_id": "sigless_3b143aa33af0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 339.6, "task": 25, "task_id": "sigless_6e4974ba05d6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 141.8, "task": 26, "task_id": "sigless_40ffe3504975", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 358.8, "task": 27, "task_id": "sigless_5c47cc5132ae", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 158.2, "task": 28, "task_id": "sigless_0dc17d9531b9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 281.6, "task": 29, "task_id": "sigless_e989552bfd91", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 255.6, "task": 30, "task_id": "sigless_588a3df34892", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 357.8, "task": 31, "task_id": "sigless_7f5464d20af0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 277.0, "task": 32, "task_id": "sigless_c06bd1b6353c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 111.4, "task": 33, "task_id": "sigless_7ce0645c7c59", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 155.6, "task": 34, "task_id": "sigless_842d8bd3822e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 167.5, "task": 35, "task_id": "sigless_f19a1cde385c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 139.0, "task": 36, "task_id": "sigless_66f0c3982031", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 255.9, "task": 37, "task_id": "sigless_6ca6f0196a67", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 204.1, "task": 38, "task_id": "sigless_8cc4767c9e31", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 419.5, "task": 39, "task_id": "sigless_689fa1a18517", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 1, "mean_action_tokens": 859.0, "task": 40, "task_id": "sigless_a6a008b7b43f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 178.8, "task": 41, "task_id": "sigless_b03bf3bb9c5b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 169.8, "task": 42, "task_id": "sigless_c5fe1b2b12ae", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 104.9, "task": 43, "task_id": "sigless_8d0cf57a5b8f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 331.6, "task": 44, "task_id": "sigless_7e986e1787e9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 1, "mean_action_tokens": 1441.8, "task": 45, "task_id": "sigless_172bb23be947", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 151.2, "task": 46, "task_id": "sigless_5f0732a851d6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 466.8, "task": 47, "task_id": "sigless_761f28484d46", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 112.5, "task": 48, "task_id": "sigless_1f311da5c92c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 515.2, "task": 49, "task_id": "sigless_5b084bc217a7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 360.8, "task": 50, "task_id": "sigless_813393f0ede5", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 270.6, "task": 51, "task_id": "sigless_c533ec05295f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 275.3, "task": 52, "task_id": "sigless_f313c6aa6b38", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 185.9, "task": 53, "task_id": "sigless_7da06c701a11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 1441.5, "task": 54, "task_id": "sigless_32c65c037f11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 169.2, "task": 55, "task_id": "sigless_800a63a44bf8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 117.5, "task": 56, "task_id": "sigless_ae3f6b074a1d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 192.3, "task": 57, "task_id": "sigless_bdb5051ba702", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 178.8, "task": 58, "task_id": "sigless_5a81bb01e5b7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 272.7, "task": 59, "task_id": "sigless_3cc19bbfa30f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 112.0, "task": 60, "task_id": "sigless_ca058cccbe26", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 379.4, "task": 61, "task_id": "sigless_b33d2de9af80", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 173.9, "task": 62, "task_id": "sigless_c25abcd9a325", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 264.3, "task": 63, "task_id": "sigless_6d8c4ba351c5", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 233.2, "task": 64, "task_id": "sigless_a247e5f7ba82", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 165.5, "task": 65, "task_id": "sigless_2285fc4955db", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 288.7, "task": 66, "task_id": "sigless_97decd4f7443", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 195.2, "task": 67, "task_id": "sigless_79bfe84158a3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 115.0, "task": 68, "task_id": "sigless_6dfdaa80a5a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 227.7, "task": 69, "task_id": "sigless_52260deec95d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 196.0, "task": 70, "task_id": "sigless_96546ea01643", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 169.7, "task": 71, "task_id": "sigless_083954eb2fb3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 382.6, "task": 72, "task_id": "sigless_a348fccf3353", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 218.0, "task": 73, "task_id": "sigless_1b1ea7b75cff", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 542.4, "task": 74, "task_id": "sigless_f8e93c6852a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 262.2, "task": 75, "task_id": "sigless_8bf7f40ca356", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 302.4, "task": 76, "task_id": "sigless_dda92f9b56cf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 225.7, "task": 77, "task_id": "sigless_29facc14bbd7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 311.4, "task": 78, "task_id": "sigless_03890dcefaec", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 367.9, "task": 79, "task_id": "sigless_0676ce351471", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 116.7, "task": 80, "task_id": "sigless_a507056ae077", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 143.1, "task": 81, "task_id": "sigless_cc73707101e6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 312.9, "task": 82, "task_id": "sigless_9588ecf888b2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 233.3, "task": 83, "task_id": "sigless_4708b0b01b11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 260.4, "task": 84, "task_id": "sigless_a4594aa05a9c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 184.4, "task": 85, "task_id": "sigless_0d23ec54c1ec", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 158.4, "task": 86, "task_id": "sigless_2b4ce9b63420", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 180.3, "task": 87, "task_id": "sigless_d19512840646", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 250.5, "task": 88, "task_id": "sigless_254a6441f2f8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 199.1, "task": 89, "task_id": "sigless_bd2a15378da9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 108.4, "task": 90, "task_id": "sigless_81915896d27e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 255.7, "task": 91, "task_id": "sigless_e1ba6073c24a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 184.9, "task": 92, "task_id": "sigless_3a3a9c12bb06", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 303.7, "task": 93, "task_id": "sigless_288bf7a714e1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 130.1, "task": 94, "task_id": "sigless_35088d24eba1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 230.5, "task": 95, "task_id": "sigless_64a085399724", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 666.3, "task": 96, "task_id": "sigless_d544567b9189", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 197.6, "task": 97, "task_id": "sigless_73f9e7c2b2e2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 129.6, "task": 98, "task_id": "sigless_719577f723ab", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 259.3, "task": 99, "task_id": "sigless_2f380f310be1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 311.0, "task": 100, "task_id": "sigless_cd4130196f1f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 310.7, "task": 101, "task_id": "sigless_af300e5a0f21", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 164.5, "task": 102, "task_id": "sigless_8c5d7927d750", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 182.4, "task": 103, "task_id": "sigless_c4383a715ff3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 165.8, "task": 104, "task_id": "sigless_bd986d86cebb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 185.0, "task": 105, "task_id": "sigless_bcebeb9e6334", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 112.1, "task": 106, "task_id": "sigless_d705d736995d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 189.2, "task": 107, "task_id": "sigless_b03a8afc1094", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 158.8, "task": 108, "task_id": "sigless_fa4972c4e52e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 1600.8, "task": 109, "task_id": "sigless_993f7ab38cdd", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 151.8, "task": 110, "task_id": "sigless_95105e48c1e8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 178.9, "task": 111, "task_id": "sigless_9e128db660ea", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 379.3, "task": 112, "task_id": "sigless_949e6c11e478", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 158.0, "task": 113, "task_id": "sigless_55cc112cbb2c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 240.0, "task": 114, "task_id": "sigless_c45cfc4290f2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 154.0, "task": 115, "task_id": "sigless_d1f52bab434e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 110.8, "task": 116, "task_id": "sigless_696808df1978", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 162.5, "task": 117, "task_id": "sigless_840847bedc74", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 114.1, "task": 118, "task_id": "sigless_eee05f5f93cc", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 194.8, "task": 119, "task_id": "sigless_d61f01ff1856", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 175.4, "task": 120, "task_id": "sigless_79a8dd260f8c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 190.4, "task": 121, "task_id": "sigless_5628428fcb9e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 498.6, "task": 122, "task_id": "sigless_459decc7079c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 189.4, "task": 123, "task_id": "sigless_897c175fe34d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 3, "mean_action_tokens": 3022.2, "task": 124, "task_id": "sigless_f9772127b371", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 1, "mean_action_tokens": 2232.2, "task": 125, "task_id": "sigless_e087cd483fa1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 1084.1, "task": 126, "task_id": "sigless_c8721da111a6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 230.8, "task": 127, "task_id": "sigless_39b2bb878943", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 230.1, "task": 128, "task_id": "sigless_fc85f3ba4f9a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 218.6, "task": 129, "task_id": "sigless_877a173b0a13", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 292.6, "task": 130, "task_id": "sigless_f35b198c6f09", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 135.4, "task": 131, "task_id": "sigless_f12cc1905252", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 201.4, "task": 132, "task_id": "sigless_2d693beca98e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 224.4, "task": 133, "task_id": "sigless_ca1164247b57", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 156.0, "task": 134, "task_id": "sigless_1c2de2da855e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 319.6, "task": 135, "task_id": "sigless_fde9338419bb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 717.4, "task": 136, "task_id": "sigless_caabd71fcc51", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 187.8, "task": 137, "task_id": "sigless_f5884d232b82", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 256.8, "task": 138, "task_id": "sigless_f00a8eba1899", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 259.7, "task": 139, "task_id": "sigless_00029a7e6212", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 294.8, "task": 140, "task_id": "sigless_92c2979883a9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 378.0, "task": 141, "task_id": "sigless_294c09c37fca", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 1, "mean_action_tokens": 1398.7, "task": 142, "task_id": "sigless_15d4ae2f8443", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 213.4, "task": 143, "task_id": "sigless_fcd2fb050bf6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 135.8, "task": 144, "task_id": "sigless_4b8ae6c364f9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 172.7, "task": 145, "task_id": "sigless_5af03fd8ef7b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 170.2, "task": 146, "task_id": "sigless_d34ebc7ed34a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 174.9, "task": 147, "task_id": "sigless_808d6c1c9b6a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 1069.1, "task": 148, "task_id": "sigless_26315cbfcfbf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 526.1, "task": 149, "task_id": "sigless_f70dce70d2e6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 230.7, "task": 150, "task_id": "sigless_192fbb20f4b6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 149.0, "task": 151, "task_id": "sigless_c6fed62b2c1d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 366.2, "task": 152, "task_id": "sigless_07dd80fcc8e7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 149.9, "task": 153, "task_id": "sigless_6dbf14b60080", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 277.6, "task": 154, "task_id": "sigless_c4f8a1d2a501", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 140.5, "task": 155, "task_id": "sigless_b6b6f07b0ff9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 314.4, "task": 156, "task_id": "sigless_94c9c9421304", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 211.3, "task": 157, "task_id": "sigless_6d83ced1ddc9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 192.7, "task": 158, "task_id": "sigless_37e2ca3dea18", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 118.0, "task": 159, "task_id": "sigless_27d7320a3bdf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 337.6, "task": 160, "task_id": "sigless_88aae2bb0dda", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 147.1, "task": 161, "task_id": "sigless_809d366ff6f0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 148.1, "task": 162, "task_id": "sigless_7412fc8a275b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 172.7, "task": 163, "task_id": "sigless_dd676587e3c2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 440.4, "task": 164, "task_id": "sigless_4cb006480238", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 302.8, "task": 165, "task_id": "sigless_adc978f7e65b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 231.1, "task": 166, "task_id": "sigless_7e997d06e5bd", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 239.9, "task": 167, "task_id": "sigless_edd7ed243c48", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 183.0, "task": 168, "task_id": "sigless_b721d6a533f8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 254.0, "task": 169, "task_id": "sigless_bcb6f4de3081", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 181.4, "task": 170, "task_id": "sigless_fe5faa93760d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 207.6, "task": 171, "task_id": "sigless_d59fd5c25caf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 368.2, "task": 172, "task_id": "sigless_bf3de39765c8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 223.3, "task": 173, "task_id": "sigless_b885d1ba1001", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 141.7, "task": 174, "task_id": "sigless_3af6f6ae5576", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"arm": "sft", "max_token_completions": 0, "mean_action_tokens": 176.5, "task": 175, "task_id": "sigless_54c0d3ca981f", "tasks": 175}
+{"arm": "sft", "max_token_completions": 7, "output": "/workspace/artifacts/t5gemma2_sft_epoch_ablation_passk_v1/two_epoch_k10_predictions.json", "output_sha256": "16f27a9d96df73e4e5c3e4f43ced4cd3b46574bf3dc9cceb5beadb382c76e14d", "rows": 175, "samples": 1750}
+PASSK_RESULT tasks=175 pass@1=2/175=0.0114 pass@10=7/175=0.0400 compile@10=124/175=0.7086
+T5GEMMA_2E_EVAL_ARM_COMPLETE arm=two_epoch score=/workspace/artifacts/t5gemma2_sft_epoch_ablation_passk_v1/two_epoch_k10_score.json
+{"arms": {"base": {"metrics": {"compile_at_k": {"count": 0, "rate": 0.0}, "pass_at_1": {"count": 0, "rate": 0.0}, "pass_at_k": {"count": 0, "rate": 0.0}}, "predictions": "/workspace/artifacts/t5gemma2_prepost_passk_v1/pre_base_k10_predictions.json", "predictions_sha256": "1690d18cabd949b909dd477bd2dc96f07c578b9b2b2a3b31d93f747c69352348", "score": "/workspace/artifacts/t5gemma2_prepost_passk_v1/pre_base_k10_score.json", "score_sha256": "41fa8a76daa1b0b2f12a87aa59992cb140aac4c99be7aeb43ec2d4f6c958dcc4"}, "one_epoch": {"metrics": {"compile_at_k": {"count": 116, "rate": 0.6628571428571428}, "pass_at_1": {"count": 3, "rate": 0.017142857142857144}, "pass_at_k": {"count": 7, "rate": 0.04}}, "predictions": "/workspace/artifacts/t5gemma2_prepost_passk_v1/post_sft_k10_predictions.json", "predictions_sha256": "90bda0f922568f33395d9767a1d6ad9f54bb760958e880ecd21df237e031cfab", "score": "/workspace/artifacts/t5gemma2_prepost_passk_v1/post_sft_k10_score.json", "score_sha256": "8b6fea84a3f222ee907f4b57d05a38f14ab429e9453823525bfbc1e7263a67c4"}, "two_epoch": {"metrics": {"compile_at_k": {"count": 124, "rate": 0.7085714285714285}, "pass_at_1": {"count": 2, "rate": 0.011428571428571429}, "pass_at_k": {"count": 7, "rate": 0.04}}, "predictions": "/workspace/artifacts/t5gemma2_sft_epoch_ablation_passk_v1/two_epoch_k10_predictions.json", "predictions_sha256": "16f27a9d96df73e4e5c3e4f43ced4cd3b46574bf3dc9cceb5beadb382c76e14d", "score": "/workspace/artifacts/t5gemma2_sft_epoch_ablation_passk_v1/two_epoch_k10_score.json", "score_sha256": "e98d2f7dea3d12a17a4287d77ba324b48e50bff0ba3ca62c765bd85349b43334"}}, "exact_pairing_validated": true, "heldout_tasks": 175, "k": 10, "no_frontier_api": true, "paired_two_epoch_vs_one_epoch": {"compile_at_k": {"equal_tasks": 149, "one_epoch_above_two_epoch_tasks": 9, "two_epoch_above_one_epoch_tasks": 17}, "pass_at_1": {"equal_tasks": 170, "one_epoch_above_two_epoch_tasks": 3, "two_epoch_above_one_epoch_tasks": 2}, "pass_at_k": {"equal_tasks": 167, "one_epoch_above_two_epoch_tasks": 4, "two_epoch_above_one_epoch_tasks": 4}}, "same_inference_code": true, "same_sampling_and_slot_seeds": true, "same_scoring_contract": true, "same_task_order_and_sources": true, "schema": "t5gemma2-sft-epoch-ablation-comparison-v1", "status": "complete", "tests_exposed_to_model": false}
+T5GEMMA_2E_EVAL_COMPLETE output=/workspace/artifacts/t5gemma2_sft_epoch_ablation_passk_v1/comparison.json

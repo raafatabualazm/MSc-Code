@@ -1,0 +1,30 @@
+
+$ /venv/main/bin/python scripts/training/audit_grpo_reward_antigravity.py --dataset data/datasets/synthetic_pool_reward_clean_cfg.jsonl --report data/datasets/synthetic_reward_splits/reward_static_audit.json
+{
+  "rows": 1725,
+  "static_failures": 0,
+  "assertions_min": 4,
+  "assertions_max": 14,
+  "helper_names": [
+    "expect",
+    "expectList",
+    "expectMap",
+    "expectSet"
+  ],
+  "static_failure_rows": []
+}
+
+$ /venv/main/bin/python scripts/training/audit_grpo_reward_antigravity.py --dataset data/datasets/synthetic_pool_reward_clean_cfg.jsonl --report data/datasets/synthetic_reward_splits/reward_static_audit.json
+{
+  "rows": 1725,
+  "static_failures": 0,
+  "assertions_min": 4,
+  "assertions_max": 14,
+  "helper_names": [
+    "expect",
+    "expectList",
+    "expectMap",
+    "expectSet"
+  ],
+  "static_failure_rows": []
+}

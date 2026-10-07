@@ -1,0 +1,6 @@
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  53%|█████▎    | 697/1327 [00:00<00:00, 6966.90it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 7897.07it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)

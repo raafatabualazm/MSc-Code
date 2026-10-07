@@ -1,0 +1,8 @@
+{"task_id": "sigless_f1f876558a71", "strings": ["accountId"], "numbers": [], "err": null, "noff": 7}
+{"task_id": "sigless_3246dfeb7fff", "strings": ["Attempt to execute code removed by Dart AOT compiler (TFA)", "DRY", "UNDO", "WATER"], "numbers": [], "err": null, "noff": 8}
+{"task_id": "sigless_ed327194c61b", "strings": ["0"], "numbers": [], "err": null, "noff": 1}
+{"task_id": "sigless_677744062f33", "strings": ["RMQ("], "numbers": [], "err": null, "noff": 11}
+{"task_id": "sigless_ffb62c1d43f8", "strings": [], "numbers": [], "err": null, "noff": 1}
+{"task_id": "sigless_c468c7824b3d", "strings": [], "numbers": [], "err": null, "noff": 0}
+{"task_id": "sigless_f9e266ef9d1b", "strings": ["row"], "numbers": [], "err": null, "noff": 3}
+{"task_id": "sigless_e5c3c9909625", "strings": ["No solution found.", "Solved Sudoku:"], "numbers": [], "err": null, "noff": 10}

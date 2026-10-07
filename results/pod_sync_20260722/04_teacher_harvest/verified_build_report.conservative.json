@@ -1,0 +1,1438 @@
+{
+  "schema_version": 2,
+  "stage": "build",
+  "data_role": "train",
+  "collected": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/collected.jsonl",
+    "size_bytes": 30963550,
+    "sha256": "d016e17af57537eb4a3061998d174d21639e01d91d988333f029102f6ed2a3e2"
+  },
+  "teacher_responses": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/teacher_responses.jsonl",
+    "size_bytes": 2563390,
+    "sha256": "942fc04eadd4246e45b5b619c18fc53b7d82904a29a7739e193652b270c0b84b"
+  },
+  "proposals": 678,
+  "rs_sft_rows": 0,
+  "unique_tasks": 0,
+  "length_bins": [],
+  "preference_pairs": 0,
+  "origins": {},
+  "rejected": 678,
+  "rejections": {
+    "hidden_acceptance": 482,
+    "complete_harness": 508,
+    "facts_gate": 577
+  },
+  "rejection_examples": [
+    {
+      "task_key": "fresh-eval-60c2bcfe24e4",
+      "failure_id": "b40845d50b45d96b13d8c0ea",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[3, 12, 33, 48, 57, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', '_StringBase.codeUnits'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"_StringBase.codeUnits\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n2 != 1\n#1      main (fil<path>/test.dart:33:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n10 != 5\n#1      main (fil<path>/test.dart:34:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n2 != 1\n#1      main (fil<path>/test.dart:33:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-60c2bcfe24e4",
+      "failure_id": "7cd9a19dddde1df6686b7f8f",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[3, 12, 33, 48, 57, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', '_StringBase.codeUnits'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"_StringBase.codeUnits\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n2 != 1\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n10 != 5\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n2 != 1\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-1aa9add98e5e",
+      "failure_id": "790c79643d5461c56c006a9c",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:9:20)\n#2      main (fil<path>/test.dart:20:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:9:20)\n#2      main (fil<path>/test.dart:22:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:9:20)\n#2      main (fil<path>/test.dart:20:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-1aa9add98e5e",
+      "failure_id": "ac1fb067b1b0fd81724a6f99",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 15, 254300] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:8:18)\n#2      main (fil<path>/test.dart:22:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:8:18)\n#2      main (fil<path>/test.dart:24:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:8:18)\n#2      main (fil<path>/test.dart:22:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-54981e6186a8",
+      "failure_id": "cd15ad889216b8e29a3605dc",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != weak\n#1      main (fil<path>/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:10:33)\n#2      main (fil<path>/test.dart:23:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != weak\n#1      main (fil<path>/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-54981e6186a8",
+      "failure_id": "3396ad35ca40f2ecc41b5b25",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != weak\n#1      main (fil<path>/test.dart:19:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:10:26)\n#2      main (fil<path>/test.dart:21:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != weak\n#1      main (fil<path>/test.dart:19:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-4f93e026c1a8",
+      "failure_id": "3d9d2ab43f81fbbfdef4a3de",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= A\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= AB\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= A\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-4f93e026c1a8",
+      "failure_id": "830eb428c3556c1d102d7b99",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase.', 'new ConcurrentModificationError', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase.\",\\n    \"new ConcurrentModificationError\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= A\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= AB\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= A\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-8561a60e8045",
+      "failure_id": "e60efc7ebe257b61c3fee728",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'List.addAll', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase.[]', 'new ReversedListIterable', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"List.addAll\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase.[]\",\\n    \"new ReversedListIterable\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:62:29)\n#2      main (fil<path>/test.dart:37:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:62:29)\n#2      main (fil<path>/test.dart:38:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:62:29)\n#2      main (fil<path>/test.dart:37:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-8561a60e8045",
+      "failure_id": "acc147cd906d475ee3474492",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'List.addAll', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase.[]', 'new ReversedListIterable', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"List.addAll\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase.[]\",\\n    \"new ReversedListIterable\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:70:29)\n#2      main (fil<path>/test.dart:47:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:70:29)\n#2      main (fil<path>/test.dart:46:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:70:29)\n#2      main (fil<path>/test.dart:46:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-c81433b26718",
+      "failure_id": "b4b8d7b2eb0562c9c684a0ed",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 255] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfalse != true\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-c81433b26718",
+      "failure_id": "b9c4f703e3d9d21ac3789f88",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 255] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-0f3539723442",
+      "failure_id": "1c2c961f5bd815ca1afe233b",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', '_RegExp._ExecuteMatch', '_RegExpMatch.[]', '_StringBase._interpolate', 'int._handleFormatError', 'int._parse', 'int._tryParseSmi', 'new ArgumentError', 'new _RegExp', 'new _RegExpMatch'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_RegExp._ExecuteMatch\",\\n    \"_RegExpMatch.[]\",\\n    \"_StringBase._interpolate\",\\n    \"int._handleFormatError\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new ArgumentError\",\\n    \"new _RegExp\",\\n    \"new _RegExpMatch\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 values in base 10 with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:43:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 values in base 10 with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:42:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 values in base 10 with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:42:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-0f3539723442",
+      "failure_id": "1051a336f7f45876a39244ef",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', '_RegExp._ExecuteMatch', '_RegExpMatch.[]', '_StringBase._interpolate', 'int._handleFormatError', 'int._parse', 'int._tryParseSmi', 'new ArgumentError', 'new _RegExp', 'new _RegExpMatch'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_RegExp._ExecuteMatch\",\\n    \"_RegExpMatch.[]\",\\n    \"_StringBase._interpolate\",\\n    \"int._handleFormatError\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new ArgumentError\",\\n    \"new _RegExp\",\\n    \"new _RegExpMatch\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 items from [Info] with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:38:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 items from [] with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:37:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nProcessed 0 items from [] with total 0 != Processed 0 log lines with base 10: total non-zero digits = 0\n#1      main (fil<path>/test.dart:37:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-20f537e9dffc",
+      "failure_id": "68a934d3e1f025ce21aa9170",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[3, 9, 10, 12, 13, 32, 48, 57, 65, 90, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14'] claimed=['[\\n    \"QWORD PTR [r14\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-20f537e9dffc",
+      "failure_id": "ed045cdef8780501bee66c80",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[3, 9, 10, 12, 13, 32, 48, 57, 65, 90, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14'] claimed=['[\\n    \"QWORD PTR [r14\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:34:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != 2\n#1      main (fil<path>/test.dart:34:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-79507a310d6e",
+      "failure_id": "23f43f69679f3cb20b005268",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-79507a310d6e",
+      "failure_id": "31292a99a9f1ad84eb5c6147",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[3, 5, 12, 48, 63, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', '_StringBase.substring', 'fn0'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"_StringBase.substring\",\\n    \"fn0\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-2f477f9ac371",
+      "failure_id": "9b814d42d5e3089de7eecef0",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.333 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:45:29)\n#2      main (fil<path>/test.dart:24:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:45:29)\n#2      main (fil<path>/test.dart:23:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:45:29)\n#2      main (fil<path>/test.dart:23:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2f477f9ac371",
+      "failure_id": "65277742e62245d035aa7717",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.333 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:39:29)\n#2      main (fil<path>/test.dart:18:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:39:29)\n#2      main (fil<path>/test.dart:17:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nlist lengths are not equal\n#0      expectList (fil<path>/test.dart:39:29)\n#2      main (fil<path>/test.dart:17:3)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-7d4c0937d16f",
+      "failure_id": "d8d6e68d0ccd106df46ac526",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[10, 12, 97, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List.addAll', 'QWORD PTR [r14', '_StringBase.[]', 'int._handleFormatError', 'int._parse', 'int._tryParseSmi', 'new _GrowableList'] claimed=['[\\n    \"List.addAll\",\\n    \"QWORD PTR [r14\",\\n    \"_StringBase.[]\",\\n    \"int._handleFormatError\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-7d4c0937d16f",
+      "failure_id": "e0258579fc01e13aebfe0403",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[10, 12, 97, 188] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List.addAll', 'QWORD PTR [r14', '_StringBase.[]', 'int._handleFormatError', 'int._parse', 'int._tryParseSmi', 'new _GrowableList'] claimed=['[\\n    \"List.addAll\",\\n    \"QWORD PTR [r14\",\\n    \"_StringBase.[]\",\\n    \"int._handleFormatError\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-c8483a96da1d",
+      "failure_id": "221058bb0b10289add7a9f92",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[5, 12, 15, 254364] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', 'QWORD PTR [rsi', '_CompactIterator.moveNext', '_CompactValuesIterable.iterator', '_LinkedHashMapMixin._getValueOrData', '_LinkedHashMapMixin._set', '_LinkedHashMapMixin.values', '_LinkedHashSetMixin._add', '_LinkedHashSetMixin._getKeyOrData', '_OperatorEqualsAndHashCode._hashCode', 'new Map._fromLiteral', 'new _Set'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"QWORD PTR [rsi\",\\n    \"_CompactIterator.moveNext\",\\n    \"_CompactValuesIterable.iterator\",\\n    \"_LinkedHashMapMixin._getValueOrData\",\\n    \"_LinkedHashMapMixin._set\",\\n    \"_LinkedHashMapMixin.values\",\\n    \"_LinkedHashSetMixin._add\",\\n    \"_LinkedHashSetMixin._getKeyOrData\",\\n    \"_OperatorEqualsAndHashCode._hashCode\",\\n    \"new Map._fromLiteral\",\\n    \"new _Set\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0.0 != -1.0\n#1      main (fil<path>/test.dart:69:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n-1.0 != 1.0\n#1      main (fil<path>/test.dart:71:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0.0 != -1.0\n#1      main (fil<path>/test.dart:69:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-c8483a96da1d",
+      "failure_id": "0088aa92741854016bbd92b5",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.250 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n1.0 != 0.25\n#1      main (fil<path>/test.dart:68:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n3.5 != 1.0\n#1      main (fil<path>/test.dart:69:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n1.0 != 0.25\n#1      main (fil<path>/test.dart:68:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-a51b430261b6",
+      "failure_id": "43698b5579a85d0d43cb9b64",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 64] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'List.join', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"List.join\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n1020200100 != 10,20,200,100\n#1      main (fil<path>/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n102030 != 10,20,30\n#1      main (fil<path>/test.dart:26:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n102030 != 10,20,30\n#1      main (fil<path>/test.dart:26:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-a51b430261b6",
+      "failure_id": "773164ab3eb2224f6d4b3e07",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 64] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'List.join', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"List.join\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n1020200100 != 10,20,200,100\n#1      main (fil<path>/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n102030 != 10,20,30\n#1      main (fil<path>/test.dart:26:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n102030 != 10,20,30\n#1      main (fil<path>/test.dart:26:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-6cd1406fd440",
+      "failure_id": "0f4d78c7864655dface8cf75",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', 'new _List.filled'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"new _List.filled\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-6cd1406fd440",
+      "failure_id": "c1b42b7b45c4ea4364e2bb22",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', 'new _List.filled'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"new _List.filled\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-c402ce567cf4",
+      "failure_id": "afcc73fd394a8a6ca39229d6",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn0 != empty\n#1      main (fil<path>/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn01 != 1\n#1      main (fil<path>/test.dart:21:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn0 != empty\n#1      main (fil<path>/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-c402ce567cf4",
+      "failure_id": "e01dc0410df82b85edeb60ea",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= empty\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n01 != 10\n#1      main (fil<path>/test.dart:37:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n!= empty\n#1      main (fil<path>/test.dart:31:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-3a0533b9f875",
+      "failure_id": "95724d72c4e4fadf75997a43",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['IterableElementError.noElement', 'List._growToNextCapacity', 'List.join', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', 'QWORD PTR [rsi', 'int._parse', 'int._tryParseSmi', 'new _GrowableList'] claimed=['[\\n    \"IterableElementError.noElement\",\\n    \"List._growToNextCapacity\",\\n    \"List.join\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"QWORD PTR [rsi\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nFormatException: Invalid radix-10 number (at character 1)\nD\n#0      int._handleFormatError (dart:core-patch/integers_patch.dart:150:5)\n#1      int._parseRadix (dart:core-patch/integers_patch.dart:179:14)\n#2      int._parse (dart:core-patch/integers_patch.dart:121:12)\n#3      int.parse (dart:core-patch/integers_patch.dart:81:12)\n#4      fn0 (fil<path>/test.dart:40:46)\n#5      main (fil<path>/test.dart:59:19)\n#6      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#7      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nFormatException: Invalid radix-10 number (at character 1)\nU\n#0      int._handleFormatError (dart:core-patch/integers_patch.dart:150:5)\n#1      int._parseRadix (dart:core-patch/integers_patch.dart:179:14)\n#2      int._parse (dart:core-patch/integers_patch.dart:121:12)\n#3      int.parse (dart:core-patch/integers_patch.dart:81:12)\n#4      fn0 (fil<path>/test.dart:40:46)\n#5      main (fil<path>/test.dart:58:19)\n#6      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#7      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nFormatException: Invalid radix-10 number (at character 1)\nU\n#0      int._handleFormatError (dart:core-patch/integers_patch.dart:150:5)\n#1      int._parseRadix (dart:core-patch/integers_patch.dart:179:14)\n#2      int._parse (dart:core-patch/integers_patch.dart:121:12)\n#3      int.parse (dart:core-patch/integers_patch.dart:81:12)\n#4      fn0 (fil<path>/test.dart:40:46)\n#5      main (fil<path>/test.dart:58:19)\n#6      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#7      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-3a0533b9f875",
+      "failure_id": "37d8238ce5052f129f618dad",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['IterableElementError.noElement', 'List._growToNextCapacity', 'List.join', 'List.length=', 'QWORD PTR [r14', 'QWORD PTR [rax', 'QWORD PTR [rsi', 'int._parse', 'int._tryParseSmi', 'new _GrowableList'] claimed=['[\\n    \"IterableElementError.noElement\",\\n    \"List._growToNextCapacity\",\\n    \"List.join\",\\n    \"List.length=\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"QWORD PTR [rsi\",\\n    \"int._parse\",\\n    \"int._tryParseSmi\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nnull != 5,5\n#1      main (fil<path>/test.dart:51:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nnull != 5\n#1      main (fil<path>/test.dart:56:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nnull != 5,5\n#1      main (fil<path>/test.dart:51:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2db5c428aa7a",
+      "failure_id": "e0fb66344d53b156244a7e2a",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12, 63] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase._interpolate', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase._interpolate\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0true != A:paired\n#1      expectList (fil<path>/test.dart:45:5)\n#3      main (fil<path>/test.dart:20:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0false != A:solo\n#1      expectList (fil<path>/test.dart:45:5)\n#3      main (fil<path>/test.dart:19:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0false != A:solo\n#1      expectList (fil<path>/test.dart:45:5)\n#3      main (fil<path>/test.dart:19:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2db5c428aa7a",
+      "failure_id": "1773ffc6c0824aec78723bfb",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12, 63] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase._interpolate', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase._interpolate\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0true != A:paired\n#1      expectList (fil<path>/test.dart:43:5)\n#3      main (fil<path>/test.dart:18:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0false != A:solo\n#1      expectList (fil<path>/test.dart:43:5)\n#3      main (fil<path>/test.dart:17:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nAfn0false != A:solo\n#1      expectList (fil<path>/test.dart:43:5)\n#3      main (fil<path>/test.dart:17:3)\n#4      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#5      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2f206ecd3c72",
+      "failure_id": "9488f2742fc6e26f08a080dd",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase._interpolate', 'rcx'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase._interpolate\",\\n    \"rcx\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n10 != Optimal interval: 10h\n#1      main (fil<path>/test.dart:34:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != Insufficient data\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n0 != Insufficient data\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2f206ecd3c72",
+      "failure_id": "9cc8129a061b3c9e6f2f611e",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase._interpolate', 'rcx'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase._interpolate\",\\n    \"rcx\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n10 != Optimal interval: 10h\n#1      main (fil<path>/test.dart:34:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn0 != Insufficient data\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn0 != Insufficient data\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-e7eef461c7e0",
+      "failure_id": "97a8045fd372990a0c988279",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11 != 1:1\n#1      main (fil<path>/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11,21 != 1:1,2:1\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11 != 1:1\n#1      main (fil<path>/test.dart:28:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-e7eef461c7e0",
+      "failure_id": "1218c929ce71d3df92555da5",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', 'StringBuffer._writeString', 'StringBuffer.toString', '_StringBase.[]', '_StringBase._interpolate', '_StringBase.substring', 'new StringBuffer'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"StringBuffer._writeString\",\\n    \"StringBuffer.toString\",\\n    \"_StringBase.[]\",\\n    \"_StringBase._interpolate\",\\n    \"_StringBase.substring\",\\n    \"new StringBuffer\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11 != 1:1\n#1      main (fil<path>/test.dart:33:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11,21 != 1:1,2:1\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n11 != 1:1\n#1      main (fil<path>/test.dart:33:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-ff800115be6d",
+      "failure_id": "931206cddac1a10edcacc1ae",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn01 != never\n#1      main (fil<path>/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn01 != day 2\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn01 != day 2\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-ff800115be6d",
+      "failure_id": "5e36e4ed282c3d797dbc1e70",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 63] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['List._growToNextCapacity', 'QWORD PTR [r14', 'QWORD PTR [rax', '_StringBase._interpolate', 'new _GrowableList'] claimed=['[\\n    \"List._growToNextCapacity\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_StringBase._interpolate\",\\n    \"new _GrowableList\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn0 != never\n#1      main (fil<path>/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn03 != day 2\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\nfn03 != day 2\n#1      main (fil<path>/test.dart:35:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-6d4af312c53e",
+      "failure_id": "dce3c03e79eafc6e40a69ba5",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12, 32] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:3:36)\n#2      main (fil<path>/test.dart:11:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:3:36)\n#2      main (fil<path>/test.dart:14:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:3:36)\n#2      main (fil<path>/test.dart:11:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-6d4af312c53e",
+      "failure_id": "b45ea7288b0ed9a8fbcba49f",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[6, 12, 32] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:13:13)\n#2      main (fil<path>/test.dart:33:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:13:13)\n#2      main (fil<path>/test.dart:36:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n#0      List.[] (dart:core-patch/growable_array.dart)\n#1      fn0 (fil<path>/test.dart:13:13)\n#2      main (fil<path>/test.dart:33:19)\n#3      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#4      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-a06a689f8eb2",
+      "failure_id": "7c32f20fc0ce8b519d831441",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rsi', '_CompactIterator.moveNext', '_LinkedHashSetMixin.iterator', 'new LinkedHashSet.from'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rsi\",\\n    \"_CompactIterator.moveNext\",\\n    \"_LinkedHashSetMixin.iterator\",\\n    \"new LinkedHashSet.from\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-a06a689f8eb2",
+      "failure_id": "f52dd42ca6652ba43c7d68d7",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-2a41476e7548",
+      "failure_id": "f2e0fed080d92ab37aece270",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n6 != 4\n#1      main (fil<path>/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n6 != 4\n#1      main (fil<path>/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-2a41476e7548",
+      "failure_id": "94d5039556b1c5d322f2f03e",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n5 != 7\n#1      main (fil<path>/test.dart:23:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n8 != 13\n#1      main (fil<path>/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n5 != 7\n#1      main (fil<path>/test.dart:23:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-1a4ae9d4d210",
+      "failure_id": "67de0ff6615e3b0b37d3cc4a",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12, 60, 94] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['QWORD PTR [r14', 'QWORD PTR [rax', '_LinkedHashMapMixin._getValueOrData', '_LinkedHashMapMixin._set', '_OperatorEqualsAndHashCode._hashCode', '_StringBase.', '_httpConnectionHook.<anonymous closure', 'assert type is String', 'assert type is int', 'new ConcurrentModificationError', 'new _Map'] claimed=['[\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"_LinkedHashMapMixin._getValueOrData\",\\n    \"_LinkedHashMapMixin._set\",\\n    \"_OperatorEqualsAndHashCode._hashCode\",\\n    \"_StringBase.\",\\n    \"_httpConnectionHook.<anonymous closure\",\\n    \"assert type is String\",\\n    \"assert type is int\",\\n    \"new ConcurrentModificationError\",\\n    \"new _Map\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n= != W\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n== != WS\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n= != W\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-1a4ae9d4d210",
+      "failure_id": "4e4845ccabbc5840455dca13",
+      "origin": "teacher_repair",
+      "reasons": [
+        "feedback replay failed",
+        "hidden acceptance failed",
+        "complete harness failed",
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n= != W\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n== != WS\n#1      main (fil<path>/test.dart:32:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      },
+      "full": {
+        "compiled": true,
+        "passed": false,
+        "diagnostic": "stability_run_1/1: Unhandled exception:\n= != W\n#1      main (fil<path>/test.dart:30:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)\n[assertion mismatch values redacted]"
+      }
+    },
+    {
+      "task_key": "fresh-eval-114c2a9d91ff",
+      "failure_id": "dbfe0d7c263850d5b12dc068",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['ExpandIterable.iterator', 'ExpandIterator.moveNext', 'QWORD PTR [r14', 'QWORD PTR [rax', 'QWORD PTR [rsi'] claimed=['[\\n    \"ExpandIterable.iterator\",\\n    \"ExpandIterator.moveNext\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"QWORD PTR [rsi\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    },
+    {
+      "task_key": "fresh-eval-114c2a9d91ff",
+      "failure_id": "4df249be680c66b5f36ee91e",
+      "origin": "teacher_repair",
+      "reasons": [
+        "missing assembly-visible string literals: ['fn0']",
+        "salient numeric-constant overlap 0.000 below 0.340",
+        "teacher fact claim mismatch for salient_numeric_constants: expected=[12] claimed=[]",
+        "teacher fact claim mismatch for string_literals: expected=['fn0'] claimed=['[\\n    \"fn0\"\\n  ]']",
+        "teacher fact claim mismatch for direct_callees: expected=['ExpandIterable.iterator', 'ExpandIterator.moveNext', 'QWORD PTR [r14', 'QWORD PTR [rax', 'QWORD PTR [rsi'] claimed=['[\\n    \"ExpandIterable.iterator\",\\n    \"ExpandIterator.moveNext\",\\n    \"QWORD PTR [r14\",\\n    \"QWORD PTR [rax\",\\n    \"QWORD PTR [rsi\"\\n  ]']"
+      ],
+      "feedback": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "acceptance": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      },
+      "full": {
+        "compiled": true,
+        "passed": true,
+        "diagnostic": ""
+      }
+    }
+  ],
+  "feedback_tests_exposed_to_teacher": false,
+  "hidden_acceptance_tests_exposed_to_teacher": false,
+  "facts_gate_mode": "conservative",
+  "outputs": {
+    "rs_sft": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/verified_rs_sft.jsonl",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preferences": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/preferences.jsonl",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

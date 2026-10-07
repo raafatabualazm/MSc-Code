@@ -1,0 +1,12 @@
+[chain] SFT ok
+[chain] launching enriched pass@k 2026-07-22T12:21:33Z
+[passk] 2026-07-22T12:21:33Z K=10 LIMIT=0 SFT=/workspace/artifacts/direct_compact_fn0_enr_sft_v1 DEV=/workspace/artifacts/compact_fn0_rebuild/dev_fn0_enr.jsonl build paired ...
+paired: 175 rows -> dev_fn0_enr_public/align/tests.jsonl
+[passk] generate ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7558.43it/s]
+[passk] gen rc=0
+[passk] score ...
+PASSK_RESULT tasks=175 pass@1=5/175=0.0286 pass@10=10/175=0.0571 compile@10=121/175=0.6914 (no_tests_join=0 empty_code_samples=0)
+[passk] 2026-07-22T13:27:02Z done rc=0
+[chain] done 2026-07-22T13:27:02Z

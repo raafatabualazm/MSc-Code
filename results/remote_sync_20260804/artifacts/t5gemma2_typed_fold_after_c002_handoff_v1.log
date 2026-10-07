@@ -1,0 +1,787 @@
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c002_prefix3_verify.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1_eval_gate.sh: OK
+T5GEMMA_TYPED_FOLD_HANDOFF_BLOCKED pass-3 handoff exited without sealed decision artifacts
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c002_prefix3_verify.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1_eval_gate.sh: OK
+T5GEMMA_TYPED_FOLD_HANDOFF_BLOCKED pass-3 evaluation retry exited without sealed decision artifacts
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c002_prefix3_verify.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1_eval_gate.sh: OK
+T5GEMMA_TYPED_FOLD_HANDOFF_BLOCKED pass-3 evaluation retry exited without sealed decision artifacts
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c002_prefix3_verify.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1_eval_gate.sh: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_c002_prefix3_verify.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_direct_rs_sft_pass3.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/resume_report.json: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+T5GEMMA_TYPED_C002_PREFIX3_VERIFY_COMPLETE {"provider_calls": 0, "verified": 1}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_residual_unresolved4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_pass2_local190_dual_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_azure_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v12/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_retry17_8k_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/orchestration_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/resume_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/prefix_verification_report.json: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/direct_targets.jsonl: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 636/1327 [00:00<00:00, 6349.29it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 7776.03it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"epoch": 0, "grad_norm": 1.137498140335083, "learning_rate": 4.996700181165029e-06, "loss": 0.1520414964761585, "microbatches": 8, "next_row": 8, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 902, "target_tokens": 149, "update": 1}
+{"epoch": 0, "grad_norm": 1.0012938976287842, "learning_rate": 4.98681040359731e-06, "loss": 0.10722234286367893, "microbatches": 8, "next_row": 16, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1026, "target_tokens": 133, "update": 2}
+{"epoch": 0, "grad_norm": 0.779316246509552, "learning_rate": 4.970359675718435e-06, "loss": 0.06859586201608181, "microbatches": 8, "next_row": 24, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1046, "target_tokens": 188, "update": 3}
+{"epoch": 0, "grad_norm": 0.9256334900856018, "learning_rate": 4.947396250347695e-06, "loss": 0.12419002130627632, "microbatches": 8, "next_row": 32, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1533, "target_tokens": 100, "update": 4}
+{"epoch": 0, "grad_norm": 2.852731227874756, "learning_rate": 4.917987483168252e-06, "loss": 0.42349498625844717, "microbatches": 8, "next_row": 40, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 3116, "target_tokens": 393, "update": 5}
+{"epoch": 0, "grad_norm": 1.2300478219985962, "learning_rate": 4.882219635161306e-06, "loss": 0.1505768815986812, "microbatches": 8, "next_row": 48, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 2688, "target_tokens": 422, "update": 6}
+{"epoch": 0, "grad_norm": 2.135655164718628, "learning_rate": 4.840197619587781e-06, "loss": 0.30563520756550133, "microbatches": 8, "next_row": 56, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1135, "target_tokens": 314, "update": 7}
+{"epoch": 0, "grad_norm": 1.517148733139038, "learning_rate": 4.7920446942596535e-06, "loss": 0.21860873140394688, "microbatches": 8, "next_row": 64, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 978, "target_tokens": 116, "update": 8}
+{"epoch": 0, "grad_norm": 1.7238655090332031, "learning_rate": 4.737902100003552e-06, "loss": 0.24883081763982773, "microbatches": 8, "next_row": 72, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1071, "target_tokens": 126, "update": 9}
+{"epoch": 0, "grad_norm": 1.51784086227417, "learning_rate": 4.677928646377076e-06, "loss": 0.21533342520706356, "microbatches": 8, "next_row": 80, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1073, "target_tokens": 110, "update": 10}
+{"epoch": 0, "grad_norm": 1.504768967628479, "learning_rate": 4.612300245853004e-06, "loss": 0.24778721202164888, "microbatches": 8, "next_row": 88, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1874, "target_tokens": 197, "update": 11}
+{"epoch": 0, "grad_norm": 1.1281713247299194, "learning_rate": 4.5412093978376986e-06, "loss": 0.15996982413344085, "microbatches": 8, "next_row": 96, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1462, "target_tokens": 190, "update": 12}
+{"epoch": 0, "grad_norm": 1.1677703857421875, "learning_rate": 4.464864624037182e-06, "loss": 0.16515544522553682, "microbatches": 8, "next_row": 104, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1559, "target_tokens": 318, "update": 13}
+{"epoch": 0, "grad_norm": 1.3446639776229858, "learning_rate": 4.383489856827045e-06, "loss": 0.14765495480969548, "microbatches": 8, "next_row": 112, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 960, "target_tokens": 117, "update": 14}
+{"epoch": 0, "grad_norm": 1.1809773445129395, "learning_rate": 4.297323782420203e-06, "loss": 0.13018208579160273, "microbatches": 8, "next_row": 120, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1494, "target_tokens": 124, "update": 15}
+{"epoch": 0, "grad_norm": 1.494438648223877, "learning_rate": 4.206619140759113e-06, "loss": 0.19355597952380776, "microbatches": 8, "next_row": 128, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 909, "target_tokens": 130, "update": 16}
+{"epoch": 0, "grad_norm": 1.0212857723236084, "learning_rate": 4.1116419841859724e-06, "loss": 0.1368466466665268, "microbatches": 8, "next_row": 136, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1232, "target_tokens": 162, "update": 17}
+{"epoch": 0, "grad_norm": 1.1863429546356201, "learning_rate": 4.012670897065361e-06, "loss": 0.15636713430285454, "microbatches": 8, "next_row": 144, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1812, "target_tokens": 122, "update": 18}
+{"epoch": 0, "grad_norm": 1.4727137088775635, "learning_rate": 3.9099961786483e-06, "loss": 0.24270367622375488, "microbatches": 8, "next_row": 152, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 833, "target_tokens": 151, "update": 19}
+{"epoch": 0, "grad_norm": 1.246592402458191, "learning_rate": 3.8039189915745286e-06, "loss": 0.18012479739263654, "microbatches": 8, "next_row": 160, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1096, "target_tokens": 118, "update": 20}
+{"epoch": 0, "grad_norm": 1.452735185623169, "learning_rate": 3.694750478510596e-06, "loss": 0.1375460133422166, "microbatches": 8, "next_row": 168, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1117, "target_tokens": 127, "update": 21}
+{"epoch": 0, "grad_norm": 1.0362900495529175, "learning_rate": 3.5828108495148077e-06, "loss": 0.1252276604063809, "microbatches": 8, "next_row": 176, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1076, "target_tokens": 189, "update": 22}
+{"epoch": 0, "grad_norm": 1.082865834236145, "learning_rate": 3.468428442805955e-06, "loss": 0.1054551424458623, "microbatches": 8, "next_row": 184, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 2518, "target_tokens": 269, "update": 23}
+{"epoch": 0, "grad_norm": 1.131244421005249, "learning_rate": 3.3519387616907477e-06, "loss": 0.12580976751632988, "microbatches": 8, "next_row": 192, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1201, "target_tokens": 102, "update": 24}
+{"epoch": 0, "grad_norm": 1.4380463361740112, "learning_rate": 3.233683490474805e-06, "loss": 0.11266210908070207, "microbatches": 8, "next_row": 200, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 726, "target_tokens": 111, "update": 25}
+{"epoch": 0, "grad_norm": 0.9441865682601929, "learning_rate": 3.1140094922437213e-06, "loss": 0.1520862584002316, "microbatches": 8, "next_row": 208, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 542, "target_tokens": 71, "update": 26}
+{"epoch": 0, "grad_norm": 1.2900511026382446, "learning_rate": 2.9932677914538694e-06, "loss": 0.24782774969935417, "microbatches": 8, "next_row": 216, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 658, "target_tokens": 80, "update": 27}
+{"epoch": 0, "grad_norm": 1.1401526927947998, "learning_rate": 2.87181254431719e-06, "loss": 0.18789378553628922, "microbatches": 8, "next_row": 224, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 946, "target_tokens": 107, "update": 28}
+{"epoch": 0, "grad_norm": 1.279280185699463, "learning_rate": 2.7500000000000004e-06, "loss": 0.15997109923046082, "microbatches": 8, "next_row": 232, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1868, "target_tokens": 187, "update": 29}
+{"epoch": 0, "grad_norm": 1.5524861812591553, "learning_rate": 2.6281874556828106e-06, "loss": 0.17319297045469284, "microbatches": 8, "next_row": 240, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1156, "target_tokens": 179, "update": 30}
+{"epoch": 0, "grad_norm": 0.9568114876747131, "learning_rate": 2.5067322085461317e-06, "loss": 0.10338053829036653, "microbatches": 8, "next_row": 248, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1542, "target_tokens": 159, "update": 31}
+{"epoch": 0, "grad_norm": 1.170210361480713, "learning_rate": 2.3859905077562794e-06, "loss": 0.15480866516008973, "microbatches": 8, "next_row": 256, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1301, "target_tokens": 141, "update": 32}
+{"epoch": 0, "grad_norm": 1.4463926553726196, "learning_rate": 2.266316509525196e-06, "loss": 0.24936229409649968, "microbatches": 8, "next_row": 264, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 716, "target_tokens": 112, "update": 33}
+{"epoch": 0, "grad_norm": 1.1727056503295898, "learning_rate": 2.1480612383092534e-06, "loss": 0.18154558911919594, "microbatches": 8, "next_row": 272, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1218, "target_tokens": 82, "update": 34}
+{"epoch": 0, "grad_norm": 1.0154262781143188, "learning_rate": 2.0315715571940457e-06, "loss": 0.13152098655700684, "microbatches": 8, "next_row": 280, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 2643, "target_tokens": 333, "update": 35}
+{"epoch": 0, "grad_norm": 1.1803771257400513, "learning_rate": 1.9171891504851926e-06, "loss": 0.179234660230577, "microbatches": 8, "next_row": 288, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 703, "target_tokens": 98, "update": 36}
+{"epoch": 0, "grad_norm": 1.3314530849456787, "learning_rate": 1.8052495214894051e-06, "loss": 0.1503560298588127, "microbatches": 8, "next_row": 296, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1420, "target_tokens": 75, "update": 37}
+{"epoch": 0, "grad_norm": 1.6182677745819092, "learning_rate": 1.6960810084254726e-06, "loss": 0.23559499578550458, "microbatches": 8, "next_row": 304, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1185, "target_tokens": 91, "update": 38}
+{"epoch": 0, "grad_norm": 0.707766592502594, "learning_rate": 1.590003821351701e-06, "loss": 0.057594080455601215, "microbatches": 8, "next_row": 312, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1113, "target_tokens": 173, "update": 39}
+{"epoch": 0, "grad_norm": 0.8345968127250671, "learning_rate": 1.4873291029346401e-06, "loss": 0.1013230390381068, "microbatches": 8, "next_row": 320, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1571, "target_tokens": 127, "update": 40}
+{"epoch": 0, "grad_norm": 0.7343972325325012, "learning_rate": 1.3883580158140291e-06, "loss": 0.08100138860754669, "microbatches": 8, "next_row": 328, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1612, "target_tokens": 255, "update": 41}
+{"epoch": 0, "grad_norm": 0.9497190117835999, "learning_rate": 1.293380859240888e-06, "loss": 0.11036591872107238, "microbatches": 8, "next_row": 336, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1091, "target_tokens": 123, "update": 42}
+{"epoch": 0, "grad_norm": 1.1964116096496582, "learning_rate": 1.2026762175797974e-06, "loss": 0.2437960496172309, "microbatches": 8, "next_row": 344, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 542, "target_tokens": 123, "update": 43}
+{"epoch": 0, "grad_norm": 0.6918920278549194, "learning_rate": 1.1165101431729562e-06, "loss": 0.0796861294656992, "microbatches": 8, "next_row": 352, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 780, "target_tokens": 114, "update": 44}
+{"epoch": 0, "grad_norm": 1.2094835042953491, "learning_rate": 1.0351353759628183e-06, "loss": 0.14848147286102176, "microbatches": 8, "next_row": 360, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1289, "target_tokens": 165, "update": 45}
+Traceback (most recent call last):
+  File "/venv/main/lib/python3.12/site-packages/torch/serialization.py", line 967, in save
+    _save(
+  File "/venv/main/lib/python3.12/site-packages/torch/serialization.py", line 1268, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: [enforce fail at inline_container.cc:858] . PytorchStreamWriter failed writing file data/2042: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py", line 678, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py", line 672, in main
+    result = train(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py", line 652, in train
+    return mixed.train(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_mixed_rs_sft.py", line 1794, in train
+    _save_checkpoint(
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_mixed_rs_sft.py", line 1321, in _save_checkpoint
+    torch.save(
+  File "/venv/main/lib/python3.12/site-packages/torch/serialization.py", line 966, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/serialization.py", line 798, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:664] . unexpected pos 1355937152 vs 1355937040
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c002_prefix3_verify.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_fold_rs_sft_union_v1_eval_gate.sh: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_c002_prefix3_verify.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_direct_rs_sft_pass3.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/resume_report.json: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+T5GEMMA_TYPED_C002_PREFIX3_VERIFY_COMPLETE {"provider_calls": 0, "verified": 1}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/run_contract.json: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_contract_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_residual_unresolved4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_pass2_local190_dual_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_azure_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v12/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_retry17_8k_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/orchestration_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/resume_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/prefix_verification_report.json: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_c002_prefix3_verification_v1/direct_targets.jsonl: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  49%|████▉     | 647/1327 [00:00<00:00, 6443.70it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 7142.20it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"epoch": 0, "grad_norm": 0.7345197200775146, "learning_rate": 1.3883580158140291e-06, "loss": 0.08100138860754669, "microbatches": 8, "next_row": 328, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1612, "target_tokens": 255, "update": 41}
+{"epoch": 0, "grad_norm": 0.9422454237937927, "learning_rate": 1.293380859240888e-06, "loss": 0.11039074137806892, "microbatches": 8, "next_row": 336, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1091, "target_tokens": 123, "update": 42}
+{"epoch": 0, "grad_norm": 1.2051873207092285, "learning_rate": 1.2026762175797974e-06, "loss": 0.24396752938628197, "microbatches": 8, "next_row": 344, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 542, "target_tokens": 123, "update": 43}
+{"epoch": 0, "grad_norm": 0.7052736878395081, "learning_rate": 1.1165101431729562e-06, "loss": 0.0790277177002281, "microbatches": 8, "next_row": 352, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 780, "target_tokens": 114, "update": 44}
+{"epoch": 0, "grad_norm": 1.1658024787902832, "learning_rate": 1.0351353759628183e-06, "loss": 0.14877776382490993, "microbatches": 8, "next_row": 360, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1289, "target_tokens": 165, "update": 45}
+{"epoch": 0, "grad_norm": 1.3307005167007446, "learning_rate": 9.587906021623017e-07, "loss": 0.22544698766432703, "microbatches": 8, "next_row": 368, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1360, "target_tokens": 104, "update": 46}
+{"epoch": 0, "grad_norm": 0.8607658743858337, "learning_rate": 8.876997541469966e-07, "loss": 0.09130601189099252, "microbatches": 8, "next_row": 376, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 910, "target_tokens": 127, "update": 47}
+{"epoch": 0, "grad_norm": 2.0610358715057373, "learning_rate": 8.220713536229246e-07, "loss": 0.1828864263370633, "microbatches": 8, "next_row": 384, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1940, "target_tokens": 127, "update": 48}
+{"epoch": 0, "grad_norm": 2.2336156368255615, "learning_rate": 7.620978999964487e-07, "loss": 0.2682433472946286, "microbatches": 8, "next_row": 392, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 2674, "target_tokens": 187, "update": 49}
+{"epoch": 0, "grad_norm": 1.321005940437317, "learning_rate": 7.079553057403471e-07, "loss": 0.24169527553021908, "microbatches": 8, "next_row": 400, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1226, "target_tokens": 129, "update": 50}
+{"epoch": 0, "grad_norm": 1.3907673358917236, "learning_rate": 6.598023804122195e-07, "loss": 0.23394775390625, "microbatches": 8, "next_row": 408, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 2740, "target_tokens": 201, "update": 51}
+{"epoch": 0, "grad_norm": 0.7816005945205688, "learning_rate": 6.177803648386948e-07, "loss": 0.08685250370763242, "microbatches": 8, "next_row": 416, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 466, "target_tokens": 170, "update": 52}
+{"epoch": 0, "grad_norm": 0.8435876369476318, "learning_rate": 5.820125168317485e-07, "loss": 0.08758272719569504, "microbatches": 8, "next_row": 424, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 3508, "target_tokens": 138, "update": 53}
+{"epoch": 0, "grad_norm": 1.6557191610336304, "learning_rate": 5.526037496523051e-07, "loss": 0.23753860278520733, "microbatches": 8, "next_row": 432, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1292, "target_tokens": 125, "update": 54}
+{"epoch": 0, "grad_norm": 1.200574517250061, "learning_rate": 5.296403242815663e-07, "loss": 0.15694029442965984, "microbatches": 8, "next_row": 440, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1188, "target_tokens": 166, "update": 55}
+{"epoch": 0, "grad_norm": 1.4373000860214233, "learning_rate": 5.13189596402691e-07, "loss": 0.17797283735126257, "microbatches": 8, "next_row": 448, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 827, "target_tokens": 111, "update": 56}
+{"epoch": 0, "grad_norm": 0.9097362160682678, "learning_rate": 5.032998188349715e-07, "loss": 0.09425148740410805, "microbatches": 8, "next_row": 456, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1139, "target_tokens": 222, "update": 57}
+{"epoch": 0, "grad_norm": 3.0446455478668213, "learning_rate": 5.000000000000001e-07, "loss": 0.2853577472269535, "microbatches": 2, "next_row": 458, "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1", "source_tokens": 1001, "target_tokens": 117, "update": 58}
+{
+  "architecture": "native_encoder_decoder",
+  "latest_checkpoint": "checkpoint-optstep-000058",
+  "planned_updates": 58,
+  "production_floor_eligible": true,
+  "rows": 458,
+  "schema": "t5gemma2-typed-fold-rs-sft-union-run-v1",
+  "status": "complete",
+  "updates": 58
+}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_fold_rs_sft_union_v1.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_fold_promotion.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_pass3_promotion.py: OK
+/workspace/analysis_rs_sft_fold/check_collapse.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_measurement_audit_inference.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_f2_passk_inference.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/score_direct_compact_passk.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/derive_passk_exclusion_sensitivity.py: OK
+/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_score_full175.json: OK
+/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_predictions.json: OK
+/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_predictions.json.provenance.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.seal.json: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary_f2.jsonl.manifest.json: OK
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  43%|████▎     | 564/1327 [00:00<00:00, 5637.48it/s]Loading weights:  92%|█████████▏| 1217/1327 [00:00<00:00, 6161.53it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 6504.11it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 1, "task_id": "sigless_6f74b303025c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 2, "task_id": "sigless_1eae8c49db66", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 3, "task_id": "sigless_8230c078962e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 4, "task_id": "sigless_ef71ae50a5fb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 5, "task_id": "sigless_0c28ea18fc09", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 6, "task_id": "sigless_9dcc77211b03", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 7, "task_id": "sigless_e3b7af399229", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 8, "task_id": "sigless_f2b582d1df68", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 9, "task_id": "sigless_af8ea815d9ac", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 10, "task_id": "sigless_ed4d7dcd5f20", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 11, "task_id": "sigless_ac1a3f90780a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 12, "task_id": "sigless_2607923a35c2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 13, "task_id": "sigless_9acafa491865", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 14, "task_id": "sigless_08a97c3f3f6b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 15, "task_id": "sigless_561333b633a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 16, "task_id": "sigless_43bc373e09d3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 17, "task_id": "sigless_7968d9b30560", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 18, "task_id": "sigless_682c5301dfb2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 19, "task_id": "sigless_37c22f197b0e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 20, "task_id": "sigless_34e9dc99606e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 21, "task_id": "sigless_6ad70e03dabe", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 22, "task_id": "sigless_217ef71865c3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 23, "task_id": "sigless_295a1f5c7259", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 24, "task_id": "sigless_3b143aa33af0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 25, "task_id": "sigless_6e4974ba05d6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 26, "task_id": "sigless_40ffe3504975", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 27, "task_id": "sigless_5c47cc5132ae", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 28, "task_id": "sigless_0dc17d9531b9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 29, "task_id": "sigless_e989552bfd91", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 30, "task_id": "sigless_588a3df34892", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 31, "task_id": "sigless_7f5464d20af0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 32, "task_id": "sigless_c06bd1b6353c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 33, "task_id": "sigless_7ce0645c7c59", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 34, "task_id": "sigless_842d8bd3822e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 35, "task_id": "sigless_f19a1cde385c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 36, "task_id": "sigless_66f0c3982031", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 37, "task_id": "sigless_6ca6f0196a67", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 38, "task_id": "sigless_8cc4767c9e31", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 39, "task_id": "sigless_689fa1a18517", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 40, "task_id": "sigless_a6a008b7b43f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 41, "task_id": "sigless_b03bf3bb9c5b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 42, "task_id": "sigless_c5fe1b2b12ae", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 43, "task_id": "sigless_8d0cf57a5b8f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 44, "task_id": "sigless_7e986e1787e9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 45, "task_id": "sigless_172bb23be947", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 46, "task_id": "sigless_5f0732a851d6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 47, "task_id": "sigless_761f28484d46", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 48, "task_id": "sigless_1f311da5c92c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 49, "task_id": "sigless_5b084bc217a7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 50, "task_id": "sigless_813393f0ede5", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 51, "task_id": "sigless_c533ec05295f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 52, "task_id": "sigless_f313c6aa6b38", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 53, "task_id": "sigless_7da06c701a11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 54, "task_id": "sigless_32c65c037f11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 55, "task_id": "sigless_800a63a44bf8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 56, "task_id": "sigless_ae3f6b074a1d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 57, "task_id": "sigless_bdb5051ba702", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 58, "task_id": "sigless_5a81bb01e5b7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 59, "task_id": "sigless_3cc19bbfa30f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 60, "task_id": "sigless_ca058cccbe26", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 61, "task_id": "sigless_b33d2de9af80", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 62, "task_id": "sigless_c25abcd9a325", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 63, "task_id": "sigless_6d8c4ba351c5", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 64, "task_id": "sigless_a247e5f7ba82", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 65, "task_id": "sigless_2285fc4955db", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 66, "task_id": "sigless_97decd4f7443", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 67, "task_id": "sigless_79bfe84158a3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 68, "task_id": "sigless_6dfdaa80a5a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 69, "task_id": "sigless_52260deec95d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 70, "task_id": "sigless_96546ea01643", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 71, "task_id": "sigless_083954eb2fb3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 72, "task_id": "sigless_a348fccf3353", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 73, "task_id": "sigless_1b1ea7b75cff", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 74, "task_id": "sigless_f8e93c6852a8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 75, "task_id": "sigless_8bf7f40ca356", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 76, "task_id": "sigless_dda92f9b56cf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 77, "task_id": "sigless_29facc14bbd7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 78, "task_id": "sigless_03890dcefaec", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 79, "task_id": "sigless_0676ce351471", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 80, "task_id": "sigless_a507056ae077", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 81, "task_id": "sigless_cc73707101e6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 82, "task_id": "sigless_9588ecf888b2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 83, "task_id": "sigless_4708b0b01b11", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 84, "task_id": "sigless_a4594aa05a9c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 85, "task_id": "sigless_0d23ec54c1ec", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 86, "task_id": "sigless_2b4ce9b63420", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 87, "task_id": "sigless_d19512840646", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 88, "task_id": "sigless_254a6441f2f8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 89, "task_id": "sigless_bd2a15378da9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 90, "task_id": "sigless_81915896d27e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 91, "task_id": "sigless_e1ba6073c24a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 92, "task_id": "sigless_3a3a9c12bb06", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 93, "task_id": "sigless_288bf7a714e1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 94, "task_id": "sigless_35088d24eba1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 95, "task_id": "sigless_64a085399724", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 96, "task_id": "sigless_d544567b9189", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 97, "task_id": "sigless_73f9e7c2b2e2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 98, "task_id": "sigless_719577f723ab", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 99, "task_id": "sigless_2f380f310be1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 100, "task_id": "sigless_cd4130196f1f", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 101, "task_id": "sigless_af300e5a0f21", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 102, "task_id": "sigless_8c5d7927d750", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 103, "task_id": "sigless_c4383a715ff3", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 104, "task_id": "sigless_bd986d86cebb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 105, "task_id": "sigless_bcebeb9e6334", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 106, "task_id": "sigless_d705d736995d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 107, "task_id": "sigless_b03a8afc1094", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 108, "task_id": "sigless_fa4972c4e52e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 3, "task": 109, "task_id": "sigless_993f7ab38cdd", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 110, "task_id": "sigless_95105e48c1e8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 111, "task_id": "sigless_9e128db660ea", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 112, "task_id": "sigless_949e6c11e478", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 113, "task_id": "sigless_55cc112cbb2c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 114, "task_id": "sigless_c45cfc4290f2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 115, "task_id": "sigless_d1f52bab434e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 116, "task_id": "sigless_696808df1978", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 117, "task_id": "sigless_840847bedc74", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 118, "task_id": "sigless_eee05f5f93cc", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 119, "task_id": "sigless_d61f01ff1856", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 120, "task_id": "sigless_79a8dd260f8c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 121, "task_id": "sigless_5628428fcb9e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 122, "task_id": "sigless_459decc7079c", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 123, "task_id": "sigless_897c175fe34d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 124, "task_id": "sigless_f9772127b371", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 125, "task_id": "sigless_e087cd483fa1", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 126, "task_id": "sigless_c8721da111a6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 127, "task_id": "sigless_39b2bb878943", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 128, "task_id": "sigless_fc85f3ba4f9a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 129, "task_id": "sigless_877a173b0a13", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 130, "task_id": "sigless_f35b198c6f09", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 131, "task_id": "sigless_f12cc1905252", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 132, "task_id": "sigless_2d693beca98e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 133, "task_id": "sigless_ca1164247b57", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 134, "task_id": "sigless_1c2de2da855e", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 135, "task_id": "sigless_fde9338419bb", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 136, "task_id": "sigless_caabd71fcc51", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 137, "task_id": "sigless_f5884d232b82", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 138, "task_id": "sigless_f00a8eba1899", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 139, "task_id": "sigless_00029a7e6212", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 140, "task_id": "sigless_92c2979883a9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 141, "task_id": "sigless_294c09c37fca", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 1, "task": 142, "task_id": "sigless_15d4ae2f8443", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 143, "task_id": "sigless_fcd2fb050bf6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 144, "task_id": "sigless_4b8ae6c364f9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 145, "task_id": "sigless_5af03fd8ef7b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 146, "task_id": "sigless_d34ebc7ed34a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 147, "task_id": "sigless_808d6c1c9b6a", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 148, "task_id": "sigless_26315cbfcfbf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 149, "task_id": "sigless_f70dce70d2e6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 150, "task_id": "sigless_192fbb20f4b6", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 151, "task_id": "sigless_c6fed62b2c1d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 152, "task_id": "sigless_07dd80fcc8e7", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 153, "task_id": "sigless_6dbf14b60080", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 154, "task_id": "sigless_c4f8a1d2a501", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 155, "task_id": "sigless_b6b6f07b0ff9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 156, "task_id": "sigless_94c9c9421304", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 157, "task_id": "sigless_6d83ced1ddc9", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 158, "task_id": "sigless_37e2ca3dea18", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 159, "task_id": "sigless_27d7320a3bdf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 160, "task_id": "sigless_88aae2bb0dda", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 161, "task_id": "sigless_809d366ff6f0", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 162, "task_id": "sigless_7412fc8a275b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 163, "task_id": "sigless_dd676587e3c2", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 164, "task_id": "sigless_4cb006480238", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 165, "task_id": "sigless_adc978f7e65b", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 166, "task_id": "sigless_7e997d06e5bd", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 167, "task_id": "sigless_edd7ed243c48", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 168, "task_id": "sigless_b721d6a533f8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 169, "task_id": "sigless_bcb6f4de3081", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 170, "task_id": "sigless_fe5faa93760d", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 171, "task_id": "sigless_d59fd5c25caf", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 172, "task_id": "sigless_bf3de39765c8", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 173, "task_id": "sigless_b885d1ba1001", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 174, "task_id": "sigless_3af6f6ae5576", "tasks": 175}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"input_view": "typed_opaque_contract", "max_token_completions": 0, "task": 175, "task_id": "sigless_54c0d3ca981f", "tasks": 175}
+{"input_view": "typed_opaque_contract", "max_token_completions": 4, "output": "/workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_seed42_k10_predictions.json", "output_sha256": "88c4d9e121d8734728c9fa0a340fecb8667c300bc72b935fd22eca0b56dad939", "rows": 175, "samples": 1750}
+PASSK_RESULT tasks=175 pass@1=6/175=0.0343 pass@10=13/175=0.0743 compile@10=173/175=0.9886
+{"compile_at_k": {"count": 172, "rate": 0.9885057471264368}, "pass_at_1": {"count": 6, "rate": 0.034482758620689655}, "pass_at_k": {"count": 13, "rate": 0.07471264367816093}, "tasks": 174}
+{
+  "arm": "typed_fold_rs_sft_union_v1",
+  "automatic_promotion_performed": false,
+  "contract": {
+    "collapse_floor": 9.5,
+    "compile_at_10_and_pass_at_1_can_promote": false,
+    "diversity_floor": 9.9,
+    "evaluation_sha256": "abc8499f6984d8503fa71855021893bb1aba0c655fb744e55e6c41708b8edce7",
+    "k": 10,
+    "minimum_promotion_seeds": 3,
+    "pass_at_10_promotion_endpoint_requires_3plus_seeds": true,
+    "pass_at_10_seed42_preregistered_diagnostic_floor": 18,
+    "primary_diagnostic_read": "mean_distinct_extracted_code_sha256_per_10",
+    "seed": 42,
+    "tasks": 175
+  },
+  "decision": {
+    "compiler_reward_saturation_claim_made": false,
+    "current_measured_arm_within_diversity_bar": {
+      "arm": "typed_contract_sft_2epoch_optstep348",
+      "reference_distinct": 10.0,
+      "reference_source": "sealed_preregistration_not_an_input_to_this_pairwise_gate"
+    },
+    "differences_below_about_three_tasks_treated_as_noise_pending_replicates": true,
+    "promoted_checkpoint": null,
+    "promotion_status": "HOLD_REQUIRES_3PLUS_MATCHED_SEEDS",
+    "seed42_diagnostic_eligible": false,
+    "single_seed_may_veto_but_may_not_promote": true,
+    "update58_diversity_eligible_under_9_90_bar": false,
+    "update58_is_comparator_not_fallback": true,
+    "update58_reference_distinct": 9.88,
+    "verpo_hold_reason": "await_pass3_read_and_at_least_three_matched_seeds",
+    "verpo_status": "HOLD",
+    "vetoes_and_holds": [
+      "pass_at_10_below_update58_18_of_175",
+      "only_one_seed_observed_minimum_three_required"
+    ]
+  },
+  "exact_pairing_validated": true,
+  "full175_k10_coverage_validated": true,
+  "human_readable_check_collapse": {
+    "ran_after_formal_validation": true,
+    "return_code": 0,
+    "return_code_used_as_promotion_gate": false,
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "==============================================================================\nARM: /workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_seed42_k10_score_full175.json\n  tasks              : 175\n  pass@1             : 6\n  pass@10            : 13\n  compile@10         : 173\n  distinct/10 (mean) : 9.98      tasks below 10 distinct: 4\n  distinct histogram : 9:4 10:171\n  successes/solved   : [1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 10]\n\n==============================================================================\nCOLLAPSE VERDICT (bars pre-registered before results)\n  distinct/10 9.98 vs baseline 10.00  ->  drop 0.02 (bar 0.10)\n  diversity within bar\n\n==============================================================================\nPAIRED vs /workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_score_full175.json\n  baseline: pass@1 5  pass@10 18  compile@10 169  distinct 9.88\n  pass@10     gain= 1 loss= 6 disc= 7  exact p=0.1250  min attainable p=0.0156\n  compile@10  gain= 5 loss= 1 disc= 6  exact p=0.2188  min attainable p=0.0312\n  pass@1      gain= 2 loss= 1 disc= 3  exact p=1.0000  min attainable p=0.2500\n\n  *** DIVERGENCE: compile@10 and pass@1 flat-or-up while pass@10 falls.\n      This is the entropy-collapse signature, not progress.\n",
+    "stdout_sha256": "14504fc790d87f6323170f0db9e33b79db2cf05420344e762772732ab13bc49f"
+  },
+  "inputs": {
+    "collapse_checker": {
+      "path": "/workspace/analysis_rs_sft_fold/check_collapse.py",
+      "return_code_not_used_as_gate": true,
+      "sha256": "7311cba90e5cbdf0abae17d7051728021140e83e9c61b43edb976e4eaf6a7fa9"
+    },
+    "fold": {
+      "generation": {
+        "matched_seed42_contract_validated": true,
+        "predictions": {
+          "path": "/workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_seed42_k10_predictions.json",
+          "sha256": "88c4d9e121d8734728c9fa0a340fecb8667c300bc72b935fd22eca0b56dad939"
+        },
+        "provenance": {
+          "path": "/workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_seed42_k10_predictions.json.provenance.json",
+          "sha256": "ff367d79d03ea08f17171c3ba99f6bc0fc205ce53c29efd40637e1c742cf4db8"
+        },
+        "sampling": {
+          "decoder_prefix_is_not_output": true,
+          "fabricated_eos": false,
+          "generation_batch_size": 10,
+          "max_new_tokens": 4096,
+          "max_source_tokens": 32768,
+          "num_samples": 10,
+          "sampled_eos_retained": true,
+          "seed": 42,
+          "seed_policy": "seed+task_index*100003+batch_start",
+          "temperature": 0.8,
+          "top_k": 0,
+          "top_p": 0.95
+        },
+        "task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+      },
+      "path": "/workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_seed42_k10_score_full175.json",
+      "sample_coordinates_sha256": "ec59fcbba33fbecaa75aebb7dc02886c5a1896d95b2c403a770e23eef5dd887a",
+      "sha256": "6e64215c88eaceb5ea546a2aa2235a9ed6919c42d76756f57f910c3c6196e1b0",
+      "task_order_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70"
+    },
+    "update58": {
+      "generation": {
+        "matched_seed42_contract_validated": true,
+        "predictions": {
+          "path": "/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_predictions.json",
+          "sha256": "74d8c944185e736565088c593ceb20f6d52740bde0ef293118ed98d94785278a"
+        },
+        "provenance": {
+          "path": "/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_predictions.json.provenance.json",
+          "sha256": "cdeed55d8246b61f068c8bc7eaf9cb27daf13ffb871f2b2e6c804e9371b7d316"
+        },
+        "sampling": {
+          "decoder_prefix_is_not_output": true,
+          "fabricated_eos": false,
+          "generation_batch_size": 10,
+          "max_new_tokens": 4096,
+          "max_source_tokens": 32768,
+          "num_samples": 10,
+          "sampled_eos_retained": true,
+          "seed": 42,
+          "seed_policy": "seed+task_index*100003+batch_start",
+          "temperature": 0.8,
+          "top_k": 0,
+          "top_p": 0.95
+        },
+        "task_ids_sha256": "9b93767fd4d0b4057bc752113faeb1efda9faa609e537e189350a6d874d6e38e"
+      },
+      "path": "/workspace/artifacts/t5gemma2_typed_pass2_update58_current_stack_matched_v1/update58_current_stack_seed42_k10_score_full175.json",
+      "sample_coordinates_sha256": "ec59fcbba33fbecaa75aebb7dc02886c5a1896d95b2c403a770e23eef5dd887a",
+      "sha256": "4f6dca7eec07731f9b7e80a294ecff931f93e88f5cbd5d433ff56495148ab8a9",
+      "task_order_sha256": "03b96235a01c18b03da8fc84ae7c617216a74883a78cec22adc3af29d16d3d70"
+    }
+  },
+  "matched_seed42_generation_provenance_validated": true,
+  "metrics": {
+    "fold": {
+      "compile_at_10": 173,
+      "distinct_counts_sha256": "e777056ce6f8901c5ce75909d379fc0d9c1b521b1fd057e916f9c184c05bf359",
+      "distinct_mean": 9.977142857142857,
+      "pass_at_1": 6,
+      "pass_at_10": 13,
+      "tasks_below_10_distinct": 4
+    },
+    "paired": {
+      "compk": {
+        "discordant": 6,
+        "exact_two_sided_p": 0.21875,
+        "gains": 5,
+        "losses": 1
+      },
+      "pass1": {
+        "discordant": 3,
+        "exact_two_sided_p": 1.0,
+        "gains": 2,
+        "losses": 1
+      },
+      "passk": {
+        "discordant": 7,
+        "exact_two_sided_p": 0.125,
+        "gains": 1,
+        "losses": 6
+      }
+    },
+    "update58": {
+      "compile_at_10": 169,
+      "distinct_counts_sha256": "532968c0631a0efb078d003ca2734a1c311cab28401d342452b75ca197db4376",
+      "distinct_mean": 9.88,
+      "pass_at_1": 5,
+      "pass_at_10": 18,
+      "tasks_below_10_distinct": 12
+    }
+  },
+  "replication_status": {
+    "additional_matched_pass3_seeds_required": 2,
+    "minimum_required_for_promotion": 3,
+    "seed43_to_46_measurement_audit_not_assumed_complete": true,
+    "validated_pass3_seeds": [
+      42
+    ],
+    "validated_seed_count": 1
+  },
+  "schema": "t5gemma2-typed-fold-single-seed-promotion-gate-v1",
+  "score_bytes_pinned_before_metrics_read": true,
+  "shared_gate_logic": {
+    "path": "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/audit_t5gemma2_typed_pass3_promotion.py",
+    "semantics": "same_full175_k10_seed42_diversity_and_pairing_gate_as_pass3",
+    "sha256": "411e1e6c5adf3a23d5cd741c1dc5280a8ea768bfe546f9b4d8f770bcabbb021b"
+  },
+  "status": "pass",
+  "verpo_launched": false
+}
+T5GEMMA_TYPED_FOLD_EVAL_COMPLETE decision=/workspace/artifacts/t5gemma2_typed_fold_rs_sft_union_eval_v1/typed_fold_union_single_seed_promotion_gate.json promotion=HOLD_REQUIRES_3PLUS_MATCHED_SEEDS verpo=HOLD
+T5GEMMA_TYPED_FOLD_HANDOFF_COMPLETE arm=B_fold_only promotion=HOLD_REQUIRES_3PLUS_MATCHED_SEEDS verpo=HOLD

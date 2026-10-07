@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_typed_fold_rs_sft_union_v1/checkpoint-optstep-000058",
+  "run_contract_sha256": "8d0f16cebacbd424ab1db66d9e12504da4743b9f56d531db68a8b6b8ee4fa193",
+  "schema": "t5gemma2-typed-fold-rs-sft-union-checkpoint-v1",
+  "update": 58
+}

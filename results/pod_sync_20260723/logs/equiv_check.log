@@ -1,0 +1,12 @@
+=== arm A: prefix=64 (as trained) ===
+reusing existing equiv_p64.json
+=== arm B: prefix=0 (forgo encoder, partial-load ignores unused adapter) ===
+generate:  95%|█████████▌| 19/20 [10:25<00:28, 28.62s/row]generate: 100%|██████████| 20/20 [10:25<00:00, 75.97s/row]generate: 100%|██████████| 20/20 [10:25<00:00, 31.26s/row]
+wrote /workspace/equiv_p0.json
+wrote /workspace/equiv_p0.json.provenance.json
+=== compare greedy outputs ===
+RESULT tasks=20 exact_match=0/20 mean_similarity=0.1878 min_similarity=0.0222
+FIRST DIFF task fresh-eval-60c2bcfe24e4
+  p64: "\n\nint fn0(String a) {\n  int count = 0;\n  for (var i = 1; i < a.length - 2; ++i) {\n    if ((a[i] >= '3' && a[i] <= '9') || \n        (a[i] == '-' && a[i + 1].isDigit() && a[i + 2].is"
+  p0 : "\n\nimport 'dart:convert';\n\nint fn0(String a) {\n  int result = 0;\n  for (var i = 0; i < a.length && result != -1; i++) {\n    var c = a[i];\n    if (c >= '0' && c <= '9') {\n      resul"
+[equiv-done rc=0]

@@ -1,0 +1,7 @@
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m trap 'rc=$?; printf "FAILED rc=%s time=%s\n" "$rc" "$(date -u +%FT%TZ)" > "$STATUS"; echo "FAILURE rc=$rc time=$(date -u +%FT%TZ)"; exit "$rc"' ERR
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m printf "RUNNING stage=preflight time=%s\n" "$(date -u +%FT%TZ)" > "$STATUS"
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m echo "START time=$(date -u +%FT%TZ)"
+[?2004lSTART time=2026-07-16T04:36:34Z
+[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -x /venv/main/bin/python
+[?2004l[?2004h(main) ]0;root@C.44461588: /workspace[01;34mroot[m[01m@[01;36mC.44461588[m[01m:[01;37m/workspace$[m test -x /home/zeus/dart-sdk/bin/dart
+[?2004lFAILURE rc=1 time=2026-07-16T04:36:34Z

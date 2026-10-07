@@ -1,0 +1,179 @@
+{
+  "acceptance_tests_exposed": false,
+  "architecture": "native_t5gemma2_encoder_decoder",
+  "checkpoint": {
+    "base_model_duplicated": false,
+    "interval": 1,
+    "keep_last": 2
+  },
+  "feedback_boundary": {
+    "acceptance_tests_exposed": false,
+    "accounting": {
+      "eligible_rows": 2386,
+      "excluded_rows": 388,
+      "holdback_expect_cases": 11520,
+      "odd_case_tasks": 989,
+      "parent_rows": 2774,
+      "source_expect_cases": 22051,
+      "visible_expect_cases": 10531
+    },
+    "excluded_task_ids_sha256": "fc8f5e7bd74c9ca617abff13da3c21f2523613ef3f7d25af5e3bd7e5adf94b0d",
+    "f2": {
+      "bytes": 12566565,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl",
+      "sha256": "c3b0a25678eb531cc54f73e5e46515b6f869a8e3a197a6d36a6ff412823689c3",
+      "size_bytes": 12566565
+    },
+    "f2_manifest": {
+      "bytes": 3187,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json",
+      "sha256": "54d0a1d1eab55a0165fd1a20b99d29dfcc9df7b4e5621d4362781d52ae2e7419",
+      "size_bytes": 3187
+    },
+    "full_preprocessing_report_sha256": "1a73ee3df03d1fda97d819e8536ab42435dfa1cbc802335987e21ed48cd196e2",
+    "heldout_bytes_opened_during_validation": false,
+    "parent_or_private_bytes_opened_during_validation": false,
+    "parent_rows": 2774,
+    "public_manifest": {
+      "bytes": 3149,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json",
+      "sha256": "11a82c87432a26fff1a0290d48dedb19d0777a833d05e15685f9ba03ad78f614",
+      "size_bytes": 3149
+    },
+    "reward_holdback_exposed": false,
+    "rollout": {
+      "bytes": 18942525,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl",
+      "sha256": "14139ed29281ffcf9a713d4ee09fb8d0f67dff613bb170c09c2a7f5c62a6252c",
+      "size_bytes": 18942525
+    },
+    "rows": 2386,
+    "schema": "verpo-train-feedback-view-v1",
+    "seal": {
+      "bytes": 916,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.seal.json",
+      "sha256": "045c4319b9d2b4e3e29e32eb6b3475404b1b216ced83c17c397f37b5c8fbccca",
+      "size_bytes": 916
+    },
+    "task_ids_sha256": "6916b6883ebff97a909a87db7a50f0de818fff3038e1b5b0495fa9adb79a8eeb"
+  },
+  "llm_judge": false,
+  "no_frontier_api": true,
+  "objective": "on_policy_visible_execution_verpo_plus_local_compiler_repair",
+  "optimization": {
+    "declared_trajectory_slots_per_task": 12,
+    "learning_rate": 1e-06,
+    "max_grad_norm": 1.0,
+    "max_updates": 16,
+    "on_policy_logprob_tolerance": 0.0002,
+    "ppo_clip": 0.0,
+    "sft_replay_weight": 0.02,
+    "tasks_per_update": 1,
+    "weight_decay": 0.0
+  },
+  "private_holdback_exposed": false,
+  "repair": {
+    "eligibility": "noncompiling_candidates_only",
+    "feedback": "sanitized_local_dart_compiler_only",
+    "parent_selection": "deterministic_max_min_token_trigram_distance",
+    "repair_advantage_updates_original_state": false,
+    "same_policy_version_before_one_update": true,
+    "trigger": "all_zero_visible_test_group"
+  },
+  "reward": {
+    "compile_weight": 0.25,
+    "components_independently_mean_centered": true,
+    "density_calibrated_partial_tests": true,
+    "diagnostic_text_is_not_a_scalar_reward": true,
+    "global_full_pass": true,
+    "local_weight": 1.0,
+    "verpo_alpha": 2.0,
+    "visible_tests_only": true
+  },
+  "runtime_provenance": {
+    "code": {
+      "dart_evaluator": {
+        "relative_path": "scripts/evaluation/graph_compile_at_k_antigravity.py",
+        "sha256": "249a173a89d5094a293105c0df7b947a73785f36e722159d265a4c8f5dbba7c6"
+      },
+      "enriched_sft_helper": {
+        "relative_path": "scripts/training/t5gemma2_enriched_sft.py",
+        "sha256": "dd4026b2e86a8c3280af5e4379f1cd8a07615e69f9d1959fd1e5ee7dc4f245e2"
+      },
+      "feedback_boundary_builder": {
+        "relative_path": "scripts/preprocessing/build_verpo_feedback_view.py",
+        "sha256": "6decd1ed1ecd3ce8e8a0bd6d861c30a26063c9d913957e361584413705f28a3b"
+      },
+      "seq2seq_core": {
+        "relative_path": "scripts/training/seq2seq_verpo_core.py",
+        "sha256": "c4c72410333669f78d109d8848c70a79321ef42dba6e1a8344b138e8bfdbdb51"
+      },
+      "trainer": {
+        "relative_path": "scripts/training/t5gemma2_compiler_feedback_verpo.py",
+        "sha256": "232880791b108df96b4f01bc44a613c595cf4edaa738f6cb9a624412da5e50e4"
+      }
+    },
+    "code_bundle_sha256": "cdab08a28a42934d536cec81062d50767836838206d10423524fab9611606589",
+    "cuda": {
+      "available": true,
+      "build_version": "12.8",
+      "compute_capability": [
+        12,
+        0
+      ],
+      "cudnn_version": 91002,
+      "current_device": 0,
+      "device_count": 1,
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "multiprocessor_count": 188,
+      "total_memory_bytes": 101972049920,
+      "visible_devices": "0"
+    },
+    "python": {
+      "implementation": "CPython",
+      "version": "3.12.13"
+    },
+    "schema": "t5gemma2-compiler-feedback-verpo-runtime-provenance-v1",
+    "torch": {
+      "git_version": "a1cb3cc05d46d198467bebbb6e8fba50a325d4e7",
+      "version": "2.8.0+cu128"
+    }
+  },
+  "sampling": {
+    "decoder_prefix_is_not_an_action": true,
+    "distribution_truncated": false,
+    "eos_token_ids": [
+      1
+    ],
+    "group_size": 4,
+    "max_new_tokens": 4096,
+    "max_repair_parents": 2,
+    "max_source_tokens": 32768,
+    "pad_before_eos_fail_closed": true,
+    "pad_removed_from_sampling_support": true,
+    "pad_token_id": 0,
+    "repair_group_size": 4,
+    "sampled_eos_is_an_action": true,
+    "sampling_support_constraint_exactly_recomputed": true,
+    "suppressed_token_ids": [
+      0
+    ],
+    "temperature": 0.8,
+    "top_k": 0,
+    "top_p": 1.0
+  },
+  "schema": "t5gemma2-compiler-feedback-verpo-run-v1",
+  "seed": 42,
+  "tasks": {
+    "rows": 2386,
+    "schedule_task_ids_sha256": "5b63673dd54a28e7f4d502039487bf0aa48d691b6ae6ab5d0698a049348a6ed2",
+    "schedule_without_replacement_within_cycle": true,
+    "task_ids_sha256": "6916b6883ebff97a909a87db7a50f0de818fff3038e1b5b0495fa9adb79a8eeb"
+  },
+  "warmstart": {
+    "path": "/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348",
+    "production_floor_eligible": true,
+    "run_contract_sha256": "21613e2c7513e203e31a4690f84b0e6d11fa1c7fa6a20725d859486a30bccac3",
+    "stage_schema": "t5gemma2-enriched-sft-run-v1"
+  }
+}

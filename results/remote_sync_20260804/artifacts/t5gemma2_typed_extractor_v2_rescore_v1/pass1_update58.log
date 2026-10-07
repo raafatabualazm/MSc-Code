@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/score_direct_compact_passk.py", line 797, in <module>
+    main()
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/score_direct_compact_passk.py", line 780, in main
+    validate_existing_score(
+  File "/workspace/hybrid_training_patch_v2_3/scripts/evaluation/score_direct_compact_passk.py", line 145, in validate_existing_score
+    raise ValueError("existing score report differs from exact inputs/settings")
+ValueError: existing score report differs from exact inputs/settings

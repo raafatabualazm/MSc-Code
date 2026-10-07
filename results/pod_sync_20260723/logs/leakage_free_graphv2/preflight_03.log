@@ -1,0 +1,7 @@
+
+$ /venv/main/bin/python -m unittest scripts.data.test_graph_v2_integrity
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 0.191s
+
+OK

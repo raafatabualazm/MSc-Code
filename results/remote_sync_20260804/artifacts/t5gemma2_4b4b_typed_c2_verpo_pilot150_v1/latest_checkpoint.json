@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_typed_c2_verpo_pilot150_v1/checkpoint-optstep-000150",
+  "run_contract_sha256": "b381d2567e52214df4510303071b5948c4c1dabb5cf13202410baab72001b10f",
+  "schema": "t5gemma2-typed-c2-verpo-pilot150-checkpoint-v1",
+  "update": 150
+}

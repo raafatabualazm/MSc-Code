@@ -1,0 +1,7 @@
+{
+  "schema": "compact-public-private-join-seal-v1",
+  "selected_role": "measure",
+  "output_sha256": "a4ed1cf185d52c3d212e2d7348fdb2a1dffd0035f4c395e2e897fd072fa70001",
+  "contract_sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02",
+  "rows": 175
+}

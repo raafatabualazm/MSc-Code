@@ -1,0 +1,17 @@
+__init__.py: OK
+contract_only_view.py: OK
+contract_only_inference.py: OK
+score_contract_only.py: OK
+verify_smoke_replay.py: OK
+handoff_attestation.py: OK
+contract_only_report.py: OK
+preregistration.json: OK
+run_contract_only_control.sh: OK
+handoff_after_current.sh: OK
+README.md: OK
+tests/test_contract_only_control.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_measurement_intervention_multiseed_report_v1.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/t5gemma2_measurement_audit_report.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/durable_evaluation_journal.py: OK
+t5gemma2-contract-only-control-v1: started
+T5GEMMA_CONTRACT_ONLY_HANDOFF_COMPLETE upstream_report_sha256=17645716115052bb48a906a4c7231c76ec28a9d7b66dc55bc53e669e990bee63 downstream_state=RUNNING

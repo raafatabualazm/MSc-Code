@@ -1,0 +1,22 @@
+[chain] v3 SFT ok
+[chain] launching v3 pass@k 2026-07-22T23:04:51Z
+[v3passk] 2026-07-22T23:04:51Z build eval paired ...
+v3 eval paired: 175 rows -> v3eval_public/align/tests.jsonl
+[v3passk] generate (candidate) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7718.08it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/pool_v3_project/hybrid_training_patch_v2_3/scripts/evaluation/direct_compact_qwen_inference.py", line 301, in <module>
+    main()
+  File "/workspace/pool_v3_project/hybrid_training_patch_v2_3/scripts/evaluation/direct_compact_qwen_inference.py", line 222, in main
+    rows = load_rows(
+           ^^^^^^^^^^
+  File "/workspace/pool_v3_project/hybrid_training_patch_v2_3/scripts/evaluation/direct_compact_qwen_inference.py", line 122, in load_rows
+    pool_metadata = validate_v3_pool_alignment_metadata(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/pool_v3_project/hybrid_training_patch_v2_3/models/direct_compact_causal.py", line 503, in validate_v3_pool_alignment_metadata
+    raise ValueError(f"{identity}: v3 alignment has no pool_metadata object")
+ValueError: alignment row 'sigless_877a173b0a13': v3 alignment has no pool_metadata object
+[chain] v3 pass@k done 2026-07-22T23:05:04Z

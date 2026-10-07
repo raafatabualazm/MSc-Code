@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_mixed_rs_sft_final_v1/checkpoint-optstep-000426",
+  "run_contract_sha256": "90d95239e17a524c2541dbe98cd728c16b1fbdd891baad27c8a488f5dc111369",
+  "schema": "t5gemma2-mixed-rs-sft-checkpoint-v1",
+  "update": 426
+}

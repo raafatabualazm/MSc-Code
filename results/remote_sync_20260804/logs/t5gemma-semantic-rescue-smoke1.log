@@ -1,0 +1,75 @@
+T5GEMMA_SEMANTIC_RESCUE_BLOCKED invalid group count
+T5GEMMA_SEMANTIC_RESCUE_BLOCKED invalid group count
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 2918, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 2901, in main
+    result = handlers[args.command](args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 513, in project
+    "runtime_provenance": _runtime_provenance(),
+                          ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 304, in _runtime_provenance
+    raise RescueAblationError(f"runtime dependency is missing: {path}")
+RescueAblationError: runtime dependency is missing: ../frontier_ceiling_patch_v1/frontier_f2.py
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 2918, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 2901, in main
+    result = handlers[args.command](args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 513, in project
+    "runtime_provenance": _runtime_provenance(),
+                          ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_semantic_rescue_ablation.py", line 304, in _runtime_provenance
+    raise RescueAblationError(f"runtime dependency is missing: {path}")
+RescueAblationError: runtime dependency is missing: ../frontier_ceiling_patch_v1/frontier_f2.py
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+/workspace/frontier_ceiling_patch_v1/frontier_f2.py: OK
+{"command": "project", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1_v1/base_projection.json", "schema": "t5gemma2-semantic-rescue-base-projection-v1", "status": "complete"}
+{"command": "plan", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1_v1/plan.json", "schema": "t5gemma2-semantic-rescue-plan-v1", "status": "complete"}
+{"command": "diagnose", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1_v1/diagnoses.json", "schema": "t5gemma2-semantic-rescue-diagnoses-v1", "status": "complete"}
+T5GEMMA_SEMANTIC_RESCUE_BLOCKED diagnosis health gate failed: receipts=1/1 accepted_parents=0

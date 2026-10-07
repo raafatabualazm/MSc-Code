@@ -1,0 +1,4 @@
+disasm cache: +60 built, 235 total
+  25/60 pass=6 tok=3760081
+  50/60 pass=10 tok=6051830
+FRONTIER_PASSK dataset=v3 provider=deepseek model=deepseek-v4-pro K=10 tasks=60 pass@10=10/60=0.1667 compile@10=22/60=0.3667 tokens=6604030

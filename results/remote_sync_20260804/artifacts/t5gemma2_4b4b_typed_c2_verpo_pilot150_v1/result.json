@@ -1,0 +1,23 @@
+{
+  "automatic_promotion_performed": false,
+  "latest_checkpoint": "checkpoint-optstep-000150",
+  "mechanics_gate": "GO",
+  "no_frontier_api": true,
+  "pilot_disposition": "discardable_not_for_automatic_promotion",
+  "production_floor_eligible": false,
+  "run_contract_sha256": "b381d2567e52214df4510303071b5948c4c1dabb5cf13202410baab72001b10f",
+  "schema": "t5gemma2-typed-c2-verpo-pilot150-run-v1",
+  "status": "complete",
+  "updates": 150,
+  "window_gates_passed": [
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144
+  ]
+}

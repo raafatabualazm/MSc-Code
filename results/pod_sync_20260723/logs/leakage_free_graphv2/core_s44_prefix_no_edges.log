@@ -1,0 +1,1515 @@
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 44 --train_file data/datasets/dart_all_graphv2_train.jsonl --eval_file data/datasets/dart_all_graphv2_validation.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --epochs 4 --sft_lr 5e-6 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --gradient_checkpointing 1 --train_batch_size 4 --grad_accum 16 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_rms_match 1 --decoder_prompt_max_length 2048 --prompt_fit_assembly 1 --auto_cfg 0 --max_block_instrs 20 --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --name_suffix _graphv2_clean_s44_prefix_no_edges --qwen_prefix_tokens 64 --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --prompt_assembly_mode none --prompt_fit_assembly 0 --prompt_clean_asm 0 --dfg_mode edges --edge_ablation none --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: epochs=4, lora_r=64, lora_alpha=128
+
+>>> Stage: SFT for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 4
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: SFT (Supervised Fine-Tuning)
+==================================================
+
+Dynamic Batch Size: 4 | Grad Accum: 16 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 1
+Graph channel: dfg_mode=edges | edge_ablation=none | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+Graph channel config: dfg_mode=edges | edge_ablation=none | gnn_ablation=full | position_scheme=roberta | causal_position_ids=cumsum | auto_cfg=0
+Loading datasets...
+Tokenizing datasets (using unified tensor builder format)...
+Tokenized 500/770 examples
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 40961.62it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7019.77it/s]
+Enabled decoder gradient checkpointing.
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Enabled local block encoder gradient checkpointing.
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Qwen graph prefix gate: 0.200000
+Gradient accumulation steps: 16
+Starting training...
+
+  0%|          | 0/52 [00:00<?, ?it/s]
+  2%|▏         | 1/52 [01:40<1:25:48, 100.96s/it]
+  4%|▍         | 2/52 [03:19<1:22:54, 99.49s/it] 
+  6%|▌         | 3/52 [05:04<1:23:29, 102.24s/it]
+  8%|▊         | 4/52 [06:50<1:22:42, 103.38s/it]
+ 10%|▉         | 5/52 [08:42<1:23:34, 106.70s/it]
+ 12%|█▏        | 6/52 [10:29<1:21:56, 106.89s/it]
+ 13%|█▎        | 7/52 [12:19<1:20:56, 107.92s/it]
+ 15%|█▌        | 8/52 [14:14<1:20:47, 110.16s/it]
+ 17%|█▋        | 9/52 [16:00<1:17:57, 108.79s/it]
+ 19%|█▉        | 10/52 [17:49<1:16:10, 108.83s/it]
+                                                  
+{'loss': '11.01', 'grad_norm': '12.07', 'learning_rate': '4.762e-06', 'epoch': '0.829'}
+
+ 19%|█▉        | 10/52 [17:49<1:16:10, 108.83s/it]
+ 21%|██        | 11/52 [19:39<1:14:33, 109.10s/it]
+ 23%|██▎       | 12/52 [21:25<1:12:03, 108.09s/it]
+ 25%|██▌       | 13/52 [21:28<49:40, 76.42s/it]   
+
+  0%|          | 0/21 [00:00<?, ?it/s][A
+
+ 10%|▉         | 2/21 [00:03<00:31,  1.64s/it][A
+
+ 14%|█▍        | 3/21 [00:05<00:31,  1.75s/it][A
+
+ 19%|█▉        | 4/21 [00:07<00:31,  1.83s/it][A
+
+ 24%|██▍       | 5/21 [00:09<00:29,  1.87s/it][A
+
+ 29%|██▊       | 6/21 [00:10<00:27,  1.80s/it][A
+
+ 33%|███▎      | 7/21 [00:12<00:24,  1.78s/it][A
+
+ 38%|███▊      | 8/21 [00:14<00:23,  1.81s/it][A
+
+ 43%|████▎     | 9/21 [00:16<00:22,  1.89s/it][A
+
+ 48%|████▊     | 10/21 [00:18<00:21,  1.92s/it][A
+
+ 52%|█████▏    | 11/21 [00:21<00:21,  2.16s/it][A
+
+ 57%|█████▋    | 12/21 [00:23<00:20,  2.32s/it][A
+
+ 62%|██████▏   | 13/21 [00:25<00:17,  2.21s/it][A
+
+ 67%|██████▋   | 14/21 [00:29<00:18,  2.66s/it][A
+
+ 71%|███████▏  | 15/21 [00:35<00:21,  3.62s/it][A
+
+ 76%|███████▌  | 16/21 [00:40<00:20,  4.19s/it][A
+
+ 81%|████████  | 17/21 [00:45<00:17,  4.26s/it][A
+
+ 86%|████████▌ | 18/21 [00:47<00:11,  3.76s/it][A
+
+ 90%|█████████ | 19/21 [00:49<00:06,  3.12s/it][A
+
+ 95%|█████████▌| 20/21 [00:50<00:02,  2.64s/it][A
+
+100%|██████████| 21/21 [00:52<00:00,  2.20s/it][A
+                                               
+
+                                               
+[A{'eval_loss': '0.6651', 'eval_runtime': '54.85', 'eval_samples_per_second': '1.513', 'eval_steps_per_second': '0.383', 'epoch': '1'}
+
+ 25%|██▌       | 13/52 [22:23<49:40, 76.42s/it]
+
+100%|██████████| 21/21 [00:52<00:00,  2.20s/it][A
+
+                                               [AAntigravitySeq2SeqTrainer: Saving model state dict to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges/checkpoint-13
+
+ 27%|██▋       | 14/52 [24:13<1:05:24, 103.28s/it]
+ 29%|██▉       | 15/52 [26:04<1:05:05, 105.56s/it]
+ 31%|███       | 16/52 [27:51<1:03:35, 105.98s/it]
+ 33%|███▎      | 17/52 [29:42<1:02:39, 107.42s/it]
+ 35%|███▍      | 18/52 [31:28<1:00:37, 107.00s/it]
+ 37%|███▋      | 19/52 [33:16<59:00, 107.28s/it]  
+ 38%|███▊      | 20/52 [35:06<57:37, 108.05s/it]
+                                                
+{'loss': '8.974', 'grad_norm': '9.862', 'learning_rate': '3.704e-06', 'epoch': '1.58'}
+
+ 38%|███▊      | 20/52 [35:06<57:37, 108.05s/it]
+ 40%|████      | 21/52 [36:51<55:19, 107.07s/it]
+ 42%|████▏     | 22/52 [38:35<53:05, 106.20s/it]
+ 44%|████▍     | 23/52 [40:20<51:12, 105.94s/it]
+ 46%|████▌     | 24/52 [42:07<49:30, 106.09s/it]
+ 48%|████▊     | 25/52 [43:57<48:16, 107.27s/it]
+ 50%|█████     | 26/52 [43:59<32:54, 75.94s/it] 
+
+  0%|          | 0/21 [00:00<?, ?it/s][A
+
+ 10%|▉         | 2/21 [00:03<00:31,  1.64s/it][A
+
+ 14%|█▍        | 3/21 [00:05<00:31,  1.75s/it][A
+
+ 19%|█▉        | 4/21 [00:07<00:31,  1.83s/it][A
+
+ 24%|██▍       | 5/21 [00:09<00:29,  1.87s/it][A
+
+ 29%|██▊       | 6/21 [00:10<00:27,  1.80s/it][A
+
+ 33%|███▎      | 7/21 [00:12<00:24,  1.78s/it][A
+
+ 38%|███▊      | 8/21 [00:14<00:23,  1.80s/it][A
+
+ 43%|████▎     | 9/21 [00:16<00:22,  1.89s/it][A
+
+ 48%|████▊     | 10/21 [00:18<00:21,  1.92s/it][A
+
+ 52%|█████▏    | 11/21 [00:21<00:21,  2.15s/it][A
+
+ 57%|█████▋    | 12/21 [00:23<00:20,  2.32s/it][A
+
+ 62%|██████▏   | 13/21 [00:25<00:17,  2.21s/it][A
+
+ 67%|██████▋   | 14/21 [00:29<00:18,  2.66s/it][A
+
+ 71%|███████▏  | 15/21 [00:35<00:21,  3.62s/it][A
+
+ 76%|███████▌  | 16/21 [00:40<00:20,  4.19s/it][A
+
+ 81%|████████  | 17/21 [00:45<00:17,  4.26s/it][A
+
+ 86%|████████▌ | 18/21 [00:47<00:11,  3.77s/it][A
+
+ 90%|█████████ | 19/21 [00:49<00:06,  3.13s/it][A
+
+ 95%|█████████▌| 20/21 [00:51<00:02,  2.64s/it][A
+
+100%|██████████| 21/21 [00:52<00:00,  2.20s/it][A
+                                               
+
+                                               
+[A{'eval_loss': '0.6108', 'eval_runtime': '54.86', 'eval_samples_per_second': '1.513', 'eval_steps_per_second': '0.383', 'epoch': '2'}
+
+ 50%|█████     | 26/52 [44:54<32:54, 75.94s/it]
+
+100%|██████████| 21/21 [00:52<00:00,  2.20s/it][A
+
+                                               [AAntigravitySeq2SeqTrainer: Saving model state dict to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges/checkpoint-26
+
+ 52%|█████▏    | 27/52 [46:45<42:50, 102.83s/it]
+ 54%|█████▍    | 28/52 [48:32<41:40, 104.19s/it]
+ 56%|█████▌    | 29/52 [50:12<39:28, 102.96s/it]
+ 58%|█████▊    | 30/52 [52:04<38:42, 105.56s/it]
+                                                
+{'loss': '8.347', 'grad_norm': '6.369', 'learning_rate': '2.187e-06', 'epoch': '2.332'}
+
+ 58%|█████▊    | 30/52 [52:04<38:42, 105.56s/it]
+ 60%|█████▉    | 31/52 [53:53<37:18, 106.59s/it]
+ 62%|██████▏   | 32/52 [55:37<35:17, 105.89s/it]
+ 63%|██████▎   | 33/52 [57:23<33:29, 105.77s/it]
+ 65%|██████▌   | 34/52 [59:09<31:43, 105.76s/it]
+ 67%|██████▋   | 35/52 [1:00:56<30:07, 106.30s/it]
+ 69%|██████▉   | 36/52 [1:02:43<28:25, 106.59s/it]
+ 71%|███████   | 37/52 [1:04:38<27:13, 108.88s/it]
+ 73%|███████▎  | 38/52 [1:06:31<25:44, 110.31s/it]
+ 75%|███████▌  | 39/52 [1:06:34<16:54, 78.03s/it] 
+
+  0%|          | 0/21 [00:00<?, ?it/s][A
+
+ 10%|▉         | 2/21 [00:03<00:31,  1.64s/it][A
+
+ 14%|█▍        | 3/21 [00:05<00:31,  1.75s/it][A
+
+ 19%|█▉        | 4/21 [00:07<00:31,  1.83s/it][A
+
+ 24%|██▍       | 5/21 [00:09<00:29,  1.87s/it][A
+
+ 29%|██▊       | 6/21 [00:10<00:26,  1.80s/it][A
+
+ 33%|███▎      | 7/21 [00:12<00:24,  1.78s/it][A
+
+ 38%|███▊      | 8/21 [00:14<00:23,  1.80s/it][A
+
+ 43%|████▎     | 9/21 [00:16<00:22,  1.88s/it][A
+
+ 48%|████▊     | 10/21 [00:18<00:21,  1.92s/it][A
+
+ 52%|█████▏    | 11/21 [00:21<00:21,  2.15s/it][A
+
+ 57%|█████▋    | 12/21 [00:23<00:20,  2.31s/it][A
+
+ 62%|██████▏   | 13/21 [00:25<00:17,  2.21s/it][A
+
+ 67%|██████▋   | 14/21 [00:29<00:18,  2.65s/it][A
+
+ 71%|███████▏  | 15/21 [00:35<00:21,  3.60s/it][A
+
+ 76%|███████▌  | 16/21 [00:40<00:20,  4.18s/it][A
+
+ 81%|████████  | 17/21 [00:45<00:16,  4.25s/it][A
+
+ 86%|████████▌ | 18/21 [00:47<00:11,  3.75s/it][A
+
+ 90%|█████████ | 19/21 [00:49<00:06,  3.11s/it][A
+
+ 95%|█████████▌| 20/21 [00:50<00:02,  2.63s/it][A
+
+100%|██████████| 21/21 [00:52<00:00,  2.19s/it][A
+                                                 
+
+                                               
+[A{'eval_loss': '0.594', 'eval_runtime': '54.71', 'eval_samples_per_second': '1.517', 'eval_steps_per_second': '0.384', 'epoch': '3'}
+
+ 75%|███████▌  | 39/52 [1:07:29<16:54, 78.03s/it]
+
+100%|██████████| 21/21 [00:52<00:00,  2.19s/it][A
+
+                                               [AAntigravitySeq2SeqTrainer: Saving model state dict to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges/checkpoint-39
+
+ 77%|███████▋  | 40/52 [1:09:19<20:47, 103.97s/it]
+                                                  
+{'loss': '8.032', 'grad_norm': '4.767', 'learning_rate': '7.886e-07', 'epoch': '3.083'}
+
+ 77%|███████▋  | 40/52 [1:09:19<20:47, 103.97s/it]
+ 79%|███████▉  | 41/52 [1:11:09<19:23, 105.80s/it]
+ 81%|████████  | 42/52 [1:12:56<17:44, 106.44s/it]
+ 83%|████████▎ | 43/52 [1:14:38<15:45, 105.07s/it]
+ 85%|████████▍ | 44/52 [1:16:26<14:07, 105.94s/it]
+ 87%|████████▋ | 45/52 [1:18:14<12:25, 106.56s/it]
+ 88%|████████▊ | 46/52 [1:19:55<10:28, 104.81s/it]
+ 90%|█████████ | 47/52 [1:21:44<08:50, 106.11s/it]
+ 92%|█████████▏| 48/52 [1:23:37<07:12, 108.21s/it]
+ 94%|█████████▍| 49/52 [1:25:31<05:29, 109.82s/it]
+ 96%|█████████▌| 50/52 [1:27:19<03:38, 109.43s/it]
+                                                  
+{'loss': '8.872', 'grad_norm': '5.122', 'learning_rate': '4.428e-08', 'epoch': '3.912'}
+
+ 96%|█████████▌| 50/52 [1:27:19<03:38, 109.43s/it]
+ 98%|█████████▊| 51/52 [1:29:01<01:46, 106.98s/it]
+100%|██████████| 52/52 [1:29:03<00:00, 75.68s/it] 
+
+  0%|          | 0/21 [00:00<?, ?it/s][A
+
+ 10%|▉         | 2/21 [00:03<00:31,  1.64s/it][A
+
+ 14%|█▍        | 3/21 [00:05<00:31,  1.75s/it][A
+
+ 19%|█▉        | 4/21 [00:07<00:31,  1.83s/it][A
+
+ 24%|██▍       | 5/21 [00:09<00:29,  1.86s/it][A
+
+ 29%|██▊       | 6/21 [00:10<00:26,  1.80s/it][A
+
+ 33%|███▎      | 7/21 [00:12<00:24,  1.77s/it][A
+
+ 38%|███▊      | 8/21 [00:14<00:23,  1.80s/it][A
+
+ 43%|████▎     | 9/21 [00:16<00:22,  1.88s/it][A
+
+ 48%|████▊     | 10/21 [00:18<00:21,  1.91s/it][A
+
+ 52%|█████▏    | 11/21 [00:21<00:21,  2.14s/it][A
+
+ 57%|█████▋    | 12/21 [00:23<00:20,  2.31s/it][A
+
+ 62%|██████▏   | 13/21 [00:25<00:17,  2.20s/it][A
+
+ 67%|██████▋   | 14/21 [00:29<00:18,  2.64s/it][A
+
+ 71%|███████▏  | 15/21 [00:35<00:21,  3.60s/it][A
+
+ 76%|███████▌  | 16/21 [00:40<00:20,  4.18s/it][A
+
+ 81%|████████  | 17/21 [00:45<00:16,  4.24s/it][A
+
+ 86%|████████▌ | 18/21 [00:47<00:11,  3.75s/it][A
+
+ 90%|█████████ | 19/21 [00:49<00:06,  3.11s/it][A
+
+ 95%|█████████▌| 20/21 [00:50<00:02,  2.62s/it][A
+
+100%|██████████| 21/21 [00:51<00:00,  2.19s/it][A
+                                                 
+
+                                               
+[A{'eval_loss': '0.5912', 'eval_runtime': '54.64', 'eval_samples_per_second': '1.519', 'eval_steps_per_second': '0.384', 'epoch': '4'}
+
+100%|██████████| 52/52 [1:29:58<00:00, 75.68s/it]
+
+100%|██████████| 21/21 [00:52<00:00,  2.19s/it][A
+
+                                               [AAntigravitySeq2SeqTrainer: Saving model state dict to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges/checkpoint-52
+
+                                                 
+{'train_runtime': '5401', 'train_samples_per_second': '0.57', 'train_steps_per_second': '0.01', 'train_loss': '8.877', 'epoch': '4'}
+
+100%|██████████| 52/52 [1:30:00<00:00, 75.68s/it]
+100%|██████████| 52/52 [1:30:00<00:00, 103.86s/it]
+Saving model to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges...
+AntigravitySeq2SeqTrainer: Saving model state dict to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.
+
+Running multi-sample inference for legacy compile/CodeBLEU tasks...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 49060.56it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 8945.04it/s]
+Enabled decoder gradient checkpointing.
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Enabled local block encoder gradient checkpointing.
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+loaded checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges/pytorch_model.bin
+Loaded parameters with strict=False. Missing keys: 602, Unexpected keys: 0
+Qwen graph prefix gate: 0.200007
+Inference mode: decoder gradient checkpointing OFF; KV cache ON
+
+generate:   0%|          | 0/154 [00:00<?, ?row/s]
+                                                  
+[1/154] generated 10 candidates
+
+generate:   0%|          | 0/154 [00:24<?, ?row/s]
+generate:   1%|          | 1/154 [00:24<1:03:18, 24.83s/row]
+                                                            
+[2/154] generated 10 candidates
+
+generate:   1%|          | 1/154 [00:44<1:03:18, 24.83s/row]
+generate:   1%|▏         | 2/154 [00:44<54:40, 21.58s/row]  
+                                                          
+[3/154] generated 10 candidates
+
+generate:   1%|▏         | 2/154 [01:26<54:40, 21.58s/row]
+generate:   2%|▏         | 3/154 [01:26<1:18:39, 31.26s/row]
+                                                            
+[4/154] generated 10 candidates
+
+generate:   2%|▏         | 3/154 [01:32<1:18:39, 31.26s/row]
+generate:   3%|▎         | 4/154 [01:32<53:11, 21.28s/row]  
+                                                          
+[5/154] generated 10 candidates
+
+generate:   3%|▎         | 4/154 [01:43<53:11, 21.28s/row]
+generate:   3%|▎         | 5/154 [01:43<42:52, 17.27s/row]
+                                                          
+[6/154] generated 10 candidates
+
+generate:   3%|▎         | 5/154 [01:51<42:52, 17.27s/row]
+generate:   4%|▍         | 6/154 [01:51<34:48, 14.11s/row]
+                                                          
+[7/154] generated 10 candidates
+
+generate:   4%|▍         | 6/154 [02:26<34:48, 14.11s/row]
+generate:   5%|▍         | 7/154 [02:26<52:02, 21.24s/row]
+                                                          
+[8/154] generated 10 candidates
+
+generate:   5%|▍         | 7/154 [02:41<52:02, 21.24s/row]
+generate:   5%|▌         | 8/154 [02:41<46:41, 19.19s/row]
+                                                          
+[9/154] generated 10 candidates
+
+generate:   5%|▌         | 8/154 [02:50<46:41, 19.19s/row]
+generate:   6%|▌         | 9/154 [02:50<38:36, 15.97s/row]
+                                                          
+[10/154] generated 10 candidates
+
+generate:   6%|▌         | 9/154 [02:59<38:36, 15.97s/row]
+generate:   6%|▋         | 10/154 [02:59<33:09, 13.82s/row]
+                                                           
+[11/154] generated 10 candidates
+
+generate:   6%|▋         | 10/154 [03:20<33:09, 13.82s/row]
+generate:   7%|▋         | 11/154 [03:20<37:42, 15.82s/row]
+                                                           
+[12/154] generated 10 candidates
+
+generate:   7%|▋         | 11/154 [03:31<37:42, 15.82s/row]
+generate:   8%|▊         | 12/154 [03:31<34:30, 14.58s/row]
+                                                           
+[13/154] generated 10 candidates
+
+generate:   8%|▊         | 12/154 [03:48<34:30, 14.58s/row]
+generate:   8%|▊         | 13/154 [03:48<36:08, 15.38s/row]
+                                                           
+[14/154] generated 10 candidates
+
+generate:   8%|▊         | 13/154 [03:54<36:08, 15.38s/row]
+generate:   9%|▉         | 14/154 [03:54<28:59, 12.42s/row]
+                                                           
+[15/154] generated 10 candidates
+
+generate:   9%|▉         | 14/154 [04:09<28:59, 12.42s/row]
+generate:  10%|▉         | 15/154 [04:09<30:46, 13.28s/row]
+                                                           
+[16/154] generated 10 candidates
+
+generate:  10%|▉         | 15/154 [04:41<30:46, 13.28s/row]
+generate:  10%|█         | 16/154 [04:41<42:59, 18.69s/row]
+                                                           
+[17/154] generated 10 candidates
+
+generate:  10%|█         | 16/154 [05:11<42:59, 18.69s/row]
+generate:  11%|█         | 17/154 [05:11<50:48, 22.25s/row]
+                                                           
+[18/154] generated 10 candidates
+
+generate:  11%|█         | 17/154 [06:02<50:48, 22.25s/row]
+generate:  12%|█▏        | 18/154 [06:02<1:09:43, 30.76s/row]
+                                                             
+[19/154] generated 10 candidates
+
+generate:  12%|█▏        | 18/154 [06:12<1:09:43, 30.76s/row]
+generate:  12%|█▏        | 19/154 [06:12<55:35, 24.71s/row]  
+                                                           
+[20/154] generated 10 candidates
+
+generate:  12%|█▏        | 19/154 [06:43<55:35, 24.71s/row]
+generate:  13%|█▎        | 20/154 [06:43<59:26, 26.62s/row]
+                                                           
+[21/154] generated 10 candidates
+
+generate:  13%|█▎        | 20/154 [07:08<59:26, 26.62s/row]
+generate:  14%|█▎        | 21/154 [07:08<57:50, 26.09s/row]
+                                                           
+[22/154] generated 10 candidates
+
+generate:  14%|█▎        | 21/154 [07:17<57:50, 26.09s/row]
+generate:  14%|█▍        | 22/154 [07:17<46:10, 20.99s/row]
+                                                           
+[23/154] generated 10 candidates
+
+generate:  14%|█▍        | 22/154 [07:48<46:10, 20.99s/row]
+generate:  15%|█▍        | 23/154 [07:48<51:54, 23.77s/row]
+                                                           
+[24/154] generated 10 candidates
+
+generate:  15%|█▍        | 23/154 [08:02<51:54, 23.77s/row]
+generate:  16%|█▌        | 24/154 [08:02<45:07, 20.83s/row]
+                                                           
+[25/154] generated 10 candidates
+
+generate:  16%|█▌        | 24/154 [08:12<45:07, 20.83s/row]
+generate:  16%|█▌        | 25/154 [08:12<38:11, 17.77s/row]
+                                                           
+[26/154] generated 10 candidates
+
+generate:  16%|█▌        | 25/154 [08:20<38:11, 17.77s/row]
+generate:  17%|█▋        | 26/154 [08:20<31:45, 14.89s/row]
+                                                           
+[27/154] generated 10 candidates
+
+generate:  17%|█▋        | 26/154 [08:31<31:45, 14.89s/row]
+generate:  18%|█▊        | 27/154 [08:31<28:32, 13.49s/row]
+                                                           
+[28/154] generated 10 candidates
+
+generate:  18%|█▊        | 27/154 [08:52<28:32, 13.49s/row]
+generate:  18%|█▊        | 28/154 [08:52<33:07, 15.78s/row]
+                                                           
+[29/154] generated 10 candidates
+
+generate:  18%|█▊        | 28/154 [08:58<33:07, 15.78s/row]
+generate:  19%|█▉        | 29/154 [08:58<26:58, 12.95s/row]
+                                                           
+[30/154] generated 10 candidates
+
+generate:  19%|█▉        | 29/154 [09:08<26:58, 12.95s/row]
+generate:  19%|█▉        | 30/154 [09:08<24:39, 11.93s/row]
+                                                           
+[31/154] generated 10 candidates
+
+generate:  19%|█▉        | 30/154 [09:22<24:39, 11.93s/row]
+generate:  20%|██        | 31/154 [09:22<26:02, 12.70s/row]
+                                                           
+[32/154] generated 10 candidates
+
+generate:  20%|██        | 31/154 [09:54<26:02, 12.70s/row]
+generate:  21%|██        | 32/154 [09:54<37:34, 18.48s/row]
+                                                           
+[33/154] generated 10 candidates
+
+generate:  21%|██        | 32/154 [10:01<37:34, 18.48s/row]
+generate:  21%|██▏       | 33/154 [10:01<30:28, 15.11s/row]
+                                                           
+[34/154] generated 10 candidates
+
+generate:  21%|██▏       | 33/154 [10:12<30:28, 15.11s/row]
+generate:  22%|██▏       | 34/154 [10:12<27:50, 13.92s/row]
+                                                           
+[35/154] generated 10 candidates
+
+generate:  22%|██▏       | 34/154 [10:28<27:50, 13.92s/row]
+generate:  23%|██▎       | 35/154 [10:28<28:19, 14.29s/row]
+                                                           
+[36/154] generated 10 candidates
+
+generate:  23%|██▎       | 35/154 [10:46<28:19, 14.29s/row]
+generate:  23%|██▎       | 36/154 [10:46<30:16, 15.39s/row]
+                                                           
+[37/154] generated 10 candidates
+
+generate:  23%|██▎       | 36/154 [11:01<30:16, 15.39s/row]
+generate:  24%|██▍       | 37/154 [11:01<29:51, 15.31s/row]
+                                                           
+[38/154] generated 10 candidates
+
+generate:  24%|██▍       | 37/154 [11:22<29:51, 15.31s/row]
+generate:  25%|██▍       | 38/154 [11:22<33:09, 17.15s/row]
+                                                           
+[39/154] generated 10 candidates
+
+generate:  25%|██▍       | 38/154 [11:30<33:09, 17.15s/row]
+generate:  25%|██▌       | 39/154 [11:30<27:30, 14.35s/row]
+                                                           
+[40/154] generated 10 candidates
+
+generate:  25%|██▌       | 39/154 [11:43<27:30, 14.35s/row]
+generate:  26%|██▌       | 40/154 [11:43<26:23, 13.89s/row]
+                                                           
+[41/154] generated 10 candidates
+
+generate:  26%|██▌       | 40/154 [12:03<26:23, 13.89s/row]
+generate:  27%|██▋       | 41/154 [12:03<29:29, 15.66s/row]
+                                                           
+[42/154] generated 10 candidates
+
+generate:  27%|██▋       | 41/154 [12:09<29:29, 15.66s/row]
+generate:  27%|██▋       | 42/154 [12:09<23:53, 12.80s/row]
+                                                           
+[43/154] generated 10 candidates
+
+generate:  27%|██▋       | 42/154 [12:32<23:53, 12.80s/row]
+generate:  28%|██▊       | 43/154 [12:32<29:43, 16.07s/row]
+                                                           
+[44/154] generated 10 candidates
+
+generate:  28%|██▊       | 43/154 [12:44<29:43, 16.07s/row]
+generate:  29%|██▊       | 44/154 [12:44<26:53, 14.67s/row]
+                                                           
+[45/154] generated 10 candidates
+
+generate:  29%|██▊       | 44/154 [13:03<26:53, 14.67s/row]
+generate:  29%|██▉       | 45/154 [13:03<29:08, 16.04s/row]
+                                                           
+[46/154] generated 10 candidates
+
+generate:  29%|██▉       | 45/154 [13:54<29:08, 16.04s/row]
+generate:  30%|██▉       | 46/154 [13:54<47:35, 26.44s/row]
+                                                           
+[47/154] generated 10 candidates
+
+generate:  30%|██▉       | 46/154 [14:02<47:35, 26.44s/row]
+generate:  31%|███       | 47/154 [14:02<37:16, 20.90s/row]
+                                                           
+[48/154] generated 10 candidates
+
+generate:  31%|███       | 47/154 [14:09<37:16, 20.90s/row]
+generate:  31%|███       | 48/154 [14:09<29:43, 16.82s/row]
+                                                           
+[49/154] generated 10 candidates
+
+generate:  31%|███       | 48/154 [14:14<29:43, 16.82s/row]
+generate:  32%|███▏      | 49/154 [14:14<23:08, 13.22s/row]
+                                                           
+[50/154] generated 10 candidates
+
+generate:  32%|███▏      | 49/154 [14:24<23:08, 13.22s/row]
+generate:  32%|███▏      | 50/154 [14:24<21:16, 12.27s/row]
+                                                           
+[51/154] generated 10 candidates
+
+generate:  32%|███▏      | 50/154 [14:32<21:16, 12.27s/row]
+generate:  33%|███▎      | 51/154 [14:32<19:04, 11.11s/row]
+                                                           
+[52/154] generated 10 candidates
+
+generate:  33%|███▎      | 51/154 [14:45<19:04, 11.11s/row]
+generate:  34%|███▍      | 52/154 [14:45<19:30, 11.48s/row]
+                                                           
+[53/154] generated 10 candidates
+
+generate:  34%|███▍      | 52/154 [15:09<19:30, 11.48s/row]
+generate:  34%|███▍      | 53/154 [15:09<25:57, 15.42s/row]
+                                                           
+[54/154] generated 10 candidates
+
+generate:  34%|███▍      | 53/154 [15:18<25:57, 15.42s/row]
+generate:  35%|███▌      | 54/154 [15:18<22:20, 13.40s/row]
+                                                           
+[55/154] generated 10 candidates
+
+generate:  35%|███▌      | 54/154 [15:31<22:20, 13.40s/row]
+generate:  36%|███▌      | 55/154 [15:31<21:54, 13.28s/row]
+                                                           
+[56/154] generated 10 candidates
+
+generate:  36%|███▌      | 55/154 [15:37<21:54, 13.28s/row]
+generate:  36%|███▋      | 56/154 [15:37<18:05, 11.08s/row]
+                                                           
+[57/154] generated 10 candidates
+
+generate:  36%|███▋      | 56/154 [15:57<18:05, 11.08s/row]
+generate:  37%|███▋      | 57/154 [15:57<22:26, 13.88s/row]
+                                                           
+[58/154] generated 10 candidates
+
+generate:  37%|███▋      | 57/154 [16:18<22:26, 13.88s/row]
+generate:  38%|███▊      | 58/154 [16:18<25:44, 16.08s/row]
+                                                           
+[59/154] generated 10 candidates
+
+generate:  38%|███▊      | 58/154 [16:33<25:44, 16.08s/row]
+generate:  38%|███▊      | 59/154 [16:33<24:35, 15.53s/row]
+                                                           
+[60/154] generated 10 candidates
+
+generate:  38%|███▊      | 59/154 [16:40<24:35, 15.53s/row]
+generate:  39%|███▉      | 60/154 [16:40<20:40, 13.20s/row]
+                                                           
+[61/154] generated 10 candidates
+
+generate:  39%|███▉      | 60/154 [17:31<20:40, 13.20s/row]
+generate:  40%|███▉      | 61/154 [17:31<37:50, 24.41s/row]
+                                                           
+[62/154] generated 10 candidates
+
+generate:  40%|███▉      | 61/154 [17:38<37:50, 24.41s/row]
+generate:  40%|████      | 62/154 [17:38<29:27, 19.21s/row]
+                                                           
+[63/154] generated 10 candidates
+
+generate:  40%|████      | 62/154 [18:05<29:27, 19.21s/row]
+generate:  41%|████      | 63/154 [18:05<32:50, 21.66s/row]
+                                                           
+[64/154] generated 10 candidates
+
+generate:  41%|████      | 63/154 [18:19<32:50, 21.66s/row]
+generate:  42%|████▏     | 64/154 [18:19<28:50, 19.22s/row]
+                                                           
+[65/154] generated 10 candidates
+
+generate:  42%|████▏     | 64/154 [18:31<28:50, 19.22s/row]
+generate:  42%|████▏     | 65/154 [18:31<25:24, 17.13s/row]
+                                                           
+[66/154] generated 10 candidates
+
+generate:  42%|████▏     | 65/154 [18:49<25:24, 17.13s/row]
+generate:  43%|████▎     | 66/154 [18:49<25:27, 17.36s/row]
+                                                           
+[67/154] generated 10 candidates
+
+generate:  43%|████▎     | 66/154 [19:03<25:27, 17.36s/row]
+generate:  44%|████▎     | 67/154 [19:03<23:26, 16.17s/row]
+                                                           
+[68/154] generated 10 candidates
+
+generate:  44%|████▎     | 67/154 [19:21<23:26, 16.17s/row]
+generate:  44%|████▍     | 68/154 [19:21<24:00, 16.75s/row]
+                                                           
+[69/154] generated 10 candidates
+
+generate:  44%|████▍     | 68/154 [19:38<24:00, 16.75s/row]
+generate:  45%|████▍     | 69/154 [19:38<24:05, 17.00s/row]
+                                                           
+[70/154] generated 10 candidates
+
+generate:  45%|████▍     | 69/154 [20:00<24:05, 17.00s/row]
+generate:  45%|████▌     | 70/154 [20:00<25:37, 18.30s/row]
+                                                           
+[71/154] generated 10 candidates
+
+generate:  45%|████▌     | 70/154 [20:34<25:37, 18.30s/row]
+generate:  46%|████▌     | 71/154 [20:34<31:54, 23.07s/row]
+                                                           
+[72/154] generated 10 candidates
+
+generate:  46%|████▌     | 71/154 [21:00<31:54, 23.07s/row]
+generate:  47%|████▋     | 72/154 [21:00<32:44, 23.96s/row]
+                                                           
+[73/154] generated 10 candidates
+
+generate:  47%|████▋     | 72/154 [21:08<32:44, 23.96s/row]
+generate:  47%|████▋     | 73/154 [21:08<25:45, 19.09s/row]
+                                                           
+[74/154] generated 10 candidates
+
+generate:  47%|████▋     | 73/154 [21:58<25:45, 19.09s/row]
+generate:  48%|████▊     | 74/154 [21:58<38:04, 28.56s/row]
+                                                           
+[75/154] generated 10 candidates
+
+generate:  48%|████▊     | 74/154 [22:28<38:04, 28.56s/row]
+generate:  49%|████▊     | 75/154 [22:28<38:10, 28.99s/row]
+                                                           
+[76/154] generated 10 candidates
+
+generate:  49%|████▊     | 75/154 [22:38<38:10, 28.99s/row]
+generate:  49%|████▉     | 76/154 [22:38<30:21, 23.35s/row]
+                                                           
+[77/154] generated 10 candidates
+
+generate:  49%|████▉     | 76/154 [23:13<30:21, 23.35s/row]
+generate:  50%|█████     | 77/154 [23:13<34:16, 26.71s/row]
+                                                           
+[78/154] generated 10 candidates
+
+generate:  50%|█████     | 77/154 [23:20<34:16, 26.71s/row]
+generate:  51%|█████     | 78/154 [23:20<26:28, 20.90s/row]
+                                                           
+[79/154] generated 10 candidates
+
+generate:  51%|█████     | 78/154 [23:47<26:28, 20.90s/row]
+generate:  51%|█████▏    | 79/154 [23:47<28:13, 22.58s/row]
+                                                           
+[80/154] generated 10 candidates
+
+generate:  51%|█████▏    | 79/154 [24:11<28:13, 22.58s/row]
+generate:  52%|█████▏    | 80/154 [24:11<28:35, 23.18s/row]
+                                                           
+[81/154] generated 10 candidates
+
+generate:  52%|█████▏    | 80/154 [24:16<28:35, 23.18s/row]
+generate:  53%|█████▎    | 81/154 [24:16<21:32, 17.71s/row]
+                                                           
+[82/154] generated 10 candidates
+
+generate:  53%|█████▎    | 81/154 [24:46<21:32, 17.71s/row]
+generate:  53%|█████▎    | 82/154 [24:46<25:29, 21.24s/row]
+                                                           
+[83/154] generated 10 candidates
+
+generate:  53%|█████▎    | 82/154 [24:53<25:29, 21.24s/row]
+generate:  54%|█████▍    | 83/154 [24:53<20:05, 16.98s/row]
+                                                           
+[84/154] generated 10 candidates
+
+generate:  54%|█████▍    | 83/154 [25:05<20:05, 16.98s/row]
+generate:  55%|█████▍    | 84/154 [25:05<17:58, 15.40s/row]
+                                                           
+[85/154] generated 10 candidates
+
+generate:  55%|█████▍    | 84/154 [25:29<17:58, 15.40s/row]
+generate:  55%|█████▌    | 85/154 [25:29<20:55, 18.19s/row]
+                                                           
+[86/154] generated 10 candidates
+
+generate:  55%|█████▌    | 85/154 [25:53<20:55, 18.19s/row]
+generate:  56%|█████▌    | 86/154 [25:53<22:22, 19.74s/row]
+                                                           
+[87/154] generated 10 candidates
+
+generate:  56%|█████▌    | 86/154 [26:43<22:22, 19.74s/row]
+generate:  56%|█████▋    | 87/154 [26:43<32:21, 28.98s/row]
+                                                           
+[88/154] generated 10 candidates
+
+generate:  56%|█████▋    | 87/154 [27:01<32:21, 28.98s/row]
+generate:  57%|█████▋    | 88/154 [27:01<28:09, 25.60s/row]
+                                                           
+[89/154] generated 10 candidates
+
+generate:  57%|█████▋    | 88/154 [27:44<28:09, 25.60s/row]
+generate:  58%|█████▊    | 89/154 [27:44<33:29, 30.91s/row]
+                                                           
+[90/154] generated 10 candidates
+
+generate:  58%|█████▊    | 89/154 [27:57<33:29, 30.91s/row]
+generate:  58%|█████▊    | 90/154 [27:57<27:04, 25.39s/row]
+                                                           
+[91/154] generated 10 candidates
+
+generate:  58%|█████▊    | 90/154 [28:47<27:04, 25.39s/row]
+generate:  59%|█████▉    | 91/154 [28:47<34:39, 33.01s/row]
+                                                           
+[92/154] generated 10 candidates
+
+generate:  59%|█████▉    | 91/154 [29:00<34:39, 33.01s/row]
+generate:  60%|█████▉    | 92/154 [29:00<27:48, 26.91s/row]
+                                                           
+[93/154] generated 10 candidates
+
+generate:  60%|█████▉    | 92/154 [29:14<27:48, 26.91s/row]
+generate:  60%|██████    | 93/154 [29:14<23:15, 22.88s/row]
+                                                           
+[94/154] generated 10 candidates
+
+generate:  60%|██████    | 93/154 [29:20<23:15, 22.88s/row]
+generate:  61%|██████    | 94/154 [29:20<17:58, 17.98s/row]
+                                                           
+[95/154] generated 10 candidates
+
+generate:  61%|██████    | 94/154 [29:57<17:58, 17.98s/row]
+generate:  62%|██████▏   | 95/154 [29:57<23:13, 23.62s/row]
+                                                           
+[96/154] generated 10 candidates
+
+generate:  62%|██████▏   | 95/154 [30:48<23:13, 23.62s/row]
+generate:  62%|██████▏   | 96/154 [30:48<30:39, 31.72s/row]
+                                                           
+[97/154] generated 10 candidates
+
+generate:  62%|██████▏   | 96/154 [31:21<30:39, 31.72s/row]
+generate:  63%|██████▎   | 97/154 [31:21<30:32, 32.15s/row]
+                                                           
+[98/154] generated 10 candidates
+
+generate:  63%|██████▎   | 97/154 [31:33<30:32, 32.15s/row]
+generate:  64%|██████▎   | 98/154 [31:33<24:27, 26.20s/row]
+                                                           
+[99/154] generated 10 candidates
+
+generate:  64%|██████▎   | 98/154 [31:50<24:27, 26.20s/row]
+generate:  64%|██████▍   | 99/154 [31:50<21:23, 23.34s/row]
+                                                           
+[100/154] generated 10 candidates
+
+generate:  64%|██████▍   | 99/154 [32:11<21:23, 23.34s/row]
+generate:  65%|██████▍   | 100/154 [32:11<20:25, 22.70s/row]
+                                                            
+[101/154] generated 10 candidates
+
+generate:  65%|██████▍   | 100/154 [32:38<20:25, 22.70s/row]
+generate:  66%|██████▌   | 101/154 [32:38<21:12, 24.01s/row]
+                                                            
+[102/154] generated 10 candidates
+
+generate:  66%|██████▌   | 101/154 [33:04<21:12, 24.01s/row]
+generate:  66%|██████▌   | 102/154 [33:04<21:25, 24.71s/row]
+                                                            
+[103/154] generated 10 candidates
+
+generate:  66%|██████▌   | 102/154 [33:11<21:25, 24.71s/row]
+generate:  67%|██████▋   | 103/154 [33:11<16:28, 19.38s/row]
+                                                            
+[104/154] generated 10 candidates
+
+generate:  67%|██████▋   | 103/154 [33:27<16:28, 19.38s/row]
+generate:  68%|██████▊   | 104/154 [33:27<15:15, 18.31s/row]
+                                                            
+[105/154] generated 10 candidates
+
+generate:  68%|██████▊   | 104/154 [33:48<15:15, 18.31s/row]
+generate:  68%|██████▊   | 105/154 [33:48<15:40, 19.18s/row]
+                                                            
+[106/154] generated 10 candidates
+
+generate:  68%|██████▊   | 105/154 [34:40<15:40, 19.18s/row]
+generate:  69%|██████▉   | 106/154 [34:40<23:02, 28.81s/row]
+                                                            
+[107/154] generated 10 candidates
+
+generate:  69%|██████▉   | 106/154 [34:57<23:02, 28.81s/row]
+generate:  69%|██████▉   | 107/154 [34:57<19:58, 25.51s/row]
+                                                            
+[108/154] generated 10 candidates
+
+generate:  69%|██████▉   | 107/154 [35:05<19:58, 25.51s/row]
+generate:  70%|███████   | 108/154 [35:05<15:23, 20.08s/row]
+                                                            
+[109/154] generated 10 candidates
+
+generate:  70%|███████   | 108/154 [35:19<15:23, 20.08s/row]
+generate:  71%|███████   | 109/154 [35:19<13:39, 18.20s/row]
+                                                            
+[110/154] generated 10 candidates
+
+generate:  71%|███████   | 109/154 [35:53<13:39, 18.20s/row]
+generate:  71%|███████▏  | 110/154 [35:53<16:50, 22.96s/row]
+                                                            
+[111/154] generated 10 candidates
+
+generate:  71%|███████▏  | 110/154 [36:06<16:50, 22.96s/row]
+generate:  72%|███████▏  | 111/154 [36:06<14:18, 19.97s/row]
+                                                            
+[112/154] generated 10 candidates
+
+generate:  72%|███████▏  | 111/154 [36:21<14:18, 19.97s/row]
+generate:  73%|███████▎  | 112/154 [36:21<12:56, 18.49s/row]
+                                                            
+[113/154] generated 10 candidates
+
+generate:  73%|███████▎  | 112/154 [36:31<12:56, 18.49s/row]
+generate:  73%|███████▎  | 113/154 [36:31<11:00, 16.11s/row]
+                                                            
+[114/154] generated 10 candidates
+
+generate:  73%|███████▎  | 113/154 [36:52<11:00, 16.11s/row]
+generate:  74%|███████▍  | 114/154 [36:52<11:34, 17.36s/row]
+                                                            
+[115/154] generated 10 candidates
+
+generate:  74%|███████▍  | 114/154 [37:22<11:34, 17.36s/row]
+generate:  75%|███████▍  | 115/154 [37:22<13:53, 21.37s/row]
+                                                            
+[116/154] generated 10 candidates
+
+generate:  75%|███████▍  | 115/154 [37:38<13:53, 21.37s/row]
+generate:  75%|███████▌  | 116/154 [37:38<12:23, 19.57s/row]
+                                                            
+[117/154] generated 10 candidates
+
+generate:  75%|███████▌  | 116/154 [37:44<12:23, 19.57s/row]
+generate:  76%|███████▌  | 117/154 [37:44<09:42, 15.74s/row]
+                                                            
+[118/154] generated 10 candidates
+
+generate:  76%|███████▌  | 117/154 [37:57<09:42, 15.74s/row]
+generate:  77%|███████▋  | 118/154 [37:57<08:49, 14.72s/row]
+                                                            
+[119/154] generated 10 candidates
+
+generate:  77%|███████▋  | 118/154 [38:32<08:49, 14.72s/row]
+generate:  77%|███████▋  | 119/154 [38:32<12:13, 20.95s/row]
+                                                            
+[120/154] generated 10 candidates
+
+generate:  77%|███████▋  | 119/154 [38:39<12:13, 20.95s/row]
+generate:  78%|███████▊  | 120/154 [38:39<09:32, 16.84s/row]
+                                                            
+[121/154] generated 10 candidates
+
+generate:  78%|███████▊  | 120/154 [38:57<09:32, 16.84s/row]
+generate:  79%|███████▊  | 121/154 [38:57<09:19, 16.95s/row]
+                                                            
+[122/154] generated 10 candidates
+
+generate:  79%|███████▊  | 121/154 [39:06<09:19, 16.95s/row]
+generate:  79%|███████▉  | 122/154 [39:06<07:49, 14.68s/row]
+                                                            
+[123/154] generated 10 candidates
+
+generate:  79%|███████▉  | 122/154 [39:54<07:49, 14.68s/row]
+generate:  80%|███████▉  | 123/154 [39:54<12:43, 24.62s/row]
+                                                            
+[124/154] generated 10 candidates
+
+generate:  80%|███████▉  | 123/154 [40:07<12:43, 24.62s/row]
+generate:  81%|████████  | 124/154 [40:07<10:37, 21.23s/row]
+                                                            
+[125/154] generated 10 candidates
+
+generate:  81%|████████  | 124/154 [40:13<10:37, 21.23s/row]
+generate:  81%|████████  | 125/154 [40:13<08:02, 16.63s/row]
+                                                            
+[126/154] generated 10 candidates
+
+generate:  81%|████████  | 125/154 [40:31<08:02, 16.63s/row]
+generate:  82%|████████▏ | 126/154 [40:31<07:59, 17.14s/row]
+                                                            
+[127/154] generated 10 candidates
+
+generate:  82%|████████▏ | 126/154 [40:38<07:59, 17.14s/row]
+generate:  82%|████████▏ | 127/154 [40:38<06:14, 13.88s/row]
+                                                            
+[128/154] generated 10 candidates
+
+generate:  82%|████████▏ | 127/154 [40:47<06:14, 13.88s/row]
+generate:  83%|████████▎ | 128/154 [40:47<05:25, 12.52s/row]
+                                                            
+[129/154] generated 10 candidates
+
+generate:  83%|████████▎ | 128/154 [41:02<05:25, 12.52s/row]
+generate:  84%|████████▍ | 129/154 [41:02<05:31, 13.25s/row]
+                                                            
+[130/154] generated 10 candidates
+
+generate:  84%|████████▍ | 129/154 [41:21<05:31, 13.25s/row]
+generate:  84%|████████▍ | 130/154 [41:21<06:01, 15.06s/row]
+                                                            
+[131/154] generated 10 candidates
+
+generate:  84%|████████▍ | 130/154 [41:41<06:01, 15.06s/row]
+generate:  85%|████████▌ | 131/154 [41:41<06:16, 16.35s/row]
+                                                            
+[132/154] generated 10 candidates
+
+generate:  85%|████████▌ | 131/154 [41:55<06:16, 16.35s/row]
+generate:  86%|████████▌ | 132/154 [41:55<05:47, 15.78s/row]
+                                                            
+[133/154] generated 10 candidates
+
+generate:  86%|████████▌ | 132/154 [42:23<05:47, 15.78s/row]
+generate:  86%|████████▋ | 133/154 [42:23<06:46, 19.38s/row]
+                                                            
+[134/154] generated 10 candidates
+
+generate:  86%|████████▋ | 133/154 [43:07<06:46, 19.38s/row]
+generate:  87%|████████▋ | 134/154 [43:07<08:54, 26.72s/row]
+                                                            
+[135/154] generated 10 candidates
+
+generate:  87%|████████▋ | 134/154 [43:13<08:54, 26.72s/row]
+generate:  88%|████████▊ | 135/154 [43:13<06:32, 20.64s/row]
+                                                            
+[136/154] generated 10 candidates
+
+generate:  88%|████████▊ | 135/154 [43:37<06:32, 20.64s/row]
+generate:  88%|████████▊ | 136/154 [43:37<06:26, 21.48s/row]
+                                                            
+[137/154] generated 10 candidates
+
+generate:  88%|████████▊ | 136/154 [44:14<06:26, 21.48s/row]
+generate:  89%|████████▉ | 137/154 [44:14<07:27, 26.32s/row]
+                                                            
+[138/154] generated 10 candidates
+
+generate:  89%|████████▉ | 137/154 [44:31<07:27, 26.32s/row]
+generate:  90%|████████▉ | 138/154 [44:31<06:14, 23.44s/row]
+                                                            
+[139/154] generated 10 candidates
+
+generate:  90%|████████▉ | 138/154 [44:40<06:14, 23.44s/row]
+generate:  90%|█████████ | 139/154 [44:40<04:46, 19.11s/row]
+                                                            
+[140/154] generated 10 candidates
+
+generate:  90%|█████████ | 139/154 [45:19<04:46, 19.11s/row]
+generate:  91%|█████████ | 140/154 [45:19<05:52, 25.15s/row]
+                                                            
+[141/154] generated 10 candidates
+
+generate:  91%|█████████ | 140/154 [45:36<05:52, 25.15s/row]
+generate:  92%|█████████▏| 141/154 [45:36<04:53, 22.57s/row]
+                                                            
+[142/154] generated 10 candidates
+
+generate:  92%|█████████▏| 141/154 [45:50<04:53, 22.57s/row]
+generate:  92%|█████████▏| 142/154 [45:50<04:00, 20.06s/row]
+                                                            
+[143/154] generated 10 candidates
+
+generate:  92%|█████████▏| 142/154 [46:07<04:00, 20.06s/row]
+generate:  93%|█████████▎| 143/154 [46:07<03:31, 19.19s/row]
+                                                            
+[144/154] generated 10 candidates
+
+generate:  93%|█████████▎| 143/154 [46:26<03:31, 19.19s/row]
+generate:  94%|█████████▎| 144/154 [46:26<03:11, 19.13s/row]
+                                                            
+[145/154] generated 10 candidates
+
+generate:  94%|█████████▎| 144/154 [46:58<03:11, 19.13s/row]
+generate:  94%|█████████▍| 145/154 [46:58<03:26, 22.89s/row]
+                                                            
+[146/154] generated 10 candidates
+
+generate:  94%|█████████▍| 145/154 [47:26<03:26, 22.89s/row]
+generate:  95%|█████████▍| 146/154 [47:26<03:16, 24.58s/row]
+                                                            
+[147/154] generated 10 candidates
+
+generate:  95%|█████████▍| 146/154 [47:37<03:16, 24.58s/row]
+generate:  95%|█████████▌| 147/154 [47:37<02:23, 20.56s/row]
+                                                            
+[148/154] generated 10 candidates
+
+generate:  95%|█████████▌| 147/154 [48:02<02:23, 20.56s/row]
+generate:  96%|█████████▌| 148/154 [48:02<02:09, 21.63s/row]
+                                                            
+[149/154] generated 10 candidates
+
+generate:  96%|█████████▌| 148/154 [48:18<02:09, 21.63s/row]
+generate:  97%|█████████▋| 149/154 [48:18<01:40, 20.09s/row]
+                                                            
+[150/154] generated 10 candidates
+
+generate:  97%|█████████▋| 149/154 [48:37<01:40, 20.09s/row]
+generate:  97%|█████████▋| 150/154 [48:37<01:19, 19.81s/row]
+                                                            
+[151/154] generated 10 candidates
+
+generate:  97%|█████████▋| 150/154 [48:53<01:19, 19.81s/row]
+generate:  98%|█████████▊| 151/154 [48:53<00:56, 18.73s/row]
+                                                            
+[152/154] generated 10 candidates
+
+generate:  98%|█████████▊| 151/154 [49:11<00:56, 18.73s/row]
+generate:  99%|█████████▊| 152/154 [49:11<00:36, 18.38s/row]
+                                                            
+[153/154] generated 10 candidates
+
+generate:  99%|█████████▊| 152/154 [49:55<00:36, 18.38s/row]
+generate:  99%|█████████▉| 153/154 [49:55<00:25, 25.92s/row]
+                                                            
+[154/154] generated 10 candidates
+
+generate:  99%|█████████▉| 153/154 [50:03<00:25, 25.92s/row]
+generate: 100%|██████████| 154/154 [50:03<00:00, 20.71s/row]
+generate: 100%|██████████| 154/154 [50:03<00:00, 19.50s/row]
+wrote /workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges_compile_predictions.json
+wrote /workspace/results/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges_compile_predictions.json.provenance.json
+
+Compile and pass evaluation settings match; reusing the same candidate pool.
+
+Calculating metrics...
+CodeBLEU Results:
+{
+  "count": 154,
+  "samples_with_success": 154,
+  "mean_codebleu": 0.6696456804086434,
+  "min_codebleu": 0.49027854088366085,
+  "max_codebleu": 0.8061400856075223
+}
+
+Compiled-only CodeBLEU Results:
+{
+  "count": 154,
+  "samples_with_success": 98,
+  "mean_codebleu": 0.6643562444266788,
+  "min_codebleu": 0.34808852927084105,
+  "max_codebleu": 0.8061400856075223
+}
+
+Using Dart binary: /usr/bin/dart | workers=64
+
+compile@k:   0%|          | 0/154 [00:00<?, ?row/s]
+compile@k:   1%|          | 1/154 [00:23<58:56, 23.12s/row]
+compile@k:   1%|▏         | 2/154 [00:26<28:35, 11.29s/row]
+compile@k:   4%|▍         | 6/154 [00:27<06:48,  2.76s/row]
+compile@k:  23%|██▎       | 36/154 [00:52<02:05,  1.06s/row]
+compile@k:  43%|████▎     | 66/154 [01:10<01:10,  1.25row/s]
+compile@k: 100%|██████████| 154/154 [01:10<00:00,  2.19row/s]
+Compile@k Results:
+[1/154] n=10, compiling=1, compile@1=0.1000
+[2/154] n=10, compiling=8, compile@1=0.8000
+[3/154] n=10, compiling=10, compile@1=1.0000
+[4/154] n=10, compiling=8, compile@1=0.8000
+[5/154] n=10, compiling=0, compile@1=0.0000
+[6/154] n=10, compiling=8, compile@1=0.8000
+[7/154] n=10, compiling=9, compile@1=0.9000
+[8/154] n=10, compiling=10, compile@1=1.0000
+[9/154] n=10, compiling=9, compile@1=0.9000
+[10/154] n=10, compiling=8, compile@1=0.8000
+[11/154] n=10, compiling=9, compile@1=0.9000
+[12/154] n=10, compiling=7, compile@1=0.7000
+[13/154] n=10, compiling=10, compile@1=1.0000
+[14/154] n=10, compiling=10, compile@1=1.0000
+[15/154] n=10, compiling=7, compile@1=0.7000
+[16/154] n=10, compiling=10, compile@1=1.0000
+[17/154] n=10, compiling=9, compile@1=0.9000
+[18/154] n=10, compiling=6, compile@1=0.6000
+[19/154] n=10, compiling=10, compile@1=1.0000
+[20/154] n=10, compiling=10, compile@1=1.0000
+[21/154] n=10, compiling=3, compile@1=0.3000
+[22/154] n=10, compiling=1, compile@1=0.1000
+[23/154] n=10, compiling=8, compile@1=0.8000
+[24/154] n=10, compiling=8, compile@1=0.8000
+[25/154] n=10, compiling=10, compile@1=1.0000
+[26/154] n=10, compiling=5, compile@1=0.5000
+[27/154] n=10, compiling=9, compile@1=0.9000
+[28/154] n=10, compiling=10, compile@1=1.0000
+[29/154] n=10, compiling=8, compile@1=0.8000
+[30/154] n=10, compiling=10, compile@1=1.0000
+[31/154] n=10, compiling=10, compile@1=1.0000
+[32/154] n=10, compiling=8, compile@1=0.8000
+[33/154] n=10, compiling=6, compile@1=0.6000
+[34/154] n=10, compiling=10, compile@1=1.0000
+[35/154] n=10, compiling=9, compile@1=0.9000
+[36/154] n=10, compiling=9, compile@1=0.9000
+[37/154] n=10, compiling=10, compile@1=1.0000
+[38/154] n=10, compiling=9, compile@1=0.9000
+[39/154] n=10, compiling=10, compile@1=1.0000
+[40/154] n=10, compiling=10, compile@1=1.0000
+[41/154] n=10, compiling=8, compile@1=0.8000
+[42/154] n=10, compiling=8, compile@1=0.8000
+[43/154] n=10, compiling=10, compile@1=1.0000
+[44/154] n=10, compiling=3, compile@1=0.3000
+[45/154] n=10, compiling=9, compile@1=0.9000
+[46/154] n=10, compiling=8, compile@1=0.8000
+[47/154] n=10, compiling=8, compile@1=0.8000
+[48/154] n=10, compiling=10, compile@1=1.0000
+[49/154] n=10, compiling=8, compile@1=0.8000
+[50/154] n=10, compiling=9, compile@1=0.9000
+[51/154] n=10, compiling=10, compile@1=1.0000
+[52/154] n=10, compiling=10, compile@1=1.0000
+[53/154] n=10, compiling=10, compile@1=1.0000
+[54/154] n=10, compiling=10, compile@1=1.0000
+[55/154] n=10, compiling=10, compile@1=1.0000
+[56/154] n=10, compiling=9, compile@1=0.9000
+[57/154] n=10, compiling=9, compile@1=0.9000
+[58/154] n=10, compiling=7, compile@1=0.7000
+[59/154] n=10, compiling=10, compile@1=1.0000
+[60/154] n=10, compiling=10, compile@1=1.0000
+[61/154] n=10, compiling=6, compile@1=0.6000
+[62/154] n=10, compiling=4, compile@1=0.4000
+[63/154] n=10, compiling=7, compile@1=0.7000
+[64/154] n=10, compiling=10, compile@1=1.0000
+[65/154] n=10, compiling=10, compile@1=1.0000
+[66/154] n=10, compiling=9, compile@1=0.9000
+[67/154] n=10, compiling=7, compile@1=0.7000
+[68/154] n=10, compiling=7, compile@1=0.7000
+[69/154] n=10, compiling=4, compile@1=0.4000
+[70/154] n=10, compiling=6, compile@1=0.6000
+[71/154] n=10, compiling=10, compile@1=1.0000
+[72/154] n=10, compiling=6, compile@1=0.6000
+[73/154] n=10, compiling=7, compile@1=0.7000
+[74/154] n=10, compiling=1, compile@1=0.1000
+[75/154] n=10, compiling=6, compile@1=0.6000
+[76/154] n=10, compiling=10, compile@1=1.0000
+[77/154] n=10, compiling=10, compile@1=1.0000
+[78/154] n=10, compiling=10, compile@1=1.0000
+[79/154] n=10, compiling=8, compile@1=0.8000
+[80/154] n=10, compiling=10, compile@1=1.0000
+[81/154] n=10, compiling=10, compile@1=1.0000
+[82/154] n=10, compiling=8, compile@1=0.8000
+[83/154] n=10, compiling=3, compile@1=0.3000
+[84/154] n=10, compiling=9, compile@1=0.9000
+[85/154] n=10, compiling=7, compile@1=0.7000
+[86/154] n=10, compiling=0, compile@1=0.0000
+[87/154] n=10, compiling=8, compile@1=0.8000
+[88/154] n=10, compiling=8, compile@1=0.8000
+[89/154] n=10, compiling=4, compile@1=0.4000
+[90/154] n=10, compiling=9, compile@1=0.9000
+[91/154] n=10, compiling=4, compile@1=0.4000
+[92/154] n=10, compiling=10, compile@1=1.0000
+[93/154] n=10, compiling=9, compile@1=0.9000
+[94/154] n=10, compiling=1, compile@1=0.1000
+[95/154] n=10, compiling=8, compile@1=0.8000
+[96/154] n=10, compiling=7, compile@1=0.7000
+[97/154] n=10, compiling=4, compile@1=0.4000
+[98/154] n=10, compiling=4, compile@1=0.4000
+[99/154] n=10, compiling=10, compile@1=1.0000
+[100/154] n=10, compiling=8, compile@1=0.8000
+[101/154] n=10, compiling=6, compile@1=0.6000
+[102/154] n=10, compiling=8, compile@1=0.8000
+[103/154] n=10, compiling=10, compile@1=1.0000
+[104/154] n=10, compiling=10, compile@1=1.0000
+[105/154] n=10, compiling=6, compile@1=0.6000
+[106/154] n=10, compiling=6, compile@1=0.6000
+[107/154] n=10, compiling=8, compile@1=0.8000
+[108/154] n=10, compiling=9, compile@1=0.9000
+[109/154] n=10, compiling=3, compile@1=0.3000
+[110/154] n=10, compiling=6, compile@1=0.6000
+[111/154] n=10, compiling=8, compile@1=0.8000
+[112/154] n=10, compiling=8, compile@1=0.8000
+[113/154] n=10, compiling=10, compile@1=1.0000
+[114/154] n=10, compiling=5, compile@1=0.5000
+[115/154] n=10, compiling=8, compile@1=0.8000
+[116/154] n=10, compiling=0, compile@1=0.0000
+[117/154] n=10, compiling=6, compile@1=0.6000
+[118/154] n=10, compiling=10, compile@1=1.0000
+[119/154] n=10, compiling=2, compile@1=0.2000
+[120/154] n=10, compiling=10, compile@1=1.0000
+[121/154] n=10, compiling=0, compile@1=0.0000
+[122/154] n=10, compiling=9, compile@1=0.9000
+[123/154] n=10, compiling=2, compile@1=0.2000
+[124/154] n=10, compiling=8, compile@1=0.8000
+[125/154] n=10, compiling=10, compile@1=1.0000
+[126/154] n=10, compiling=9, compile@1=0.9000
+[127/154] n=10, compiling=0, compile@1=0.0000
+[128/154] n=10, compiling=9, compile@1=0.9000
+[129/154] n=10, compiling=10, compile@1=1.0000
+[130/154] n=10, compiling=7, compile@1=0.7000
+[131/154] n=10, compiling=10, compile@1=1.0000
+[132/154] n=10, compiling=8, compile@1=0.8000
+[133/154] n=10, compiling=10, compile@1=1.0000
+[134/154] n=10, compiling=6, compile@1=0.6000
+[135/154] n=10, compiling=8, compile@1=0.8000
+[136/154] n=10, compiling=7, compile@1=0.7000
+[137/154] n=10, compiling=6, compile@1=0.6000
+[138/154] n=10, compiling=8, compile@1=0.8000
+[139/154] n=10, compiling=10, compile@1=1.0000
+[140/154] n=10, compiling=7, compile@1=0.7000
+[141/154] n=10, compiling=8, compile@1=0.8000
+[142/154] n=10, compiling=8, compile@1=0.8000
+[143/154] n=10, compiling=5, compile@1=0.5000
+[144/154] n=10, compiling=10, compile@1=1.0000
+[145/154] n=10, compiling=0, compile@1=0.0000
+[146/154] n=10, compiling=9, compile@1=0.9000
+[147/154] n=10, compiling=7, compile@1=0.7000
+[148/154] n=10, compiling=7, compile@1=0.7000
+[149/154] n=10, compiling=3, compile@1=0.3000
+[150/154] n=10, compiling=9, compile@1=0.9000
+[151/154] n=10, compiling=9, compile@1=0.9000
+[152/154] n=10, compiling=10, compile@1=1.0000
+[153/154] n=10, compiling=0, compile@1=0.0000
+[154/154] n=10, compiling=10, compile@1=1.0000
+{
+  "compile_at_1": 0.75,
+  "compile_at_5": 0.9349618635332924,
+  "total_problems": 154
+}
+
+Using Dart binary: /usr/bin/dart | workers=64
+
+pass@k:   0%|          | 0/154 [00:00<?, ?row/s]
+pass@k:   1%|          | 1/154 [00:25<1:04:20, 25.23s/row]
+pass@k:   2%|▏         | 3/154 [00:25<16:54,  6.72s/row]  
+pass@k:   6%|▋         | 10/154 [00:27<04:01,  1.68s/row]
+pass@k:   8%|▊         | 13/154 [00:28<02:44,  1.16s/row]
+pass@k:  10%|█         | 16/154 [00:28<01:58,  1.17row/s]
+pass@k:  23%|██▎       | 36/154 [00:52<02:08,  1.09s/row]
+pass@k:  30%|██▉       | 46/154 [00:53<01:20,  1.33row/s]
+pass@k:  43%|████▎     | 66/154 [01:23<01:38,  1.12s/row]
+pass@k: 100%|██████████| 154/154 [01:23<00:00,  1.85row/s]
+Pass@k Results:
+[1/154] n=10, passed=1, pass@1=0.1000
+[2/154] n=10, passed=1, pass@1=0.1000
+[3/154] n=10, passed=0, pass@1=0.0000
+[4/154] n=10, passed=8, pass@1=0.8000
+[5/154] n=10, passed=0, pass@1=0.0000
+[6/154] n=10, passed=7, pass@1=0.7000
+[7/154] n=10, passed=0, pass@1=0.0000
+[8/154] n=10, passed=7, pass@1=0.7000
+[9/154] n=10, passed=0, pass@1=0.0000
+[10/154] n=10, passed=7, pass@1=0.7000
+[11/154] n=10, passed=0, pass@1=0.0000
+[12/154] n=10, passed=0, pass@1=0.0000
+[13/154] n=10, passed=9, pass@1=0.9000
+[14/154] n=10, passed=10, pass@1=1.0000
+[15/154] n=10, passed=6, pass@1=0.6000
+[16/154] n=10, passed=0, pass@1=0.0000
+[17/154] n=10, passed=1, pass@1=0.1000
+[18/154] n=10, passed=0, pass@1=0.0000
+[19/154] n=10, passed=9, pass@1=0.9000
+[20/154] n=10, passed=0, pass@1=0.0000
+[21/154] n=10, passed=0, pass@1=0.0000
+[22/154] n=10, passed=1, pass@1=0.1000
+[23/154] n=10, passed=5, pass@1=0.5000
+[24/154] n=10, passed=5, pass@1=0.5000
+[25/154] n=10, passed=0, pass@1=0.0000
+[26/154] n=10, passed=2, pass@1=0.2000
+[27/154] n=10, passed=9, pass@1=0.9000
+[28/154] n=10, passed=9, pass@1=0.9000
+[29/154] n=10, passed=7, pass@1=0.7000
+[30/154] n=10, passed=10, pass@1=1.0000
+[31/154] n=10, passed=0, pass@1=0.0000
+[32/154] n=10, passed=1, pass@1=0.1000
+[33/154] n=10, passed=6, pass@1=0.6000
+[34/154] n=10, passed=0, pass@1=0.0000
+[35/154] n=10, passed=0, pass@1=0.0000
+[36/154] n=10, passed=1, pass@1=0.1000
+[37/154] n=10, passed=6, pass@1=0.6000
+[38/154] n=10, passed=0, pass@1=0.0000
+[39/154] n=10, passed=7, pass@1=0.7000
+[40/154] n=10, passed=9, pass@1=0.9000
+[41/154] n=10, passed=5, pass@1=0.5000
+[42/154] n=10, passed=8, pass@1=0.8000
+[43/154] n=10, passed=0, pass@1=0.0000
+[44/154] n=10, passed=0, pass@1=0.0000
+[45/154] n=10, passed=9, pass@1=0.9000
+[46/154] n=10, passed=1, pass@1=0.1000
+[47/154] n=10, passed=7, pass@1=0.7000
+[48/154] n=10, passed=6, pass@1=0.6000
+[49/154] n=10, passed=8, pass@1=0.8000
+[50/154] n=10, passed=0, pass@1=0.0000
+[51/154] n=10, passed=7, pass@1=0.7000
+[52/154] n=10, passed=0, pass@1=0.0000
+[53/154] n=10, passed=7, pass@1=0.7000
+[54/154] n=10, passed=1, pass@1=0.1000
+[55/154] n=10, passed=9, pass@1=0.9000
+[56/154] n=10, passed=9, pass@1=0.9000
+[57/154] n=10, passed=9, pass@1=0.9000
+[58/154] n=10, passed=0, pass@1=0.0000
+[59/154] n=10, passed=0, pass@1=0.0000
+[60/154] n=10, passed=0, pass@1=0.0000
+[61/154] n=10, passed=0, pass@1=0.0000
+[62/154] n=10, passed=0, pass@1=0.0000
+[63/154] n=10, passed=0, pass@1=0.0000
+[64/154] n=10, passed=0, pass@1=0.0000
+[65/154] n=10, passed=0, pass@1=0.0000
+[66/154] n=10, passed=0, pass@1=0.0000
+[67/154] n=10, passed=0, pass@1=0.0000
+[68/154] n=10, passed=0, pass@1=0.0000
+[69/154] n=10, passed=0, pass@1=0.0000
+[70/154] n=10, passed=0, pass@1=0.0000
+[71/154] n=10, passed=0, pass@1=0.0000
+[72/154] n=10, passed=1, pass@1=0.1000
+[73/154] n=10, passed=0, pass@1=0.0000
+[74/154] n=10, passed=0, pass@1=0.0000
+[75/154] n=10, passed=0, pass@1=0.0000
+[76/154] n=10, passed=0, pass@1=0.0000
+[77/154] n=10, passed=0, pass@1=0.0000
+[78/154] n=10, passed=10, pass@1=1.0000
+[79/154] n=10, passed=0, pass@1=0.0000
+[80/154] n=10, passed=0, pass@1=0.0000
+[81/154] n=10, passed=0, pass@1=0.0000
+[82/154] n=10, passed=0, pass@1=0.0000
+[83/154] n=10, passed=0, pass@1=0.0000
+[84/154] n=10, passed=0, pass@1=0.0000
+[85/154] n=10, passed=1, pass@1=0.1000
+[86/154] n=10, passed=0, pass@1=0.0000
+[87/154] n=10, passed=0, pass@1=0.0000
+[88/154] n=10, passed=0, pass@1=0.0000
+[89/154] n=10, passed=0, pass@1=0.0000
+[90/154] n=10, passed=0, pass@1=0.0000
+[91/154] n=10, passed=0, pass@1=0.0000
+[92/154] n=10, passed=0, pass@1=0.0000
+[93/154] n=10, passed=0, pass@1=0.0000
+[94/154] n=10, passed=0, pass@1=0.0000
+[95/154] n=10, passed=4, pass@1=0.4000
+[96/154] n=10, passed=0, pass@1=0.0000
+[97/154] n=10, passed=0, pass@1=0.0000
+[98/154] n=10, passed=0, pass@1=0.0000
+[99/154] n=10, passed=0, pass@1=0.0000
+[100/154] n=10, passed=0, pass@1=0.0000
+[101/154] n=10, passed=0, pass@1=0.0000
+[102/154] n=10, passed=0, pass@1=0.0000
+[103/154] n=10, passed=0, pass@1=0.0000
+[104/154] n=10, passed=0, pass@1=0.0000
+[105/154] n=10, passed=0, pass@1=0.0000
+[106/154] n=10, passed=0, pass@1=0.0000
+[107/154] n=10, passed=0, pass@1=0.0000
+[108/154] n=10, passed=0, pass@1=0.0000
+[109/154] n=10, passed=1, pass@1=0.1000
+[110/154] n=10, passed=0, pass@1=0.0000
+[111/154] n=10, passed=0, pass@1=0.0000
+[112/154] n=10, passed=0, pass@1=0.0000
+[113/154] n=10, passed=0, pass@1=0.0000
+[114/154] n=10, passed=0, pass@1=0.0000
+[115/154] n=10, passed=0, pass@1=0.0000
+[116/154] n=10, passed=0, pass@1=0.0000
+[117/154] n=10, passed=0, pass@1=0.0000
+[118/154] n=10, passed=0, pass@1=0.0000
+[119/154] n=10, passed=0, pass@1=0.0000
+[120/154] n=10, passed=0, pass@1=0.0000
+[121/154] n=10, passed=0, pass@1=0.0000
+[122/154] n=10, passed=0, pass@1=0.0000
+[123/154] n=10, passed=0, pass@1=0.0000
+[124/154] n=10, passed=0, pass@1=0.0000
+[125/154] n=10, passed=0, pass@1=0.0000
+[126/154] n=10, passed=0, pass@1=0.0000
+[127/154] n=10, passed=0, pass@1=0.0000
+[128/154] n=10, passed=0, pass@1=0.0000
+[129/154] n=10, passed=0, pass@1=0.0000
+[130/154] n=10, passed=0, pass@1=0.0000
+[131/154] n=10, passed=0, pass@1=0.0000
+[132/154] n=10, passed=0, pass@1=0.0000
+[133/154] n=10, passed=0, pass@1=0.0000
+[134/154] n=10, passed=0, pass@1=0.0000
+[135/154] n=10, passed=0, pass@1=0.0000
+[136/154] n=10, passed=0, pass@1=0.0000
+[137/154] n=10, passed=0, pass@1=0.0000
+[138/154] n=10, passed=0, pass@1=0.0000
+[139/154] n=10, passed=0, pass@1=0.0000
+[140/154] n=10, passed=0, pass@1=0.0000
+[141/154] n=10, passed=0, pass@1=0.0000
+[142/154] n=10, passed=0, pass@1=0.0000
+[143/154] n=10, passed=0, pass@1=0.0000
+[144/154] n=10, passed=0, pass@1=0.0000
+[145/154] n=10, passed=0, pass@1=0.0000
+[146/154] n=10, passed=0, pass@1=0.0000
+[147/154] n=10, passed=0, pass@1=0.0000
+[148/154] n=10, passed=0, pass@1=0.0000
+[149/154] n=10, passed=3, pass@1=0.3000
+[150/154] n=10, passed=1, pass@1=0.1000
+[151/154] n=10, passed=0, pass@1=0.0000
+[152/154] n=10, passed=0, pass@1=0.0000
+[153/154] n=10, passed=0, pass@1=0.0000
+[154/154] n=10, passed=0, pass@1=0.0000
+{
+  "pass_at_1": 0.16298701298701299,
+  "pass_at_5": 0.2510307153164296,
+  "pass_at_10": 0.2922077922077922,
+  "total_problems": 154
+}
+
+Results summary saved to /workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges.json
+
+Compiling candidate-level metrics to CSV: /workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges_compile_stats.csv ...
+Using Dart binary: /usr/bin/dart
+Stats CSV workers=64
+
+stats CSV:   0%|          | 0/154 [00:00<?, ?row/s]
+stats CSV:   1%|          | 1/154 [00:24<1:02:29, 24.51s/row]
+stats CSV:   2%|▏         | 3/154 [00:25<16:49,  6.69s/row]  
+stats CSV:  10%|█         | 16/154 [00:26<02:03,  1.12row/s]
+stats CSV:  19%|█▉        | 30/154 [00:28<00:58,  2.13row/s]
+stats CSV:  23%|██▎       | 36/154 [00:52<02:46,  1.41s/row]
+stats CSV:  41%|████      | 63/154 [00:53<00:49,  1.83row/s]
+stats CSV:  41%|████      | 63/154 [01:10<00:49,  1.83row/s]
+stats CSV:  43%|████▎     | 66/154 [01:21<01:57,  1.33s/row]
+stats CSV: 100%|██████████| 154/154 [01:21<00:00,  1.89row/s]
+Successfully compiled per-problem statistics to: /workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges_compile_stats.csv
+
+Reusing aligned candidate-level statistics: /workspace/results/sweeps_antigravity/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s44_prefix_no_edges_pass_stats.csv
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.
+HF upload skipped: set HF_TOKEN/HUGGINGFACE_TOKEN or pass --hf_token.

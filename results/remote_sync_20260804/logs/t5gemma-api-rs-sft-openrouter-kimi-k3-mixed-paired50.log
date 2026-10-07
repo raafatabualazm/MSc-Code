@@ -1,0 +1,658 @@
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+T5GEMMA_KIMI_WAITING for completed 100-task TRAIN-only harvest
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+T5GEMMA_KIMI_BLOCKED local harvest report differs
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+{"api_slot": 2, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-fa87d491d2b9"}
+{"api_slot": 3, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b87f4cae4ada"}
+{"api_slot": 4, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4128d40d5043"}
+{"api_slot": 5, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-113fc6793a61"}
+{"api_slot": 6, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_74bb500fd9f7"}
+{"api_slot": 7, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-ad995329fdfb"}
+{"api_slot": 8, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_3a4011ccdb44"}
+{"api_slot": 9, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_a373cc2baf70"}
+{"api_slot": 10, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_5e09beb70d6b"}
+{"api_slot": 11, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_857807765dcc"}
+{"api_slot": 12, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-bd5fc5b86c0b"}
+{"api_slot": 13, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d7bf2906f3b4"}
+{"api_slot": 14, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_44b5b8de7031"}
+{"api_slot": 15, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-ad955f68b657"}
+{"api_slot": 16, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4a6b302d1245"}
+{"api_slot": 17, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_cbfe7a20b129"}
+{"api_slot": 18, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-141127c3521f"}
+{"api_slot": 19, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_6732ad0e03c2"}
+{"api_slot": 20, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_e45852ef8453"}
+{"api_slot": 21, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b5cb3f9f2d41"}
+{"api_slot": 22, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d83f819cda4a"}
+{"api_slot": 23, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_07c3783f819e"}
+{"api_slot": 24, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-01f0babe7165"}
+{"api_slot": 25, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_aca3a29acba5"}
+{"api_slot": 26, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d801178ee7a1"}
+{"api_slot": 27, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-0971a155beb5"}
+{"api_slot": 28, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_2b5922da1112"}
+{"api_slot": 29, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4b95ab6f2740"}
+{"api_slot": 30, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_423c455e1e6f"}
+{"api_slot": 31, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_6db71c675d48"}
+{"api_slot": 32, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_0aa123040ab4"}
+{"api_slot": 33, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_ff7d9e36c230"}
+{"api_slot": 34, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_67337c7dd9ce"}
+{"api_slot": 35, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b97ec4460458"}
+{"api_slot": 36, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4cd3735945ef"}
+{"api_slot": 37, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-32a961a9b2c2"}
+{"api_slot": 38, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_a56cfc171fc7"}
+{"api_slot": 39, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-541f93e561d9"}
+{"api_slot": 40, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d3b5764ae6ff"}
+{"api_slot": 41, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4e5963a46a73"}
+{"api_slot": 42, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d7c02dd879e2"}
+{"api_slot": 43, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-dae4c6a47ee5"}
+{"api_slot": 44, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-94ac6f9cb495"}
+{"api_slot": 45, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_978e6e0fc30a"}
+{"api_slot": 46, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-8caa0cdff2b4"}
+{"api_slot": 47, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-3a0533b9f875"}
+{"api_slot": 48, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-68e5b6c08f36"}
+{"api_slot": 49, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4008c7e7f49c"}
+{"api_slot": 50, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d238b35062c6"}
+{"accepted": false, "task_id": "fresh-eval-7a2a960d09eb", "verification_task": 1, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-fa87d491d2b9", "verification_task": 2, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b87f4cae4ada", "verification_task": 3, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4128d40d5043", "verification_task": 4, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-113fc6793a61", "verification_task": 5, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_74bb500fd9f7", "verification_task": 6, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ad995329fdfb", "verification_task": 7, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_3a4011ccdb44", "verification_task": 8, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a373cc2baf70", "verification_task": 9, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_5e09beb70d6b", "verification_task": 10, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_857807765dcc", "verification_task": 11, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-bd5fc5b86c0b", "verification_task": 12, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d7bf2906f3b4", "verification_task": 13, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_44b5b8de7031", "verification_task": 14, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ad955f68b657", "verification_task": 15, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4a6b302d1245", "verification_task": 16, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_cbfe7a20b129", "verification_task": 17, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-141127c3521f", "verification_task": 18, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6732ad0e03c2", "verification_task": 19, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_e45852ef8453", "verification_task": 20, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b5cb3f9f2d41", "verification_task": 21, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d83f819cda4a", "verification_task": 22, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_07c3783f819e", "verification_task": 23, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-01f0babe7165", "verification_task": 24, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_aca3a29acba5", "verification_task": 25, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d801178ee7a1", "verification_task": 26, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-0971a155beb5", "verification_task": 27, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_2b5922da1112", "verification_task": 28, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4b95ab6f2740", "verification_task": 29, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_423c455e1e6f", "verification_task": 30, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6db71c675d48", "verification_task": 31, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0aa123040ab4", "verification_task": 32, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_ff7d9e36c230", "verification_task": 33, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_67337c7dd9ce", "verification_task": 34, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b97ec4460458", "verification_task": 35, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4cd3735945ef", "verification_task": 36, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-32a961a9b2c2", "verification_task": 37, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a56cfc171fc7", "verification_task": 38, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-541f93e561d9", "verification_task": 39, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d3b5764ae6ff", "verification_task": 40, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4e5963a46a73", "verification_task": 41, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d7c02dd879e2", "verification_task": 42, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-dae4c6a47ee5", "verification_task": 43, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-94ac6f9cb495", "verification_task": 44, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_978e6e0fc30a", "verification_task": 45, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-8caa0cdff2b4", "verification_task": 46, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-3a0533b9f875", "verification_task": 47, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-68e5b6c08f36", "verification_task": 48, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4008c7e7f49c", "verification_task": 49, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d238b35062c6", "verification_task": 50, "verification_tasks": 50, "visible_passes": 0}
+{"calls": 50, "estimated_usd": "13.516800000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v1", "private_holdback_passes": 0, "tasks": 50, "verified_targets": 0}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+T5GEMMA_KIMI_ROUTE_CANARY_OK
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+{"api_slot": 2, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-fa87d491d2b9"}
+{"api_slot": 3, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b87f4cae4ada"}
+{"api_slot": 4, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4128d40d5043"}
+{"api_slot": 5, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-113fc6793a61"}
+{"api_slot": 6, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_74bb500fd9f7"}
+{"api_slot": 7, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-ad995329fdfb"}
+{"api_slot": 8, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_3a4011ccdb44"}
+{"api_slot": 9, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_a373cc2baf70"}
+{"api_slot": 10, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_5e09beb70d6b"}
+{"api_slot": 11, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_857807765dcc"}
+{"api_slot": 12, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-bd5fc5b86c0b"}
+{"api_slot": 13, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d7bf2906f3b4"}
+{"api_slot": 14, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_44b5b8de7031"}
+{"api_slot": 15, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-ad955f68b657"}
+{"api_slot": 16, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4a6b302d1245"}
+{"api_slot": 17, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_cbfe7a20b129"}
+{"api_slot": 18, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-141127c3521f"}
+{"api_slot": 19, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_6732ad0e03c2"}
+{"api_slot": 20, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_e45852ef8453"}
+{"api_slot": 21, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b5cb3f9f2d41"}
+{"api_slot": 22, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d83f819cda4a"}
+{"api_slot": 23, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_07c3783f819e"}
+{"api_slot": 24, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-01f0babe7165"}
+{"api_slot": 25, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_aca3a29acba5"}
+{"api_slot": 26, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_d801178ee7a1"}
+{"api_slot": 27, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-0971a155beb5"}
+{"api_slot": 28, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_2b5922da1112"}
+{"api_slot": 29, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4b95ab6f2740"}
+{"api_slot": 30, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_423c455e1e6f"}
+{"api_slot": 31, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_6db71c675d48"}
+{"api_slot": 32, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_0aa123040ab4"}
+{"api_slot": 33, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_ff7d9e36c230"}
+{"api_slot": 34, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_67337c7dd9ce"}
+{"api_slot": 35, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_b97ec4460458"}
+{"api_slot": 36, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4cd3735945ef"}
+{"api_slot": 37, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-32a961a9b2c2"}
+{"api_slot": 38, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_a56cfc171fc7"}
+{"api_slot": 39, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-541f93e561d9"}
+{"api_slot": 40, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d3b5764ae6ff"}
+{"api_slot": 41, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_4e5963a46a73"}
+{"api_slot": 42, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d7c02dd879e2"}
+{"api_slot": 43, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-dae4c6a47ee5"}
+{"api_slot": 44, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-94ac6f9cb495"}
+{"api_slot": 45, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "sigless_978e6e0fc30a"}
+{"api_slot": 46, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-8caa0cdff2b4"}
+{"api_slot": 47, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-3a0533b9f875"}
+{"api_slot": 48, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-68e5b6c08f36"}
+{"api_slot": 49, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-4008c7e7f49c"}
+{"api_slot": 50, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-d238b35062c6"}
+{"accepted": false, "task_id": "fresh-eval-7a2a960d09eb", "verification_task": 1, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-fa87d491d2b9", "verification_task": 2, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b87f4cae4ada", "verification_task": 3, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4128d40d5043", "verification_task": 4, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-113fc6793a61", "verification_task": 5, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_74bb500fd9f7", "verification_task": 6, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ad995329fdfb", "verification_task": 7, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_3a4011ccdb44", "verification_task": 8, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a373cc2baf70", "verification_task": 9, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_5e09beb70d6b", "verification_task": 10, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_857807765dcc", "verification_task": 11, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-bd5fc5b86c0b", "verification_task": 12, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d7bf2906f3b4", "verification_task": 13, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_44b5b8de7031", "verification_task": 14, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ad955f68b657", "verification_task": 15, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4a6b302d1245", "verification_task": 16, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_cbfe7a20b129", "verification_task": 17, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-141127c3521f", "verification_task": 18, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6732ad0e03c2", "verification_task": 19, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_e45852ef8453", "verification_task": 20, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b5cb3f9f2d41", "verification_task": 21, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d83f819cda4a", "verification_task": 22, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_07c3783f819e", "verification_task": 23, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-01f0babe7165", "verification_task": 24, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_aca3a29acba5", "verification_task": 25, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d801178ee7a1", "verification_task": 26, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-0971a155beb5", "verification_task": 27, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_2b5922da1112", "verification_task": 28, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4b95ab6f2740", "verification_task": 29, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_423c455e1e6f", "verification_task": 30, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6db71c675d48", "verification_task": 31, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0aa123040ab4", "verification_task": 32, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_ff7d9e36c230", "verification_task": 33, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_67337c7dd9ce", "verification_task": 34, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b97ec4460458", "verification_task": 35, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4cd3735945ef", "verification_task": 36, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-32a961a9b2c2", "verification_task": 37, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a56cfc171fc7", "verification_task": 38, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-541f93e561d9", "verification_task": 39, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d3b5764ae6ff", "verification_task": 40, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4e5963a46a73", "verification_task": 41, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d7c02dd879e2", "verification_task": 42, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-dae4c6a47ee5", "verification_task": 43, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-94ac6f9cb495", "verification_task": 44, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_978e6e0fc30a", "verification_task": 45, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-8caa0cdff2b4", "verification_task": 46, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-3a0533b9f875", "verification_task": 47, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-68e5b6c08f36", "verification_task": 48, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4008c7e7f49c", "verification_task": 49, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-d238b35062c6", "verification_task": 50, "verification_tasks": 50, "visible_passes": 0}
+{"calls": 50, "estimated_usd": "13.516800000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v2", "private_holdback_passes": 0, "tasks": 50, "verified_targets": 0}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+  File "/venv/main/lib/python3.12/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 914, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 919, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1023, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k3 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Modal', 'is_byok': False, 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_id': 'user_36eaYOMLnqJwvZYSKaScBkoPMOI'}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+  File "/venv/main/lib/python3.12/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 914, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 919, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1023, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k3 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Modal', 'is_byok': False, 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_id': 'user_36eaYOMLnqJwvZYSKaScBkoPMOI'}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+  File "/venv/main/lib/python3.12/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 914, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 919, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/openai/_base_client.py", line 1023, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k3 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Together', 'is_byok': False, 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing', 'retry_after_seconds': 1, 'retry_after_seconds_raw': 1, 'headers': {'Retry-After': '1'}}}, 'user_id': 'user_36eaYOMLnqJwvZYSKaScBkoPMOI'}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+T5GEMMA_KIMI_ROUTE_CANARY_OK
+Terminated
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+T5GEMMA_KIMI_ROUTE_CANARY_OK
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3272, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2793, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1725, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3272, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2793, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1725, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3272, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2793, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1725, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3272, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2793, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1725, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 5, "retry_in_seconds": 30.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 6, "retry_in_seconds": 30.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 7, "retry_in_seconds": 30.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3355, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3350, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2859, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1782, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 1, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-7a2a960d09eb"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-fa87d491d2b9"}
+{"api_slot": 3, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 3, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 3, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 3, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 3, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_b87f4cae4ada"}
+{"api_slot": 4, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 4, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 4, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 4, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 4, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_4128d40d5043"}
+{"api_slot": 5, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 5, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 5, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 5, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-113fc6793a61"}
+{"api_slot": 6, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 6, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 6, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 6, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 6, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_74bb500fd9f7"}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3398, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3393, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2871, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1782, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-7a2a960d09eb"}
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3401, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 3396, in main
+    run(parse_args(argv))
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 2871, in run
+    slot_results = execute_api_phase(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py", line 1782, in execute_api_phase
+    raise RuntimeError(
+RuntimeError: fresh-eval-7a2a960d09eb: fail-fast provider status provider_error
+T5GEMMA_KIMI_FAIL_FAST status=1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_kimi_schedule_attestation.py: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+aba53a73f81d3781aceb251ec5c400181736f8eb60ab2ed05560a3593ba6e2bb
+{"api_slot": 1, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-7a2a960d09eb"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 2, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-fa87d491d2b9"}
+{"api_slot": 3, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_b87f4cae4ada"}
+{"api_slot": 4, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_4128d40d5043"}
+{"api_slot": 5, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-113fc6793a61"}
+{"api_slot": 6, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_74bb500fd9f7"}
+{"api_slot": 7, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-ad995329fdfb"}
+{"api_slot": 8, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_3a4011ccdb44"}
+{"api_slot": 9, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_a373cc2baf70"}
+{"api_slot": 10, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_5e09beb70d6b"}
+{"api_slot": 11, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_857807765dcc"}
+{"api_slot": 12, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-bd5fc5b86c0b"}
+{"api_slot": 13, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_d7bf2906f3b4"}
+{"api_slot": 14, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 14, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_44b5b8de7031"}
+{"api_slot": 15, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 15, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-ad955f68b657"}
+{"api_slot": 16, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 16, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 16, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-4a6b302d1245"}
+{"api_slot": 17, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 17, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_cbfe7a20b129"}
+{"api_slot": 18, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-141127c3521f"}
+{"api_slot": 19, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_6732ad0e03c2"}
+{"api_slot": 20, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_e45852ef8453"}
+{"api_slot": 21, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 21, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 21, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 21, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_b5cb3f9f2d41"}
+{"api_slot": 22, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_d83f819cda4a"}
+{"api_slot": 23, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 23, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_07c3783f819e"}
+{"api_slot": 24, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-01f0babe7165"}
+{"api_slot": 25, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_aca3a29acba5"}
+{"api_slot": 26, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 26, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 26, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 26, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_d801178ee7a1"}
+{"api_slot": 27, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-0971a155beb5"}
+{"api_slot": 28, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_2b5922da1112"}
+{"api_slot": 29, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 29, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-4b95ab6f2740"}
+{"api_slot": 30, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_423c455e1e6f"}
+{"api_slot": 31, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_6db71c675d48"}
+{"api_slot": 32, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_0aa123040ab4"}
+{"api_slot": 33, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 33, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_ff7d9e36c230"}
+{"api_slot": 34, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 34, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_67337c7dd9ce"}
+{"api_slot": 35, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_b97ec4460458"}
+{"api_slot": 36, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 36, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_4cd3735945ef"}
+{"api_slot": 37, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-32a961a9b2c2"}
+{"api_slot": 38, "api_slots": 50, "code_only": false, "status": "response", "task_id": "sigless_a56cfc171fc7"}
+{"api_slot": 39, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-541f93e561d9"}
+{"api_slot": 40, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-d3b5764ae6ff"}
+{"api_slot": 41, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_4e5963a46a73"}
+{"api_slot": 42, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 42, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-d7c02dd879e2"}
+{"api_slot": 43, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 43, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 43, "api_slots": 50, "provider_attempt": 3, "retry_in_seconds": 8.0, "status": "provider_retry"}
+{"api_slot": 43, "api_slots": 50, "provider_attempt": 4, "retry_in_seconds": 16.0, "status": "provider_retry"}
+{"api_slot": 43, "api_slots": 50, "provider_attempt": 5, "retry_in_seconds": 30.0, "status": "provider_retry"}
+{"api_slot": 43, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-dae4c6a47ee5"}
+{"api_slot": 44, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 44, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-94ac6f9cb495"}
+{"api_slot": 45, "api_slots": 50, "code_only": true, "status": "response", "task_id": "sigless_978e6e0fc30a"}
+{"api_slot": 46, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-8caa0cdff2b4"}
+{"api_slot": 47, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-3a0533b9f875"}
+{"api_slot": 48, "api_slots": 50, "code_only": false, "status": "response", "task_id": "fresh-eval-68e5b6c08f36"}
+{"api_slot": 49, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 49, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 49, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-4008c7e7f49c"}
+{"api_slot": 50, "api_slots": 50, "provider_attempt": 1, "retry_in_seconds": 2.0, "status": "provider_retry"}
+{"api_slot": 50, "api_slots": 50, "provider_attempt": 2, "retry_in_seconds": 4.0, "status": "provider_retry"}
+{"api_slot": 50, "api_slots": 50, "code_only": true, "status": "response", "task_id": "fresh-eval-d238b35062c6"}
+{"accepted": false, "task_id": "fresh-eval-7a2a960d09eb", "verification_task": 1, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-fa87d491d2b9", "verification_task": 2, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_b87f4cae4ada", "verification_task": 3, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_4128d40d5043", "verification_task": 4, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-113fc6793a61", "verification_task": 5, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_74bb500fd9f7", "verification_task": 6, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-ad995329fdfb", "verification_task": 7, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_3a4011ccdb44", "verification_task": 8, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_a373cc2baf70", "verification_task": 9, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_5e09beb70d6b", "verification_task": 10, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_857807765dcc", "verification_task": 11, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-bd5fc5b86c0b", "verification_task": 12, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_d7bf2906f3b4", "verification_task": 13, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_44b5b8de7031", "verification_task": 14, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ad955f68b657", "verification_task": 15, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4a6b302d1245", "verification_task": 16, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_cbfe7a20b129", "verification_task": 17, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-141127c3521f", "verification_task": 18, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_6732ad0e03c2", "verification_task": 19, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_e45852ef8453", "verification_task": 20, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_b5cb3f9f2d41", "verification_task": 21, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_d83f819cda4a", "verification_task": 22, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_07c3783f819e", "verification_task": 23, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-01f0babe7165", "verification_task": 24, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_aca3a29acba5", "verification_task": 25, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_d801178ee7a1", "verification_task": 26, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "fresh-eval-0971a155beb5", "verification_task": 27, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_2b5922da1112", "verification_task": 28, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4b95ab6f2740", "verification_task": 29, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_423c455e1e6f", "verification_task": 30, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_6db71c675d48", "verification_task": 31, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0aa123040ab4", "verification_task": 32, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_ff7d9e36c230", "verification_task": 33, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_67337c7dd9ce", "verification_task": 34, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_b97ec4460458", "verification_task": 35, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_4cd3735945ef", "verification_task": 36, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-32a961a9b2c2", "verification_task": 37, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_a56cfc171fc7", "verification_task": 38, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": true, "task_id": "fresh-eval-541f93e561d9", "verification_task": 39, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-d3b5764ae6ff", "verification_task": 40, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_4e5963a46a73", "verification_task": 41, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-d7c02dd879e2", "verification_task": 42, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-dae4c6a47ee5", "verification_task": 43, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-94ac6f9cb495", "verification_task": 44, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_978e6e0fc30a", "verification_task": 45, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-8caa0cdff2b4", "verification_task": 46, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-3a0533b9f875", "verification_task": 47, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-68e5b6c08f36", "verification_task": 48, "verification_tasks": 50, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-4008c7e7f49c", "verification_task": 49, "verification_tasks": 50, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-d238b35062c6", "verification_task": 50, "verification_tasks": 50, "visible_passes": 1}
+{"calls": 50, "estimated_usd": "1.356474000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_openrouter_kimi_k3_mixed_paired50_v12", "private_holdback_passes": 10, "tasks": 50, "verified_targets": 10}

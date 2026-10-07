@@ -1,0 +1,1410 @@
+[queue] 2026-07-19T20:06:16Z waiting for forced-causality probe to finish...
+[queue] 2026-07-20T00:30:18Z GPU free; settling 60s
+
+[02a3_clean12k_long_eval] /venv/main/bin/python /workspace/scripts/evaluation/functional_graph_gate_antigravity.py --project_root /workspace --dataset /workspace/artifacts/hybrid_v2_3_s44/00f_hierarchical_data/long_dev_ge200_clean9k.jsonl --checkpoint /workspace/artifacts/hybrid_v2_3_s44/02a1_matched_control_recovery/pytorch_model.bin --output_dir /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval --report /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/report.json --decoder_model Qwen/Qwen3-8B --decoder_revision '' --encoder_revision '' --seed 44 --num_samples 10 --k 10 --generation_batch_size 8 --max_new_tokens 3328 --decoder_prompt_max_length 12288 --causality_prompt_mode graph_only --performance_prompt_mode full --run_deployment_arm --no-run_causality_arm --min_rows 64 --bootstrap_iterations 10000 --bootstrap_seed 44 --statistical_confidence 0.95 --max_sign_test_p_value 0.05 --min_causal_effective_pairs 8 --min_deployment_effective_pairs 8 --min_causal_permutation_ci_lower_pp 0.0 --min_causal_null_ci_lower_pp 0.0 --min_facts_permutation_ci_lower_pp 0.0 --min_deployment_ci_lower_pp 0.0 --no-require_facts_statistics --min_causal_permutation_drop_pp 0.0 --min_facts_permutation_drop_pp 0.0 --min_causal_task_losses 0 --min_deployment_improvement_pp 0.0 --load_4bit 0 --workers 16 --timeout 20
+
+/venv/main/bin/python /workspace/scripts/evaluation/graph_inference_antigravity.py --dataset /workspace/artifacts/hybrid_v2_3_s44/00f_hierarchical_data/long_dev_ge200_clean9k.jsonl --decoder_model Qwen/Qwen3-8B --checkpoint /workspace/artifacts/hybrid_v2_3_s44/02a1_matched_control_recovery/pytorch_model.bin --output /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/deployment_current.json --num_samples 10 --generation_batch_size 8 --max_new_tokens 3328 --decoder_prompt_max_length 12288 --decoder_revision  --encoder_revision  --seed 44 --graph_input_ablation none --graph_ablation_seed 44
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 49980.52it/s]
+Decoder attention implementation: flash_attention_2
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 8677.47it/s]
+Enabled decoder gradient checkpointing.
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=scalar, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Froze LocalBlockEncoder weights
+Applied PEFT LORA (r=64, alpha=128) to Decoder targets=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+loaded checkpoint: /workspace/artifacts/hybrid_v2_3_s44/02a1_matched_control_recovery/pytorch_model.bin
+Validated checkpoint architecture: recognised=565 missing_frozen=617 unexpected=0
+Qwen graph prefix gate: 0.200065
+Inference mode: decoder gradient checkpointing OFF; KV cache ON
+generate:   0%|          | 0/140 [00:00<?, ?row/s]                                                  [1/140] generated 10 candidates
+generate:   0%|          | 0/140 [01:50<?, ?row/s]generate:   1%|          | 1/140 [01:50<4:16:34, 110.75s/row]                                                             [2/140] generated 10 candidates
+generate:   1%|          | 1/140 [03:22<4:16:34, 110.75s/row]generate:   1%|▏         | 2/140 [03:22<3:49:07, 99.62s/row]                                                             [3/140] generated 10 candidates
+generate:   1%|▏         | 2/140 [05:27<3:49:07, 99.62s/row]generate:   2%|▏         | 3/140 [05:27<4:14:19, 111.38s/row]                                                             [4/140] generated 10 candidates
+generate:   2%|▏         | 3/140 [07:12<4:14:19, 111.38s/row]generate:   3%|▎         | 4/140 [07:12<4:05:55, 108.49s/row]                                                             [5/140] generated 10 candidates
+generate:   3%|▎         | 4/140 [09:10<4:05:55, 108.49s/row]generate:   4%|▎         | 5/140 [09:10<4:12:11, 112.08s/row]                                                             [6/140] generated 10 candidates
+generate:   4%|▎         | 5/140 [10:27<4:12:11, 112.08s/row]generate:   4%|▍         | 6/140 [10:27<3:44:01, 100.31s/row]                                                             [7/140] generated 10 candidates
+generate:   4%|▍         | 6/140 [13:25<3:44:01, 100.31s/row]generate:   5%|▌         | 7/140 [13:25<4:38:21, 125.58s/row]                                                             [8/140] generated 10 candidates
+generate:   5%|▌         | 7/140 [14:30<4:38:21, 125.58s/row]generate:   6%|▌         | 8/140 [14:30<3:54:03, 106.39s/row]                                                             [9/140] generated 10 candidates
+generate:   6%|▌         | 8/140 [16:27<3:54:03, 106.39s/row]generate:   6%|▋         | 9/140 [16:27<3:59:16, 109.59s/row]                                                             [10/140] generated 10 candidates
+generate:   6%|▋         | 9/140 [18:27<3:59:16, 109.59s/row]generate:   7%|▋         | 10/140 [18:27<4:04:30, 112.85s/row]                                                              [11/140] generated 10 candidates
+generate:   7%|▋         | 10/140 [20:00<4:04:30, 112.85s/row]generate:   8%|▊         | 11/140 [20:00<3:49:11, 106.60s/row]                                                              [12/140] generated 10 candidates
+generate:   8%|▊         | 11/140 [22:26<3:49:11, 106.60s/row]generate:   9%|▊         | 12/140 [22:26<4:13:19, 118.75s/row]                                                              [13/140] generated 10 candidates
+generate:   9%|▊         | 12/140 [24:35<4:13:19, 118.75s/row]generate:   9%|▉         | 13/140 [24:35<4:18:05, 121.93s/row]                                                              [14/140] generated 10 candidates
+generate:   9%|▉         | 13/140 [26:31<4:18:05, 121.93s/row]generate:  10%|█         | 14/140 [26:31<4:11:53, 119.95s/row]                                                              [15/140] generated 10 candidates
+generate:  10%|█         | 14/140 [27:55<4:11:53, 119.95s/row]generate:  11%|█         | 15/140 [27:55<3:47:48, 109.35s/row]                                                              [16/140] generated 10 candidates
+generate:  11%|█         | 15/140 [29:31<3:47:48, 109.35s/row]generate:  11%|█▏        | 16/140 [29:31<3:37:21, 105.18s/row]                                                              [17/140] generated 10 candidates
+generate:  11%|█▏        | 16/140 [30:36<3:37:21, 105.18s/row]generate:  12%|█▏        | 17/140 [30:36<3:10:59, 93.17s/row]                                                              [18/140] generated 10 candidates
+generate:  12%|█▏        | 17/140 [31:40<3:10:59, 93.17s/row]generate:  13%|█▎        | 18/140 [31:40<2:51:37, 84.41s/row]                                                             [19/140] generated 10 candidates
+generate:  13%|█▎        | 18/140 [33:11<2:51:37, 84.41s/row]generate:  14%|█▎        | 19/140 [33:11<2:54:16, 86.42s/row]                                                             [20/140] generated 10 candidates
+generate:  14%|█▎        | 19/140 [33:56<2:54:16, 86.42s/row]generate:  14%|█▍        | 20/140 [33:56<2:28:02, 74.02s/row]                                                             [21/140] generated 10 candidates
+generate:  14%|█▍        | 20/140 [35:06<2:28:02, 74.02s/row]generate:  15%|█▌        | 21/140 [35:06<2:24:06, 72.66s/row]                                                             [22/140] generated 10 candidates
+generate:  15%|█▌        | 21/140 [35:53<2:24:06, 72.66s/row]generate:  16%|█▌        | 22/140 [35:53<2:07:37, 64.89s/row]                                                             [23/140] generated 10 candidates
+generate:  16%|█▌        | 22/140 [37:12<2:07:37, 64.89s/row]generate:  16%|█▋        | 23/140 [37:12<2:15:00, 69.24s/row]                                                             [24/140] generated 10 candidates
+generate:  16%|█▋        | 23/140 [38:37<2:15:00, 69.24s/row]generate:  17%|█▋        | 24/140 [38:37<2:23:02, 73.99s/row]                                                             [25/140] generated 10 candidates
+generate:  17%|█▋        | 24/140 [40:05<2:23:02, 73.99s/row]generate:  18%|█▊        | 25/140 [40:05<2:29:58, 78.25s/row]                                                             [26/140] generated 10 candidates
+generate:  18%|█▊        | 25/140 [41:29<2:29:58, 78.25s/row]generate:  19%|█▊        | 26/140 [41:29<2:31:57, 79.98s/row]                                                             [27/140] generated 10 candidates
+generate:  19%|█▊        | 26/140 [43:39<2:31:57, 79.98s/row]generate:  19%|█▉        | 27/140 [43:39<2:58:33, 94.81s/row]                                                             [28/140] generated 10 candidates
+generate:  19%|█▉        | 27/140 [45:02<2:58:33, 94.81s/row]generate:  20%|██        | 28/140 [45:02<2:50:21, 91.26s/row]                                                             [29/140] generated 10 candidates
+generate:  20%|██        | 28/140 [46:30<2:50:21, 91.26s/row]generate:  21%|██        | 29/140 [46:30<2:47:15, 90.41s/row]                                                             [30/140] generated 10 candidates
+generate:  21%|██        | 29/140 [47:33<2:47:15, 90.41s/row]generate:  21%|██▏       | 30/140 [47:33<2:30:44, 82.22s/row]                                                             [31/140] generated 10 candidates
+generate:  21%|██▏       | 30/140 [48:23<2:30:44, 82.22s/row]generate:  22%|██▏       | 31/140 [48:23<2:11:42, 72.50s/row]                                                             [32/140] generated 10 candidates
+generate:  22%|██▏       | 31/140 [49:27<2:11:42, 72.50s/row]generate:  23%|██▎       | 32/140 [49:27<2:05:35, 69.77s/row]                                                             [33/140] generated 10 candidates
+generate:  23%|██▎       | 32/140 [50:14<2:05:35, 69.77s/row]generate:  24%|██▎       | 33/140 [50:14<1:52:44, 63.22s/row]                                                             [34/140] generated 10 candidates
+generate:  24%|██▎       | 33/140 [51:40<1:52:44, 63.22s/row]generate:  24%|██▍       | 34/140 [51:40<2:03:29, 69.90s/row]                                                             [35/140] generated 10 candidates
+generate:  24%|██▍       | 34/140 [55:04<2:03:29, 69.90s/row]generate:  25%|██▌       | 35/140 [55:04<3:12:35, 110.05s/row]                                                              [36/140] generated 10 candidates
+generate:  25%|██▌       | 35/140 [58:00<3:12:35, 110.05s/row]generate:  26%|██▌       | 36/140 [58:00<3:44:58, 129.79s/row]                                                              [37/140] generated 10 candidates
+generate:  26%|██▌       | 36/140 [59:28<3:44:58, 129.79s/row]generate:  26%|██▋       | 37/140 [59:28<3:21:33, 117.41s/row]                                                              [38/140] generated 10 candidates
+generate:  26%|██▋       | 37/140 [1:01:26<3:21:33, 117.41s/row]generate:  27%|██▋       | 38/140 [1:01:26<3:19:40, 117.45s/row]                                                                [39/140] generated 10 candidates
+generate:  27%|██▋       | 38/140 [1:03:15<3:19:40, 117.45s/row]generate:  28%|██▊       | 39/140 [1:03:15<3:13:37, 115.02s/row]                                                                [40/140] generated 10 candidates
+generate:  28%|██▊       | 39/140 [1:04:49<3:13:37, 115.02s/row]generate:  29%|██▊       | 40/140 [1:04:49<3:01:18, 108.79s/row]                                                                [41/140] generated 10 candidates
+generate:  29%|██▊       | 40/140 [1:06:53<3:01:18, 108.79s/row]generate:  29%|██▉       | 41/140 [1:06:53<3:06:47, 113.20s/row]                                                                [42/140] generated 10 candidates
+generate:  29%|██▉       | 41/140 [1:07:59<3:06:47, 113.20s/row]generate:  30%|███       | 42/140 [1:07:59<2:41:52, 99.10s/row]                                                                [43/140] generated 10 candidates
+generate:  30%|███       | 42/140 [1:09:33<2:41:52, 99.10s/row]generate:  31%|███       | 43/140 [1:09:33<2:37:38, 97.51s/row]                                                               [44/140] generated 10 candidates
+generate:  31%|███       | 43/140 [1:10:58<2:37:38, 97.51s/row]generate:  31%|███▏      | 44/140 [1:10:58<2:30:17, 93.93s/row]                                                               [45/140] generated 10 candidates
+generate:  31%|███▏      | 44/140 [1:12:54<2:30:17, 93.93s/row]generate:  32%|███▏      | 45/140 [1:12:54<2:39:00, 100.43s/row]                                                                [46/140] generated 10 candidates
+generate:  32%|███▏      | 45/140 [1:14:00<2:39:00, 100.43s/row]generate:  33%|███▎      | 46/140 [1:14:00<2:20:59, 90.00s/row]                                                                [47/140] generated 10 candidates
+generate:  33%|███▎      | 46/140 [1:14:46<2:20:59, 90.00s/row]generate:  34%|███▎      | 47/140 [1:14:46<1:59:08, 76.87s/row]                                                               [48/140] generated 10 candidates
+generate:  34%|███▎      | 47/140 [1:15:28<1:59:08, 76.87s/row]generate:  34%|███▍      | 48/140 [1:15:28<1:42:00, 66.52s/row]                                                               [49/140] generated 10 candidates
+generate:  34%|███▍      | 48/140 [1:16:29<1:42:00, 66.52s/row]generate:  35%|███▌      | 49/140 [1:16:29<1:38:13, 64.76s/row]                                                               [50/140] generated 10 candidates
+generate:  35%|███▌      | 49/140 [1:17:08<1:38:13, 64.76s/row]generate:  36%|███▌      | 50/140 [1:17:08<1:25:33, 57.04s/row]                                                               [51/140] generated 10 candidates
+generate:  36%|███▌      | 50/140 [1:18:28<1:25:33, 57.04s/row]generate:  36%|███▋      | 51/140 [1:18:28<1:35:00, 64.05s/row]                                                               [52/140] generated 10 candidates
+generate:  36%|███▋      | 51/140 [1:21:47<1:35:00, 64.05s/row]generate:  37%|███▋      | 52/140 [1:21:47<2:33:18, 104.53s/row]                                                                [53/140] generated 10 candidates
+generate:  37%|███▋      | 52/140 [1:23:01<2:33:18, 104.53s/row]generate:  38%|███▊      | 53/140 [1:23:01<2:18:03, 95.21s/row]                                                                [54/140] generated 10 candidates
+generate:  38%|███▊      | 53/140 [1:24:28<2:18:03, 95.21s/row]generate:  39%|███▊      | 54/140 [1:24:28<2:12:56, 92.75s/row]                                                               [55/140] generated 10 candidates
+generate:  39%|███▊      | 54/140 [1:27:09<2:12:56, 92.75s/row]generate:  39%|███▉      | 55/140 [1:27:09<2:40:34, 113.35s/row]                                                                [56/140] generated 10 candidates
+generate:  39%|███▉      | 55/140 [1:30:34<2:40:34, 113.35s/row]generate:  40%|████      | 56/140 [1:30:34<3:17:04, 140.77s/row]                                                                [57/140] generated 10 candidates
+generate:  40%|████      | 56/140 [1:31:34<3:17:04, 140.77s/row]generate:  41%|████      | 57/140 [1:31:34<2:41:28, 116.73s/row]                                                                [58/140] generated 10 candidates
+generate:  41%|████      | 57/140 [1:33:21<2:41:28, 116.73s/row]generate:  41%|████▏     | 58/140 [1:33:21<2:35:16, 113.61s/row]                                                                [59/140] generated 10 candidates
+generate:  41%|████▏     | 58/140 [1:34:08<2:35:16, 113.61s/row]generate:  42%|████▏     | 59/140 [1:34:08<2:06:23, 93.62s/row]                                                                [60/140] generated 10 candidates
+generate:  42%|████▏     | 59/140 [1:35:05<2:06:23, 93.62s/row]generate:  43%|████▎     | 60/140 [1:35:05<1:50:25, 82.82s/row]                                                               [61/140] generated 10 candidates
+generate:  43%|████▎     | 60/140 [1:36:14<1:50:25, 82.82s/row]generate:  44%|████▎     | 61/140 [1:36:14<1:43:22, 78.52s/row]                                                               [62/140] generated 10 candidates
+generate:  44%|████▎     | 61/140 [1:38:18<1:43:22, 78.52s/row]generate:  44%|████▍     | 62/140 [1:38:18<1:59:59, 92.31s/row]                                                               [63/140] generated 10 candidates
+generate:  44%|████▍     | 62/140 [1:41:23<1:59:59, 92.31s/row]generate:  45%|████▌     | 63/140 [1:41:23<2:34:02, 120.04s/row]                                                                [64/140] generated 10 candidates
+generate:  45%|████▌     | 63/140 [1:42:27<2:34:02, 120.04s/row]generate:  46%|████▌     | 64/140 [1:42:27<2:10:36, 103.11s/row]                                                                [65/140] generated 10 candidates
+generate:  46%|████▌     | 64/140 [1:44:56<2:10:36, 103.11s/row]generate:  46%|████▋     | 65/140 [1:44:56<2:26:13, 116.98s/row]                                                                [66/140] generated 10 candidates
+generate:  46%|████▋     | 65/140 [1:47:04<2:26:13, 116.98s/row]generate:  47%|████▋     | 66/140 [1:47:04<2:28:19, 120.26s/row]                                                                [67/140] generated 10 candidates
+generate:  47%|████▋     | 66/140 [1:49:37<2:28:19, 120.26s/row]generate:  48%|████▊     | 67/140 [1:49:37<2:38:26, 130.23s/row]                                                                [68/140] generated 10 candidates
+generate:  48%|████▊     | 67/140 [1:50:32<2:38:26, 130.23s/row]generate:  49%|████▊     | 68/140 [1:50:32<2:08:52, 107.40s/row]                                                                [69/140] generated 10 candidates
+generate:  49%|████▊     | 68/140 [1:53:43<2:08:52, 107.40s/row]generate:  49%|████▉     | 69/140 [1:53:43<2:36:56, 132.62s/row]                                                                [70/140] generated 10 candidates
+generate:  49%|████▉     | 69/140 [1:55:00<2:36:56, 132.62s/row]generate:  50%|█████     | 70/140 [1:55:00<2:15:12, 115.89s/row]                                                                [71/140] generated 10 candidates
+generate:  50%|█████     | 70/140 [2:00:15<2:15:12, 115.89s/row]generate:  51%|█████     | 71/140 [2:00:15<3:22:05, 175.74s/row]                                                                [72/140] generated 10 candidates
+generate:  51%|█████     | 71/140 [2:01:36<3:22:05, 175.74s/row]generate:  51%|█████▏    | 72/140 [2:01:36<2:47:00, 147.35s/row]                                                                [73/140] generated 10 candidates
+generate:  51%|█████▏    | 72/140 [2:02:47<2:47:00, 147.35s/row]generate:  52%|█████▏    | 73/140 [2:02:47<2:18:55, 124.41s/row]                                                                [74/140] generated 10 candidates
+generate:  52%|█████▏    | 73/140 [2:03:45<2:18:55, 124.41s/row]generate:  53%|█████▎    | 74/140 [2:03:45<1:54:57, 104.50s/row]                                                                [75/140] generated 10 candidates
+generate:  53%|█████▎    | 74/140 [2:05:04<1:54:57, 104.50s/row]generate:  54%|█████▎    | 75/140 [2:05:04<1:44:45, 96.71s/row]                                                                [76/140] generated 10 candidates
+generate:  54%|█████▎    | 75/140 [2:07:16<1:44:45, 96.71s/row]generate:  54%|█████▍    | 76/140 [2:07:16<1:54:24, 107.26s/row]                                                                [77/140] generated 10 candidates
+generate:  54%|█████▍    | 76/140 [2:08:14<1:54:24, 107.26s/row]generate:  55%|█████▌    | 77/140 [2:08:14<1:37:12, 92.58s/row]                                                                [78/140] generated 10 candidates
+generate:  55%|█████▌    | 77/140 [2:09:43<1:37:12, 92.58s/row]generate:  56%|█████▌    | 78/140 [2:09:43<1:34:26, 91.39s/row]                                                               [79/140] generated 10 candidates
+generate:  56%|█████▌    | 78/140 [2:10:24<1:34:26, 91.39s/row]generate:  56%|█████▋    | 79/140 [2:10:24<1:17:42, 76.43s/row]                                                               [80/140] generated 10 candidates
+generate:  56%|█████▋    | 79/140 [2:11:39<1:17:42, 76.43s/row]generate:  57%|█████▋    | 80/140 [2:11:39<1:15:55, 75.93s/row]                                                               [81/140] generated 10 candidates
+generate:  57%|█████▋    | 80/140 [2:13:01<1:15:55, 75.93s/row]generate:  58%|█████▊    | 81/140 [2:13:01<1:16:36, 77.91s/row]                                                               [82/140] generated 10 candidates
+generate:  58%|█████▊    | 81/140 [2:14:06<1:16:36, 77.91s/row]generate:  59%|█████▊    | 82/140 [2:14:06<1:11:28, 73.94s/row]                                                               [83/140] generated 10 candidates
+generate:  59%|█████▊    | 82/140 [2:15:12<1:11:28, 73.94s/row]generate:  59%|█████▉    | 83/140 [2:15:12<1:07:50, 71.42s/row]                                                               [84/140] generated 10 candidates
+generate:  59%|█████▉    | 83/140 [2:16:07<1:07:50, 71.42s/row]generate:  60%|██████    | 84/140 [2:16:07<1:02:07, 66.56s/row]                                                               [85/140] generated 10 candidates
+generate:  60%|██████    | 84/140 [2:17:25<1:02:07, 66.56s/row]generate:  61%|██████    | 85/140 [2:17:25<1:04:18, 70.15s/row]                                                               [86/140] generated 10 candidates
+generate:  61%|██████    | 85/140 [2:18:41<1:04:18, 70.15s/row]generate:  61%|██████▏   | 86/140 [2:18:41<1:04:37, 71.80s/row]                                                               [87/140] generated 10 candidates
+generate:  61%|██████▏   | 86/140 [2:20:04<1:04:37, 71.80s/row]generate:  62%|██████▏   | 87/140 [2:20:04<1:06:25, 75.20s/row]                                                               [88/140] generated 10 candidates
+generate:  62%|██████▏   | 87/140 [2:21:08<1:06:25, 75.20s/row]generate:  63%|██████▎   | 88/140 [2:21:08<1:02:10, 71.75s/row]                                                               [89/140] generated 10 candidates
+generate:  63%|██████▎   | 88/140 [2:22:11<1:02:10, 71.75s/row]generate:  64%|██████▎   | 89/140 [2:22:11<58:42, 69.07s/row]                                                               [90/140] generated 10 candidates
+generate:  64%|██████▎   | 89/140 [2:23:45<58:42, 69.07s/row]generate:  64%|██████▍   | 90/140 [2:23:45<1:03:46, 76.54s/row]                                                               [91/140] generated 10 candidates
+generate:  64%|██████▍   | 90/140 [2:25:46<1:03:46, 76.54s/row]generate:  65%|██████▌   | 91/140 [2:25:46<1:13:32, 90.05s/row]                                                               [92/140] generated 10 candidates
+generate:  65%|██████▌   | 91/140 [2:26:55<1:13:32, 90.05s/row]generate:  66%|██████▌   | 92/140 [2:26:55<1:06:55, 83.65s/row]                                                               [93/140] generated 10 candidates
+generate:  66%|██████▌   | 92/140 [2:28:04<1:06:55, 83.65s/row]generate:  66%|██████▋   | 93/140 [2:28:04<1:01:57, 79.11s/row]                                                               [94/140] generated 10 candidates
+generate:  66%|██████▋   | 93/140 [2:29:10<1:01:57, 79.11s/row]generate:  67%|██████▋   | 94/140 [2:29:10<57:45, 75.33s/row]                                                               [95/140] generated 10 candidates
+generate:  67%|██████▋   | 94/140 [2:30:10<57:45, 75.33s/row]generate:  68%|██████▊   | 95/140 [2:30:10<52:58, 70.62s/row]                                                             [96/140] generated 10 candidates
+generate:  68%|██████▊   | 95/140 [2:31:06<52:58, 70.62s/row]generate:  69%|██████▊   | 96/140 [2:31:06<48:42, 66.41s/row]                                                             [97/140] generated 10 candidates
+generate:  69%|██████▊   | 96/140 [2:32:13<48:42, 66.41s/row]generate:  69%|██████▉   | 97/140 [2:32:13<47:35, 66.41s/row]                                                             [98/140] generated 10 candidates
+generate:  69%|██████▉   | 97/140 [2:33:19<47:35, 66.41s/row]generate:  70%|███████   | 98/140 [2:33:19<46:33, 66.51s/row]                                                             [99/140] generated 10 candidates
+generate:  70%|███████   | 98/140 [2:35:21<46:33, 66.51s/row]generate:  71%|███████   | 99/140 [2:35:21<56:42, 82.99s/row]                                                             [100/140] generated 10 candidates
+generate:  71%|███████   | 99/140 [2:36:24<56:42, 82.99s/row]generate:  71%|███████▏  | 100/140 [2:36:24<51:26, 77.15s/row]                                                              [101/140] generated 10 candidates
+generate:  71%|███████▏  | 100/140 [2:37:16<51:26, 77.15s/row]generate:  72%|███████▏  | 101/140 [2:37:16<45:07, 69.43s/row]                                                              [102/140] generated 10 candidates
+generate:  72%|███████▏  | 101/140 [2:39:50<45:07, 69.43s/row]generate:  73%|███████▎  | 102/140 [2:39:50<1:00:09, 95.00s/row]                                                                [103/140] generated 10 candidates
+generate:  73%|███████▎  | 102/140 [2:41:02<1:00:09, 95.00s/row]generate:  74%|███████▎  | 103/140 [2:41:02<54:16, 88.01s/row]                                                                [104/140] generated 10 candidates
+generate:  74%|███████▎  | 103/140 [2:41:58<54:16, 88.01s/row]generate:  74%|███████▍  | 104/140 [2:41:58<47:01, 78.36s/row]                                                              [105/140] generated 10 candidates
+generate:  74%|███████▍  | 104/140 [2:43:46<47:01, 78.36s/row]generate:  75%|███████▌  | 105/140 [2:43:46<50:55, 87.31s/row]                                                              [106/140] generated 10 candidates
+generate:  75%|███████▌  | 105/140 [2:45:17<50:55, 87.31s/row]generate:  76%|███████▌  | 106/140 [2:45:17<49:59, 88.23s/row]                                                              [107/140] generated 10 candidates
+generate:  76%|███████▌  | 106/140 [2:46:41<49:59, 88.23s/row]generate:  76%|███████▋  | 107/140 [2:46:41<47:54, 87.10s/row]                                                              [108/140] generated 10 candidates
+generate:  76%|███████▋  | 107/140 [2:48:57<47:54, 87.10s/row]generate:  77%|███████▋  | 108/140 [2:48:57<54:14, 101.71s/row]                                                               [109/140] generated 10 candidates
+generate:  77%|███████▋  | 108/140 [2:50:08<54:14, 101.71s/row]generate:  78%|███████▊  | 109/140 [2:50:08<47:49, 92.56s/row]                                                               [110/140] generated 10 candidates
+generate:  78%|███████▊  | 109/140 [2:52:03<47:49, 92.56s/row]generate:  79%|███████▊  | 110/140 [2:52:03<49:36, 99.23s/row]                                                              [111/140] generated 10 candidates
+generate:  79%|███████▊  | 110/140 [2:54:19<49:36, 99.23s/row]generate:  79%|███████▉  | 111/140 [2:54:19<53:16, 110.22s/row]                                                               [112/140] generated 10 candidates
+generate:  79%|███████▉  | 111/140 [2:56:10<53:16, 110.22s/row]generate:  80%|████████  | 112/140 [2:56:10<51:35, 110.56s/row]                                                               [113/140] generated 10 candidates
+generate:  80%|████████  | 112/140 [2:57:55<51:35, 110.56s/row]generate:  81%|████████  | 113/140 [2:57:55<48:57, 108.80s/row]                                                               [114/140] generated 10 candidates
+generate:  81%|████████  | 113/140 [2:58:41<48:57, 108.80s/row]generate:  81%|████████▏ | 114/140 [2:58:41<39:03, 90.12s/row]                                                               [115/140] generated 10 candidates
+generate:  81%|████████▏ | 114/140 [3:00:07<39:03, 90.12s/row]generate:  82%|████████▏ | 115/140 [3:00:07<36:58, 88.75s/row]                                                              [116/140] generated 10 candidates
+generate:  82%|████████▏ | 115/140 [3:01:14<36:58, 88.75s/row]generate:  83%|████████▎ | 116/140 [3:01:14<32:55, 82.30s/row]                                                              [117/140] generated 10 candidates
+generate:  83%|████████▎ | 116/140 [3:04:23<32:55, 82.30s/row]generate:  84%|████████▎ | 117/140 [3:04:23<43:51, 114.40s/row]                                                               [118/140] generated 10 candidates
+generate:  84%|████████▎ | 117/140 [3:06:22<43:51, 114.40s/row]generate:  84%|████████▍ | 118/140 [3:06:22<42:23, 115.60s/row]                                                               [119/140] generated 10 candidates
+generate:  84%|████████▍ | 118/140 [3:11:32<42:23, 115.60s/row]generate:  85%|████████▌ | 119/140 [3:11:32<1:00:51, 173.89s/row]                                                                 [120/140] generated 10 candidates
+generate:  85%|████████▌ | 119/140 [3:12:42<1:00:51, 173.89s/row]generate:  86%|████████▌ | 120/140 [3:12:42<47:39, 142.96s/row]                                                                 [121/140] generated 10 candidates
+generate:  86%|████████▌ | 120/140 [3:14:32<47:39, 142.96s/row]generate:  86%|████████▋ | 121/140 [3:14:32<42:06, 132.98s/row]                                                               [122/140] generated 10 candidates
+generate:  86%|████████▋ | 121/140 [3:16:46<42:06, 132.98s/row]generate:  87%|████████▋ | 122/140 [3:16:46<39:58, 133.23s/row]                                                               [123/140] generated 10 candidates
+generate:  87%|████████▋ | 122/140 [3:17:41<39:58, 133.23s/row]generate:  88%|████████▊ | 123/140 [3:17:41<31:08, 109.89s/row]                                                               [124/140] generated 10 candidates
+generate:  88%|████████▊ | 123/140 [3:19:05<31:08, 109.89s/row]generate:  89%|████████▊ | 124/140 [3:19:05<27:12, 102.05s/row]                                                               [125/140] generated 10 candidates
+generate:  89%|████████▊ | 124/140 [3:20:22<27:12, 102.05s/row]generate:  89%|████████▉ | 125/140 [3:20:22<23:35, 94.38s/row]                                                               [126/140] generated 10 candidates
+generate:  89%|████████▉ | 125/140 [3:21:24<23:35, 94.38s/row]generate:  90%|█████████ | 126/140 [3:21:24<19:47, 84.84s/row]                                                              [127/140] generated 10 candidates
+generate:  90%|█████████ | 126/140 [3:23:40<19:47, 84.84s/row]generate:  91%|█████████ | 127/140 [3:23:40<21:40, 100.04s/row]                                                               [128/140] generated 10 candidates
+generate:  91%|█████████ | 127/140 [3:25:04<21:40, 100.04s/row]generate:  91%|█████████▏| 128/140 [3:25:04<19:05, 95.42s/row]                                                               [129/140] generated 10 candidates
+generate:  91%|█████████▏| 128/140 [3:28:48<19:05, 95.42s/row]generate:  92%|█████████▏| 129/140 [3:28:48<24:33, 133.97s/row]                                                               [130/140] generated 10 candidates
+generate:  92%|█████████▏| 129/140 [3:30:41<24:33, 133.97s/row]generate:  93%|█████████▎| 130/140 [3:30:41<21:16, 127.63s/row]                                                               [131/140] generated 10 candidates
+generate:  93%|█████████▎| 130/140 [3:31:58<21:16, 127.63s/row]generate:  94%|█████████▎| 131/140 [3:31:58<16:51, 112.42s/row]                                                               [132/140] generated 10 candidates
+generate:  94%|█████████▎| 131/140 [3:33:55<16:51, 112.42s/row]generate:  94%|█████████▍| 132/140 [3:33:55<15:10, 113.84s/row]                                                               [133/140] generated 10 candidates
+generate:  94%|█████████▍| 132/140 [3:34:56<15:10, 113.84s/row]generate:  95%|█████████▌| 133/140 [3:34:56<11:25, 97.99s/row]                                                               [134/140] generated 10 candidates
+generate:  95%|█████████▌| 133/140 [3:36:25<11:25, 97.99s/row]generate:  96%|█████████▌| 134/140 [3:36:25<09:31, 95.32s/row]                                                              [135/140] generated 10 candidates
+generate:  96%|█████████▌| 134/140 [3:37:59<09:31, 95.32s/row]generate:  96%|█████████▋| 135/140 [3:37:59<07:54, 94.81s/row]                                                              [136/140] generated 10 candidates
+generate:  96%|█████████▋| 135/140 [3:39:45<07:54, 94.81s/row]generate:  97%|█████████▋| 136/140 [3:39:45<06:33, 98.33s/row]                                                              [137/140] generated 10 candidates
+generate:  97%|█████████▋| 136/140 [3:41:40<06:33, 98.33s/row]generate:  98%|█████████▊| 137/140 [3:41:40<05:10, 103.34s/row]                                                               [138/140] generated 10 candidates
+generate:  98%|█████████▊| 137/140 [3:43:12<05:10, 103.34s/row]generate:  99%|█████████▊| 138/140 [3:43:12<03:19, 99.75s/row]                                                               [139/140] generated 10 candidates
+generate:  99%|█████████▊| 138/140 [3:44:22<03:19, 99.75s/row]generate:  99%|█████████▉| 139/140 [3:44:22<01:31, 91.01s/row]                                                              [140/140] generated 10 candidates
+generate:  99%|█████████▉| 139/140 [3:46:24<01:31, 91.01s/row]generate: 100%|██████████| 140/140 [3:46:24<00:00, 100.04s/row]generate: 100%|██████████| 140/140 [3:46:24<00:00, 97.03s/row] 
+wrote /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/deployment_current.json
+wrote /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/deployment_current.json.provenance.json
+[100/1400] evaluated candidates from deployment_current.json
+[200/1400] evaluated candidates from deployment_current.json
+[300/1400] evaluated candidates from deployment_current.json
+[400/1400] evaluated candidates from deployment_current.json
+[500/1400] evaluated candidates from deployment_current.json
+[600/1400] evaluated candidates from deployment_current.json
+[700/1400] evaluated candidates from deployment_current.json
+[800/1400] evaluated candidates from deployment_current.json
+[900/1400] evaluated candidates from deployment_current.json
+[1000/1400] evaluated candidates from deployment_current.json
+[1100/1400] evaluated candidates from deployment_current.json
+[1200/1400] evaluated candidates from deployment_current.json
+[1300/1400] evaluated candidates from deployment_current.json
+[1400/1400] evaluated candidates from deployment_current.json
+{
+  "schema_version": 3,
+  "status": "passed",
+  "dataset": "/workspace/artifacts/hybrid_v2_3_s44/00f_hierarchical_data/long_dev_ge200_clean9k.jsonl",
+  "held_out_rows": 140,
+  "checkpoint": "/workspace/artifacts/hybrid_v2_3_s44/02a1_matched_control_recovery/pytorch_model.bin",
+  "baseline_checkpoint": null,
+  "baseline_pass_at_k": null,
+  "baseline_source": null,
+  "k": 10,
+  "deployment_prompt_mode": "full",
+  "deployment_arm_ran": true,
+  "causality_arm_ran": false,
+  "causal_prompt_mode": null,
+  "matched_permutation_provenance": null,
+  "deployment_provenance": {
+    "deployment": {
+      "checkpoint": {
+        "path": "/workspace/artifacts/hybrid_v2_3_s44/02a1_matched_control_recovery/pytorch_model.bin",
+        "sha256": "8f1096dfa52d588d0390e42bcad0f89708a57d07b8b2d2d4d42d67fb519301c2",
+        "size_bytes": 1349588215
+      },
+      "checkpoint_load": {
+        "absent_trainable_examples": [],
+        "absent_trainable_tensor_count": 0,
+        "allow_partial": false,
+        "allowed_absent_trainable_examples": [],
+        "allowed_absent_trainable_tensor_count": 0,
+        "checkpoint_tensor_count": 565,
+        "context": "inference checkpoint",
+        "current_trainable_tensor_count": 565,
+        "failures": [],
+        "load_missing_tensor_count": 617,
+        "load_target": "GraphCodeBERTT5Seq2Seq",
+        "missing_frozen_examples": [
+          "graph_encoder.convs.0.eps",
+          "graph_encoder.convs.1.eps",
+          "graph_encoder.convs.2.eps",
+          "graph_encoder.convs.3.eps",
+          "local_encoder.encoder.embeddings.LayerNorm.bias",
+          "local_encoder.encoder.embeddings.LayerNorm.weight",
+          "local_encoder.encoder.embeddings.position_embeddings.weight",
+          "local_encoder.encoder.embeddings.token_type_embeddings.weight",
+          "local_encoder.encoder.embeddings.word_embeddings.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.output.LayerNorm.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.output.LayerNorm.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.output.dense.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.output.dense.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.self.key.bias",
+          "local_encoder.encoder.encoder.layer.0.attention.self.key.weight",
+          "local_encoder.encoder.encoder.layer.0.attention.self.query.bias"
+        ],
+        "missing_frozen_tensor_count": 617,
+        "model_state_tensor_count": 1182,
+        "recognised_checkpoint_tensor_count": 565,
+        "status": "passed",
+        "unapproved_absent_trainable_examples": [],
+        "unapproved_absent_trainable_tensor_count": 0,
+        "unexpected_examples": [],
+        "unexpected_tensor_count": 0
+      },
+      "dataset": {
+        "path": "/workspace/artifacts/hybrid_v2_3_s44/00f_hierarchical_data/long_dev_ge200_clean9k.jsonl",
+        "sha256": "42259c0b17adef094314d803125d24927e5adbbff4bcfd7b0872bed65fe8a8aa",
+        "size_bytes": 8869536
+      },
+      "generation": {
+        "decoder_gradient_checkpointing": false,
+        "decoder_prompt_max_length": 12288,
+        "generation_batch_size": 8,
+        "max_new_tokens": 3328,
+        "num_samples": 10,
+        "use_cache": true
+      },
+      "git": {
+        "commit": null,
+        "dirty": null
+      },
+      "graph_environment": {
+        "GRAPH_ADD_REVERSE_EDGES": "1",
+        "GRAPH_BLOCK_POOLING": "multi_query",
+        "GRAPH_BLOCK_POSITION_MODE": "sinusoidal",
+        "GRAPH_BLOCK_VECTORS_PER_BLOCK": "4",
+        "GRAPH_DECODER_MODEL": "Qwen/Qwen3-8B",
+        "GRAPH_DECODER_PEFT": "lora",
+        "GRAPH_DECODER_PROMPT_MAX_LENGTH": "3072",
+        "GRAPH_DECODER_REVISION": "",
+        "GRAPH_DFG_MODE": "edges",
+        "GRAPH_ENCODER_MODEL": "microsoft/graphcodebert-base",
+        "GRAPH_ENCODER_PEFT": "none",
+        "GRAPH_ENCODER_REVISION": "",
+        "GRAPH_GRADIENT_CHECKPOINTING": "1",
+        "GRAPH_HYBRID_PATCH_SHA256": "8360a9349d7ad32aa0e0eaa8f5b179fbdd582caaf725d25efc3533c9a9880526",
+        "GRAPH_LOAD_4BIT": "0",
+        "GRAPH_LORA_ALPHA": "128",
+        "GRAPH_LORA_R": "64",
+        "GRAPH_MAX_TARGET_LENGTH": "3328",
+        "GRAPH_NEUTRAL_FUNCTION_NAME": "fn0",
+        "GRAPH_POSITION_SCHEME": "roberta",
+        "GRAPH_PROMPT_ASSEMBLY_MODE": "full",
+        "GRAPH_PROMPT_BINARY_EVIDENCE": "1",
+        "GRAPH_PROMPT_CLEAN_ASM": "1",
+        "GRAPH_PROMPT_FIT_ASSEMBLY": "1",
+        "GRAPH_QUIET": "1",
+        "GRAPH_QWEN_LORA_TARGETS": "attention_mlp",
+        "GRAPH_QWEN_PREFIX_DYNAMIC": "1",
+        "GRAPH_QWEN_PREFIX_MIN_TOKENS": "16",
+        "GRAPH_QWEN_PREFIX_RMS_MATCH": "1",
+        "GRAPH_QWEN_PREFIX_TOKENS": "64",
+        "GRAPH_QWEN_PREFIX_TOKENS_PER_LOG2": "8",
+        "GRAPH_REGION_COMPRESSION": "linear_residual",
+        "GRAPH_REGION_MAX_BLOCKS": "8",
+        "GRAPH_REQUIRE_NEUTRAL_CONTRACT": "1",
+        "GRAPH_SEED": "44"
+      },
+      "graph_input_ablation": {
+        "final_context_zeroed": false,
+        "mapping_sha256": "8f57b05d0da8c4bd1f535a28bfc26df0b560e32041bbf3a9719508980befdc69",
+        "mode": "none",
+        "seed": 44,
+        "self_mapped_rows": 140
+      },
+      "graph_prefix_gate": {
+        "mean_sigmoid": 0.20006518065929413,
+        "override_requested": null
+      },
+      "models": {
+        "decoder": {
+          "requested_id": "Qwen/Qwen3-8B",
+          "requested_revision": null,
+          "resolved_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+          "resolved_name_or_path": "Qwen/Qwen3-8B"
+        },
+        "encoder": {
+          "requested_id": "microsoft/graphcodebert-base",
+          "requested_revision": null,
+          "resolved_commit": "2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d",
+          "resolved_name_or_path": "microsoft/graphcodebert-base"
+        }
+      },
+      "output": {
+        "path": "/workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/deployment_current.json",
+        "sha256": "6e26dc104fbff86e9d971e585cdebe626cc0adaa625755e70214c41f391b3e26",
+        "size_bytes": 1945434
+      },
+      "prompt_schema_version": "antigravity-v6-all-length-hierarchical",
+      "prompt_stream_sha256": "dab2d7b1879f41a5f21812b5928e1ec85f7dbb9fce37fa6c8b0186aa257f5757",
+      "row_count": 140,
+      "runtime": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "executable": "/venv/main/bin/python",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "torch": "2.8.0+cu128"
+      },
+      "schema_version": 1,
+      "scoring_tests_visible_to_policy": false,
+      "seed": 44,
+      "source_files": [
+        {
+          "path": "/workspace/scripts/evaluation/graph_inference_antigravity.py",
+          "sha256": "8661571da20bddd8c95e877ca8822bd91f25366b1738f5a101d9378d5c5c10e6",
+          "size_bytes": 38589
+        },
+        {
+          "path": "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py",
+          "sha256": "cd6325012dcdb76e22cc027040a23c1f94afa6e5490c27aafcbbef062d56a3b4",
+          "size_bytes": 98959
+        },
+        {
+          "path": "/workspace/models/hierarchical_graph_encoder_antigravity.py",
+          "sha256": "0d9ed811fd3e2793d8d21a003ced9cff67cecfe65cf03a33bb611ec44af6f7db",
+          "size_bytes": 24304
+        },
+        {
+          "path": "/workspace/models/graphcodebert_tensor_builder.py",
+          "sha256": "a324bba2c3a642176404fba513c386e6952b4c6f04d26e9be01732ed36900ed5",
+          "size_bytes": 9576
+        },
+        {
+          "path": "/workspace/models/pyg_cfg_dataset.py",
+          "sha256": "5cf35b3c2d446e3e4444a833d6d0a39c6ddd366f2375a8b866706b4cd322edb3",
+          "size_bytes": 8528
+        },
+        {
+          "path": "/workspace/scripts/data/cfg_extractor.py",
+          "sha256": "daebbbfa7ac53fed9104e66396bc861bc837a8cea5a948548204d34439ee553c",
+          "size_bytes": 40627
+        },
+        {
+          "path": "/workspace/scripts/data/dfg_extractor.py",
+          "sha256": "603c052e8a79e7f6f689e97acdfc9c87245505b4fbf497bc2c49c2343fb0ed12",
+          "size_bytes": 23048
+        }
+      ]
+    }
+  },
+  "paired_causality": null,
+  "causal_prompt_stream_sha256": null,
+  "metrics": {
+    "deployment": {
+      "rows": 140,
+      "candidates": 1400,
+      "expected_candidates_per_task": 10,
+      "coverage_validated": true,
+      "pass_at_k": {
+        "10": 0.007142857142857143
+      },
+      "compile_at_k": {
+        "10": 0.9214285714285714
+      },
+      "facts_at_k": {
+        "10": 0.0
+      },
+      "per_task": [
+        {
+          "task_key": "fresh-eval-c062a9ac77ec",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9a6b0e049f87",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b51cb0fef9eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_27e8acf70e89",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0b89cca13ea4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-aeb4509b96d0",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ac4f35094289",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b21fb045b669",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e56f6af88490",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3d39925f8eed",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-20eca31dff55",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b78bd0013bcf",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7db23ffcde5e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-db1c9d37ebf8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5dcafa4a6026",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_cb1e1ab1b986",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_72c3a51899c7",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a87e2136d0c6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_199d307b7dbc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d755c95628b6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c605b43fb3da",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e4dd77a47000",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0ef3e137e365",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5b736efe012c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d9b785124cea",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b713ac8fa47c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e4ad87e2dc28",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d63d99e42b1e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4e0a56fb56e6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0fa66da98a61",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0f1a0e934a8b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b9530aba7d83",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5e31e535fb10",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8b39afe117f6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-90948503bce4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9b9bb406de24",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1984f52c75fc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4925f435ada2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c8cd12a4878a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-54ac5ac3c5f1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1693a3e3a2e8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a99888b4928f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-15f749c4762c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f09040589b70",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c0ee71b99722",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-15d2e882070c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8273030bc1e6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-8d3826b6b462",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c49bde778b8f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_8183c505826b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0a90c0418a4f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7a80499c7147",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_12e1351b5ef2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bae0bbfd88eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_ff8780d0432b",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_5c825eae1054",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_69f557be81a9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6ba8dc9d0d72",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_15de438ccf60",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_46fa6dbba93e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_840e554be8f4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9b86c2bb59ad",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-cd988749c2ed",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9a6cfc51cfb1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d8ceeee8205e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-3bc9e02ef51c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d1d6a999b0a8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_ca60dc9c2830",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f96f9d5824bf",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-9cae187763e9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c78f604fd997",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-259e0d234fff",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_eca5b09b13b2",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1481265a5721",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7f399efa2389",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_540b304561eb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0a1e12cbb772",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_f81c8acba2c3",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-95c4400168be",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_407aec9f695f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_244cd4a5c9ab",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bf15319647bb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3bd0072c4aef",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_061736d04c3a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_e0aaccb23f50",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bb8311dd9e91",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1977e1d5d104",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f1e83d15ffe6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b57dba457d8a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_26ecf2c4bd65",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bc2189b66c38",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_a72cb3680f28",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_1ed317b810c5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-4beca065fb3c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_838a165125d4",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bb0dad11ee03",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-156826da2b45",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b35c138e42d8",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3d92870d72ab",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd2a13dba135",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-0fa5082cb193",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c794ce262280",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-a63eec4a6874",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-e62f3194db5e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b0c0c83bfc3a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6b38756cbee9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-ee72aa55a6e9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_af82a9f5a649",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0a12e5411b43",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_bf330d99adb4",
+          "n": 10,
+          "pass@10": 1.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_16cb5dcb886c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-793c5c66b141",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-19c5f7771a5c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-de52958d917f",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-273e281154a6",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_3aa721f415c9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_025c93b21838",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd7f702e4e20",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_179318026249",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_9d6c88657376",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_b9647184c783",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_4d95c478d570",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fa59a7d9c9c9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-f2cf42971dbc",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_6ea748306ca1",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_c62f1111423e",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_10d9b76c0dde",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_928b0ceba67d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_0c3d4094de77",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_d7ff1b561c29",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-b77541aa0761",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_77f1427cde4d",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "fresh-eval-5f20e3043a5c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_fd5da24b466c",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_61a11fc0653a",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_76ce20e8f050",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 0.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_03598b765ca9",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_7403cc0ffd52",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_47874c2208f5",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        },
+        {
+          "task_key": "sigless_03bfa4b5c6bb",
+          "n": 10,
+          "pass@10": 0.0,
+          "compile@10": 1.0,
+          "facts@10": 0.0
+        }
+      ],
+      "prediction_file": "/workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/deployment_current.json"
+    }
+  },
+  "statistical_tests": {},
+  "statistical_configuration": {
+    "task_is_resampling_unit": true,
+    "bootstrap_iterations": 10000,
+    "bootstrap_seed": 44,
+    "confidence": 0.95,
+    "one_sided_sign_test_alpha": 0.05,
+    "minimum_causal_effective_pairs": 8,
+    "minimum_deployment_effective_pairs": 8,
+    "facts_statistics_required": false,
+    "note": "The task bootstrap addresses finite held-out-task uncertainty. Multiple generation seeds are still recommended for final estimates."
+  },
+  "gates_percentage_points": {
+    "causal_permutation_drop": null,
+    "causal_null_drop": null,
+    "facts_permutation_drop": null,
+    "deployment_improvement": null
+  },
+  "thresholds_percentage_points": {
+    "causal_permutation_observed_drop": 0.0,
+    "causal_permutation_bootstrap_lower": 0.0,
+    "causal_null_observed_drop": 0.0,
+    "causal_null_bootstrap_lower": 0.0,
+    "facts_permutation_observed_drop": 0.0,
+    "facts_permutation_bootstrap_lower": 0.0,
+    "deprecated_causal_task_losses": 0,
+    "deployment_observed_improvement": null,
+    "deployment_bootstrap_lower": null
+  },
+  "failures": []
+}
+
+Eval-only gate exit=0; report: /workspace/artifacts/hybrid_v2_3_s44/02a3_clean12k_long_eval/report.json
+[queue] 2026-07-20T04:18:47Z done rc=0

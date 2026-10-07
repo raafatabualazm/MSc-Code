@@ -1,0 +1,80 @@
+{
+  "schema_version": 2,
+  "stage": "collect",
+  "data_role": "train",
+  "dataset": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl",
+    "size_bytes": 120044157,
+    "sha256": "f929d52f054dbcf5f7480b0cc689c053b5974aee297dae746da0ffc2bd0de765"
+  },
+  "phase0_report": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/phase0_report.json",
+    "size_bytes": 5470,
+    "sha256": "34f410ac5d463b7b3c560b9dd9d7e8ab5d6d9528201601b498413d9e62a28a39"
+  },
+  "phase0_approved_rows": 1081,
+  "predictions": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json",
+    "size_bytes": 10373104,
+    "sha256": "0d7e55b4920a62bba17e431840ab56e5ac84f7db367c3511b4ee7fa6abfac2ab"
+  },
+  "prediction_provenance": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json.provenance.json",
+    "size_bytes": 6900,
+    "sha256": "aa73986639ee0377f956ff3d9af286bb85b007c5ce7085690de970aad7449b2a"
+  },
+  "prediction_validation": {
+    "status": "passed",
+    "dataset": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl",
+      "size_bytes": 120044157,
+      "sha256": "f929d52f054dbcf5f7480b0cc689c053b5974aee297dae746da0ffc2bd0de765"
+    },
+    "predictions": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json",
+      "size_bytes": 10373104,
+      "sha256": "0d7e55b4920a62bba17e431840ab56e5ac84f7db367c3511b4ee7fa6abfac2ab"
+    },
+    "provenance": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/03_train_rollouts/predictions.json.provenance.json",
+      "size_bytes": 6900,
+      "sha256": "aa73986639ee0377f956ff3d9af286bb85b007c5ce7085690de970aad7449b2a"
+    },
+    "checkpoint": {
+      "path": "/workspace/artifacts/text_arm_v2_s44/02t_text_sft/pytorch_model.bin",
+      "sha256": "3d53cfcac95282cec22260e393bf55ae2727e2fd9405c2a3781348b34928a04f",
+      "size_bytes": 1349588215
+    },
+    "checkpoint_load_status": "passed",
+    "prompt_schema_version": "antigravity-v6-all-length-hierarchical",
+    "generation": {
+      "decoder_gradient_checkpointing": false,
+      "decoder_prompt_max_length": 12288,
+      "generation_batch_size": 16,
+      "max_new_tokens": 3328,
+      "num_samples": 8,
+      "use_cache": true
+    },
+    "graph_input_ablation": {
+      "final_context_zeroed": false,
+      "mapping_sha256": "4c5489a37a29fb2f9875128902cd4afb5af588d2105e958b8885ee0e397f2337",
+      "mode": "none",
+      "seed": 44,
+      "self_mapped_rows": 1000
+    },
+    "source_line_count": 1000,
+    "unique_source_line_count": 1000,
+    "failures": []
+  },
+  "evaluated_candidates": 2704,
+  "selected_records": 678,
+  "feedback_positives": 2,
+  "teacher_failures": 676,
+  "tasks": 338,
+  "hidden_acceptance_tests_exposed": false,
+  "output": {
+    "path": "/workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/collected.jsonl",
+    "size_bytes": 30963550,
+    "sha256": "d016e17af57537eb4a3061998d174d21639e01d91d988333f029102f6ed2a3e2"
+  }
+}

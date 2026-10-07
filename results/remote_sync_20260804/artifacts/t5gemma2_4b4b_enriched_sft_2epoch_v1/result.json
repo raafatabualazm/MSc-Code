@@ -1,0 +1,9 @@
+{
+  "latest_checkpoint": "checkpoint-optstep-000348",
+  "no_frontier_api": true,
+  "planned_updates": 348,
+  "rows": 2776,
+  "schema": "t5gemma2-enriched-sft-run-v1",
+  "status": "complete",
+  "updates": 348
+}

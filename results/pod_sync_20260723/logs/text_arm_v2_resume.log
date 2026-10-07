@@ -1,0 +1,1204 @@
+[00_raw_token_length_measurement] previous state differs from current inputs/config; rebuilding
+
+[00_raw_token_length_measurement] /venv/main/bin/python /workspace/scripts/evaluation/report_token_lengths_antigravity.py --dataset /workspace/data/training/combined_sealed_v2_train_text.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/raw_token_length_distribution.json --decoder_model Qwen/Qwen3-8B --decoder_revision '' --max_target_tokens 3328 --max_prompt_tokens 12288 --max_generation_tokens 3328 --short_max 150 --bridge_max 199 --historical_limits 768,1024,2048,3072 --prompt_mode full --no-fail_on_overflow
+{
+  "schema_version": 1,
+  "datasets": [
+    "/workspace/data/training/combined_sealed_v2_train_text.jsonl"
+  ],
+  "decoder_model": "Qwen/Qwen3-8B",
+  "decoder_revision": null,
+  "rows": 2951,
+  "budgets": {
+    "target_tokens": 3328,
+    "prompt_tokens": 12288,
+    "generation_tokens": 3328
+  },
+  "historical_limits": [
+    768,
+    1024,
+    2048,
+    3072
+  ],
+  "overall": {
+    "target": {
+      "count": 2951,
+      "min": 25,
+      "max": 2954,
+      "mean": 231.76584208742798,
+      "p50": 165.0,
+      "p75": 295.0,
+      "p90": 421.0,
+      "p95": 546.0,
+      "p99": 1152.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 76,
+          "fraction": 0.025753981701118266
+        },
+        "1024": {
+          "count": 45,
+          "fraction": 0.015249068112504236
+        },
+        "2048": {
+          "count": 6,
+          "fraction": 0.0020332090816672314
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "prompt": {
+      "count": 2951,
+      "min": 260,
+      "max": 12239,
+      "mean": 2950.168417485598,
+      "p50": 2166.0,
+      "p75": 3594.5,
+      "p90": 5848.0,
+      "p95": 7976.5,
+      "p99": 12239.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 2789,
+          "fraction": 0.9451033547949848
+        },
+        "1024": {
+          "count": 2626,
+          "fraction": 0.8898678414096917
+        },
+        "2048": {
+          "count": 1577,
+          "fraction": 0.534395120298204
+        },
+        "3072": {
+          "count": 948,
+          "fraction": 0.32124703490342255
+        }
+      }
+    }
+  },
+  "unique_code_targets": {
+    "rows": 2951,
+    "target": {
+      "count": 2951,
+      "min": 25,
+      "max": 2954,
+      "mean": 231.76584208742798,
+      "p50": 165.0,
+      "p75": 295.0,
+      "p90": 421.0,
+      "p95": 546.0,
+      "p99": 1152.0,
+      "over_historical_limits": {
+        "768": {
+          "count": 76,
+          "fraction": 0.025753981701118266
+        },
+        "1024": {
+          "count": 45,
+          "fraction": 0.015249068112504236
+        },
+        "2048": {
+          "count": 6,
+          "fraction": 0.0020332090816672314
+        },
+        "3072": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      }
+    },
+    "by_instruction_stratum": {
+      "short": {
+        "count": 1204,
+        "min": 25,
+        "max": 836,
+        "mean": 123.66943521594685,
+        "p50": 101.0,
+        "p75": 138.0,
+        "p90": 206.0,
+        "p95": 276.0,
+        "p99": 385.73000000000025,
+        "over_historical_limits": {
+          "768": {
+            "count": 1,
+            "fraction": 0.0008305647840531562
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "bridge": {
+        "count": 475,
+        "min": 56,
+        "max": 552,
+        "mean": 161.0442105263158,
+        "p50": 141.0,
+        "p75": 193.0,
+        "p90": 264.20000000000005,
+        "p95": 322.89999999999986,
+        "p99": 439.3399999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "long": {
+        "count": 1272,
+        "min": 71,
+        "max": 2954,
+        "mean": 360.4929245283019,
+        "p50": 298.5,
+        "p75": 404.0,
+        "p90": 572.8000000000002,
+        "p95": 834.8000000000002,
+        "p99": 1617.5699999999988,
+        "over_historical_limits": {
+          "768": {
+            "count": 75,
+            "fraction": 0.0589622641509434
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.03537735849056604
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0047169811320754715
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_dataset": {
+    "/workspace/data/training/combined_sealed_v2_train_text.jsonl": {
+      "rows": 2951,
+      "target": {
+        "count": 2951,
+        "min": 25,
+        "max": 2954,
+        "mean": 231.76584208742798,
+        "p50": 165.0,
+        "p75": 295.0,
+        "p90": 421.0,
+        "p95": 546.0,
+        "p99": 1152.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 76,
+            "fraction": 0.025753981701118266
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.015249068112504236
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0020332090816672314
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2951,
+        "min": 260,
+        "max": 12239,
+        "mean": 2950.168417485598,
+        "p50": 2166.0,
+        "p75": 3594.5,
+        "p90": 5848.0,
+        "p95": 7976.5,
+        "p99": 12239.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 2789,
+            "fraction": 0.9451033547949848
+          },
+          "1024": {
+            "count": 2626,
+            "fraction": 0.8898678414096917
+          },
+          "2048": {
+            "count": 1577,
+            "fraction": 0.534395120298204
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.32124703490342255
+          }
+        }
+      }
+    }
+  },
+  "by_instruction_stratum": {
+    "bridge": {
+      "target": {
+        "count": 475,
+        "min": 56,
+        "max": 552,
+        "mean": 161.0442105263158,
+        "p50": 141.0,
+        "p75": 193.0,
+        "p90": 264.20000000000005,
+        "p95": 322.89999999999986,
+        "p99": 439.3399999999999,
+        "over_historical_limits": {
+          "768": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 475,
+        "min": 1453,
+        "max": 2795,
+        "mean": 2142.7115789473683,
+        "p50": 2130.0,
+        "p75": 2293.0,
+        "p90": 2432.6,
+        "p95": 2518.2,
+        "p99": 2635.7799999999997,
+        "over_historical_limits": {
+          "768": {
+            "count": 475,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 475,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 301,
+            "fraction": 0.6336842105263157
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    },
+    "long": {
+      "target": {
+        "count": 1272,
+        "min": 71,
+        "max": 2954,
+        "mean": 360.4929245283019,
+        "p50": 298.5,
+        "p75": 404.0,
+        "p90": 572.8000000000002,
+        "p95": 834.8000000000002,
+        "p99": 1617.5699999999988,
+        "over_historical_limits": {
+          "768": {
+            "count": 75,
+            "fraction": 0.0589622641509434
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.03537735849056604
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0047169811320754715
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1272,
+        "min": 2119,
+        "max": 12239,
+        "mean": 4828.062106918239,
+        "p50": 3914.0,
+        "p75": 5734.25,
+        "p90": 8487.800000000001,
+        "p95": 10947.7,
+        "p99": 12239.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "1024": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "2048": {
+            "count": 1272,
+            "fraction": 1.0
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.7452830188679245
+          }
+        }
+      }
+    },
+    "short": {
+      "target": {
+        "count": 1204,
+        "min": 25,
+        "max": 836,
+        "mean": 123.66943521594685,
+        "p50": 101.0,
+        "p75": 138.0,
+        "p90": 206.0,
+        "p95": 276.0,
+        "p99": 385.73000000000025,
+        "over_historical_limits": {
+          "768": {
+            "count": 1,
+            "fraction": 0.0008305647840531562
+          },
+          "1024": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "2048": {
+            "count": 0,
+            "fraction": 0.0
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 1204,
+        "min": 260,
+        "max": 2144,
+        "mean": 1284.7707641196014,
+        "p50": 1346.5,
+        "p75": 1607.25,
+        "p90": 1767.7,
+        "p95": 1840.0,
+        "p99": 1964.7000000000003,
+        "over_historical_limits": {
+          "768": {
+            "count": 1042,
+            "fraction": 0.8654485049833887
+          },
+          "1024": {
+            "count": 879,
+            "fraction": 0.7300664451827242
+          },
+          "2048": {
+            "count": 4,
+            "fraction": 0.0033222591362126247
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "by_training_task": {
+    "code": {
+      "target": {
+        "count": 2951,
+        "min": 25,
+        "max": 2954,
+        "mean": 231.76584208742798,
+        "p50": 165.0,
+        "p75": 295.0,
+        "p90": 421.0,
+        "p95": 546.0,
+        "p99": 1152.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 76,
+            "fraction": 0.025753981701118266
+          },
+          "1024": {
+            "count": 45,
+            "fraction": 0.015249068112504236
+          },
+          "2048": {
+            "count": 6,
+            "fraction": 0.0020332090816672314
+          },
+          "3072": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        }
+      },
+      "prompt": {
+        "count": 2951,
+        "min": 260,
+        "max": 12239,
+        "mean": 2950.168417485598,
+        "p50": 2166.0,
+        "p75": 3594.5,
+        "p90": 5848.0,
+        "p95": 7976.5,
+        "p99": 12239.0,
+        "over_historical_limits": {
+          "768": {
+            "count": 2789,
+            "fraction": 0.9451033547949848
+          },
+          "1024": {
+            "count": 2626,
+            "fraction": 0.8898678414096917
+          },
+          "2048": {
+            "count": 1577,
+            "fraction": 0.534395120298204
+          },
+          "3072": {
+            "count": 948,
+            "fraction": 0.32124703490342255
+          }
+        }
+      }
+    }
+  },
+  "stratum_counts": {
+    "short": 1204,
+    "bridge": 475,
+    "long": 1272
+  },
+  "training_task_counts": {
+    "code": 2951
+  },
+  "overflow_count": 0,
+  "overflow": [],
+  "largest_targets": [
+    {
+      "index": 227,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_5e85a7023303",
+      "target_sha256": "0e195dc26802be9b8bea0fb8ee722e911c233eb40cb315070583f2519889bd3c",
+      "training_task": "code",
+      "instruction_count": 506,
+      "stratum": "long",
+      "target_tokens": 2954,
+      "prompt_tokens": 6491
+    },
+    {
+      "index": 225,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "ed78264878b9c694e6821f6bf492f46365d187cf990cfd61eaa3ec4acb413fd6",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2883,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 346,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e4c9064bfc27",
+      "target_sha256": "0e81f9d1fc999757e58eb3ec67825ce6eabcac0475dede1d76210959a1b94fc8",
+      "training_task": "code",
+      "instruction_count": 1895,
+      "stratum": "long",
+      "target_tokens": 2766,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 343,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "8bd886e9ea2695dd0e86b209475571e97ecbe2116ee4395f0f691c61b156ff4c",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2497,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 341,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f17b4d628f1b",
+      "target_sha256": "4fe1b93eded6cc2e9c32ddad4871d9cff9dc0d89c62ac474aff2b4526ba060e9",
+      "training_task": "code",
+      "instruction_count": 3574,
+      "stratum": "long",
+      "target_tokens": 2437,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 344,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e9699c095415",
+      "target_sha256": "62c5c7f274ef19f32aea23a1c1d324b221f4a340c67287aed14d1f4e0a97ffa9",
+      "training_task": "code",
+      "instruction_count": 1635,
+      "stratum": "long",
+      "target_tokens": 2257,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 226,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1cbe3362270a",
+      "target_sha256": "2c023c39849621052478db61adb5c6607fd489d874529a7f3c1d2902b092a89f",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 1811,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 345,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f9772127b371",
+      "target_sha256": "376c4e354f79f42c42647e80411e6ef1b65b717efe1f5ea8f9a1c82fcd98fa42",
+      "training_task": "code",
+      "instruction_count": 1240,
+      "stratum": "long",
+      "target_tokens": 1734,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 222,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1624bba57515",
+      "target_sha256": "d7bfa75dea81cf3118ac442d66076e4e61798a216b6d1aaca5508788b219bfc7",
+      "training_task": "code",
+      "instruction_count": 307,
+      "stratum": "long",
+      "target_tokens": 1711,
+      "prompt_tokens": 4532
+    },
+    {
+      "index": 223,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_452c11877e17",
+      "target_sha256": "3dd7d1f007e2d7a4a07fca58b759db17ab05e2306fd56319783c536b3b190ac7",
+      "training_task": "code",
+      "instruction_count": 2093,
+      "stratum": "long",
+      "target_tokens": 1684,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 326,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_36c354c2e279",
+      "target_sha256": "2e7ef8afb6209f98a6433834c1056707484a6371899648f0603e205f76607a65",
+      "training_task": "code",
+      "instruction_count": 2462,
+      "stratum": "long",
+      "target_tokens": 1656,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 342,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_4643689d0568",
+      "target_sha256": "2c6440addf62902e33847573bb04ce40959b83fdcdeaac22d8e5c16f70d6bfaa",
+      "training_task": "code",
+      "instruction_count": 468,
+      "stratum": "long",
+      "target_tokens": 1644,
+      "prompt_tokens": 6715
+    },
+    {
+      "index": 335,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f3a6984bc886",
+      "target_sha256": "65ddddc45532e8127256c4d7170585203f0ea8e96ba41047f7a7867f172a8709",
+      "training_task": "code",
+      "instruction_count": 1407,
+      "stratum": "long",
+      "target_tokens": 1641,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 317,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1bba4dc0b268",
+      "target_sha256": "f32341a6a5460c3aebb66f4a07106320e28922d5266267888e0002bc89850e96",
+      "training_task": "code",
+      "instruction_count": 2866,
+      "stratum": "long",
+      "target_tokens": 1608,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 337,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e087cd483fa1",
+      "target_sha256": "21da921ec0203fe20dd42742037c36801d0ef98584f4c08d8fb6fecdce1bc62f",
+      "training_task": "code",
+      "instruction_count": 1130,
+      "stratum": "long",
+      "target_tokens": 1570,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 348,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_8c5cd5096002",
+      "target_sha256": "deceb2cdef7cb4ef8705d51c64851120b44a765dd12af1a182a1d6cc79129367",
+      "training_task": "code",
+      "instruction_count": 1045,
+      "stratum": "long",
+      "target_tokens": 1535,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 347,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_34a9876149cb",
+      "target_sha256": "3c72e38bc96e12cb9c513d4829dd235ea1680326bceacc8b818b4b67d505df47",
+      "training_task": "code",
+      "instruction_count": 1070,
+      "stratum": "long",
+      "target_tokens": 1504,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 312,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f221251b6b7f",
+      "target_sha256": "b8357b35c06baab0a02076f25c05ace074764acb7baa86002632e6dc33d8ec86",
+      "training_task": "code",
+      "instruction_count": 2069,
+      "stratum": "long",
+      "target_tokens": 1450,
+      "prompt_tokens": 12238
+    },
+    {
+      "index": 322,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_57ebb9eb364c",
+      "target_sha256": "06ec0c880d43b122070633a2aacfbcd25e509a671ce667debc1183f69639e826",
+      "training_task": "code",
+      "instruction_count": 1848,
+      "stratum": "long",
+      "target_tokens": 1404,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 34,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_bfde11b99b84",
+      "target_sha256": "e8f47aae7cdcf99314f6c74ab28555e351fc2187755adb8c074ff8bba9d8316a",
+      "training_task": "code",
+      "instruction_count": 839,
+      "stratum": "long",
+      "target_tokens": 1399,
+      "prompt_tokens": 10774
+    },
+    {
+      "index": 336,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_81ec67fa4418",
+      "target_sha256": "2e5aeec576bb4f06275b8806fa96fa3463e3f64b3c583366f20227b297d475fe",
+      "training_task": "code",
+      "instruction_count": 876,
+      "stratum": "long",
+      "target_tokens": 1356,
+      "prompt_tokens": 11421
+    },
+    {
+      "index": 339,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_aea7dbe52ffd",
+      "target_sha256": "249b6d0752493689ef7101621be4e31487f72e0e015b8b4a9a1cec6816096b44",
+      "training_task": "code",
+      "instruction_count": 792,
+      "stratum": "long",
+      "target_tokens": 1352,
+      "prompt_tokens": 10962
+    },
+    {
+      "index": 224,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_09ce81b7f2f1",
+      "target_sha256": "051066c9506b9b06d3b6ab1b6749073d97756a44082591bc07f7112d300353c7",
+      "training_task": "code",
+      "instruction_count": 335,
+      "stratum": "long",
+      "target_tokens": 1346,
+      "prompt_tokens": 4495
+    },
+    {
+      "index": 308,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_3518a36dafdb",
+      "target_sha256": "3ad57d492dfe6adc9e2485978e3faa393e124c88be1a99d282b71d73095468db",
+      "training_task": "code",
+      "instruction_count": 541,
+      "stratum": "long",
+      "target_tokens": 1281,
+      "prompt_tokens": 7512
+    },
+    {
+      "index": 284,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_cc35f0aee394",
+      "target_sha256": "fede3653ef40da5abfca2ae6b43d4758b9cf91945790ed0c55a795c68afa0817",
+      "training_task": "code",
+      "instruction_count": 1086,
+      "stratum": "long",
+      "target_tokens": 1262,
+      "prompt_tokens": 12238
+    }
+  ],
+  "largest_prompts": [
+    {
+      "index": 44,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e18cfe2df675",
+      "target_sha256": "5b68cc759943385906eda36385b038d069f32d9eb163d3f6ef553bae6636184e",
+      "training_task": "code",
+      "instruction_count": 1224,
+      "stratum": "long",
+      "target_tokens": 717,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 45,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_96d9c81edafe",
+      "target_sha256": "2347550929228e038b639a69ff775e121132a64d1c4c7cacd0056e9afd96727e",
+      "training_task": "code",
+      "instruction_count": 1312,
+      "stratum": "long",
+      "target_tokens": 954,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 49,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e81ac4c1ff2c",
+      "target_sha256": "304be6b601d4724d9058cc970e393660657df7c6a2b5f36dcc0f6b3b32c77bbc",
+      "training_task": "code",
+      "instruction_count": 1858,
+      "stratum": "long",
+      "target_tokens": 1045,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 125,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_a0f853c85702",
+      "target_sha256": "b2a7113842a8db5239290e0703015b0aef4f888dc829d15494ee074cd94406d8",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 468,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 144,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e8b5f7e7d1a6",
+      "target_sha256": "049f276d4743a21fffbae99c0ec0f856ab137114f69fe711fcd6e1188f3b81aa",
+      "training_task": "code",
+      "instruction_count": 1003,
+      "stratum": "long",
+      "target_tokens": 492,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 145,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_c8721da111a6",
+      "target_sha256": "c70d474493a711ad78d636fcd77ecad9e62851279163167217678b4384c71999",
+      "training_task": "code",
+      "instruction_count": 1025,
+      "stratum": "long",
+      "target_tokens": 1043,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 225,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_2f67f22e192a",
+      "target_sha256": "ed78264878b9c694e6821f6bf492f46365d187cf990cfd61eaa3ec4acb413fd6",
+      "training_task": "code",
+      "instruction_count": 1406,
+      "stratum": "long",
+      "target_tokens": 2883,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 226,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_1cbe3362270a",
+      "target_sha256": "2c023c39849621052478db61adb5c6607fd489d874529a7f3c1d2902b092a89f",
+      "training_task": "code",
+      "instruction_count": 1173,
+      "stratum": "long",
+      "target_tokens": 1811,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 285,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_765377c5baac",
+      "target_sha256": "b34eb215c8b7c3be502389341fb0a227329103e8b8a46a82af376017a21ada97",
+      "training_task": "code",
+      "instruction_count": 1095,
+      "stratum": "long",
+      "target_tokens": 865,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 290,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_a7bf17dd7855",
+      "target_sha256": "6d810acae472d6c7a7c54d7e99b990ac559e1cd8047a0c632ca35e8f1d78e7aa",
+      "training_task": "code",
+      "instruction_count": 1883,
+      "stratum": "long",
+      "target_tokens": 1217,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 297,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_f09d9557f98c",
+      "target_sha256": "41a83498a3db3b82f7687dd0ce5714fd6c61ff90e26e2b9cd4dc6ea7a05fa950",
+      "training_task": "code",
+      "instruction_count": 1269,
+      "stratum": "long",
+      "target_tokens": 1079,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 298,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_ec367ca40900",
+      "target_sha256": "e94d0933e3dfb9fd0b6dd1249270b412d15df62d816a46f59b96102eaa434393",
+      "training_task": "code",
+      "instruction_count": 1345,
+      "stratum": "long",
+      "target_tokens": 1147,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 302,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_509ad5d6523e",
+      "target_sha256": "5cbd36e3d7424435a36c7ec1c04e47196b8260044583ac391a3cc27d61a489c1",
+      "training_task": "code",
+      "instruction_count": 1012,
+      "stratum": "long",
+      "target_tokens": 774,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 306,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_c2b17d7018c8",
+      "target_sha256": "be611ff07c2a3e753699e7e176ea6b331a0878e0ae360a7cdf6e8571501a4232",
+      "training_task": "code",
+      "instruction_count": 970,
+      "stratum": "long",
+      "target_tokens": 1033,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 313,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_7f1aeee4e097",
+      "target_sha256": "764f335e66185348215cfe94c55618d88d02856de16e231562748dd70d14b936",
+      "training_task": "code",
+      "instruction_count": 1326,
+      "stratum": "long",
+      "target_tokens": 1068,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 318,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_0c578dee7813",
+      "target_sha256": "5de24813bfc138a1c7ab7c2963244d4af1cde7c8d4fc5df9618a6f008ee14eca",
+      "training_task": "code",
+      "instruction_count": 1055,
+      "stratum": "long",
+      "target_tokens": 929,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 322,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_57ebb9eb364c",
+      "target_sha256": "06ec0c880d43b122070633a2aacfbcd25e509a671ce667debc1183f69639e826",
+      "training_task": "code",
+      "instruction_count": 1848,
+      "stratum": "long",
+      "target_tokens": 1404,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 324,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_fad549403ea6",
+      "target_sha256": "165d0bb08a064de765d9f78c71099f6b5e636f50b0aad9e1d2d481568d0023eb",
+      "training_task": "code",
+      "instruction_count": 1193,
+      "stratum": "long",
+      "target_tokens": 952,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 325,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_b78f065b5f17",
+      "target_sha256": "69467e8ddc599ab279dc0d588e163a51fb9a1c7a11986a35ac98c49848ae1152",
+      "training_task": "code",
+      "instruction_count": 1366,
+      "stratum": "long",
+      "target_tokens": 1021,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 326,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_36c354c2e279",
+      "target_sha256": "2e7ef8afb6209f98a6433834c1056707484a6371899648f0603e205f76607a65",
+      "training_task": "code",
+      "instruction_count": 2462,
+      "stratum": "long",
+      "target_tokens": 1656,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 328,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_4c1aaefe00e2",
+      "target_sha256": "077b2d5829133d2b924ac7f8d86645745b006c6b7d9f82c9937cc657bc2749c5",
+      "training_task": "code",
+      "instruction_count": 1235,
+      "stratum": "long",
+      "target_tokens": 785,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 331,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_262495f5da02",
+      "target_sha256": "683552b7d12ff6b33506ad36a7662bd8a6df2f2615cc0cf4d456c68b45e63d21",
+      "training_task": "code",
+      "instruction_count": 1224,
+      "stratum": "long",
+      "target_tokens": 1233,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 334,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_b435d75e158e",
+      "target_sha256": "2f6fa2c4b63ed3b5cfe011a623690bf3fab396aee6b4e0998a9c055b4f196381",
+      "training_task": "code",
+      "instruction_count": 936,
+      "stratum": "long",
+      "target_tokens": 1088,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 337,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_e087cd483fa1",
+      "target_sha256": "21da921ec0203fe20dd42742037c36801d0ef98584f4c08d8fb6fecdce1bc62f",
+      "training_task": "code",
+      "instruction_count": 1130,
+      "stratum": "long",
+      "target_tokens": 1570,
+      "prompt_tokens": 12239
+    },
+    {
+      "index": 343,
+      "dataset": "/workspace/data/training/combined_sealed_v2_train_text.jsonl",
+      "task_id": "sigless_112a67159d52",
+      "target_sha256": "8bd886e9ea2695dd0e86b209475571e97ecbe2116ee4395f0f691c61b156ff4c",
+      "training_task": "code",
+      "instruction_count": 1332,
+      "stratum": "long",
+      "target_tokens": 2497,
+      "prompt_tokens": 12239
+    }
+  ]
+}
+[00a_phase0_prepare] previous state differs from current inputs/config; rebuilding
+
+[00a_phase0_prepare] /venv/main/bin/python /workspace/scripts/training/prepare_hybrid_training_data_antigravity.py --input /workspace/data/training/combined_sealed_v2_train_text.jsonl --output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl --dev_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_dev.jsonl --short_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_short_le150.jsonl --dev_fraction 0.1 --min_dev_rows 32 --bridge_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_bridge_151_199.jsonl --long_output /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_long_ge200.jsonl --report /workspace/artifacts/text_arm_v2_s44/00_phase0/phase0_report.json --neutral_name fn0 --data_role train --feedback_fraction 0.6 --max_instructions 150 --max_bridge_instructions 199 --min_short_rows 64 --min_long_rows 64 --seed 44 --timeout 20 --workers 16 --drop_invalid_references --forbidden_eval /workspace/data/testing/grpo_data_graphv2.jsonl --forbidden_eval /workspace/data/testing/fresh_graphv2_holdout_s44_rebuilt312.jsonl
+reference replay 50/2951
+reference replay 100/2951
+reference replay 150/2951
+reference replay 200/2951
+reference replay 250/2951
+reference replay 300/2951
+reference replay 350/2951
+reference replay 400/2951
+reference replay 450/2951
+reference replay 500/2951
+reference replay 550/2951
+reference replay 600/2951
+reference replay 650/2951
+reference replay 700/2951
+reference replay 750/2951
+reference replay 800/2951
+reference replay 850/2951
+reference replay 900/2951
+reference replay 950/2951
+reference replay 1000/2951
+reference replay 1050/2951
+reference replay 1100/2951
+reference replay 1150/2951
+reference replay 1200/2951
+reference replay 1250/2951
+reference replay 1300/2951
+reference replay 1350/2951
+reference replay 1400/2951
+reference replay 1450/2951
+reference replay 1500/2951
+reference replay 1550/2951
+reference replay 1600/2951
+reference replay 1650/2951
+reference replay 1700/2951
+reference replay 1750/2951
+reference replay 1800/2951
+reference replay 1850/2951
+reference replay 1900/2951
+reference replay 1950/2951
+reference replay 2000/2951
+reference replay 2050/2951
+reference replay 2100/2951
+reference replay 2150/2951
+reference replay 2200/2951
+reference replay 2250/2951
+reference replay 2300/2951
+reference replay 2350/2951
+reference replay 2400/2951
+reference replay 2450/2951
+reference replay 2500/2951
+reference replay 2550/2951
+reference replay 2600/2951
+reference replay 2650/2951
+reference replay 2700/2951
+reference replay 2750/2951
+reference replay 2800/2951
+reference replay 2850/2951
+reference replay 2900/2951
+reference replay 2950/2951
+reference replay 2951/2951
+{
+  "input_rows": 2951,
+  "all_length_train_rows": 2656,
+  "short_rows": 1081,
+  "development_rows": 295,
+  "bridge_rows": 429,
+  "long_rows": 1146,
+  "long_rows_are_trained": true
+}
+[00b_phase0_reference_audit] previous state differs from current inputs/config; rebuilding
+
+[00b_phase0_reference_audit] /venv/main/bin/python /workspace/scripts/evaluation/audit_grpo_reward_antigravity.py --dataset /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_train.jsonl --test_fields feedback_tests,acceptance_tests,tests --run_references -1 --workers 16 --timeout 20 --require_phase0_approved --require_neutral_contract --report /workspace/artifacts/text_arm_v2_s44/00_phase0/approved_all_length_reference_audit.json
+[100/2656] reference parity failures=0
+[200/2656] reference parity failures=0
+[300/2656] reference parity failures=0
+[400/2656] reference parity failures=0
+[500/2656] reference parity failures=0
+[600/2656] reference parity failures=0
+[700/2656] reference parity failures=0
+[800/2656] reference parity failures=0
+[900/2656] reference parity failures=0
+[1000/2656] reference parity failures=0
+[1100/2656] reference parity failures=0
+[1200/2656] reference parity failures=0
+[1300/2656] reference parity failures=0
+[1400/2656] reference parity failures=0
+[1500/2656] reference parity failures=0
+[1600/2656] reference parity failures=0
+[1700/2656] reference parity failures=0
+[1800/2656] reference parity failures=0
+[1900/2656] reference parity failures=0
+[2000/2656] reference parity failures=0
+[2100/2656] reference parity failures=0
+[2200/2656] reference parity failures=0
+[2300/2656] reference parity failures=0
+[2400/2656] reference parity failures=0
+[2500/2656] reference parity failures=0
+[2600/2656] reference parity failures=0
+Terminated
+[text_arm_v2] 2026-07-20T11:39:58Z done rc=143
+[2656/2656] reference parity failures=0
+{
+  "rows": 2656,
+  "static_failures": 0,
+  "test_fields": {
+    "feedback_tests": {
+      "assertions_min": 0,
+      "assertions_max": 7
+    },
+    "acceptance_tests": {
+      "assertions_min": 0,
+      "assertions_max": 5
+    },
+    "tests": {
+      "assertions_min": 0,
+      "assertions_max": 12
+    }
+  },
+  "static_failure_rows": [],
+  "reference_reward_parity": {
+    "checked_rows": 2656,
+    "checked_harnesses": 6210,
+    "passed_rows": 2656,
+    "failures": []
+  }
+}

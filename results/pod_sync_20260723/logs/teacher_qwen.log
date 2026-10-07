@@ -1,0 +1,6 @@
+failing tasks to repair: 160 model=qwen3.7-max topk=5
+  20/160 verified=5
+  40/160 verified=6
+  60/160 verified=9
+  80/160 verified=11
+  100/160 verified=15

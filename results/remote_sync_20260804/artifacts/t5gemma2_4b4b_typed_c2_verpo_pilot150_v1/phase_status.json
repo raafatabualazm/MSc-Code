@@ -1,0 +1,10 @@
+{
+  "automatic_promotion_performed": false,
+  "completed_update": 16,
+  "gate_decision": "GO",
+  "gate_file": "pilot_gate_update000016.json",
+  "latest_checkpoint": "checkpoint-optstep-000016",
+  "run_contract_sha256": "b381d2567e52214df4510303071b5948c4c1dabb5cf13202410baab72001b10f",
+  "schema": "t5gemma2-typed-c2-verpo-phase-status-v1",
+  "status": "awaiting_explicit_resume_after_gate16"
+}

@@ -1,0 +1,77 @@
+Preflight reports and dataset hashes: VERIFIED
+
+=== grpo_s42 (estimate 4.00 h) ===
+/venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 1 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading GRPO training dataset: data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl
+Tokenizing datasets...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 41454.84it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7717.16it/s]
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Loading checkpoint from: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loaded checkpoint: 391 tensors | trainable params not found in checkpoint: 0 | unexpected checkpoint keys: 0
+Qwen graph prefix gate: 0.200000
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO graph glue training: ON
+Starting GRPO Reinforcement Learning loop...
+GRPO optimizer: lr=5e-07 grad_accum=8 kl_coef=0.0 clip_eps=0.15 entropy_coef=0.0 unique_test_bonus=0.0 duplicate_penalty=0.0 gen_temperature=0.7 gen_top_p=1.0 adv_norm=mean min_reward_range=0.05 passk_k=0 score_chunk_size=1 loss_pooling=seq legacy_topk_smoothing=0 overlong_filter=1 clip_eps_high=None
+
+GRPO epoch 1/1:   0%|          | 0/256 [00:00<?, ?batch/s]
+                                                          
+Epoch 1 | Step 1 | Batch 1/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 0/8 | PassRatio: 0.000/0.000 | CompiledObserved: 0.88 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   0%|          | 0/256 [00:43<?, ?batch/s]
+GRPO epoch 1/1:   0%|          | 1/256 [00:43<3:04:26, 43.40s/batch]
+                                                                    
+Epoch 1 | Step 2 | Batch 2/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 0/8 | PassRatio: 0.000/0.000 | CompiledObserved: 1.00 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   0%|          | 1/256 [01:09<3:04:26, 43.40s/batch]
+GRPO epoch 1/1:   1%|          | 2/256 [01:09<2:19:42, 33.00s/batch]
+                                                                    
+Epoch 1 | Step 3 | Batch 3/256 | Loss: 0.0000 | Reward: -0.625 [-1.000, 1.000] | RewardStd: 0.781 | SignalGroups: 1.00 | AdvAbs: 0.609 | OptStep: 0 | Skip: 0 | Accum: 1/8 | PassRatio: 0.188/1.000 | CompiledObserved: 1.00 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.19 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 0.81 | PasskW: 1.00
+
+GRPO epoch 1/1:   1%|          | 2/256 [01:38<2:19:42, 33.00s/batch]
+GRPO epoch 1/1:   1%|          | 3/256 [01:38<2:11:53, 31.28s/batch]
+                                                                    
+Epoch 1 | Step 4 | Batch 4/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 1/8 | PassRatio: 0.000/0.000 | CompiledObserved: 0.81 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   1%|          | 3/256 [02:47<2:11:53, 31.28s/batch]
+GRPO epoch 1/1:   2%|▏         | 4/256 [02:47<3:14:27, 46.30s/batch]
+                                                                    
+Epoch 1 | Step 5 | Batch 5/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 1/8 | PassRatio: 0.000/0.000 | CompiledObserved: 0.88 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   2%|▏         | 4/256 [03:15<3:14:27, 46.30s/batch]
+GRPO epoch 1/1:   2%|▏         | 5/256 [03:15<2:46:03, 39.69s/batch]
+                                                                    
+Epoch 1 | Step 6 | Batch 6/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 1/8 | PassRatio: 0.000/0.000 | CompiledObserved: 0.50 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   2%|▏         | 5/256 [04:24<2:46:03, 39.69s/batch]
+GRPO epoch 1/1:   2%|▏         | 6/256 [04:24<3:27:21, 49.76s/batch]
+                                                                    
+Epoch 1 | Step 7 | Batch 7/256 | Loss: 0.0000 | Reward: -1.000 [-1.000, -1.000] | RewardStd: 0.000 | SignalGroups: 0.00 | AdvAbs: 0.000 | OptStep: 0 | Skip: 1 | Accum: 1/8 | PassRatio: 0.000/0.000 | CompiledObserved: 0.56 (known=1.00) | UniqueBonus: 0.000 | DupPenalty: 0.000 | Entropy: 0.000 | Perfect: 0.00 | NearPerfect: 0.00 | HighPartial: 0.00 | ZeroPass: 1.00 | PasskW: 1.00
+
+GRPO epoch 1/1:   2%|▏         | 6/256 [05:34<3:27:21, 49.76s/batch]

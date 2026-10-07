@@ -1,0 +1,9 @@
+{
+  "latest_checkpoint": "checkpoint-optstep-000001",
+  "no_frontier_api": true,
+  "production_floor_eligible": true,
+  "run_contract_sha256": "9a18d0b85a76579d00d44ae8094f189e1df22e09a02d20791f89c2e1c616ffc7",
+  "schema": "t5gemma2-compiler-feedback-verpo-run-v1",
+  "status": "complete",
+  "updates": 1
+}

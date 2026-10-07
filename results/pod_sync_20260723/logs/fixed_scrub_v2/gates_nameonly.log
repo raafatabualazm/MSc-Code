@@ -1,0 +1,8 @@
+[PASS] map: every scrubbed task maps to a benchmark row 
+[PASS] G1 drift(strict): byte-exact instructions modulo <symbol> masking + edges mismatched=0 []
+[PASS] G2 leak: no original identifiers >3 chars in public rows {}
+    (benign SDK-context collisions: {'add': 30, 'encode': 1, 'common': 1}; short-name mnemonics: {'add': 645})
+[PASS] G3 neutrality+hygiene 
+[PASS] G3 shuffle: public order differs from private order 
+[PASS] G5 references: compile 151/154 (expect 151), pass 142/154 (expect 142) 
+GATES: ALL PASS

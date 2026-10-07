@@ -1,0 +1,4 @@
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+GOLD_ROUNDTRIP_BUILT rows=175 sha256=d16d78ce3955df2a6c58623c66b84ffacfe13573240dda19df6c8474d9dcdc52
+PASSK_RESULT tasks=175 pass@1=175/175=1.0000 pass@1=175/175=1.0000 compile@1=175/175=1.0000
+GOLD_ROUNDTRIP_RESULT pass=175/175 compile=175/175

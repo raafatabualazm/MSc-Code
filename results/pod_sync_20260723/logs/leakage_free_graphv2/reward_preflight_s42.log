@@ -1,0 +1,408 @@
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 4 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --grpo_reward_preflight_batches 8 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading datasets...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 2029, in <module>
+    main()
+  File "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py", line 1764, in main
+    train_records, eval_records = build_dataset(config)
+                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py", line 483, in build_dataset
+    load_jsonl_many(config.eval_file),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py", line 475, in load_jsonl_many
+    rows.extend(load_jsonl(path))
+                ^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/graph_encoder_decoder_decompiler_v2_antigravity.py", line 455, in load_jsonl
+    with open(path, "r", encoding="utf-8") as handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/datasets/test-set.jsonl'
+Traceback (most recent call last):
+  File "/workspace/configs/run_sweeps_antigravity.py", line 1396, in <module>
+    main()
+  File "/workspace/configs/run_sweeps_antigravity.py", line 1380, in main
+    run_stages_for_cfg(target[0], args)
+  File "/workspace/configs/run_sweeps_antigravity.py", line 938, in run_stages_for_cfg
+    run_experiment(
+  File "/workspace/configs/run_sweeps_antigravity.py", line 680, in run_experiment
+    subprocess.run(train_cmd, cwd=str(msc_code_root), env=env, check=True)
+  File "/venv/main/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/venv/main/bin/python', '-m', 'scripts.training.graph_grpo_decompiler_antigravity']' returned non-zero exit status 1.
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 4 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --grpo_reward_preflight_batches 8 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading GRPO training dataset: data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl
+Tokenizing datasets...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 45186.37it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7637.53it/s]
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Loading checkpoint from: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loaded checkpoint: 391 tensors | trainable params not found in checkpoint: 0 | unexpected checkpoint keys: 0
+Qwen graph prefix gate: 0.200000
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO graph glue training: ON
+Reward preflight 1/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.000 (known=0.000) | Reward=[-1.00,-1.00]
+Reward preflight 2/8 | SignalGroups=1.000 | Perfect=0.0625 | CompiledObserved=0.500 (known=0.125) | Reward=[-1.00,1.00]
+Reward preflight 3/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.000 (known=0.000) | Reward=[-1.00,-1.00]
+Reward preflight 4/8 | SignalGroups=1.000 | Perfect=0.2500 | CompiledObserved=1.000 (known=0.250) | Reward=[-1.00,1.00]
+Reward preflight 5/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.000 (known=0.000) | Reward=[-1.00,-1.00]
+Reward preflight 6/8 | SignalGroups=1.000 | Perfect=0.8750 | CompiledObserved=1.000 (known=0.875) | Reward=[-1.00,1.00]
+Reward preflight 7/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.000 (known=0.000) | Reward=[-1.00,-1.00]
+Reward preflight 8/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.000 (known=0.000) | Reward=[-1.00,-1.00]
+{
+  "schema_version": 1,
+  "no_optimizer_update": true,
+  "batches": 8,
+  "seed": 42,
+  "group_size": 16,
+  "reward_mode": "binary",
+  "reward": {
+    "perfect": 1.0,
+    "binary_fail": -1.0
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_new_tokens": 768
+  },
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin",
+    "size_bytes": 903604927,
+    "sha256": "6bfda91d8893988e36b697c766d39e477ecb2304783343ab588b0e92ea27ebfa"
+  },
+  "dataset": {
+    "path": "/workspace/data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl",
+    "size_bytes": 7327213,
+    "sha256": "756f7c1b7802dc9f36aab9f47dcfc2f97e10dbeda7b16168f7decd2b79cfb701"
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "signal_group_rate_mean": 0.375,
+  "perfect_sample_rate_mean": 0.1484375,
+  "compiled_sample_rate_mean": 0.3125,
+  "compiled_known_fraction_mean": 0.15625,
+  "pass_ratio_mean": 0.1484375
+}
+Reward preflight saved to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight_grpo/reward_preflight.json; no optimizer update was performed.
+GRPO reward preflight complete; no training checkpoint or evaluation was requested.
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 1 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --grpo_reward_preflight_batches 8 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading GRPO training dataset: data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl
+Tokenizing datasets...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 44459.40it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 8169.17it/s]
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Loading checkpoint from: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loaded checkpoint: 391 tensors | trainable params not found in checkpoint: 0 | unexpected checkpoint keys: 0
+Qwen graph prefix gate: 0.200000
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO graph glue training: ON
+Reward preflight 1/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 2/8 | SignalGroups=1.000 | Perfect=0.0625 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 3/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 4/8 | SignalGroups=1.000 | Perfect=0.1250 | CompiledObserved=0.438 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 5/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.875 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 6/8 | SignalGroups=1.000 | Perfect=0.8750 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 7/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 8/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+{
+  "schema_version": 1,
+  "no_optimizer_update": true,
+  "batches": 8,
+  "seed": 42,
+  "group_size": 16,
+  "reward_mode": "binary",
+  "reward": {
+    "perfect": 1.0,
+    "binary_fail": -1.0
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_new_tokens": 768
+  },
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin",
+    "size_bytes": 903604927,
+    "sha256": "6bfda91d8893988e36b697c766d39e477ecb2304783343ab588b0e92ea27ebfa"
+  },
+  "dataset": {
+    "path": "/workspace/data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl",
+    "size_bytes": 7327213,
+    "sha256": "756f7c1b7802dc9f36aab9f47dcfc2f97e10dbeda7b16168f7decd2b79cfb701"
+  },
+  "reward_implementation": {
+    "trainer": {
+      "path": "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py",
+      "size_bytes": 103422,
+      "sha256": "c29cd1ed6cc19bd4b8517105f8e28db89d64368dd7cf4147cb6b4613413a20fe"
+    },
+    "jit_evaluator": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "size_bytes": 18063,
+      "sha256": "3aa38743357cad2bc9c79a95b767c02fd8c5dfe34fd01e1ad79066b8b55a528f"
+    }
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "signal_group_rate_mean": 0.375,
+  "perfect_sample_rate_mean": 0.1328125,
+  "compiled_sample_rate_mean": 0.875,
+  "compiled_known_fraction_mean": 1.0,
+  "pass_ratio_mean": 0.1328125
+}
+Reward preflight saved to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight_grpo/reward_preflight.json; no optimizer update was performed.
+GRPO reward preflight complete; no training checkpoint or evaluation was requested.
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 1 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --grpo_reward_preflight_batches 8 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading GRPO training dataset: data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl
+Tokenizing datasets...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 39515.92it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7399.78it/s]
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Loading checkpoint from: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loaded checkpoint: 391 tensors | trainable params not found in checkpoint: 0 | unexpected checkpoint keys: 0
+Qwen graph prefix gate: 0.200000
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO graph glue training: ON
+Reward preflight 1/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 2/8 | SignalGroups=1.000 | Perfect=0.0625 | CompiledObserved=0.812 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 3/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 4/8 | SignalGroups=1.000 | Perfect=0.1875 | CompiledObserved=0.312 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 5/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.750 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 6/8 | SignalGroups=1.000 | Perfect=0.9375 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 7/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.812 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 8/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+{
+  "schema_version": 1,
+  "no_optimizer_update": true,
+  "batches": 8,
+  "seed": 42,
+  "group_size": 16,
+  "reward_mode": "binary",
+  "reward": {
+    "perfect": 1.0,
+    "binary_fail": -1.0
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_new_tokens": 768
+  },
+  "pass_stability_runs": 3,
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin",
+    "size_bytes": 903604927,
+    "sha256": "6bfda91d8893988e36b697c766d39e477ecb2304783343ab588b0e92ea27ebfa"
+  },
+  "dataset": {
+    "path": "/workspace/data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl",
+    "size_bytes": 7327213,
+    "sha256": "756f7c1b7802dc9f36aab9f47dcfc2f97e10dbeda7b16168f7decd2b79cfb701"
+  },
+  "reward_implementation": {
+    "trainer": {
+      "path": "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py",
+      "size_bytes": 103511,
+      "sha256": "1d9199ee93a94fd5dc27c86756049e7754e325c964c846e10be5b87b9a1d9d5f"
+    },
+    "jit_evaluator": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "size_bytes": 18630,
+      "sha256": "5ad4a6fdfd946c059568ae3e18efbf855d563ac241871732c26887a2d2a516e8"
+    }
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "signal_group_rate_mean": 0.375,
+  "perfect_sample_rate_mean": 0.1484375,
+  "compiled_sample_rate_mean": 0.828125,
+  "compiled_known_fraction_mean": 1.0,
+  "pass_ratio_mean": 0.1484375
+}
+Reward preflight saved to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight_grpo/reward_preflight.json; no optimizer update was performed.
+GRPO reward preflight complete; no training checkpoint or evaluation was requested.
+
+$ /venv/main/bin/python /workspace/configs/run_sweeps_antigravity.py --experiment qwen3-8b-base_lora_enc_dec_r16_5e6_gcb --name_suffix _graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight --encoder gcb --max_risk high --hardware_profile rtx6000 --force_rerun --use_grpo --grpo_checkpoint /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin --grpo_train_file data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl --compile_dataset data/testing/grpo_data_graphv2.jsonl --pass_dataset data/testing/grpo_data_graphv2.jsonl --compile_mode jit_tests --decoder_revision b968826d9c46dd6066d109eabc6255188de91218 --encoder_revision 2b0488a7bb0eefc7041f1bb2cad1ab26b0da269d --seed 42 --lora_r 64 --lora_alpha 128 --load_4bit 0 --attn_implementation sdpa --qwen_prefix_tokens 64 --qwen_prefix_gate_init 0.2 --qwen_prefix_gate_mode token --qwen_prefix_dynamic 1 --qwen_prefix_min_tokens 4 --qwen_prefix_tokens_per_log2 4 --qwen_prefix_rms_match 1 --prompt_assembly_mode none --decoder_prompt_max_length 2048 --prompt_fit_assembly 0 --auto_cfg 0 --max_block_instrs 20 --dfg_mode edges --edge_ablation full --gnn_ablation full --add_reverse_edges 1 --block_position_mode sinusoidal --position_scheme roberta --causal_position_ids cumsum --use_reasoning 0 --grpo_group_size 16 --grpo_score_chunk_size 1 --grpo_gen_top_p 1.0 --grpo_epochs 1 --grpo_lr 5e-7 --grpo_reward_mode binary --grpo_binary_fail_reward -1.0 --grpo_perfect_base_reward 1.0 --grpo_perfect_bonus 0.0 --grpo_kl_coef 0.0 --grpo_clip_eps 0.15 --grpo_adv_norm mean --grpo_loss_pooling seq --grpo_simko_k 0 --grpo_passk_k 0 --grpo_unique_test_bonus 0.0 --grpo_duplicate_penalty 0.0 --grpo_entropy_coef 0.0 --grpo_overlong_filter 1 --grpo_max_new_tokens 768 --grpo_test_timeout 8 --grpo_reward_workers 32 --train_batch_size 1 --grad_accum 8 --eval_max_new_tokens 768 --generation_batch_size 10 --num_samples 10 --pass_num_samples 10 --metric_workers 64 --save_strategy epoch --save_total_limit 2 --grpo_reward_preflight_batches 8 --hf_repo raafatabualazm/antigravity-qwen3-8b-artifacts --hf_private 1 --hf_upload_checkpoints 1
+CLI overrides applied to all sweeps: lora_r=64, lora_alpha=128
+
+>>> Stage: GRPO for qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+
+==================================================
+RUNNING EXPERIMENT: qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight
+Decoder: Qwen/Qwen3-8B
+Encoder PEFT: lora | Decoder PEFT: lora
+LR: 5e-6 | Epochs: 1
+OOM Risk (on 6GB VRAM): HIGH
+Training Mode: GRPO Reinforcement Learning
+==================================================
+
+Dynamic Batch Size: 1 | Grad Accum: 8 | LoRA R: 64 | Alpha: 128 | Qwen prefix tokens: 64 | Qwen gate init: 0.2 | Qwen gate mode: token | Dynamic prefix: 1 [4, 4/log2] | Prefix RMS match: 1 | Prompt tokens: 2048 | Reasoning: 0 | Attention: sdpa | Grad ckpt: 0
+Graph channel: dfg_mode=edges | edge_ablation=full | gnn_ablation=full | reverse_edges=1 | block_positions=sinusoidal | position_scheme=roberta | causal_position_ids=cumsum | grpo_train_graph_glue=1 | auto_cfg=0
+GRPO speed knobs: group_size=16 epochs=1 test_timeout=8s lr=5e-07 perfect_bonus=0.0 entropy_coef=0.0 reward_workers=32 max_new_tokens=768
+GRPO stage: Continuing from checkpoint: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loading GRPO training dataset: data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl
+Tokenizing datasets...
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 45792.39it/s]
+Decoder attention implementation: sdpa
+
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 399/399 [00:00<00:00, 8337.21it/s]
+Enabled Qwen graph glue: 64 learned prefix tokens, dynamic=1, gate_mode=token, gate_init=0.2
+Qwen prefix RMS matching ON: target token RMS 0.022050
+Applied PEFT LORA (r=64, alpha=128) to LocalBlockEncoder
+Applied PEFT LORA (r=64, alpha=128) to Decoder
+Loading checkpoint from: /workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin
+Loaded checkpoint: 391 tensors | trainable params not found in checkpoint: 0 | unexpected checkpoint keys: 0
+Qwen graph prefix gate: 0.200000
+Sanity: base weights dtype=torch.bfloat16, trainable dtype=torch.float32, cast_trainable_tensors_to_fp32=0
+GRPO graph glue training: ON
+Reward preflight 1/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 2/8 | SignalGroups=1.000 | Perfect=0.0625 | CompiledObserved=0.875 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 3/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.938 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 4/8 | SignalGroups=1.000 | Perfect=0.3125 | CompiledObserved=0.625 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 5/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.625 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 6/8 | SignalGroups=1.000 | Perfect=0.9375 | CompiledObserved=1.000 (known=1.000) | Reward=[-1.00,1.00]
+Reward preflight 7/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.875 (known=1.000) | Reward=[-1.00,-1.00]
+Reward preflight 8/8 | SignalGroups=0.000 | Perfect=0.0000 | CompiledObserved=0.812 (known=1.000) | Reward=[-1.00,-1.00]
+{
+  "schema_version": 1,
+  "no_optimizer_update": true,
+  "batches": 8,
+  "seed": 42,
+  "group_size": 16,
+  "reward_mode": "binary",
+  "reward": {
+    "perfect": 1.0,
+    "binary_fail": -1.0
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "max_new_tokens": 768
+  },
+  "pass_stability_runs": 3,
+  "checkpoint": {
+    "path": "/workspace/artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_prefix_cfg_dfg_expanded/pytorch_model.bin",
+    "size_bytes": 903604927,
+    "sha256": "6bfda91d8893988e36b697c766d39e477ecb2304783343ab588b0e92ea27ebfa"
+  },
+  "dataset": {
+    "path": "/workspace/data/datasets/synthetic_reward_graphv2_splits/synthetic_reward_graphv2_grpo256.jsonl",
+    "size_bytes": 7327213,
+    "sha256": "756f7c1b7802dc9f36aab9f47dcfc2f97e10dbeda7b16168f7decd2b79cfb701"
+  },
+  "reward_implementation": {
+    "trainer": {
+      "path": "/workspace/scripts/training/graph_grpo_decompiler_antigravity.py",
+      "size_bytes": 105201,
+      "sha256": "7d894520064c97db6d97447dd2b5efd887e0637e87e93ec57846155581bf3816"
+    },
+    "jit_evaluator": {
+      "path": "/workspace/scripts/evaluation/graph_compile_at_k_antigravity.py",
+      "size_bytes": 18630,
+      "sha256": "5ad4a6fdfd946c059568ae3e18efbf855d563ac241871732c26887a2d2a516e8"
+    }
+  },
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "signal_group_rate_mean": 0.375,
+  "perfect_sample_rate_mean": 0.1640625,
+  "compiled_sample_rate_mean": 0.84375,
+  "compiled_known_fraction_mean": 1.0,
+  "pass_ratio_mean": 0.1640625
+}
+Reward preflight saved to artifacts/qwen3-8b-base_lora_enc_dec_r64_5e6_gcb_a128_graphv2_clean_s42_cfgdfg_expanded_synrl_reward_preflight_grpo/reward_preflight.json; no optimizer update was performed.
+GRPO reward preflight complete; no training checkpoint or evaluation was requested.

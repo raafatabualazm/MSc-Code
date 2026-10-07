@@ -1,0 +1,21 @@
+{
+  "alignment_sha256": "527f98f84852921db4c8f51a732873fee6a43132b5d4294c97e955d196926115",
+  "attn_implementation": "flash_attention_2",
+  "contract_sha256": "4801767387e4312cced559166c2fbf7145242ab21b2b35883a54c9f99f367e02",
+  "dataset_sha256": "d42355b6d3e6a0af368ff1e0a8ffdcd44dcba3e99577931bf5f903ef9d2055fb",
+  "decoder_adapter": "/workspace/artifacts/direct_compact_gpt_sft_v1/decoder_adapter",
+  "decoder_adapter_sha256": "5e0bbe269edaeb51e75681f9c9edb4166268e076cdce41294cbbf4a2580707ae",
+  "decoder_model": "Qwen/Qwen3-8B",
+  "decoder_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "encoder": null,
+  "lm_head_rows": 151936,
+  "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+  "num_rows": 175,
+  "num_samples": 10,
+  "overlay_rows": 20475,
+  "schema": "direct-compact-inference-v1",
+  "seed": 42,
+  "selected_role": "measure",
+  "soft_prefix": null,
+  "source_overlay_sha256": "4730667fa4177d3d7d515bcb7ef783f1d3eaa1633d54544aac57b4a95f7d1c41"
+}

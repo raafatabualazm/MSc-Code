@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_typed_fold_gold_replay_v2/checkpoint-optstep-000058",
+  "run_contract_sha256": "a3d325af70ac9cd0a0c55cb7e66f4df2b390f78fab3ca6a70a930093ac989a00",
+  "schema": "t5gemma2-typed-fold-gold-replay-checkpoint-v2",
+  "update": 58
+}

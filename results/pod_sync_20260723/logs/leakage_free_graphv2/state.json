@@ -1,0 +1,174 @@
+{
+  "completed": {
+    "preflight_01": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_01.log",
+      "time": 1783775065.3927855
+    },
+    "preflight_02": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_02.log",
+      "time": 1783775072.3454087
+    },
+    "preflight_03": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_03.log",
+      "time": 1783775078.2746346
+    },
+    "preflight_04": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_04.log",
+      "time": 1783775080.68896
+    },
+    "preflight_05": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_05.log",
+      "time": 1783775083.7958677
+    },
+    "preflight_06": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_06.log",
+      "time": 1783775085.075534
+    },
+    "preflight_07": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_07.log",
+      "time": 1783775085.8385794
+    },
+    "preflight_08": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_08.log",
+      "time": 1783775093.4315836
+    },
+    "preflight_09": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_09.log",
+      "time": 1783775094.8340435
+    },
+    "preflight_10": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_10.log",
+      "time": 1783775107.3208213
+    },
+    "preflight_11": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_11.log",
+      "time": 1783775113.4512064
+    },
+    "preflight_12": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_12.log",
+      "time": 1783775123.3858519
+    },
+    "preflight_13": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_13.log",
+      "time": 1783775124.695911
+    },
+    "preflight_14": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_14.log",
+      "time": 1783775130.7032435
+    },
+    "preflight_15": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_15.log",
+      "time": 1783775132.6364543
+    },
+    "preflight_16": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_16.log",
+      "time": 1783775134.6551769
+    },
+    "preflight_17": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_17.log",
+      "time": 1783775138.763037
+    },
+    "preflight_18": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_18.log",
+      "time": 1783775141.757528
+    },
+    "preflight_19": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_19.log",
+      "time": 1783775143.2900488
+    },
+    "preflight_20": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_20.log",
+      "time": 1783775145.0718124
+    },
+    "preflight_21": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_21.log",
+      "time": 1783775147.0623841
+    },
+    "preflight_full_reward_parity": {
+      "log": "/workspace/logs/leakage_free_graphv2/preflight_full_reward_parity.log",
+      "time": 1783775211.0413947
+    },
+    "reference_s42": {
+      "log": "/workspace/logs/leakage_free_graphv2/reference_s42.log",
+      "time": 1783781971.9379318
+    },
+    "signature_reference_s42": {
+      "log": "/workspace/logs/leakage_free_graphv2/signature_reference_s42.log",
+      "time": 1783788813.3467634
+    },
+    "core_s42_text": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_text.log",
+      "time": 1783801103.9716327
+    },
+    "core_s42_prefix_no_edges": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_no_edges.log",
+      "time": 1783810161.5307329
+    },
+    "core_s42_prefix_cfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_cfg.log",
+      "time": 1783818480.9831269
+    },
+    "core_s42_prefix_cfg_dfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_cfg_dfg.log",
+      "time": 1783829620.7537048
+    },
+    "core_s42_prefix_shuffled": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_shuffled.log",
+      "time": 1783838442.716709
+    },
+    "core_s42_prefix_cfg_dfg_text": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_cfg_dfg_text.log",
+      "time": 1783851176.0051482
+    },
+    "core_s43_prefix_no_edges": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s43_prefix_no_edges.log",
+      "time": 1783860252.8880665
+    },
+    "core_s43_prefix_cfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s43_prefix_cfg.log",
+      "time": 1783869758.8530881
+    },
+    "core_s43_prefix_cfg_dfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s43_prefix_cfg_dfg.log",
+      "time": 1783877996.855793
+    },
+    "core_s44_prefix_no_edges": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s44_prefix_no_edges.log",
+      "time": 1783886782.4288373
+    },
+    "core_s44_prefix_cfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s44_prefix_cfg.log",
+      "time": 1783896166.9658108
+    },
+    "core_s44_prefix_cfg_dfg": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s44_prefix_cfg_dfg.log",
+      "time": 1783905706.4133837
+    },
+    "expanded_s42": {
+      "log": "/workspace/logs/leakage_free_graphv2/expanded_s42.log",
+      "time": 1783916714.5189097
+    },
+    "reward_preflight_s42": {
+      "log": "/workspace/logs/leakage_free_graphv2/reward_preflight_s42.log",
+      "time": 1783923366.2278383
+    },
+    "grpo_s42": {
+      "log": "/workspace/logs/leakage_free_graphv2/grpo_s42.log",
+      "time": 1783937397.3675234
+    },
+    "core_s42_prefix_no_gine": {
+      "log": "/workspace/logs/leakage_free_graphv2/core_s42_prefix_no_gine.log",
+      "time": 1783945837.1249325
+    }
+  },
+  "failed": {
+    "reward_preflight_s42": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_graphv2/reward_preflight_s42.log"
+    },
+    "grpo_s42": {
+      "exit_code": 1,
+      "log": "/workspace/logs/leakage_free_graphv2/grpo_s42.log"
+    }
+  }
+}

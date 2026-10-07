@@ -1,0 +1,75 @@
+
+$ /venv/main/bin/python scripts/data/test_graph_preprocessing_fixes.py
+[instruction_def_use]
+  ok: x86 mov
+  ok: x86 alias eax->rax
+  ok: x86 subreg r8d->r8
+  ok: x86 rmw add
+  ok: x86 xor zero idiom
+  ok: x86 mem store: addr regs read, no write
+  ok: x86 stack load
+  ok: x86 lea
+  ok: x86 cmp defines flags
+  ok: x86 xchg reads and writes both operands
+  ok: x86 idiv implicit operands
+  ok: x86 cqo implicit operands
+  ok: x86 pop
+  ok: x86 branch untracked
+  ok: arm mov
+  ok: arm w->x alias
+  ok: arm add sp imm
+  ok: arm zero reg excluded
+  ok: arm moving-sp ldr omits unsound slot
+  ok: arm moving-sp str omits unsound slot
+  ok: arm stable-frame slot
+  ok: arm stp writeback: base written
+  ok: arm ldp
+  ok: arm madd
+  ok: arm cbz read-only
+  ok: arm movk rmw
+  ok: arm fp/lr alias
+  ok: arm eor zero idiom
+  ok: arm hex imm not a register
+  ok: arm stxr status destination
+  ok: arm bl Dart call effects
+[block_def_use]
+  ok: defs
+  ok: upward-exposed
+[build_cross_block_dfg]
+  ok: kill respected: x0 flows 1->2 not 0->2
+  ok: all edges typed dataflow
+  ok: loop-carried self edge
+  ok: entry def reaches loop
+  ok: single block -> no edges
+[dominator-chain backedge]
+  ok: latch->header edge exists
+  ok: classified loop_backedge via dominator chain
+  ok: no forward edge misclassified
+[edge type vocab]
+  ok: dataflow has dedicated slot
+  ok: 18 graph-v2 forward/reverse edge slots
+  ok: dataflow edge_attr = 8
+[ensure_cfg_blocks dataflow wiring]
+  ok: grpo_data_graphv2.jsonl: CFG edges unchanged
+  ok: grpo_data_graphv2.jsonl: dataflow edges added
+  ok: grpo_data_graphv2.jsonl: dataflow indices in range
+  ok: grpo_data_graphv2.jsonl: idempotent
+  ok: synthetic_pool_graphv2.jsonl: CFG edges unchanged
+  ok: synthetic_pool_graphv2.jsonl: dataflow edges added
+  ok: synthetic_pool_graphv2.jsonl: dataflow indices in range
+  ok: synthetic_pool_graphv2.jsonl: idempotent
+[cumsum_position_ids]
+  ok: pad holes skipped
+[tensor builder]
+  skip: no snapshot file supplied
+  ok: found a block with legacy DFG nodes
+  ok: legacy appends unk DFG tokens
+  ok: edges mode appends none
+  ok: strict graph-v2 rejects oversized blocks
+  ok: legacy-compatible edges mode reclaims the 8-token reserve
+  ok: roberta: code starts at 2
+  ok: roberta: pads at padding_idx=1
+  ok: roberta: max position < 514
+  ok: roberta: DFG tokens at position 0
+
+ALL 62 CHECKS PASSED

@@ -1,0 +1,17 @@
+
+$ /venv/main/bin/python scripts/evaluation/audit_prompt_integrity_antigravity.py --dataset data/testing/grpo_data_graphv2.jsonl --output results/protocol_audit_154_graphv2.json
+{
+  "prompt_schema_version": "antigravity-v2-no-test-hints",
+  "dataset": {
+    "path": "/workspace/data/testing/grpo_data_graphv2.jsonl",
+    "size_bytes": 4883242,
+    "sha256": "8453876a40d2279684a190a5bf1430a62897c84e063a78e25c57198287bc6928"
+  },
+  "rows": 154,
+  "rows_with_tests": 154,
+  "rows_with_candidate_assertions": 154,
+  "rows_leaking_scoring_tests": 0,
+  "leaked_rows": [],
+  "prompt_stream_sha256": "7cbd12ba2bd0dd98281ea39e8389492909b7226fde94c80eae98d1c09fe5ade4",
+  "passed": true
+}

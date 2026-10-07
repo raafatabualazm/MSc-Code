@@ -1,0 +1,75 @@
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_api_rs_sft_rescue.py: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_production_2epoch_tranche2_v1/repair_policy_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_hard_targets_f2.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/direct_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_manifest.json: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_sources.jsonl: OK
+/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_probe_2epoch_v1/repair_policy_targets.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"api_slot": 1, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_a0c192f9fb04"}
+{"api_slot": 2, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_c6c16b565fb8"}
+{"api_slot": 3, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_632fe2fdcdd7"}
+{"api_slot": 4, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "sigless_ce359d26e1b6"}
+{"api_slot": 5, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_349b49ac2473"}
+{"api_slot": 6, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_596085856e22"}
+{"api_slot": 7, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-f013bee2fd01"}
+{"api_slot": 8, "api_slots": 20, "code_only": true, "status": "response", "task_id": "fresh-eval-bc3f7e9fb087"}
+{"api_slot": 9, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_e44878b31a21"}
+{"api_slot": 10, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_332a71719331"}
+{"api_slot": 11, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-8e2553c1c1ae"}
+{"api_slot": 12, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-72ac49a6fb92"}
+{"api_slot": 13, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_a4ba19fd8844"}
+{"api_slot": 14, "api_slots": 20, "code_only": true, "status": "response", "task_id": "sigless_dfe8156844d2"}
+{"api_slot": 15, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-0acd29551b0b"}
+{"api_slot": 16, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "sigless_ab267dcfcb70"}
+{"api_slot": 17, "api_slots": 20, "code_only": false, "status": "response", "task_id": "fresh-eval-faf2a15fbc00"}
+{"api_slot": 18, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "sigless_5ef01b4278b3"}
+{"api_slot": 19, "api_slots": 20, "code_only": false, "status": "provider_error", "task_id": "fresh-eval-88b0c2fa78f6"}
+{"api_slot": 20, "api_slots": 20, "code_only": false, "status": "response", "task_id": "sigless_f063735927c7"}
+{"accepted": false, "task_id": "sigless_a0c192f9fb04", "verification_task": 1, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_c6c16b565fb8", "verification_task": 2, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_632fe2fdcdd7", "verification_task": 3, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_ce359d26e1b6", "verification_task": 4, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_349b49ac2473", "verification_task": 5, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_596085856e22", "verification_task": 6, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-f013bee2fd01", "verification_task": 7, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": true, "task_id": "fresh-eval-bc3f7e9fb087", "verification_task": 8, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_e44878b31a21", "verification_task": 9, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_332a71719331", "verification_task": 10, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-8e2553c1c1ae", "verification_task": 11, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-72ac49a6fb92", "verification_task": 12, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_a4ba19fd8844", "verification_task": 13, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_dfe8156844d2", "verification_task": 14, "verification_tasks": 20, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-0acd29551b0b", "verification_task": 15, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_ab267dcfcb70", "verification_task": 16, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-faf2a15fbc00", "verification_task": 17, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_5ef01b4278b3", "verification_task": 18, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-88b0c2fa78f6", "verification_task": 19, "verification_tasks": 20, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_f063735927c7", "verification_task": 20, "verification_tasks": 20, "visible_passes": 0}
+{"calls": 20, "estimated_usd": "5.823850000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_claude_opus_production_residual_tranche2_2epoch_v1", "tasks": 20, "verified_targets": 2}

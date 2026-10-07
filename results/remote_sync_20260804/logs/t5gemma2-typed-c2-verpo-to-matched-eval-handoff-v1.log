@@ -1,0 +1,8 @@
+T5GEMMA_TYPED_C2_VERPO_EVAL_HANDOFF_BLOCKED validator or matched-evaluation Supervisor deployment is absent
+T5GEMMA_TYPED_C2_VERPO_EVAL_HANDOFF_BLOCKED validator or matched-evaluation Supervisor deployment is absent
+/workspace/hybrid_training_patch_v2_3/scripts/evaluation/validate_t5gemma2_typed_c2_verpo_terminal.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_c2_verpo_pilot150.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_c2_verpo_matched_eval8192_v1.sh: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2-typed-c2-verpo-matched-eval8192-v1.conf: OK
+t5gemma2-typed-c2-verpo-matched-eval8192-v1: started
+T5GEMMA_TYPED_C2_VERPO_EVAL_HANDOFF_STARTED program=t5gemma2-typed-c2-verpo-matched-eval8192-v1 update=150 gates=16..144

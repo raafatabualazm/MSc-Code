@@ -1,0 +1,14 @@
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+{"api_slot": 1, "api_slots": 5, "code_only": true, "status": "response", "task_id": "sigless_42482b64ab02"}
+{"api_slot": 2, "api_slots": 5, "code_only": true, "status": "response", "task_id": "fresh-eval-72ac49a6fb92"}
+{"api_slot": 3, "api_slots": 5, "code_only": true, "status": "response", "task_id": "fresh-eval-c1a59fd8f6ff"}
+{"api_slot": 4, "api_slots": 5, "code_only": false, "status": "response", "task_id": "fresh-eval-a5ed1213af84"}
+{"api_slot": 5, "api_slots": 5, "code_only": false, "status": "response", "task_id": "sigless_f529c5a7cbbb"}
+{"accepted": true, "task_id": "sigless_42482b64ab02", "verification_task": 1, "verification_tasks": 5, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-72ac49a6fb92", "verification_task": 2, "verification_tasks": 5, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-c1a59fd8f6ff", "verification_task": 3, "verification_tasks": 5, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-a5ed1213af84", "verification_task": 4, "verification_tasks": 5, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_f529c5a7cbbb", "verification_task": 5, "verification_tasks": 5, "visible_passes": 0}
+{"calls": 5, "estimated_usd": "0.310832000", "output_dir": "/workspace/artifacts/t5gemma2_api_rs_sft_claude_probe_prefix10_v1", "tasks": 5, "verified_targets": 2}

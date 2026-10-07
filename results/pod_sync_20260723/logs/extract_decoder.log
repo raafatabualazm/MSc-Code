@@ -1,0 +1,7 @@
+extracted 504 decoder-LoRA tensors; dropped {'graph_encoder': 38, 'qwen_prefix_adapter': 17, 'projection': 6, 'other': 0}
+wrote /workspace/artifacts/text_arm_v2_s44/08b_decoder_only_lora (adapter_config.json + adapter_model.safetensors)
+verifying PEFT load on CPU (loading Qwen3-8B, ~1-2 min)...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7293.01it/s]
+PEFT_LOAD_OK trainable_lora_params=174,587,904
+VERIFIED_CLEAN_DECODER_ONLY

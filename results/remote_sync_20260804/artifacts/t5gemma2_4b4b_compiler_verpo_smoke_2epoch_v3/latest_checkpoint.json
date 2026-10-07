@@ -1,0 +1,6 @@
+{
+  "path": "/workspace/artifacts/t5gemma2_4b4b_compiler_verpo_smoke_2epoch_v3/checkpoint-optstep-000001",
+  "run_contract_sha256": "04e1fda375d542f1ddf95da7f231f88c1c758e00cba8a36935a0f44ab8f60dbb",
+  "schema": "t5gemma2-compiler-feedback-verpo-checkpoint-v1",
+  "update": 1
+}

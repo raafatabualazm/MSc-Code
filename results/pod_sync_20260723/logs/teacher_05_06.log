@@ -1,0 +1,15 @@
+[teacher] 2026-07-20T17:30:35Z waiting for 04/collected.jsonl + v2b exit...
+[teacher] collected rows=678 ; starting 05 teacher (sync, deepseek-reasoner, concurrency 16)
+[teacher] key sourced: yes
+Traceback (most recent call last):
+  File "/workspace/scripts/training/teacher_repair_dataset_antigravity.py", line 1209, in <module>
+    main()
+  File "/workspace/scripts/training/teacher_repair_dataset_antigravity.py", line 1205, in main
+    raise SystemExit(args.func(args))
+                     ^^^^^^^^^^^^^^^
+  File "/workspace/scripts/training/teacher_repair_dataset_antigravity.py", line 771, in teacher_command
+    validate_collected_artifact(args.collected)
+  File "/workspace/scripts/training/teacher_repair_dataset_antigravity.py", line 411, in validate_collected_artifact
+    raise FileNotFoundError(
+FileNotFoundError: missing collect manifest required for provenance: /workspace/artifacts/text_arm_v2_s44/04_teacher_harvest/collected.jsonl.manifest.json
+[teacher] 05 exit=1

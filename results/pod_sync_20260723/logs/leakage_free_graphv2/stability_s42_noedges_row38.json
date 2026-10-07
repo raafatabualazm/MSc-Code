@@ -1,0 +1,287 @@
+{
+  "row": 38,
+  "task_id": "41",
+  "problem_id": "41",
+  "runs": [
+    {
+      "repeat": 1,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_u99nsdll/test.dart:44:5)\n#1      main (file:///tmp/dart_jit_compilek_41_u99nsdll/test.dart:29:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_m1z4yqll/test.dart:32:5)\n#1      main (file:///tmp/dart_jit_compilek_41_m1z4yqll/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_9s36orna/test.dart:51:5)\n#1      main (file:///tmp/dart_jit_compilek_41_9s36orna/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:14:27: Error: Method not found: 'abs'.\n  final distanceBetween = abs(a - b);\n                          ^^^"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_b51274yr/test.dart:37:5)\n#1      main (file:///tmp/dart_jit_compilek_41_b51274yr/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_e3qp054m/test.dart:33:5)\n#1      main (file:///tmp/dart_jit_compilek_41_e3qp054m/test.dart:18:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:10:18: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    a = b % 1987 + b / 1987 * 5;\n                 ^\ntest.dart:11:22: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    b = tempA % 1987 + tempA / 1987 * 6;\n                     ^"
+        },
+        {
+          "candidate": 8,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_sau3hq43/test.dart:39:5)\n#1      main (file:///tmp/dart_jit_compilek_41_sau3hq43/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_qsbim303/test.dart:35:5)\n#1      main (file:///tmp/dart_jit_compilek_41_qsbim303/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_dt7xqgjw/test.dart:44:5)\n#1      main (file:///tmp/dart_jit_compilek_41_dt7xqgjw/test.dart:29:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_fg8tvyea/test.dart:32:5)\n#1      main (file:///tmp/dart_jit_compilek_41_fg8tvyea/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_i_mxk4uk/test.dart:51:5)\n#1      main (file:///tmp/dart_jit_compilek_41_i_mxk4uk/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:14:27: Error: Method not found: 'abs'.\n  final distanceBetween = abs(a - b);\n                          ^^^"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_sw7lnqsr/test.dart:37:5)\n#1      main (file:///tmp/dart_jit_compilek_41_sw7lnqsr/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_u890ozs_/test.dart:33:5)\n#1      main (file:///tmp/dart_jit_compilek_41_u890ozs_/test.dart:18:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:10:18: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    a = b % 1987 + b / 1987 * 5;\n                 ^\ntest.dart:11:22: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    b = tempA % 1987 + tempA / 1987 * 6;\n                     ^"
+        },
+        {
+          "candidate": 8,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_817h92yw/test.dart:39:5)\n#1      main (file:///tmp/dart_jit_compilek_41_817h92yw/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41__vhln1wk/test.dart:35:5)\n#1      main (file:///tmp/dart_jit_compilek_41__vhln1wk/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_mzhpkbjz/test.dart:44:5)\n#1      main (file:///tmp/dart_jit_compilek_41_mzhpkbjz/test.dart:29:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_4m8ivg6v/test.dart:32:5)\n#1      main (file:///tmp/dart_jit_compilek_41_4m8ivg6v/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_yd8kivtu/test.dart:51:5)\n#1      main (file:///tmp/dart_jit_compilek_41_yd8kivtu/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:14:27: Error: Method not found: 'abs'.\n  final distanceBetween = abs(a - b);\n                          ^^^"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_t0ynndx3/test.dart:37:5)\n#1      main (file:///tmp/dart_jit_compilek_41_t0ynndx3/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_sivrj314/test.dart:33:5)\n#1      main (file:///tmp/dart_jit_compilek_41_sivrj314/test.dart:18:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:10:18: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    a = b % 1987 + b / 1987 * 5;\n                 ^\ntest.dart:11:22: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    b = tempA % 1987 + tempA / 1987 * 6;\n                     ^"
+        },
+        {
+          "candidate": 8,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_hml759jb/test.dart:39:5)\n#1      main (file:///tmp/dart_jit_compilek_41_hml759jb/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_iu50qefx/test.dart:35:5)\n#1      main (file:///tmp/dart_jit_compilek_41_iu50qefx/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        }
+      ]
+    },
+    {
+      "repeat": 4,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_l1h1b2wu/test.dart:44:5)\n#1      main (file:///tmp/dart_jit_compilek_41_l1h1b2wu/test.dart:29:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_dinbc2tj/test.dart:32:5)\n#1      main (file:///tmp/dart_jit_compilek_41_dinbc2tj/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_qudmrlsb/test.dart:51:5)\n#1      main (file:///tmp/dart_jit_compilek_41_qudmrlsb/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:14:27: Error: Method not found: 'abs'.\n  final distanceBetween = abs(a - b);\n                          ^^^"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_lrvxk0aj/test.dart:37:5)\n#1      main (file:///tmp/dart_jit_compilek_41_lrvxk0aj/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_g__muv8f/test.dart:33:5)\n#1      main (file:///tmp/dart_jit_compilek_41_g__muv8f/test.dart:18:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:10:18: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    a = b % 1987 + b / 1987 * 5;\n                 ^\ntest.dart:11:22: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    b = tempA % 1987 + tempA / 1987 * 6;\n                     ^"
+        },
+        {
+          "candidate": 8,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_hz2wm8c_/test.dart:39:5)\n#1      main (file:///tmp/dart_jit_compilek_41_hz2wm8c_/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_eliskfps/test.dart:35:5)\n#1      main (file:///tmp/dart_jit_compilek_41_eliskfps/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        }
+      ]
+    },
+    {
+      "repeat": 5,
+      "passed": 1,
+      "outcomes": [
+        {
+          "candidate": 1,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_7ocm3t10/test.dart:44:5)\n#1      main (file:///tmp/dart_jit_compilek_41_7ocm3t10/test.dart:29:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 2,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_fxqgo3c4/test.dart:32:5)\n#1      main (file:///tmp/dart_jit_compilek_41_fxqgo3c4/test.dart:17:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 3,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_d5ok_g5l/test.dart:51:5)\n#1      main (file:///tmp/dart_jit_compilek_41_d5ok_g5l/test.dart:36:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 4,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:14:27: Error: Method not found: 'abs'.\n  final distanceBetween = abs(a - b);\n                          ^^^"
+        },
+        {
+          "candidate": 5,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_uuzems6p/test.dart:37:5)\n#1      main (file:///tmp/dart_jit_compilek_41_uuzems6p/test.dart:22:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 6,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n0 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_k7xge_cl/test.dart:33:5)\n#1      main (file:///tmp/dart_jit_compilek_41_k7xge_cl/test.dart:18:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 7,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: test.dart:10:18: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    a = b % 1987 + b / 1987 * 5;\n                 ^\ntest.dart:11:22: Error: A value of type 'double' can't be assigned to a variable of type 'int'.\n    b = tempA % 1987 + tempA / 1987 * 6;\n                     ^"
+        },
+        {
+          "candidate": 8,
+          "passed": true,
+          "diagnostic": ""
+        },
+        {
+          "candidate": 9,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_pf1uew3z/test.dart:39:5)\n#1      main (file:///tmp/dart_jit_compilek_41_pf1uew3z/test.dart:24:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        },
+        {
+          "candidate": 10,
+          "passed": false,
+          "diagnostic": "stability_run_1/3: Unhandled exception:\n1 != 4\n#0      expect (file:///tmp/dart_jit_compilek_41_cn8px0mz/test.dart:35:5)\n#1      main (file:///tmp/dart_jit_compilek_41_cn8px0mz/test.dart:20:3)\n#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:313:19)\n#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192:12)"
+        }
+      ]
+    }
+  ]
+}

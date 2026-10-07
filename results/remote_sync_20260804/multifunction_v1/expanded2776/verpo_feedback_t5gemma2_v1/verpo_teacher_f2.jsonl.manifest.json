@@ -1,0 +1,50 @@
+{
+  "dataset": {
+    "bytes": 18942525,
+    "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl",
+    "sha256": "14139ed29281ffcf9a713d4ee09fb8d0f67dff613bb170c09c2a7f5c62a6252c",
+    "size_bytes": 18942525
+  },
+  "f2_prompt_contract": {
+    "all_rows_within_limit": true,
+    "chat_overhead_reserve": 256,
+    "constant_prefix_token_cap": null,
+    "max_prompt_tokens": 12000,
+    "maximum_estimated_prompt_tokens": 11591,
+    "maximum_task_id": "sigless_1bba4dc0b268",
+    "representation_schema": "lossless-semantic-f2",
+    "system_prompt": "Return only self-contained equivalent Dart fn0+imports/helpers; no main/tests/fences/prose. F2: Cn+n UTF8 prefix; strings/numbers=JSON; external J[n]=@Xn. E=entry BREFs; H lines=HREF+hex, HREF=#hex; M lines=MREF+ASCII, expand MREF substring first; D lines=IREF+instruction; S lines=SREF+refs/{inline}; B2 repeats BREF+instructions+CFG; X=end. CFG T/F/N/L/U/J+BREF=true/false/fallthrough/loop/unconditional/jump; n/f=to next; t/l+BREF=T/L target plus F next. Instruction=opcode[:operands]. ne/ae/np/be/ge/le/no/g add j. Aliases [s,o,u,+,*,x,v,_,/,i,>,k,r,f,<]=[movsd,comisd,movups,add,mulsd,xorps,movaps,subsd,divsd,cvtsi2sd,shr,movmskpd,roundsd,cvttsd2si,shl]; others literal. Regs [A,B,C,D,I,S,P,R,E,F,G,H,K,M,T,V]=[rax,rbx,rcx,rdx,rdi,rsi,rbp,rsp,r8,r9,r10,r11,r12,r13,r14,r15]; d/w/b narrows; Xn/Yn/Zn=xmm/ymm/zmm. [Q,D,W,B,X,Y,Z][ or SIZE+seg:[ means [QWORD,DWORD,WORD,BYTE,XMMWORD,YMMWORD,ZMMWORD] PTR; PTR [. #h=0xh; [S:,K:,U,X,R+]=[@STUB:,@SDK:,@U,@X,@REL+]; ~=@; %23/%7E/%25=#/~/%; @BREF=block; fn:@SELF=target; fn:Un=helper @Un. Bare jcc uses T (L loop); bare jmp uses U/J/L.",
+    "system_prompt_sha256": "c56d74351a8c4c202d271817f3457095d0c055240c1b042b2fb30a080a808345",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "invariants": {
+    "all_artifact_hashes_verified": true,
+    "all_codec_roundtrips_verified": true,
+    "all_complete_prompts_within_limit": true,
+    "all_external_symbols_retained": true,
+    "all_f2_semantic_roundtrips_verified": true,
+    "all_row_contract_hashes_verified": true,
+    "all_student_constant_prefixes_verified": true,
+    "all_user_functions_retained": true,
+    "cfg_explicit": true,
+    "f2_system_prompt_self_contained_and_hashed": true,
+    "opaque_source_ids_expanded": true,
+    "train_dev_representation_contract_identical": true,
+    "transfer_table_redundancy_proven": true
+  },
+  "output": {
+    "bytes": 12566565,
+    "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl",
+    "sha256": "c3b0a25678eb531cc54f73e5e46515b6f869a8e3a197a6d36a6ff412823689c3",
+    "size_bytes": 12566565
+  },
+  "rows": 2386,
+  "schema": "verified-api-readable-compact-v2",
+  "verpo_feedback_derivation": {
+    "parent_manifest_sha256": "e25d0927676ca0f5486ed9ee4dfb4a6f3c57bf22375f2d03e64e65a9bd930b05",
+    "parent_or_private_artifact_paths_exposed": false,
+    "schema": "task-bound-expect-half-split-v1",
+    "task_ids_sha256": "6916b6883ebff97a909a87db7a50f0de818fff3038e1b5b0495fa9adb79a8eeb",
+    "tests_or_holdback_exposed_in_f2": false
+  }
+}

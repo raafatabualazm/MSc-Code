@@ -1,0 +1,132 @@
+{
+  "accounting": {
+    "eligible_rows": 2386,
+    "excluded_rows": 388,
+    "holdback_expect_cases": 11520,
+    "odd_case_tasks": 989,
+    "parent_rows": 2774,
+    "source_expect_cases": 22051,
+    "visible_expect_cases": 10531
+  },
+  "digests": {
+    "eligible_task_ids_sha256": "6916b6883ebff97a909a87db7a50f0de818fff3038e1b5b0495fa9adb79a8eeb",
+    "excluded_task_ids_sha256": "fc8f5e7bd74c9ca617abff13da3c21f2523613ef3f7d25af5e3bd7e5adf94b0d",
+    "script_sha256": "6decd1ed1ecd3ce8e8a0bd6d861c30a26063c9d913957e361584413705f28a3b"
+  },
+  "inputs": {
+    "contract": {
+      "bytes": 2875795,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/compact_contract.json",
+      "sha256": "f51583b5020c0989c7d20e28cb270d4701b8b8d4fc7955296204959b940fd69f",
+      "size_bytes": 2875795
+    },
+    "executable_dataset": {
+      "bytes": 27082103,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable.jsonl",
+      "sha256": "04a81d4a36b06d157d3bf365527b4159a18cb41a2ef620cca7975b9befcc1d2b",
+      "size_bytes": 27082103
+    },
+    "executable_f2": {
+      "bytes": 15673877,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable_f2.jsonl",
+      "sha256": "12dfaf3e3bffc94bf68d9ea6a858548522c44e157f0f4da80a7cbed2acb6e221",
+      "size_bytes": 15673877
+    },
+    "executable_f2_manifest": {
+      "bytes": 14755,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable_f2.jsonl.manifest.json",
+      "sha256": "e25d0927676ca0f5486ed9ee4dfb4a6f3c57bf22375f2d03e64e65a9bd930b05",
+      "size_bytes": 14755
+    },
+    "executable_seal": {
+      "bytes": 8708,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/train_multifunction_binary_executable.seal.json",
+      "sha256": "15bbd980629aa0b1e0472d27cb2998379c621a9eb9dd6661d2821404cf267ae9",
+      "size_bytes": 8708
+    },
+    "executable_view_report": {
+      "bytes": 8035,
+      "path": "/workspace/multifunction_v1/expanded2776/executable_target24k/executable_view.build.json",
+      "sha256": "df1eab534d63767645bdd2cc97e1d7220209d2e8cbfe6d18f9fa16b28c4b3c92",
+      "size_bytes": 8035
+    }
+  },
+  "invariants": {
+    "acceptance_tests_read_or_used": false,
+    "all_expect_cases_accounted_exactly_once": true,
+    "compact_model_binding_fields_unchanged": true,
+    "deepseek_f2_contains_no_tests": true,
+    "dev175_bytes_opened": false,
+    "holdback_is_not_a_trainer_input": true,
+    "parent_is_exact_safe1578": false,
+    "parent_is_sealed_executable_view": true,
+    "rollout_contains_no_acceptance_or_holdback_fields": true,
+    "visible_and_holdback_nonempty_for_every_eligible_task": true
+  },
+  "outputs": {
+    "excluded": {
+      "bytes": 80316,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/excluded_feedback_tasks.jsonl",
+      "sha256": "b41a3ec7f5d4254b2e871c7a3befe140d4c57b021132511fc3d1746fd6416f6a",
+      "size_bytes": 80316
+    },
+    "f2": {
+      "bytes": 12566565,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl",
+      "sha256": "c3b0a25678eb531cc54f73e5e46515b6f869a8e3a197a6d36a6ff412823689c3",
+      "size_bytes": 12566565
+    },
+    "f2_manifest": {
+      "bytes": 3187,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json",
+      "sha256": "54d0a1d1eab55a0165fd1a20b99d29dfcc9df7b4e5621d4362781d52ae2e7419",
+      "size_bytes": 3187
+    },
+    "reward_holdback_private": {
+      "bytes": 6677745,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl",
+      "sha256": "dbc21d2ba875ea4532a0602d2d07b0457eb99b1ff906c3e4613f9608e5e0ae3f",
+      "size_bytes": 6677745
+    },
+    "rollout": {
+      "bytes": 18942525,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl",
+      "sha256": "14139ed29281ffcf9a713d4ee09fb8d0f67dff613bb170c09c2a7f5c62a6252c",
+      "size_bytes": 18942525
+    },
+    "seal": {
+      "bytes": 916,
+      "path": "/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.seal.json",
+      "sha256": "045c4319b9d2b4e3e29e32eb6b3475404b1b216ced83c17c397f37b5c8fbccca",
+      "size_bytes": 916
+    }
+  },
+  "predeclared_expectation": {
+    "accounting": {
+      "eligible_rows": 2386,
+      "excluded_rows": 388,
+      "holdback_expect_cases": 11520,
+      "odd_case_tasks": 989,
+      "parent_rows": 2774,
+      "source_expect_cases": 22051,
+      "visible_expect_cases": 10531
+    },
+    "eligible_task_ids_sha256": "6916b6883ebff97a909a87db7a50f0de818fff3038e1b5b0495fa9adb79a8eeb",
+    "excluded_task_ids_sha256": "fc8f5e7bd74c9ca617abff13da3c21f2523613ef3f7d25af5e3bd7e5adf94b0d"
+  },
+  "schema": "verpo-train-feedback-view-v1",
+  "split_policy": {
+    "acceptance_tests_used": false,
+    "even_policy": "N/2 visible; N/2 holdback",
+    "malformed_policy": "exclude",
+    "minimum_cases": 2,
+    "no_expect_policy": "exclude",
+    "odd_policy": "floor(N/2) visible; ceil(N/2) holdback",
+    "schema": "task-bound-expect-half-split-v1",
+    "seed": 42,
+    "selection": "lowest task-bound SHA-256 ranks become visible",
+    "single_case_policy": "exclude",
+    "source_field": "tests"
+  },
+  "status": "complete"
+}

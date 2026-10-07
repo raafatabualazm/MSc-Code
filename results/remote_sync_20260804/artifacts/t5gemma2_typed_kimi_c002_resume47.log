@@ -1,0 +1,228 @@
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py: FAILED
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_api_rescue_c002_resume47.sh: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py: OK
+sha256sum: WARNING: 1 computed checksum did NOT match
+T5GEMMA_TYPED_C002_RESUME47_BLOCKED resume controller code differs
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_api_rescue_c002_resume47.sh: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_t5gemma2_typed_api_visible_split.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_visible_failure_projection.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/prior_reports_after_cohort1.tsv: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_initial_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_retry_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/sonnet_residual_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_initial_c001/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_retry_c001/typed_api_rescue_report.json: OK
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py", line 413, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py", line 408, in main
+    run(argv)
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py", line 395, in run
+    return cascade.run(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py", line 1666, in run
+    slots = build_typed_slots(plans, samples_per_parent=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py", line 319, in _preflight_build_slots
+    raise ValueError("full tail-47 prompt-bound audit differs")
+ValueError: full tail-47 prompt-bound audit differs
+Traceback (most recent call last):
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py", line 419, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py", line 403, in main
+    report = run(parse_args(argv))
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py", line 276, in run
+    initial = execute_phase(
+              ^^^^^^^^^^^^^^
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py", line 110, in execute_phase
+    invoke(launcher, plan_env)
+  File "/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py", line 238, in _invoke_default
+    raise RuntimeError(f"phase launcher exited {result.returncode}")
+RuntimeError: phase launcher exited 1
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_kimi_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/deploy/vast/t5gemma2_typed_api_rescue_c002_resume47.sh: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_dual_api_orchestrator.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/continuation_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_t5gemma2_typed_api_visible_split.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_visible_failure_projection.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/prior_reports_after_cohort1.tsv: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_initial_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_retry_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/sonnet_residual_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_initial_c001/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_retry_c001/typed_api_rescue_report.json: OK
+{"budget": {"input_usd_per_million": "3", "max_calls": 47, "max_input_tokens_per_call": 30720, "max_input_tokens_total": 1443840, "max_output_tokens_per_call": 4096, "max_output_tokens_total": 192512, "max_total_tokens": 1636352, "max_usd": "7.219200", "output_usd_per_million": "15", "reservation_policy": "full_per_call_caps_for_every_scheduled_call", "worst_case_complete_call_capacity": 47, "worst_case_usd_nanos_per_call": 153600000}, "cohort_index": 2, "fixed_kimi_cohort_limit": 3, "frontier_api_calls": false, "inputs_sha256": "5be4589406c241a523f627a37b66becd2b07fcd76358f67341ac8a501d1fcae2", "phase": "kimi_initial", "prior_reports": [{"cohort_index": 0, "journal_sha256": "4a110f6bbe1e946e9725d1c9353ce7f08a5b2c648d196b4239ed717f21b13cd9", "phase": "kimi_initial", "report_sha256": "992d8565e8975a0802df8980e7e252a35203466ed58da69d5d358dd0edebb58b", "targets_sha256": "d4b72943d0c0a2a213e625b7073330ac2d0d31b3d7d8b23ea90f6ebc577dff61"}, {"cohort_index": 0, "journal_sha256": "c87801248667afbbb799f646c9e05ea4c7766967fde6efc1b09b9d848bafdb14", "phase": "kimi_retry", "report_sha256": "ec222eb97f1993b87e06163ca027b5bc6040243f112e4b284b9042c0c4085f75", "targets_sha256": "81f33daa02e13ae9bdc15af863a6e39e33b72b67622df5a46d2267b5fc5e57a4"}, {"cohort_index": 0, "journal_sha256": "a1f8301231eb5a6a0f39b4f102a173ad1d93d9c11436536de8159e9418a36fdc", "phase": "sonnet_residual", "report_sha256": "0b0eabe2ba10d9da0012bc08faec112f747fc84cbd440f309c8af672b5ae7620", "targets_sha256": "e6b00c0f629874822636920691aaf2122efbbc9b0b49c9bdc5ae76cd9a51cd85"}, {"cohort_index": 1, "journal_sha256": "06e0d17d127ace7d6a6fef3f3d54e66416778df356bfc7cdf873519666b4e441", "phase": "kimi_initial", "report_sha256": "a93046201d2d3f2401a4b3f205f407b80eb99c593ed27892d53896bfd8bf3e05", "targets_sha256": "bd89b6a0fa901c4f1fa665a84cae636484a8de45ae9911cdac12d6b6d6fef1ba"}, {"cohort_index": 1, "journal_sha256": "c262b59822c266d71fd2df07663799dedddb511da01d8819b4724d3939e6cade", "phase": "kimi_retry", "report_sha256": "253fb7c67d0cafb349e9f15d8ad68b80db03519b4d33f2b23297248abca39aac", "targets_sha256": "ad1a49b91a02e852bdd27195345f85894e1b98cf99318e026ecbcb5630e5a09a"}], "provider_credentials_read": false, "schema": "t5gemma2-typed-api-rescue-cascade-plan-v1", "script_sha256": "11094b27ddbd80f07b358019ad094239cb74181a264b24d81cf3ce3af7f60899", "selection": {"base_selection_replaced": true, "cohort_index": 2, "cohort_size": 47, "fixed_kimi_cohort_limit": 3, "minimum_verified_yield_to_continue": 8, "mode": "kimi_initial", "original_scheduled_tasks": 50, "original_task_ids_sha256": "9dbbd75cd3d1bf231557179f3a318b49ea861cfbdefcd69d6190a354f1e7c40b", "paid_prefix_recalled": false, "paid_prefix_task_ids_sha256": "455aaef8b5f2cd5d8bb33029fb58aa2356efde972f703a50cb4add3de5a9ee6a", "paid_prefix_tasks": 3, "previous_cohort_outcomes": [{"cohort_index": 0, "continued": true, "scheduled": 50, "verified": 17}, {"cohort_index": 1, "continued": true, "scheduled": 50, "verified": 12}], "prior_all_provider_scheduled_task_ids_sha256": "d4794aa5d17fd6aa23147ee4f8c28c1525a516af9c6da3b369730b5ba1f5a1be", "prior_all_provider_scheduled_tasks_excluded": 105, "prior_scheduled_task_ids_sha256": "e8fb9d4f3bde5d838087fdc7c8177621053a9a80236c75831c9e54b9bc831949", "prior_scheduled_tasks_excluded": 100, "scheduled_calls": 47, "scheduled_tasks": 47, "selected_task_ids_sha256": "c9316309ecba02471fe62846d30476220d4f42a478e46acbd87d5be5b439eb49", "selection_adapter": "immutable_c002_prefix3_then_exact_tail47", "source_chain_head_sha256": "5c224d735b9476acc98d77454f241cd4390261787613d6a253b7787fa33c3d3a", "source_journal_sha256": "5005e6d090e7a7091b65d816abf5c387ca4f2459c49e49cbf686369580f57da4", "source_plan_sha256": "273e94b78074a68bb1e9dfa057d4620802bb9a787821805ae810e3e18d20ccd0", "task_ids_sha256": "c9316309ecba02471fe62846d30476220d4f42a478e46acbd87d5be5b439eb49"}, "source_journal_sha256": "ed876d6ddf1cc624f8f1ab7b0de8e739b7d40578e95f10a200a890535fdfaebc", "status": "complete"}
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_c002_resume47.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_cascade.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_api_rescue_continuation_c002.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/preprocessing/build_t5gemma2_typed_api_visible_split.py: OK
+/workspace/hybrid_training_patch_v2_3/scripts/training/t5gemma2_typed_visible_failure_projection.py: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/plan_kimi_initial_c002.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c002_v2/kimi_initial_c002/typed_api_rescue.journal.jsonl.chain-head.json: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776.jsonl: OK
+/workspace/multifunction_v1/expanded2776/build/train_multifunction_binary_expanded_2776_f2.jsonl: OK
+/workspace/multifunction_v1/build/dev_multifunction_binary.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_local_direct_harvest_rs58_k4_v1/direct_targets.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_typed_direct_rs_sft_225_v1/dataset_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/split_manifest.json: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/visible_train.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_api_visible_split_v1/holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection_report.json: OK
+/workspace/artifacts/t5gemma2_typed_visible_failure_projection_v1/visible_projection.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/prior_reports_after_cohort1.tsv: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_initial_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/kimi_retry_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_dual_api_rescue_v1/sonnet_residual_c000/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_initial_c001/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_continuation_c001_v1/kimi_retry_c001/typed_api_rescue_report.json: OK
+/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/prompt_preflight_kimi_initial.json: OK
+{"api_slot": 1, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_1f5b2a0a5a8e"}
+{"api_slot": 2, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_d6a577acccac"}
+{"api_slot": 3, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-4888aaaa32b4"}
+{"api_slot": 4, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_f3a6984bc886"}
+{"api_slot": 5, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_148f77d7380c"}
+{"api_slot": 6, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_35bf468535bf"}
+{"api_slot": 7, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_cc0de96caf05"}
+{"api_slot": 8, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_d90d5bfe312c"}
+{"api_slot": 9, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-4fde4325a2f4"}
+{"api_slot": 10, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_b41496af33c7"}
+{"api_slot": 11, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-b08742cd4f93"}
+{"api_slot": 12, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_5709313db58d"}
+{"api_slot": 13, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_67751684f6fc"}
+{"api_slot": 14, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_a98835a1b936"}
+{"api_slot": 15, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_d3a4262da07b"}
+{"api_slot": 16, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_8774c1cef8c5"}
+{"api_slot": 17, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-5aa602bff466"}
+{"api_slot": 18, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_8e46ffdc0539"}
+{"api_slot": 19, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-ac3fcee7b645"}
+{"api_slot": 20, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_81370d6cb292"}
+{"api_slot": 21, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_0de0b2c1403b"}
+{"api_slot": 22, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_5c7dbc974cdc"}
+{"api_slot": 23, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_9e31dab51a51"}
+{"api_slot": 24, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_198562fcc704"}
+{"api_slot": 25, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-43cbc91be065"}
+{"api_slot": 26, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_399d3d67edf9"}
+{"api_slot": 27, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_73b117219888"}
+{"api_slot": 28, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_604312285628"}
+{"api_slot": 29, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_1c485c927aee"}
+{"api_slot": 30, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_567f761e810b"}
+{"api_slot": 31, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_1699627ab40d"}
+{"api_slot": 32, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_037a83cfa693"}
+{"api_slot": 33, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_91a8855c0141"}
+{"api_slot": 34, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-e59675779b7d"}
+{"api_slot": 35, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_5540ab714120"}
+{"api_slot": 36, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-9fad87268c07"}
+{"api_slot": 37, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-965e83c1601d"}
+{"api_slot": 38, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_ea890014e562"}
+{"api_slot": 39, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_0b19a9a5c674"}
+{"api_slot": 40, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_f1f876558a71"}
+{"api_slot": 41, "api_slots": 47, "code_only": false, "status": "response", "task_id": "sigless_290ec232dd7c"}
+{"api_slot": 42, "api_slots": 47, "code_only": true, "status": "response", "task_id": "sigless_165be0615c4a"}
+{"api_slot": 43, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-05eab17b10d2"}
+{"api_slot": 44, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-c8b6bfed6434"}
+{"api_slot": 45, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-d1c2e51de8bd"}
+{"api_slot": 46, "api_slots": 47, "code_only": true, "status": "response", "task_id": "fresh-eval-ebd1d46dd96e"}
+{"api_slot": 47, "api_slots": 47, "code_only": false, "status": "response", "task_id": "fresh-eval-d798d104d5ca"}
+{"accepted": false, "task_id": "sigless_1f5b2a0a5a8e", "verification_task": 1, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_d6a577acccac", "verification_task": 2, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-4888aaaa32b4", "verification_task": 3, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_f3a6984bc886", "verification_task": 4, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_148f77d7380c", "verification_task": 5, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_35bf468535bf", "verification_task": 6, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_cc0de96caf05", "verification_task": 7, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_d90d5bfe312c", "verification_task": 8, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-4fde4325a2f4", "verification_task": 9, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_b41496af33c7", "verification_task": 10, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-b08742cd4f93", "verification_task": 11, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_5709313db58d", "verification_task": 12, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_67751684f6fc", "verification_task": 13, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_a98835a1b936", "verification_task": 14, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_d3a4262da07b", "verification_task": 15, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_8774c1cef8c5", "verification_task": 16, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-5aa602bff466", "verification_task": 17, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_8e46ffdc0539", "verification_task": 18, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-ac3fcee7b645", "verification_task": 19, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_81370d6cb292", "verification_task": 20, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0de0b2c1403b", "verification_task": 21, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_5c7dbc974cdc", "verification_task": 22, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_9e31dab51a51", "verification_task": 23, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_198562fcc704", "verification_task": 24, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-43cbc91be065", "verification_task": 25, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_399d3d67edf9", "verification_task": 26, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_73b117219888", "verification_task": 27, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_604312285628", "verification_task": 28, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_1c485c927aee", "verification_task": 29, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "sigless_567f761e810b", "verification_task": 30, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_1699627ab40d", "verification_task": 31, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_037a83cfa693", "verification_task": 32, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": true, "task_id": "sigless_91a8855c0141", "verification_task": 33, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-e59675779b7d", "verification_task": 34, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_5540ab714120", "verification_task": 35, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-9fad87268c07", "verification_task": 36, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-965e83c1601d", "verification_task": 37, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_ea890014e562", "verification_task": 38, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_0b19a9a5c674", "verification_task": 39, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "sigless_f1f876558a71", "verification_task": 40, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_290ec232dd7c", "verification_task": 41, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "sigless_165be0615c4a", "verification_task": 42, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-05eab17b10d2", "verification_task": 43, "verification_tasks": 47, "visible_passes": 0}
+{"accepted": false, "task_id": "fresh-eval-c8b6bfed6434", "verification_task": 44, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": true, "task_id": "fresh-eval-d1c2e51de8bd", "verification_task": 45, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-ebd1d46dd96e", "verification_task": 46, "verification_tasks": 47, "visible_passes": 1}
+{"accepted": false, "task_id": "fresh-eval-d798d104d5ca", "verification_task": 47, "verification_tasks": 47, "visible_passes": 0}
+{"estimated_usd": "1.828719000", "output_dir": "/workspace/artifacts/t5gemma2_typed_kimi_c002_resume47_v2/kimi_initial_tail47", "phase": "kimi_initial", "retry_eligible": 12, "tasks": 47, "verified_targets": 11}
+{"cumulative_usd": "6.154428000", "status": "complete", "tail_verified": 11}

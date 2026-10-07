@@ -1,0 +1,46 @@
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_rs_sft_pilot_2epoch_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_1000x4_v1/harvest_report.json: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest.journal.jsonl: OK
+/workspace/artifacts/t5gemma2_local_base_harvest_2epoch_remaining1186x4_v1/harvest_report.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_rollout_feedback.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_teacher_f2.jsonl.manifest.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/verpo_feedback_view.public.json: OK
+/workspace/multifunction_v1/expanded2776/verpo_feedback_t5gemma2_v1/reward_holdback.private.jsonl: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_model.safetensors: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/adapter/adapter_config.json: OK
+/workspace/artifacts/t5gemma2_4b4b_enriched_sft_2epoch_v1/checkpoint-optstep-000348/tokenizer/tokenizer.json: OK
+/workspace/frontier_ceiling_patch_v1/frontier_f2.py: OK
+{"command": "project", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1/base_projection.json", "schema": "t5gemma2-semantic-rescue-base-projection-v1", "status": "complete"}
+{"command": "plan", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1/plan.json", "schema": "t5gemma2-semantic-rescue-plan-v1", "status": "complete"}
+{"command": "diagnose", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1/diagnoses.json", "schema": "t5gemma2-semantic-rescue-diagnoses-v1", "status": "complete"}
+Loading weights:   0%|          | 0/1327 [00:00<?, ?it/s]Loading weights:  67%|██████▋   | 888/1327 [00:00<00:00, 8803.17it/s]Loading weights: 100%|██████████| 1327/1327 [00:00<00:00, 9702.59it/s]
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 1, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:plain_resample:p0:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 2, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:plain_resample:p0:r1", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 3, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:plain_resample:p1:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 4, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:plain_resample:p1:r1", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 5, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:compiler_only:p0:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 6, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:compiler_only:p0:r1", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 7, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:compiler_only:p1:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 8, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:compiler_only:p1:r1", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 9, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:semantic_judge:p0:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 10, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:semantic_judge:p0:r1", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 11, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:semantic_judge:p1:r0", "status": "generated"}
+[transformers] Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+{"completed_slots": 12, "planned_slots": 12, "slot_id": "sigless_a44286e7f2d8:semantic_judge:p1:r1", "status": "generated"}
+{"command": "generate", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1/generation.json", "schema": "t5gemma2-semantic-rescue-generation-v1", "status": "complete"}
+{"command": "score", "output": "/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1/score.json", "schema": "t5gemma2-semantic-rescue-score-v1", "status": "complete"}
+T5GEMMA_SEMANTIC_RESCUE_COMPLETE groups=1 output=/workspace/artifacts/t5gemma2_semantic_rescue_smoke1b_v1

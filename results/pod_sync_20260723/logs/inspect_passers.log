@@ -1,0 +1,30 @@
+PASS task=sigless_6f74b303025c sample=0 test=stdout gold_len=1046 quote_marks=16
+  expected[:110]='"Topological Sort: 4 5 2 0 3 1\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  Map<int, List<i"
+PASS task=sigless_34e9dc99606e sample=6 test=stdout gold_len=1187 quote_marks=18
+  expected[:110]='"Pattern found at positions: 17\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final text = 'H"
+PASS task=sigless_6ad70e03dabe sample=5 test=stdout gold_len=1869 quote_marks=108
+  expected[:110]='"Stable matches:\\nA \\u2192 W\\nB \\u2192 X\\nC \\u2192 Y\\nD \\u2192 Z\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final List<Stri"
+PASS task=sigless_96546ea01643 sample=0 test=return-value gold_len=520 quote_marks=10
+  expected[:110]=''
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nString fn0(List<int> signalStreng"
+PASS task=sigless_083954eb2fb3 sample=0 test=return-value gold_len=510 quote_marks=8
+  expected[:110]=''
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<int> packetSizes)"
+PASS task=sigless_8bf7f40ca356 sample=0 test=stdout gold_len=769 quote_marks=10
+  expected[:110]='"Combinations of [1, 2, 3, 4] taken 2 at a time:\\n[1, 2]\\n[1, 3]\\n[1, 4]\\n[2, 3]\\n[2, 4]\\n[3, 4]\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  List<int> items"
+PASS task=sigless_897c175fe34d sample=7 test=return-value gold_len=789 quote_marks=8
+  expected[:110]=''
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nint fn0(List<int> pixels, int thr"
+PASS task=sigless_c8721da111a6 sample=9 test=stdout gold_len=3880 quote_marks=46
+  expected[:110]='"Frequent Itemsets:\\n\\nAssociation Rules:\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\nvoid fn0() {\n  \n  final transacti"
+PASS task=sigless_4b8ae6c364f9 sample=6 test=return-value gold_len=415 quote_marks=12
+  expected[:110]=''
+  gen_head="import 'dart:async';\nimport 'dart:convert';\n@pragma('vm:never-inline')\n@pragma('vm:entry-point')\ndouble fn0(List<String> operation"
+PASS task=sigless_edd7ed243c48 sample=0 test=stdout gold_len=783 quote_marks=12
+  expected[:110]='"Breadth-first traversal: [1, 2, 3, 4, 5, 6, 7, 8]\\n"'
+  gen_head="import 'dart:async';\nimport 'dart:convert';\nclass Node {\n  int value;\n  List<Node> children = [];\n\n  Node(this.value);\n\n  void add"
